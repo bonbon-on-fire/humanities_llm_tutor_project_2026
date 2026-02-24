@@ -103,7 +103,6 @@ def build_graph(*, model: ChatOpenAI | None = None, persona: str | None = None):
         api_key = _get_openai_api_key()
         model = ChatOpenAI(
             model="gpt-5.2",
-            extra_body={"reasoning_effort": "low"},
             api_key=api_key,
         )
     if persona is None:
