@@ -15,6 +15,15 @@ When you run `python -m ui`, the UI will prompt for:
 
 The UI then runs the conversation automatically (no interactive / no mock-tutor mode).
 
+### Exercise as context for student and tutor
+
+The **selected exercise** (the full text of the chosen `exercise_XX.txt` file) is used as context for both sides:
+
+- **Student**: The exercise text is passed into every call to the student bot as `exercise=...`. The student bot includes it in the student’s context (e.g. in the system prompt) so the simulated student can refer to the assignment when replying (e.g. “I don’t get this question” or “which part of the prompt are we doing?”).
+- **Tutor**: The same exercise text is passed as `assignment_override` to the tutor so the tutor’s responses are anchored to that assignment.
+
+- **Transcript**: The exercise text and `exercise_file` name are saved in the transcript JSON so the judge has full context when evaluating the run.
+
 ## Transcript output
 
 After the conversation ends normally, the UI will prompt for a transcript name and save a JSON file under `judge/transcripts/`.
@@ -27,17 +36,23 @@ After the conversation ends normally, the UI will prompt for a transcript name a
   - If the target file already exists, **reprompt** for a new name (no overwrite)
 - **On Ctrl+C**: exit **without saving**.
 
-### Transcript JSON schema (one object per exchange)
+### Transcript JSON schema
 
-Transcripts are an array of exchange objects, in order:
+Transcripts are saved as a single object so the judge has full context (including the exercise):
 
 ```json
-[
-  { "turn": 1, "student": "…", "tutor": "…" },
-  { "turn": 2, "student": "…", "tutor": "…" }
-]
+{
+  "exercise": "Full exercise/assignment text used as context for student and tutor.",
+  "exercise_file": "exercise_04.txt",
+  "student_type": "chaotic",
+  "student_version": "01",
+  "exchanges": [
+    { "turn": 1, "student": "…", "tutor": "…" },
+    { "turn": 2, "student": "…", "tutor": "…" }
+  ]
+}
 ```
 
 Notes:
-- Only **student + tutor messages** are stored (no metadata).
-- The transcript **does not include** the initial tutor greeting used to start the run.
+- **exercise** is the full text that was used as context for the student and as the tutor’s assignment.
+- **exchanges** are the student+tutor message pairs (the initial tutor greeting is not stored).

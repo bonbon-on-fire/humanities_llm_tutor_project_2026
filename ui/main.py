@@ -218,7 +218,10 @@ def main() -> int:
 
     tutor_greeting = "Hi. What would you like to work on today?"
     print()
-    print(f"[Config] exercise={exercise_path.name} student={student_type} version=student_{version} turns={turns}")
+    print(
+        f"[Config] exercise={exercise_path.name} (used as context for student and tutor) "
+        f"student={student_type} version=student_{version} turns={turns}"
+    )
     print("[Tutor]", tutor_greeting, "\n")
 
     transcript: list[dict[str, object]] = []
@@ -227,6 +230,7 @@ def main() -> int:
 
     try:
         for turn_idx in range(turns):
+            # Exercise is passed as context so the student bot can reference the assignment.
             student_msg = student_api.get_next_student_message(
                 student_messages_for_bot,
                 exercise=exercise_text,
@@ -247,6 +251,15 @@ def main() -> int:
             student_messages_for_bot.append(HumanMessage(content=tutor_text))
 
             transcript.append({"turn": turn_idx + 1, "student": student_text, "tutor": tutor_text})
+
+        # Build output with exercise as context for the judge.
+        transcript_payload = {
+            "exercise": exercise_text,
+            "exercise_file": exercise_path.name,
+            "student_type": student_type,
+            "student_version": version,
+            "exchanges": transcript,
+        }
     except KeyboardInterrupt:
         print("\nCancelled. Exiting without saving.")
         return 130
@@ -257,7 +270,7 @@ def main() -> int:
         print("\nCancelled. Exiting without saving.")
         return 130
 
-    out_path.write_text(json.dumps(transcript, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    out_path.write_text(json.dumps(transcript_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Saved transcript to: {out_path}")
     return 0
 
