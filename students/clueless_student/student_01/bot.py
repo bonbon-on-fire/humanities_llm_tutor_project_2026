@@ -6,6 +6,7 @@ Uses OPENAI_KEY from the environment (or .env) for the LLM; falls back to OPENAI
 """
 
 import os
+import warnings
 from pathlib import Path
 from typing import Annotated, Sequence
 
@@ -14,6 +15,12 @@ try:
     load_dotenv()
 except ImportError:
     pass
+
+warnings.filterwarnings(
+    "ignore",
+    message=r"Core Pydantic V1 functionality isn't compatible with Python 3\.14 or greater\.",
+    category=UserWarning,
+)
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
@@ -102,7 +109,7 @@ def build_graph(*, model: ChatOpenAI | None = None, persona: str | None = None):
     if model is None:
         api_key = _get_openai_api_key()
         model = ChatOpenAI(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             temperature=0.7,
             api_key=api_key,
         )

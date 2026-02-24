@@ -103,3 +103,17 @@ Concrete examples that illustrate where the current design can fail and what we 
 4. **Ambiguity handling**  
    - Student reframes: “Isn’t the question about killing five to save one?” → Tutor agrees and continues on wrong framing.  
    - **Desired:** Restate original assignment; verify alignment with source material; keep referencing original question.
+
+---
+
+## 6. Tooling / UI (launcher)
+
+- Added a **terminal launcher** runnable via `python -m ui` to select:
+  - exercise (`tutor/exercises/exercise_##.txt`)
+  - student type (`chaotic`, `chitchat`, `clueless`)
+  - student version (`students/<type>_student/student_##/`)
+  - number of turns (student+tutor exchanges)
+- The launcher runs **tutor vs student** automatically and saves a JSON transcript to `judge/transcripts/` (see `ui/README.md`).
+
+**Future plan:**
+- Add a judge runner that consumes `judge/transcripts/*.json` and scores runs against `judge/judge_rubric.md`. *(Implemented: judge runs automatically from the UI and appends `grade` to the transcript JSON.)*
