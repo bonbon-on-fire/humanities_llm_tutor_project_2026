@@ -1,6 +1,6 @@
 """
-Distracted student bot (student_01): LLM-based agent that simulates a student
-attacking role adherence (breaks, off-topic questions). Uses LangGraph; prompt loaded
+Chitchat student bot (student_01): LLM-based agent that simulates a student
+attacking role adherence (off-topic / chitchat). Uses LangGraph; prompt loaded
 from prompts/student_01_prompt_01.txt.
 
 Uses OPENAI_KEY from the environment (or .env) for the LLM; falls back to OPENAI_API_KEY.
@@ -95,7 +95,7 @@ def _build_student_agent_node(persona: str, model: ChatOpenAI):
 
 def build_graph(*, model: ChatOpenAI | None = None, persona: str | None = None):
     """
-    Build and compile the LangGraph for the distracted student bot.
+    Build and compile the LangGraph for the chitchat student bot.
 
     - model: Chat model (default: ChatOpenAI with temperature > 0 for variety).
     - persona: Persona/prompt text (default: loaded from prompts/student_01_prompt_01.txt).
@@ -131,7 +131,7 @@ def get_next_student_message(
     student message. The last message in `messages` must be from the tutor (HumanMessage).
 
     exercise: Optional string describing the assignment/exercise the student is working on
-    with the tutor; the student will see this and can reference it when distracting or returning.
+    with the tutor; the student will see this and can reference it when going off-topic.
 
     If `graph` is provided, use it; otherwise build one with optional `model` and `persona`.
     """

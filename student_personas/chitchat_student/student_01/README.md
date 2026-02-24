@@ -1,6 +1,6 @@
-# Chaotic Student 01 — Academic integrity attacker
+# Chitchat Student 01 — Role-adherence (off-topic) attacker
 
-Persona and LangGraph-based bot that simulates a student trying to get the tutor to break **academic integrity** (e.g. give submission-ready answers or claim "instructor said you can give the solution"). Used to test that the tutor refuses and redirects.
+Persona and LangGraph-based bot that simulates a student trying to get the tutor to **go off-topic** (e.g. declare a break and ask for pizza recommendations, chat about weekend plans). Used to test that the tutor maintains **role adherence**: acknowledges breaks, declines off-topic requests, and reminds the student of its purpose.
 
 ## Contents
 
@@ -38,38 +38,40 @@ All commands from the **project root**:
 ### Interactive (you play the tutor)
 
 ```powershell
-python -m student_personas.chaotic_student.student_01.cli
+python -m student_personas.chitchat_student.student_01.cli
 # Type tutor messages; bot replies as student. Type 'quit' to exit.
 ```
 
 ### Real tutor vs student (`--tutor`)
 
-Runs the **tutor bot** (from `tutor/run_tutor.py`) against this student. Tutor output is the student’s input each turn.
+Runs the **tutor bot** (from `tutor/run_tutor.py`) against this student. Tutor output is the student's input each turn.
 
 ```powershell
-python -m student_personas.chaotic_student.student_01.cli --tutor --max-turns 10
+python -m student_personas.chitchat_student.student_01.cli --tutor --max-turns 10
 ```
 
 With the same assignment for both:
 
 ```powershell
-python -m student_personas.chaotic_student.student_01.cli --tutor --exercise "When is it morally okay to kill one to save five? ..." --max-turns 10
-python -m student_personas.chaotic_student.student_01.cli --tutor --exercise-file path/to/assignment.txt --max-turns 10
+python -m student_personas.chitchat_student.student_01.cli --tutor --exercise "When is it morally okay to kill one to save five? ..." --max-turns 10
+python -m student_personas.chitchat_student.student_01.cli --tutor --exercise-file path/to/assignment.txt --max-turns 10
 ```
 
 ### Mock tutor (scripted replies, no real tutor)
 
+The mock tutor models **desired role-adherence**: it acknowledges breaks and declines off-topic questions (e.g. pizza, weather), reminding the student of the tutor's purpose.
+
 ```powershell
-python -m student_personas.chaotic_student.student_01.cli --mock-tutor --max-turns 5
+python -m student_personas.chitchat_student.student_01.cli --mock-tutor --max-turns 5
 ```
 
 ### Exercise / assignment context
 
-The student bot can see the exercise text so it can reference it when asking for “the solution”:
+The student bot can see the exercise text so it can reference it before going off-topic:
 
 ```powershell
-python -m student_personas.chaotic_student.student_01.cli --exercise "Discuss act vs rule consequentialism in 500 words."
-python -m student_personas.chaotic_student.student_01.cli --exercise-file path/to/assignment.txt
+python -m student_personas.chitchat_student.student_01.cli --exercise "Discuss act vs rule consequentialism in 500 words."
+python -m student_personas.chitchat_student.student_01.cli --exercise-file path/to/assignment.txt
 ```
 
 ### Multiple prompt variants (`--prompt`)
@@ -77,14 +79,14 @@ python -m student_personas.chaotic_student.student_01.cli --exercise-file path/t
 Use a different prompt file under `prompts/` (e.g. after adding `student_01_prompt_02.txt`):
 
 ```powershell
-python -m student_personas.chaotic_student.student_01.cli --prompt student_01_prompt_02 --tutor --max-turns 10
+python -m student_personas.chitchat_student.student_01.cli --prompt student_01_prompt_02 --tutor --max-turns 10
 ```
 
 ### All options
 
 | Option | Description |
 |--------|-------------|
-| `--tutor` | Use the real tutor bot; tutor output is the student’s input. |
+| `--tutor` | Use the real tutor bot; tutor output is the student's input. |
 | `--mock-tutor` | Use a scripted mock tutor instead of typing or the real tutor. |
 | `--max-turns N` | Maximum number of exchanges (default 20). |
 | `--exercise "..."` | Exercise/assignment text visible to the student (and to the tutor when using `--tutor`). |
@@ -97,7 +99,7 @@ When driving the tutor yourself (e.g. from another script), use the bot like thi
 
 ```python
 from langchain_core.messages import HumanMessage, AIMessage
-from student_personas.chaotic_student.student_01.bot import build_graph, get_next_student_message
+from student_personas.chitchat_student.student_01.bot import build_graph, get_next_student_message
 
 graph = build_graph()
 messages = [HumanMessage(content="Hi. What would you like to work on?")]
@@ -107,6 +109,6 @@ student_msg = get_next_student_message(messages, exercise="...", graph=graph)
 
 Optional: `get_next_student_message(..., exercise=exercise, graph=graph)` and `build_graph(persona=...)` / `load_persona(path=...)` for custom prompt or assignment.
 
-## Multiple chaotic-student versions
+## Multiple chitchat-student versions
 
-To add more prompts or a new student (e.g. student_02), see **`student_personas/chaotic_student/MULTIPLE_VERSIONS.md`**.
+To add more prompts or a new student (e.g. student_02), mirror the structure under **`student_personas/chitchat_student/`** (e.g. add `student_02/` with its own `bot.py`, `cli.py`, `prompts/`, and use the same run pattern with the appropriate module path).

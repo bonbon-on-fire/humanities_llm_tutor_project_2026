@@ -1,17 +1,17 @@
 """
-CLI to run a conversation with the distracted student bot.
+CLI to run a conversation with the clueless student bot.
 
 Modes:
 - Interactive: you play the tutor (type each tutor message; bot replies as student).
-- Mock tutor: a scripted tutor replies so you can run the student bot without a real tutor.
+- Mock tutor: a scripted tutor replies with good "helping lost student" behavior (diagnostic then short reply).
 - --tutor: use the real tutor bot; tutor output is the student's input.
 
 Usage (from project root):
-  python -m student_personas.distracted_student.student_01.cli
-  python -m student_personas.distracted_student.student_01.cli --mock-tutor
-  python -m student_personas.distracted_student.student_01.cli --tutor --exercise "..."
-  python -m student_personas.distracted_student.student_01.cli --prompt student_01_prompt_02 --tutor
-  python -m student_personas.distracted_student.student_01.cli --max-turns 20
+  python -m student_personas.clueless_student.student_01.cli
+  python -m student_personas.clueless_student.student_01.cli --mock-tutor
+  python -m student_personas.clueless_student.student_01.cli --tutor --exercise "..."
+  python -m student_personas.clueless_student.student_01.cli --prompt student_01_prompt_02 --tutor
+  python -m student_personas.clueless_student.student_01.cli --max-turns 20
 
 Requires OPENAI_KEY (or OPENAI_API_KEY) for the student bot. For --tutor also set OPENAI_API_KEY.
 """
@@ -31,7 +31,7 @@ if __name__ == "__main__" and __package__ is None:
     _root = Path(__file__).resolve().parent.parent.parent.parent
     if str(_root) not in sys.path:
         sys.path.insert(0, str(_root))
-    __package__ = "student_personas.distracted_student.student_01"
+    __package__ = "student_personas.clueless_student.student_01"
 
 from langchain_core.messages import AIMessage, HumanMessage
 
@@ -54,47 +54,21 @@ def _prompt_path_from_name(prompt_name: str) -> Path:
 
 
 def _mock_tutor_reply(turn_index: int, last_student_content: str) -> str:
-    """Scripted mock tutor: acknowledges breaks and declines off-topic (desired role-adherence behavior)."""
+    """Scripted mock tutor: good 'helping lost student' behavior—diagnostic question first, then short reply + check."""
     if turn_index == 0:
         return (
             "Hi. I'm your tutor for this assignment. I'm here to help you work through it step by step. "
             "What would you like to work on first?"
         )
-    low = (last_student_content or "").lower()
-    # Declaring a break / pause
-    if "break" in low or "pause" in low or "taking a break" in low or "pause on the assignment" in low:
+    # Alternate: odd turns = one diagnostic question; even turns = short reply + check for understanding.
+    if turn_index % 2 == 1:
         return (
-            "Got it. When you're ready to get back to the assignment, I'm here to help with that. "
-            "I don't do general chat or off-topic questions—just the assignment."
+            "To help you without overwhelming you—what part is unclear? "
+            "The main question we're trying to answer, or a specific concept?"
         )
-    # Off-topic: recommendations, food, weather, movies, weekend, etc.
-    if any(
-        x in low
-        for x in (
-            "pizza",
-            "restaurant",
-            "coffee",
-            "movie",
-            "weather",
-            "weekend",
-            "recommend",
-            "favorite food",
-            "game last night",
-            "study music",
-            "chat about something else",
-        )
-    ):
-        return (
-            "I'm here to help with the assignment only. I don't do recommendations or general chat. "
-            "When you want to work on the assignment again, just say so."
-        )
-    # Returning to assignment or on-topic
-    if "back to" in low or "assignment" in low or "work on" in low or "question" in low:
-        return "Sure. What part of the assignment would you like to work on?"
-    # Default: redirect to assignment
     return (
-        "I'm your tutor for this assignment. I can help you work through it when you're ready—"
-        "just tell me what you'd like to tackle."
+        "Here's one way to think about it: start by stating the problem in your own words. "
+        "Does that help? What would you try first?"
     )
 
 
@@ -106,7 +80,7 @@ def run_interactive(max_turns: int, exercise: str, prompt_path: Path | None = No
         persona = load_persona(path=prompt_path)
     graph = build_graph(persona=persona)
     messages: list = []
-    print("Distracted student bot (student_01). You play the tutor. Type 'quit' to exit.\n")
+    print("Clueless student bot (student_01). You play the tutor. Type 'quit' to exit.\n")
     if exercise:
         print("[Exercise context is set and visible to the student.]\n")
 
@@ -132,14 +106,14 @@ def run_interactive(max_turns: int, exercise: str, prompt_path: Path | None = No
 
 
 def run_mock_tutor(max_turns: int, exercise: str, prompt_path: Path | None = None) -> None:
-    """Run conversation loop with a scripted mock tutor (no real tutor)."""
+    """Run conversation loop with a scripted mock tutor (good 'helping lost student' behavior)."""
     persona = None
     if prompt_path is not None:
         from .bot import load_persona
         persona = load_persona(path=prompt_path)
     graph = build_graph(persona=persona)
     messages: list = []
-    print("Distracted student bot (student_01) with mock tutor. Student may speak first or after tutor.\n")
+    print("Clueless student bot (student_01) with mock tutor. Student may speak first or after tutor.\n")
     if exercise:
         print("[Exercise context is set and visible to the student.]\n")
 
@@ -186,7 +160,7 @@ def run_tutor_mode(max_turns: int, exercise: str, prompt_path: Path | None = Non
     tutor_greeting = "Hi. What would you like to work on today?"
     student_messages_for_bot = [HumanMessage(content=tutor_greeting)]
 
-    print("Tutor vs Student (distracted_student_01). Tutor output is the student's input.\n")
+    print("Tutor vs Student (clueless_student_01). Tutor output is the student's input.\n")
     if exercise:
         print("[Exercise context is set for both tutor and student.]\n")
     print("[Tutor]", tutor_greeting, "\n")
@@ -227,7 +201,7 @@ def _load_exercise(args: argparse.Namespace) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Run distracted student bot (student_01). Interactive = you play tutor; mock = scripted tutor."
+        description="Run clueless student bot (student_01). Interactive = you play tutor; mock = scripted tutor (good 'helping lost student' behavior)."
     )
     parser.add_argument(
         "--mock-tutor",
