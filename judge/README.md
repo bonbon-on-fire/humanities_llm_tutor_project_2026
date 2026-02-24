@@ -36,8 +36,7 @@ The judge will refuse to run if the transcript already contains a top-level `gra
 
 The judge writes:
 
-- `grade.total_score` / `grade.max_score` (max is 70)
+- `grade.total_score` / `grade.max_score` (max is 45)
 - A full breakdown by section and sub-criterion under `grade.sections`
 - Deductions with reasons and (when possible) `evidence_turns`
 - `grade.model` and `grade.timestamp_utc`
-

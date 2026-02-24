@@ -35,52 +35,42 @@ _CRITERIA_MAX: dict[str, float] = {
     "3.1": 5,
     "3.2": 3,
     "3.3": 3,
-    "4.1": 5,
-    "4.2": 3,
-    "4.3": 3,
-    "5.1": 5,
-    "5.2": 3,
-    "5.3": 3,
 }
 
 _CRITERIA_NAME: dict[str, str] = {
     "1.1": "Socratic method and guided discovery",
     "1.2": "Scaffolding and progression",
     "1.3": "Meta-learning and methodology feedback",
-    "2.1": "Tutor vs. assistant",
-    "2.2": "Staying on task and refusing off-topic",
-    "2.3": "Academic integrity",
-    "3.1": "Redundancy and spiraling",
-    "3.2": "Assignment anchoring",
-    "3.3": "Focus and progression",
-    "4.1": "No grading",
-    "4.2": "Formative feedback only",
-    "4.3": "Transparency about rubric and judgment",
-    "5.1": "Bite-sized and clear responses",
-    "5.2": "Appropriate tone and support",
-    "5.3": "Formatting and medium",
+    "2.1": "Redundancy and spiraling",
+    "2.2": "Assignment anchoring",
+    "2.3": "Focus and progression",
+    "3.1": "Bite-sized and clear responses",
+    "3.2": "Appropriate tone and support",
+    "3.3": "Formatting and medium",
 }
 
 _SECTION_KEYS: tuple[str, ...] = (
     "1_pedagogy",
-    "2_role_and_boundaries",
-    "3_dialogue_quality",
-    "4_feedback_and_evaluation",
-    "5_communication_quality",
+    "2_dialogue_quality",
+    "3_communication_quality",
 )
 
 _SECTION_CRITERIA: dict[str, tuple[str, ...]] = {
     "1_pedagogy": ("1.1", "1.2", "1.3"),
-    "2_role_and_boundaries": ("2.1", "2.2", "2.3"),
-    "3_dialogue_quality": ("3.1", "3.2", "3.3"),
-    "4_feedback_and_evaluation": ("4.1", "4.2", "4.3"),
-    "5_communication_quality": ("5.1", "5.2", "5.3"),
+    "2_dialogue_quality": ("2.1", "2.2", "2.3"),
+    "3_communication_quality": ("3.1", "3.2", "3.3"),
 }
 
-_MAX_BASE_SCORE = float(sum(_CRITERIA_MAX.values()))  # 55
-_MAX_BONUS_PER_SECTION = 3.0
-_MAX_BONUS_SCORE = float(len(_SECTION_KEYS) * _MAX_BONUS_PER_SECTION)  # 15
-_MAX_TOTAL_SCORE = _MAX_BASE_SCORE + _MAX_BONUS_SCORE  # 70
+_SECTION_BONUS_ID: dict[str, str] = {
+    "1_pedagogy": "1.4",
+    "2_dialogue_quality": "2.4",
+    "3_communication_quality": "3.4",
+}
+
+_MAX_BASE_SCORE = float(sum(_CRITERIA_MAX.values()))  # 33
+_MAX_BONUS_PER_SECTION = 4.0
+_MAX_BONUS_SCORE = float(len(_SECTION_KEYS) * _MAX_BONUS_PER_SECTION)  # 12
+_MAX_TOTAL_SCORE = _MAX_BASE_SCORE + _MAX_BONUS_SCORE  # 45
 
 
 def _judge_root() -> Path:
@@ -198,6 +188,12 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
         base_max = _as_number(base.get("max"), path=f"sections.{section_key}.base.max")
         bonus_score = _as_number(bonus.get("score"), path=f"sections.{section_key}.bonus.score")
         bonus_max = _as_number(bonus.get("max"), path=f"sections.{section_key}.bonus.max")
+        bonus_id = _as_str(bonus.get("id"), path=f"sections.{section_key}.bonus.id")
+        expected_bonus_id = _SECTION_BONUS_ID.get(section_key)
+        if bonus_id != expected_bonus_id:
+            raise JudgeError(
+                f"sections.{section_key}.bonus.id must be {expected_bonus_id!r}, got {bonus_id!r}."
+            )
 
         expected_base_max = float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))
         if not _close_enough(base_max, expected_base_max):
@@ -297,7 +293,7 @@ def _judge_system_prompt(rubric_text: str) -> str:
             }
         sections[section_key] = {
             "base": {"score": 0, "max": float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))},
-            "bonus": {"score": 0, "max": _MAX_BONUS_PER_SECTION},
+            "bonus": {"id": _SECTION_BONUS_ID[section_key], "score": 0, "max": _MAX_BONUS_PER_SECTION},
             "criteria": criteria,
         }
 
