@@ -9,6 +9,7 @@ from pathlib import Path
 
 from langchain_core.messages import HumanMessage
 
+from judge import JudgeError, judge_transcript
 from tutor.run_tutor import get_tutor_reply
 
 
@@ -272,5 +273,12 @@ def main() -> int:
 
     out_path.write_text(json.dumps(transcript_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Saved transcript to: {out_path}")
+
+    try:
+        result = judge_transcript(out_path.stem)
+    except JudgeError as e:
+        print(f"Judge failed: {e}")
+        return 1
+    print(f"[Judge] total_score={result.total_score}/{result.max_score}")
     return 0
 

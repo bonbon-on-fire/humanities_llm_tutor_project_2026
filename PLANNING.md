@@ -116,4 +116,4 @@ Concrete examples that illustrate where the current design can fail and what we 
 - The launcher runs **tutor vs student** automatically and saves a JSON transcript to `judge/transcripts/` (see `ui/README.md`).
 
 **Future plan:**
-- Add a judge runner that consumes `judge/transcripts/*.json` and scores runs against `judge/judge_rubric.md`.
+- Add a judge runner that consumes `judge/transcripts/*.json` and scores runs against `judge/judge_rubric.md`. *(Implemented: judge runs automatically from the UI and appends `grade` to the transcript JSON.)*

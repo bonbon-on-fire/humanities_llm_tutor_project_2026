@@ -56,3 +56,10 @@ Transcripts are saved as a single object so the judge has full context (includin
 Notes:
 - **exercise** is the full text that was used as context for the student and as the tutor’s assignment.
 - **exchanges** are the student+tutor message pairs (the initial tutor greeting is not stored).
+
+## Judge integration
+
+After the transcript is saved, the UI runs the **judge** once on that transcript and:
+
+- Appends a top-level `grade` object to the transcript JSON (see `judge/README.md`)
+- Prints the total score as `total_score/max_score`
