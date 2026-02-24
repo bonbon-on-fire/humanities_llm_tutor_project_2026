@@ -57,11 +57,20 @@ class TutorState(TypedDict):
 
 
 def _create_tutor_graph(system_prompt: str):
-    model = ChatOpenAI(
-        model=os.environ.get("OPENAI_MODEL", "gpt-4o"),
-        temperature=0,
+    model_name = os.environ.get("OPENAI_MODEL", "gpt-5.2")
+    reasoning_effort = os.environ.get("OPENAI_REASONING_EFFORT", "low")
+
+    kwargs: dict = dict(
+        model=model_name,
         api_key=os.environ.get("OPENAI_API_KEY"),
     )
+    # Reasoning models (o-series and gpt-5.x) use reasoning_effort instead of temperature
+    if reasoning_effort:
+        kwargs["extra_body"] = {"reasoning_effort": reasoning_effort}
+    else:
+        kwargs["temperature"] = 0
+
+    model = ChatOpenAI(**kwargs)
 
     def tutor_node(state: TutorState) -> dict:
         messages = [SystemMessage(content=system_prompt)] + state["messages"]

@@ -479,7 +479,7 @@
 
   // ---------- Debug toggle ----------
 
-  debugCheckbox.addEventListener('change', () => {
+  debugCheckbox.addEventListener('change', async () => {
     const reasoningBoxes = document.querySelectorAll('.reasoning');
     reasoningBoxes.forEach(box => {
       if (debugCheckbox.checked) {
@@ -488,6 +488,54 @@
         box.classList.remove('show');
       }
     });
+
+    // If enabling debug mode, fetch reasoning for all tutor messages that don't have it yet
+    if (debugCheckbox.checked) {
+      try {
+        const res = await fetch('/get-reasoning');
+        const data = await res.json();
+        const reasoningList = data.reasoning || [];
+        
+        // Get all message bubbles in order (both student and tutor)
+        const allBubbles = Array.from(document.querySelectorAll('.bubble-wrap'));
+        let reasoningIndex = 0;
+        
+        allBubbles.forEach((bubble) => {
+          const isTutor = bubble.classList.contains('left');
+          if (!isTutor) {
+            reasoningIndex++;
+            return; // Skip student messages
+          }
+          
+          // Check if this bubble already has a reasoning box
+          if (bubble.querySelector('.reasoning')) {
+            reasoningIndex++;
+            return;
+          }
+          
+          const reasoning = reasoningList[reasoningIndex];
+          if (reasoning) {
+            // Find the label element to insert reasoning before it
+            const label = bubble.querySelector('.msg-label');
+            if (label) {
+              const reasoningBox = document.createElement('div');
+              reasoningBox.className = 'reasoning show';
+              const reasoningLabel = document.createElement('div');
+              reasoningLabel.className = 'reasoning-label';
+              reasoningLabel.textContent = 'Pedagogical Reasoning';
+              const reasoningText = document.createElement('div');
+              reasoningText.textContent = reasoning;
+              reasoningBox.appendChild(reasoningLabel);
+              reasoningBox.appendChild(reasoningText);
+              bubble.insertBefore(reasoningBox, label);
+            }
+          }
+          reasoningIndex++;
+        });
+      } catch (e) {
+        console.error('Failed to fetch reasoning:', e);
+      }
+    }
   });
 
   // ---------- Auto-resize textarea ----------

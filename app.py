@@ -45,7 +45,9 @@ app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-key-change-in-prod")
 _system_prompt = load_system_prompt()
 _tutor_graph = _create_tutor_graph(_system_prompt)
 
-# In-memory store: session_id -> list[{"role": "student"|"tutor", "content": str}]
+# In-memory store: session_id -> list[{"role": "student"|"tutor", "content": str, "raw_content": str?, "reasoning": str?}]
+# For tutor messages: "content" is the student-facing text, "raw_content" is the original JSON response,
+# "reasoning" is the extracted pedagogical reasoning (if available)
 _conversations: dict[str, list] = {}
 
 STUDENT_FNS = {
@@ -82,13 +84,16 @@ def _set_conv(conv: list) -> None:
 def _to_tutor_msgs(conv: list) -> list:
     """Convert stored conversation to tutor-perspective LangChain messages.
     Student messages → HumanMessage, tutor messages → AIMessage.
+    Uses raw_content for tutor messages if available (preserves full JSON response).
     """
     result = []
     for m in conv:
         if m["role"] == "student":
             result.append(HumanMessage(content=m["content"]))
         else:
-            result.append(AIMessage(content=m["content"]))
+            # Use raw_content if available (full JSON), otherwise fall back to parsed content
+            tutor_content = m.get("raw_content") or m["content"]
+            result.append(AIMessage(content=tutor_content))
     return result
 
 
@@ -131,14 +136,15 @@ def reset():
     last = out_messages[-1] if out_messages else None
 
     if isinstance(last, AIMessage):
-        content = last.content if isinstance(last.content, str) else str(last.content)
-        reasoning, student_facing = _parse_tutor_response(content)
-        tutor_text = student_facing if student_facing is not None else content
+        raw_content = last.content if isinstance(last.content, str) else str(last.content)
+        reasoning, student_facing = _parse_tutor_response(raw_content)
+        tutor_text = student_facing if student_facing is not None else raw_content
     else:
         tutor_text = ""
+        raw_content = ""
         reasoning = None
 
-    conv.append({"role": "tutor", "content": tutor_text})
+    conv.append({"role": "tutor", "content": tutor_text, "raw_content": raw_content, "reasoning": reasoning})
     _set_conv(conv)
 
     response = {"tutor": tutor_text}
@@ -165,20 +171,38 @@ def chat():
     last = out_messages[-1] if out_messages else None
 
     if isinstance(last, AIMessage):
-        content = last.content if isinstance(last.content, str) else str(last.content)
-        reasoning, student_facing = _parse_tutor_response(content)
-        tutor_text = student_facing if student_facing is not None else content
+        raw_content = last.content if isinstance(last.content, str) else str(last.content)
+        reasoning, student_facing = _parse_tutor_response(raw_content)
+        tutor_text = student_facing if student_facing is not None else raw_content
     else:
         tutor_text = ""
+        raw_content = ""
         reasoning = None
 
-    conv.append({"role": "tutor", "content": tutor_text})
+    conv.append({"role": "tutor", "content": tutor_text, "raw_content": raw_content, "reasoning": reasoning})
     _set_conv(conv)
 
     response = {"student": user_msg, "tutor": tutor_text}
     if debug and reasoning:
         response["reasoning"] = reasoning
     return jsonify(response)
+
+
+@app.route("/get-reasoning", methods=["GET"])
+def get_reasoning():
+    """Get reasoning for all tutor messages in the conversation."""
+    conv = _get_conv()
+    reasoning_list = []
+    for msg in conv:
+        if msg["role"] == "tutor":
+            # Try to get stored reasoning, or re-parse from raw_content
+            reasoning = msg.get("reasoning")
+            if not reasoning and msg.get("raw_content"):
+                reasoning, _ = _parse_tutor_response(msg["raw_content"])
+            reasoning_list.append(reasoning)
+        else:
+            reasoning_list.append(None)
+    return jsonify({"reasoning": reasoning_list})
 
 
 @app.route("/student/<student_type>", methods=["POST"])
@@ -206,14 +230,15 @@ def student(student_type: str):
     last = out_messages[-1] if out_messages else None
 
     if isinstance(last, AIMessage):
-        content = last.content if isinstance(last.content, str) else str(last.content)
-        reasoning, student_facing = _parse_tutor_response(content)
-        tutor_text = student_facing if student_facing is not None else content
+        raw_content = last.content if isinstance(last.content, str) else str(last.content)
+        reasoning, student_facing = _parse_tutor_response(raw_content)
+        tutor_text = student_facing if student_facing is not None else raw_content
     else:
         tutor_text = ""
+        raw_content = ""
         reasoning = None
 
-    conv.append({"role": "tutor", "content": tutor_text})
+    conv.append({"role": "tutor", "content": tutor_text, "raw_content": raw_content, "reasoning": reasoning})
     _set_conv(conv)
 
     response = {"student": student_text, "tutor": tutor_text}
