@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://humanities-llm-tutor/grader/transcript.schema.json",
+  "title": "TutorConversationTranscript",
+  "description": "Full conversation between tutor and student for LLM judge evaluation",
+  "type": "object",
+  "required": ["assignment", "turns"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Optional unique identifier for this transcript (e.g. UUID)."
+    },
+    "assignment": {
+      "type": "object",
+      "description": "The problem or assignment this conversation is about.",
+      "required": ["text"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Full problem statement or assignment text shown to the student and tutor."
+        },
+        "courseId": {
+          "type": "string",
+          "description": "Optional course or module identifier."
+        },
+        "courseName": {
+          "type": "string",
+          "description": "Optional human-readable course name."
+        }
+      }
+    },
+    "turns": {
+      "type": "array",
+      "description": "Ordered list of conversation turns. First turn is typically student or tutor; order must be preserved.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["role", "content"],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": ["student", "tutor"],
+            "description": "Speaker of this turn."
+          },
+          "content": {
+            "type": "string",
+            "description": "Plain text of the message. Math may use $...$ and $$...$$; preserve as-is for judge."
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Optional ISO 8601 timestamp for when the message was sent."
+          },
+          "turnIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Optional 0-based index of this turn in the conversation (for reference)."
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Optional metadata for storage and evaluation.",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the transcript was created or exported."
+        },
+        "sessionId": {
+          "type": "string",
+          "description": "Session or run identifier."
+        },
+        "evaluationId": {
+          "type": "string",
+          "description": "ID of a prior evaluation run, if any."
+        }
+      }
+    }
+  }
+}
