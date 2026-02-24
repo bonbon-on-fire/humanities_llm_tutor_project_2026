@@ -18,7 +18,12 @@ load_dotenv(Path(__file__).resolve().parent / ".env")
 from flask import Flask, jsonify, render_template, request, session
 from langchain_core.messages import AIMessage, HumanMessage
 
-from tutor.run_tutor import _create_tutor_graph, get_tutor_reply, load_system_prompt
+from tutor.run_tutor import (
+    _create_tutor_graph,
+    _parse_tutor_response,
+    get_tutor_reply,
+    load_system_prompt,
+)
 from students.chaotic_student.student_01.bot import (
     get_next_student_message as chaotic_get_next,
 )
@@ -113,16 +118,33 @@ def index():
 @app.route("/reset", methods=["POST"])
 def reset():
     """Clear conversation and get the tutor's opening message."""
+    data = request.get_json(silent=True) or {}
+    debug = data.get("debug", False)
+
     conv = _get_conv()
     conv.clear()
 
     # Seed with a neutral student opening so the tutor can greet properly
     seed = [HumanMessage(content="Hello, I'd like to get started on my assignment.")]
-    _, tutor_text = get_tutor_reply(seed, graph=_tutor_graph)
+    result = _tutor_graph.invoke({"messages": seed})
+    out_messages = result["messages"]
+    last = out_messages[-1] if out_messages else None
+
+    if isinstance(last, AIMessage):
+        content = last.content if isinstance(last.content, str) else str(last.content)
+        reasoning, student_facing = _parse_tutor_response(content)
+        tutor_text = student_facing if student_facing is not None else content
+    else:
+        tutor_text = ""
+        reasoning = None
 
     conv.append({"role": "tutor", "content": tutor_text})
     _set_conv(conv)
-    return jsonify({"tutor": tutor_text})
+
+    response = {"tutor": tutor_text}
+    if debug and reasoning:
+        response["reasoning"] = reasoning
+    return jsonify(response)
 
 
 @app.route("/chat", methods=["POST"])
@@ -130,6 +152,7 @@ def chat():
     """Receive a user-typed message, forward to tutor, return reply."""
     data = request.get_json(silent=True) or {}
     user_msg = data.get("message", "").strip()
+    debug = data.get("debug", False)
     if not user_msg:
         return jsonify({"error": "Empty message."}), 400
 
@@ -137,12 +160,25 @@ def chat():
     conv.append({"role": "student", "content": user_msg})
 
     tutor_msgs = _to_tutor_msgs(conv)
-    _, tutor_text = get_tutor_reply(tutor_msgs, graph=_tutor_graph)
+    result = _tutor_graph.invoke({"messages": tutor_msgs})
+    out_messages = result["messages"]
+    last = out_messages[-1] if out_messages else None
+
+    if isinstance(last, AIMessage):
+        content = last.content if isinstance(last.content, str) else str(last.content)
+        reasoning, student_facing = _parse_tutor_response(content)
+        tutor_text = student_facing if student_facing is not None else content
+    else:
+        tutor_text = ""
+        reasoning = None
 
     conv.append({"role": "tutor", "content": tutor_text})
     _set_conv(conv)
 
-    return jsonify({"student": user_msg, "tutor": tutor_text})
+    response = {"student": user_msg, "tutor": tutor_text}
+    if debug and reasoning:
+        response["reasoning"] = reasoning
+    return jsonify(response)
 
 
 @app.route("/student/<student_type>", methods=["POST"])
@@ -150,6 +186,9 @@ def student(student_type: str):
     """Generate a student-bot message then get the tutor's reply."""
     if student_type not in STUDENT_FNS:
         return jsonify({"error": f"Unknown student type: {student_type}"}), 400
+
+    data = request.get_json(silent=True) or {}
+    debug = data.get("debug", False)
 
     conv = _get_conv()
     if not conv or conv[-1]["role"] != "tutor":
@@ -162,12 +201,25 @@ def student(student_type: str):
     conv.append({"role": "student", "content": student_text})
 
     tutor_msgs = _to_tutor_msgs(conv)
-    _, tutor_text = get_tutor_reply(tutor_msgs, graph=_tutor_graph)
+    result = _tutor_graph.invoke({"messages": tutor_msgs})
+    out_messages = result["messages"]
+    last = out_messages[-1] if out_messages else None
+
+    if isinstance(last, AIMessage):
+        content = last.content if isinstance(last.content, str) else str(last.content)
+        reasoning, student_facing = _parse_tutor_response(content)
+        tutor_text = student_facing if student_facing is not None else content
+    else:
+        tutor_text = ""
+        reasoning = None
 
     conv.append({"role": "tutor", "content": tutor_text})
     _set_conv(conv)
 
-    return jsonify({"student": student_text, "tutor": tutor_text})
+    response = {"student": student_text, "tutor": tutor_text}
+    if debug and reasoning:
+        response["reasoning"] = reasoning
+    return jsonify(response)
 
 
 # ---------------------------------------------------------------------------

@@ -39,6 +39,17 @@
       color: #718096;
     }
 
+    #debug-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: #4a5568;
+    }
+    #debug-toggle input[type="checkbox"] {
+      cursor: pointer;
+    }
+
     #btn-reset {
       background: none;
       border: 1px solid #cbd5e0;
@@ -106,6 +117,29 @@
 
     .msg.student + .msg-label,
     .msg-label { color: #718096; }
+
+    .reasoning {
+      display: none;
+      background: #fef3c7;
+      border: 1px solid #fbbf24;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #78350f;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .reasoning.show { display: block; }
+    .reasoning-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      color: #92400e;
+    }
 
     .bubble-wrap { display: flex; flex-direction: column; }
     .bubble-wrap.right { align-items: flex-end; }
@@ -230,6 +264,10 @@
 <header>
   <h1>🎓 Humanities Tutor</h1>
   <div style="display:flex;align-items:center;gap:16px;">
+    <label id="debug-toggle">
+      <input type="checkbox" id="debug-checkbox" />
+      <span>Debug mode</span>
+    </label>
     <span id="status-label">Ready</span>
     <button id="btn-reset">New conversation</button>
   </div>
@@ -271,6 +309,7 @@
   const emptyState   = document.getElementById('empty-state');
   const statusLabel  = document.getElementById('status-label');
   const toast        = document.getElementById('toast');
+  const debugCheckbox = document.getElementById('debug-checkbox');
 
   let busy = false;
   // Track what role sent the last message so we can enable/disable student buttons
@@ -300,7 +339,7 @@
     studentBtns.forEach(b => b.disabled = busy || lastRole !== 'tutor');
   }
 
-  function appendBubble(role, text, label) {
+  function appendBubble(role, text, label, reasoning) {
     if (emptyState) emptyState.remove();
 
     const wrap = document.createElement('div');
@@ -309,6 +348,20 @@
     const lbl = document.createElement('div');
     lbl.className = 'msg-label';
     lbl.textContent = label || (role === 'tutor' ? 'Tutor' : 'You');
+
+    // Add reasoning box if present and debug mode is on
+    if (reasoning && debugCheckbox.checked) {
+      const reasoningBox = document.createElement('div');
+      reasoningBox.className = 'reasoning show';
+      const reasoningLabel = document.createElement('div');
+      reasoningLabel.className = 'reasoning-label';
+      reasoningLabel.textContent = 'Pedagogical Reasoning';
+      const reasoningText = document.createElement('div');
+      reasoningText.textContent = reasoning;
+      reasoningBox.appendChild(reasoningLabel);
+      reasoningBox.appendChild(reasoningText);
+      wrap.appendChild(reasoningBox);
+    }
 
     const bubble = document.createElement('div');
     bubble.className = `msg ${role}`;
@@ -354,8 +407,8 @@
     updateStudentBtns();
 
     try {
-      const data = await apiPost('/reset', {});
-      appendBubble('tutor', data.tutor);
+      const data = await apiPost('/reset', { debug: debugCheckbox.checked });
+      appendBubble('tutor', data.tutor, undefined, data.reasoning);
       setStatus('Ready');
     } catch (e) {
       showToast(e.message);
@@ -378,8 +431,8 @@
     appendBubble('student', text);
 
     try {
-      const data = await apiPost('/chat', { message: text });
-      appendBubble('tutor', data.tutor);
+      const data = await apiPost('/chat', { message: text, debug: debugCheckbox.checked });
+      appendBubble('tutor', data.tutor, undefined, data.reasoning);
       setStatus('Ready');
     } catch (e) {
       showToast(e.message);
@@ -411,15 +464,28 @@
       setStatus(`Generating ${label} message…`);
 
       try {
-        const data = await apiPost(`/student/${type}`, {});
+        const data = await apiPost(`/student/${type}`, { debug: debugCheckbox.checked });
         appendBubble('student', data.student, label);
-        appendBubble('tutor', data.tutor);
+        appendBubble('tutor', data.tutor, undefined, data.reasoning);
         setStatus('Ready');
       } catch (e) {
         showToast(e.message);
         setStatus('Error');
       } finally {
         setBusy(false);
+      }
+    });
+  });
+
+  // ---------- Debug toggle ----------
+
+  debugCheckbox.addEventListener('change', () => {
+    const reasoningBoxes = document.querySelectorAll('.reasoning');
+    reasoningBoxes.forEach(box => {
+      if (debugCheckbox.checked) {
+        box.classList.add('show');
+      } else {
+        box.classList.remove('show');
       }
     });
   });
