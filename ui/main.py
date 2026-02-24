@@ -4,8 +4,15 @@ import importlib
 import json
 import os
 import re
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
+
+warnings.filterwarnings(
+    "ignore",
+    message=r"Core Pydantic V1 functionality isn't compatible with Python 3\.14 or greater\.",
+    category=UserWarning,
+)
 
 from langchain_core.messages import HumanMessage
 

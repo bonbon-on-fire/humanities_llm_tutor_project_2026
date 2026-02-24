@@ -18,6 +18,7 @@ Requires OPENAI_KEY (or OPENAI_API_KEY) for the student bot. For --tutor also se
 
 import argparse
 import sys
+import warnings
 from pathlib import Path
 
 try:
@@ -32,6 +33,12 @@ if __name__ == "__main__" and __package__ is None:
     if str(_root) not in sys.path:
         sys.path.insert(0, str(_root))
     __package__ = "student_personas.chitchat_student.student_01"
+
+warnings.filterwarnings(
+    "ignore",
+    message=r"Core Pydantic V1 functionality isn't compatible with Python 3\.14 or greater\.",
+    category=UserWarning,
+)
 
 from langchain_core.messages import AIMessage, HumanMessage
 
