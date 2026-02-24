@@ -1,4 +1,4 @@
-# Rubric LLM Judge – mass personalization
+# LLM Judge Rubric
 
 ## 1. Content/transcript quality
 

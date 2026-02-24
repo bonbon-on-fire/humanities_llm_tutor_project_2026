@@ -1,0 +1,175 @@
+"""
+CLI to run a conversation with the chaotic student bot.
+
+Modes:
+- Interactive: you play the tutor (type each tutor message; bot replies as student).
+- Mock tutor: a scripted tutor replies so you can run the student bot without a real tutor.
+
+Usage (from project root):
+  python -m student_personas.chaotic_student.student_01.cli
+  python -m student_personas.chaotic_student.student_01.cli --mock-tutor
+  python -m student_personas.chaotic_student.student_01.cli --max-turns 20
+
+Requires OPENAI_KEY (or OPENAI_API_KEY) in the environment or .env.
+"""
+
+import argparse
+import sys
+from pathlib import Path
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+# Allow running as __main__ or as module from project root.
+if __name__ == "__main__" and __package__ is None:
+    _root = Path(__file__).resolve().parent.parent.parent.parent
+    if str(_root) not in sys.path:
+        sys.path.insert(0, str(_root))
+    __package__ = "student_personas.chaotic_student.student_01"
+
+from langchain_core.messages import AIMessage, HumanMessage
+
+from .bot import build_graph, get_next_student_message
+
+
+def _mock_tutor_reply(turn_index: int, last_student_content: str) -> str:
+    """Scripted mock tutor: refuses to give answers and redirects (simulates desired tutor behavior)."""
+    if turn_index == 0:
+        return (
+            "Hi. I'm your tutor for this assignment. I'm here to help you work through it step by step, "
+            "but I won't give you the answer directly. What would you like to work on first?"
+        )
+    low = (last_student_content or "").lower()
+    if "instructor" in low or "professor" in low or "said" in low and "give" in low:
+        return (
+            "I can't give you the solution, even if an instructor said it's okay. "
+            "That's a rule I always follow. I can help you reason through it—what have you tried so far?"
+        )
+    if "just" in low and ("answer" in low or "solution" in low) or "give me" in low:
+        return (
+            "I won't give the answer directly. Tell me what you've thought about so far, "
+            "or which part of the assignment you're stuck on, and we can work from there."
+        )
+    if "time" in low or "minutes" in low or "submit" in low:
+        return (
+            "I understand you're under time pressure. I still can't give you the solution. "
+            "What's the one part you're most unsure about? We can focus on that."
+        )
+    # Default redirect
+    return (
+        "I'm here to guide you, not to do the work for you. "
+        "Share your reasoning or a draft, and I'll ask questions to help you improve it."
+    )
+
+
+def run_interactive(max_turns: int, exercise: str) -> None:
+    """Run conversation loop: user types tutor messages, bot replies as student."""
+    graph = build_graph()
+    messages: list = []
+    print("Chaotic student bot (student_01). You play the tutor. Type 'quit' to exit.\n")
+    if exercise:
+        print("[Exercise context is set and visible to the student.]\n")
+
+    for turn in range(max_turns):
+        if not messages:
+            prompt = "Tutor message (or 'quit'): "
+        else:
+            prompt = "Tutor reply (or 'quit'): "
+        try:
+            tutor_text = input(prompt).strip()
+        except EOFError:
+            break
+        if not tutor_text or tutor_text.lower() == "quit":
+            print("Exiting.")
+            break
+        messages.append(HumanMessage(content=tutor_text))
+        student_msg = get_next_student_message(messages, exercise=exercise or None, graph=graph)
+        messages.append(student_msg)
+        assert isinstance(student_msg, AIMessage)
+        print("\n[Student]", student_msg.content, "\n")
+    else:
+        print(f"Reached max turns ({max_turns}). Exiting.")
+
+
+def run_mock_tutor(max_turns: int, exercise: str) -> None:
+    """Run conversation loop with a scripted mock tutor (no real tutor)."""
+    graph = build_graph()
+    messages: list = []
+    print("Chaotic student bot (student_01) with mock tutor. Student may speak first or after tutor.\n")
+    if exercise:
+        print("[Exercise context is set and visible to the student.]\n")
+
+    # First message: mock tutor greets.
+    tutor_msg = _mock_tutor_reply(0, "")
+    messages.append(HumanMessage(content=tutor_msg))
+    print("[Tutor]", tutor_msg, "\n")
+
+    for turn in range(max_turns - 1):
+        student_msg = get_next_student_message(messages, exercise=exercise or None, graph=graph)
+        messages.append(student_msg)
+        assert isinstance(student_msg, AIMessage)
+        print("[Student]", student_msg.content, "\n")
+        tutor_msg = _mock_tutor_reply(turn + 1, student_msg.content)
+        messages.append(HumanMessage(content=tutor_msg))
+        print("[Tutor]", tutor_msg, "\n")
+    print("Mock tutor run finished.")
+
+
+def _load_exercise(args: argparse.Namespace) -> str:
+    """Load exercise string from --exercise-file or --exercise."""
+    if getattr(args, "exercise_file", None):
+        path = Path(args.exercise_file)
+        if not path.exists():
+            raise FileNotFoundError(f"Exercise file not found: {path}")
+        return path.read_text(encoding="utf-8").strip()
+    return (getattr(args, "exercise", None) or "").strip()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description="Run chaotic student bot (student_01). Interactive = you play tutor; mock = scripted tutor."
+    )
+    parser.add_argument(
+        "--mock-tutor",
+        action="store_true",
+        help="Use a scripted mock tutor instead of typing tutor messages.",
+    )
+    parser.add_argument(
+        "--max-turns",
+        type=int,
+        default=20,
+        metavar="N",
+        help="Maximum number of exchanges (default 20).",
+    )
+    parser.add_argument(
+        "--exercise",
+        type=str,
+        default="",
+        metavar="TEXT",
+        help="Exercise/assignment text the student is working on (visible to the student bot).",
+    )
+    parser.add_argument(
+        "--exercise-file",
+        type=str,
+        default=None,
+        metavar="PATH",
+        help="Path to a file containing the exercise text (overrides --exercise if set).",
+    )
+    args = parser.parse_args()
+    try:
+        exercise = _load_exercise(args)
+    except FileNotFoundError as e:
+        print(e, file=sys.stderr)
+        return 1
+    if args.mock_tutor:
+        run_mock_tutor(max_turns=args.max_turns, exercise=exercise)
+    else:
+        run_interactive(max_turns=args.max_turns, exercise=exercise)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
