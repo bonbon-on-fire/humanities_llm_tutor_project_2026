@@ -4,9 +4,10 @@ Persona and LangGraph-based bot that simulates a student trying to get the tutor
 
 ## Contents
 
-- **persona.md** — Persona spec: role, tactics, tone.
-- **bot.py** — LangGraph agent: loads persona, uses an LLM to generate the next student message from conversation history.
+- **prompts/student_01_prompt_01.txt** — Student prompt (persona, tactics, tone) loaded by the bot.
+- **bot.py** — LangGraph agent: loads the prompt, uses an LLM to generate the next student message from conversation history.
 - **cli.py** — CLI to run a conversation (interactive or mock tutor).
+- **persona.md** — Optional: human-readable persona spec (same content as the prompt file).
 
 ## Setup
 

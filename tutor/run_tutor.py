@@ -139,6 +139,33 @@ def _print_tutor_reply(ai_message: AIMessage, show_reasoning: bool) -> None:
         print(content)
 
 
+def get_tutor_reply(
+    messages: list,
+    assignment_override: str | None = None,
+    *,
+    graph=None,
+    show_reasoning: bool = False,
+) -> tuple[list, str]:
+    """
+    Invoke the tutor with the given conversation (list of HumanMessage, AIMessage).
+    Returns (updated_messages, student_facing_answer_text).
+    Use this to drive the tutor from another script (e.g. student bot CLI).
+    """
+    if graph is None:
+        system_prompt = load_system_prompt(assignment_override)
+        graph = _create_tutor_graph(system_prompt)
+    result = graph.invoke({"messages": messages})
+    out_messages = result["messages"]
+    last = out_messages[-1] if out_messages else None
+    if isinstance(last, AIMessage):
+        content = last.content if isinstance(last.content, str) else str(last.content)
+        _, student_facing = _parse_tutor_response(content)
+        text = student_facing if student_facing is not None else content
+    else:
+        text = ""
+    return out_messages, text
+
+
 # ---------------------------------------------------------------------------
 # Terminal REPL
 # ---------------------------------------------------------------------------

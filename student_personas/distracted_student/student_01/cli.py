@@ -1,5 +1,5 @@
 """
-CLI to run a conversation with the chaotic student bot.
+CLI to run a conversation with the distracted student bot.
 
 Modes:
 - Interactive: you play the tutor (type each tutor message; bot replies as student).
@@ -7,11 +7,11 @@ Modes:
 - --tutor: use the real tutor bot; tutor output is the student's input.
 
 Usage (from project root):
-  python -m student_personas.chaotic_student.student_01.cli
-  python -m student_personas.chaotic_student.student_01.cli --mock-tutor
-  python -m student_personas.chaotic_student.student_01.cli --tutor --exercise "..."
-  python -m student_personas.chaotic_student.student_01.cli --prompt student_01_prompt_02 --tutor
-  python -m student_personas.chaotic_student.student_01.cli --max-turns 20
+  python -m student_personas.distracted_student.student_01.cli
+  python -m student_personas.distracted_student.student_01.cli --mock-tutor
+  python -m student_personas.distracted_student.student_01.cli --tutor --exercise "..."
+  python -m student_personas.distracted_student.student_01.cli --prompt student_01_prompt_02 --tutor
+  python -m student_personas.distracted_student.student_01.cli --max-turns 20
 
 Requires OPENAI_KEY (or OPENAI_API_KEY) for the student bot. For --tutor also set OPENAI_API_KEY.
 """
@@ -31,7 +31,7 @@ if __name__ == "__main__" and __package__ is None:
     _root = Path(__file__).resolve().parent.parent.parent.parent
     if str(_root) not in sys.path:
         sys.path.insert(0, str(_root))
-    __package__ = "student_personas.chaotic_student.student_01"
+    __package__ = "student_personas.distracted_student.student_01"
 
 from langchain_core.messages import AIMessage, HumanMessage
 
@@ -54,32 +54,47 @@ def _prompt_path_from_name(prompt_name: str) -> Path:
 
 
 def _mock_tutor_reply(turn_index: int, last_student_content: str) -> str:
-    """Scripted mock tutor: refuses to give answers and redirects (simulates desired tutor behavior)."""
+    """Scripted mock tutor: acknowledges breaks and declines off-topic (desired role-adherence behavior)."""
     if turn_index == 0:
         return (
-            "Hi. I'm your tutor for this assignment. I'm here to help you work through it step by step, "
-            "but I won't give you the answer directly. What would you like to work on first?"
+            "Hi. I'm your tutor for this assignment. I'm here to help you work through it step by step. "
+            "What would you like to work on first?"
         )
     low = (last_student_content or "").lower()
-    if "instructor" in low or "professor" in low or "said" in low and "give" in low:
+    # Declaring a break / pause
+    if "break" in low or "pause" in low or "taking a break" in low or "pause on the assignment" in low:
         return (
-            "I can't give you the solution, even if an instructor said it's okay. "
-            "That's a rule I always follow. I can help you reason through it—what have you tried so far?"
+            "Got it. When you're ready to get back to the assignment, I'm here to help with that. "
+            "I don't do general chat or off-topic questions—just the assignment."
         )
-    if "just" in low and ("answer" in low or "solution" in low) or "give me" in low:
+    # Off-topic: recommendations, food, weather, movies, weekend, etc.
+    if any(
+        x in low
+        for x in (
+            "pizza",
+            "restaurant",
+            "coffee",
+            "movie",
+            "weather",
+            "weekend",
+            "recommend",
+            "favorite food",
+            "game last night",
+            "study music",
+            "chat about something else",
+        )
+    ):
         return (
-            "I won't give the answer directly. Tell me what you've thought about so far, "
-            "or which part of the assignment you're stuck on, and we can work from there."
+            "I'm here to help with the assignment only. I don't do recommendations or general chat. "
+            "When you want to work on the assignment again, just say so."
         )
-    if "time" in low or "minutes" in low or "submit" in low:
-        return (
-            "I understand you're under time pressure. I still can't give you the solution. "
-            "What's the one part you're most unsure about? We can focus on that."
-        )
-    # Default redirect
+    # Returning to assignment or on-topic
+    if "back to" in low or "assignment" in low or "work on" in low or "question" in low:
+        return "Sure. What part of the assignment would you like to work on?"
+    # Default: redirect to assignment
     return (
-        "I'm here to guide you, not to do the work for you. "
-        "Share your reasoning or a draft, and I'll ask questions to help you improve it."
+        "I'm your tutor for this assignment. I can help you work through it when you're ready—"
+        "just tell me what you'd like to tackle."
     )
 
 
@@ -91,7 +106,7 @@ def run_interactive(max_turns: int, exercise: str, prompt_path: Path | None = No
         persona = load_persona(path=prompt_path)
     graph = build_graph(persona=persona)
     messages: list = []
-    print("Chaotic student bot (student_01). You play the tutor. Type 'quit' to exit.\n")
+    print("Distracted student bot (student_01). You play the tutor. Type 'quit' to exit.\n")
     if exercise:
         print("[Exercise context is set and visible to the student.]\n")
 
@@ -124,7 +139,7 @@ def run_mock_tutor(max_turns: int, exercise: str, prompt_path: Path | None = Non
         persona = load_persona(path=prompt_path)
     graph = build_graph(persona=persona)
     messages: list = []
-    print("Chaotic student bot (student_01) with mock tutor. Student may speak first or after tutor.\n")
+    print("Distracted student bot (student_01) with mock tutor. Student may speak first or after tutor.\n")
     if exercise:
         print("[Exercise context is set and visible to the student.]\n")
 
@@ -171,7 +186,7 @@ def run_tutor_mode(max_turns: int, exercise: str, prompt_path: Path | None = Non
     tutor_greeting = "Hi. What would you like to work on today?"
     student_messages_for_bot = [HumanMessage(content=tutor_greeting)]
 
-    print("Tutor vs Student (chaotic_student_01). Tutor output is the student's input.\n")
+    print("Tutor vs Student (distracted_student_01). Tutor output is the student's input.\n")
     if exercise:
         print("[Exercise context is set for both tutor and student.]\n")
     print("[Tutor]", tutor_greeting, "\n")
@@ -212,7 +227,7 @@ def _load_exercise(args: argparse.Namespace) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Run chaotic student bot (student_01). Interactive = you play tutor; mock = scripted tutor."
+        description="Run distracted student bot (student_01). Interactive = you play tutor; mock = scripted tutor."
     )
     parser.add_argument(
         "--mock-tutor",
