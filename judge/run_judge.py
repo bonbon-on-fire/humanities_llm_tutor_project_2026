@@ -43,6 +43,24 @@ _CRITERIA_MAX: dict[str, float] = {
     "5.3": 3,
 }
 
+_CRITERIA_NAME: dict[str, str] = {
+    "1.1": "Socratic method and guided discovery",
+    "1.2": "Scaffolding and progression",
+    "1.3": "Meta-learning and methodology feedback",
+    "2.1": "Tutor vs. assistant",
+    "2.2": "Staying on task and refusing off-topic",
+    "2.3": "Academic integrity",
+    "3.1": "Redundancy and spiraling",
+    "3.2": "Assignment anchoring",
+    "3.3": "Focus and progression",
+    "4.1": "No grading",
+    "4.2": "Formative feedback only",
+    "4.3": "Transparency about rubric and judgment",
+    "5.1": "Bite-sized and clear responses",
+    "5.2": "Appropriate tone and support",
+    "5.3": "Formatting and medium",
+}
+
 _SECTION_KEYS: tuple[str, ...] = (
     "1_pedagogy",
     "2_role_and_boundaries",
@@ -265,33 +283,32 @@ def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
 
 
 def _judge_system_prompt(rubric_text: str) -> str:
-    expected_schema = {
+    sections: dict[str, Any] = {}
+    for section_key in _SECTION_KEYS:
+        criteria: dict[str, Any] = {}
+        for crit_id in _SECTION_CRITERIA[section_key]:
+            criteria[crit_id] = {
+                "name": _CRITERIA_NAME[crit_id],
+                "score": 0,
+                "max": _CRITERIA_MAX[crit_id],
+                "deductions": [
+                    {"points": 1, "reason": "Short reason", "evidence_turns": [1]},
+                ],
+            }
+        sections[section_key] = {
+            "base": {"score": 0, "max": float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))},
+            "bonus": {"score": 0, "max": _MAX_BONUS_PER_SECTION},
+            "criteria": criteria,
+        }
+
+    expected_schema: dict[str, Any] = {
         "total_score": 0,
         "max_score": _MAX_TOTAL_SCORE,
         "total_base_score": 0,
         "max_base_score": _MAX_BASE_SCORE,
         "total_bonus": 0,
         "max_bonus": _MAX_BONUS_SCORE,
-        "sections": {
-            "1_pedagogy": {
-                "base": {"score": 0, "max": 11},
-                "bonus": {"score": 0, "max": 3},
-                "criteria": {
-                    "1.1": {
-                        "name": "Socratic method and guided discovery",
-                        "score": 0,
-                        "max": 5,
-                        "deductions": [
-                            {
-                                "points": 1,
-                                "reason": "Short reason",
-                                "evidence_turns": [1],
-                            }
-                        ],
-                    }
-                },
-            }
-        },
+        "sections": sections,
     }
 
     return (
@@ -307,6 +324,7 @@ def _judge_system_prompt(rubric_text: str) -> str:
         "- Do NOT add points except via the per-section bonus (0..3, can be fractional).\n"
         "- Scores can be fractional. Keep them within allowed ranges.\n"
         "- Provide deductions with concise reasons, and include evidence_turns (turn numbers) when applicable.\n"
+        "- You MUST include ALL sections and ALL sub-criteria IDs shown in the schema.\n"
         "- Ensure all totals are internally consistent: section base score equals sum of its criteria scores; "
         "total_base_score equals sum of section base scores; total_bonus equals sum of section bonus scores; "
         "total_score equals total_base_score + total_bonus.\n"
