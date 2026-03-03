@@ -321,13 +321,43 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 
 ---
 
-### Phase 4: Terminal UI rework — TBD
+### Phase 4: Terminal UI rework ✦ DECIDED
 
-*(To be planned. Includes: fixing student imports, adding exercise selection, passing exercise to student bots, supporting all persona versions, and general UI/UX improvements.)*
+**Problems:**
+- Old `ui/` (now `terminal_ui/`) imported from deleted student paths, loaded exercises from `tutor/exercises/`, saved transcripts to `judge/transcripts/`.
+- Student type and version selection assumed the old nested folder structure.
+- No tutor or judge version selection.
+- Transcript naming was manual.
+- Pydantic warning suppression was redundant.
 
+**New pipeline** (`python -m terminal_ui`):
+
+| Step | What | Discovery |
+| ---- | ---- | --------- |
+| 0 | Tutor prompt version | Scans `tutor/prompts/*.txt` |
+| 1 | Student persona type | `chaotic`, `chitchat`, `clueless` |
+| 2 | Persona version | Scans `students/personas/{type}_*.txt` |
+| 3 | Course | Scans `curriculum/` subfolder names |
+| 4 | Exercise | Scans `curriculum/{course}/exercise_*.txt` |
+| 5 | Number of turns | User input |
+| 6 | Run conversation | Tutor + student alternate for N turns |
+| 7 | Judge prompt version | Scans `judge/prompts/*.txt` |
+| 8 | Auto-save + judge | See below |
+
+**Transcript auto-naming:** `transcripts/{persona_type}/transcript_XX.json` with auto-incrementing numbers.
+
+**Changes:**
+- Uses `students.run_student` API (prompt_name-based, flat).
+- Uses `tutor.run_tutor` API (prompt version selectable).
+- Uses `judge.judge_transcript()` with selectable judge prompt version.
+- Exercises loaded from `curriculum/{course}/exercise_{num}.txt`.
+- Transcripts saved to `transcripts/{persona_type}/transcript_XX.json`.
+- Transcript JSON includes: tutor_prompt, student_persona, course, exercise_number, judge_prompt, turns, exchanges.
+- Removed Pydantic warning suppression.
+- Auto-selects when only one option exists for a step.
 
 ---
 
-### Phase 5: Web UI rework — TBD
+### Phase 5: Web app rework — TBD
 
 *(To be planned. Includes: fixing student imports, adding exercise selection, passing exercise to student bots, supporting all persona versions, and general UI/UX improvements.)*

@@ -495,16 +495,23 @@ class JudgeResult:
     max_score: float
 
 
-def judge_transcript(transcript_name: str) -> JudgeResult:
+def judge_transcript(
+    transcript_name: str,
+    *,
+    prompt_name: str = "judge_01",
+    rubric_name: str = "rubric_01",
+) -> JudgeResult:
     """
-    Score one transcript by stem name (filename without .json) under transcripts/.
+    Score one transcript by relative path (without .json) under transcripts/.
+
+    Examples: ``"chaotic/transcript_01"`` or ``"transcript_01"``.
 
     Side effect: updates the transcript JSON in-place by adding a top-level
     ``grade`` object.
     """
     name = (transcript_name or "").strip()
     if not name:
-        raise JudgeError("transcript_name is required (filename without .json).")
+        raise JudgeError("transcript_name is required (path without .json).")
 
     transcript_path = TRANSCRIPTS_DIR / f"{name}.json"
     if not transcript_path.exists():
@@ -526,7 +533,7 @@ def judge_transcript(transcript_name: str) -> JudgeResult:
     api_key = _require_openai_api_key()
     model_name = os.environ.get("OPENAI_MODEL", "gpt-5.2")
 
-    system_prompt = load_judge_prompt()
+    system_prompt = load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name)
     conversation_text = _format_conversation_for_judge(transcript)
 
     graph = _create_judge_graph(model_name=model_name, api_key=api_key)

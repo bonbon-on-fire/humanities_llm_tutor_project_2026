@@ -1,65 +1,70 @@
-# UI (terminal launcher)
+# Terminal UI
 
-This folder contains a **terminal-based UI** that launches an automated **tutor vs student** conversation run.
+Interactive terminal launcher that orchestrates a **tutor vs student** conversation run, then scores it with the judge.
 
-## How it works
+## How to run
 
-When you run `python -m ui`, the UI will prompt for:
+```
+python -m terminal_ui
+```
 
-- **Exercise number**: choose `01..NN`, where `NN` is based on how many `exercise_*.txt` files exist in `tutor/exercises/`.
-  - Selection is **strictly mapped**: `01` → `exercise_01.txt`, `02` → `exercise_02.txt`, etc.
-- **Student type**: one of `chaotic`, `chitchat`, `clueless`.
-- **Student version**: choose `01..NN` based on available `students/<type>_student/student_##/` folders.
-  - Example: `01` → `student_01`.
-- **Turns**: number of **student+tutor exchanges** to run.
+## Pipeline
 
-The UI then runs the conversation automatically (no interactive / no mock-tutor mode).
+The UI prompts for each configuration step, then runs the conversation:
 
-### Exercise as context for student and tutor
+| Step | Prompt | Source |
+| ---- | ------ | ------ |
+| 0 | Tutor prompt version | Scans `tutor/prompts/*.txt` |
+| 1 | Student persona type | `chaotic`, `chitchat`, `clueless` |
+| 2 | Student persona version | Scans `students/personas/{type}_*.txt` for version numbers |
+| 3 | Course | Scans `curriculum/` subfolder names |
+| 4 | Exercise number | Scans `curriculum/{course}/exercise_*.txt` |
+| 5 | Number of turns | Positive integer |
+| 6 | *Runs conversation* | Tutor and student alternate for N turns |
+| 7 | Judge prompt version | Scans `judge/prompts/*.txt` |
+| 8 | *Auto-saves transcript + runs judge* | See below |
 
-The **selected exercise** (the full text of the chosen `exercise_XX.txt` file) is used as context for both sides:
-
-- **Student**: The exercise text is passed into every call to the student bot as `exercise=...`. The student bot includes it in the student’s context (e.g. in the system prompt) so the simulated student can refer to the assignment when replying (e.g. “I don’t get this question” or “which part of the prompt are we doing?”).
-- **Tutor**: The same exercise text is passed as `assignment_override` to the tutor so the tutor’s responses are anchored to that assignment.
-
-- **Transcript**: The exercise text and `exercise_file` name are saved in the transcript JSON so the judge has full context when evaluating the run.
+If there's only one option for a step (e.g. one tutor prompt), it's auto-selected.
 
 ## Transcript output
 
-After the conversation ends normally, the UI will prompt for a transcript name and save a JSON file under `judge/transcripts/`.
+Transcripts are auto-named and saved under `transcripts/{persona_type}/`:
 
-- **Directory**: `judge/transcripts/`
-- **Naming normalization**:
-  - Lowercase everything
-  - Convert spaces to underscores
-  - If the user omits `.json`, append `.json`
-  - If the target file already exists, **reprompt** for a new name (no overwrite)
-- **On Ctrl+C**: exit **without saving**.
+```
+transcripts/
+  chaotic/
+    transcript_01.json
+    transcript_02.json
+  chitchat/
+    transcript_01.json
+  ...
+```
+
+Numbers auto-increment (next available `transcript_XX`).
 
 ### Transcript JSON schema
 
-Transcripts are saved as a single object so the judge has full context (including the exercise):
-
 ```json
 {
-  "exercise": "Full exercise/assignment text used as context for student and tutor.",
-  "exercise_file": "exercise_04.txt",
-  "student_type": "chaotic",
-  "student_version": "01",
+  "tutor_prompt": "tutor_01",
+  "student_persona": "chaotic_01",
+  "course": "philosophy",
+  "exercise_number": "01",
+  "exercise": "Full exercise text...",
+  "judge_prompt": "judge_01",
+  "turns": 10,
   "exchanges": [
-    { "turn": 1, "student": "…", "tutor": "…" },
-    { "turn": 2, "student": "…", "tutor": "…" }
+    { "turn": 1, "student": "...", "tutor": "..." },
+    { "turn": 2, "student": "...", "tutor": "..." }
   ]
 }
 ```
 
-Notes:
-- **exercise** is the full text that was used as context for the student and as the tutor’s assignment.
-- **exchanges** are the student+tutor message pairs (the initial tutor greeting is not stored).
+After the judge runs, a `grade` object is appended to the transcript (see `judge/README.md`).
 
-## Judge integration
+## Environment variables
 
-After the transcript is saved, the UI runs the **judge** once on that transcript and:
-
-- Appends a top-level `grade` object to the transcript JSON (see `judge/README.md`)
-- Prints the total score as `total_score/max_score`
+| Variable | Required | Description |
+| -------- | -------- | ----------- |
+| `OPENAI_API_KEY` | Yes | OpenAI API key. Fails immediately if not set. |
+| `OPENAI_MODEL` | No | Model name (default: `gpt-5.2`). |
