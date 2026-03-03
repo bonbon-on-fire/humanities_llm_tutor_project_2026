@@ -196,18 +196,84 @@ msg = get_next_student_message(
 
 ---
 
-### Phase 2: Tutor module rework — TBD
+### Phase 2: Tutor module + exercises rework ✦ DECIDED
 
-*(To be planned after Phase 1 is complete.)*
+**Problems:**
+- `tutor/run_tutor.py` was a monolith: graph, JSON parsing, terminal REPL, .env loading all in one file.
+- `tutor/requirements.txt` duplicated the root `requirements.txt`.
+- Exercises lived inside `tutor/exercises/` but are shared between tutor and students — they don't belong to tutor.
+- `.env` was loaded as a side effect at import time inside the tutor module.
+- `app.py` imported private (`_`-prefixed) functions from the tutor.
+- The terminal REPL in `main()` is unnecessary — tutor is always called through the UI.
+
+**Changes:**
+
+#### 2a. Exercises → top-level `exercises/` folder (course-based structure)
+
+Exercises move out of `tutor/` to a top-level folder, grouped by course:
+
+```
+exercises/
+  README.md
+  philosophy/
+    course.txt           — course description/context (shared by all exercises in this course)
+    exercise_01.txt      — trolley problem / act consequentialism
+  urban_studies/
+    course.txt           — course description/context
+    exercise_01.txt      — geographic & demographic data table
+    exercise_02.txt      — city case study stressors table
+    exercise_03.txt      — decision-making actors table
+```
+
+- Each course = a subfolder with a `course.txt` for shared context.
+- Adding a new course = create a folder with `course.txt` + exercise files.
+- Adding a new exercise = drop another `exercise_XX.txt` into the course folder.
+- When loading an exercise, `course.txt` context can be prepended to the exercise text.
+
+#### 2b. Tutor module cleanup
+
+```
+tutor/
+  __init__.py          — exports public API
+  run_tutor.py         — LangGraph engine, JSON parsing, get_tutor_reply()
+  README.md            — module documentation
+  prompts/
+    tutor_01.txt       — system prompt (renamed from tutor_prompt_01.txt)
+```
+
+- **Delete** `tutor/requirements.txt` (redundant with root).
+- **Delete** `tutor/exercises/` (moved to top-level).
+- **Rename** `tutor_prompt_01.txt` → `tutor_01.txt`.
+- **Remove** terminal REPL (`main()`, `__name__` block) — tutor is only called through UI.
+- **Remove** `.env` loading from tutor module — centralized at project root.
+- **Make public**: `_create_tutor_graph` → `create_tutor_graph`, `_parse_tutor_response` → `parse_tutor_response`.
+- **Fail fast** on missing API key (same pattern as students).
+- **`__init__.py`** exports: `get_tutor_reply`, `create_tutor_graph`, `parse_tutor_response`, `load_system_prompt`.
+
+#### 2c. Students module rename
+
+- `students/bot.py` → `students/run_student.py` (consistency with `tutor/run_tutor.py`).
+- Update `students/__init__.py` imports.
+
+**What breaks:**
+- `app.py` — imports from `tutor.run_tutor` (private names change to public). Will be fixed in Phase 5.
+- `ui/main.py` — imports `get_tutor_reply` from `tutor.run_tutor` and loads exercises from `tutor/exercises/`. Will be fixed in Phase 4.
 
 ---
 
-### Phase 3: Judge module + UI rework — TBD
+### Phase 3: Judge module rework — TBD
 
 *(To be planned. Includes fixing `ui/main.py` imports to use new student API.)*
 
 ---
 
-### Phase 4: Web app (`app.py`) rework — TBD
+### Phase 4: Terminal UI rework — TBD
+
+*(To be planned. Includes: fixing student imports, adding exercise selection, passing exercise to student bots, supporting all persona versions, and general UI/UX improvements.)*
+
+
+---
+
+### Phase 5: Web app rework — TBD
 
 *(To be planned. Includes: fixing student imports, adding exercise selection, passing exercise to student bots, supporting all persona versions, and general UI/UX improvements.)*

@@ -2,8 +2,8 @@
 Shared student bot engine.
 
 All student personas use the same LangGraph pipeline — only the system prompt
-differs.  Select a persona by passing ``persona_version`` (e.g. "chaotic_01"),
-which maps to ``students/personas/<persona_version>.txt``.
+differs.  Select a persona by passing ``prompt_name`` (e.g. "chaotic_01"),
+which maps to ``students/personas/<prompt_name>.txt``.
 """
 
 from __future__ import annotations
@@ -37,19 +37,19 @@ def _require_openai_api_key() -> str:
 # Prompt loading
 # ---------------------------------------------------------------------------
 
-def list_persona_versions() -> list[str]:
-    """Return sorted persona versions available in students/personas/ (without extension)."""
+def list_personas() -> list[str]:
+    """Return sorted persona names available in students/personas/ (without extension)."""
     return sorted(p.stem for p in PERSONAS_DIR.glob("*.txt"))
 
 
-def load_persona_version(persona_version: str) -> str:
-    """Load a student persona prompt by version (e.g. 'chaotic_01' → personas/chaotic_01.txt)."""
-    path = PERSONAS_DIR / f"{persona_version}.txt"
+def load_prompt(prompt_name: str) -> str:
+    """Load a student persona prompt by name (e.g. 'chaotic_01' → personas/chaotic_01.txt)."""
+    path = PERSONAS_DIR / f"{prompt_name}.txt"
     if not path.exists():
-        available = list_persona_versions()
+        available = list_personas()
         raise FileNotFoundError(
-            f"Persona '{persona_version}' not found at {path}.\n"
-            f"Available persona versions: {available}"
+            f"Persona '{prompt_name}' not found at {path}.\n"
+            f"Available personas: {available}"
         )
     return path.read_text(encoding="utf-8").strip()
 
@@ -99,14 +99,14 @@ def _build_student_agent_node(persona: str, model: ChatOpenAI):
 
 def build_graph(
     *,
-    persona_version: str | None = None,
+    prompt_name: str | None = None,
     persona: str | None = None,
     model: ChatOpenAI | None = None,
 ):
     """
     Build and compile the LangGraph for a student bot.
 
-    Provide either ``persona_version`` (looks up the .txt file) or ``persona``
+    Provide either ``prompt_name`` (looks up the .txt file) or ``persona``
     (raw prompt text).  If neither is given, ``prompt_name`` defaults to
     ``"chaotic_01"``.
     """
@@ -117,7 +117,7 @@ def build_graph(
             api_key=_require_openai_api_key(),
         )
     if persona is None:
-MM_DD_YYYY        _notes_notespersona = load_persona_version(persona_version or "chaotic_01")
+        persona = load_prompt(prompt_name or "chaotic_01")
 
     node_fn = _build_student_agent_node(persona, model)
     builder = StateGraph(StudentBotState)
