@@ -328,6 +328,6 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 
 ---
 
-### Phase 5: Web app rework — TBD
+### Phase 5: Web UI rework — TBD
 
 *(To be planned. Includes: fixing student imports, adding exercise selection, passing exercise to student bots, supporting all persona versions, and general UI/UX improvements.)*
