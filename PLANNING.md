@@ -117,3 +117,12 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 **Future plan:**
 - Add a judge runner that consumes `judge/transcripts/*.json` and scores runs against `judge/judge_rubric.md`. *(Implemented: judge runs automatically from the UI and appends `grade` to the transcript JSON.)*
+
+---
+
+## 7. Project hygiene
+
+### Meetings
+
+- Meeting notes live in `meeting_notes/`.
+- Preferred naming convention is `MM_DD_YYYY.md` for new notes; see `meeting_notes/README.md` and `meeting_notes/_template.md`.
