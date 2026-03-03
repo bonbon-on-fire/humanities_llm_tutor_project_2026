@@ -7,14 +7,14 @@ Simulated student bots used to test the tutor. Each persona is a different "atta
 ```
 students/
   __init__.py      — package exports
-  bot.py           — shared LangGraph engine (one file, all personas)
+  run_student.py   — shared LangGraph engine (one file, all personas)
   personas/
     chaotic_01.txt — LLM system prompt
     chaotic_01.md  — human-readable summary of what the persona tests
     ...
 ```
 
-- **`bot.py`** — the single bot engine. Select a persona by name (e.g. `"chaotic_01"`); the engine loads the matching `.txt` prompt from `personas/`.
+- **`run_student.py`** — the single bot engine. Select a persona by name (e.g. `"chaotic_01"`); the engine loads the matching `.txt` prompt from `personas/`.
 - **`personas/*.txt`** — system prompts sent to the LLM to shape the student's behavior.
 - **`personas/*.md`** — short human-readable descriptions (a few sentences explaining what the persona tests and how it behaves).
 
@@ -39,7 +39,7 @@ No code changes needed. The bot engine discovers personas automatically.
 ## Usage
 
 ```python
-from students.bot import get_next_student_message
+from students.run_student import get_next_student_message
 
 msg = get_next_student_message(
     messages,                    # conversation so far (list of BaseMessage)

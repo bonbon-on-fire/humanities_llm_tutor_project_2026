@@ -148,7 +148,7 @@ This section tracks the ongoing restructuring of the codebase. The goal is to ma
 ```
 students/
   __init__.py          — package init; exports the public API
-  bot.py               — single shared LangGraph engine for all student personas
+  run_student.py       — single shared LangGraph engine for all student personas
   README.md            — module documentation
   personas/
     chaotic_01.txt     — LLM system prompt for chaotic persona v1
@@ -175,7 +175,7 @@ msg = get_next_student_message(
 ```
 
 **What's deleted:**
-- All per-student `bot.py` copies (4 files) — replaced by single `students/bot.py`
+- All per-student `bot.py` copies (4 files) — replaced by single `students/run_student.py`
 - All `cli.py` files (4 files) — mock-tutor mode removed; no standalone CLI needed
 - All `persona.md` files (4 files) — dead files, not used by any code
 - All per-student `README.md` files (4 files) — outdated, wrong import paths
@@ -183,7 +183,7 @@ msg = get_next_student_message(
 - Entire folder tree: `chaotic_student/`, `chitchat_student/`, `clueless_student/` subdirectories
 
 **What's new:**
-- `students/bot.py` — one shared engine; `prompt_name` parameter selects the persona
+- `students/run_student.py` — one shared engine; `prompt_name` parameter selects the persona
 - `students/README.md` — module documentation
 - `students/personas/*.txt` — flat prompt files, named `{type}_{version}.txt`
 - `students/personas/*.md` — human-readable companion summaries (few sentences describing what the persona tests and how it behaves)
