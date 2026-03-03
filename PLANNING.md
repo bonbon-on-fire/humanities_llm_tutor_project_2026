@@ -108,15 +108,10 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 ## 6. Tooling / UI (launcher)
 
-- Added a **terminal launcher** runnable via `python -m ui` to select:
-  - exercise (`tutor/exercises/exercise_##.txt`)
-  - student type (`chaotic`, `chitchat`, `clueless`)
-  - student version (`students/<type>_student/student_##/`)
-  - number of turns (student+tutor exchanges)
-- The launcher runs **tutor vs student** automatically and saves a JSON transcript to `judge/transcripts/` (see `ui/README.md`).
+- **Terminal launcher** (`python -m ui`): selects exercise, student persona, number of turns; runs tutor vs student; saves transcript; invokes judge.
+- **Flask web app** (`app.py`): chat UI with student-bot simulation buttons and debug reasoning display.
 
-**Future plan:**
-- Add a judge runner that consumes `judge/transcripts/*.json` and scores runs against `judge/judge_rubric.md`. *(Implemented: judge runs automatically from the UI and appends `grade` to the transcript JSON.)*
+> **Note:** Both the terminal UI and web app are **broken** after the student module rework (Phase 1). They will be updated in later rework phases.
 
 ---
 
@@ -126,3 +121,93 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 - Meeting notes live in `meeting_notes/`.
 - Preferred naming convention is `MM_DD_YYYY.md` for new notes; see `meeting_notes/README.md` and `meeting_notes/_template.md`.
+
+---
+
+## 8. Project rework plan
+
+This section tracks the ongoing restructuring of the codebase. The goal is to make the project **easy to understand, easy to extend**, and eliminate code duplication — while keeping the LangGraph architecture.
+
+### Global decisions
+
+| Decision | Detail |
+| -------- | ------ |
+| **Model** | `gpt-5.2` everywhere (tutor, students, judge). No hardcoded model overrides. All components use `os.environ.get("OPENAI_MODEL", "gpt-5.2")`. |
+| **API key required** | Every component must have `OPENAI_API_KEY` set. If missing, fail immediately with a clear error. No silent fallbacks, no offline/mock modes. |
+| **No mock/offline modes** | All CLI mock-tutor modes are removed. The system always talks to the real LLM. |
+| **Exercises will grow** | The `exercises/` folder will have more exercises added over time. The structure must make adding new exercises trivial. |
+
+---
+
+### Phase 1: Students module rework ✦ DECIDED
+
+**Problem:** The old student module had 4 copies of identical `bot.py` code, 4 copies of near-identical `cli.py`, dead `persona.md` files, and a deeply nested folder structure (`students/chaotic_student/student_01/prompts/student_01_prompt_01.txt`). Adding a new persona required duplicating an entire folder tree.
+
+**New structure:**
+
+```
+students/
+  __init__.py          — package init; exports the public API
+  bot.py               — single shared LangGraph engine for all student personas
+  README.md            — module documentation
+  personas/
+    chaotic_01.txt     — LLM system prompt for chaotic persona v1
+    chaotic_01.md      — human-readable summary (few sentences: what this persona tests)
+    chaotic_02.txt
+    chaotic_02.md
+    chitchat_01.txt
+    chitchat_01.md
+    clueless_01.txt
+    clueless_01.md
+```
+
+**Public API** (from `students.bot`):
+
+```python
+from students.bot import get_next_student_message, build_graph, load_prompt
+
+# Get next student message given a persona name
+msg = get_next_student_message(
+    messages,
+    prompt_name="chaotic_01",   # maps to students/personas/chaotic_01.txt
+    exercise="...",             # optional exercise text
+)
+```
+
+**What's deleted:**
+- All per-student `bot.py` copies (4 files) — replaced by single `students/bot.py`
+- All `cli.py` files (4 files) — mock-tutor mode removed; no standalone CLI needed
+- All `persona.md` files (4 files) — dead files, not used by any code
+- All per-student `README.md` files (4 files) — outdated, wrong import paths
+- All nested `__init__.py` files (8 files) — no more nested packages
+- Entire folder tree: `chaotic_student/`, `chitchat_student/`, `clueless_student/` subdirectories
+
+**What's new:**
+- `students/bot.py` — one shared engine; `prompt_name` parameter selects the persona
+- `students/README.md` — module documentation
+- `students/personas/*.txt` — flat prompt files, named `{type}_{version}.txt`
+- `students/personas/*.md` — human-readable companion summaries (few sentences describing what the persona tests and how it behaves)
+
+**Adding a new persona** = create two files: `students/personas/{name}.txt` + `students/personas/{name}.md`. No code changes.
+
+**What breaks:**
+- `app.py` — imports `students.chaotic_student.student_01.bot` (old path). Will be fixed in Phase 4.
+- `ui/main.py` — dynamically imports `students.{type}_student.student_{version}.bot` (old path). Will be fixed in Phase 3.
+
+---
+
+### Phase 2: Tutor module rework — TBD
+
+*(To be planned after Phase 1 is complete.)*
+
+---
+
+### Phase 3: Judge module + UI rework — TBD
+
+*(To be planned. Includes fixing `ui/main.py` imports to use new student API.)*
+
+---
+
+### Phase 4: Web app (`app.py`) rework — TBD
+
+*(To be planned. Includes: fixing student imports, adding exercise selection, passing exercise to student bots, supporting all persona versions, and general UI/UX improvements.)*
