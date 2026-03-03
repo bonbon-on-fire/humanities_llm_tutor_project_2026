@@ -1,11 +1,11 @@
-# Exercises
+# Curriculum
 
 Assignment exercises used by both the tutor and student bots. Organized by course.
 
 ## Structure
 
 ```
-exercises/
+curriculum/
   <course_name>/
     course.txt           — course description / shared context
     exercise_01.txt      — individual exercise
@@ -26,7 +26,7 @@ exercises/
 
 ## Adding a new course
 
-1. Create a folder under `exercises/` with the course name.
+1. Create a folder under `curriculum/` with the course name.
 2. Add a `course.txt` with the course description.
 3. Add `exercise_01.txt`, `exercise_02.txt`, etc.
 

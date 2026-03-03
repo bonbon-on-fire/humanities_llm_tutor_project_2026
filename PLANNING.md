@@ -135,7 +135,7 @@ This section tracks the ongoing restructuring of the codebase. The goal is to ma
 | **Model** | `gpt-5.2` everywhere (tutor, students, judge). No hardcoded model overrides. All components use `os.environ.get("OPENAI_MODEL", "gpt-5.2")`. |
 | **API key required** | Every component must have `OPENAI_API_KEY` set. If missing, fail immediately with a clear error. No silent fallbacks, no offline/mock modes. |
 | **No mock/offline modes** | All CLI mock-tutor modes are removed. The system always talks to the real LLM. |
-| **Exercises will grow** | The `exercises/` folder will have more exercises added over time. The structure must make adding new exercises trivial. |
+| **Curriculum will grow** | The `curriculum/` folder will have more courses and exercises added over time. The structure must make adding new content trivial. |
 
 ---
 
@@ -196,7 +196,7 @@ msg = get_next_student_message(
 
 ---
 
-### Phase 2: Tutor module + exercises rework ✦ DECIDED
+### Phase 2: Tutor module + curriculum rework ✦ DECIDED
 
 **Problems:**
 - `tutor/run_tutor.py` was a monolith: graph, JSON parsing, terminal REPL, .env loading all in one file.
@@ -208,12 +208,12 @@ msg = get_next_student_message(
 
 **Changes:**
 
-#### 2a. Exercises → top-level `exercises/` folder (course-based structure)
+#### 2a. Exercises → top-level `curriculum/` folder (course-based structure)
 
 Exercises move out of `tutor/` to a top-level folder, grouped by course:
 
 ```
-exercises/
+curriculum/
   README.md
   philosophy/
     course.txt           — course description/context (shared by all exercises in this course)
@@ -242,7 +242,7 @@ tutor/
 ```
 
 - **Delete** `tutor/requirements.txt` (redundant with root).
-- **Delete** `tutor/exercises/` (moved to top-level).
+- **Delete** `tutor/exercises/` (moved to top-level `curriculum/`).
 - **Rename** `tutor_prompt_01.txt` → `tutor_01.txt`.
 - **Remove** terminal REPL (`main()`, `__name__` block) — tutor is only called through UI.
 - **Remove** `.env` loading from tutor module — centralized at project root.
@@ -257,7 +257,7 @@ tutor/
 
 **What breaks:**
 - `app.py` — imports from `tutor.run_tutor` (private names change to public). Will be fixed in Phase 5.
-- `ui/main.py` — imports `get_tutor_reply` from `tutor.run_tutor` and loads exercises from `tutor/exercises/`. Will be fixed in Phase 4.
+- `ui/main.py` — imports `get_tutor_reply` from `tutor.run_tutor` and loads exercises from `tutor/exercises/` (now `curriculum/`). Will be fixed in Phase 4.
 
 ---
 
