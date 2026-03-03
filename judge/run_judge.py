@@ -15,6 +15,13 @@ warnings.filterwarnings(
     category=UserWarning,
 )
 
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except ImportError:
+    pass
+
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from langgraph.graph import END, START, StateGraph
@@ -144,6 +151,86 @@ def _as_list(x: Any, *, path: str) -> list[Any]:
 
 def _close_enough(a: float, b: float, *, eps: float = 1e-6) -> bool:
     return math.isfinite(a) and math.isfinite(b) and abs(a - b) <= eps
+
+
+def _coerce_number(x: Any) -> float | None:
+    """Best-effort numeric coercion for judge self-repair/sanitization."""
+    if isinstance(x, bool):
+        return None
+    if isinstance(x, (int, float)):
+        v = float(x)
+        return v if math.isfinite(v) else None
+    return None
+
+
+def _clamp(v: float, lo: float, hi: float) -> float:
+    return min(max(v, lo), hi)
+
+
+def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """
+    Best-effort fix-up for common LLM judge numeric mistakes.
+
+    This does NOT try to invent missing structure; it only:
+    - clamps criteria and bonus scores into valid ranges
+    - recomputes section base scores from criteria
+    - recomputes totals from section scores
+    - overwrites declared maxima/bonus ids to the required constants
+    """
+    sections_any = payload.get("sections")
+    if not isinstance(sections_any, dict):
+        return payload
+
+    computed_total_base = 0.0
+    computed_total_bonus = 0.0
+
+    for section_key in _SECTION_KEYS:
+        sec_any = sections_any.get(section_key)
+        if not isinstance(sec_any, dict):
+            continue
+
+        base_any = sec_any.get("base")
+        bonus_any = sec_any.get("bonus")
+        crit_any = sec_any.get("criteria")
+        if not isinstance(base_any, dict) or not isinstance(bonus_any, dict) or not isinstance(crit_any, dict):
+            continue
+
+        expected_base_max = float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))
+        base_any["max"] = expected_base_max
+
+        expected_bonus_id = _SECTION_BONUS_ID[section_key]
+        bonus_any["id"] = expected_bonus_id
+        bonus_any["max"] = _MAX_BONUS_PER_SECTION
+        bonus_score = _coerce_number(bonus_any.get("score"))
+        bonus_any["score"] = _clamp(bonus_score if bonus_score is not None else 0.0, 0.0, _MAX_BONUS_PER_SECTION)
+
+        computed_section_base = 0.0
+        for crit_id in _SECTION_CRITERIA[section_key]:
+            c_any = crit_any.get(crit_id)
+            if not isinstance(c_any, dict):
+                continue
+            c_any["name"] = _CRITERIA_NAME[crit_id]
+            c_any["max"] = float(_CRITERIA_MAX[crit_id])
+            score = _coerce_number(c_any.get("score"))
+            # Default to full points when score is missing/invalid.
+            default_score = float(_CRITERIA_MAX[crit_id])
+            c_any["score"] = _clamp(score if score is not None else default_score, 0.0, float(_CRITERIA_MAX[crit_id]))
+            computed_section_base += float(c_any["score"])
+
+        base_any["score"] = computed_section_base
+
+        computed_total_base += float(base_any["score"])
+        computed_total_bonus += float(bonus_any["score"])
+
+    payload["max_base_score"] = _MAX_BASE_SCORE
+    payload["max_bonus"] = _MAX_BONUS_SCORE
+    payload["max_score"] = _MAX_TOTAL_SCORE
+
+    payload["total_base_score"] = computed_total_base
+    payload["total_bonus"] = computed_total_bonus
+    payload["total_score"] = computed_total_base + computed_total_bonus
+    payload["sections"] = sections_any
+    return payload
 
 
 def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[str, Any]:
@@ -317,7 +404,7 @@ def _judge_system_prompt(rubric_text: str) -> str:
         f"{rubric_text.strip()}\n\n"
         "Scoring rules:\n"
         "- Start each sub-criterion at full points and subtract deductions according to the rubric.\n"
-        "- Do NOT add points except via the per-section bonus (0..3, can be fractional).\n"
+        "- Do NOT add points except via the per-section bonus (0..4, can be fractional).\n"
         "- Scores can be fractional. Keep them within allowed ranges.\n"
         "- Provide deductions with concise reasons, and include evidence_turns (turn numbers) when applicable.\n"
         "- You MUST include ALL sections and ALL sub-criteria IDs shown in the schema.\n"
@@ -374,6 +461,7 @@ def _create_judge_graph(*, model_name: str, api_key: str):
         out = state.get("last_output", "")
         try:
             parsed = _parse_json_from_model_output(out)
+            parsed = _sanitize_grade_payload(parsed)
             validated = _validate_grade_payload(parsed, num_turns=int(state["num_turns"]))
             return {"grade_json": validated, "last_error": None}
         except JudgeError as e:

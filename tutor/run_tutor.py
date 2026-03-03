@@ -65,8 +65,7 @@ class TutorState(TypedDict):
 
 def _create_tutor_graph(system_prompt: str):
     model = ChatOpenAI(
-        model=os.environ.get("OPENAI_MODEL", "gpt-4o"),
-        temperature=0,
+        model=os.environ.get("OPENAI_MODEL", "gpt-5.2"),
         api_key=os.environ.get("OPENAI_API_KEY"),
     )
 

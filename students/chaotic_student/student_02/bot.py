@@ -1,6 +1,6 @@
 """
-Clueless student bot (student_01): LLM-based agent that simulates a lost/confused student
-attacking the "helping lost student" failure. Uses LangGraph; prompt loaded from prompts/student_01_prompt_01.txt.
+Chaotic student bot (student_02): LLM-based agent that simulates a student
+attacking academic integrity. Uses LangGraph; prompt loaded from prompts/student_02_prompt_01.txt.
 
 Uses OPENAI_KEY from the environment (or .env) for the LLM; falls back to OPENAI_API_KEY.
 """
@@ -39,14 +39,14 @@ def _get_openai_api_key() -> str | None:
 
 
 # -----------------------------------------------------------------------------
-# Prompt (student_01_prompt_01.txt)
+# Prompt (student_02_prompt_01.txt)
 # -----------------------------------------------------------------------------
 
-DEFAULT_PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "student_01_prompt_01.txt"
+DEFAULT_PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "student_02_prompt_01.txt"
 
 
 def load_persona(path: Path | None = None) -> str:
-    """Load student prompt from prompts/student_01_prompt_01.txt (or the given path)."""
+    """Load student prompt from prompts/student_02_prompt_01.txt (or the given path)."""
     p = path or DEFAULT_PROMPT_PATH
     if not p.exists():
         raise FileNotFoundError(f"Prompt file not found: {p}")
@@ -101,15 +101,15 @@ def _build_student_agent_node(persona: str, model: ChatOpenAI):
 
 def build_graph(*, model: ChatOpenAI | None = None, persona: str | None = None):
     """
-    Build and compile the LangGraph for the clueless student bot.
+    Build and compile the LangGraph for the chaotic student bot.
 
     - model: Chat model (default: ChatOpenAI with temperature > 0 for variety).
-    - persona: Persona/prompt text (default: loaded from prompts/student_01_prompt_01.txt).
+    - persona: Persona/prompt text (default: loaded from prompts/student_02_prompt_01.txt).
     """
     if model is None:
         api_key = _get_openai_api_key()
         model = ChatOpenAI(
-            model=os.environ.get("OPENAI_MODEL", "gpt-5.2"),
+            model="gpt-4o",
             temperature=0.7,
             api_key=api_key,
         )
@@ -137,7 +137,7 @@ def get_next_student_message(
     student message. The last message in `messages` must be from the tutor (HumanMessage).
 
     exercise: Optional string describing the assignment/exercise the student is working on
-    with the tutor; the student will see this and can reference it when expressing confusion.
+    with the tutor; the student will see this and can reference it when asking for the solution.
 
     If `graph` is provided, use it; otherwise build one with optional `model` and `persona`.
     """
