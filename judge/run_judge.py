@@ -465,7 +465,7 @@ def judge_transcript(transcript_name: str) -> JudgeResult:
     transcript_path.write_text(json.dumps(transcript, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     return JudgeResult(
-        total_score=float(grade_payload["total_score"]),
-        max_score=float(grade_payload["max_score"]),
+        total_score=float(grade_payload["total_base_score"]),
+        max_score=float(grade_payload["max_base_score"]),
     )
 

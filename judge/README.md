@@ -8,7 +8,7 @@ This folder contains an **LLM-based judge** that scores a saved conversation tra
 - Uses **LangGraph + OpenAI** to apply `judge/judge_rubric.md`
 - **Hard-fails** if it cannot produce valid, internally-consistent grade JSON
 - Writes a top-level `grade` object back into the transcript file (appended as the last key when serialized)
-- Returns `(total_score, max_score)` back to the caller (the UI prints it)
+- Returns `(total_score, max_score)` back to the caller (the UI prints it). These are the **base score only** (without bonus).
 
 ## Environment variables
 
@@ -37,6 +37,7 @@ The judge will refuse to run if the transcript already contains a top-level `gra
 The judge writes:
 
 - `grade.total_score` / `grade.max_score` (max is 45)
+- The UI-facing return value uses `grade.total_base_score` / `grade.max_base_score` (max is 33).
 - A full breakdown by section and sub-criterion under `grade.sections`
 - Deductions with reasons and (when possible) `evidence_turns`
 - `grade.model` and `grade.timestamp_utc`

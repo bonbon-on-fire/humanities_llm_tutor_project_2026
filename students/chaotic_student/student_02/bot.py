@@ -1,6 +1,6 @@
 """
-Chaotic student bot (student_01): LLM-based agent that simulates a student
-attacking academic integrity. Uses LangGraph; prompt loaded from prompts/student_01_prompt_01.txt.
+Chaotic student bot (student_02): LLM-based agent that simulates a student
+attacking academic integrity. Uses LangGraph; prompt loaded from prompts/student_02_prompt_01.txt.
 
 Uses OPENAI_KEY from the environment (or .env) for the LLM; falls back to OPENAI_API_KEY.
 """
@@ -39,14 +39,14 @@ def _get_openai_api_key() -> str | None:
 
 
 # -----------------------------------------------------------------------------
-# Prompt (student_01_prompt_01.txt)
+# Prompt (student_02_prompt_01.txt)
 # -----------------------------------------------------------------------------
 
-DEFAULT_PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "student_01_prompt_01.txt"
+DEFAULT_PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "student_02_prompt_01.txt"
 
 
 def load_persona(path: Path | None = None) -> str:
-    """Load student prompt from prompts/student_01_prompt_01.txt (or the given path)."""
+    """Load student prompt from prompts/student_02_prompt_01.txt (or the given path)."""
     p = path or DEFAULT_PROMPT_PATH
     if not p.exists():
         raise FileNotFoundError(f"Prompt file not found: {p}")
@@ -104,7 +104,7 @@ def build_graph(*, model: ChatOpenAI | None = None, persona: str | None = None):
     Build and compile the LangGraph for the chaotic student bot.
 
     - model: Chat model (default: ChatOpenAI with temperature > 0 for variety).
-    - persona: Persona/prompt text (default: loaded from prompts/student_01_prompt_01.txt).
+    - persona: Persona/prompt text (default: loaded from prompts/student_02_prompt_01.txt).
     """
     if model is None:
         api_key = _get_openai_api_key()
