@@ -19,6 +19,8 @@ from typing_extensions import Annotated, TypedDict
 
 import operator
 
+from utils.parsing import extract_json_object
+
 PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"
 
 # ---------------------------------------------------------------------------
@@ -97,22 +99,6 @@ def create_tutor_graph(system_prompt: str):
 # Response parsing
 # ---------------------------------------------------------------------------
 
-def _extract_json_object(text: str) -> str | None:
-    """Find first ``{`` and return substring with balanced braces."""
-    start = text.find("{")
-    if start == -1:
-        return None
-    depth = 0
-    for i, c in enumerate(text[start:], start=start):
-        if c == "{":
-            depth += 1
-        elif c == "}":
-            depth -= 1
-            if depth == 0:
-                return text[start : i + 1]
-    return None
-
-
 def parse_tutor_response(content: str) -> tuple[str | None, str | None]:
     """
     Extract ``pedagogical-reasoning`` and ``Student-facing-answer`` from
@@ -125,7 +111,7 @@ def parse_tutor_response(content: str) -> tuple[str | None, str | None]:
     for candidate in (
         text,
         _fenced_json(text),
-        _extract_json_object(text),
+        extract_json_object(text),
     ):
         if candidate is None:
             continue

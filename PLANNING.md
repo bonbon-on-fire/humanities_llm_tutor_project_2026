@@ -261,9 +261,62 @@ tutor/
 
 ---
 
-### Phase 3: Judge module rework — TBD
+### Phase 3: Judge module rework ✦ DECIDED
 
-*(To be planned. Includes fixing `ui/main.py` imports to use new student API.)*
+**Problems:**
+- Model defaulted to `gpt-4o` instead of `gpt-5.2`.
+- `.env` loaded at import time with a `try/except` fallback — inconsistent with other modules.
+- Pydantic warning suppression duplicated code already in `sitecustomize.py`.
+- `_extract_json_object` was duplicated identically in tutor and judge.
+- Judge system prompt was embedded in Python code (`_judge_system_prompt()`), not in a file.
+- Transcripts lived inside `judge/transcripts/` but are test-run output, not part of the judge module.
+- Rubric file was named `judge_rubric.md` — renamed for consistency and versioning.
+
+**Changes:**
+
+#### 3a. Shared `utils/` module (new top-level package)
+
+```
+utils/
+  __init__.py          — exports extract_json_object
+  parsing.py           — JSON parsing helpers (extract_json_object)
+```
+
+`tutor/run_tutor.py` and `judge/run_judge.py` both import from `utils.parsing` instead of having local copies.
+
+#### 3b. Judge module cleanup
+
+```
+judge/
+  __init__.py          — exports JudgeError, JudgeResult, judge_transcript, load_judge_prompt
+  run_judge.py         — LangGraph engine, validation, scoring
+  rubric_01.md         — grading rubric (renamed from judge_rubric.md)
+  README.md
+  prompts/
+    judge_01.txt       — judge system prompt template (uses {rubric} and {schema} placeholders)
+```
+
+- **Model → `gpt-5.2`** default.
+- **Removed** `.env` loading and Pydantic warning suppression.
+- **Fail-fast** API key (same `_require_openai_api_key()` pattern).
+- **Judge prompt** moved to `judge/prompts/judge_01.txt` — template with `{rubric}` and `{schema}` placeholders filled at runtime.
+- **Rubric** renamed `judge_rubric.md` → `rubric_01.md`.
+- **`_extract_json_object`** removed — uses shared `utils.parsing.extract_json_object`.
+- **`load_judge_prompt()`** added as public API — loads prompt template, injects rubric and schema.
+- LangGraph state carries `system_prompt` (pre-built string) instead of `rubric_text`.
+
+#### 3c. Transcripts → top-level
+
+```
+transcripts/           — moved from judge/transcripts/
+  chaotic_01_exercise_01_01.json
+  ...
+```
+
+Transcripts are test-run artifacts shared between the UI (producer) and judge (consumer).
+
+**What breaks:**
+- `ui/main.py` — saves transcripts to `judge/transcripts/` and imports `judge_transcript`. Will be fixed in Phase 4.
 
 ---
 
