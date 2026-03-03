@@ -290,10 +290,11 @@ utils/
 judge/
   __init__.py          — exports JudgeError, JudgeResult, judge_transcript, load_judge_prompt
   run_judge.py         — LangGraph engine, validation, scoring
-  rubric_01.md         — grading rubric (renamed from judge_rubric.md)
   README.md
   prompts/
     judge_01.txt       — judge system prompt template (uses {rubric} and {schema} placeholders)
+  rubrics/
+    rubric_01.md       — grading rubric (renamed from judge_rubric.md)
 ```
 
 - **Model → `gpt-5.2`** default.

@@ -384,7 +384,7 @@ def load_judge_prompt(
     if not prompt_path.exists():
         raise FileNotFoundError(f"Judge prompt not found: {prompt_path}")
 
-    rubric_path = _JUDGE_ROOT / f"{rubric_name}.md"
+    rubric_path = _JUDGE_ROOT / "rubrics" / f"{rubric_name}.md"
     if not rubric_path.exists():
         raise FileNotFoundError(f"Rubric not found: {rubric_path}")
 
