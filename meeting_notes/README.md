@@ -4,11 +4,11 @@ This folder contains project meeting notes.
 
 ## Naming convention
 
-- Prefer ISO dates: `YYYY_MM_DD.md` (example: `2026_03_03.md`)
+- Prefer: `MM_DD_YYYY.md` (example: `02_24_2026.md`)
 
 ## Recommended structure
 
-Use the template in `meetings/_template.md`.
+Use the template in `meeting_notes/_template.md`.
 
 ## Tips
 

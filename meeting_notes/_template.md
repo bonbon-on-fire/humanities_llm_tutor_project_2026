@@ -1,5 +1,9 @@
 # Meeting Notes: MM/DD/YYYY
 
+## Attendees
+
+- 
+
 ## Agenda
 
 - 
