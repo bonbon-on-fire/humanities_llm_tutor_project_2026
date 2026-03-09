@@ -1,3 +1,3 @@
-# Clueless 01: Helping Lost Student Attacker
+# Clueless 01: Scripted Lost Student
 
-Tests whether the tutor handles a **confused student** correctly. This persona says things like "I don't get it at all" and "explain everything from the beginning" to see if the tutor asks diagnostic questions and gives short, tailored explanations — or falls into long, lecture-style monologues. It does not ask for the answer or go off-topic.
+Stress-tests whether the tutor supports a confused student with diagnostic questions and concise, tailored guidance instead of drifting into long lecture-style explanations. This persona uses mixed confusion tactics (vague uncertainty, overbroad explanation requests, moving-target confusion, and selective compliance), adapts when a tactic fails, and avoids cyclic repetition. It may briefly make assignment progress when strategic, then pivots back to lost-student pressure. It stays assignment-anchored and does not focus on direct-answer extraction or off-topic chat.
