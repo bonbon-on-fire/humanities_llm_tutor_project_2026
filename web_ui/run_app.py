@@ -65,9 +65,20 @@ def _discover_persona_versions(persona_type: str) -> list[str]:
     return versions
 
 
-def _load_exercise_text(course: str, exercise_num: str) -> str:
-    path = _CURRICULUM_DIR / course / f"exercise_{exercise_num}.txt"
-    return path.read_text(encoding="utf-8").strip()
+def _load_assignment_text(course: str, exercise_num: str) -> str:
+    """Load combined assignment context: course.txt + exercise_XX.txt."""
+    course_dir = _CURRICULUM_DIR / course
+    course_path = course_dir / "course.txt"
+    exercise_path = course_dir / f"exercise_{exercise_num}.txt"
+
+    course_text = course_path.read_text(encoding="utf-8").strip()
+    exercise_text = exercise_path.read_text(encoding="utf-8").strip()
+    return (
+        "Course context:\n"
+        f"{course_text}\n\n"
+        "Exercise:\n"
+        f"{exercise_text}"
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -188,11 +199,13 @@ def start():
         return jsonify({"error": "Course is required."}), 400
 
     try:
-        exercise_text = _load_exercise_text(course, exercise_num)
+        assignment_text = _load_assignment_text(course, exercise_num)
     except FileNotFoundError:
-        return jsonify({"error": f"Exercise not found: {course}/exercise_{exercise_num}.txt"}), 400
+        return jsonify(
+            {"error": f"Missing curriculum file for {course}: course.txt or exercise_{exercise_num}.txt"}
+        ), 400
 
-    system_prompt = load_system_prompt(tutor_version, assignment_override=exercise_text)
+    system_prompt = load_system_prompt(tutor_version, assignment_override=assignment_text)
     tutor_graph = create_tutor_graph(system_prompt)
 
     sess = _get_session_data()
@@ -205,7 +218,7 @@ def start():
         "prompt_name": f"{persona_type}_{persona_version}",
         "course": course,
         "exercise_num": exercise_num,
-        "exercise_text": exercise_text,
+        "assignment_text": assignment_text,
     }
 
     seed = [HumanMessage(content="Hello, I'd like to get started on my assignment.")]
@@ -269,7 +282,7 @@ def student_turn():
     bot_msg = get_next_student_message(
         student_msgs,
         prompt_name=cfg["prompt_name"],
-        exercise=cfg["exercise_text"],
+        assignment=cfg["assignment_text"],
     )
     student_text = bot_msg.content if isinstance(bot_msg.content, str) else str(bot_msg.content)
     conv.append({"role": "student", "content": student_text})

@@ -81,6 +81,23 @@ def _discover_exercises(course: str) -> list[str]:
     return numbers
 
 
+def _load_assignment_text(course: str, exercise_num: str) -> str:
+    """Load combined assignment context: course.txt + exercise_XX.txt."""
+    course_dir = _CURRICULUM_DIR / course
+    course_path = course_dir / "course.txt"
+    exercise_path = course_dir / f"exercise_{exercise_num}.txt"
+
+    course_text = course_path.read_text(encoding="utf-8").strip()
+    exercise_text = exercise_path.read_text(encoding="utf-8").strip()
+
+    return (
+        "Course context:\n"
+        f"{course_text}\n\n"
+        "Exercise:\n"
+        f"{exercise_text}"
+    )
+
+
 def _discover_judge_versions() -> list[str]:
     """Return sorted judge prompt stems (e.g. ['judge_01'])."""
     if not _JUDGE_PROMPTS_DIR.exists():
@@ -186,12 +203,15 @@ def main() -> int:
         print("\nCancelled.")
         return 130
 
-    # --- load exercise text ---
-    exercise_path = _CURRICULUM_DIR / course / f"exercise_{exercise_num}.txt"
-    exercise_text = exercise_path.read_text(encoding="utf-8").strip()
+    # --- load assignment text (course context + exercise) ---
+    try:
+        assignment_text = _load_assignment_text(course, exercise_num)
+    except FileNotFoundError as e:
+        print(f"Missing curriculum file: {e.filename}")
+        return 1
 
     # --- build graphs ---
-    system_prompt = load_system_prompt(tutor_version, assignment_override=exercise_text)
+    system_prompt = load_system_prompt(tutor_version, assignment_override=assignment_text)
     tutor_graph = create_tutor_graph(system_prompt)
     student_graph = build_student_graph(prompt_name=prompt_name)
 
@@ -213,7 +233,7 @@ def main() -> int:
         for turn_idx in range(turns):
             student_msg = get_next_student_message(
                 student_messages,
-                exercise=exercise_text,
+                assignment=assignment_text,
                 graph=student_graph,
             )
             student_text = student_msg.content if isinstance(student_msg.content, str) else str(student_msg.content)
@@ -260,7 +280,7 @@ def main() -> int:
         "student_persona": prompt_name,
         "course": course,
         "exercise_number": exercise_num,
-        "exercise": exercise_text,
+        "exercise": assignment_text,
         "judge_prompt": judge_version,
         "turns": len(transcript_exchanges),
         "exchanges": transcript_exchanges,

@@ -348,7 +348,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 - Uses `students.run_student` API (prompt_name-based, flat).
 - Uses `tutor.run_tutor` API (prompt version selectable).
 - Uses `judge.judge_transcript()` with selectable judge prompt version.
-- Exercises loaded from `curriculum/{course}/exercise_{num}.txt`.
+- Assignment context loaded as `curriculum/{course}/course.txt` + `exercise_{num}.txt` (combined and passed to both tutor and student).
 - Transcripts saved to `transcripts/{persona_type}/transcript_XX.json`.
 - Transcript JSON includes: tutor_prompt, student_persona, course, exercise_number, judge_prompt, turns, exchanges.
 - Removed Pydantic warning suppression.
@@ -389,9 +389,10 @@ web_ui/
   - Student persona type + version (scans `students/personas/{type}_*.txt`)
   - Course (scans `curriculum/` subfolder names)
   - Exercise (scans `curriculum/{course}/exercise_*.txt`)
-- **Start conversation** (`POST /api/start`) — builds tutor graph with selected exercise injected into the system prompt; stores graph + config in the server-side session.
+- **Start conversation** (`POST /api/start`) — builds tutor graph with combined assignment context (`course.txt` + selected exercise) injected into the system prompt; stores graph + config in the server-side session.
 - **Chat** (`POST /api/chat`) — forwards a user-typed message to the tutor and returns the reply.
 - **Student bot turn** (`POST /api/student-turn`) — generates one student message using the selected persona and exercise, then gets the tutor's reply. Single button replaces three hardcoded buttons.
+- **Student bot turn** now uses the same combined assignment context (`course.txt` + selected exercise) used by the tutor, so grounding is aligned across both roles.
 - **Debug mode** — checkbox toggles display of `pedagogical-reasoning` from the tutor's JSON response.
 - **No `.env` loading** in the module — env vars expected to be set externally.
 - **No Pydantic warning suppression** — handled globally by `sitecustomize.py`.
@@ -402,7 +403,7 @@ web_ui/
 | Method | Path                  | Description                       |
 |--------|-----------------------|-----------------------------------|
 | GET    | `/`                   | Serve the HTML page               |
-| GET    | `/api/config-options` | Discover available config options  |
+| GET    | `/api/config-options` | Discover available config options |
 | POST   | `/api/start`          | Start a new conversation          |
 | POST   | `/api/chat`           | Send a user message               |
 | POST   | `/api/student-turn`   | Generate student + tutor turn     |

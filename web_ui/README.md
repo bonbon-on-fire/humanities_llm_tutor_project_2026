@@ -35,11 +35,12 @@ The web UI mirrors the terminal UI pipeline:
    persona type + version, course, and exercise. Options are discovered
    dynamically from the file system via `GET /api/config-options`.
 2. **Start conversation** — `POST /api/start` builds the tutor graph with the
-   chosen exercise injected into the system prompt and returns the tutor's
-   opening message.
+   combined assignment context (`course.txt` + chosen exercise) injected into
+   the system prompt and returns the tutor's opening message.
 3. **Chat** — the user types messages (`POST /api/chat`) or clicks
    *Run student bot turn* (`POST /api/student-turn`) to let the selected
-   student persona generate a message and get the tutor's reply.
+   student persona generate a message using that same combined assignment
+   context, then get the tutor's reply.
 4. **Debug mode** — a checkbox toggles display of the tutor's
    `pedagogical-reasoning` field alongside each reply.
 

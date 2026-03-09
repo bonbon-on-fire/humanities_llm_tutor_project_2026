@@ -44,7 +44,7 @@ from students.run_student import get_next_student_message
 msg = get_next_student_message(
     messages,                    # conversation so far (list of BaseMessage)
     prompt_name="chaotic_01",    # persona to use
-    exercise="...",              # optional assignment text
+    assignment="...",            # optional assignment text
 )
 ```
 

@@ -65,7 +65,7 @@ def load_prompt(prompt_name: str) -> str:
 
 class StudentBotState(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]
-    exercise: NotRequired[str]
+    assignment: NotRequired[str]
 
 
 def _last_message_is_tutor(state: StudentBotState) -> bool:
@@ -82,12 +82,12 @@ def _build_student_agent_node(persona: str, model: ChatOpenAI):
             return {}
 
         system_content = persona
-        exercise = (state.get("exercise") or "").strip()
-        if exercise:
+        assignment = (state.get("assignment") or "").strip()
+        if assignment:
             system_content += (
                 "\n\n---\n\n"
                 "Current exercise (assignment) you are working on with the tutor:\n\n"
-                + exercise
+                + assignment
             )
         chat_messages = [SystemMessage(content=system_content)] + list(messages)
         response = model.invoke(chat_messages)
@@ -140,7 +140,7 @@ def get_next_student_message(
     messages: Sequence[BaseMessage],
     *,
     prompt_name: str | None = None,
-    exercise: str | None = None,
+    assignment: str | None = None,
     graph=None,
     model: ChatOpenAI | None = None,
     persona: str | None = None,
@@ -155,7 +155,7 @@ def get_next_student_message(
     prompt_name : str
         Persona prompt to use (e.g. "chaotic_01").  Maps to
         ``students/personas/<prompt_name>.txt``.
-    exercise : str, optional
+    assignment : str, optional
         Assignment text the student can reference.
     graph : optional
         Pre-built graph (skips build_graph).
@@ -167,8 +167,8 @@ def get_next_student_message(
     if graph is None:
         graph = build_graph(prompt_name=prompt_name, model=model, persona=persona)
     payload: dict = {"messages": list(messages)}
-    if exercise is not None:
-        payload["exercise"] = exercise.strip()
+    if assignment is not None:
+        payload["assignment"] = assignment.strip()
     result = graph.invoke(payload)
     out_messages = result.get("messages") or []
     if not out_messages:
