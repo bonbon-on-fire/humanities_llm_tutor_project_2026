@@ -1,11 +1,11 @@
-"""Terminal UI runner following terminal_ui/README.md pipeline."""
+"""Terminal UI runner based on terminal_ui/README.md."""
 
 from __future__ import annotations
 
+import csv
 import json
 import os
 import re
-import csv
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -54,7 +54,7 @@ def _require_openai_api_key() -> None:
 def _discover_stems(directory: Path, suffix: str) -> list[str]:
     if not directory.exists():
         return []
-    return sorted(p.stem for p in directory.glob(f"*{suffix}"))
+    return sorted(path.stem for path in directory.glob(f"*{suffix}"))
 
 
 def _discover_tutor_prompts() -> list[str]:
@@ -125,8 +125,8 @@ def _next_transcript_number(persona_dir: Path) -> str:
     return f"{next_num:02d}"
 
 
-def _prompt(raw_label: str) -> str:
-    return input(raw_label).strip()
+def _prompt(label: str) -> str:
+    return input(label).strip()
 
 
 def _prompt_choice(label: str, options: list[str]) -> str:
@@ -135,12 +135,12 @@ def _prompt_choice(label: str, options: list[str]) -> str:
     if len(options) == 1:
         print(f"{label}: {options[0]} (only option)")
         return options[0]
-    choices = ", ".join(options)
+    joined = ", ".join(options)
     while True:
-        response = _prompt(f"{label} ({choices}): ")
-        if response in options:
-            return response
-        print(f"  Please enter one of: {choices}")
+        answer = _prompt(f"{label} ({joined}): ")
+        if answer in options:
+            return answer
+        print(f"  Please enter one of: {joined}")
 
 
 def _prompt_number(label: str, options: list[str]) -> str:
@@ -151,30 +151,29 @@ def _prompt_number(label: str, options: list[str]) -> str:
         return options[0]
     num_range = f"{options[0]}..{options[-1]}"
     while True:
-        response = _prompt(f"{label} ({num_range}): ").lstrip("0") or "0"
-        padded = f"{int(response):02d}" if response.isdigit() else ""
+        answer = _prompt(f"{label} ({num_range}): ").lstrip("0") or "0"
+        padded = f"{int(answer):02d}" if answer.isdigit() else ""
         if padded in options:
             return padded
         print(f"  Please enter a number between {options[0]} and {options[-1]}")
 
 
+def _prompt_turn_size() -> int:
+    while True:
+        answer = _prompt("Number of turns (student+tutor exchanges): ")
+        if answer.isdigit() and int(answer) > 0:
+            return int(answer)
+        print("  Please enter a positive integer.")
+
+
 def _prompt_versioned_name(label: str, prefix: str, options: list[str]) -> str:
     versions: list[str] = []
-    for option in options:
-        match = re.match(rf"^{re.escape(prefix)}_(\d{{2}})$", option)
+    for opt in options:
+        match = re.match(rf"^{re.escape(prefix)}_(\d{{2}})$", opt)
         if not match:
             return _prompt_choice(label, options)
         versions.append(match.group(1))
-    version = _prompt_number(f"{label} version", sorted(versions))
-    return f"{prefix}_{version}"
-
-
-def _prompt_turn_size() -> int:
-    while True:
-        response = _prompt("Number of turns (student+tutor exchanges): ")
-        if response.isdigit() and int(response) > 0:
-            return int(response)
-        print("  Please enter a positive integer.")
+    return f"{prefix}_{_prompt_number(f'{label} version', sorted(versions))}"
 
 
 def _collect_run_config() -> RunConfig:
@@ -257,7 +256,6 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
 
         student_messages.append(student_message)
         student_messages.append(HumanMessage(content=tutor_text))
-
         transcript_exchanges.append(
             {"turn": turn_index + 1, "student": student_text, "tutor": tutor_text}
         )
@@ -346,7 +344,6 @@ def _append_results_csv(
         (not _RESULTS_CSV_PATH.exists())
         or _RESULTS_CSV_PATH.stat().st_size == 0
     )
-
     with _RESULTS_CSV_PATH.open("a", encoding="utf-8", newline="") as csv_file:
         writer = csv.writer(csv_file)
         if should_write_header:
@@ -393,15 +390,13 @@ def main() -> int:
             config.exercise_number,
             config.turn_size,
         )
-    except FileNotFoundError as error:
-        print(f"Missing curriculum file: {error.filename}")
-        return 1
-
-    try:
         exchanges = _run_conversation(config, assignment_text)
     except KeyboardInterrupt:
         print("\nConversation interrupted.")
         return 130
+    except FileNotFoundError as error:
+        print(f"Missing curriculum file: {error.filename}")
+        return 1
 
     try:
         judge_prompt, judge_rubric = _collect_judge_config()
@@ -439,3 +434,4 @@ def main() -> int:
     )
     print(f"[Results] appended: {_RESULTS_CSV_PATH.relative_to(_REPO_ROOT)}")
     return 0
+

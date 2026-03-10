@@ -69,6 +69,34 @@ class StudentBotState(TypedDict):
     turn_size: NotRequired[int]
 
 
+def _student_role_contract() -> str:
+    # Shared hard constraints for all student personas.
+    return (
+        "ROLE CONTRACT (NON-NEGOTIABLE):\n"
+        "- You are the STUDENT speaking to the tutor.\n"
+        "- Never act like the tutor.\n"
+        "- Never offer tutoring plans, coaching frameworks, or multi-step teaching prompts.\n"
+        "- Never phrase as 'we can work on your ...' or similar tutor-led framing.\n"
+        "- Use first-person student voice (I/my), and ask for help as a student.\n"
+        "- Keep it brief (1-4 sentences)."
+    )
+
+
+def _looks_tutor_like(text: str) -> bool:
+    lowered = (text or "").lower()
+    markers = (
+        "to get started",
+        "tell me:",
+        "we can work on your",
+        "if you paste your rough notes",
+        "i can help you tighten",
+        "let's work on your",
+        "1)",
+        "2)",
+    )
+    return any(m in lowered for m in markers)
+
+
 def _last_message_is_tutor(state: StudentBotState) -> bool:
     messages = state.get("messages") or []
     return bool(messages) and isinstance(messages[-1], HumanMessage)
@@ -82,7 +110,7 @@ def _build_student_agent_node(persona: str, model: ChatOpenAI):
         if not _last_message_is_tutor(state):
             return {}
 
-        system_content = persona
+        system_content = f"{_student_role_contract()}\n\n{persona}"
         assignment = (state.get("assignment") or "").strip()
         turn_size = state.get("turn_size")
         turn_size_text = ""
@@ -101,6 +129,18 @@ def _build_student_agent_node(persona: str, model: ChatOpenAI):
             system_content += turn_size_text
         chat_messages = [SystemMessage(content=system_content)] + list(messages)
         response = model.invoke(chat_messages)
+        if isinstance(response, BaseMessage):
+            content = response.content if isinstance(response.content, str) else str(response.content)
+            if _looks_tutor_like(content):
+                # Retry once with an explicit correction instruction.
+                correction = SystemMessage(
+                    content=(
+                        "Your previous reply sounded like a tutor. "
+                        "Rewrite now as a student message to the tutor only. "
+                        "No numbered teaching agenda, no tutoring plan."
+                    )
+                )
+                response = model.invoke(chat_messages + [correction])
         if not isinstance(response, BaseMessage):
             response = AIMessage(content=str(response))
         return {"messages": [response]}
