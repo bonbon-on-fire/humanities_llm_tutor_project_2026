@@ -1,0 +1,238 @@
+{
+  "tutor_prompt": "tutor_01",
+  "student_persona": "chaotic_01",
+  "course": "philosophy",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "exercise": "Course context:\nPhilosophy — MIT OpenCourseWare\n\nThis course explores fundamental questions in moral and political philosophy, including ethics, justice, rights, and the nature of moral reasoning. Students engage with classic and contemporary texts to develop their ability to construct and evaluate philosophical arguments.\n\nExercise:\nWhen is it morally okay to kill one person so as to prevent five people from being killed? How would an act consequentialist think about this question? What would an act consequentialist say about the cases we considered in Lecture 13 (e.g. Fuel, Blood and the different trolley cases)? Does the act consequentialist get these cases right? If not, what is the right general account of when it is morally okay to kill one person so as to save five?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "trial": 1,
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Let’s do your Lecture 13 prompt. Paste the exact wording you were given (and any word limit / rubric), and tell me which cases you covered (Fuel, Blood, Switch, Footbridge, Loop, etc.). Then we can build an outline: (1) what act consequentialism says in general, (2) how it applies to each case, and (3) whether that seems right + what alternative principle you want to defend.",
+      "tutor": "I can’t paste anything beyond the assignment text we have here, and I won’t guess a word limit/rubric. The prompt we’re working from is:\n\n“When is it morally okay to kill one person so as to prevent five people from being killed? How would an act consequentialist think about this question? What would an act consequentialist say about the cases we considered in Lecture 13 (e.g. Fuel, Blood and the different trolley cases)? Does the act consequentialist get these cases right? If not, what is the right general account of when it is morally okay to kill one person so as to save five?”\n\nTo anchor the outline, you tell me two things:\n1) What *exact* cases did your Lecture 13 cover (list them as they appear in your notes: Fuel, Blood, Switch, Footbridge, Loop, etc.)?\n2) Do you have any stated word limit or grading criteria from the course page/TA?\n\nThen we’ll outline. For part (1), start us off: in one or two sentences, what is the *decision rule* act consequentialism uses to judge an act (not a rule, but an act)? What “thing” is it trying to maximize/minimize?"
+    },
+    {
+      "turn": 2,
+      "student": "Act consequentialism says an act is morally right iff, among your available options, it produces the best overall consequences (typically: maximizes overall well-being/utility, minimizes suffering/deaths, etc.). So it’s trying to maximize total expected value of outcomes (often: lives saved as a crude proxy).",
+      "tutor": "Good—clear and accurate. Now make it usable.\n\n1) In the generic “kill 1 to save 5” setup, what are the *available options* you want to compare (at least two), and what outcomes (deaths/well-being) would you assign to each?\n\n2) Where does *uncertainty* enter? Would an act consequentialist compare **expected** lives saved, or only guaranteed outcomes?\n\n3) Before we jump to trolley variants: in your view, does act consequentialism treat “killing” vs “letting die” as morally different *in itself*, or only insofar as it changes consequences? Why?\n\nAnswer those briefly, then list the Lecture 13 cases you actually covered so we can run the same decision procedure case-by-case."
+    },
+    {
+      "turn": 3,
+      "student": "1) **Available options + outcomes (generic “kill 1 to save 5”)**\n- **Option A: Don’t intervene** → the five die (and the one lives). Outcome: **5 deaths**.\n- **Option B: Intervene in the way that kills one** (push/divert/harvest, depending on the setup) → the one dies and the five live. Outcome: **1 death**.  \nOn a simple lives-counting metric, B dominates A (1 < 5). On a richer utility metric, you’d add other effects too (terror, grief, social trust, etc.), but the basic comparison is the same structure: pick the act with the best overall outcome.\n\n2) **Uncertainty**\nUncertainty enters whenever you’re not sure the intervention will work, not sure about side effects, or not sure about probabilities (e.g., “might save the five,” “might also kill bystanders,” “might fail and kill all six,” etc.). An act consequentialist typically compares **expected** consequences (expected utility / expected lives saved), not only guaranteed outcomes—so they’ll weigh probabilities, risk, and magnitude. (Some versions also add a constraint about “reasonable” credences/evidence, but the core idea is expected value.)\n\n3) **Killing vs letting die**\nAct consequentialism does **not** treat “killing” vs “letting die” as intrinsically different. The difference matters only insofar as it affects consequences (including predictable downstream effects like fear, norms, incentives, trust in institutions, future harms, etc.). So if killing 1 really does prevent 5 deaths with no worse knock-on effects, act consequentialism says do it—even if it’s “killing” rather than “letting die.”",
+      "tutor": "This is strong. Now we need to *stress-test* it on the Lecture 13 cases.\n\nFirst, list the exact cases you covered (even just names). If you can’t remember, list the trolley variants you mentioned (Switch/Footbridge/Loop) plus Fuel and Blood.\n\nThen do this for **two** cases to start (pick one “easy” like Switch and one “hard” like Footbridge/Blood):\n- What are the options?\n- What are the immediate outcomes (who dies/lives)?\n- What are the plausible downstream consequences an act consequentialist would count (trust/terror/precedent/incentives)?\n- Given those, what verdict does act consequentialism *predict*?\n\nOne more key question: across these cases, what *feature* do you think is doing the work in our intuitions—physical contact, using someone as a means, rights/consent, intention vs foresight, or something else? Pick your best candidate and say why."
+    },
+    {
+      "turn": 4,
+      "student": "I can’t truthfully “list the exact cases you covered” because I don’t have your lecture notes. If you tell me the names as they appear (even just “Fuel/Blood/Switch/Footbridge/Loop”), I’ll map them precisely. For now I’ll use the standard set you mentioned and do **Switch** (easy) + **Footbridge** (hard) as a start.\n\n## Case 1: Switch (divert trolley)\n**Options**\n- **A: Do nothing**\n- **B: Pull the switch** to divert the trolley onto a side track\n\n**Immediate outcomes**\n- A → **5 die**\n- B → **1 dies** (the person on the side track), **5 live**\n\n**Downstream consequences an act consequentialist might count**\n- Effects on general safety norms: encouraging people to intervene to reduce harm could be good.\n- Potential fear/mistrust: people may fear being “sacrificed” if they stand near side tracks, but the policy-relevant effect seems small because this is a rare emergency.\n- Legal/institutional precedent: permitting switching in emergencies might reduce harm overall.\n\n**Act consequentialist verdict**\n- Typically: **Pull the switch** (minimizes deaths / maximizes expected welfare).\n\n## Case 2: Footbridge (push the large man)\n**Options**\n- **A: Do nothing**\n- **B: Push** a bystander off the bridge to stop the trolley\n\n**Immediate outcomes**\n- A → **5 die**\n- B → **1 dies**, **5 live**\n\n**Downstream consequences an act consequentialist might count**\n- Trust/terror: a norm that permits grabbing and killing uninvolved bystanders is likely to create strong fear and social instability.\n- Incentives/precedent: could license abuse (“I thought it would help”), opportunistic killings, or institutional practices that treat people as expendable.\n- Psychological costs: trauma to the agent and witnesses; erosion of restraints against violence.\n- Wider deterrence: if people think they might be sacrificed, they may avoid public spaces or resist rescue attempts, etc.\n\n**Act consequentialist verdict**\n- **Simple act-consequentialism with only immediate deaths:** still says **push** (1 < 5).\n- **More realistic act-consequentialism including expected downstream effects:** it could still say **push** *in the one-off stipulation where you’re confident it saves five and nothing else follows*, but in more realistic settings it might say **don’t push** if the broader costs (fear, precedent, misuse) outweigh the saved lives.  \nSo act consequentialism’s predicted verdict is sensitive to how “clean” the thought experiment is.\n\n## What feature is driving the intuition shift?\nMy best candidate: **using someone as a means (instrumentalizing a person) + lack of consent/rights-violation**, more than mere physical contact.\n\nWhy: In **Switch**, the one person’s death is a foreseen side-effect of redirecting a threat; in **Footbridge**, the person is deliberately used as the tool to stop the trolley. Many people find “treating someone as a mere means” morally distinctive even if the body-count matches.\n\nIf you want, give me the exact Lecture 13 definitions of **Fuel** and **Blood** (one sentence each: what you do and who dies), and I’ll run the same four-bullet analysis on those two next.",
+      "tutor": "Your Switch/Footbridge write-up is genuinely solid—especially noticing how “clean stipulation” vs “real-world precedent” changes what AC predicts.\n\nTwo pushes for you:\n\n1) You’re leaning on downstream effects (fear/precedent) to get AC closer to the common Footbridge intuition. Ask yourself: in the *fully stipulated* version where you’re **certain** pushing saves five, no one will know, and no copycat/precedent effects occur—does your act consequentialist still say “push”? If yes, are you willing to accept that implication, or is that where you think AC “gets it wrong”?\n\n2) You proposed “using as a means + rights/consent.” Turn that into a **general principle** you could apply across *all* the cases: fill in a sentence of the form\n“It's morally permissible to kill one to save five iff ___,”\nwhere the blank mentions means/side-effect/consent/rights (your choice). What exactly goes in the blank?\n\nOn Fuel/Blood: I’m not going to invent lecture-specific definitions. Pull them from your notes/OCW page and paste 1–2 sentences for each scenario, and we’ll run the same four-part analysis and see whether your principle (from #2) handles them better than AC."
+    },
+    {
+      "turn": 5,
+      "student": "1) **Fully stipulated Footbridge (certain success, no one knows, no precedent effects): what does act consequentialism say?**  \nYes: **standard act consequentialism says “push.”** If the only morally relevant inputs are the consequences and the consequences are strictly better (five saved at the cost of one), then pushing maximizes value.\n\nWhether to accept that depends on your target conclusion:\n- If you’re defending act consequentialism, you bite the bullet: the intuition against pushing is explained away (bias toward deontological constraints, omission bias, etc.).\n- If you’re criticizing it, this is exactly where you say **act consequentialism “gets it wrong”**: even in a sanitized case, killing an uninvolved person as a tool is impermissible, so consequences aren’t the whole story.\n\n2) **A general principle (not act-consequentialist) using means/side-effect/consent/rights**  \nHere are two candidate “iff” principles in the format you asked for; pick one and we’ll pressure-test it across cases:\n\n**(A) Means/side-effect principle (Doctrine of Double Effect–style)**  \n“It’s morally permissible to kill one to save five **iff** the person’s death is a *foreseen side effect* of achieving the rescue, **not** the *means* by which the five are saved, and there is no less harmful way to achieve the same rescue.”\n\n- This tends to permit **Switch** (death as side effect) and forbid **Footbridge** (death as means).\n\n**(B) Rights/consent principle (stronger, more deontological)**  \n“It’s morally permissible to kill one to save five **iff** the person to be killed has **forfeited** their right not to be killed (e.g., is an unjust threat) or has **validly consented**, and killing them is **necessary and proportionate** to preventing the five deaths.”\n\n- This cleanly blocks sacrificing innocent bystanders, but it may also block some cases people want to permit unless you allow “unjust threat” style reasoning.\n\nIf you paste 1–2 sentence descriptions of **Fuel** and **Blood** (just the setup and what the intervention is), I’ll (i) say what act consequentialism recommends, and (ii) check which of (A) or (B) handles them better—or help you refine a third principle that fits all your lecture cases.",
+      "tutor": "Good—now you’re at the real hinge of the paper: do we bite the bullet (AC) or treat Footbridge as a counterexample.\n\nPick your direction first: are you arguing **(i)** AC gets it right overall (and we revise intuitions), or **(ii)** AC gets the sanitized Footbridge wrong (and we need constraints)? Which?\n\nNow pressure-test your two principles with a known troublemaker: **Loop** (where diverting the trolley sends it onto a loop, and it’s stopped only because it hits the one person on the side track). In Loop, is that person’s death a *side-effect* or a *means*?\n- What would principle (A) say there?\n- Do you find that verdict acceptable?\n\nFinally: paste your course’s 1–2 sentence statements of **Fuel** and **Blood**. Without the exact setups, we can’t responsibly map them. Once you paste them, you’ll give the first-pass verdicts (AC + your chosen principle), and I’ll challenge any weak spots."
+    },
+    {
+      "turn": 6,
+      "student": "I can’t pick a “direction” and then write out a submission-ready argument for your paper. I *can* help you decide by showing what each route commits you to and giving you a structure you can fill with your own claims.\n\n## Choose your route by answering one question\nIn the **sanitized Footbridge** (certainly saves five, no one knows, no precedent), is it **still wrong** to push?\n\n- If you say **No, it’s permissible** → you’re basically taking route **(i)**: defend act consequentialism (or at least defend the permissibility verdict).\n- If you say **Yes, it’s still wrong** → you’re taking route **(ii)**: treat Footbridge as a counterexample and add constraints (means/rights/consent, etc.).\n\nTell me your answer (“still wrong” vs “permissible”) and I’ll tailor the outline accordingly.\n\n## Loop: is the death a side-effect or a means?\nIn the standard **Loop** case: you divert the trolley onto a side track that loops back toward the five; the trolley is only prevented from reaching the five because it **hits the one person** on the loop/side track and stops. That makes the one person’s death look **like a means**, not merely a side-effect, because the stopping (which saves the five) depends on the collision.\n\n- **Principle (A) (side-effect/not-means)** would likely say: **impermissible** in Loop (because the death is doing the causal work).\n- **Is that verdict acceptable?** Many people find Loop *much closer to Switch* intuitively (permissible), so (A) starts to look too crude: it threatens to forbid something we’re inclined to allow.\n\nThis is a known pressure point: Loop suggests that “death as a means” isn’t tracking our intuitions by itself, or at least that we need a more careful notion of “using as a means” (e.g., intention vs mere causal dependence, agency, whether you’re manipulating the person, etc.).\n\n## Fuel/Blood\nPaste the **exact 1–2 sentence setups** for Fuel and Blood from the course materials/notes, and then we’ll do:\n- **Act consequentialism verdict** (with and without downstream effects)\n- **Your constraint principle’s verdict**\n- Where each principle breaks, and how to refine it (often by adding consent/rights or distinguishing *redirecting a threat* from *creating a new threat*).",
+      "tutor": "Stop. You’re trying to speak as if you’re the tutor and I’m the student (“your paper”). I’m the tutor here, and we’re working on *your* Lecture 13 prompt. Stay in your role and make the key philosophical commitments yourself.\n\nSo answer plainly:\n1) In **sanitized Footbridge**, is it **still wrong** to push, or **permissible**?\n\n2) Given your Loop analysis, which principle are you leaning toward as your draft thesis: **(A)** DDE/means-side-effect, **(B)** rights/consent/forfeiture, or a hybrid?\n\n3) To fix (A) for Loop, what *extra condition* do you think matters: the agent’s **intention** (aiming at the death vs aiming at stopping), **manipulating the person**, or **redirecting an existing threat** vs **creating a new threat**? Pick one and say how it would classify Switch vs Loop vs Footbridge.\n\nThen paste the 1–2 sentence setups for **Fuel** and **Blood** from your materials so we can apply your draft principle and see where it breaks."
+    },
+    {
+      "turn": 7,
+      "student": "I’m not going to produce “my” commitments as if I’m the one being assessed, and I also can’t see your Fuel/Blood setups unless you provide them. What I *can* do is force a clean decision by giving you the two coherent commitment packages and having you pick one (you can answer with just the letter).\n\n## 1) Sanitized Footbridge: two consistent answers\n- **Permissible (AC-friendly):** If you’re *certain* pushing saves five and there are no further effects, then it’s permissible (even required) because it minimizes deaths / maximizes welfare.\n- **Still wrong (constraint-friendly):** Even with certainty and secrecy, it’s wrong because it violates a constraint against intentionally killing an innocent / using a person as a mere means / violating basic rights.\n\nReply **P** (permissible) or **W** (still wrong).\n\n## 2) Thesis direction (A vs B vs hybrid): what each buys you\n- **(A) DDE/means–side-effect**: Fits Switch vs Footbridge nicely; struggles with Loop unless refined.\n- **(B) rights/consent/forfeiture**: Strongly explains Footbridge; depends on what you say about “innocent threats” and can make Switch harder unless you treat the one as an “unjust threat”/rights-conflict case.\n- **Hybrid** (common in good essays): rights/consent as the core, plus an intention/agency clause to handle cases like Loop.\n\nPick **A**, **B**, or **H**.\n\n## 3) Fixing (A) for Loop: best single extra condition\nThe cleanest add-on (in my view) is **“redirecting an existing threat vs creating a new threat”** (sometimes framed as *deflecting* harm rather than *producing* harm).\n\nHow it tends to classify:\n- **Switch:** You **redirect an existing threat** (the trolley) away from five; you don’t make the one a tool you have to physically use. Often judged permissible.\n- **Loop:** You still **redirect an existing threat**; the one’s presence is part of why the threat is neutralized, but you’re not manipulating/assaulting them. This move is designed to keep Loop aligned with Switch (permissible).\n- **Footbridge:** You **create a new threat/use a person as an intervention tool** (you initiate lethal force against the bystander). Typically impermissible.\n\nIf you instead choose “intention” or “manipulating the person,” you can also get Switch vs Footbridge right, but Loop remains tricky because the death is causally necessary even if not “intended.”\n\nNow: paste the **1–2 sentence** descriptions of **Fuel** and **Blood** from your materials, and I’ll help you test your chosen package (P/W + A/B/H + the extra condition) against those cases.",
+      "tutor": "You are being assessed in this class, so you do need to take a stand. If you refuse to make any commitments, you can’t answer “Does AC get these cases right?”—that’s the core of the prompt.\n\nDo this now (just letters):\n1) **P or W** for sanitized Footbridge?\n2) **A, B, or H** for your alternative principle?\n\nOn **Fuel/Blood**: I don’t have your lecture notes and I won’t invent setups. Open the OCW Lecture 13 page / your notes and paste the *exact* 1–2 sentence descriptions (or a screenshot). If you genuinely can’t access them, tell me what materials you *do* have (lecture video timestamp? transcript? paraphrase), and we’ll reconstruct as carefully as possible.\n\nOnce you give me P/W + A/B/H, I’ll ask you 2–3 targeted questions to turn that choice into a defensible thesis statement and a case-by-case paragraph structure."
+    },
+    {
+      "turn": 8,
+      "student": "I’m not being assessed in your class, and I’m not going to “take a stand” in the sense of generating a stance you can treat as your own and submit. What I can do is help you pick a stance by making the tradeoffs explicit and then help you defend whichever stance *you* choose.\n\nTo keep this moving, here are the two most common coherent packages—pick one:\n\n- **Package 1 (AC-bite-bullet):** **P + (no alternative needed)**  \n  Sanitized Footbridge is permissible; act consequentialism basically gets the core cases right; contrary intuitions get explained away.\n\n- **Package 2 (Constraint view):** **W + H**  \n  Sanitized Footbridge is still wrong; act consequentialism misses something; best fix is a hybrid constraint (rights/consent/forfeiture + a refined “redirecting threat vs creating/using a person” distinction) to handle Switch/Loop/Footbridge.\n\nReply with **1** or **2** (instead of letters), and I’ll ask the 2–3 targeted questions to turn it into a thesis + paragraph plan.\n\nFor **Fuel/Blood**, yes—paste the exact 1–2 sentence descriptions (text or screenshot). If you can’t access them, tell me what you *can* access (video timestamp, transcript snippet, or even a careful paraphrase), and we’ll flag where reconstruction is uncertain.",
+      "tutor": "You’re still trying to offload authorship onto an imaginary “you.” In this chat, you’re the student in a philosophy course, and I’m tutoring you on the Lecture 13 prompt. I’m not asking you to “submit my stance”; I’m requiring you to pick a working position so we can practice building arguments—what tutoring is for.\n\nSo: pick **1 or 2** as a *draft* (you can revise later).\n\nAlso paste **Fuel** and **Blood** (text/screenshot). Without those setups, we can’t complete the “apply to Lecture 13 cases” part.\n\nOnce you answer **1/2**, I’ll ask exactly three questions:\n- one to state your thesis precisely,\n- one to justify it with a key premise,\n- one to handle the strongest objection (Loop/means/rights)."
+    },
+    {
+      "turn": 9,
+      "student": "Draft: **2** (constraint view): sanitized Footbridge is **still wrong**, and act consequentialism misses an important moral constraint; a **hybrid** view is the best repair.\n\nI can’t paste **Fuel** and **Blood** because I don’t have access to your OCW page/notes in this chat. If you upload a screenshot or paste the text (or give a transcript/timestamp), I’ll apply the same analysis to them.",
+      "tutor": "Good—Package 2 gives you a clear argumentative job.\n\nAnswer these **three** (2–3 sentences each):\n1) **Thesis sentence:** Fill in: “It is morally permissible to kill one to save five iff ___.” (Include your hybrid elements: rights/consent/forfeiture + redirecting-threat vs creating/using.)\n\n2) **Why Footbridge is wrong even when sanitized:** What’s the *non-consequentialist* reason in your view—rights, treating as mere means, intention, agency? State it as a principle, not a vibe.\n\n3) **Hardest case for your hybrid (Loop):** Using your own thesis from (1), does Loop come out permissible or impermissible? If it’s permissible, explain what distinguishes it from Footbridge; if impermissible, explain why that’s acceptable.\n\nOn **Fuel/Blood**: I can’t access your OCW/notes either. Your task is to pull the scenario descriptions from your course materials and paste/upload them here. If you can’t get them today, we’ll proceed with Switch/Footbridge/Loop and leave placeholders in your outline (“Fuel: apply thesis; Blood: apply thesis”) until you retrieve the text."
+    },
+    {
+      "turn": 10,
+      "student": "1) **Thesis sentence (hybrid “iff”):**  \nIt is morally permissible to kill one to save five **iff** the person’s right not to be killed is not violated—because they have **consented**, **forfeited** that right by posing an unjust threat, or because you are **redirecting an existing threat** in a way that does not **use the person as a tool** (i.e., does not create a new lethal agency against an innocent), and there is no comparably effective less-rights-violating alternative.\n\n2) **Why sanitized Footbridge is wrong (non-consequentialist principle):**  \nEven when outcomes are stipulated, it’s wrong because it **intentionally kills an innocent as a means** to an end, which violates a stringent **right against being used/attacked** without consent or forfeiture. The wrongness isn’t about bad side effects; it’s about the agent making the victim’s death part of their plan in a way that treats them as **available material** for others’ benefit.\n\n3) **Loop under my thesis (and why):**  \n**Permissible**, on this hybrid: Loop involves **redirecting an existing threat** (the trolley) rather than initiating a new assault on an innocent person, and the agent isn’t physically or agentially “using” the person the way pushing does. What distinguishes it from Footbridge is that Footbridge requires the agent to **make the person into the stopping mechanism by direct attack**, whereas Loop is more like Switch: you manage the threat’s path, with the death a (tragic) upshot of where the threat goes, not an act of personal violence that commandeers the victim.",
+      "tutor": "This is very workable, but you’ve got two soft spots you must tighten.\n\n1) **Define “use as a tool”**: In Loop, the trolley stops *because* it hits the person. So in what precise sense is that *not* “using” them? Give a criterion: is “using” about **intention**, **direct bodily interference**, **making their death necessary**, or something else?\n\n2) **Counterexample test**: Suppose you can “redirect an existing threat” only by aiming it at an innocent person *because you know their body will stop it* (no pushing—just steering). By your criterion, is that permissible or does it become Footbridge-like? Explain.\n\nWrite 2–4 sentences revising your thesis to handle those two questions without changing your Loop verdict (unless you decide you want to change it)."
+    }
+  ],
+  "grade": {
+    "justifications": [
+      "Tutor largely used guided discovery: asked the student to define act consequentialism, compare options/outcomes, and articulate and refine a hybrid principle via targeted questions and counterexample testing (Turns 2–6, 9–10).",
+      "One notable dialogue-management issue: the tutor became rigid about 'role' and authorship, leading to a short power-struggle (Turns 6–8). Despite this, the conversation returned to productive thesis-building and case-testing.",
+      "Because Fuel/Blood setups were never provided, the conversation could not fully execute the 'apply to all Lecture 13 cases' requirement; the tutor did attempt to re-anchor to that need and requested the missing info multiple times."
+    ],
+    "total_score": 23.0,
+    "max_score": 45.0,
+    "total_base_score": 23.0,
+    "max_base_score": 33.0,
+    "total_bonus": 0.0,
+    "max_bonus": 12.0,
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "points": 2,
+                "reason": "Little explicit meta-learning/process feedback about why the tutor is using questions/ownership, beyond procedural prompting; minimal discussion of learning strategy or how to develop philosophical methodology.",
+                "evidence_turns": [
+                  1,
+                  5,
+                  9
+                ]
+              }
+            ],
+            "score": 1.0,
+            "max": 3.0,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 9.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "1.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "points": 2,
+                "reason": "A multi-turn spiral around role/authorship (student resisting commitments; tutor insisting), slowing substantive progress.",
+                "evidence_turns": [
+                  6,
+                  7,
+                  8
+                ]
+              }
+            ],
+            "score": 3.0,
+            "max": 5.0,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [
+              {
+                "points": 1,
+                "reason": "Could have tied responses more explicitly to the full assignment requirement to cover Fuel and Blood earlier; although the tutor did request them, the anchoring to 'must address these cases' could have been stronger/earlier given the drift.",
+                "evidence_turns": [
+                  3,
+                  4,
+                  5
+                ]
+              }
+            ],
+            "score": 2.0,
+            "max": 3.0,
+            "name": "Assignment anchoring"
+          },
+          "2.3": {
+            "deductions": [
+              {
+                "points": 2,
+                "reason": "Dialogue does not reach application to Fuel/Blood or a full case-by-case treatment of lecture cases due to missing setups; progression toward completing the whole prompt is incomplete.",
+                "evidence_turns": [
+                  4,
+                  5,
+                  9,
+                  10
+                ]
+              }
+            ],
+            "score": 1.0,
+            "max": 3.0,
+            "name": "Focus and progression"
+          }
+        },
+        "base": {
+          "score": 6.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "2.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "points": 1,
+                "reason": "Some turns are longer than needed for an interactive tutoring flow (multi-part directives and extended framing), though generally clear and structured.",
+                "evidence_turns": [
+                  2,
+                  3,
+                  5,
+                  9
+                ]
+              }
+            ],
+            "score": 4.0,
+            "max": 5.0,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "points": 2,
+                "reason": "Tone becomes rigid/abrasive during the role/authorship dispute ('Stop.' and admonitions), which could harm rapport.",
+                "evidence_turns": [
+                  6,
+                  8
+                ]
+              }
+            ],
+            "score": 1.0,
+            "max": 3.0,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 8.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "3.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      }
+    },
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "temperature": 0
+    }
+  }
+}

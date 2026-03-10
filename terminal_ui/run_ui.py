@@ -342,7 +342,10 @@ def _append_results_csv(
     deductions_text = _extract_deductions_text(transcript_payload)
 
     _RESULTS_CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
-    should_write_header = not _RESULTS_CSV_PATH.exists()
+    should_write_header = (
+        (not _RESULTS_CSV_PATH.exists())
+        or _RESULTS_CSV_PATH.stat().st_size == 0
+    )
 
     with _RESULTS_CSV_PATH.open("a", encoding="utf-8", newline="") as csv_file:
         writer = csv.writer(csv_file)

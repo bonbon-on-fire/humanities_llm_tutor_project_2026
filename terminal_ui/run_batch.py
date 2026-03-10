@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import csv
 from pathlib import Path
 
 from langchain_core.messages import HumanMessage
@@ -25,6 +26,7 @@ _JUDGE_PROMPTS_DIR = _REPO_ROOT / "judge" / "prompts"
 _JUDGE_RUBRICS_DIR = _REPO_ROOT / "judge" / "rubrics"
 _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
 _TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
+_RESULTS_CSV_PATH = _TRANSCRIPTS_DIR / "transcripts_compiled.csv"
 
 # ---------------------------------------------------------------------------
 # Manual batch configuration (edit these lists/values directly)
@@ -36,28 +38,28 @@ TUTOR_PROMPTS: list[str] = ["tutor_01"]
 
 # Add student persona names from students/personas/*.txt (without extension).
 # Example: ["chaotic_01", "chitchat_03", "clueless_02"]
-STUDENT_PERSONAS: list[str] = ["chaotic_01"]
+STUDENT_PERSONAS: list[str] = ["chaotic_02", "chaotic_03"]
 
 # Add (course, exercise_number) tuples.
 # exercise_number should be zero-padded, e.g. "01", "02".
 # Example: [("philosophy", "01"), ("urban_studies", "03")]
-COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01")]
+COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01"), ("urban_studies", "01"), ("urban_studies", "02"), ("urban_studies", "03")]
 
 # Add judge prompt versions from judge/prompts/*.txt (without extension).
 # Example: ["judge_01"]
-JUDGE_PROMPTS: list[str] = ["judge_01"]
+JUDGE_PROMPTS: list[str] = ["judge_02"]
 
 # Add judge rubric versions from judge/rubrics/*.md (without extension).
 # Example: ["rubric_01", "rubric_02"]
-JUDGE_RUBRICS: list[str] = ["rubric_01"]
+JUDGE_RUBRICS: list[str] = ["rubric_02"]
 
 # Number of repeated trials per full config combination.
 # Example: 3 means each combination is run 3 times.
-TRIALS: int = 1
+TRIALS: int = 2
 
 # Conversation length in student+tutor exchanges.
 # Example: 10 means 10 student turns + 10 tutor turns.
-TURN_SIZE: int = 2
+TURN_SIZE: int = 10
 
 
 def _discover_tutor_versions() -> list[str]:
@@ -166,6 +168,87 @@ def _validate_manual_config() -> None:
             raise ValueError(f"Unknown exercise '{exercise_num}' for course '{course}'")
 
 
+def _extract_deductions_text(transcript_payload: dict) -> str:
+    grade = transcript_payload.get("grade")
+    if not isinstance(grade, dict):
+        return ""
+    sections = grade.get("sections")
+    if not isinstance(sections, dict):
+        return ""
+
+    lines: list[str] = []
+    for section_id in sorted(sections.keys()):
+        section_payload = sections.get(section_id)
+        if not isinstance(section_payload, dict):
+            continue
+        criteria = section_payload.get("criteria")
+        if not isinstance(criteria, dict):
+            continue
+        for criterion_id in sorted(criteria.keys()):
+            criterion_payload = criteria.get(criterion_id)
+            if not isinstance(criterion_payload, dict):
+                continue
+            deductions = criterion_payload.get("deductions", [])
+            if not isinstance(deductions, list):
+                continue
+            for deduction in deductions:
+                if not isinstance(deduction, dict):
+                    continue
+                reason = str(deduction.get("reason", "")).strip()
+                if not reason:
+                    continue
+                lines.append(f"{section_id}/{criterion_id}: {reason}")
+    return " | ".join(lines)
+
+
+def _append_results_csv(
+    *,
+    tutor_prompt: str,
+    student_persona: str,
+    course: str,
+    exercise_number: str,
+    judge_prompt: str,
+    judge_rubric: str,
+    transcript_name: str,
+    transcript_path: Path,
+) -> None:
+    transcript_payload = json.loads(transcript_path.read_text(encoding="utf-8"))
+    deductions_text = _extract_deductions_text(transcript_payload)
+
+    _RESULTS_CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
+    should_write_header = (
+        (not _RESULTS_CSV_PATH.exists())
+        or _RESULTS_CSV_PATH.stat().st_size == 0
+    )
+    with _RESULTS_CSV_PATH.open("a", encoding="utf-8", newline="") as csv_file:
+        writer = csv.writer(csv_file)
+        if should_write_header:
+            writer.writerow(
+                [
+                    "tutor_prompt",
+                    "student_persona",
+                    "course",
+                    "exercise_number",
+                    "judge_prompt",
+                    "judge_rubric",
+                    "transcript_name",
+                    "deductions",
+                ]
+            )
+        writer.writerow(
+            [
+                tutor_prompt,
+                student_persona,
+                course,
+                exercise_number,
+                judge_prompt,
+                judge_rubric,
+                transcript_name,
+                deductions_text,
+            ]
+        )
+
+
 def main() -> int:
     _validate_manual_config()
 
@@ -239,6 +322,16 @@ def main() -> int:
                                 relative_stem,
                                 prompt_name=judge_prompt,
                                 rubric_name=judge_rubric,
+                            )
+                            _append_results_csv(
+                                tutor_prompt=tutor_prompt,
+                                student_persona=persona_name,
+                                course=course,
+                                exercise_number=exercise_num,
+                                judge_prompt=judge_prompt,
+                                judge_rubric=judge_rubric,
+                                transcript_name=transcript_name,
+                                transcript_path=transcript_path,
                             )
                             print(f"Conversation done -> added {transcript_path.relative_to(_REPO_ROOT)}")
 
