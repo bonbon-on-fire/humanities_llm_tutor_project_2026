@@ -43,7 +43,7 @@ STUDENT_PERSONAS: list[str] = ["clueless_01"]
 
 # Which course/exercise combinations to run.
 # Exercise numbers should be zero-padded strings like "01".
-COURSE_EXERCISES: list[tuple[str, str]] = [("urban_studies", "01")]
+COURSE_EXERCISES: list[tuple[str, str]] = [("urban_studies", "02")]
 
 # Turn size per conversation (student+tutor exchanges).
 TURN_SIZE: int = 10
