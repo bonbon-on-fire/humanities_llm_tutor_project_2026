@@ -87,6 +87,23 @@ Numbers auto-increment (next available `transcript_XX`).
 
 After the judge runs, a `grade` object is appended to the transcript (see `judge/README.md`).
 
+### Compiled CSV output
+
+After each judged run, terminal UI appends one row to:
+
+- `transcripts/transcripts_compiled.csv`
+
+Columns:
+
+- `tutor_prompt`
+- `student_persona`
+- `course`
+- `exercise_number`
+- `judge_prompt`
+- `judge_rubric`
+- `transcript_name`
+- `deductions` (flattened as `section/criterion: reason`, joined by ` | `)
+
 ## Environment variables
 
 | Variable | Required | Description |

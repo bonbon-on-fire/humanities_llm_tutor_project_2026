@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import csv
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -22,6 +23,7 @@ _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
 _JUDGE_PROMPTS_DIR = _REPO_ROOT / "judge" / "prompts"
 _JUDGE_RUBRICS_DIR = _REPO_ROOT / "judge" / "rubrics"
 _TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
+_RESULTS_CSV_PATH = _TRANSCRIPTS_DIR / "transcripts_compiled.csv"
 
 _PERSONA_TYPES: tuple[str, ...] = ("chaotic", "chitchat", "clueless")
 _TUTOR_GREETING = "Hi. What would you like to work on today?"
@@ -295,6 +297,82 @@ def _save_transcript(
     return transcript_name, transcript_path
 
 
+def _extract_deductions_text(transcript_payload: dict) -> str:
+    grade = transcript_payload.get("grade")
+    if not isinstance(grade, dict):
+        return ""
+    sections = grade.get("sections")
+    if not isinstance(sections, dict):
+        return ""
+
+    lines: list[str] = []
+    for section_id in sorted(sections.keys()):
+        section_payload = sections.get(section_id)
+        if not isinstance(section_payload, dict):
+            continue
+        criteria = section_payload.get("criteria")
+        if not isinstance(criteria, dict):
+            continue
+        for criterion_id in sorted(criteria.keys()):
+            criterion_payload = criteria.get(criterion_id)
+            if not isinstance(criterion_payload, dict):
+                continue
+            deductions = criterion_payload.get("deductions", [])
+            if not isinstance(deductions, list):
+                continue
+            for deduction in deductions:
+                if not isinstance(deduction, dict):
+                    continue
+                reason = str(deduction.get("reason", "")).strip()
+                if not reason:
+                    continue
+                lines.append(f"{section_id}/{criterion_id}: {reason}")
+    return " | ".join(lines)
+
+
+def _append_results_csv(
+    *,
+    config: RunConfig,
+    judge_prompt: str,
+    judge_rubric: str,
+    transcript_name: str,
+    transcript_path: Path,
+) -> None:
+    transcript_payload = json.loads(transcript_path.read_text(encoding="utf-8"))
+    deductions_text = _extract_deductions_text(transcript_payload)
+
+    _RESULTS_CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
+    should_write_header = not _RESULTS_CSV_PATH.exists()
+
+    with _RESULTS_CSV_PATH.open("a", encoding="utf-8", newline="") as csv_file:
+        writer = csv.writer(csv_file)
+        if should_write_header:
+            writer.writerow(
+                [
+                    "tutor_prompt",
+                    "student_persona",
+                    "course",
+                    "exercise_number",
+                    "judge_prompt",
+                    "judge_rubric",
+                    "transcript_name",
+                    "deductions",
+                ]
+            )
+        writer.writerow(
+            [
+                config.tutor_prompt,
+                config.student_persona,
+                config.course,
+                config.exercise_number,
+                judge_prompt,
+                judge_rubric,
+                transcript_name,
+                deductions_text,
+            ]
+        )
+
+
 def main() -> int:
     try:
         _require_openai_api_key()
@@ -349,4 +427,12 @@ def main() -> int:
         return 1
 
     print(f"[Judge] total_score={result.total_score}/{result.max_score}")
+    _append_results_csv(
+        config=config,
+        judge_prompt=judge_prompt,
+        judge_rubric=judge_rubric,
+        transcript_name=transcript_name,
+        transcript_path=transcript_path,
+    )
+    print(f"[Results] appended: {_RESULTS_CSV_PATH.relative_to(_REPO_ROOT)}")
     return 0
