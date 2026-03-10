@@ -39,11 +39,11 @@ _TUTOR_GREETING = "Hi. What would you like to work on today?"
 TUTOR_PROMPTS: list[str] = ["tutor_01"]
 
 # Which student personas to run (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["chitchat_03"]
+STUDENT_PERSONAS: list[str] = ["clueless_01"]
 
 # Which course/exercise combinations to run.
 # Exercise numbers should be zero-padded strings like "01".
-COURSE_EXERCISES: list[tuple[str, str]] = [("urban_studies", "02"), ("urban_studies", "03")]
+COURSE_EXERCISES: list[tuple[str, str]] = [("urban_studies", "01")]
 
 # Turn size per conversation (student+tutor exchanges).
 TURN_SIZE: int = 10
