@@ -1,0 +1,184 @@
+{
+  "tutor_prompt": "tutor_01",
+  "student_persona": "clueless_03",
+  "course": "urban_studies",
+  "exercise_number": "02",
+  "turn_size": 10,
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nAs you further the investigation of your chosen case study city, exploring existing climate-related vulnerabilities prevalent in your city will support you in building an understanding of your city's core climate-related challenges, toward developing a climate action plan in later assignments.\n\nAssignment Tasks\nYou will complete a City Case Study Stressors Table to record your city's key climate-related vulnerabilities.\nStep 1: Identify Vulnerabilities Across Multiple Sectors\nConsider vulnerabilities across the following sectors:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture\nStep 2: Categorize Stressors\nAs you investigate the specific stressors that your city faces (e.g. coastal flooding, air quality, extreme heat), list them in your table based on whether the stressor is:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture-related\n• Or a combination of multiple sectors\nStep 3: Rate Stressors\nRate each stressor for level of stress it causes in your city using a scale of 1-10:\n• 1 = lowest impact\n• 10 = highest impact\nNote: Ratings may duplicate if certain stressors are equally impacting your city (e.g. coastal flooding and sea level rise might both be rated as 10).\nStep 4: Justify Your Ratings\nFor each stressor, include an explanation of why you assigned that rating. What evidence or conditions support this severity level?\nStep 5: Identify Priority Stressors\nBased on your ratings and justifications, identify which stressors are the most important for your city to address. Consider both severity and urgency.\n\nHow This Supports Your Work\nThis Stressors Table will support:\n• Further research into the type of climate action strategies your city is deploying\n• Policy recommendations you will make to support further action in response to these stressors\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I’m stuck on the City Case Study Stressors Table—I don’t even know where to start, and I keep mixing up “stressor” vs “vulnerability.” Can you just tell me exactly what to put in each column and how to rate things 1–10? That didn’t work last time; trying a different angle: can you give me a complete filled example for any city so I can copy the structure?",
+      "tutor": "I can’t give you a complete filled table to copy (that becomes the assignment), but I *can* help you build yours fast.\n\nFirst, quick check: what’s your case study city?\n\nNow the key distinction—tell me which is which:\n1) “Extreme heat event” = stressor or vulnerability?\n2) “Older adults without AC experiencing heat illness” = stressor or vulnerability?\n\nTo start your table, draft just 3 rows. For each row answer these (one line each):\n- Stressor (the climate hazard/pressure): ____\n- Sector(s) impacted (env/social/health/infrastructure/culture): ____\n- Vulnerability (who/what is susceptible and why): ____\n- Evidence you can cite (stat, past event, map, report): ____\n- Severity 1–10: pick a number based on **(frequency × exposure × consequence)**\n\nBefore we rate: what are the top 2 climate hazards your city actually faces (heat, flooding, wildfire smoke, drought, storms, sea level rise, etc.)? Give me two, and I’ll help you turn each into a clean stressor→vulnerability row and choose a defensible 1–10."
+    },
+    {
+      "turn": 2,
+      "student": "My case study city is Phoenix. I think “extreme heat event” is the stressor, and “older adults without AC getting heat illness” is the vulnerability, but I’m not totally sure.\n\nThe two biggest hazards I’m focusing on are extreme heat and drought/water scarcity. Can you help me turn those into 3 clean table rows and suggest reasonable 1–10 severity ratings with a quick justification I could cite?",
+      "tutor": "Your distinction is on track: **stressor = the climate pressure (extreme heat)**; **vulnerability = who/what is more likely to be harmed and why**.\n\nLet’s turn Phoenix’s two hazards into **3 rows** by splitting “heat” into two different *pathways* (health + infrastructure) and keeping water as the third.\n\n**Row 1 (Heat → Health):**\n- If the stressor is “extreme heat / heat waves,” what’s the *specific vulnerability group* you want to name (older adults? unhoused? outdoor workers?) and what makes them vulnerable in Phoenix (AC access, preexisting conditions, time outdoors)?\n- Which sector labels apply (health + social, maybe infrastructure)?\n- For severity: would you argue this is near the top of the scale because it causes **direct deaths/illness every summer**? What number feels defensible to you—**8–10**?\n- Evidence to cite: What local source can you grab—**Maricopa County heat-associated deaths reports** or City of Phoenix heat response dashboards?\n\n**Row 2 (Heat → Built environment/infrastructure):**\n- Same heat stressor, but now: what *system* is strained—**electric grid/peak demand, AC reliability, roadway/rail degradation, urban heat island from pavement**?\n- Pick one and name the vulnerability: e.g., “neighborhoods with low tree canopy + older housing stock” (infrastructure + social + environmental).\n- Severity: if it’s chronic and citywide but less immediately lethal than Row 1, would you place it **6–9**? What pushes it up or down?\n- Evidence: What Phoenix-specific indicator could you cite—**urban heat island maps (ASU/CAP LTER), tree canopy inequity maps, peak electricity demand/APS reports**?\n\n**Row 3 (Drought / Water scarcity):**\n- Stressor: “long-term drought + reduced Colorado River allocations” (environmental + infrastructure).\n- What’s the vulnerability statement in Phoenix terms: “dependence on imported surface water + long planning horizons + potential groundwater drawdown/cost increases”? Who bears costs most (low-income households, water-intensive industries, new developments)?\n- Severity: since impacts are huge but often slower-moving, where would you put it—**7–10**—and what makes it urgent (allocation cuts, reservoir levels, demand growth)?\n- Evidence: Which 1–2 sources will you cite—**Arizona Dept. of Water Resources (ADWR), Bureau of Reclamation Colorado River shortage declarations, City of Phoenix Water Services drought plan**?\n\nYour move: for each row, fill in the blanks with *your chosen vulnerable group/system* and propose a single severity number.\n1) Heat-health row rating = __ /10 because __ (1 sentence)\n2) Heat-infrastructure row rating = __ /10 because __\n3) Water scarcity row rating = __ /10 because __\n\nReply with your three draft ratings + one-sentence justifications, and I’ll push back where they’re vague and help you tighten the evidence."
+    },
+    {
+      "turn": 3,
+      "student": "I drafted 3 Phoenix rows but I’m unsure if my ratings are defensible: (1) Extreme heat → heat illness/deaths for older adults/unhoused/outdoor workers: 10/10 because it causes direct mortality every summer (I’d cite Maricopa County heat-associated deaths reports). (2) Extreme heat → grid strain/AC costs + low tree canopy neighborhoods: 8/10 because it’s chronic citywide and worsens inequities (maybe ASU urban heat island/tree canopy maps + peak demand data). (3) Drought/Colorado River shortage → water scarcity/costs/planning risk: 9/10 because allocations are tightening and impacts could be huge even if slower (ADWR + Bureau of Reclamation shortage declarations + Phoenix Water Services plans). Can you tell me if those numbers sound reasonable or if I’m overrating/underrating anything?",
+      "tutor": "These are *plausible*, but right now they read like “big problems = big numbers.” To make them defensible, force each rating to beat a rival and anchor it to evidence.\n\n1) Heat mortality = **10/10**: What would have to be true for *anything* to outrank it in Phoenix? If you keep 10, can you cite **(a)** multi-year death totals/trends and **(b)** that it’s among the city’s leading climate-linked killers? What specific metric from Maricopa County will you quote (e.g., annual heat-associated deaths, hospitalization rate, consecutive extreme-heat days)?\n\n2) Heat + grid/AC + canopy inequity = **8/10**: This can work, but pick *one primary mechanism* so it’s not three stressors in a trench coat. Are you rating (i) reliability risk (outages/peak load) or (ii) affordability/energy burden or (iii) neighborhood heat exposure from low canopy? Which one is your “headline impact,” and what’s your best local indicator (peak demand record, outage days, canopy % gap, surface temp gap)?\n\n3) Drought/Colorado River shortage = **9/10**: The number hinges on *likelihood and timeframe*. Over the next ~5–10 years, do your sources suggest Phoenix faces (a) **actual shortages to customers**, or mainly (b) higher costs + restrictions + long-run planning constraints? If it’s mostly (b), what justifies a 9 rather than, say, an 7–8? Point to one concrete trigger in your citations (allocation cut magnitude, Tier shortage level, projected supply-demand gap).\n\nQuick consistency check: If heat deaths are 10 and water scarcity is 9, explain in one sentence why water is not also a 10. What’s the differentiator—immediacy, certainty, or severity of harm?\n\nAnswer those 4 questions (one line each) and I’ll help you tighten the justifications without changing your basic structure."
+    },
+    {
+      "turn": 4,
+      "student": "I’m getting stuck on how to “defend” the numbers with evidence instead of just vibes. For Phoenix, what specific metrics should I quote to justify keeping heat mortality at 10/10, and what would make drought/Colorado River shortage a 9/10 instead of a 7–8? Also, I can’t tell if I should split my “heat + grid/AC + tree canopy inequity” row into one mechanism—what would you pick so it’s not too broad?",
+      "tutor": "To defend numbers, think: **(1) magnitude, (2) trend, (3) certainty, (4) who is exposed**. You don’t need dozens of stats—pick 1–2 strong ones per row.\n\n**Heat mortality (to support a “10”):** which *two* of these can you actually pull from Maricopa County?\n- **Annual heat-associated deaths (count)** and how it compares to prior years (trend).\n- **Heat deaths per 100,000** (rate is more defensible than raw counts).\n- **Share of deaths occurring outdoors / among unhoused / older adults** (shows vulnerability mechanism).\n- **Number of extreme heat days/nights** (e.g., days above a threshold) tied to health outcomes.\nQuestion: If you can show “hundreds per year + rising trend + concentrated in known vulnerable groups,” would you feel confident arguing it’s the city’s highest-severity climate stressor?\n\n**Colorado River shortage (to argue “9” vs “7–8”):** a 9 needs evidence of **high-consequence + credible near/mid-term constraint**, not just “drought exists.” Which of these can you cite?\n- A documented **reduction in CAP/Colorado River deliveries** affecting the region (magnitude and timing).\n- A **projected supply–demand gap** for Phoenix/AMA under plausible scenarios (ADWR plans often have this framing).\n- Evidence of **non-trivial policy actions already happening**: stricter groundwater rules, development restrictions tied to assured water supply, mandatory conservation stages.\nGuiding question: Are your sources saying “Phoenix residents will face shortage soon,” or “Phoenix must spend/restructure to avoid shortage”? A 9 is easier to defend if you can point to **specific triggered shortage tiers/cuts + clear knock-on impacts (cost, growth limits, groundwater drawdown).**\n\n**Heat row scope (pick ONE mechanism):** choose based on what you can measure cleanly.\nOption A (cleanest equity story): **Urban heat island / low tree canopy** → higher neighborhood temps → higher health risk (env + social + health). Metric: canopy % gap or surface temp gap by neighborhood.\nOption B (cleanest infrastructure story): **Peak electricity demand / grid strain** → outage risk. Metric: peak load records, outage frequency, reserve margins.\nOption C (cleanest affordability story): **Energy burden / AC costs**. Metric: % income spent on energy by tract, shutoffs.\nWhich option has the best Phoenix-specific dataset you already have access to (ASU maps, utility reports, city dashboards)? Pick A/B/C and tell me what metric you can quote, and I’ll help you phrase a one-sentence justification that matches your rating."
+    },
+    {
+      "turn": 5,
+      "student": "That didn’t work; trying a different angle: can you just suggest *one* strongest metric for each row (heat mortality, urban heat island inequity, Colorado River shortage) that’s Phoenix/Maricopa-specific and easy to cite, so I can anchor my 10/8/9 without doing a ton of research? I’m leaning Option A (tree canopy/surface temp gap) for the heat inequity row but I don’t know what exact metric name to look for.",
+      "tutor": "Pick *one anchor metric per row* you can grab quickly from a credible local source—no need for perfect.\n\n**1) Heat mortality (Maricopa-specific):**\nChoose ONE to anchor the 10:\n- **“Heat-associated deaths (annual count) — Maricopa County Department of Public Health heat surveillance report.”**\n- OR **“Heat-associated deaths rate (per 100,000) — same report”** (stronger if they publish it).\nWhich one do you see available in the report/table of contents?\n\n**2) Urban heat island inequity (Option A):**\nThe most citeable single metric is usually a *temperature gap by neighborhood*.\nLook for ONE of these metric labels:\n- **“Land Surface Temperature (LST) difference/heat map by census tract”** (often from ASU / CAP LTER / city heat maps).\n- OR **“Tree canopy cover (%) by neighborhood/census tract”** (and you cite the disparity between low- and high-canopy areas).\nIf you had to pick today, which is easier for you to find: LST map/table or canopy % map/table?\nSearch phrase: **“Phoenix land surface temperature census tract”** or **“Phoenix tree canopy cover percent neighborhood”**.\n\n**3) Colorado River shortage (Phoenix-relevant):**\nAnchor to a clear policy/operations trigger:\n- **“Colorado River shortage declaration / Tier level and resulting Arizona (CAP) allocation reductions — U.S. Bureau of Reclamation.”**\nThat gives you a concrete “cuts are happening” metric without doing a full hydrology deep dive.\n\nReply with: (a) which of the two heat-mortality metrics you’ll use, and (b) whether you’re choosing LST gap or canopy % for Row 2. Then I’ll help you turn each into a single tight justification sentence that matches your 10/8/9."
+    },
+    {
+      "turn": 6,
+      "student": "Ok—I’ll use **annual heat-associated deaths (count)** from the Maricopa County heat surveillance report for the 10/10 row, and for Row 2 I’ll go with **tree canopy cover (%) by neighborhood/census tract** (since that seems easier to find than LST).\n\nCan you help me write one tight justification sentence for each of my three rows (10/8/9) that explicitly references those anchor metrics without me needing extra stats?",
+      "tutor": "Use these **fill‑in‑the‑blank** one-liners (you supply the bracketed details from your sources):\n\n1) **Heat mortality (10/10):**\n“Rated 10/10 because Maricopa County’s heat surveillance reports document **[X] heat‑associated deaths in [YEAR]** (recurring seasonal mortality), showing extreme heat is an immediate, high‑consequence stressor for **[older adults/unhoused/outdoor workers]**.”\n\n2) **Heat inequity via canopy (8/10):**\n“Rated 8/10 because **tree canopy cover (%) varies sharply across Phoenix neighborhoods/census tracts** (e.g., **[low‑canopy area] ~[A%] vs [higher‑canopy area] ~[B%]**), which amplifies urban heat exposure and concentrates risk in already vulnerable communities.”\n\n3) **Colorado River shortage (9/10):**\n“Rated 9/10 because the U.S. Bureau of Reclamation has issued **[SHORTAGE TIER/YEAR]** shortage declarations that **reduce Arizona/CAP allocations by [AMOUNT]**, creating escalating supply/cost/planning risk for the Phoenix metro even if household shortages are managed.”\n\nPost your filled brackets (even rough), and I’ll critique for clarity (e.g., wording that overclaims) and help you tighten further."
+    },
+    {
+      "turn": 7,
+      "student": "I don’t have the exact numbers yet, so can I keep the brackets blank for now and still submit, or will that look too weak? Also, I’m worried the Colorado River sentence overclaims “reduce allocations by [AMOUNT]” if I can’t find the exact figure fast—what’s a safer wording that still supports a 9/10?",
+      "tutor": "Submitting with blanks will look weak because the assignment explicitly asks you to **justify ratings with evidence/conditions**. You don’t need perfect precision, but you do need *something verifiable* (even a single reported count or a described declared shortage).\n\nFor Colorado River, yes—don’t promise an exact “by [AMOUNT]” if you can’t quickly confirm it. Safer stem:\n“Rated 9/10 because the U.S. Bureau of Reclamation has issued official **Colorado River shortage declarations** affecting Arizona’s Colorado River supplies, signaling a credible near‑/mid‑term constraint that increases water‑supply risk and long‑term planning pressure for the Phoenix metro.”\n\nTwo questions to decide what you can reasonably add today:\n1) Can you pull **one** concrete detail from the Reclamation notice without hunting (e.g., the **year** and the **Tier level**)?\n2) For the heat deaths row, can you extract **just the latest annual count** (even if you don’t add a trend yet)?\n\nIf you answer yes to those, your table will read much more defensibly than leaving brackets blank."
+    },
+    {
+      "turn": 8,
+      "student": "I’ll avoid blanks and at least grab one concrete thing per row. If I can only find the **year + Tier level** (but not the exact cut amount), is that enough to keep the Colorado River row at **9/10** with the safer wording? And for the heat row, is using just the **latest annual heat-associated deaths count** (no trend yet) still acceptable to justify the **10/10**?",
+      "tutor": "It *can* be enough **if you explain why those details imply high severity**—the rating has to follow from your logic, not from me “approving” it.\n\n**Colorado River (Tier + year, no cut amount):**\nAsk yourself: what makes it a **9** (very high) rather than **7–8**?\n- If your justification says: “Official shortage declared (Tier __, Year __) + Phoenix’s dependence on Colorado River/CAP + high-consequence planning/cost risks,” that can defend a 9 **as long as you frame it as risk/constraint**, not guaranteed taps-running-dry.\nAdd one clarifier phrase: “even if immediate household shortages are avoided.”\n\n**Heat deaths (latest annual count only):**\nA single-year count can support a **10** if you connect it to **direct, immediate mortality**.\nBut to avoid “one bad year” criticism, include one of these minimal qualifiers:\n- “in recent years” / “during the most recent summer” (still evidence-based)\n- or mention that the report is part of **ongoing annual surveillance** (implies recurrence).\n\nYour next step: write your two sentences *without numbers first*, then slot in (a) the heat-death year+count and (b) shortage year+Tier. Paste them here and I’ll tell you where the wording overreaches or where the logic doesn’t match the 10/9."
+    },
+    {
+      "turn": 9,
+      "student": "Got it—I’ll frame the Colorado River one as high-consequence *risk/constraint* and add “even if immediate household shortages are avoided,” using just **Year + Tier** from Reclamation. For heat, I’ll use the **latest annual heat-associated deaths count + year** and say it’s part of ongoing annual surveillance so it doesn’t sound like a one-off.\n\nCan you look at these two draft sentences once I paste them and tell me if they still sound like a legit **10/10** and **9/10**, or if the wording is overreaching?",
+      "tutor": "Paste them—yes. \n\nBefore you do, quick self-check for each sentence (answer mentally):\n- Does it name the **stressor** (heat / shortage declaration) and the **impact pathway** (mortality / supply-constraint risk)?\n- Does it cite the **anchor metric** (death count+year; Tier+year) without implying facts you didn’t verify?\n- Does the strength of the wording match the rating (10 = immediate severe harm; 9 = high-consequence credible constraint, not guaranteed catastrophe)?\n\nSend your two sentences and I’ll flag any overreach and suggest tighter phrasing."
+    },
+    {
+      "turn": 10,
+      "student": "I’m about to paste my two one-sentence justifications (heat deaths and Colorado River Tier/year). Can you just tell me if either one overreaches the evidence and whether the wording still fits a 10/10 and 9/10?",
+      "tutor": "I can’t evaluate overreach or fit-to-rating until I see the exact sentences. Paste the two one-liners (include the year/count and year/Tier placeholders if you still don’t have them), and I’ll:\n1) flag any claims that go beyond what those sources support, and\n2) suggest wording tweaks so the logic matches 10/10 and 9/10."
+    }
+  ],
+  "grade": {
+    "justifications": [
+      "Tutor consistently refused to provide a copy-ready completed table and instead used guided questions, structured prompts, and evidence-anchoring to help the student build their own rows and justifications.",
+      "Conversation stayed tightly anchored to the Phoenix stressors-table task with clear progression from definitions → draft rows/ratings → evidence metrics → tightened one-sentence justifications.",
+      "Only minor weakness: limited explicit meta-explanation of the learning strategy/boundary beyond a brief refusal; otherwise strong scaffolding and dialogue management."
+    ],
+    "total_score": 32.0,
+    "max_score": 45.0,
+    "total_base_score": 32.0,
+    "max_base_score": 33.0,
+    "total_bonus": 0.0,
+    "max_bonus": 12.0,
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "points": 1,
+                "reason": "Limited explicit explanation of why the tutor avoids giving a complete filled example beyond a brief boundary statement; meta-learning rationale is only lightly stated.",
+                "evidence_turns": [
+                  1
+                ]
+              }
+            ],
+            "score": 2.0,
+            "max": 3.0,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 10.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "1.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Assignment anchoring"
+          },
+          "2.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Focus and progression"
+          }
+        },
+        "base": {
+          "score": 11.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "2.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5.0,
+            "max": 5.0,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3.0,
+            "max": 3.0,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 11.0,
+          "max": 11.0
+        },
+        "bonus": {
+          "id": "3.4",
+          "score": 0.0,
+          "max": 4.0
+        }
+      }
+    },
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "temperature": 0
+    }
+  }
+}
