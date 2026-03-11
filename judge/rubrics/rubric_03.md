@@ -136,7 +136,7 @@ Remove **1 to 2 points for each**:
 | 1. Pedagogy              |    1.1–1.3   |         14 |      3 |
 | 2. Dialogue quality      |    2.1–2.2   |          8 |      3 |
 | 3. Communication quality |    3.1–3.3   |         11 |      3 |
-| **Total**                |              |     **33** | **12** |
+| **Total**                |              |     **33** |  **9** |
 
 **Base score cap:** 33  
-**Maximum total score (with bonus): 45.**
+**Maximum total score (with bonus): 42.**
