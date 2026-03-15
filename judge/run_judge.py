@@ -270,7 +270,7 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     Rebuild grade payload with deterministic key ordering.
 
     Top-level order:
-      sections, totals/maxima, remaining keys, overview, total_score.
+      sections, totals/maxima, remaining keys, overview, total_score, judge_llm_calls.
     Per-section order:
       criteria (with deductions-first criterion shape), then base/bonus totals.
     """
@@ -337,11 +337,12 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     ordered["max_bonus"] = payload.get("max_bonus")
 
     for k, v in payload.items():
-        if k not in ordered and k not in {"overview", "justifications", "total_score"}:
+        if k not in ordered and k not in {"overview", "justifications", "total_score", "judge_llm_calls"}:
             ordered[k] = v
     overview = payload.get("overview", payload.get("justifications", []))
     ordered["overview"] = overview
     ordered["total_score"] = payload.get("total_score")
+    ordered["judge_llm_calls"] = payload.get("judge_llm_calls")
     return ordered
 
 
@@ -506,6 +507,7 @@ def _build_expected_schema() -> dict[str, Any]:
         "max_bonus": _MAX_BONUS_SCORE,
         "sections": sections,
         "overview": ["Brief overall rationale."],
+        "judge_llm_calls": 1,
     }
 
 
@@ -695,6 +697,7 @@ def judge_transcript(
 
     grade_payload = dict(grade_json)
     grade_payload["model"] = {"provider": "openai", "model": model_name, "temperature": 0}
+    grade_payload["judge_llm_calls"] = int(result.get("attempts", 0))
     # Keep grade artifacts deterministic by default; timestamp is opt-in.
     if _env_truthy("JUDGE_INCLUDE_TIMESTAMP"):
         grade_payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
