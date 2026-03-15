@@ -2,6 +2,10 @@
 
 LLM-based grader that scores tutor–student conversation transcripts against a rubric.
 
+Current defaults in code:
+- prompt: `judge_03`
+- rubric: `rubric_03`
+
 ## Structure
 
 ```

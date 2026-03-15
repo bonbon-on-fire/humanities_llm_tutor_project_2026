@@ -87,6 +87,9 @@ Numbers auto-increment (next available `transcript_XX`).
 ```
 
 After the judge runs, a `grade` object is appended to the transcript (see `judge/README.md`).
+The current judge output includes:
+- `overview` (replaces `justifications`)
+- `judge_llm_calls` (number of LLM attempts used by the judge)
 
 ### Compiled CSV output
 
