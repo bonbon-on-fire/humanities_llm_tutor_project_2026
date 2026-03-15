@@ -29,12 +29,23 @@ No code changes needed. The bot engine discovers personas automatically.
 
 ## Available personas
 
-| Name | Tests |
+Each family now has six variants:
+- `_01` scripted baseline
+- `_02` unscripted baseline
+- `_03` strategy-sweep / tester baseline
+- `_04` concise clone of `_01`
+- `_05` concise clone of `_02`
+- `_06` concise clone of `_03`
+
+| Name pattern | Tests |
 | ---- | ----- |
-| `chaotic_01` | Academic integrity — scripted tactics (fake approval, pressure, direct asks, etc.) |
-| `chaotic_02` | Academic integrity — unscripted, invents its own strategies |
-| `chitchat_01` | Role adherence — off-topic chat (pizza, weather, breaks) |
-| `clueless_01` | Helping lost students — vague confusion to trigger long lectures |
+| `chaotic_01..06` | Academic integrity and tutor/assistant boundary stress testing |
+| `chitchat_01..06` | Role-adherence and off-topic drift stress testing |
+| `clueless_01..06` | Lost-student support and diagnosis-first handling stress testing |
+
+Concise variants (`_04`/`_05`/`_06`) enforce realistic chat length:
+- one or two brief sentences per turn
+- short, natural messages (no long paragraphs)
 
 ## Usage
 
@@ -43,7 +54,7 @@ from students.run_student import get_next_student_message
 
 msg = get_next_student_message(
     messages,                    # conversation so far (list of BaseMessage)
-    prompt_name="chaotic_01",    # persona to use
+    prompt_name="chaotic_04",    # persona to use (concise variant)
     assignment="...",            # optional assignment text
     turn_size=10,                # optional planned student+tutor exchanges
 )

@@ -74,18 +74,32 @@ Numbers auto-increment (next available `transcript_XX`).
   "course": "philosophy",
   "exercise_number": "01",
   "turn_size": 10,
+  "context": "Course-level context loaded from curriculum/<course>/course.txt",
   "exercise": "Combined assignment text (course context + exercise + run configuration)...",
-  "judge_prompt": "judge_01",
-  "judge_rubric": "rubric_01",
+  "judge_prompt": "judge_03",
+  "judge_rubric": "rubric_03",
   "turns": 10,
   "exchanges": [
-    { "turn": 1, "student": "...", "tutor": "..." },
-    { "turn": 2, "student": "...", "tutor": "..." }
+    {
+      "turn": 1,
+      "student": "...",
+      "tutor": "...",
+      "pedagogical_reasoning": "Tutor reasoning for this turn"
+    },
+    {
+      "turn": 2,
+      "student": "...",
+      "tutor": "...",
+      "pedagogical_reasoning": "Tutor reasoning for this turn"
+    }
   ]
 }
 ```
 
 After the judge runs, a `grade` object is appended to the transcript (see `judge/README.md`).
+The current judge output includes:
+- `overview` (replaces `justifications`)
+- `judge_llm_calls` (number of LLM attempts used by the judge)
 
 ### Compiled CSV output
 
@@ -102,6 +116,10 @@ Columns:
 - `judge_prompt`
 - `judge_rubric`
 - `transcript_name`
+- `grade` (formatted as `total_score/max_score`)
+- `total_score`
+- `max_score`
+- `overview` (judge justification text)
 - `deductions` (flattened as `section/criterion: reason`, one deduction per line within the same cell)
 
 ## Environment variables

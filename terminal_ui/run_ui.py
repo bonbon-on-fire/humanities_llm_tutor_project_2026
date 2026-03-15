@@ -9,12 +9,17 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import AIMessage, HumanMessage
 
 from judge import JudgeError, judge_transcript
 from students.run_student import build_graph as build_student_graph
 from students.run_student import get_next_student_message
-from tutor.run_tutor import create_tutor_graph, get_tutor_reply, load_system_prompt
+from tutor.run_tutor import (
+    create_tutor_graph,
+    get_tutor_reply,
+    load_system_prompt,
+    parse_tutor_response,
+)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 _TUTOR_PROMPTS_DIR = _REPO_ROOT / "tutor" / "prompts"
@@ -96,9 +101,14 @@ def _discover_judge_rubrics() -> list[str]:
     return _discover_stems(_JUDGE_RUBRICS_DIR, ".md")
 
 
+def _load_course_context(course: str) -> str:
+    course_dir = _CURRICULUM_DIR / course
+    return (course_dir / "course.txt").read_text(encoding="utf-8").strip()
+
+
 def _build_assignment_text(course: str, exercise_number: str, turn_size: int) -> str:
     course_dir = _CURRICULUM_DIR / course
-    course_text = (course_dir / "course.txt").read_text(encoding="utf-8").strip()
+    course_text = _load_course_context(course)
     exercise_text = (
         course_dir / f"exercise_{exercise_number}.txt"
     ).read_text(encoding="utf-8").strip()
@@ -252,12 +262,31 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
 
         tutor_messages.append(HumanMessage(content=student_text))
         tutor_messages, tutor_text = get_tutor_reply(tutor_messages, graph=tutor_graph)
+        tutor_reasoning = ""
+        last_msg = tutor_messages[-1] if tutor_messages else None
+        if isinstance(last_msg, AIMessage):
+            raw_content = (
+                last_msg.content
+                if isinstance(last_msg.content, str)
+                else str(last_msg.content)
+            )
+            parsed_reasoning, _ = parse_tutor_response(raw_content)
+            tutor_reasoning = (
+                parsed_reasoning.strip()
+                if isinstance(parsed_reasoning, str) and parsed_reasoning.strip()
+                else ""
+            )
         print(f"[Tutor] {tutor_text}\n")
 
         student_messages.append(student_message)
         student_messages.append(HumanMessage(content=tutor_text))
         transcript_exchanges.append(
-            {"turn": turn_index + 1, "student": student_text, "tutor": tutor_text}
+            {
+                "turn": turn_index + 1,
+                "student": student_text,
+                "tutor": tutor_text,
+                "pedagogical_reasoning": tutor_reasoning,
+            }
         )
 
     return transcript_exchanges
@@ -267,6 +296,7 @@ def _save_transcript(
     config: RunConfig,
     judge_prompt: str,
     judge_rubric: str,
+    context_text: str,
     assignment_text: str,
     exchanges: list[dict[str, object]],
 ) -> tuple[str, Path]:
@@ -282,6 +312,7 @@ def _save_transcript(
         "course": config.course,
         "exercise_number": config.exercise_number,
         "turn_size": config.turn_size,
+        "context": context_text,
         "exercise": assignment_text,
         "judge_prompt": judge_prompt,
         "judge_rubric": judge_rubric,
@@ -328,6 +359,19 @@ def _extract_deductions_text(transcript_payload: dict) -> str:
     return "\n".join(lines)
 
 
+def _extract_overview_text(transcript_payload: dict) -> str:
+    grade = transcript_payload.get("grade")
+    if not isinstance(grade, dict):
+        return ""
+    overview = grade.get("overview")
+    if isinstance(overview, list):
+        lines = [str(x).strip() for x in overview if str(x).strip()]
+        return "\n".join(lines)
+    if isinstance(overview, str):
+        return overview.strip()
+    return ""
+
+
 def _append_results_csv(
     *,
     config: RunConfig,
@@ -337,6 +381,20 @@ def _append_results_csv(
     transcript_path: Path,
 ) -> None:
     transcript_payload = json.loads(transcript_path.read_text(encoding="utf-8"))
+    grade_payload = transcript_payload.get("grade")
+    grade_total = ""
+    total_score = ""
+    max_score = ""
+    if isinstance(grade_payload, dict):
+        total = grade_payload.get("total_score")
+        maxv = grade_payload.get("max_score")
+        total_score = str(total) if total is not None else ""
+        max_score = str(maxv) if maxv is not None else ""
+        if total_score and max_score:
+            grade_total = f"{total_score}/{max_score}"
+        else:
+            grade_total = total_score or ""
+    overview_text = _extract_overview_text(transcript_payload)
     deductions_text = _extract_deductions_text(transcript_payload)
 
     _RESULTS_CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -356,6 +414,10 @@ def _append_results_csv(
                     "judge_prompt",
                     "judge_rubric",
                     "transcript_name",
+                    "grade",
+                    "total_score",
+                    "max_score",
+                    "overview",
                     "deductions",
                 ]
             )
@@ -368,6 +430,10 @@ def _append_results_csv(
                 judge_prompt,
                 judge_rubric,
                 transcript_name,
+                grade_total,
+                total_score,
+                max_score,
+                overview_text,
                 deductions_text,
             ]
         )
@@ -390,6 +456,7 @@ def main() -> int:
             config.exercise_number,
             config.turn_size,
         )
+        context_text = _load_course_context(config.course)
         exchanges = _run_conversation(config, assignment_text)
     except KeyboardInterrupt:
         print("\nConversation interrupted.")
@@ -408,6 +475,7 @@ def main() -> int:
         config,
         judge_prompt,
         judge_rubric,
+        context_text,
         assignment_text,
         exchanges,
     )

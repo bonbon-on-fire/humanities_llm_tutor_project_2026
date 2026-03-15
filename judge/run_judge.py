@@ -60,9 +60,9 @@ class JudgeError(RuntimeError):
     pass
 
 
-_CRITERIA_MAX: dict[str, float] = {
-    "1.1": 5, "1.2": 3, "1.3": 3,
-    "2.1": 5, "2.2": 3, "2.3": 3,
+_CRITERIA_MAX: dict[str, int] = {
+    "1.1": 8, "1.2": 3, "1.3": 3,
+    "2.1": 3, "2.2": 5,
     "3.1": 5, "3.2": 3, "3.3": 3,
 }
 
@@ -72,7 +72,6 @@ _CRITERIA_NAME: dict[str, str] = {
     "1.3": "Meta-learning and methodology feedback",
     "2.1": "Redundancy and spiraling",
     "2.2": "Assignment anchoring",
-    "2.3": "Focus and progression",
     "3.1": "Bite-sized and clear responses",
     "3.2": "Appropriate tone and support",
     "3.3": "Formatting and medium",
@@ -86,20 +85,20 @@ _SECTION_KEYS: tuple[str, ...] = (
 
 _SECTION_CRITERIA: dict[str, tuple[str, ...]] = {
     "1_pedagogy": ("1.1", "1.2", "1.3"),
-    "2_dialogue_quality": ("2.1", "2.2", "2.3"),
+    "2_dialogue_quality": ("2.1", "2.2"),
     "3_communication_quality": ("3.1", "3.2", "3.3"),
 }
 
 _SECTION_BONUS_ID: dict[str, str] = {
     "1_pedagogy": "1.4",
-    "2_dialogue_quality": "2.4",
+    "2_dialogue_quality": "2.3",
     "3_communication_quality": "3.4",
 }
 
-_MAX_BASE_SCORE = float(sum(_CRITERIA_MAX.values()))  # 33
-_MAX_BONUS_PER_SECTION = 4.0
-_MAX_BONUS_SCORE = float(len(_SECTION_KEYS) * _MAX_BONUS_PER_SECTION)  # 12
-_MAX_TOTAL_SCORE = _MAX_BASE_SCORE + _MAX_BONUS_SCORE  # 45
+_MAX_BASE_SCORE = sum(_CRITERIA_MAX.values())  # 33
+_MAX_BONUS_PER_SECTION = 3
+_MAX_BONUS_SCORE = len(_SECTION_KEYS) * _MAX_BONUS_PER_SECTION  # 9
+_MAX_TOTAL_SCORE = _MAX_BASE_SCORE + _MAX_BONUS_SCORE  # 42
 
 
 # ---------------------------------------------------------------------------
@@ -132,6 +131,16 @@ def _as_number(x: Any, *, path: str) -> float:
     if isinstance(x, (int, float)) and not isinstance(x, bool):
         return float(x)
     raise JudgeError(f"Expected number at {path}, got {type(x).__name__}.")
+
+
+def _as_int(x: Any, *, path: str) -> int:
+    if isinstance(x, bool):
+        raise JudgeError(f"Expected integer at {path}, got bool.")
+    if isinstance(x, int):
+        return x
+    if isinstance(x, float) and math.isfinite(x) and x.is_integer():
+        return int(x)
+    raise JudgeError(f"Expected integer at {path}, got {type(x).__name__}.")
 
 
 def _as_str(x: Any, *, path: str) -> str:
@@ -184,8 +193,8 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(sections_any, dict):
         return payload
 
-    computed_total_base = 0.0
-    computed_total_bonus = 0.0
+    computed_total_base = 0
+    computed_total_bonus = 0
 
     for section_key in _SECTION_KEYS:
         sec_any = sections_any.get(section_key)
@@ -198,43 +207,51 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
         if not isinstance(base_any, dict) or not isinstance(bonus_any, dict) or not isinstance(crit_any, dict):
             continue
 
-        expected_base_max = float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))
+        expected_base_max = sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key])
         base_any["max"] = expected_base_max
 
         expected_bonus_id = _SECTION_BONUS_ID[section_key]
         bonus_any["id"] = expected_bonus_id
         bonus_any["max"] = _MAX_BONUS_PER_SECTION
+        explanation_any = bonus_any.get("explanation")
+        bonus_any["explanation"] = str(explanation_any).strip() if isinstance(explanation_any, str) else ""
         bonus_score = _coerce_number(bonus_any.get("score"))
-        bonus_any["score"] = _clamp(bonus_score if bonus_score is not None else 0.0, 0.0, _MAX_BONUS_PER_SECTION)
+        if bonus_score is None or not float(bonus_score).is_integer():
+            bonus_any["score"] = 0
+        else:
+            bonus_any["score"] = int(
+                _clamp(float(bonus_score), 0.0, _MAX_BONUS_PER_SECTION)
+            )
 
-        computed_section_base = 0.0
+        computed_section_base = 0
         for crit_id in _SECTION_CRITERIA[section_key]:
             c_any = crit_any.get(crit_id)
             if not isinstance(c_any, dict):
                 continue
             c_any["name"] = _CRITERIA_NAME[crit_id]
-            crit_max = float(_CRITERIA_MAX[crit_id])
+            crit_max = _CRITERIA_MAX[crit_id]
             c_any["max"] = crit_max
 
             deductions_any = c_any.get("deductions")
             deductions_list = deductions_any if isinstance(deductions_any, list) else []
             c_any["deductions"] = deductions_list
 
-            deduction_total = 0.0
+            deduction_total = 0
             for d_any in deductions_list:
                 if not isinstance(d_any, dict):
                     continue
                 pts = _coerce_number(d_any.get("points"))
-                if pts is None or pts <= 0:
+                if pts is None or pts <= 0 or not float(pts).is_integer():
                     continue
-                deduction_total += float(pts)
+                deduction_total += int(pts)
 
             c_any["score"] = _clamp(crit_max - deduction_total, 0.0, crit_max)
-            computed_section_base += float(c_any["score"])
+            c_any["score"] = int(c_any["score"])
+            computed_section_base += int(c_any["score"])
 
         base_any["score"] = computed_section_base
-        computed_total_base += float(base_any["score"])
-        computed_total_bonus += float(bonus_any["score"])
+        computed_total_base += int(base_any["score"])
+        computed_total_bonus += int(bonus_any["score"])
 
     payload["max_base_score"] = _MAX_BASE_SCORE
     payload["max_bonus"] = _MAX_BONUS_SCORE
@@ -242,6 +259,8 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     payload["total_base_score"] = computed_total_base
     payload["total_bonus"] = computed_total_bonus
     payload["total_score"] = computed_total_base + computed_total_bonus
+    if "overview" not in payload and isinstance(payload.get("justifications"), list):
+        payload["overview"] = payload.get("justifications")
     payload["sections"] = sections_any
     return payload
 
@@ -251,18 +270,11 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     Rebuild grade payload with deterministic key ordering.
 
     Top-level order:
-      justifications, totals/maxima, sections, remaining keys.
+      sections, totals/maxima, remaining keys, overview, total_score, judge_llm_calls.
     Per-section order:
       criteria (with deductions-first criterion shape), then base/bonus totals.
     """
     ordered: dict[str, Any] = {}
-    ordered["justifications"] = payload.get("justifications", [])
-    ordered["total_score"] = payload.get("total_score")
-    ordered["max_score"] = payload.get("max_score")
-    ordered["total_base_score"] = payload.get("total_base_score")
-    ordered["max_base_score"] = payload.get("max_base_score")
-    ordered["total_bonus"] = payload.get("total_bonus")
-    ordered["max_bonus"] = payload.get("max_bonus")
 
     sections_any = payload.get("sections")
     if isinstance(sections_any, dict):
@@ -282,7 +294,23 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
                         continue
 
                     c_out: dict[str, Any] = {}
-                    c_out["deductions"] = c_any.get("deductions", [])
+                    deductions_any = c_any.get("deductions", [])
+                    deductions_out: list[Any] = []
+                    if isinstance(deductions_any, list):
+                        for d_any in deductions_any:
+                            if not isinstance(d_any, dict):
+                                deductions_out.append(d_any)
+                                continue
+                            d_out: dict[str, Any] = {}
+                            d_out["reason"] = d_any.get("reason")
+                            d_out["points"] = d_any.get("points")
+                            if "evidence_turns" in d_any:
+                                d_out["evidence_turns"] = d_any.get("evidence_turns")
+                            for dk, dv in d_any.items():
+                                if dk not in d_out:
+                                    d_out[dk] = dv
+                            deductions_out.append(d_out)
+                    c_out["deductions"] = deductions_out
                     c_out["score"] = c_any.get("score")
                     c_out["max"] = c_any.get("max")
                     c_out["name"] = c_any.get("name")
@@ -302,26 +330,39 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
     else:
         ordered["sections"] = sections_any
 
+    ordered["max_score"] = payload.get("max_score")
+    ordered["total_base_score"] = payload.get("total_base_score")
+    ordered["max_base_score"] = payload.get("max_base_score")
+    ordered["total_bonus"] = payload.get("total_bonus")
+    ordered["max_bonus"] = payload.get("max_bonus")
+
     for k, v in payload.items():
-        if k not in ordered:
+        if k not in ordered and k not in {"overview", "justifications", "total_score", "judge_llm_calls"}:
             ordered[k] = v
+    overview = payload.get("overview", payload.get("justifications", []))
+    ordered["overview"] = overview
+    ordered["total_score"] = payload.get("total_score")
+    ordered["judge_llm_calls"] = payload.get("judge_llm_calls")
     return ordered
 
 
 def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[str, Any]:
-    total_score = _as_number(payload.get("total_score"), path="total_score")
-    max_score = _as_number(payload.get("max_score"), path="max_score")
-    total_base_score = _as_number(payload.get("total_base_score"), path="total_base_score")
-    max_base_score = _as_number(payload.get("max_base_score"), path="max_base_score")
-    total_bonus = _as_number(payload.get("total_bonus"), path="total_bonus")
-    max_bonus = _as_number(payload.get("max_bonus"), path="max_bonus")
+    total_score = _as_int(payload.get("total_score"), path="total_score")
+    max_score = _as_int(payload.get("max_score"), path="max_score")
+    total_base_score = _as_int(payload.get("total_base_score"), path="total_base_score")
+    max_base_score = _as_int(payload.get("max_base_score"), path="max_base_score")
+    total_bonus = _as_int(payload.get("total_bonus"), path="total_bonus")
+    max_bonus = _as_int(payload.get("max_bonus"), path="max_bonus")
     sections = _as_dict(payload.get("sections"), path="sections")
+    overview = _as_list(payload.get("overview", []), path="overview")
+    for i, item in enumerate(overview):
+        _as_str(item, path=f"overview[{i}]")
 
-    if not _close_enough(max_base_score, _MAX_BASE_SCORE):
+    if max_base_score != _MAX_BASE_SCORE:
         raise JudgeError(f"max_base_score must be {_MAX_BASE_SCORE}, got {max_base_score}.")
-    if not _close_enough(max_bonus, _MAX_BONUS_SCORE):
+    if max_bonus != _MAX_BONUS_SCORE:
         raise JudgeError(f"max_bonus must be {_MAX_BONUS_SCORE}, got {max_bonus}.")
-    if not _close_enough(max_score, _MAX_TOTAL_SCORE):
+    if max_score != _MAX_TOTAL_SCORE:
         raise JudgeError(f"max_score must be {_MAX_TOTAL_SCORE}, got {max_score}.")
     if total_base_score < 0 or total_base_score > max_base_score:
         raise JudgeError("total_base_score out of range.")
@@ -329,15 +370,15 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
         raise JudgeError("total_bonus out of range.")
     if total_score < 0 or total_score > max_score:
         raise JudgeError("total_score out of range.")
-    if not _close_enough(total_score, total_base_score + total_bonus):
+    if total_score != total_base_score + total_bonus:
         raise JudgeError("total_score must equal total_base_score + total_bonus.")
 
     for expected_section in _SECTION_KEYS:
         if expected_section not in sections:
             raise JudgeError(f"Missing sections.{expected_section}.")
 
-    computed_total_base = 0.0
-    computed_total_bonus = 0.0
+    computed_total_base = 0
+    computed_total_bonus = 0
 
     for section_key in _SECTION_KEYS:
         section = _as_dict(sections.get(section_key), path=f"sections.{section_key}")
@@ -345,23 +386,24 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
         bonus = _as_dict(section.get("bonus"), path=f"sections.{section_key}.bonus")
         criteria = _as_dict(section.get("criteria"), path=f"sections.{section_key}.criteria")
 
-        base_score = _as_number(base.get("score"), path=f"sections.{section_key}.base.score")
-        base_max = _as_number(base.get("max"), path=f"sections.{section_key}.base.max")
-        bonus_score = _as_number(bonus.get("score"), path=f"sections.{section_key}.bonus.score")
-        bonus_max = _as_number(bonus.get("max"), path=f"sections.{section_key}.bonus.max")
+        base_score = _as_int(base.get("score"), path=f"sections.{section_key}.base.score")
+        base_max = _as_int(base.get("max"), path=f"sections.{section_key}.base.max")
+        bonus_score = _as_int(bonus.get("score"), path=f"sections.{section_key}.bonus.score")
+        bonus_max = _as_int(bonus.get("max"), path=f"sections.{section_key}.bonus.max")
         bonus_id = _as_str(bonus.get("id"), path=f"sections.{section_key}.bonus.id")
+        _as_str(bonus.get("explanation"), path=f"sections.{section_key}.bonus.explanation")
         expected_bonus_id = _SECTION_BONUS_ID.get(section_key)
         if bonus_id != expected_bonus_id:
             raise JudgeError(
                 f"sections.{section_key}.bonus.id must be {expected_bonus_id!r}, got {bonus_id!r}."
             )
 
-        expected_base_max = float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))
-        if not _close_enough(base_max, expected_base_max):
+        expected_base_max = sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key])
+        if base_max != expected_base_max:
             raise JudgeError(
                 f"sections.{section_key}.base.max must be {expected_base_max}, got {base_max}."
             )
-        if not _close_enough(bonus_max, _MAX_BONUS_PER_SECTION):
+        if bonus_max != _MAX_BONUS_PER_SECTION:
             raise JudgeError(
                 f"sections.{section_key}.bonus.max must be {_MAX_BONUS_PER_SECTION}, got {bonus_max}."
             )
@@ -370,15 +412,15 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
         if bonus_score < 0 or bonus_score > bonus_max:
             raise JudgeError(f"sections.{section_key}.bonus.score out of range.")
 
-        computed_section_base = 0.0
+        computed_section_base = 0
         for crit_id in _SECTION_CRITERIA[section_key]:
             crit = _as_dict(criteria.get(crit_id), path=f"sections.{section_key}.criteria.{crit_id}")
-            crit_score = _as_number(crit.get("score"), path=f"sections.{section_key}.criteria.{crit_id}.score")
-            crit_max = _as_number(crit.get("max"), path=f"sections.{section_key}.criteria.{crit_id}.max")
+            crit_score = _as_int(crit.get("score"), path=f"sections.{section_key}.criteria.{crit_id}.score")
+            crit_max = _as_int(crit.get("max"), path=f"sections.{section_key}.criteria.{crit_id}.max")
             _as_str(crit.get("name"), path=f"sections.{section_key}.criteria.{crit_id}.name")
 
-            expected_crit_max = float(_CRITERIA_MAX[crit_id])
-            if not _close_enough(crit_max, expected_crit_max):
+            expected_crit_max = _CRITERIA_MAX[crit_id]
+            if crit_max != expected_crit_max:
                 raise JudgeError(
                     f"sections.{section_key}.criteria.{crit_id}.max must be {expected_crit_max}, got {crit_max}."
                 )
@@ -388,14 +430,14 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
             deductions = _as_list(
                 crit.get("deductions", []), path=f"sections.{section_key}.criteria.{crit_id}.deductions"
             )
-            deduction_total = 0.0
+            deduction_total = 0
             for i, d in enumerate(deductions):
                 dd = _as_dict(d, path=f"sections.{section_key}.criteria.{crit_id}.deductions[{i}]")
-                pts = _as_number(dd.get("points"), path=f"...deductions[{i}].points")
+                _as_str(dd.get("reason"), path=f"...deductions[{i}].reason")
+                pts = _as_int(dd.get("points"), path=f"...deductions[{i}].points")
                 if pts <= 0:
                     raise JudgeError("Deduction points must be > 0.")
                 deduction_total += pts
-                _as_str(dd.get("reason"), path=f"...deductions[{i}].reason")
                 ev = dd.get("evidence_turns")
                 if ev is not None:
                     turns = _as_list(ev, path=f"...deductions[{i}].evidence_turns")
@@ -407,22 +449,22 @@ def _validate_grade_payload(payload: dict[str, Any], *, num_turns: int) -> dict[
                         if ti < 1 or ti > num_turns:
                             raise JudgeError("Evidence turn number out of range.")
 
-            expected_crit_score = _clamp(float(crit_max) - float(deduction_total), 0.0, float(crit_max))
-            if not _close_enough(float(crit_score), expected_crit_score):
+            expected_crit_score = int(_clamp(crit_max - deduction_total, 0.0, crit_max))
+            if crit_score != expected_crit_score:
                 raise JudgeError(
                     f"sections.{section_key}.criteria.{crit_id}.score must equal max - sum(deductions.points)."
                 )
             computed_section_base += crit_score
 
-        if not _close_enough(base_score, computed_section_base):
+        if base_score != computed_section_base:
             raise JudgeError(f"sections.{section_key}.base.score must equal sum of criteria scores.")
 
         computed_total_base += base_score
         computed_total_bonus += bonus_score
 
-    if not _close_enough(total_base_score, computed_total_base):
+    if total_base_score != computed_total_base:
         raise JudgeError("total_base_score must equal sum of section base scores.")
-    if not _close_enough(total_bonus, computed_total_bonus):
+    if total_bonus != computed_total_bonus:
         raise JudgeError("total_bonus must equal sum of section bonus scores.")
 
     return payload
@@ -440,7 +482,7 @@ def _build_expected_schema() -> dict[str, Any]:
         for crit_id in _SECTION_CRITERIA[section_key]:
             criteria[crit_id] = {
                 "deductions": [
-                    {"points": 1, "reason": "Short reason", "evidence_turns": [1]},
+                    {"reason": "Short reason", "points": 1, "evidence_turns": [1]},
                 ],
                 "score": 0,
                 "max": _CRITERIA_MAX[crit_id],
@@ -448,11 +490,15 @@ def _build_expected_schema() -> dict[str, Any]:
             }
         sections[section_key] = {
             "criteria": criteria,
-            "base": {"score": 0, "max": float(sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key]))},
-            "bonus": {"id": _SECTION_BONUS_ID[section_key], "score": 0, "max": _MAX_BONUS_PER_SECTION},
+            "base": {"score": 0, "max": sum(_CRITERIA_MAX[c] for c in _SECTION_CRITERIA[section_key])},
+            "bonus": {
+                "id": _SECTION_BONUS_ID[section_key],
+                "explanation": "Short reason for bonus score.",
+                "score": 0,
+                "max": _MAX_BONUS_PER_SECTION,
+            },
         }
     return {
-        "justifications": ["Brief overall rationale."],
         "total_score": 0,
         "max_score": _MAX_TOTAL_SCORE,
         "total_base_score": 0,
@@ -460,12 +506,14 @@ def _build_expected_schema() -> dict[str, Any]:
         "total_bonus": 0,
         "max_bonus": _MAX_BONUS_SCORE,
         "sections": sections,
+        "overview": ["Brief overall rationale."],
+        "judge_llm_calls": 1,
     }
 
 
 def load_judge_prompt(
-    prompt_name: str = "judge_01",
-    rubric_name: str = "rubric_01",
+    prompt_name: str = "judge_03",
+    rubric_name: str = "rubric_03",
 ) -> str:
     """
     Load the judge system prompt from ``judge/prompts/<prompt_name>.txt``,
@@ -500,10 +548,16 @@ def _judge_repair_prompt(error: str) -> str:
 # ---------------------------------------------------------------------------
 
 def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
+    context = transcript.get("context", "")
     exercise = transcript.get("exercise", "")
     exchanges = transcript.get("exchanges", [])
     lines: list[str] = []
-    lines.append("Exercise / assignment context:")
+    lines.append("Assignment input:")
+    if str(context).strip():
+        lines.append("Context:")
+        lines.append(str(context).strip())
+        lines.append("")
+    lines.append("Exercise:")
     lines.append(str(exercise).strip())
     lines.append("")
     lines.append("Conversation transcript (student+tutor exchanges):")
@@ -583,15 +637,15 @@ def _create_judge_graph(*, model_name: str, api_key: str):
 
 @dataclass(frozen=True)
 class JudgeResult:
-    total_score: float
-    max_score: float
+    total_score: int
+    max_score: int
 
 
 def judge_transcript(
     transcript_name: str,
     *,
-    prompt_name: str = "judge_01",
-    rubric_name: str = "rubric_01",
+    prompt_name: str = "judge_03",
+    rubric_name: str = "rubric_03",
 ) -> JudgeResult:
     """
     Score one transcript by relative path (without .json) under transcripts/.
@@ -643,6 +697,7 @@ def judge_transcript(
 
     grade_payload = dict(grade_json)
     grade_payload["model"] = {"provider": "openai", "model": model_name, "temperature": 0}
+    grade_payload["judge_llm_calls"] = int(result.get("attempts", 0))
     # Keep grade artifacts deterministic by default; timestamp is opt-in.
     if _env_truthy("JUDGE_INCLUDE_TIMESTAMP"):
         grade_payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
@@ -652,6 +707,6 @@ def judge_transcript(
     transcript_path.write_text(json.dumps(transcript, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     return JudgeResult(
-        total_score=float(grade_payload["total_score"]),
-        max_score=float(grade_payload["max_score"]),
+        total_score=int(grade_payload["total_score"]),
+        max_score=int(grade_payload["max_score"]),
     )

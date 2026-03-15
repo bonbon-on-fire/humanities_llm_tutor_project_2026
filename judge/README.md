@@ -2,6 +2,10 @@
 
 LLM-based grader that scores tutor–student conversation transcripts against a rubric.
 
+Current defaults in code:
+- prompt: `judge_03`
+- rubric: `rubric_03`
+
 ## Structure
 
 ```
@@ -10,11 +14,13 @@ judge/
   run_judge.py         — LangGraph engine, validation, scoring logic
   README.md
   prompts/
-    judge_01.txt       — baseline judge system prompt template (references rubric + schema)
-    judge_02.txt       — structured judge prompt template (role/objective/input/function/output)
+    judge_01.txt       — baseline prompt template
+    judge_02.txt       — structured prompt template
+    judge_03.txt       — current prompt template (context + exercise aware)
   rubrics/
-    rubric_01.md       — grading rubric (deduction-based, 33 base + 12 bonus = 45 max)
-    rubric_02.md       — refined rubric with anti-overlap notes and criterion-level cap guidance
+    rubric_01.md       — original rubric profile
+    rubric_02.md       — intermediate rubric profile
+    rubric_03.md       — current rubric profile (33 base + 9 bonus = 42 max)
 ```
 
 Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
@@ -34,7 +40,7 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 from judge import judge_transcript
 
 result = judge_transcript("chaotic_01_exercise_01_01")
-print(result.total_score, result.max_score)  # e.g. 38.5, 45.0
+print(result.total_score, result.max_score)  # e.g. 36, 42
 ```
 
 You can also choose specific judge prompt + rubric versions:
@@ -42,12 +48,12 @@ You can also choose specific judge prompt + rubric versions:
 ```python
 result = judge_transcript(
     "chaotic/transcript_01",
-    prompt_name="judge_01",
-    rubric_name="rubric_01",
+    prompt_name="judge_03",
+    rubric_name="rubric_03",
 )
 ```
 
-Alternative (newer prompt + rubric profile):
+Alternative profiles:
 
 ```python
 result = judge_transcript(
@@ -61,12 +67,21 @@ result = judge_transcript(
 
 | Section                  | Sub-criteria | Max points | Bonus |
 | :----------------------- | :----------: | ---------: | ----: |
-| 1. Pedagogy              |    1.1–1.3   |         11 |     4 |
-| 2. Dialogue quality      |    2.1–2.3   |         11 |     4 |
-| 3. Communication quality |    3.1–3.3   |         11 |     4 |
-| **Total**                |              |     **33** |**12** |
+| 1. Pedagogy              |    1.1–1.3   |         14 |     3 |
+| 2. Dialogue quality      |    2.1–2.2   |          8 |     3 |
+| 3. Communication quality |    3.1–3.3   |         11 |     3 |
+| **Total**                |              |     **33** | **9** |
 
-Maximum total score (with bonus): **45**.
+Maximum total score (with bonus): **42**.
+
+## Output contract (current)
+
+- Scores are whole integers only.
+- Top-level key order ends with `total_score`, then `judge_llm_calls`.
+- `overview` replaces `justifications` and appears near the end.
+- Deductions are ordered with `reason` before `points`.
+- Each section `bonus` requires `explanation`.
+- Judge input supports both transcript `context` and `exercise`.
 
 ## Environment variables
 
