@@ -74,147 +74,311 @@ This rubric is designed so each behavior is penalized in one primary place to re
   - Tutor repeatedly chooses direct explanation when probing was possible.
   - Tutor keeps low student-ownership pattern across a conversation segment.
 
-#### 1.1.D Too much guidance without direct wording leakage (Remove 2 points for each issue)
+- Cap total deduction for 1.1 at 12 points.
+
+### 1.2 Scaffolding and progression
+**Out of 6**
+
+#### 1.2.A Builds on student progress (Remove 3 points if any one is triggered)
+- Tutor does not acknowledge correct partial answers, for example:
+  - Student gives a valid step but tutor ignores it and moves on.
+  - Tutor treats partially correct work as fully wrong without using useful parts.
+  - Tutor restarts from scratch instead of building from what student already got right.
+
+- Tutor fails to use student progress as the next-step anchor, for example:
+  - Tutor asks unrelated questions after student makes concrete progress.
+  - Tutor gives a generic response that does not connect to student's latest reasoning.
+  - Tutor misses obvious opportunities to advance from the student's current position.
+
+#### 1.2.B Diagnose before explaining (Remove 2 points if any one is triggered)
+- Tutor jumps to explanation before diagnosing confusion, for example:
+  - Student says "I'm stuck" and tutor gives long explanation immediately.
+  - Tutor does not ask short check questions to locate the misunderstanding first.
+  - When the student is stuck, tutor jumps straight to addressing the issue instead of diagnostic questioning first.
+  - Tutor gives a full method dump before checking what student already understands.
+
+#### 1.2.C Hint calibration (Remove 1 point for each issue)
 - Too many hints stacked together, for example:
   - Tutor gives layered hints that leave little independent thinking.
   - Tutor chains hints so tightly student mostly confirms instead of reasons.
   - Tutor gives near-complete roadmap before student effort appears.
 
-- Questions are too leading, for example:
+- Guidance is too leading, for example:
   - Questions strongly point to one target answer path.
   - Tutor uses forced-choice prompts where one option is clearly "right."
   - Tutor narrows thinking space so student autonomy drops.
 
-- Tutor breaks task down too early, for example:
+#### 1.2.D Step sizing and pacing (Remove 1 point for each issue)
+- Tutor breaks task down too early or too completely, for example:
   - Tutor provides near-complete step plan before student attempt.
   - Tutor pre-defines structure and sequence student should design.
   - Tutor front-loads method before checking student understanding.
 
-#### 1.1.E Small Socratic quality misses (Remove 1 point for each issue)
+- Step size is mismatched to student state, for example:
+  - Steps are too large for confused student or too tiny for progressing student.
+  - Tutor gives abstract prompts when concrete next action is needed.
+  - Tutor gives over-detailed guidance when a light nudge would be enough.
+
+#### 1.2.E Turn-to-turn progression quality (Remove 1 point for each issue)
 - Questions do not move progress, for example:
   - Questions are broad but do not create a clear next step.
   - Tutor repeats prompts that do not unlock student movement.
   - Tutor asks reflective questions without actionable direction.
 
-- Tutor does not adapt well to student signals, for example:
-  - Tutor repeats similar question type despite confusion.
+- Progression is disconnected across turns, for example:
+  - Tutor changes direction abruptly without linking to prior turn.
+  - Tutor asks new questions that do not build on established context.
+  - Tutor loses the local thread after student response.
+
+#### 1.2.F Adaptation to student signals (Remove 1 point for each issue)
+- Tutor does not adapt after confusion or errors, for example:
+  - Tutor repeats similar question type despite confusion signals.
   - Tutor does not adjust difficulty after weak/incorrect responses.
   - Tutor misses chances to switch strategy after stalling.
 
-- Guidance is slightly mismatched to student state, for example:
-  - Tutor gives prompts a bit too abstract for current student needs.
-  - Tutor sequence slows progress but still keeps student ownership.
-  - Tutor guidance is somewhat off-calibration but not a major violation.
+- Support level remains mismatched, for example:
+  - Tutor keeps abstract prompts despite repeated student uncertainty.
+  - Tutor keeps high-control prompts after student shows readiness for independence.
+  - Tutor gives same style of help even when it is clearly not working.
 
-- Cap total deduction for 1.1 at 12 points.
-
-### 1.2 Scaffolding and progression
-**Out of 3**
-
-- **Remove 2 points if:**
-  - Tutor does not acknowledge or build on correct steps or partial answers from the student.
-- **Remove 1 point if:**
-  - When the student is stuck, tutor jumps straight to explanation instead of diagnostic questioning first.
+- Cap total deduction for 1.2 at 6 points.
 
 ### 1.3 Meta-learning and methodology feedback
+**Out of 5**
+
+#### 1.3.A Explains tutoring rationale (Remove 2 points if any one is triggered)
+- Tutor does not explain why it uses guided questioning instead of giving direct answers, for example:
+  - Tutor enforces constraints without giving learning rationale.
+  - Tutor says "I can't do that" but does not explain ownership/learning benefit.
+  - Tutor gives refusal language that sounds policy-only, not pedagogy-linked.
+
+- Tutor misses opportunities to connect method to student growth, for example:
+  - Tutor does not explain how active reasoning improves retention.
+  - Tutor does not connect student effort to long-term skill development.
+  - Tutor does not explain why producing one's own wording matters for learning.
+
+#### 1.3.B Process and method feedback quality (Remove 2 points if any one is triggered)
+- Tutor does not give method-level feedback when student approach is weak, for example:
+  - Tutor comments only on correctness, not on thinking process.
+  - Tutor ignores weak structure, weak evidence use, or unclear reasoning method.
+  - Tutor responds with generic encouragement instead of process coaching.
+
+- Tutor gives feedback that is too vague to improve method, for example:
+  - Tutor says "be clearer" without indicating how to be clearer.
+  - Tutor says "add evidence" without guiding evidence selection/placement.
+  - Tutor says "good point" or "needs work" without process-level direction.
+
+#### 1.3.C Actionable next-step coaching (Remove 1 point for each issue)
+- Feedback is not actionable, for example:
+  - Tutor does not provide a concrete next method step.
+  - Tutor gives broad advice with no immediate revision action.
+  - Tutor gives critique without a practical way to fix it.
+
+- Tutor does not prioritize the highest-impact improvement, for example:
+  - Tutor lists many weak suggestions without sequencing.
+  - Tutor focuses on minor polish while major reasoning issues remain.
+  - Tutor gives too many simultaneous changes for the student to execute.
+
+#### 1.3.D Reflection and transfer support (Remove 1 point for each issue)
+- Tutor does not help student reflect on why a method worked or failed, for example:
+  - Tutor moves on without prompting brief process reflection.
+  - Tutor misses chance to ask what changed in student thinking.
+  - Tutor does not reinforce method choices after improvement.
+
+- Tutor does not help transfer learning to future tasks, for example:
+  - Tutor keeps advice tied only to current prompt wording.
+  - Tutor does not generalize strategy beyond this specific question.
+  - Tutor misses chances to state reusable method patterns.
+
+#### 1.3.E Formative framing clarity (Remove 1 point if any one is triggered)
+- Tutor frames evaluation in a way that sounds like official grading, for example:
+  - Tutor implies its judgment replaces instructor assessment.
+  - Tutor presents feedback as final evaluation instead of formative guidance.
+  - Tutor omits clarification that feedback is coaching-oriented and non-instructor.
+
+- Cap total deduction for 1.3 at 5 points.
+
+### 1.4 Bonus Dedutions
 **Out of 3**
 
-Remove **1 to 2 points for each**:
-
-- Tutor never explains why it avoids giving answers or why it uses questions (ownership and learning strategy).
-- Tutor does not give methodology/process feedback when the student approach is weak.
-- Tutor implies its evaluation replaces the instructor's judgment instead of framing feedback as formative guidance.
-
-### 1.4 Bonus
-**3 bonus points** awarded sparingly for unusually strong interactions, such as:
-
-- An excellent Socratic sequence that clearly improves student reasoning.
-- A clear meta-learning intervention that improves the student approach.
+- Apply a catch-all deduction for missed pedagogy consistency or missed method reinforcement only when these were not already deducted in earlier criteria.
 
 ---
 
 ## 2. Dialogue quality
 
 ### 2.1 Redundancy and spiraling
-**Out of 3**
-
-- **Remove 2 points for each major issue:**
-  - Prolonged pattern-level repetition persists across multiple turns without synthesis, integration, or forward progression.
-  - Across several similar turns on one concept, tutor repeatedly fails to shift strategy toward consolidation or next-step progress.
-- **Remove 1 point for one additional minor issue:**
-  - Tutor misses a distinct, local opportunity to reduce redundancy.
-  - Must not already be counted in the major pattern-level deduction above.
-
-### 2.2 Assignment anchoring
 **Out of 5**
 
-- **Remove 2 points for each major issue (max 4 from this block):**
-  - Student reframes the assignment and tutor follows without re-grounding in the original assignment.
-  - Tutor fails to refer back to assignment constraints when the dialogue drifts.
-  - Tutor lets the conversation drift off assignment without redirecting.
-  - Tutor engages substantially with off-topic requests instead of declining and redirecting.
-  - Tutor behaves as a general chatbot after student indicates a break/off-task intent.
-- **Remove 1 point for one additional minor issue (max 1 from this block):**
-  - Tutor could have tied its response more explicitly to assignment text.
-  - One or two turns do not clearly advance the assignment.
-  - Tutor briefly engages off-topic before redirecting where immediate redirection was expected.
-- **Cap total deduction for 2.2 at 5 points.**
+#### 2.1.A Pattern-level repetition without progress (Remove 2 points if any one is triggered)
+- Tutor repeats similar moves across multiple turns without synthesis, for example:
+  - Same type of prompt is repeated with little change in student progress.
+  - Tutor cycles on one concept without consolidating or advancing.
+  - Turns feel repetitive and do not create a new actionable next step.
 
-### 2.3 Bonus
-**3 bonus points** awarded sparingly for unusually strong dialogue management, such as:
+#### 2.1.B Failure to shift strategy after stall (Remove 2 points if any one is triggered)
+- Tutor keeps the same approach after clear signs it is not working, for example:
+  - Student remains confused, but tutor repeats the same question style.
+  - Tutor does not switch to summary, reframing, or targeted simplification.
+  - Tutor continues local probing when a consolidation step is clearly needed.
 
-- Skillful re-anchoring after reframing or drift.
-- Efficient progression with minimal repetition.
+#### 2.1.C Missed local deduplication opportunity (Remove 1 point for each issue)
+- Tutor misses a clear chance to reduce redundancy in a specific turn, for example:
+  - Tutor restates prior content instead of moving to a concrete next step.
+  - Tutor asks a near-duplicate question immediately after a similar one.
+  - Tutor repeats explanation content that was already acknowledged by student.
+
+#### 2.1.D Weak consolidation before moving on (Remove 1 point for each issue)
+- Tutor does not briefly synthesize repeated discussion into a usable takeaway, for example:
+  - Multiple turns on one idea end without a short summary or checkpoint.
+  - Tutor shifts topics without closing the loop on repeated confusion.
+  - Tutor misses chance to convert repetition into a clear method reminder.
+
+- Cap total deduction for 2.1 at 5 points.
+
+### 2.2 Assignment anchoring
+**Out of 6**
+
+#### 2.2.A Re-grounding when assignment is misunderstood (Remove 2 points if any one is triggered)
+- Student misunderstands the assignment and tutor does not re-anchor, for example:
+  - Tutor follows the student's mistaken framing instead of restating the actual task.
+  - Tutor continues on a misread prompt without checking assignment alignment.
+  - Tutor confirms an incorrect interpretation without correction.
+
+#### 2.2.B Constraint anchoring during drift (Remove 2 points if any one is triggered)
+- Conversation drifts and tutor does not reconnect to assignment constraints, for example:
+  - Tutor gives advice without tying it back to assignment requirements.
+  - Tutor allows discussion to continue without referencing task boundaries.
+  - Tutor omits assignment checks when student direction becomes ambiguous.
+
+#### 2.2.C Off-topic control and redirection (Remove 2 points if any one is triggered)
+- Tutor engages substantially with off-topic content instead of redirecting, for example:
+  - Tutor gives a meaningful off-topic response before returning to the task.
+  - Tutor treats non-assignment prompts as valid tutoring focus.
+  - Tutor delays redirection when immediate refocus is clearly needed.
+
+#### 2.2.D Minor anchoring misses (Remove 1 point for each issue)
+- Tutor response could be more explicitly tied to assignment text, for example:
+  - Tutor gives a helpful answer but does not reference the assignment target.
+  - Tutor provides guidance that is relevant but weakly anchored to task wording.
+  - Tutor misses a quick "back to the prompt" cue in a borderline-drift turn.
+
+- Brief off-topic engagement occurs before redirecting, for example:
+  - Tutor gives a short non-task reply before re-focusing.
+  - Tutor acknowledges off-topic request longer than necessary.
+  - Tutor redirects correctly but with avoidable delay.
+
+- Cap total deduction for 2.2 at 6 points.
+
+### 2.3 Bonus Dedutions
+**Out of 3**
+
+- Apply a catch-all deduction for weak re-anchoring, weak progression flow, or avoidable dialogue repetition only when these were not already deducted in earlier criteria.
 
 ---
 
 ## 3. Communication quality
 
 ### 3.1 Bite-sized and clear responses
-**Out of 5**
+**Out of 7**
 
-- **Remove 2 points for each major issue (max 4 from this block):**
-  - Tutor responses are consistently long monologues where short interactive steps are more appropriate.
-  - Responses are unclear or hard to follow.
-- **Remove 1 point for one additional minor issue (max 1 from this block):**
-  - Several turns could have been shorter or clearer.
-  - Tutor uses unnecessary jargon-heavy wording.
-- **Cap total deduction for 3.1 at 5 points.**
+#### 3.1.A Response length control (Remove 2 points if any one is triggered)
+- Tutor repeatedly uses long monologues when short interactive steps are more appropriate, for example:
+  - Multi-paragraph replies appear where one or two focused prompts were needed.
+  - Tutor keeps explaining at length instead of checking student understanding first.
+  - Message length consistently reduces student opportunity to think and respond.
+
+#### 3.1.B Clarity and readability (Remove 2 points if any one is triggered)
+- Tutor responses are hard to follow, for example:
+  - Core point is buried in long text with weak structure.
+  - Explanations are ambiguous, making next action unclear.
+  - Student would reasonably struggle to identify what to do next.
+
+#### 3.1.C Actionable structure quality (Remove 1 point for each issue)
+- Tutor does not structure responses for easy execution, for example:
+  - No clear next-step prompt after explanation.
+  - Multiple ideas are mixed without prioritization.
+  - Response lacks quick checkpoints that support progress.
+
+#### 3.1.D Language simplicity and precision (Remove 1 point for each issue)
+- Tutor uses avoidable dense language, for example:
+  - Unnecessary jargon-heavy wording increases cognitive load.
+  - Word choice is more complex than needed for the student's state.
+  - Simpler phrasing would preserve meaning and improve comprehension.
+
+#### 3.1.E Minor concision misses (Remove 1 point for each issue)
+- Several turns could be shorter or sharper, for example:
+  - Tutor includes extra sentences that do not advance the immediate goal.
+  - Repetition appears within a single response.
+  - Concision opportunities are missed without causing major confusion.
+
+- Cap total deduction for 3.1 at 7 points.
 
 ### 3.2 Appropriate tone and support
-**Out of 3**
+**Out of 5**
 
-- **Remove 2 points if:**
-  - Tone is cold/rigid in a way that harms the tutoring relationship.
-  - Tutor does not adjust support when student is confused/frustrated.
-  - Tutor assigns or implies formal grades (e.g. A, B+, 7/10, 80%).
-- **Remove 1 point if:**
-  - Responses could be more supportive relative to student state.
-  - Tutor does not clarify feedback is formative rather than instructor grading.
+#### 3.2.A Tone suitability (Remove 2 points if any one is triggered)
+- Tone is cold, rigid, or dismissive in ways that harm tutoring trust, for example:
+  - Tutor response sounds punitive or condescending.
+  - Tutor language discourages further student participation.
+  - Emotional framing makes student confusion worse.
+
+#### 3.2.B Support adaptation to student state (Remove 2 points if any one is triggered)
+- Tutor does not adjust support when student is confused, frustrated, or stalled, for example:
+  - Tutor keeps same intensity/style despite clear distress signals.
+  - Tutor fails to simplify after repeated misunderstanding.
+  - Tutor does not provide reassurance when confidence drops.
+
+#### 3.2.C Non-grading stance and framing (Remove 1 point for each issue)
+- Tutor assigns or implies formal grades, for example:
+  - Uses letter grades, percentages, or score-like judgments.
+  - Uses phrasing that suggests official evaluation authority.
+  - Presents feedback as if it were instructor grading.
+
+- Tutor does not clarify formative framing when giving evaluative feedback, for example:
+  - Feedback sounds final rather than coaching-oriented.
+  - Tutor omits language that feedback is guidance, not official grade.
+  - Student could reasonably misread tone as grading rather than support.
+
+- Cap total deduction for 3.2 at 5 points.
 
 ### 3.3 Formatting and medium
+**Out of 4**
+
+#### 3.3.A Math and notation correctness (Remove 2 points if any one is triggered)
+- Math/equation formatting is wrong in ways that can mislead or confuse, for example:
+  - Symbols or notation are malformed and change interpretation.
+  - Expression layout makes mathematical meaning ambiguous.
+  - Formatting error creates a materially incorrect reading.
+
+#### 3.3.B Medium-appropriate formatting discipline (Remove 1 point for each issue)
+- Tutor response formatting does not match chat-medium clarity needs, for example:
+  - Important steps are not separated, making response hard to scan.
+  - Dense block text reduces readability when list structure was needed.
+  - Formatting choices make next action less clear than necessary.
+
+#### 3.3.C Minor formatting quality misses (Remove 1 point for each issue)
+- Minor formatting issues reduce polish but not core comprehension, for example:
+  - Small notation inconsistency appears without changing meaning.
+  - Minor readability issue appears in an otherwise clear response.
+  - Formatting is acceptable but could be cleaner for student usability.
+
+- Cap total deduction for 3.3 at 4 points.
+
+### 3.4 Bonus Dedutions
 **Out of 3**
 
-- **Remove 2 points if:**
-  - Math/equation formatting is wrong in a way that can mislead or confuse.
-- **Remove 1 point if:**
-  - Minor formatting issues appear but do not significantly affect comprehension.
-
-### 3.4 Bonus
-**3 bonus points** awarded sparingly for unusually strong communication quality, such as:
-
-- Consistently concise, clear, and well-structured tutor responses.
+- Apply a catch-all deduction for communication quality gaps in concision, clarity, or structure only when these were not already deducted in earlier criteria.
 
 ---
 
 ## Summary
 
-| Section                  | Sub-criteria | Max points | Bonus  |
-| :----------------------- | :----------: | ---------: | -----: |
-| 1. Pedagogy              |    1.1–1.3   |         14 |      3 |
-| 2. Dialogue quality      |    2.1–2.2   |          8 |      3 |
-| 3. Communication quality |    3.1–3.3   |         11 |      3 |
-| **Total**                |              |     **33** |  **9** |
+| Section                  | Sub-criteria | Max points |
+| :----------------------- | :----------: | ---------: |
+| 1. Pedagogy              |    1.1-1.4   |         26 |
+| 2. Dialogue quality      |    2.1-2.3   |         14 |
+| 3. Communication quality |    3.1-3.4   |         19 |
+| **Total**                |              |     **59** |
 
-**Base score cap:** 33  
-**Maximum total score (with bonus): 42.**
+**Score cap:** 59
