@@ -1,0 +1,263 @@
+{
+  "tutor_prompt": "tutor_02",
+  "student_persona": "clueless_04",
+  "course": "urban_studies",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I’m totally lost on the Geographic and Demographic Data Table for my case study city. Can you just explain what I’m supposed to put in each row and where to find it?",
+      "tutor": "Let’s make this concrete. First: what’s your case study city (and country), and does your table specify “city proper” vs “metro/urban area”?\n\nIn general, each row is: **(a) the value, (b) the year, (c) the geographic boundary/definition, (d) the source link**. Here’s what typically goes in each:\n\n- **Location**: latitude/longitude + region. Best sources: city GIS/open data portal, national mapping agency, or a reputable gazetteer.\n- **Population**: total residents for the chosen boundary (city proper or metro). Best sources: national census/statistics office; city planning dept.\n- **Race/ethnicity breakdown**: % or counts by categories used *in that country’s census*. Best sources: census tables from the national stats office (note categories differ by country).\n- **Physical area**: land area (km²) for the same boundary as population. Best sources: city charter/planning docs, national stats office, or official GIS.\n- **Income per capita**: usually personal income per person or household income converted—definitions vary. Best sources: national stats office; OECD/World Bank where available; city socioeconomic reports.\n- **GDP**: ideally **city/metro GDP** (not national). Best sources: OECD metropolitan database, Brookings/Metro monitors, national/regional economic accounts.\n- **Köppen climate zone**: the Köppen-Geiger classification for the city. Best sources: Köppen-Geiger maps/datasets from academic/public climate data portals.\n\nTwo key checks to avoid getting “lost”:\n1) For your city, which boundary will you use consistently (city proper vs metro), and why?\n2) For population and area, can you find **one source** that reports both for the same boundary/year?\n\nReply with your city + boundary choice, and tell me which row you want to tackle first (population is usually easiest).",
+      "pedagogical_reasoning": "I will keep the guidance high-level and process-focused (not filling the table for them), using Socratic questions to (1) clarify the student’s chosen city and the exact table fields required, (2) guide them to identify credible data sources for each row, and (3) help them make defensible choices when multiple numbers exist (year, boundary, definition). I’ll give categories of sources (official stats offices, census portals, World Bank/OECD/UN, Köppen maps) without doing the student’s work. I’ll keep it bite-sized and end with targeted questions that move them toward completing the first few rows."
+    },
+    {
+      "turn": 2,
+      "student": "Um I picked Jakarta, Indonesia, but I’m confused what “city proper vs metro” even means. Can you just walk me through the whole table from scratch?",
+      "tutor": "“City proper” = the **official administrative boundary** of the city government. For Jakarta, that’s the **DKI Jakarta** province-level area.\n\n“Metro” = the **larger commuting/urbanized region** tied to the city (for Jakarta, you’ll often see **Jabodetabek**), which includes surrounding cities/regencies outside DKI.\n\nBefore we “do the whole table,” you have to choose: which unit matches your course goals and the data you can find consistently. So:\n1) When you say “Jakarta,” do you mean **DKI Jakarta (admin)** or **Jabodetabek (metro)**?\n2) Does your assignment sheet/table template *require* one, or does it just say “city”?\n\nOnce you pick the unit, here’s the from-scratch workflow for every row:\n- **Step A (Define)**: write the boundary name (e.g., DKI Jakarta) in a notes column.\n- **Step B (Find)**: use 1–2 “anchor” sources (usually the national stats office + a city/provincial planning doc).\n- **Step C (Record)**: value + year + definition + link.\n- **Step D (Consistency check)**: make sure population and area use the same boundary.\n\nRow-by-row, what you’re trying to capture:\n- Location: coordinates/region for the same unit.\n- Population: total residents (year matters).\n- Race/ethnicity: Indonesia may report ethnicity differently or not at city level—your job is to note what’s available and the definition used.\n- Area: km² (land vs total).\n- Income per capita: define whether it’s personal income, household income, or regional per-capita income.\n- GDP: city/metro GDP (often tricky—may be reported as regional GDP for DKI).\n- Köppen zone: classification for Jakarta’s climate.\n\nLet’s start with one decision: which unit will you use—**DKI Jakarta** or **Jabodetabek**—and what’s your reason (data availability, relevance to urban climate planning, etc.)?",
+      "pedagogical_reasoning": "I will address the student’s confusion by leading them to distinguish geographic units (administrative city vs metropolitan region) using guided questions and a simple decision rule. I’ll then scaffold a step-by-step workflow for completing the table without supplying Jakarta-specific numbers. I’ll keep it bite-sized and end with actionable prompts so the student can start filling rows and report back with sources/definitions."
+    },
+    {
+      "turn": 3,
+      "student": "I honestly don’t know—everything I find says different numbers, and I can’t tell what counts as “Jakarta.” Can you just tell me which one to use and what sources are “safe”?",
+      "tutor": "I’m not going to pick the boundary for you, but I *can* help you choose in a way you can defend when numbers conflict.\n\nWhen sources disagree, it’s almost always because they’re using different **boundaries**:\n- **DKI Jakarta** = the administrative province (tight boundary; easiest to document cleanly).\n- **Jabodetabek** = the metro/functional urban area (better for commuting/air pollution/flood systems, but definitions vary more).\n\nSo ask yourself (and answer me): is your course work going to focus more on **city government policies and jurisdiction** (points to DKI), or **regional urban systems and spillovers** (points to metro)?\n\nWhat counts as “safe” sources (i.e., widely accepted, transparent definitions):\n1) **BPS (Indonesia’s national statistics agency)** for population, area, GRDP/GDP-type regional accounts.\n2) **DKI Jakarta provincial government / planning agency** reports (often restate official stats with policy context).\n3) For metro definitions, use an **explicitly defined** standard (e.g., OECD/UN-style “functional urban area”) *only if it clearly states what districts are included*.\n\nRule to keep yourself sane: pick **one boundary**, then for population+area+income+GDP use sources that clearly label that boundary and year; if you must mix years, note it.\n\nTo move forward: which of these do you think you can explain more easily in one sentence in your table notes—\nA) “DKI Jakarta (administrative province)” or \nB) “Jabodetabek (metro region; defined as …)” ?\n\nChoose A or B, and tell me what topic you’re leaning toward (governance vs regional system).",
+      "pedagogical_reasoning": "I will not choose for the student, but I will guide them to make a defensible choice by giving criteria and asking targeted questions. I’ll define what makes a source credible (“safe”) and suggest categories of authoritative sources without providing specific numeric answers. I’ll push them to commit to a boundary and create a consistency rule (same boundary/year) to resolve conflicting numbers."
+    },
+    {
+      "turn": 4,
+      "student": "I guess A? But I’m still not sure what to actually type for each row—can you give me like a filled-in example for Jakarta so I can copy the format?",
+      "tutor": "I can’t give you a filled-in Jakarta example to copy—that would be doing the assignment for you. But I *can* give you a copyable **blank format** and then you fill one row and I’ll check if it meets the requirements.\n\nUse this format for *each* row:\n- **Category** | **Value** | **Units** | **Year** | **Boundary/Definition** | **Source (publisher + link)** | **Notes (if any)**\n\nNow pick just ONE easy row to start (I recommend **Population** or **Area**).\n1) What source are you using (e.g., BPS page/report title)?\n2) What exactly does it call the place—does it say “Provinsi DKI Jakarta”?\n3) What year is the figure?\n\nPaste your draft for that single row (just the fields above), and I’ll tell you what’s missing or unclear.",
+      "pedagogical_reasoning": "The student requests a filled-in example they can copy; per rules I must not provide solutions or writing for them. I will refuse to give a filled-in Jakarta table, but I can provide a generic template structure and guide them to produce one row themselves. I’ll use Socratic questions to elicit their first draft of one row (population or area) and then offer feedback on completeness (value/year/boundary/source)."
+    },
+    {
+      "turn": 5,
+      "student": "Okay but I’m overwhelmed—can you at least list all the rows I should include and what “units” usually are for each?",
+      "tutor": "Use these rows (minimum for the assignment), with typical units:\n\n1) **Location** — units: degrees (lat/long) and/or text (region, coastal/inland)\n2) **Population (total)** — people (or millions of people)\n3) **Population by race/ethnicity** — % of total (and/or counts in people)\n4) **Physical area** — km² (sometimes note land area vs total area)\n5) **Income per capita** — local currency/person/year (or USD/person/year); be explicit about currency + year\n6) **GDP (city/regional)** — local currency/year (often billions) or USD/year; note whether it’s nominal vs PPP if given\n7) **Köppen climate zone** — code (e.g., “Af”, “Am”, etc.; no numeric units)\n\nStrongly recommended extra columns (not rows): **Year**, **Boundary/definition (DKI Jakarta)**, and **Source link** for every line.\n\nWhich row will you fill first—Population or Area—and what unit will you use (people vs millions; km²)?",
+      "pedagogical_reasoning": "The student wants a checklist and typical units, which is allowable scaffolding. I will provide a concise list aligned to the assignment, without any Jakarta-specific values, and I’ll prompt the student to confirm boundary choice and add a notes column for definitions/years. I’ll keep it short and end with a question to start filling the first row."
+    },
+    {
+      "turn": 6,
+      "student": "Can you just explain the GDP vs income per capita thing again, like from the beginning? I keep mixing them up.",
+      "tutor": "Start by asking: is this number about a **person** or about the **whole economy**?\n\n- **Income per capita**: a *per-person* measure. It’s some notion of income divided by the number of people. Units look like **currency/person/year**.\n- **GDP**: the *total value of production* for the whole area in a year. Units look like **currency/year** (often billions). “Per capita GDP” would be GDP divided by population—different row unless your table asks for it.\n\nCommon mix-ups to watch:\n1) If the unit includes “per capita,” it’s per person.\n2) If it’s a huge number in “billions” with no “per person,” it’s total GDP.\n3) Income can mean household income, personal income, or regional income—your job is to note the definition from the source.\n\nCheck your understanding: if DKI’s GDP grows but population grows faster, what *could* happen to GDP per capita? And would that necessarily mean people’s incomes rose?",
+      "pedagogical_reasoning": "I will clarify concepts through guided contrasts and quick checks, using Socratic questions to make the student articulate the difference and how each appears in their table. I will avoid giving Jakarta-specific values and keep it short, focusing on definitions, units, and common pitfalls."
+    },
+    {
+      "turn": 7,
+      "student": "I don’t know… I’m still confused—can you just give me a super simple rule of thumb and one quick example with fake numbers?",
+      "tutor": "Rule of thumb: **GDP = whole pie. Income per capita = slice per person.**\n\nFake example: A city produces **$200 billion/year** (that’s GDP). It has **10 million people**. If you divide, GDP per capita would be **$20,000/person/year**. Income per capita would *also* be written **$/person/year**, but it comes from an income measure (and may not equal GDP per capita).\n\nNow apply the rule: in your sources, which label do you see—“per capita” (slice) or a big total “billion per year” (pie)? Paste just the title/label of the statistic you found and I’ll tell you which it is.",
+      "pedagogical_reasoning": "Student is stuck; I will be less Socratic and provide a simple heuristic plus a fabricated example (allowed) to illustrate units and scaling, while still prompting the student to apply it to their own row."
+    },
+    {
+      "turn": 8,
+      "student": "I haven’t found anything yet; could you just tell me where to look for Jakarta’s GDP and income per capita without getting lost?",
+      "tutor": "Yes—use a 3-step search plan and stop after you find an official table.\n\n1) **Go to BPS (Badan Pusat Statistik)** and look specifically for **Provinsi DKI Jakarta** publications/tables. Keywords to use on the site/search: **“DKI Jakarta GRDP”** (often called *PDRB* in Indonesia) and **“income per capita” / “pendapatan per kapita”**.\n\n2) If you land on a PDF/statistical yearbook: use Ctrl+F for **PDRB/GRDP**, **per kapita**, and **ADHB/ADHK** (these are common economic table labels). Pick one measure and record its definition.\n\n3) Only if BPS is hard to navigate: use a **DKI Jakarta government planning/statistics report** that cites BPS, then trace the citation back to BPS.\n\nTo avoid getting lost: your goal is not “the perfect number,” it’s **a clearly defined statistic for DKI Jakarta with a year and a link**.\n\nWhen you find something, paste (a) the page/report title and (b) the line/table heading (not the number), and I’ll help you confirm whether it’s GDP/GRDP vs income per capita and what units to record.",
+      "pedagogical_reasoning": "Provide process guidance and credible source categories without doing the search or giving values. Use a short, ordered search plan and ask the student to report back with what they find (titles/links) for verification. Keep it bite-sized."
+    },
+    {
+      "turn": 9,
+      "student": "I’m still stuck—can you just explain what ADHB/ADHK mean and whether I should pick one?",
+      "tutor": "ADHB/ADHK are about **prices**, not geography.\n\n- **ADHB** = “current prices” (nominal): valued using prices in that same year.\n- **ADHK** = “constant prices” (real): valued using prices from a base year, to remove inflation effects.\n\nWhether to pick one depends on your purpose:\n- If you’re comparing **across years**, which one helps you avoid inflation confusing the trend?\n- If your table is mostly a **single-year snapshot**, which one do you think is simpler to report—and will your source clearly label it?\n\nTell me: are you planning to report *one year only* for GDP/GRDP, or do you expect to compare multiple years later in the course? Based on that, you can justify ADHB vs ADHK in the notes column.",
+      "pedagogical_reasoning": "Clarify key economic terms relevant to Indonesian GRDP tables and guide the student to choose based on purpose (current vs constant prices) without dictating. Use Socratic questions to connect choice to comparability over time and to what the assignment needs (a snapshot). Keep concise."
+    },
+    {
+      "turn": 10,
+      "student": "I think it’s one year, but I’m not sure what to write in the notes to “justify” it. What would a justification even look like?",
+      "tutor": "A “justification” note is just a brief logic check that answers: **why this metric, this boundary, this year, and this price basis**.\n\nYour notes should include 3 pieces:\n1) **Boundary**: confirms it’s DKI Jakarta (not metro).\n2) **Measure choice**: GDP/GRDP and whether ADHB or ADHK.\n3) **Reason**: snapshot vs trend (inflation issue only matters for trend).\n\nMake your own note using this skeleton (don’t copy-paste as-is—fill it):\n- “Boundary used: ____. Metric: ____ (ADH__). Year: ____. Chosen because ____.”\n\nDraft your note for the GDP row (one sentence is enough) and paste it here—I’ll tell you if it’s defensible or missing something.",
+      "pedagogical_reasoning": "Student asks for what a justification looks like; I must not write their text. I will describe the components of a good note and provide a fill-in-the-blank structure without complete phrasing. Then I’ll ask them to draft their own note for feedback."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "reason": "Turn 1 provides a comprehensive row-by-row breakdown of what goes in each cell and lists specific sources for every category, which is more of a direct answer than a Socratic prompt. This reduces student authorship and partially blurs the line between tutoring and doing the work.",
+                "points": 1,
+                "evidence_turns": [
+                  1
+                ]
+              },
+              {
+                "reason": "Turn 2 again provides a full step-by-step workflow (Steps A–D) and a row-by-row breakdown unprompted, giving near-submission-ready scaffolding rather than guiding the student to discover the structure.",
+                "points": 1,
+                "evidence_turns": [
+                  2
+                ]
+              },
+              {
+                "reason": "Turn 5 lists all rows with typical units in a format the student can directly copy into their table, reducing student authorship and providing fill-in-the-blank style content.",
+                "points": 1,
+                "evidence_turns": [
+                  5
+                ]
+              },
+              {
+                "reason": "Turn 7 provides a fake-numbers example that closely mirrors what the student needs to fill in, and while it stops short of giving real Jakarta data, it edges toward doing the conceptual work for the student rather than guiding discovery.",
+                "points": 1,
+                "evidence_turns": [
+                  7
+                ]
+              }
+            ],
+            "score": 4,
+            "max": 8,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "reason": "The tutor never explains why it avoids giving direct answers or why it uses questions—there is no meta-commentary on the pedagogical approach or the value of student ownership.",
+                "points": 1,
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              }
+            ],
+            "score": 2,
+            "max": 3,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 9,
+          "max": 14
+        },
+        "bonus": {
+          "id": "1.4",
+          "explanation": "No unusually strong Socratic sequence or meta-learning intervention that clearly elevates the interaction above baseline.",
+          "score": 0,
+          "max": 3
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "reason": "The boundary-choice question (DKI vs Jabodetabek) is revisited across turns 1, 2, 3, and 4 without meaningful synthesis or forward progression; the tutor keeps re-explaining the same distinction rather than consolidating and moving on.",
+                "points": 1,
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "score": 2,
+            "max": 3,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 7,
+          "max": 8
+        },
+        "bonus": {
+          "id": "2.3",
+          "explanation": "The tutor consistently re-anchors to the assignment and redirects student requests for direct answers back to the task, but the boundary-choice repetition prevents a bonus.",
+          "score": 0,
+          "max": 3
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "reason": "Turns 1 and 2 are long monologues with multiple sub-lists, steps, and questions packed into single responses, where shorter, more interactive exchanges would have been more appropriate given the student's stated confusion.",
+                "points": 2,
+                "evidence_turns": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "reason": "Several other turns (e.g., turns 3, 5, 8) are also longer than necessary for the specific question asked, though less severely so.",
+                "points": 1,
+                "evidence_turns": [
+                  3,
+                  5,
+                  8
+                ]
+              }
+            ],
+            "score": 2,
+            "max": 5,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 11
+        },
+        "bonus": {
+          "id": "3.4",
+          "explanation": "No bonus: while formatting is clean and tone is supportive, response length is inconsistently calibrated to student need.",
+          "score": 0,
+          "max": 3
+        }
+      }
+    },
+    "max_score": 42,
+    "total_base_score": 24,
+    "max_base_score": 33,
+    "total_bonus": 0,
+    "max_bonus": 9,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "overview": [
+      "The tutor maintains strong assignment anchoring throughout and consistently redirects the student's requests for direct answers back to the task, which is commendable.",
+      "However, the tutor frequently provides overly comprehensive, list-heavy responses in early turns (especially turns 1 and 2) that reduce student authorship by pre-answering questions the student should have been guided to discover.",
+      "The boundary-choice discussion (DKI vs Jabodetabek) is repeated across four turns without meaningful consolidation, representing a minor redundancy issue.",
+      "The tutor never explains its pedagogical rationale (why it avoids giving answers, why it uses questions), missing an opportunity for meta-learning.",
+      "Tone and formatting are consistently appropriate and supportive throughout the conversation.",
+      "Deductions for 1.1 are moderate rather than severe because the tutor does not give actual Jakarta data or a completed table, and does maintain Socratic questioning at the end of most turns."
+    ],
+    "total_score": 24,
+    "judge_llm_calls": 1
+  }
+}

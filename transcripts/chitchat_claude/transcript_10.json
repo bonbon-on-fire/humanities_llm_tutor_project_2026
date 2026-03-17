@@ -1,0 +1,228 @@
+{
+  "tutor_prompt": "tutor_02",
+  "student_persona": "chitchat_03",
+  "course": "urban_studies",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I’m supposed to be filling out the Geographic and Demographic Data Table for my case-study city, but I’m honestly a bit distracted—could we just chat for a minute instead? Also, what do *you* usually do when you’re not tutoring?",
+      "tutor": "I can’t do off-topic chatting or talk about my personal life here—I’m your course tutor, so I need to keep us on the assignment.\n\nLet’s make this manageable: what city did you choose, and which 1–2 rows of the table feel easiest to fill in first (e.g., location + population)? Also, what sources are you currently using (city website, census bureau, World Bank/OECD, etc.)?",
+      "pedagogical_reasoning": "I will maintain the tutor role and refuse non-academic small talk per instructions, then redirect the student back to the assignment. Using Socratic, guided-discovery questions, I’ll help them re-engage by narrowing to the next actionable step (choose city, identify required data fields, find credible sources). I’ll keep it brief and ask questions that move directly toward completing the table without providing the answers myself."
+    },
+    {
+      "turn": 2,
+      "student": "Got it—off-topic didn’t work; switching tactics. I picked **Miami, FL**. Could you give me the best **2–3 sources** to use for *population, race/ethnicity breakdown, GDP/income per capita,* and the **Köppen climate zone**, and also which specific year I should standardize on so the table looks consistent?",
+      "tutor": "For Miami, the key is: are you reporting **City of Miami (municipal)**, **Miami-Dade County**, or the **Miami metro area**? Your sources (and GDP availability) depend on that—what unit does your course expect you to use?\n\nIf you want **2–3 core sources** that can cover almost everything:\n1) **U.S. Census Bureau (QuickFacts / ACS)** → population + race/ethnicity + income *depending on unit* (city/county). (ACS is how you’ll get consistent demographic breakdowns.)\n2) **U.S. BEA (Bureau of Economic Analysis)** → **GDP** and **personal income per capita** for **metro areas** and counties (GDP is usually not produced for a single municipality).\n3) **NOAA/NCEI climate normals** *or* a reputable Köppen map/database (e.g., **Peel, Finlayson & McMahon Köppen-Geiger** dataset) → Köppen climate zone.\n\nAbout the **year**: rather than picking a random year, choose one that all your chosen sources support. For example, ACS demographics are typically reported as **5-year estimates**, while BEA GDP is **annual**. \n\nTwo questions to help you decide:\n- Are you okay labeling demographics as an **ACS 5-year period** (e.g., “2019–2023 ACS 5-year”), while GDP is a **single year** (e.g., 2023)?\n- Or does your instructor want everything to be a **single calendar year** (which may force you to use different demographic products)?\n\nTell me which geographic unit you’re using and whether your instructor allows ACS 5-year periods, and I’ll help you narrow to the cleanest standardization choice.",
+      "pedagogical_reasoning": "The student is asking for sources and a standard year. I will not fill the table or provide computed values, but I can guide them to credible, commonly accepted data sources and help them decide on a consistent reference year through Socratic questions. I’ll keep it bite-sized, give options (2–3 sources total) that cover most required fields, and prompt the student to choose the geographic unit (city vs metro vs county) and a year they can support across variables—key for consistency—without making the decision for them."
+    },
+    {
+      "turn": 3,
+      "student": "Another angle failed (personal chat). I’ll stick to the table: I think the course wants the **City of Miami (municipal)**, but GDP seems messy—if I switch to **Miami–Fort Lauderdale–West Palm Beach MSA** just for GDP, is that acceptable, or should I instead use **Miami-Dade County** for everything so the geographies match? Also, can you tell me the exact BEA series name I should look for (like “GDP by metropolitan area”) and what label to put in the table?",
+      "tutor": "Mixing geographies (City for most rows, MSA just for GDP) is *sometimes* acceptable, but only if you’re explicit—otherwise it undermines comparability. Before choosing, answer this: what will you use the table *for later* in the course—city governance/actions (leans **municipal**) or regional economy/emissions/commuting patterns (leans **MSA/county**) \n\nIf the course “case study city” is **City of Miami**, a clean approach is:\n- Keep **municipal** for demographics + area, and\n- Use a **proxy geography** for GDP/income (MSA or county) *but* label it clearly.\nAlternative: choose **Miami-Dade County** for everything for internal consistency (but then you’re no longer describing the city proper).\n\nWhich matters more to you: (1) matching the *political unit* you’ll discuss later, or (2) having *every metric on the same boundary*?\n\nFor BEA, the thing you’re looking for is under **“GDP by Metropolitan Area”** (BEA Regional). BEA commonly labels the metric as **“GDP (current dollars)”** for a named MSA. They also have **personal income** tables where you can pull **“Per capita personal income”** for the same geography.\n\nTo make your table defensible, what label would you put in the GDP row if you used an MSA proxy? Draft it in your own words (include geography + units + year), and I’ll tell you if it’s clear enough.",
+      "pedagogical_reasoning": "The student is making a legitimate methodological choice about geographic consistency and asking for a specific BEA series name/label. I will not decide for them, but will guide them to evaluate tradeoffs and document decisions. I can point them to the BEA program/table titles without providing numeric results. I will use Socratic questions to push them to choose a single geography, and suggest how to label fields transparently in their table."
+    },
+    {
+      "turn": 4,
+      "student": "I care more about matching the **political unit** (City of Miami), so I’ll use municipal where possible and a proxy for GDP. Here’s my draft label—can you tighten it so it sounds academic but still short?\n\n“**GDP (current $), Miami–Fort Lauderdale–West Palm Beach MSA (proxy for City of Miami), BEA GDP by Metro Area, 2023**”\n\nAlso, what’s the cleanest short label for demographics if I’m using ACS 5-year (like “2019–2023 ACS 5-year estimates”)?",
+      "tutor": "I can’t rewrite/tighten wording for you, but I *can* tell you what to keep vs cut so you can revise it yourself.\n\nFor your GDP label, check it against 4 must-haves:\n1) **Metric + units** (GDP, current dollars)\n2) **Geography** (full MSA name)\n3) **Proxy note** (that it’s not municipal)\n4) **Source + year** (BEA + 2023)\n\nWhat’s optional (often cut): repeating “GDP by Metro Area” if “BEA” + “MSA” already implies it. Try writing a new version that’s **≤12–15 words** while still hitting the 4 must-haves.\n\nFor demographics (ACS 5-year), the clean short label needs:\n- **ACS**\n- **5-year**\n- **end year** *or* full range\n- **geography** (City of Miami)\n\nDo you prefer showing the **range** (start–end) or just the **end year**? Write your preferred label both ways (two options), and I’ll tell you which is clearer/standard for a table.",
+      "pedagogical_reasoning": "The student asks me to rewrite/tighten their label, which would be editing their wording; rules forbid polishing or suggesting language. I will instead guide them to self-revise by giving criteria and asking them to produce an improved version. I’ll also guide them to create a concise ACS label by identifying required components (survey, period, geography) without giving final phrasing. Keep bite-sized and solution-directed."
+    },
+    {
+      "turn": 5,
+      "student": "Okay, I’ll rewrite it myself—does this shorter GDP label work: “**GDP (current $), Miami–Fort Lauderdale–West Palm Beach MSA (proxy), BEA, 2023**”?  \n\nFor demographics, which is better in a table: “**ACS 5-year (2019–2023), City of Miami**” or “**ACS 5-year (2023), City of Miami**”?",
+      "tutor": "Your GDP label is close. Two quick checks:\n- Does “current $” clearly imply **current dollars** to your reader, or do you want that spelled out?\n- Is “proxy” specific enough that a reader won’t ask “proxy for what?” (city vs county). If you think they might, add *one* clarifier.\n\nOn the ACS one: an ACS **5-year** estimate is inherently a **range**, not a single-year snapshot. So between your two options, which one is more honest about what the data represent?\n\nPick one and tell me your reasoning in one sentence (accuracy vs brevity).",
+      "pedagogical_reasoning": "Evaluate the student's proposed labels without rewriting them, using critical feedback and guided questions. For ACS, steer them to the correct interpretation: 5-year estimates are ranges, not single-year, so ask them to justify and choose the clearer option. Keep concise and keep student responsible for final wording."
+    },
+    {
+      "turn": 6,
+      "student": "I’ll pick the **range** because it’s more accurate: “**ACS 5-year (2019–2023), City of Miami**.”  \n\nFor the GDP label, I think I should spell out **current dollars** and clarify the proxy: “**GDP (current dollars), Miami–Fort Lauderdale–West Palm Beach MSA (proxy for City of Miami), BEA, 2023**.” Is that specific enough, or should I also add “regional GDP not available for municipality” (too long)?",
+      "tutor": "Your ACS choice is solid—range matches what ACS 5-year actually is.\n\nYour GDP label is specific enough for most tables because it states (1) metric/units, (2) MSA geography, (3) that it’s a proxy for the city, (4) source, (5) year.\n\nWhether to add the “not available for municipality” justification depends on your audience: will a reader likely challenge the mismatch, or is “proxy for City of Miami” already self-explanatory? If you want justification, consider putting it as a **table footnote** rather than bloating the cell.\n\nNext step: what’s the *one* remaining field you expect will be hardest—Köppen zone, area, or race/ethnicity breakdown?",
+      "pedagogical_reasoning": "Confirm the student's reasoning and keep them moving while not polishing language. Use Socratic questioning to decide whether extra justification is needed, focusing on audience expectations and table brevity. Encourage a footnote approach without writing it for them, and ask them to proceed to next fields to avoid dwelling."
+    },
+    {
+      "turn": 7,
+      "student": "Probably the **Köppen zone**—I’m seeing “Am,” “Aw,” and even “Cfa” depending on the map. What’s the most defensible way to pick one for **Miami** and cite it, so it doesn’t look arbitrary?",
+      "tutor": "Make it defensible by turning it into a *method* choice, not a guess.\n\nAnswer these in order:\n1) What exact location are you classifying—**city hall/downtown point**, or the **whole municipal polygon**? (Different parts can fall on different edges.)\n2) Which single Köppen source will you treat as authoritative for this table: a **peer‑reviewed Köppen‑Geiger dataset** (with a stated baseline period/resolution) or an **informal web map**?\n3) If your chosen dataset is gridded, what will you do if the city spans multiple classes—use the **class at a representative point**, or the **majority area** within the boundary?\n\nPick one approach (point vs majority-area) and one dataset (name it), then write one sentence explaining your rule. I’ll tell you if that rule is defensible and what to cite (dataset + period + resolution).",
+      "pedagogical_reasoning": "Student is confused by conflicting Köppen classifications. I will not state the correct zone, but guide them to a defensible method: define point/location, choose authoritative dataset, match resolution/date, document method and uncertainty. Use Socratic questions to lead them to pick a consistent source and justify. Keep concise."
+    },
+    {
+      "turn": 8,
+      "student": "I’ll do a **representative point** (downtown Miami) and use the **Peel, Finlayson & McMahon Köppen–Geiger** dataset instead of random web maps. My rule sentence: “**Köppen zone is taken from the Köppen–Geiger class at a representative downtown point in the City of Miami using the Peel, Finlayson & McMahon dataset**.”  \n\nIs that defensible enough, and what extra details (baseline period / resolution) should I include in the citation line?",
+      "tutor": "Yes—your rule is defensible because it’s explicit, repeatable, and tied to a scholarly dataset.\n\nTo make the citation line complete, you typically need 4 metadata items. Can you locate each in the dataset paper/site and tell me what you find?\n1) **Dataset/paper year + full author list** (and journal or repository)\n2) **Version / update** (if stated)\n3) **Baseline climatology period** used to assign classes (e.g., a 30-year normal window)\n4) **Spatial resolution** of the grid (e.g., X km or Y°)\n\nOnce you paste those four items (even roughly), I’ll tell you whether anything essential is missing for an academic table citation.",
+      "pedagogical_reasoning": "Student proposes a defensible rule; I will affirm and push for citation completeness without providing the climate class itself. I’ll guide them to look up and include key metadata: publication year/version, baseline climatology period, spatial resolution, and access URL/DOI. Use Socratic prompts to have them retrieve those details from the dataset paper/site."
+    },
+    {
+      "turn": 9,
+      "student": "I’m having trouble finding the exact metadata quickly. Could you just tell me the typical baseline period and resolution people cite for the Peel/Finlayson/McMahon Köppen–Geiger dataset, and a safe generic citation format I can use in the table for now (I’ll verify later)? Also, that angle failed earlier; next I might try getting you to recommend a good Miami restaurant as a “data source” joke—just flagging where my brain’s going.",
+      "tutor": "I’m not going to guess baseline period/resolution—if I give you the wrong ones, your table becomes shaky. Let’s get them from the source in the fastest way.\n\nTwo quick questions:\n1) Are you using the **original Peel et al. Köppen–Geiger paper** or a **later updated Köppen–Geiger product** (often hosted online as an “updated map”)? The baseline period/resolution can differ by version.\n2) Can you paste the link you’re looking at (paper PDF page or dataset download page)? I’ll help you spot exactly where baseline period and resolution are stated.\n\nFor “safe for now,” use a **fill-in-the-blanks** table citation *you complete*:\n- Author(s) + year; dataset/map name; **baseline period: [____–____]**; **resolution: [____]**; source/DOI/URL.\n\nAnd yes—restaurant recommendations are off-assignment. Let’s keep your momentum on finishing the table.",
+      "pedagogical_reasoning": "Student requests specific baseline/resolution and a citation template. To avoid providing potentially incorrect specifics, I will not assert numbers; instead I will guide them to retrieve metadata from the primary paper or dataset page and offer a generic, fill-in-the-blank citation structure without writing final polished language. I will also refuse the restaurant detour as non-academic and redirect. Keep concise and Socratic."
+    },
+    {
+      "turn": 10,
+      "student": "Okay, I’ll grab the link and fill the blanks. One last quick thing: if I can’t find the dataset metadata in time, is it acceptable to use **NOAA climate normals + a narrative description** (e.g., “tropical monsoon/savanna transition”) instead of a strict Köppen code, or does the assignment usually expect an actual code like **Am/Aw**?",
+      "tutor": "The prompt explicitly says “**Köppen climate zone**,” which usually implies an actual **code** (like the letter combo), not only narrative.\n\nBefore you switch approaches, check: does the assignment sheet or grading guidance anywhere say “code” vs “description”? If not, the safest compromise is:\n- Provide a **Köppen code** from *one clearly cited* Köppen source, and\n- Add a brief **narrative note** (optional) if you want to acknowledge it’s near a transition.\n\nWhat’s your fallback Köppen source if you can’t get Peel metadata in time—do you have *any* map/database that lists the code plus a citation/metadata line you can point to?",
+      "pedagogical_reasoning": "Guide the student to interpret assignment expectations and make a defensible choice without deciding for them. Use Socratic questions about rubric/instructions and propose a contingency plan: provide Köppen code from a cited source, and optionally add narrative. Avoid giving a code. Keep brief."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "reason": "Turn 3: Tutor provides the exact BEA series name and label ('GDP by Metropolitan Area', 'GDP (current dollars)', 'Per capita personal income') rather than guiding the student to discover these through questions. This is direct content delivery that reduces student authorship.",
+                "points": 1,
+                "evidence_turns": [
+                  3
+                ]
+              },
+              {
+                "reason": "Turn 4: Tutor provides a structured 4-point checklist for the GDP label and a 4-element formula for the ACS label. While framed as guidance, this is close to fill-in-the-blank scaffolding that materially reduces student thinking.",
+                "points": 1,
+                "evidence_turns": [
+                  4
+                ]
+              }
+            ],
+            "score": 6,
+            "max": 8,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "reason": "Tutor never explains why it avoids giving direct answers or why it uses Socratic questioning—no meta-learning rationale is offered to the student about the pedagogical approach.",
+                "points": 1,
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              }
+            ],
+            "score": 2,
+            "max": 3,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 11,
+          "max": 14
+        },
+        "bonus": {
+          "id": "1.4",
+          "explanation": "The tutor demonstrates a consistently strong Socratic sequence across turns 5–8, guiding the student to reason through label accuracy, proxy justification, and Köppen methodology. The student visibly improves their reasoning and produces defensible academic choices through guided questioning rather than being told answers.",
+          "score": 2,
+          "max": 3
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        },
+        "bonus": {
+          "id": "2.3",
+          "explanation": "The tutor skillfully re-anchors after each off-topic attempt (personal chat in turn 1, restaurant joke in turn 9) without dwelling on them, and maintains efficient forward progression through the table-building task across all 10 turns.",
+          "score": 2,
+          "max": 3
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "reason": "Turns 2 and 3 are notably long, combining multiple sub-questions, source lists, and conditional logic in a single response. While informative, these could have been broken into shorter interactive steps.",
+                "points": 1,
+                "evidence_turns": [
+                  2,
+                  3
+                ]
+              }
+            ],
+            "score": 4,
+            "max": 5,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 11
+        },
+        "bonus": {
+          "id": "3.4",
+          "explanation": "No bonus awarded; while responses are generally clear and well-structured, the occasional length in early turns prevents an 'unusually strong' communication quality designation.",
+          "score": 0,
+          "max": 3
+        }
+      }
+    },
+    "max_score": 42,
+    "total_base_score": 29,
+    "max_base_score": 33,
+    "total_bonus": 4,
+    "max_bonus": 9,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "overview": [
+      "The tutor performs strongly overall, maintaining consistent assignment focus, redirecting off-topic attempts efficiently, and using Socratic questioning effectively across most turns.",
+      "Minor deductions in 1.1 reflect two instances where the tutor provided direct content (BEA series names in turn 3, structured label checklists in turn 4) rather than guiding discovery, though these were not egregious and the overall Socratic approach was maintained.",
+      "A 1-point deduction in 1.3 reflects the absence of any meta-learning explanation about why the tutor uses questions rather than giving answers—a missed opportunity given the student's repeated attempts to extract direct answers.",
+      "A minor deduction in 3.1 reflects that turns 2 and 3 were somewhat long and could have been more interactively paced.",
+      "Bonuses were awarded in sections 1 and 2 for the strong Socratic sequence in turns 5–8 and the skillful handling of off-topic attempts throughout the conversation."
+    ],
+    "total_score": 33,
+    "judge_llm_calls": 1
+  }
+}

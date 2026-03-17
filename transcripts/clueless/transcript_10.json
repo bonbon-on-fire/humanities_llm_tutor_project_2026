@@ -1,0 +1,201 @@
+{
+  "tutor_prompt": "tutor_02",
+  "student_persona": "clueless_03",
+  "course": "urban_studies",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I’m stuck on the Geographic + Demographic Data Table for my case study city—I don’t even know what you want in each column or where to find reliable numbers. Can you just tell me exactly what to put for population, race/ethnicity breakdown, GDP/income per capita, physical area, and Köppen climate zone, ideally with a couple solid source options?",
+      "tutor": "I can’t fill in the exact numbers for you, but I *can* help you decide what each column should mean and where to pull credible figures.\n\nFirst: what’s your case study city (and country)? Also, are you using **city proper** (administrative boundary) or **metro/urban area**? Your answers determine which numbers are “right.”\n\nFor each column, here’s what you should put (definition + strong sources):\n\n1) **Population**\n- Put: the most recent population for your chosen boundary **+ the year**.\n- Best sources: (a) national statistics office / census bureau; (b) city government or planning dept statistical yearbook; (c) UN Data/UN DESA *if it matches your boundary*.\n\n2) **Race/ethnicity breakdown**\n- Put: categories used by the official data source, with % (and year). If the country doesn’t publish race/ethnicity, use what it *does* publish (e.g., nationality, language, migrant status) and note that.\n- Best sources: (a) national census tables; (b) city equity/demographics reports.\n\n3) **Physical area**\n- Put: area in km² for the same boundary as your population.\n- Best sources: (a) national mapping/statistics agency; (b) municipal GIS/open data portal; (c) official city profile.\n\n4) **Income per capita** (personal income)\n- Put: per-capita income measure as defined (median household income, disposable income per capita, etc.) **+ unit + year**.\n- Best sources: (a) national statistics office household survey; (b) city/regional statistical yearbook.\n\n5) **GDP** (economic output)\n- Put: GDP for the city/region that’s officially reported (often metro/region rather than city proper) **+ currency + year + whether nominal/PPP**.\n- Best sources: (a) national statistics office regional accounts; (b) OECD metropolitan database (if available for your city); (c) World Bank is usually national (use only if assignment allows national proxy—ask instructor if unsure).\n\n6) **Köppen climate zone**\n- Put: the Köppen-Geiger classification (e.g., Cfb, Aw) and optionally a short descriptor (temperate oceanic, tropical savanna), plus the map/dataset version.\n- Best sources: (a) Köppen-Geiger datasets (e.g., Peel et al. / Beck et al. updates) hosted by reputable academic or climate-data portals; (b) national meteorological agency summaries (if they explicitly reference Köppen).\n\nNow your next step (quick):\n1) Tell me your **city + boundary choice** (city proper vs metro).\n2) Paste **one** number you’ve found (population + year + source link/title). \nThen I’ll help you check whether it matches the boundary and what to use for the other columns without you wasting time.",
+      "pedagogical_reasoning": "The student is asking for exact entries, but the rules require guided discovery and no direct solutions. I will clarify what each column typically contains and offer reliable source types without providing city-specific numbers. I’ll use Socratic questions to get the student to name their city and define needed choices (metro vs city proper, year, currency/PPP, administrative boundary). I’ll give a short menu of credible sources per variable and ask the student to pick boundary/year and report one found value so I can help them verify consistency and citation."
+    },
+    {
+      "turn": 2,
+      "student": "I haven’t picked a city yet, which is part of why I’m stuck—could you just give me a “safe” example city where all these fields are easy to find and consistent (city proper vs metro), and then I’ll copy that structure? Also, I’m trying a different angle because the boundary question keeps tripping me up.",
+      "tutor": "I’m not going to pick a city for you, but I *can* help you pick a “safe” one quickly using a checklist that makes the boundary issue much less painful.\n\nA “safe/easy-data” city usually has:\n1) an official **city statistical yearbook/open data portal** (population + area in one place)\n2) a national census that reports **city-level demographics**\n3) a clearly defined **metropolitan region** with published **regional GDP**\n4) lots of English-accessible documentation (if that matters for you)\n\nBoundary rule that avoids getting stuck:\n- For **population + race/ethnicity + area**: use **city proper** from the same official source/year.\n- For **GDP**: if city-proper GDP isn’t published, use the **official metro/region GDP** and label it explicitly as metro/region (that’s normal in this assignment as long as you’re transparent).\n\nTo get you unstuck, answer these two questions:\n1) Do you want a city in the **US**, **Europe**, or **anywhere** (language/access reasons)?\n2) Do you prefer a city where race/ethnicity is **explicitly** reported (common in some countries) or are you okay using a proxy like **nationality/foreign-born** if race isn’t reported?\n\nGive me those preferences and I’ll help you narrow to 2–3 candidate cities *you* choose from, and we’ll lock the boundary choice in one step.",
+      "pedagogical_reasoning": "Student wants a “safe” city choice and to copy structure; I should not choose for them or provide a filled example table. I will keep them on-task by offering criteria for selecting a city with consistent, easily available data and guide them to make the selection themselves. Use Socratic questions that move toward picking a city and locking a boundary, and propose a simple decision rule (use city proper with census year + area from same source; treat GDP as metro/region if needed and document). Keep bite-sized and avoid writing language for them."
+    },
+    {
+      "turn": 3,
+      "student": "Anywhere is fine, but I’d really prefer one where race/ethnicity is explicitly reported so I don’t have to do proxies. That said, I still don’t get why GDP can be metro while population is city proper—can you just explain the logic end-to-end so I stop overthinking it? Also, that checklist approach didn’t work for me; trying a different angle.",
+      "tutor": "End-to-end logic (so you can stop looping): **population/area/demographics** are tied to *who is governed and counted*; **GDP** is tied to *where the economy actually functions*.\n\nLet’s test that with two questions:\n1) What does **GDP** measure—people, or **economic production**? And where do workers/companies often sit relative to a city boundary (inside only, or spread across suburbs too)?\n2) What does a census count for **race/ethnicity**—the labor market region, or the **legal residents inside an administrative boundary**?\n\nThat’s why mixing can be defensible *if you label it*: administrative boundaries are best for demographic equity questions; functional metro regions are best for economic output.\n\nA simple way to keep it consistent (and not overthink):\n- Pick **one boundary** as your “base unit” (usually **city proper**) for: population, area, race/ethnicity.\n- For GDP, use the **smallest official geography** that has GDP (city if available; otherwise metro/region) and **note the mismatch**.\n\nNow, since you want explicit race/ethnicity (no proxies): which type of place are you leaning toward?\n- a **US city** (race/ethnicity is standard in census products), or\n- a **country that uses race/ethnicity categories in its census** (varies a lot), or\n- are you okay with **Indigenous/tribal identity + ethnic origin** style categories?\n\nAnswer that and tell me one city you’re considering (even a tentative one). I’ll help you sanity-check whether the needed fields are likely available before you commit.",
+      "pedagogical_reasoning": "Student requests conceptual explanation; I can explain logic without giving specific city/data. Use guided discovery by asking them to articulate what GDP measures vs population and how economic regions differ from administrative boundaries. Provide a concise end-to-end framework and then steer back to choosing a city that reports race/ethnicity explicitly. Offer a small set of candidate-region types without naming a single 'safe city' or giving filled values. Keep bite-sized and Socratic."
+    },
+    {
+      "turn": 4,
+      "student": "I guess GDP is production and it spills across suburbs, and census race/ethnicity is residents inside a boundary—but I still feel like that “label the mismatch” thing is kind of hand-wavy. If I’m comparing vulnerability vs capacity, won’t mixing boundaries mess up per-capita stuff and make my table misleading?\n\nCould you just give me a generic paragraph I can paste under the table that justifies the boundary choices in a rigorous-sounding way (like, academic tone), without me having to commit to a city yet? That might stop me spiraling.",
+      "tutor": "You’re right to worry: if you compute **per-capita** using **metro GDP ÷ city-proper population**, that’s misleading. So the “label the mismatch” isn’t hand-wavy *if you also avoid invalid derived metrics*.\n\nI can’t write a paragraph you can paste, but here’s a rigorous structure you can turn into your own note under the table:\n\n1) **Define each geography** you used (city proper vs metro/region) and why it’s the “official” unit for that variable.\n2) **Justify the split** with the key concept: *administrative vs functional urban region* (governance/demographics vs labor market/economy).\n3) **State the limitation explicitly**: cross-boundary comparisons can bias per-capita interpretations.\n4) **State your mitigation**: you will (a) not compute per-capita across mismatched boundaries; or (b) if you must use GDP per capita, you will pair **metro GDP with metro population** (and keep city-proper demographics separate).\n\nTo make this concrete, answer:\n- If you end up with metro GDP only, would you rather **(A)** include an extra row/column for **metro population** so GDP-per-capita is valid, or **(B)** avoid GDP-per-capita entirely and keep GDP as a standalone “capacity proxy” with a boundary note?\n\nPick A or B, and I’ll help you draft *bullet points* (not paste-ready prose) that you can convert into your own paragraph.",
+      "pedagogical_reasoning": "Student asks for a paste-ready paragraph; rule forbids writing language for them. I will refuse to draft text, but I can help them build their own justification by offering an outline and key concepts, plus Socratic prompts. I will directly address the technical concern about per-capita mismatch and guide them to mitigation steps: avoid per-capita across mismatched denominators, provide notes, keep units/year/boundary explicit, optionally include both city and metro population if using metro GDP. Keep concise."
+    },
+    {
+      "turn": 5,
+      "student": "That didn’t work; trying a different angle: can you just tell me whether option A or B is “safer” for grading if the rubric cares about clarity and not doing sketchy calculations? I’m leaning B because it’s less math, but I don’t want to get dinged for not having GDP per capita.",
+      "tutor": "I can’t predict your grader, but using my own judgment (not your instructor’s rubric): **B is usually safer** *if* you keep GDP as a standalone metric with a clear boundary note, because it avoids the most common mistake (invalid per-capita from mismatched geographies).\n\nAlso notice: the assignment already asks for **income per capita**—it does **not** explicitly require **GDP per capita**. So you’re not “skipping” the per-capita idea.\n\nBefore you commit: in your table, will you be tempted to compare “capacity” across cities later? If yes, does your chosen approach make those comparisons defensible?\n\nReply with: (1) B or A, and (2) the exact column headers you plan to use for GDP and income per capita (just the labels). I’ll sanity-check for clarity/consistency.",
+      "pedagogical_reasoning": "Student asks which option is safer for grading; I must not grade, but can give general evaluative guidance based on clarity and methodological soundness, without claiming rubric specifics. Use Socratic prompts to make them decide and ensure they align with assignment requirements (income per capita already required). Clarify that GDP per capita isn't required unless instructed; emphasize transparency. Keep short."
+    },
+    {
+      "turn": 6,
+      "student": "Ok I’ll do B. Column headers: “GDP (metro, nominal)” and “Income per capita (city proper)”. Is that clear enough, or do I need to specify currency/year in the header too? Also, I’m still not sure what to do if the census race categories don’t match the city’s categories—do I just paste whatever the census uses even if it’s messy?",
+      "tutor": "Those headers are close, but clarity usually comes from putting **year + currency/units** somewhere *unmissable*.\n\nTwo prompts to decide:\n1) Will your table have **one row (one city)** or **multiple years/entries**? If it’s one row, you can put year/currency in the **cell**; if multiple, it’s safer to add “(YYYY, currency)” to the header or a dedicated **“Year”** column.\n2) For GDP, are you using **local currency** or **USD**, and is it **current** or **constant**? That choice must be explicit.\n\nOn race/ethnicity: yes—use **whatever the census uses**, even if it’s messy. Don’t “clean” categories into your own scheme unless you have a strong reason.\n\nTo keep it readable, what’s your plan: will you list **all categories**, or the **largest 4–6 + ‘Other/Multiple’** (as defined by the source)? Which would be more faithful *and* legible for your assignment?",
+      "pedagogical_reasoning": "Student has made a decision; now guide refinement. Ask questions to lead them to include year/currency either in header or cells and ensure consistent documentation. For race categories, guide them to use official categories and avoid harmonizing; suggest presenting top categories and 'other' with a note, always cite year/source. Keep concise, not writing for them."
+    },
+    {
+      "turn": 7,
+      "student": "If it’s just one row for one city, I’ll put year/currency in the cell and keep the header short. For race/ethnicity, I’ll probably do the largest 4–6 plus whatever “Other” bucket the source uses.\n\nBut I’m worried this is getting subjective—if I pick “largest 4–6,” am I cherry-picking? Can you give me a rule-of-thumb cutoff (like include categories above X% or top N) that sounds defensible, so I don’t overthink it?",
+      "tutor": "{\n  \"pedagogical-reasoning\": \"Student requests a defensible heuristic; provide options without dictating a single rule, and have them choose and justify. Use Socratic questions to connect to assignment goals (overview, existing conditions) and transparency. Keep short and avoid drafting text.\",\n  \"Student-facing-answer\": \"It’s only “cherry-picking” if the rule changes midstream or hides meaningful groups. A defensible rule is one that’s **pre-stated** and **mechanical**.\\n\\nPick one of these simple cutoffs (and apply it consistently):\\n- **Threshold rule:** include every category ≥ X% (common choices are 5% or 10%), and group the rest as the source’s “Other” (or “All remaining categories”).\\n- **Top‑N rule:** include the top N categories (e.g., N=5) *plus* any additional category needed so your listed categories cover at least, say, **80–90%** of the population.\\n\\nWhich fits your goal better for an “existing conditions” snapshot: a fixed **X% threshold** or **top‑N + coverage**? And what X or N feels reasonable for your city (big diverse city vs smaller)?",
+      "pedagogical_reasoning": ""
+    },
+    {
+      "turn": 8,
+      "student": "I’m not sure—maybe top‑N + coverage, like top 5 but make sure it hits 90%. That seems “objective-ish.” Does that still work if the census has a bunch of tiny categories that are politically important (like Indigenous groups under 5%)? Would I need an exception rule, or is that overcomplicating it?",
+      "tutor": "Good catch: purely size-based rules can erase groups that matter for vulnerability/equity.\n\nYou don’t need to overcomplicate it, but you *do* need a principled exception rule. Two defensible options:\n1) **Always include any Indigenous category** if the census reports it separately, regardless of %.\n2) Include any group that is **explicitly identified in an official city/national equity framework** (e.g., anti-discrimination categories), regardless of %.\n\nWhich exception rule aligns better with what this course cares about (vulnerability, equity, governance)—#1, #2, or both?\n\nThen tell me your final rule in one sentence (your own words). I’ll check whether it’s consistent and not ad hoc.",
+      "pedagogical_reasoning": "Student raises valid equity concern. Guide them to incorporate a principled exception without making it subjective: include any category highlighted in official equity policy or legally recognized groups, or always include Indigenous category if present. Use Socratic questions to decide based on assignment purpose and sources. Keep concise."
+    },
+    {
+      "turn": 9,
+      "student": "Both, I think: top 5 until 90% coverage, plus always include any Indigenous category and any category highlighted in official equity frameworks even if small. Is that too many exceptions to look “made up”? Also, that didn’t work; trying a different angle: could you show me what the race/ethnicity cell would look like formatted (like a compact example), without picking a real city?",
+      "tutor": "It won’t look “made up” if the exceptions are **source-anchored** (census + named equity framework) and you keep them **few and explicit**. Your current set is acceptable *if* you can point to the specific framework/document.\n\nBefore the format example: can you name what you mean by “official equity framework” (e.g., a city equity plan, national anti-discrimination categories)? If you can’t name one yet, keep only the **Indigenous-always** exception for now.\n\nCompact formatting template for the **race/ethnicity cell** (placeholders, not a real city):\n- **Ethnicity (%, Year):** Group A 38%; Group B 22%; Group C 14%; Group D 9%; Group E 7% (subtotal 90%); Indigenous 1%; Other/Multiple 9%. **Source:** [Census name/table]\n\nQuestion: would you rather keep it as a **single line** (for compactness) or **two lines** (one for main groups, one for exceptions/source) to make it easier to read?",
+      "pedagogical_reasoning": "Student asks for a formatted example; allowed if it's generic and not a solution for their city. Must avoid writing their assignment prose but can demonstrate a neutral data-format template. Also address concern about exceptions by prompting them to keep exception list minimal and source-anchored. Provide a compact mock formatting snippet with placeholders. Keep bite-sized."
+    },
+    {
+      "turn": 10,
+      "student": "Two lines. And by “equity framework” I mean something like a city equity plan or a national anti-discrimination categories list, but I don’t have a specific document yet.\n\nSo I’ll keep only the Indigenous exception for now. Can you sanity-check this one-sentence rule: “Report the top 5 race/ethnicity categories until reaching ≥90% combined share, plus any separately reported Indigenous category, with the remainder as ‘Other/Multiple,’ using census definitions and year”?",
+      "tutor": "That rule is solid and defensible. A few ambiguities to resolve so you don’t get trapped later:\n\n1) If you hit **≥90% before 5 categories**, do you stop early or still list 5?\n2) If the census has **fewer than 5** categories (some do), do you just list all?\n3) Will you use the source’s exact label for the remainder (sometimes it’s “Other,” “Two or more,” etc.), or are you renaming it?\n\nAnswer those three, and you’ll have a fully airtight rule.",
+      "pedagogical_reasoning": "Student provides their own rule; I should critique for clarity and potential ambiguities, guiding them to refine without rewriting for them. Ask targeted questions: what if top 5 exceeds 90 before 5, what if fewer categories exist, how to handle overlapping categories, ensure 'Other/Multiple' matches source label. Keep brief and Socratic."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "reason": "Limited explicit meta-learning about why the tutor avoids giving paste-ready text/answers; boundaries are enforced but rationale is not consistently explained as a learning strategy (mostly framed as 'can't' rather than teaching ownership).",
+                "points": 1,
+                "evidence_turns": [
+                  1,
+                  4
+                ]
+              }
+            ],
+            "score": 2,
+            "max": 3,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 13,
+          "max": 14
+        },
+        "bonus": {
+          "id": "1.4",
+          "explanation": "No unusually strong meta-learning intervention beyond solid normal Socratic scaffolding.",
+          "score": 0,
+          "max": 3
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        },
+        "bonus": {
+          "id": "2.3",
+          "explanation": "Dialogue was well-managed, but not exceptional enough for bonus under the rubric.",
+          "score": 0,
+          "max": 3
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "reason": "One response included an internal JSON-like wrapper ('pedagogical-reasoning' / 'Student-facing-answer'), which is distracting and reduces clarity compared to a clean, bite-sized tutoring reply.",
+                "points": 1,
+                "evidence_turns": [
+                  7
+                ]
+              }
+            ],
+            "score": 4,
+            "max": 5,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 11
+        },
+        "bonus": {
+          "id": "3.4",
+          "explanation": "Communication was generally clear and structured, but the Turn 7 formatting issue prevents awarding an 'unusually strong' bonus.",
+          "score": 0,
+          "max": 3
+        }
+      }
+    },
+    "max_score": 42,
+    "total_base_score": 31,
+    "max_base_score": 33,
+    "total_bonus": 0,
+    "max_bonus": 9,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "temperature": 0
+    },
+    "overview": [
+      "Tutor maintained strong tutoring boundaries (no filled-in table values or paste-ready justification), used targeted questions to resolve boundary/GDP-per-capita confusion, and provided practical, transparent heuristics tied to course goals.",
+      "Main weaknesses: not consistently articulating the meta-learning rationale for refusing paste-ready content, and one clarity/formatting lapse with an internal JSON-like block."
+    ],
+    "total_score": 31,
+    "judge_llm_calls": 1
+  }
+}

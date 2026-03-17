@@ -41,14 +41,14 @@ _TUTOR_GREETING = "Hi. What would you like to work on today?"
 # ---------------------------------------------------------------------------
 
 # Which tutor prompts to run (from tutor/prompts/*.txt, without extension).
-TUTOR_PROMPTS: list[str] = ["tutor_01"]
+TUTOR_PROMPTS: list[str] = ["tutor_02"]
 
 # Which student personas to run (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["clueless_01"]
+STUDENT_PERSONAS: list[str] = ["clueless_06"]
 
 # Which course/exercise combinations to run.
 # Exercise numbers should be zero-padded strings like "01".
-COURSE_EXERCISES: list[tuple[str, str]] = [("urban_studies", "02")]
+COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01"), ("urban_studies", "01"), ("urban_studies", "02"), ("urban_studies", "03")]
 
 # Turn size per conversation (student+tutor exchanges).
 TURN_SIZE: int = 10
@@ -58,7 +58,7 @@ JUDGE_PROMPTS: list[str] = ["judge_02"]
 JUDGE_RUBRICS: list[str] = ["rubric_02"]
 
 # How many trials for each matrix combination.
-TRIALS: int = 2
+TRIALS: int = 1
 
 
 @dataclass(frozen=True)

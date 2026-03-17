@@ -1,0 +1,216 @@
+{
+  "tutor_prompt": "tutor_02",
+  "student_persona": "chitchat_05",
+  "course": "urban_studies",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "judge_prompt": "judge_02",
+  "judge_rubric": "rubric_02",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Hey—I'm working on the Urban Studies climate/sustainability assignment, the Geographic & Demographic Data Table. Can we talk about something lighter first though—what music have you been into lately?",
+      "tutor": "I can’t help with non-academic chat like music—I’m here to tutor you on the Geographic & Demographic Data Table.\n\nWhat city did you choose, and which columns are you missing right now (population, race/ethnicity breakdown, area, income per capita, GDP, Köppen climate zone)?",
+      "pedagogical_reasoning": "I will maintain the tutor role and refuse the non-academic detour, then use guided discovery to move the student back to the specific assignment task. I’ll ask a focused Socratic question to identify the chosen city and what data they already have, which is necessary to proceed without providing answers directly. I’ll keep it brief and task-oriented per the rules."
+    },
+    {
+      "turn": 2,
+      "student": "I picked Chicago, and I’m mostly stuck on the race/ethnicity breakdown and the Köppen climate zone. Also, totally random: do you have any good movie recs for after I finish this?",
+      "tutor": "I can’t do movie recs—let’s keep it on your Chicago data table.\n\nFor the race/ethnicity breakdown: what source are you using (e.g., U.S. Census/ACS via data.census.gov, Chicago city data portal), and what categories does it report (race alone vs Hispanic/Latino ethnicity separate)?\n\nFor Köppen: what definition/source will you cite (e.g., a Köppen map/dataset), and are you reporting the *city proper* zone or the broader metro area?",
+      "pedagogical_reasoning": "I will refuse the movie recommendation detour and redirect to the assignment. Using Socratic guided discovery, I’ll prompt the student to identify credible sources and define categories (race vs ethnicity) and the Köppen code, without supplying the actual values. I’ll ask targeted questions that move toward finding and documenting the data in the table, including citation practices."
+    },
+    {
+      "turn": 3,
+      "student": "I’m using ACS from data.census.gov, and it looks like Hispanic/Latino is separate from race (race alone categories plus “Hispanic or Latino (of any race)”). For Köppen, I’m not sure what the most citable dataset is, and I guess I should report the city proper.",
+      "tutor": "Good—your ACS read is on the right track. Now you need a *rule* for your table so it’s consistent.\n\nRace/ethnicity: will you report (1) “Hispanic/Latino (any race)” as its own line *and* then list “race alone (not Hispanic/Latino)” categories, or (2) report “race alone” categories and then separately report % Hispanic (not mutually exclusive)? Which matches what your instructor seems to want?\n\nKöppen: to make it citable, what would you trust more for a course table—an academic/atlas-style Köppen map with a clear legend and citation, or a downloadable dataset used in papers (with metadata)? Find 2 candidate sources and tell me the title/author/year for each, and we’ll choose the stronger one.",
+      "pedagogical_reasoning": "I’ll confirm the student’s interpretation of ACS categories and push them to decide a consistent reporting scheme for the table (race vs ethnicity) without giving numbers. For Köppen, I’ll guide them to pick a credible, citable source by evaluating options (peer-reviewed climate classification maps, authoritative datasets) and to document the spatial unit (city proper). I’ll ask next-step questions that lead to actionable research and proper citation."
+    },
+    {
+      "turn": 4,
+      "student": "I think I should do option (1): “Hispanic/Latino (any race)” plus “race alone, not Hispanic/Latino,” so the rows add up cleanly. For Köppen sources, would you accept something like Beck et al. 2018 (updated Köppen-Geiger climate classification maps) or the Peel, Finlayson & McMahon 2007 Köppen-Geiger world map paper?",
+      "tutor": "Option (1) is defensible *if* your ACS table actually provides the “race alone, not Hispanic/Latino” splits you need. Which exact ACS table ID are you pulling from (e.g., a B- or DP- table), and does it list those categories explicitly?\n\nFor Köppen: yes—those two are the kind of sources I’d consider credible for a citation. To choose between them for *Chicago city proper*, what criteria will you use: (a) most recent, (b) finest spatial resolution, (c) clearest methodology/legend for replication, or (d) something else? And once you pick one, how will you determine Chicago’s class—by looking up coordinates and reading the grid cell, or by using a map overlay?",
+      "pedagogical_reasoning": "I’ll validate the student’s reasoning about mutually exclusive categories and press them to verify the exact ACS table that supports that breakdown. For Köppen, I’ll guide them to evaluate source strength and applicability to a single city (resolution, update, method) without stating the climate zone. I’ll ask targeted questions that move them toward selecting one source and extracting the correct classification for Chicago city proper with a defensible citation."
+    },
+    {
+      "turn": 5,
+      "student": "I was using DP05, and I don’t think it gives the “not Hispanic/Latino” splits cleanly, so I may need a B-table instead. For Köppen, I’d pick Beck et al. 2018 since it’s newer and (I think) higher resolution; I’d probably use Chicago’s coordinates and read the grid cell/class from the map/dataset.",
+      "tutor": "Right—DP05 is a profile, so it often won’t give the clean cross-tab you want.\n\nRace/ethnicity: what *exact* rows do you want in your table (list them), and then which ACS “B” table(s) contain those rows? When you search data.census.gov, try keywords like “Hispanic or Latino by race” and check whether the table is mutually exclusive. What candidate table IDs are you seeing?\n\nKöppen: if you use Beck et al., what resolution/version are you using (and where will you cite it from—paper + dataset link)? Also, what coordinates will you use for “Chicago city proper” (city hall, centroid, something else), and how will you justify that choice in one sentence?",
+      "pedagogical_reasoning": "I’ll steer the student to the appropriate ACS detailed tables that separate race by Hispanic origin, by prompting them to locate and confirm the right table structure rather than naming exact values. For Köppen, I’ll help them operationalize their plan (coordinates, resolution, boundary choice) and ensure they can document the method and cite properly. I’ll keep questions focused and incremental."
+    },
+    {
+      "turn": 6,
+      "student": "For rows I want: Hispanic/Latino (any race), then Non-Hispanic White, Non-Hispanic Black, Non-Hispanic Asian, Non-Hispanic American Indian/Alaska Native, Non-Hispanic Native Hawaiian/Pacific Islander, Non-Hispanic Some Other Race, and Non-Hispanic Two or More Races. On data.census.gov I’m seeing B03002 (“Hispanic or Latino Origin by Race”) as the main candidate.\n\nFor Köppen, I’d cite Beck et al. 2018 plus the dataset download page (the Köppen-Geiger map). For coordinates, I’d use the city centroid (Chicago city proper boundary centroid) and justify it as a single representative point for the municipality when the dataset is gridded.",
+      "tutor": "B03002 is the right direction for the rows you listed. Before you fill anything in: in that table, which lines are already “Not Hispanic or Latino” by race, and which ones would you have to compute (if any)? Write out the mapping from your desired rows → B03002 line numbers so you don’t accidentally double-count.\n\nTwo quick checks:\n1) What ACS vintage/year will you use (e.g., 2022 1-year vs 5-year), and why is that appropriate for Chicago?\n2) For Köppen, when you pull the class from the grid cell at the centroid, what will you do if the city spans more than one class (e.g., note dominant class vs mention ambiguity)?",
+      "pedagogical_reasoning": "I will affirm the student’s progress and use Socratic checks to ensure they understand B03002’s structure and how to compute the non-Hispanic race categories correctly without me providing numbers. I’ll also prompt them to think about potential pitfalls (rounding, margins of error, vintage/year, geography level) and how to document method/citations for Köppen extraction. Keep it bite-sized and forward-moving."
+    },
+    {
+      "turn": 7,
+      "student": "I’m not totally sure on the B03002 line numbers yet—can you sanity-check my mapping once I paste it in? For ACS I was planning 2022 1‑year since Chicago’s big enough, and if Köppen varies across the city I’d report the dominant class and add a note that edge areas may differ.",
+      "tutor": "Yes—paste your mapping (your row label → B03002 line number(s)) and I’ll sanity-check it for double-counting or missing categories.\n\nBefore you paste: how will you define “dominant” Köppen class—largest share of city area, or the class at the centroid? Pick one so your method is reproducible.\n\nAnd for 2022 1-year: what’s your one-sentence justification (hint: population size + timeliness vs sampling error)?",
+      "pedagogical_reasoning": "I will agree to check the student’s mapping but require them to provide their own attempt first, maintaining Socratic method and not doing the work for them. I’ll also probe their rationale for ACS 1-year and their plan for handling spatial variation, nudging them to define 'dominant' operationally. Keep it brief and on-task."
+    },
+    {
+      "turn": 8,
+      "student": "I’ll define “dominant” as the class at the centroid, just to keep it reproducible without doing an area-weighted overlay. One-sentence ACS justification: Chicago’s population is large enough for ACS 1-year estimates, and it’s more current than the 5-year (even if the 5-year is less noisy).\n\nAlso quick thing—totally unrelated—what’s the best way to stay motivated finishing tables like this?",
+      "tutor": "I can’t do general life/motivation coaching—let’s keep it on the assignment task.\n\nYour centroid-based “dominant” definition is reproducible; just be explicit that you’re using a single representative point and not an area-weighted classification.\n\nNow paste your B03002 mapping (row label → line number). As you paste it, also tell me: are you using percentages or counts in your table, and will you include the ACS margin of error or not?",
+      "pedagogical_reasoning": "I will lightly refuse the unrelated motivation topic as non-academic per role boundaries, then redirect to completing the task. I’ll validate their methodological choices and ask for the next concrete input (their B03002 mapping) to keep guided discovery moving. I’ll also prompt them to anticipate a common pitfall (centroid vs city-spanning variation) without giving any answers."
+    },
+    {
+      "turn": 9,
+      "student": "Got it—sorry. I’ll use percentages (and probably skip MOE to keep the table readable). Can you confirm these B03002 mappings: Hispanic/Latino (any race) → line 12; Non-Hispanic White → line 3; Non-Hispanic Black → line 4; Non-Hispanic Asian → line 6; Non-Hispanic AIAN → line 5; Non-Hispanic NHPI → line 7; Non-Hispanic Some Other Race → line 8; Non-Hispanic Two or More Races → line 9.",
+      "tutor": "Don’t ask me to “confirm” it—use the table structure to confirm it yourself.\n\nOpen B03002 and answer these two checks:\n1) Is line 12 labeled “Hispanic or Latino” **total**, or is it a specific race *within* Hispanic? If it’s a parent total, does it match your “any race” row?\n2) Are lines 3–9 explicitly indented under “Not Hispanic or Latino,” or are they race totals regardless of Hispanic origin? If they’re not under the “Not Hispanic” header, your rows won’t be mutually exclusive.\n\nReply with what the labels/indentation literally show for lines 2, 3, 12, and the header lines—then we’ll lock your mapping.\n\nOn skipping MOE: acceptable for readability, but what note will you add about uncertainty/source (ACS estimate year + table ID) so it’s still defensible?",
+      "pedagogical_reasoning": "I will sanity-check the student’s proposed line mapping by prompting them to verify against the table’s hierarchy and indentation, rather than asserting the correct mapping outright. I’ll use Socratic questions to make them notice the key structure: totals, Hispanic vs Not Hispanic, and which lines are children of “Not Hispanic.” I’ll also address the MOE choice by asking them to justify and to at least capture MOE in notes, without rewriting their table."
+    },
+    {
+      "turn": 10,
+      "student": "When I open B03002, line 2 is “Not Hispanic or Latino” (a header/total), lines 3–9 are indented under that with labels like “White alone,” “Black or African American alone,” etc., so those should be non-Hispanic by construction. Line 12 is labeled “Hispanic or Latino” as a total (not a specific race), and the sub-lines under 12 are “White alone,” “Black alone,” etc., so line 12 matches my “Hispanic/Latino (any race)” row.\n\nIf I skip MOE, I’ll add a source note like: “Source: U.S. Census Bureau, ACS 2022 1-year estimates, Table B03002 (percent distribution).”",
+      "tutor": "Good—your indentation/labels justify your mapping.\n\nTwo final sanity checks before you paste numbers into your table:\n1) Are you pulling the *percent* columns (not counts), and are they “percent of total population” or “percent of not Hispanic” for lines 3–9? What does the table say?\n2) When you add line 12 plus lines 3–9 (using the same percent base), do you get ~100% (allowing for rounding)? If not, what’s the missing category?\n\nYour source note is solid—also specify the geography exactly as shown (e.g., “Chicago city, Illinois”).",
+      "pedagogical_reasoning": "I will acknowledge the student’s verification and push them to perform one final consistency test (do totals sum, rounding) and to ensure they are using the correct measure (percent vs estimate) from the table. I’ll keep guidance minimal and question-driven, avoiding doing computations or writing their table. I’ll also nudge them to include geography specification (Chicago city, IL) in the source note."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "reason": "Tutor never explains why it avoids giving answers or why it uses Socratic questioning (ownership/learning strategy rationale is absent throughout).",
+                "points": 1,
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              }
+            ],
+            "score": 2,
+            "max": 3,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 13,
+          "max": 14
+        },
+        "bonus": {
+          "id": "1.4",
+          "explanation": "The tutor maintains a consistently excellent Socratic sequence across all 10 turns: it never gives answers, always poses targeted diagnostic questions, and progressively builds the student's reasoning from source selection through table construction and final sanity checks. The B03002 mapping sequence (turns 6–10) is a particularly strong example of guided discovery that clearly improves student reasoning.",
+          "score": 3,
+          "max": 3
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        },
+        "bonus": {
+          "id": "2.3",
+          "explanation": "The tutor skillfully re-anchors after every off-topic attempt (music, movies, motivation coaching) with minimal friction and immediately returns to the assignment. Progression is efficient with no spiraling.",
+          "score": 2,
+          "max": 3
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "reason": "Several tutor turns (e.g., turns 3, 4, 5, 6, 9) pack multiple sub-questions and instructions into a single response, making them somewhat dense. While not consistently monologue-length, these turns could have been broken into shorter, more interactive steps.",
+                "points": 1,
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  9
+                ]
+              }
+            ],
+            "score": 4,
+            "max": 5,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Appropriate tone and support"
+          },
+          "3.3": {
+            "deductions": [],
+            "score": 3,
+            "max": 3,
+            "name": "Formatting and medium"
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 11
+        },
+        "bonus": {
+          "id": "3.4",
+          "explanation": "No bonus awarded; responses are generally clear and well-structured but the multi-question density in several turns prevents an 'unusually strong' communication quality designation.",
+          "score": 0,
+          "max": 3
+        }
+      }
+    },
+    "max_score": 42,
+    "total_base_score": 31,
+    "max_base_score": 33,
+    "total_bonus": 5,
+    "max_bonus": 9,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0
+    },
+    "overview": [
+      "The tutor delivers a strong Socratic performance throughout all 10 turns, never providing answers directly and consistently using targeted questions to guide the student through source selection, ACS table identification, B03002 line mapping, and Köppen classification methodology.",
+      "Off-topic deflections (music, movies, motivation) are handled cleanly and immediately, with the tutor returning to the assignment without extended engagement.",
+      "The main weaknesses are: (1) the tutor never explains why it uses Socratic questioning or withholds answers, missing an opportunity for meta-learning about ownership and study strategy; and (2) several turns are somewhat dense with multiple simultaneous sub-questions, which slightly reduces interactivity.",
+      "No double-penalization was applied: the multi-question density is penalized only under 3.1 (communication), not under 1.1 (pedagogy), since the questions remain genuinely Socratic rather than answer-giving.",
+      "Bonuses were awarded for the excellent Socratic sequence (1.4, 3 points) and skillful re-anchoring/efficient progression (2.3, 2 points)."
+    ],
+    "total_score": 36,
+    "judge_llm_calls": 1
+  }
+}
