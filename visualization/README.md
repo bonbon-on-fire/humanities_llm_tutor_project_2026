@@ -36,13 +36,13 @@ python -m pip install matplotlib
 
 Written to `visualization/outputs/`:
 
-1. `01_grades_per_transcript_gpt_vs_claude.png`
+1. `grades_per_transcript_gpt_vs_claude.png`
    - Line chart of transcript-level total scores
    - GPT and Claude shown in different colors
 
-2. `02_avg_grade_by_persona_per_exercise_gpt.png`
+2. `avg_grade_by_persona_per_exercise_gpt.png`
    - Average score per exercise for persona types (`chaotic`, `chitchat`, `clueless`)
    - One color per persona type
 
-3. `03_avg_grade_by_persona_per_exercise_claude.png`
+3. `avg_grade_by_persona_per_exercise_claude.png`
    - Same view as above for Claude scores

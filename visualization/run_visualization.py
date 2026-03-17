@@ -140,7 +140,7 @@ def _line_chart_grades_per_transcript(
     ax.grid(True, alpha=0.3)
     ax.legend()
     fig.tight_layout()
-    fig.savefig(out_dir / "01_grades_per_transcript_gpt_vs_claude.png", dpi=150)
+    fig.savefig(out_dir / "grades_per_transcript_gpt_vs_claude.png", dpi=150)
     plt.close(fig)
 
 
@@ -215,12 +215,12 @@ def main() -> int:
     _line_chart_avg_by_persona_per_exercise(
         rows=gpt_rows,
         model_label="GPT",
-        out_path=out_dir / "02_avg_grade_by_persona_per_exercise_gpt.png",
+        out_path=out_dir / "avg_grade_by_persona_per_exercise_gpt.png",
     )
     _line_chart_avg_by_persona_per_exercise(
         rows=claude_rows,
         model_label="Claude",
-        out_path=out_dir / "03_avg_grade_by_persona_per_exercise_claude.png",
+        out_path=out_dir / "avg_grade_by_persona_per_exercise_claude.png",
     )
     print(f"[Done] Wrote visualizations to: {out_dir}")
     return 0
