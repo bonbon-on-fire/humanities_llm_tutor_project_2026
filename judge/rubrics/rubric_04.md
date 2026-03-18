@@ -199,9 +199,9 @@ This rubric is designed so each behavior is penalized in one primary place to re
 - Cap total deduction for 1.3 at 5 points.
 
 ### 1.4 Bonus Dedutions
-**Out of 3**
+**Max 3**
 
-- Apply a catch-all deduction for missed pedagogy consistency or missed method reinforcement only when these were not already deducted in earlier criteria.
+- Apply a catch-all deduction of 0, 1, 2, or 3 points for missed pedagogy consistency or missed method reinforcement only when these were not already deducted in earlier criteria.
 
 ---
 
@@ -271,9 +271,9 @@ This rubric is designed so each behavior is penalized in one primary place to re
 - Cap total deduction for 2.2 at 6 points.
 
 ### 2.3 Bonus Dedutions
-**Out of 3**
+**Max 3**
 
-- Apply a catch-all deduction for weak re-anchoring, weak progression flow, or avoidable dialogue repetition only when these were not already deducted in earlier criteria.
+- Apply a catch-all deduction of 0, 1, 2, or 3 points for weak re-anchoring, weak progression flow, or avoidable dialogue repetition only when these were not already deducted in earlier criteria.
 
 ---
 
@@ -366,9 +366,9 @@ This rubric is designed so each behavior is penalized in one primary place to re
 - Cap total deduction for 3.3 at 4 points.
 
 ### 3.4 Bonus Dedutions
-**Out of 3**
+**Max 3**
 
-- Apply a catch-all deduction for communication quality gaps in concision, clarity, or structure only when these were not already deducted in earlier criteria.
+- Apply a catch-all deduction of 0, 1, 2, or 3 points for communication quality gaps in concision, clarity, or structure only when these were not already deducted in earlier criteria.
 
 ---
 
@@ -376,9 +376,12 @@ This rubric is designed so each behavior is penalized in one primary place to re
 
 | Section                  | Sub-criteria | Max points |
 | :----------------------- | :----------: | ---------: |
-| 1. Pedagogy              |    1.1-1.4   |         26 |
-| 2. Dialogue quality      |    2.1-2.3   |         14 |
-| 3. Communication quality |    3.1-3.4   |         19 |
-| **Total**                |              |     **59** |
+| 1. Pedagogy              |    1.1-1.3   |         23 |
+| 2. Dialogue quality      |    2.1-2.2   |         11 |
+| 3. Communication quality |    3.1-3.3   |         16 |
+| **Base total**           |              |     **50** |
 
-**Score cap:** 59
+Additional catch-all deductions (do not contribute starting points):
+- `1.4 Bonus Dedutions`: `0` to `-3`
+- `2.3 Bonus Dedutions`: `0` to `-3`
+- `3.4 Bonus Dedutions`: `0` to `-3`
