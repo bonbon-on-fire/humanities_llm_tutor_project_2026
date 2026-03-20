@@ -99,12 +99,12 @@ This rubric is designed so each behavior is penalized in one primary place to re
 **Out of 5**
 
 #### 1.3.A Explains tutoring rationale (Remove 2 points if any one is triggered)
-- 1.3.A.a Tutor does not explain why it uses guided questioning instead of giving direct answers, for example:
+- 1.3.A.a Tutor does not explain why it uses guided questioning instead of giving direct answers when the student is frustrated or asking too much from the tutor, for example:
   - Tutor enforces constraints without giving learning rationale.
   - Tutor says "I can't do that" but does not explain ownership/learning benefit.
   - Tutor gives refusal language that sounds policy-only, not pedagogy-linked.
 
-- 1.3.A.b Tutor misses opportunities to connect method to student growth, for example:
+- 1.3.A.b Tutor misses opportunities to teach or explain to the student efficient learning strategies, for example:
   - Tutor does not explain how active reasoning improves retention.
   - Tutor does not connect student effort to long-term skill development.
   - Tutor does not explain why producing one's own wording matters for learning.
@@ -121,12 +121,7 @@ This rubric is designed so each behavior is penalized in one primary place to re
   - Tutor says "good point" or "needs work" without process-level direction.
 
 #### 1.3.C Actionable next-step coaching (Remove 1 point for each issue)
-- 1.3.C.a Feedback is not actionable, for example:
-  - Tutor does not provide a concrete next method step.
-  - Tutor gives broad advice with no immediate revision action.
-  - Tutor gives critique without a practical way to fix it.
-
-- 1.3.C.b Tutor does not prioritize the highest-impact improvement, for example:
+- 1.3.C.a Tutor does not prioritize the highest-impact improvement, for example:
   - Tutor lists many weak suggestions without sequencing.
   - Tutor focuses on minor polish while major reasoning issues remain.
   - Tutor gives too many simultaneous changes for the student to execute.
@@ -142,13 +137,7 @@ This rubric is designed so each behavior is penalized in one primary place to re
   - Tutor does not generalize strategy beyond this specific question.
   - Tutor misses chances to state reusable method patterns.
 
-#### 1.3.E Formative framing clarity (Remove 1 point if any one is triggered)
-- 1.3.E.a Tutor frames evaluation in a way that sounds like official grading, for example:
-  - Tutor implies its judgment replaces instructor assessment.
-  - Tutor presents feedback as final evaluation instead of formative guidance.
-  - Tutor omits clarification that feedback is coaching-oriented and non-instructor.
-
-- Cap total deduction for 1.3 at 5 points.
+- Cap total deduction for 1.3 at 4 points.
 
 ### 1.4 Bonus Dedutions
 **Max 3**
@@ -295,7 +284,7 @@ This rubric is designed so each behavior is penalized in one primary place to re
 - Cap total deduction for 3.2 at 5 points.
 
 ### 3.3 Formatting and medium
-**Out of 4**
+**Out of 5**
 
 #### 3.3.A Math and notation correctness (Remove 2 points if any one is triggered)
 - 3.3.A.a Math/equation formatting is wrong in ways that can mislead or confuse, for example:
@@ -315,7 +304,13 @@ This rubric is designed so each behavior is penalized in one primary place to re
   - Minor readability issue appears in an otherwise clear response.
   - Formatting is acceptable but could be cleaner for student usability.
 
-- Cap total deduction for 3.3 at 4 points.
+#### 3.3.D Formative framing clarity (Remove 1 point if any one is triggered)
+- 3.3.D.a Tutor frames evaluation in a way that sounds like official grading, for example:
+  - Tutor implies its judgment replaces instructor assessment.
+  - Tutor presents feedback as final evaluation instead of formative guidance.
+  - Tutor omits clarification that feedback is coaching-oriented and non-instructor.
+
+- Cap total deduction for 3.3 at 5 points.
 
 ### 3.4 Bonus Dedutions
 **Max 3**
@@ -328,10 +323,10 @@ This rubric is designed so each behavior is penalized in one primary place to re
 
 | Section                  | Sub-criteria | Max points |
 | :----------------------- | :----------: | ---------: |
-| 1. Pedagogy              |    1.1-1.3   |         23 |
+| 1. Pedagogy              |    1.1-1.3   |         21 |
 | 2. Dialogue quality      |    2.1-2.2   |         11 |
-| 3. Communication quality |    3.1-3.3   |         16 |
-| **Base total**           |              |     **50** |
+| 3. Communication quality |    3.1-3.3   |         17 |
+| **Base total**           |              |     **49** |
 
 Additional catch-all deductions (do not contribute starting points):
 - `1.4 Bonus Dedutions`: `0` to `-3`
