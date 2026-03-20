@@ -42,11 +42,11 @@ _GPT_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
 # ---------------------------------------------------------------------------
 
 # Judge prompt/rubric versions.
-JUDGE_PROMPTS: list[str] = ["judge_03"]
+JUDGE_PROMPTS: list[str] = ["judge_04"]
 JUDGE_RUBRICS: list[str] = ["rubric_04"]
 
 # Which student personas to process (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["chaotic_01"]
+STUDENT_PERSONAS: list[str] = ["chaotic_01", "chaotic_02", "chaotic_03", "chaotic_04", "chaotic_05", "chaotic_06"]
 
 # Per persona type, list transcript stems from the *_raw folder.
 # Use stem format without ".json" (example: "transcript_01").

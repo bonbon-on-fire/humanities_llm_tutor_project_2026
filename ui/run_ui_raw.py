@@ -44,7 +44,7 @@ _RAW_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
 TUTOR_PROMPTS: list[str] = ["tutor_03"]
 
 # Which student personas to run (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["chaotic_01"]
+STUDENT_PERSONAS: list[str] = ["chaotic_02", "chaotic_03"]
 
 # Which course/exercise combinations to run.
 # Exercise numbers should be zero-padded strings like "01".
