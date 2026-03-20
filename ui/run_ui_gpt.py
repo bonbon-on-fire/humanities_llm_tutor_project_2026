@@ -188,6 +188,7 @@ def main() -> int:
                                 relative,
                                 prompt_name=prompt_name,
                                 rubric_name=rubric_name,
+                                output_name=source_stem,
                             )
                             print(
                                 "[GPT Judge] "
