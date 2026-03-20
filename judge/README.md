@@ -6,6 +6,10 @@ Current defaults in code:
 - prompt: `judge_03`
 - rubric: `rubric_04`
 
+Latest available prompt profile:
+- prompt: `judge_04`
+- rubric: `rubric_04`
+
 ## Structure
 
 ```
@@ -17,7 +21,8 @@ judge/
   prompts/
     judge_01.txt       — baseline prompt template
     judge_02.txt       — structured prompt template
-    judge_03.txt       — current prompt template (context + exercise aware)
+    judge_03.txt       — prior prompt template (context + exercise aware)
+    judge_04.txt       — current prompt template (context + exercise aware)
   rubrics/
     rubric_01.md       — original rubric profile
     rubric_02.md       — intermediate rubric profile
@@ -50,7 +55,7 @@ You can also choose specific judge prompt + rubric versions:
 ```python
 result = judge_transcript(
     "chaotic/transcript_01",
-    prompt_name="judge_03",
+    prompt_name="judge_04",
     rubric_name="rubric_04",
 )
 ```
