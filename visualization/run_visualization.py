@@ -140,6 +140,39 @@ def _pearson_correlation(x_values: list[float], y_values: list[float]) -> float 
     return sum_cov / denom
 
 
+def _average_ranks(values: list[float]) -> list[float]:
+    n = len(values)
+    indexed = sorted(enumerate(values), key=lambda iv: iv[1])
+    ranks = [0.0] * n
+
+    i = 0
+    while i < n:
+        j = i
+        v = indexed[i][1]
+        while j + 1 < n and indexed[j + 1][1] == v:
+            j += 1
+
+        # Average rank for ties, with 1-based rank indexing.
+        avg_rank = ((i + 1) + (j + 1)) / 2.0
+        for k in range(i, j + 1):
+            orig_idx = indexed[k][0]
+            ranks[orig_idx] = avg_rank
+        i = j + 1
+
+    return ranks
+
+
+def _spearman_correlation(x_values: list[float], y_values: list[float]) -> float | None:
+    if len(x_values) != len(y_values):
+        return None
+    if len(x_values) < 2:
+        return None
+
+    x_ranks = _average_ranks(x_values)
+    y_ranks = _average_ranks(y_values)
+    return _pearson_correlation(x_ranks, y_ranks)
+
+
 def _line_chart_grades_per_transcript(
     *,
     gpt_rows: list[GradeRow],
@@ -174,7 +207,8 @@ def _line_chart_grades_per_transcript(
             continue
         paired_gpt.append(gpt_row.total_score)
         paired_claude.append(claude_row.total_score)
-    corr = _pearson_correlation(paired_gpt, paired_claude)
+    pearson_corr = _pearson_correlation(paired_gpt, paired_claude)
+    spearman_corr = _spearman_correlation(paired_gpt, paired_claude)
 
     fig, ax = plt.subplots(figsize=(16, 7))
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.8, marker="o", markersize=3)
@@ -185,11 +219,17 @@ def _line_chart_grades_per_transcript(
     ax.grid(True, alpha=0.3)
     ax.legend()
 
-    corr_text = (
-        f"Pearson Correlation: {corr:.3f}"
-        if corr is not None
+    pearson_text = (
+        f"Pearson Correlation: {pearson_corr:.3f}"
+        if pearson_corr is not None
         else "Pearson Correlation: N/A"
     )
+    spearman_text = (
+        f"Spearman Correlation: {spearman_corr:.3f}"
+        if spearman_corr is not None
+        else "Spearman Correlation: N/A"
+    )
+    corr_text = f"{pearson_text}\n{spearman_text}"
     ax.text(
         0.01,
         0.98,

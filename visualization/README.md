@@ -43,7 +43,7 @@ Written to `visualization/outputs/`:
 1. `grades_per_transcript_gpt_vs_claude.png`
    - Line chart of transcript-level total scores
    - GPT and Claude shown in different colors
-   - Includes Pearson Correlation computed on matched GPT/Claude transcript pairs
+   - Includes Pearson Correlation and Spearman Correlation computed on matched GPT/Claude transcript pairs
 
 ## Notes
 
