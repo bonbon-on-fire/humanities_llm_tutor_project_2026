@@ -8,6 +8,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -113,6 +114,32 @@ def _safe_import_matplotlib():
     return plt
 
 
+def _pearson_correlation(x_values: list[float], y_values: list[float]) -> float | None:
+    if len(x_values) != len(y_values):
+        return None
+    if len(x_values) < 2:
+        return None
+
+    n = len(x_values)
+    mean_x = sum(x_values) / n
+    mean_y = sum(y_values) / n
+
+    sum_cov = 0.0
+    sum_var_x = 0.0
+    sum_var_y = 0.0
+    for x, y in zip(x_values, y_values):
+        dx = x - mean_x
+        dy = y - mean_y
+        sum_cov += dx * dy
+        sum_var_x += dx * dx
+        sum_var_y += dy * dy
+
+    denom = math.sqrt(sum_var_x * sum_var_y)
+    if denom == 0:
+        return None
+    return sum_cov / denom
+
+
 def _line_chart_grades_per_transcript(
     *,
     gpt_rows: list[GradeRow],
@@ -135,6 +162,20 @@ def _line_chart_grades_per_transcript(
     y_gpt = [gpt_by_key[k].total_score if k in gpt_by_key else float("nan") for k in all_keys]
     y_claude = [claude_by_key[k].total_score if k in claude_by_key else float("nan") for k in all_keys]
 
+    # Correlation uses only transcript keys that exist in both providers with finite scores.
+    paired_gpt: list[float] = []
+    paired_claude: list[float] = []
+    for key in all_keys:
+        gpt_row = gpt_by_key.get(key)
+        claude_row = claude_by_key.get(key)
+        if gpt_row is None or claude_row is None:
+            continue
+        if not math.isfinite(gpt_row.total_score) or not math.isfinite(claude_row.total_score):
+            continue
+        paired_gpt.append(gpt_row.total_score)
+        paired_claude.append(claude_row.total_score)
+    corr = _pearson_correlation(paired_gpt, paired_claude)
+
     fig, ax = plt.subplots(figsize=(16, 7))
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.8, marker="o", markersize=3)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.8, marker="o", markersize=3)
@@ -143,6 +184,23 @@ def _line_chart_grades_per_transcript(
     ax.set_ylabel("Total Score")
     ax.grid(True, alpha=0.3)
     ax.legend()
+
+    corr_text = (
+        f"Pearson Correlation: {corr:.3f}"
+        if corr is not None
+        else "Pearson Correlation: N/A"
+    )
+    ax.text(
+        0.01,
+        0.98,
+        corr_text,
+        transform=ax.transAxes,
+        ha="left",
+        va="top",
+        fontsize=10,
+        bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.8, "edgecolor": "#cccccc"},
+    )
+
     fig.tight_layout()
     fig.savefig(out_dir / "grades_per_transcript_gpt_vs_claude.png", dpi=150)
     plt.close(fig)
