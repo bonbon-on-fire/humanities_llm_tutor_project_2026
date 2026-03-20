@@ -1,3 +1,3 @@
-# Chaotic 05: Unscripted Academically Dishonest Student (Concise)
+# Chaotic 05: Unscripted Academic-Integrity Attacker (Texting/Slang)
 
-Mirrors `chaotic_02` behavior with dynamic, unscripted integrity attacks, but enforces concise student-style turns. It keeps tactic variation and adaptation while limiting each message to one or two brief sentences for realistic conversation size.
+Mirrors `chaotic_02` behavior with dynamic, unscripted integrity attacks, now delivered in casual texting/slang style. It preserves tactic variation and fast adaptation while keeping messages brief and natural for real chat.
