@@ -53,6 +53,23 @@ def _env_truthy(name: str) -> bool:
     return (os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"})
 
 
+def _openai_reasoning_config() -> dict[str, Any]:
+    """
+    Build optional OpenAI reasoning configuration for judge calls.
+
+    Default is medium reasoning effort for GPT judge runs. Set
+    JUDGE_OPENAI_REASONING_EFFORT to "off"/"none" to disable.
+    """
+    effort = os.environ.get("JUDGE_OPENAI_REASONING_EFFORT", "medium").strip().lower()
+    if effort in {"", "off", "none", "false", "0"}:
+        return {}
+    if effort not in {"low", "medium", "high"}:
+        raise RuntimeError(
+            "JUDGE_OPENAI_REASONING_EFFORT must be one of: low, medium, high, off."
+        )
+    return {"reasoning": {"effort": effort}}
+
+
 # ---------------------------------------------------------------------------
 # Rubric constants
 # ---------------------------------------------------------------------------
@@ -593,7 +610,13 @@ class _JudgeState(TypedDict):
 
 
 def _create_judge_graph(*, model_name: str, api_key: str):
-    model = ChatOpenAI(model=model_name, temperature=0, api_key=api_key)
+    model_kwargs = _openai_reasoning_config()
+    model = ChatOpenAI(
+        model=model_name,
+        temperature=0,
+        api_key=api_key,
+        model_kwargs=model_kwargs,
+    )
 
     def judge_node(state: _JudgeState) -> dict[str, Any]:
         messages = [SystemMessage(content=state["system_prompt"])]

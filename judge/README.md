@@ -95,6 +95,7 @@ Maximum total score: **47**.
 | -------- | -------- | ----------- |
 | `OPENAI_API_KEY` | Yes | OpenAI API key. Fails immediately if not set. |
 | `OPENAI_MODEL` | No | Model name (default: `gpt-5.2`). |
+| `JUDGE_OPENAI_REASONING_EFFORT` | No | OpenAI reasoning effort for GPT judge: `low`, `medium`, `high`, or `off`. Default: `medium`. |
 | `JUDGE_INCLUDE_TIMESTAMP` | No | If truthy (`1/true/yes/on`), include `timestamp_utc` in grade output. Default off for deterministic artifacts. |
 
 ## Claude Judge Module
