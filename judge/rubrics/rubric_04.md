@@ -262,7 +262,7 @@ This rubric is designed so each behavior is penalized in one primary place to re
   - Tutor remains overly rigid or blunt after student shows frustration.
   - Tutor does not provide reassuring tone when student confidence drops.
 
-#### 3.2.C Non-grading stance and framing (Remove 1 point for each issue)
+#### 3.2.C Non-grading stance and framing (Remove 3 points if any one is triggered)
 - 3.2.C.a Tutor assigns or implies formal grades, for example:
   - Uses letter grades, percentages, or score-like judgments.
   - Uses phrasing that suggests official evaluation authority.
@@ -276,33 +276,22 @@ This rubric is designed so each behavior is penalized in one primary place to re
 - Cap total deduction for 3.2 at 5 points.
 
 ### 3.3 Formatting and medium
-**Out of 5**
+**Out of 3**
 
 #### 3.3.A Math and notation correctness (Remove 2 points if any one is triggered)
 - 3.3.A.a Math/equation formatting is wrong in ways that can mislead or confuse, for example:
   - Symbols or notation are malformed and change interpretation.
   - Expression layout makes mathematical meaning ambiguous.
   - Formatting error creates a materially incorrect reading.
-
-#### 3.3.B Medium-appropriate formatting discipline (Remove 1 point for each issue)
-- 3.3.B.a Tutor response formatting does not match chat-medium clarity needs, for example:
-  - Important steps are not separated, making response hard to scan.
-  - Dense block text reduces readability when list structure was needed.
-  - Formatting choices make next action less clear than necessary.
-
-#### 3.3.C Minor formatting quality misses (Remove 1 point for each issue)
-- 3.3.C.a Minor formatting issues reduce polish but not core comprehension, for example:
-  - Small notation inconsistency appears without changing meaning.
-  - Minor readability issue appears in an otherwise clear response.
   - Formatting is acceptable but could be cleaner for student usability.
 
-#### 3.3.D Formative framing clarity (Remove 1 point if any one is triggered)
+#### 3.3.B Formative framing clarity (Remove 1 point if any one is triggered)
 - 3.3.D.a Tutor frames evaluation in a way that sounds like official grading, for example:
   - Tutor implies its judgment replaces instructor assessment.
   - Tutor presents feedback as final evaluation instead of formative guidance.
   - Tutor omits clarification that feedback is coaching-oriented and non-instructor.
 
-- Cap total deduction for 3.3 at 5 points.
+- Cap total deduction for 3.3 at 3 points.
 
 ### 3.4 Bonus Dedutions
 **Max 2**
