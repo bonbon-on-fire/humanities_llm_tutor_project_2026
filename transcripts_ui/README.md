@@ -1,6 +1,6 @@
 # Transcripts UI
 
-Flask app to browse judged tutor transcripts and compare GPT vs Claude grades.
+Flask app to browse raw tutor transcripts and compare GPT vs Claude grades.
 
 ## Run
 
@@ -22,7 +22,12 @@ Then open [http://127.0.0.1:5001](http://127.0.0.1:5001).
 
 - By default, the app reads from `transcripts/` in repo root.
 - Override with env var `TRANSCRIPTS_DIR` if needed.
-- Expected judged inputs (raw is intentionally ignored):
+- Expected transcript inputs:
+  - Raw source transcripts:
+    - `transcripts/chaotic/chaotic_raw/*.json`
+    - `transcripts/chitchat/chitchat_raw/*.json`
+    - `transcripts/clueless/clueless_raw/*.json`
+  - Judged counterparts:
   - `transcripts/chaotic/chaotic_gpt/*.json`
   - `transcripts/chaotic/chaotic_claude/*.json`
   - `transcripts/chitchat/chitchat_gpt/*.json`
@@ -30,7 +35,13 @@ Then open [http://127.0.0.1:5001](http://127.0.0.1:5001).
   - `transcripts/clueless/clueless_gpt/*.json`
   - `transcripts/clueless/clueless_claude/*.json`
 
-The app pairs GPT and Claude files by full transcript stem (for example `transcript_09__judge_03__rubric_04`).
+The app is raw-first:
+
+- Dashboard rows are built from `*_raw` files.
+- For each raw transcript (e.g. `transcript_09`), GPT/Claude counterparts are matched by stem:
+  - exact: `transcript_09.json`
+  - or judged suffix form: `transcript_09__<judge_prompt>__<judge_rubric>.json`
+- If a counterpart is missing, ambiguous, unreadable, missing `grade`, or does not exactly match the raw transcript content (except judge fields), the evaluator section displays an explicit error message.
 
 ## Features
 

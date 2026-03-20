@@ -41,9 +41,10 @@ def _discover_persona_bases() -> list[str]:
     personas: list[str] = []
     for persona_dir in sorted(p for p in TRANSCRIPTS_DIR.iterdir() if p.is_dir()):
         persona = persona_dir.name
+        raw_dir = persona_dir / f"{persona}_raw"
         gpt_dir = persona_dir / f"{persona}_gpt"
         claude_dir = persona_dir / f"{persona}_claude"
-        if gpt_dir.is_dir() or claude_dir.is_dir():
+        if raw_dir.is_dir() or gpt_dir.is_dir() or claude_dir.is_dir():
             personas.append(persona)
     return personas
 
@@ -104,31 +105,115 @@ def _transcript_path_for(*, persona: str, provider: str, stem: str) -> Path:
     return TRANSCRIPTS_DIR / persona / f"{persona}_{provider}" / f"{stem}.json"
 
 
+def _counterpart_candidates(*, persona: str, provider: str, raw_stem: str) -> list[Path]:
+    provider_dir = TRANSCRIPTS_DIR / persona / f"{persona}_{provider}"
+    if not provider_dir.is_dir():
+        return []
+
+    out: list[Path] = []
+    for path in provider_dir.glob("*.json"):
+        stem = path.stem
+        if stem == raw_stem or stem.startswith(f"{raw_stem}__"):
+            out.append(path)
+    return sorted(out, key=lambda p: p.name)
+
+
+def _resolve_counterpart(*, persona: str, provider: str, raw_stem: str) -> tuple[Path | None, str | None]:
+    candidates = _counterpart_candidates(persona=persona, provider=provider, raw_stem=raw_stem)
+    if not candidates:
+        return None, f"No {provider.upper()} counterpart found for `{raw_stem}`."
+    if len(candidates) > 1:
+        names = ", ".join(p.stem for p in candidates[:3])
+        suffix = "..." if len(candidates) > 3 else ""
+        return None, f"Multiple {provider.upper()} counterparts found for `{raw_stem}`: {names}{suffix}"
+    return candidates[0], None
+
+
+def _normalized_transcript_payload(data: dict) -> dict:
+    return {
+        k: v
+        for k, v in data.items()
+        if k not in ("grade", "judge_prompt", "judge_rubric")
+    }
+
+
+def _check_transcript_match(*, raw_data: dict, judged_data: dict, provider: str) -> str | None:
+    raw_payload = _normalized_transcript_payload(raw_data)
+    judged_payload = _normalized_transcript_payload(judged_data)
+    if raw_payload != judged_payload:
+        return (
+            f"{provider.upper()} counterpart transcript content mismatch. "
+            "Expected exact copy of raw transcript before grading."
+        )
+    return None
+
+
+def _raw_stems_for_persona(persona: str) -> list[str]:
+    raw_dir = TRANSCRIPTS_DIR / persona / f"{persona}_raw"
+    return sorted(_json_stems(raw_dir), key=_stem_sort_key)
+
+
+def _counterpart_result(*, persona: str, provider: str, raw_stem: str, raw_data: dict) -> tuple[dict | None, str | None]:
+    counterpart_path, resolve_error = _resolve_counterpart(
+        persona=persona,
+        provider=provider,
+        raw_stem=raw_stem,
+    )
+    if resolve_error:
+        return None, resolve_error
+    if counterpart_path is None:
+        return None, f"{provider.upper()} counterpart is empty."
+
+    judged_data = _load_json(counterpart_path)
+    if not judged_data:
+        return None, f"{provider.upper()} counterpart file exists but could not be read."
+
+    match_error = _check_transcript_match(
+        raw_data=raw_data,
+        judged_data=judged_data,
+        provider=provider,
+    )
+    if match_error:
+        return None, match_error
+
+    grade = _grade_summary(judged_data)
+    if not grade:
+        return None, f"{provider.upper()} counterpart exists but grade is missing."
+
+    return grade, None
+
+
 def list_transcripts() -> list[dict]:
     out: list[dict] = []
     for persona in _discover_persona_bases():
-        gpt_dir = TRANSCRIPTS_DIR / persona / f"{persona}_gpt"
-        claude_dir = TRANSCRIPTS_DIR / persona / f"{persona}_claude"
-        stems = sorted(_json_stems(gpt_dir) | _json_stems(claude_dir), key=_stem_sort_key)
+        for raw_stem in _raw_stems_for_persona(persona):
+            raw_data = _load_json(_transcript_path_for(persona=persona, provider="raw", stem=raw_stem))
+            if not raw_data:
+                continue
 
-        for stem in stems:
-            gpt_data = _load_json(_transcript_path_for(persona=persona, provider="gpt", stem=stem))
-            claude_data = _load_json(_transcript_path_for(persona=persona, provider="claude", stem=stem))
-            gpt_grade = _grade_summary(gpt_data)
-            claude_grade = _grade_summary(claude_data)
-
-            meta_source = gpt_data or claude_data or {}
-            meta = {k: v for k, v in meta_source.items() if k not in ("exchanges", "grade")}
+            gpt_grade, gpt_error = _counterpart_result(
+                persona=persona,
+                provider="gpt",
+                raw_stem=raw_stem,
+                raw_data=raw_data,
+            )
+            claude_grade, claude_error = _counterpart_result(
+                persona=persona,
+                provider="claude",
+                raw_stem=raw_stem,
+                raw_data=raw_data,
+            )
+            meta = {k: v for k, v in raw_data.items() if k not in ("exchanges", "grade")}
             out.append(
                 {
                     "persona": persona,
-                    # Route key for exact judged transcript stem
-                    "number": stem,
-                    # Human-friendly transcript number (if available)
-                    "display_number": _extract_display_number(stem),
+                    "number": raw_stem,
+                    "display_number": _extract_display_number(raw_stem),
                     "metadata": meta,
                     "gpt_grade": gpt_grade,
                     "claude_grade": claude_grade,
+                    "gpt_error": gpt_error,
+                    "claude_error": claude_error,
                     "gpt_score": gpt_grade["total_score"] if gpt_grade else None,
                     "gpt_max": gpt_grade["max_score"] if gpt_grade else None,
                     "claude_score": claude_grade["total_score"] if claude_grade else None,
@@ -153,21 +238,34 @@ def api_get_transcript(persona: str, num: str):
     if persona not in _discover_persona_bases():
         return jsonify({"error": "Unknown persona"}), 404
 
-    gpt_data = _load_json(_transcript_path_for(persona=persona, provider="gpt", stem=num))
-    claude_data = _load_json(_transcript_path_for(persona=persona, provider="claude", stem=num))
-    if not gpt_data and not claude_data:
+    raw_data = _load_json(_transcript_path_for(persona=persona, provider="raw", stem=num))
+    if not raw_data:
         return jsonify({"error": "Transcript not found"}), 404
 
-    primary = gpt_data or claude_data or {}
+    gpt_grade, gpt_error = _counterpart_result(
+        persona=persona,
+        provider="gpt",
+        raw_stem=num,
+        raw_data=raw_data,
+    )
+    claude_grade, claude_error = _counterpart_result(
+        persona=persona,
+        provider="claude",
+        raw_stem=num,
+        raw_data=raw_data,
+    )
+
     return jsonify(
         {
             "persona": persona,
             "number": num,
             "display_number": _extract_display_number(num),
-            "metadata": {k: v for k, v in primary.items() if k not in ("exchanges", "grade")},
-            "exchanges": (gpt_data or claude_data or {}).get("exchanges", []),
-            "grade_gpt": _grade_summary(gpt_data),
-            "grade_claude": _grade_summary(claude_data),
+            "metadata": {k: v for k, v in raw_data.items() if k not in ("exchanges", "grade")},
+            "exchanges": raw_data.get("exchanges", []),
+            "grade_gpt": gpt_grade,
+            "grade_claude": claude_grade,
+            "gpt_error": gpt_error,
+            "claude_error": claude_error,
         }
     )
 

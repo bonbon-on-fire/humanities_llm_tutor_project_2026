@@ -143,9 +143,10 @@
     return div.innerHTML;
   }
 
-  function renderGradeReport(container, grade, evaluatorLabel, cssClass) {
+  function renderGradeReport(container, grade, evaluatorLabel, cssClass, errorMessage) {
     if (!grade) {
-      container.innerHTML = `<p class="text-muted">No ${evaluatorLabel} grade available.</p>`;
+      const message = errorMessage || `No ${evaluatorLabel} grade available.`;
+      container.innerHTML = `<p class="error">${escapeHtml(message)}</p>`;
       return;
     }
     const model = grade.model ? grade.model.provider + " / " + grade.model.model : "";
@@ -235,8 +236,8 @@
 
     const gptEl = document.createElement("div");
     const claudeEl = document.createElement("div");
-    renderGradeReport(gptEl, data.grade_gpt, "GPT evaluator", "gpt");
-    renderGradeReport(claudeEl, data.grade_claude, "Claude evaluator", "claude");
+    renderGradeReport(gptEl, data.grade_gpt, "GPT evaluator", "gpt", data.gpt_error);
+    renderGradeReport(claudeEl, data.grade_claude, "Claude evaluator", "claude", data.claude_error);
 
     const titleId = data.display_number || data.number;
     document.getElementById("transcript-title").textContent = `${data.persona} / ${titleId}`;
@@ -255,7 +256,7 @@
       const list = await r.json();
       if (!r.ok) throw new Error(list.error || "Failed to load");
       if (list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" class="error">No judged transcripts found. Run `ui.run_ui_gpt` and `ui.run_ui_claude` first.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" class="error">No raw transcripts found. Run `ui.run_ui_raw` first.</td></tr>';
         return;
       }
       renderDashboard(list);

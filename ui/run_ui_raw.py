@@ -35,6 +35,7 @@ _RAW_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
     "chitchat": "chitchat_raw",
     "clueless": "clueless_raw",
 }
+_TUTOR_CALL_MAX_RETRIES = 2
 
 # ---------------------------------------------------------------------------
 # Batch config (edit these directly)
@@ -44,7 +45,7 @@ _RAW_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
 TUTOR_PROMPTS: list[str] = ["tutor_03"]
 
 # Which student personas to run (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["chitchat_01", "chitchat_02", "chitchat_03", "chitchat_04", "chitchat_05", "chitchat_06"]
+STUDENT_PERSONAS: list[str] = ["chitchat_02", "chitchat_03", "chitchat_04", "chitchat_05", "chitchat_06"]
 
 # Which course/exercise combinations to run.
 # Exercise numbers should be zero-padded strings like "01".
@@ -188,6 +189,14 @@ def _validate_manual_config() -> None:
             raise ValueError(f"Unknown exercise '{exercise_num}' for course '{course}'")
 
 
+def _is_retryable_openai_payload_error(error: Exception) -> bool:
+    text = str(error).lower()
+    return (
+        "badrequesterror" in text
+        and "could not parse the json body" in text
+    )
+
+
 def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str, object]]:
     system_prompt = load_system_prompt(
         config.tutor_prompt,
@@ -214,7 +223,32 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
         )
 
         tutor_messages.append(HumanMessage(content=student_text))
-        tutor_messages, tutor_text = get_tutor_reply(tutor_messages, graph=tutor_graph)
+        tutor_error: Exception | None = None
+        tutor_text = ""
+        for attempt in range(1, _TUTOR_CALL_MAX_RETRIES + 2):
+            try:
+                tutor_messages, tutor_text = get_tutor_reply(tutor_messages, graph=tutor_graph)
+                tutor_error = None
+                break
+            except Exception as error:  # noqa: BLE001
+                tutor_error = error
+                if _is_retryable_openai_payload_error(error) and attempt <= _TUTOR_CALL_MAX_RETRIES:
+                    # Rebuild graph before retrying in case model/client state is corrupted.
+                    tutor_graph = create_tutor_graph(system_prompt)
+                    print(
+                        "[Warn] transient tutor API payload error; "
+                        f"retrying turn={turn_index + 1} attempt={attempt}/{_TUTOR_CALL_MAX_RETRIES + 1}"
+                    )
+                    continue
+                break
+        if tutor_error is not None:
+            raise RuntimeError(
+                "Tutor call failed "
+                f"(turn={turn_index + 1}, persona={config.student_persona}, "
+                f"course={config.course}, exercise={config.exercise_number}). "
+                f"Last error: {tutor_error}"
+            ) from tutor_error
+
         tutor_reasoning = ""
         last_msg = tutor_messages[-1] if tutor_messages else None
         if isinstance(last_msg, AIMessage):
@@ -301,6 +335,7 @@ def main() -> int:
         return 1
 
     try:
+        failed_runs = 0
         for config, trial in _iter_runs():
             assignment_text = _build_assignment_text(
                 config.course,
@@ -308,7 +343,20 @@ def main() -> int:
                 config.turn_size,
             )
             context_text = _load_course_context(config.course)
-            exchanges = _run_conversation(config, assignment_text)
+            try:
+                exchanges = _run_conversation(config, assignment_text)
+            except RuntimeError as error:
+                failed_runs += 1
+                print(
+                    "[Run Failed] "
+                    f"trial={trial}/{TRIALS} "
+                    f"tutor={config.tutor_prompt} "
+                    f"persona={config.student_persona} "
+                    f"course={config.course} "
+                    f"exercise={config.exercise_number} "
+                    f"reason={error}"
+                )
+                continue
             _, transcript_path = _save_raw_transcript(
                 config,
                 context_text,
@@ -325,6 +373,8 @@ def main() -> int:
                 f"turns={config.turn_size} "
                 f"saved={transcript_path.relative_to(_REPO_ROOT)}"
             )
+        if failed_runs:
+            print(f"[Raw Batch] completed with {failed_runs} failed run(s).")
     except KeyboardInterrupt:
         print("\nRaw batch interrupted.")
         return 130
