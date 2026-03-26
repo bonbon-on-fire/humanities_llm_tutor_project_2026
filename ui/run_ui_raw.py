@@ -42,10 +42,10 @@ _TUTOR_CALL_MAX_RETRIES = 2
 # ---------------------------------------------------------------------------
 
 # Which tutor prompts to run (from tutor/prompts/*.txt, without extension).
-TUTOR_PROMPTS: list[str] = ["tutor_04"]
+TUTOR_PROMPTS: list[str] = ["tutor_03"]
 
 # Which student personas to run (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["chitchat_01", "chitchat_02", "chitchat_03"]
+STUDENT_PERSONAS: list[str] = ["chaotic_01", "chaotic_02", "chaotic_03", "chaotic_04", "chaotic_05", "chaotic_06"]
 
 # Which course/exercise combinations to run.
 # Exercise numbers should be zero-padded strings like "01".

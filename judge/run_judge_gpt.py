@@ -527,11 +527,11 @@ def _build_expected_schema(*, rubric_name: str) -> dict[str, Any]:
                 "base": {"score": 10, "max": 10},
             },
         },
-        "total_base_score": 42,
+        "total_base_score": 46,
         "max_base_score": 46,
         "max_score": 46,
         "overview": ["Brief evidence-based summary."],
-        "total_score": 42,
+        "total_score": 46,
         "judge_llm_calls": 1,
     }
 
