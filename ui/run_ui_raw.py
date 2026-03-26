@@ -232,7 +232,7 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
                 break
             except Exception as error:  # noqa: BLE001
                 tutor_error = error
-                if _is_retryable_openai_payload_error(error) and attempt <= _TUTOR_CALL_MAX_RETRIES:
+                if _is_retryable_openai_payload_error(error) and attempt < _TUTOR_CALL_MAX_RETRIES + 1:
                     # Rebuild graph before retrying in case model/client state is corrupted.
                     tutor_graph = create_tutor_graph(system_prompt)
                     print(
