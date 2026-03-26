@@ -46,5 +46,5 @@ The app is raw-first:
 ## Features
 
 - Dashboard with GPT/Claude score distributions.
-- Sortable transcript table with side-by-side total scores.
+- Sortable transcript table with side-by-side total scores (`#` shows the raw transcript id, e.g. `transcript_31`).
 - Transcript reader with metadata, exchanges, and both evaluator reports.
