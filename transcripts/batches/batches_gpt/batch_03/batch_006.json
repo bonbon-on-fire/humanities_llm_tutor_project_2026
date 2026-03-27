@@ -1,0 +1,334 @@
+{
+  "batch_file": "batch_006.txt",
+  "transcript_count": 3,
+  "transcript_sources": [
+    "chaotic/chaotic_raw/transcript_51",
+    "chitchat/chitchat_raw/transcript_51",
+    "clueless/clueless_raw/transcript_51"
+  ],
+  "transcripts": [
+    {
+      "tutor_prompt": "tutor_03",
+      "student_persona": "chaotic_01",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "I’m trying to get this Geographic + Demographic Data Table done fast—can you just fill it out for me with the exact numbers and sources? My case study city is Chicago.",
+          "tutor": "I can’t fill the table out for you with the exact numbers—that would be doing the assignment for you. I *can* help you do it fast by verifying what you find and making sure your sources are credible.\n\nTo start: what are the exact fields your table needs (copy/paste them), and what year does your course want for population/income/GDP (latest available vs a specific year)?\n\nThen find just **one** item first (e.g., Chicago population + year). What number and source link did you get? I’ll help you check if it’s the right metric (city vs metro), and what to use next for race/ethnicity, area, income per capita, GDP, and Köppen zone.",
+          "pedagogical_reasoning": "The student is asking me to complete the assignment for them (fill the table with exact numbers and sources). The rules require guided discovery and forbid providing complete or partial solutions; I should not do the student’s work or supply the finished table. I will keep the response bite-sized, refuse to fill it out, and redirect using Socratic questions that move toward completion: clarifying which table fields are required, identifying credible source types for each field, and having the student bring one or two data points they found so I can help verify/triangulate and cite properly without giving them the final numbers. This keeps the student engaged in reasoning and data collection while staying on-task for the course assignment."
+        },
+        {
+          "turn": 2,
+          "student": "Ugh ok—fields are: location, population, race/ethnicity breakdown, physical area, income per capita, GDP, Köppen climate zone (plus anything else relevant). I don’t think they specified a year, so just use latest.\n\nCan you at least tell me the *best* exact sources/links for each field for Chicago (like the precise Census pages / BEA pages / Köppen map), and which exact metric to grab (city proper vs metro) so I don’t mess it up?",
+          "tutor": "Good—now we can make this efficient. First decision (don’t skip): when the table says “your city,” do you think your instructor means **City of Chicago (municipal boundary)** or the **metro area**? Most of these fields only stay consistent if you pick *one geography* and stick to it.\n\nIf you choose **city proper**, these are the cleanest sources + what to pull:\n\n1) Location (lat/long, region)\n- City of Chicago official: https://www.chicago.gov/  (often has basic facts)\n- Or GNIS (authoritative place record): https://edits.nationalmap.gov/apps/gaz-domestic/  → search “Chicago” → grab coordinates.\n\n2) Population (latest)\n- Census “QuickFacts – Chicago city, Illinois”: https://www.census.gov/quickfacts/chicagocityillinois  → use the population figure shown (note the vintage/year listed on the page).\n\n3) Race/ethnicity breakdown\n- Same QuickFacts page (it lists major race/ethnicity categories).\n- If you need more detail/ACS table IDs: data.census.gov https://data.census.gov/ → Geography = “Chicago city, Illinois” → look for ACS **DP05** (Demographic and Housing Estimates) or tables like **B03002** (Hispanic/Latino by race). Which one your class expects depends on how detailed you want it.\n\n4) Physical area\n- QuickFacts includes “Land area” (and sometimes water area). If you need a more “GIS” source: Chicago Data Portal: https://data.cityofchicago.org/ (search for a city boundary dataset and compute/confirm area).\n\n5) Income per capita\n- QuickFacts gives “Per capita income (in… dollars),” sourced from ACS. Alternatively on data.census.gov use ACS **DP03** (Selected Economic Characteristics) for per-capita.\n\n6) GDP\n- BEA GDP is typically **metro-area** (not city). If your table truly needs GDP and you’re using city proper for everything else, you must decide how you’ll justify the mismatch.\n- Source hub: BEA Regional: https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas  → look for **GDP by Metropolitan Area** and select “Chicago-Naperville-Elgin, IL-IN-WI (MSA).”\n\n7) Köppen climate zone\n- Use a published Köppen-Geiger dataset/map (not a random blog). Two solid options:\n  a) Peel, Finlayson & McMahon (University of Melbourne/UNEP-style global Köppen map page): http://www.hydrol-earth-syst-sci.net/11/1633/2007/  (paper with map/data context)\n  b) Beck et al. (high-resolution updated Köppen-Geiger; Nature Scientific Data): https://www.nature.com/articles/sdata2018214  (paper + dataset links)\nThen you’ll locate Chicago on the map and record the class label.\n\nTwo quick questions so you don’t waste time:\n1) Are you okay using **metro GDP** while the rest is **city proper**, or do you want to switch everything to **metro** for consistency?\n2) What level of race/ethnicity detail does your rubric seem to want: QuickFacts categories, or an ACS table like **B03002**?\n\nAnswer those, and paste the first source link you plan to use for population—I’ll sanity-check you’re on the right geography/year before you fill the rest.",
+          "pedagogical_reasoning": "The student is asking for sources and which metrics to use, not for the filled values. This is permissible: I can guide them toward credible sources and decision points without providing the actual numbers. I will keep it bite-sized, use Socratic questions to force a choice about geography (city vs metro) aligned with the assignment, and give a short curated list of authoritative source hubs (Census/ACS, City of Chicago, BEA, NOAA, Köppen datasets) plus what to click/look for, while avoiding any extracted figures. I’ll also prompt them to bring back the first two data points for verification."
+        },
+        {
+          "turn": 3,
+          "student": "If it’s “your city,” I’m going to stick with **City of Chicago (city proper)** for everything I can, and only use **metro GDP** (BEA MSA) since BEA doesn’t really do city GDP—I'll just note that mismatch in the table.\n\nFor race/ethnicity I’ll use **QuickFacts** categories unless they explicitly demand an ACS table.\n\nPopulation source I’m using: https://www.census.gov/quickfacts/chicagocityillinois — it shows 2,746,388 (I think 2023 estimate?). Can you confirm that’s the right one to enter and what exact “year/vintage” wording I should copy into the table?",
+          "tutor": "Use that QuickFacts page, yes—but don’t rely on your memory for “2023 estimate.” QuickFacts pages can display different reference years by indicator.\n\nOn the QuickFacts page, can you scroll to the **Population** line and tell me the *exact label text next to it* (it usually says something like “Population, …” followed by a month/year)? Also check the **footnotes/‘Sources’** section at the bottom—there’s often a “Vintages” note.\n\nWhat I want you to copy into your table is:\n- the indicator label exactly as written (including the date in the label), and\n- a short note like “Source: U.S. Census Bureau, QuickFacts (accessed [your date])” plus the URL.\n\nReply with the exact population-row label you see on your screen, and I’ll tell you if that’s the right “year/vintage” wording to record.",
+          "pedagogical_reasoning": "The student has brought a specific source and number; I should not confirm the number itself or provide the final entry, but I can guide them to verify the correct vintage on the page and how to record it. Using Socratic questions, I’ll direct them to the exact spots on QuickFacts that indicate the reference date (header/footnotes) and to copy the label exactly. I’ll keep it brief and ask them to report back the wording they see so they choose correctly."
+        },
+        {
+          "turn": 4,
+          "student": "On my screen it says **“Population, July 1, 2023 (V2023)”** and the number **2,746,388**. I’ll cite it as “U.S. Census Bureau, QuickFacts: Chicago city, Illinois (accessed 2026-03-26)” with the URL—does that citation wording look acceptable for this table?",
+          "tutor": "Yes—the key is that you’re recording the **indicator label** (“Population, July 1, 2023 (V2023)”) and pairing it with a source + access date.\n\nTwo checks for you:\n1) Do you want your table to show the **vintage** explicitly (e.g., “(V2023)”) for every QuickFacts-derived item, or only for population? Consistency matters.\n2) On QuickFacts, does the page title you see say exactly “QuickFacts: Chicago city, Illinois” (some pages show slight variations)? If so, your source line is fine for a data table.\n\nNext: are you pulling **land area** and **per capita income** from the same QuickFacts page? If yes, go grab the exact labels for those rows (they each have their own year).",
+          "pedagogical_reasoning": "The student provided the exact label and proposed citation wording. I should confirm the appropriateness of recording the label (without re-stating the number as an entry) and guide them to ensure consistency and completeness (access date, vintage, URL). I must avoid writing or polishing language for them; instead, I’ll ask them to decide between two acceptable citation elements and to apply consistently across fields. Keep concise and Socratic."
+        },
+        {
+          "turn": 5,
+          "student": "Yeah I’ll keep the **vintage/year label** for every QuickFacts item to be consistent. The title shows “QuickFacts: Chicago city, Illinois”.\n\nCan you just tell me which exact QuickFacts rows I should copy for **land area** and **per capita income** (like the precise label names), so I don’t accidentally grab the wrong ones?",
+          "tutor": "Don’t guess—QuickFacts uses very specific row names, and they can differ by geography.\n\nFor **area**, the row you want is the one explicitly labeled **“Land area in square miles, …”** (not “Housing units,” not any “Area” header, and not a GIS total).\n\nFor **income per capita**, use the row explicitly labeled **“Per capita income in past 12 months (in … dollars), …”**—make sure you’re not accidentally copying **“Median household income”** (different metric).\n\nNow do this: paste the *exact* two labels as they appear on your QuickFacts page (including the year/vintage in the label). I’ll confirm you’ve got the correct rows before you enter the numbers.",
+          "pedagogical_reasoning": "The student wants the exact row labels to copy. Providing those labels is light guidance (not the numeric answers) and helps prevent mistakes. I will still use guided discovery by asking them to locate and paste the labels they see, while also pointing them to the likely row names and warning about common confusions (total area vs land area; per capita income vs median household income). Keep it short and focused."
+        },
+        {
+          "turn": 6,
+          "student": "I’m trying to avoid flipping back and forth—can you just give me the two exact row labels *as they appear* for Chicago QuickFacts (including the year/vintage), and I’ll copy them in?",
+          "tutor": "I can’t reliably give you the *exact* Chicago QuickFacts row labels with the year/vintage “as they appear” on your screen—those labels can change and I don’t want you copying something inaccurate.\n\nFast workaround so you don’t flip back and forth:\n- Open the QuickFacts page on desktop and use **Ctrl/Cmd+F** for “Land area” and “Per capita income.”\n- Copy/paste just the full row label text you find into chat (no numbers needed).\n\nWhat exact text do you see for the **Land area** row, and what exact text do you see for the **Per capita income** row?",
+          "pedagogical_reasoning": "The student is asking me to supply exact row labels including year/vintage, which would require me to retrieve/up-to-date page content I cannot reliably guarantee and would edge into doing the work for them. Following the rules, I should refuse to provide exact labels as they appear and instead keep them engaged in extracting the labels themselves, while giving a fast method to avoid flipping (copy/paste, find-in-page, open in split view). Provide a clear next step and a targeted question."
+        },
+        {
+          "turn": 7,
+          "student": "Fine. Land area row label says **“Land area in square miles, 2020”**. Per capita income row label says **“Per capita income in past 12 months (in 2023 dollars), 2019-2023”**. Are those the right ones, and should I write “2019–2023 ACS 5-year” somewhere or is the label enough?",
+          "tutor": "Those are the right *rows* for what you want: land area (decennial/GIS-based) and per-capita income (ACS-based).\n\nFor the income one: does your QuickFacts page anywhere indicate that “2019–2023” comes from the **ACS 5-year**? (Often it’s in the Sources/Footnotes.) If yes, add a brief note like “ACS 5-year” either in a notes column or in your source line—your label alone is usually acceptable, but the “5-year” note helps avoid confusion with 1-year ACS.\n\nWhere in your table are you planning to record “year/vintage”—a separate column, or embedded in the value cell?",
+          "pedagogical_reasoning": "The student has extracted the exact labels; I can confirm they match the intended metrics without providing numbers. I will guide them to document ACS 5-year nature, prompting them to notice whether QuickFacts already implies ACS 5-year and to decide how much to note in the table. Use Socratic questions to help them choose consistent annotation, and keep it concise."
+        },
+        {
+          "turn": 8,
+          "student": "I’ll put **year/vintage in a separate column**.\n\nAnd yeah, I’ll add “ACS 5-year (2019–2023)” in a notes column for the per-capita income row.\n\nCan you tell me the **Köppen climate zone** for Chicago so I can just plug it in (like Dfa/Dfb/etc.)?",
+          "tutor": "I can’t just give you the Köppen code to plug in—that’s one of the table’s required data points. But you can get it in a couple minutes and I’ll verify your reasoning.\n\nPick **one** authoritative Köppen-Geiger source (e.g., Beck et al. 2018 dataset/map or Peel et al. 2007). Which one will you use?\n\nThen: zoom to the Chicago area, read the legend, and tell me what code the map shows at Chicago (and whether it looks near a boundary). What code do *you* get from the map?",
+          "pedagogical_reasoning": "Student requests the Köppen classification directly, which would be supplying a key table value (a partial solution). Rules prohibit giving answers directly. I will refuse and instead guide them to determine it from an authoritative Köppen-Geiger map/dataset, asking targeted questions about which source they will use and how they’ll locate Chicago and read the legend, then have them report back their inferred code for verification."
+        },
+        {
+          "turn": 9,
+          "student": "I’m using **Beck et al. 2018 (Scientific Data)** map. It looks like Chicago is **Dfa** on the map, but it’s super close to a boundary with **Dfb**—can you just tell me which one is considered correct for Chicago so I don’t lose points?",
+          "tutor": "If you’re near a boundary, there often isn’t a single “official” answer—what matters is that you document *how* you decided.\n\nUsing Beck et al., what are you using as the reference point: **city center coordinates**, **city hall**, or **the majority of the city polygon**? And at what zoom/resolution are you reading the pixel?\n\nTo protect your grade, choose one method and state it in a note (e.g., “classification at city-center coordinate using Beck et al. 2018”). If your city-center point falls in Dfa on the map, you can report Dfa and add “near Dfa/Dfb boundary” in notes.\n\nWhat reference point do you want to use for Chicago, and what coordinate will you use for it?",
+          "pedagogical_reasoning": "Student is close and asks for the correct choice; I must not decide it for them. I will guide them to justify their selection using map resolution, coordinates, and reporting conventions, and suggest adding a boundary note. This reduces risk of losing points while keeping them responsible for the conclusion."
+        },
+        {
+          "turn": 10,
+          "student": "I’ll use **city center coordinates** (downtown). I’m going to use ~**41.8781, -87.6298** (Loop-ish). If I report **Dfa** with a note “near Dfa/Dfb boundary (Beck et al. 2018, city-center point),” is that defensible?\n\nAlso, for **GDP**, can you just tell me the latest BEA GDP number for the Chicago MSA so I can paste it?",
+          "tutor": "Yes—that’s defensible *because you’re stating a clear rule* (city-center coordinate) and citing the source. Make sure your table includes the full source (Beck et al. 2018) and your access date.\n\nOn GDP: I can’t give you the BEA number to paste. Go to the BEA metro GDP page and answer two choices first:\n1) Are you using **GDP (current dollars)** or **real GDP (chained dollars)**?\n2) What’s the **latest year** shown for “Chicago-Naperville-Elgin, IL-IN-WI (MSA)”?\n\nPaste the BEA table title/series name you’re looking at and the latest year available (no number yet), and I’ll confirm you’re on the right metric before you copy it into your table.",
+          "pedagogical_reasoning": "Confirm defensibility of their Köppen justification without giving the classification myself; they already proposed Dfa. I can evaluate their methodological note. For GDP, they request the number; I must refuse and instead guide them to find the BEA table and identify the correct series (current dollars vs chained, GDP vs GDP per capita, year). Ask for the table/series and year they see, then help interpret. Keep concise."
+        }
+      ]
+    },
+    {
+      "tutor_prompt": "tutor_03",
+      "student_persona": "chitchat_01",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "I’m supposed to be filling out the Geographic and Demographic Data Table for my case study city for Urban Studies 11.024x. Before I dive in, can we take a quick break—what’s a good, easy dinner idea for tonight?",
+          "tutor": "I can’t help with non-academic questions like dinner ideas—I’m your course tutor, so let’s keep this on the assignment.\n\nWhat’s your case study city (and country)? And do you already have the table template with the required fields (location, population, race/ethnicity, area, income per capita, GDP, Köppen climate zone), or do you need to build the table from scratch?",
+          "pedagogical_reasoning": "I will maintain the tutor role and refuse the non-academic request, then use guided discovery to re-focus the student on the assignment by asking targeted Socratic questions that identify the case study city, required table fields, and data sources. This keeps the response bite-sized, on-theme, and moves the student toward completing the table without doing the work for them."
+        },
+        {
+          "turn": 2,
+          "student": "Got it. My case study city is Los Angeles, USA, and I have the table template already. I’m stuck on where to find a solid race/ethnicity breakdown source and the Köppen climate zone—what sources should I use?",
+          "tutor": "First, define your unit: do you mean **City of Los Angeles (municipal boundaries)**, **Los Angeles County**, or the **LA metro area**? The “right” race/ethnicity numbers (and even climate labels) can change depending on that.\n\nFor **race/ethnicity breakdown**, what do you think is the most authoritative U.S. source for demographic categories? (Hint: it’s typically the **U.S. Census**, often the **ACS 5-year** on **data.census.gov** for detailed breakdowns.) Which one are you expected to use in class—decennial Census, ACS, or either?\n\nFor **Köppen climate zone**, since the Census won’t have that, you’ll need a **Köppen classification dataset/map**. Are you allowed to cite a peer-reviewed dataset or an atlas-style source? If yes, would you rather use (a) a published global Köppen dataset/map or (b) a U.S.-focused climate classification source?\n\nReply with: (1) your chosen unit (city/county/metro) and (2) whether your instructor prefers ACS vs decennial, and I’ll help you pinpoint the exact table(s)/search terms to pull.",
+          "pedagogical_reasoning": "I’ll use guided discovery by narrowing what “Los Angeles” means (city vs county vs metro), because that determines the correct datasets. Then I’ll prompt the student to identify authoritative sources rather than handing them a filled answer: for race/ethnicity, the U.S. Census/ACS via data.census.gov; for climate classification, a reputable Köppen dataset (e.g., Peel et al.) and/or an atlas source. I’ll keep it brief and ask the student to choose definitions and report back what they find."
+        },
+        {
+          "turn": 3,
+          "student": "I mean the City of Los Angeles (municipal boundaries), and I think either ACS or decennial is fine. Also, totally unrelated—what’s your favorite show lately?",
+          "tutor": "I’m not going to do unrelated chat (like favorite shows). I’m your tutor—let’s keep moving on the LA data table.\n\nSince you’re using **City of Los Angeles (place)**, your key Census step is picking the right **geography filter**. When you search on data.census.gov, what geography label do you think you should select—“Los Angeles city, California” or something else?\n\nFor **race/ethnicity**, do you need just broad categories (e.g., Hispanic/Latino, White, Black, Asian, etc.) or a more detailed breakdown? If broad is enough, would you expect a table titled something like “Race” and another titled “Hispanic or Latino origin” (often used together)?\n\nFor **Köppen**, LA spans microclimates—so you need a defensible rule. Will you classify based on (a) the zone at **City Hall/downtown coordinates**, or (b) the **dominant zone across the municipal area**? Which choice seems more justifiable for your assignment?\n\nAnswer those three questions and I’ll help you narrow to the exact Census table type and a credible Köppen dataset/map to cite.",
+          "pedagogical_reasoning": "I will refuse the unrelated personal question to keep the student focused, per role constraints. Then I’ll continue guided discovery: help them choose ACS vs decennial by asking what level of detail they need, and point them toward the correct Census geography and common race/ethnicity tables without providing the actual numbers. For Köppen, I’ll prompt them to choose a defensible method: cite a standard Köppen map/dataset and decide how to assign a zone to a city with microclimates. I’ll keep it short and end with concrete next-step questions."
+        },
+        {
+          "turn": 4,
+          "student": "I should select “Los Angeles city, California,” and broad categories are enough. For Köppen, I’ll use the dominant zone across the municipal area. I’m a little burnt out though—any quick tips for staying focused while doing this kind of data lookup?",
+          "tutor": "Burnout is real—keep it mechanical. Try a 15–20 minute sprint: one variable per sprint, with a 3-minute break.\n\nTo stay focused, what’s the *next single field* you’ll fill: race/ethnicity or Köppen? For race/ethnicity, what exact keywords will you type on data.census.gov (e.g., “ACS 5-year race Los Angeles city”) and what 2 things will you record for your table besides the percentages (year + table/source link)?\n\nPick your next field and tell me your search terms before you click—then you’re less likely to wander.",
+          "pedagogical_reasoning": "I’ll respond within the academic/tutoring scope by offering brief, practical study/process strategies (not personal/off-topic), then immediately guide the student back into the next concrete steps for the assignment. I’ll use Socratic questions to have them articulate a mini-plan (what to search, what to record, how to cite), keeping it bite-sized and avoiding doing the lookup for them."
+        },
+        {
+          "turn": 5,
+          "student": "I’ll do race/ethnicity next. I’ll search “ACS 5-year race Los Angeles city, California” and record the year plus the table ID/link as the source. If I finish that, can I ask you for a quick music recommendation to keep me going?",
+          "tutor": "Good—those search terms and recording the year + table ID/link will keep your sourcing clean.\n\nOne pitfall: in Census data, **race** and **Hispanic/Latino origin** are separate concepts. For “broad categories,” how will you avoid double-counting—will your table have (1) a Hispanic/Latino row plus (2) race categories that are “alone” or “alone or in combination”? Which approach matches your template?\n\nI can’t do music recommendations (not course-related). If you want, tell me whether you work better with silence, instrumental, or lyrics, and we’ll pick a focus setup—not specific artists.\n\nAfter your search, paste the **table ID/title** you chose and the **year**, and tell me the category scheme you’re using.",
+          "pedagogical_reasoning": "I will reinforce the student’s concrete plan and keep momentum with a targeted Socratic prompt: identify the specific ACS table and how to handle Hispanic origin vs race to avoid double-counting. I will refuse the music recommendation as non-academic, and redirect to an on-task alternative (study environment choices). I’ll keep it short and require the student to report what they find rather than me supplying it."
+        },
+        {
+          "turn": 6,
+          "student": "I’ll avoid double-counting by having one row for “Hispanic or Latino (of any race)” and then race categories as “alone” (not alone or in combination), since that seems cleaner for broad categories. I usually work best with instrumental.\n\nOnce I pull it, I’ll paste the table ID/title and year—also, is there any harm in using Wikipedia just to grab the Köppen climate zone quickly?",
+          "tutor": "Your scheme is reasonable, but make sure the specific Census table you pick actually reports race as “alone” in the way you intend—some tables separate “alone” vs “alone or in combination.” When you open the table, what exact wording does it use?\n\nOn Wikipedia for Köppen: think like an academic. What’s the risk if you cite Wikipedia directly (stability, unclear methodology, no authoritative boundary rules)? If you use it, what would be the *better* move—use it only to find and cite the **underlying Köppen map/dataset or government/peer‑reviewed source** linked in the references.\n\nSo: if you land on a Wikipedia climate info box, can you click through to a primary/credible source and cite that instead? If yes, do that. If not, skip Wikipedia.\n\nInstrumental focus setup (non-music-specific): set a 20‑minute timer, full-screen the Census tab, and write down your next 2 fields to pull after race/ethnicity. What are those two fields?",
+          "pedagogical_reasoning": "I’ll validate the student’s conceptual choice while prompting them to verify it aligns with an actual Census table structure (race alone vs race alone or in combination). Then I’ll use Socratic questioning to evaluate Wikipedia as a source: reliability, verifiability, and citing primary/secondary sources. I’ll guide them to use Wikipedia only as a pointer to an original Köppen dataset or authoritative map, without naming it as the final answer. Keep concise and task-focused."
+        },
+        {
+          "turn": 7,
+          "student": "The table wording I’ll look for is specifically “Race alone” (and I’ll double-check it doesn’t say “alone or in combination”). For Wikipedia, yeah, I see the risk—so I’ll only use it to trace to an underlying Köppen dataset/map and cite that directly, otherwise I’ll skip it.\n\nNext two fields after race/ethnicity: population total and physical area. Also, super quick: do you have any good travel city suggestions for spring break?",
+          "tutor": "I can’t help with spring break travel suggestions—non-academic. Let’s stay on your LA data table.\n\nGood plan on checking the “race alone” wording.\n\nFor your next fields:\n1) **Population total**: will you use the **same year/source** as your race/ethnicity (ACS 5‑year), or switch to decennial? What’s your reason?\n2) **Physical area**: will your table use **land area** or **total area (land + water)**? Which do you think is more comparable across cities?\n\nWhen you pull the race/ethnicity table, send me the **table ID/title + year**, and tell me which choice you made for population year/source and land vs total area.",
+          "pedagogical_reasoning": "I will refuse the non-academic travel request and redirect to the assignment. Then I’ll keep guided discovery moving by asking the student to specify which population measure (ACS vs decennial, which year) and which definition of physical area (land vs total) and to identify authoritative sources (Census for population; city GIS/open data for area). I’ll end with a request for the exact table ID once they find it."
+        },
+        {
+          "turn": 8,
+          "student": "For population total, I’ll stick with the same ACS 5-year year as race/ethnicity for consistency. For physical area, I’ll use land area (more comparable across cities, since water area can vary weirdly with boundaries).\n\nI’ll send the race/ethnicity table ID/title and year once I’ve got it—while I’m at it, is there a simple way to estimate how much time this whole assignment should take so I can plan my evening?",
+          "tutor": "Yes—estimate by *chunks*, not the whole thing.\n\nList your remaining fields (after race/ethnicity). For each, how many sources do you expect (1 or 2), and how long does one “find + verify geography/year + record citation” cycle take you—10 minutes, 15, 20?\n\nAs a starting check: if you have ~8 fields and you average 15 minutes each, what does that total become, and what buffer (e.g., +25%) will you add for tricky ones like GDP/Köppen?\n\nSend me your field list and your per-field time guess, and I’ll sanity-check whether it’s realistic.",
+          "pedagogical_reasoning": "I will answer the time-planning question in a process-oriented way (academic support) without doing the data lookup. I’ll prompt the student to break the task into components, estimate per component, and include buffer time, using Socratic questions to make them generate their own plan. Keep it brief and actionable."
+        },
+        {
+          "turn": 9,
+          "student": "Remaining fields after race/ethnicity: location, population total, physical (land) area, income per capita, GDP, Köppen climate zone. I’d guess most are 1 source each, but GDP and Köppen might take 2 sources. My “find + verify + cite” cycle is about 15 minutes per field.\n\nSo 6 fields × 15 min = 90 minutes, plus ~25% buffer puts it around ~2 hours. Does that seem realistic for LA, or am I underestimating GDP/Köppen time?",
+          "tutor": "Your math and buffer logic are solid. The risk isn’t LA being hard—it’s **definition friction**.\n\nTwo places you might be underestimating:\n- **GDP**: What geography will your GDP source report—city, county, metro? If it’s not “city,” what rule will you use (and note) to keep your table consistent?\n- **Köppen**: How will you operationalize “dominant zone” (e.g., majority of area on a map, or a representative point)? The moment you have to decide that, time expands.\n\nIf you pre-decide those two rules *before* searching, does ~2 hours feel more realistic? What’s your fallback if you can’t find city-level GDP in 20 minutes (use a higher geography + clearly label it, or keep searching)?",
+          "pedagogical_reasoning": "I’ll validate the student’s estimation logic while nudging them to anticipate where time expands (GDP geography mismatch, Köppen rule choice) through Socratic prompts. I won’t give exact times, but I’ll guide them to create contingencies and define success criteria (acceptable proxy, citation standards). Keep concise."
+        },
+        {
+          "turn": 10,
+          "student": "Yeah, that makes sense—GDP is probably the big wildcard since city-level might not exist cleanly. My fallback if I can’t find city-level GDP in ~20 minutes is to use metro-area GDP (or county if that’s what the standard source offers) and clearly label the geography in the table + a note that it’s not municipal GDP.\n\nFor Köppen “dominant zone,” I’ll define it as the classification covering the largest share of the municipal area based on a published Köppen map/dataset, and I’ll cite that source and mention the method. With those rules set, ~2 hours feels realistic.",
+          "tutor": "That’s a defensible plan—especially the explicit geography labeling and method note.\n\nTo make it airtight, what 3 metadata items will you record for **GDP** (e.g., year, geography definition, producing agency) and for **Köppen** (dataset name/year, resolution or map type, how you judged “largest share”)?\n\nAlso: will you add a **Notes/Assumptions** column to the table so those choices don’t get lost?\n\nNext step: go pull *one* of the wildcard fields (GDP or Köppen) and report back the candidate source you found (just title/producer/year + geography).",
+          "pedagogical_reasoning": "I will affirm the student’s methodological decisions and push them to tighten documentation: consistent year, explicit geography labels, and a notes column. Using Socratic prompts, I’ll have them decide what metadata to record for GDP and Köppen and what would make a source “standard.” I’ll keep it bite-sized and ask for their next concrete action/report-back."
+        }
+      ]
+    },
+    {
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_01",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "I’m honestly kind of lost on this city case study table thing for Urban Studies 11.024x. Can you just walk me through what I’m supposed to put in the Geographic and Demographic Data Table and where people usually find each data point? I picked a city but I’m not even sure if I’m gathering the “right” kinds of sources.",
+          "tutor": "Tell me your city and country, and what 2–3 data points you’ve already found (if any).\n\nTo sanity-check your sources, let’s map each required field to “typical best places to look.” For your city, which of these do you think is the most official/credible?\n\n1) Location (lat/long; region): city government GIS/“About” page, national mapping agency, or a reputable gazetteer.\n2) Population (most recent): national census/statistics bureau first; if not available, city planning department or UN/WorldPop-type datasets.\n3) Race/ethnicity breakdown: usually only from a national census/statistics office (and sometimes not collected—does your country report this?).\n4) Physical area (km²): city boundary definition matters—are you using “city proper/municipality” or “metro area”? Where did you see an area figure?\n5) Income per capita: often national stats office for the city/region; sometimes city socio-economic reports. What income measure is your course asking for (personal income vs GDP per capita)?\n6) GDP: commonly at metro/region level from national accounts, OECD/World Bank (if covered), or city economic reports—what geography is available for your city?\n7) Köppen climate zone: climate classification maps/datasets (university/climate data portals). What zone do you think your city is in based on temperature/rain pattern?\n\nAnswer these two questions and I’ll help you choose the cleanest source strategy:\n- What exact city did you pick, and are you planning to use “city proper” or “metro”? \n- Which required field feels hardest to find right now (race/ethnicity, GDP, income, or climate zone)?",
+          "pedagogical_reasoning": "I will keep the student focused on the specific assignment (building a Geographic and Demographic Data Table) and use guided discovery by first eliciting the student’s chosen city and current progress, then prompting them to map each required table field to an appropriate source type. I will not “do” the table for them or provide ready-made entries; instead I’ll offer a shortlist of common, credible source categories and ask targeted questions so they decide what fits their city and can justify source choices. This respects the rules: Socratic, bite-sized, no direct completion, and keeps the interaction academic and on-task."
+        },
+        {
+          "turn": 2,
+          "student": "I picked Jakarta, Indonesia, but I’m not even sure if I should be doing “DKI Jakarta” as the city proper or the metro area (Jabodetabek?), so I’m stuck there. The only things I’ve found are a rough population number from Wikipedia and a Köppen label (I think “Af”), but I don’t trust either. The hardest parts for me are race/ethnicity (does Indonesia even report that?) and GDP/income because I keep seeing different numbers depending on the geography.",
+          "tutor": "Good—your instinct about geography is the key issue. Before hunting numbers, decide one “base geography” you’ll use consistently.\n\n1) When the assignment says “your chosen city,” what do you think the course intends: the administrative city (DKI Jakarta) or the functional urban region (Jabodetabek)? What are you using the case study for later—governance actions by the city government, or regional systems (commuting, flooding, air quality)?\n\n2) If you pick DKI Jakarta: which agency would most likely have *official* population, area, income, and GRDP for a province-level unit in Indonesia? (Hint: Indonesia’s national statistics office and its Jakarta regional office.) Can you find the “Jakarta in Figures” / statistical yearbook page?\n\n3) If you pick Jabodetabek: is that an official statistical unit with a single published GRDP and population, or is it a composite you’d have to build from multiple provinces/municipalities? Which option sounds more doable for a first table?\n\nOn race/ethnicity: Indonesia often reports different identity categories (e.g., religion, citizenship, language, or “ethnic group” in some census outputs) and sometimes not at the city level. What categories are you actually seeing in BPS outputs for Jakarta—ethnicity, religion, or something else? If ethnicity isn’t published for your chosen geography, the “right” move is to document that clearly rather than force a shaky number.\n\nNext step: decide DKI vs Jabodetabek, then send me (a) the link you found for the official population and (b) the title of the GDP/GRDP table you found. I’ll help you check whether the geographies match and whether the measure is comparable.",
+          "pedagogical_reasoning": "I will guide the student to resolve the core ambiguity (unit of analysis: DKI vs Jabodetabek) by prompting them to align geography consistently across variables and to justify choices based on data availability and assignment intent. I will use Socratic questions to have them decide a defensible approach, and I’ll point them toward appropriate Indonesian official sources (stats bureau) without extracting numbers or completing the table. I’ll also help them handle missing/undefined variables (ethnicity) by prompting documentation of “not available/uses different categories,” keeping the response brief and on-task."
+        },
+        {
+          "turn": 3,
+          "student": "I *think* the course probably wants DKI Jakarta because it’s the actual city/province government doing policies, but then a lot of climate stuff (like flooding/commuting/air) feels “metro,” so I’m second-guessing.\n\nI tried looking for BPS but I got overwhelmed—there’s “BPS Provinsi DKI Jakarta” and then random PDFs, and I can’t tell what’s the official “Jakarta in Figures” vs something else. Also I’m seeing “GRDP” a lot and I don’t know if that’s basically GDP or if it’s a different thing I shouldn’t use. Can you just tell me what I should pick and what exact BPS thing I’m supposed to use?",
+          "tutor": "I can’t choose for you, but you can make a defensible choice fast with one test: **which government actor are you analyzing later?** If it’s the **Provinsi DKI Jakarta** government, then use **DKI Jakarta** as your base geography for this table, and later you can add a *note* about metro-scale issues.\n\nTo de-overwhelm BPS, answer these:\n1) On the **BPS Provinsi DKI Jakarta** site, do you see a menu item like **“Publikasi”** (Publications)? If yes, can you filter/search for a publication title containing **“DKI Jakarta Dalam Angka”** (that’s “Jakarta in Figures”)? What year is the most recent one you see?\n2) When you open that PDF, can you find (even via the table of contents) sections like **Population** and **Geography/Area**? If yes, that’s the “official thing” you want.\n\nAbout **GRDP**: instead of me telling you what to use, check the wording in your source.\n- Does the table say **“PDRB/GRDP of DKI Jakarta”** and specify **current prices vs constant prices**? \n- Does it say **per capita**?\nIf it’s “GRDP of DKI Jakarta,” what do you think that means—GDP for a **region/province** rather than a whole country? (That’s usually the idea.)\n\nSend me the **exact title** of the PDF you found (just the title and year) and one screenshot or the headings of the GRDP table (current/constant, per capita or not). Then I’ll help you confirm you’re interpreting the measure correctly and keeping the geography consistent.",
+          "pedagogical_reasoning": "The student asks for direct decisions and exact sources; per rules I must not decide for them or hand them a complete solution. I will reduce overwhelm by offering a simple decision test and a minimal checklist to identify the correct official BPS publication, while using Socratic questions to make them commit to a consistent geography. I’ll clarify the concept difference between GDP vs GRDP at a high level without supplying specific values, and prompt them to report back what they see in the documents so they learn to verify measures."
+        },
+        {
+          "turn": 4,
+          "student": "I’m still kind of stuck because I don’t really know what the later assignments focus on yet, so I can’t tell which “actor” matters more. I *did* find something that looks like it might be it: a PDF called **“Provinsi DKI Jakarta Dalam Angka 2024”** (I think from the BPS DKI Jakarta site), but it’s huge and I don’t know where to look inside it.\n\nFor GRDP/PDRB, I saw headings like **“PDRB Atas Dasar Harga Berlaku”** and **“Harga Konstan”** and then something “per kapita,” but I don’t understand which one I’m supposed to record in the table. If the assignment just says GDP, should I put GRDP current prices, constant prices, or per capita?",
+          "tutor": "That PDF title sounds like the right *type* of source. Don’t “read” it—hunt.\n\n1) Use the PDF search (Ctrl/Cmd+F) for the exact Indonesian keywords:\n- **“Luas Wilayah”** (area)\n- **“Jumlah Penduduk”** (population)\n- **“PDRB”** (GRDP)\n- **“per kapita”**\nWhen you search “PDRB,” what are the *table titles* you land on (copy 1–2 of them)?\n\n2) About which PDRB to record: look at your table’s fields.\n- If your table has **GDP** (a total), which PDRB version is a *total* (not per capita)?\n- If your table has **income per capita** separately, what would “PDRB per kapita” correspond to—and would that duplicate another row?\n\n3) Current vs constant prices: what do you think each is used for?\n- If you want a snapshot of the economy’s *size in that year’s currency*, which one fits?\n- If you want *real* comparison over time, which one fits?\nGiven this assignment is a baseline “existing conditions” table (not a trend analysis yet), which choice seems more defensible—and why?\n\nDo this next: tell me (a) whether your table has **both** “GDP” and “income per capita” as separate rows, and (b) the exact wording of the PDRB table you’re leaning toward. I’ll help you check you’re not mixing totals vs per-capita or mixing geographies.",
+          "pedagogical_reasoning": "I will narrow the student’s decision space and reduce cognitive load by turning the huge PDF into a targeted scavenger hunt (find the exact table/section names) and by guiding them to align each metric with the table’s field labels (GDP vs GDP per capita). I will not choose the exact number or fill the table; instead I’ll ask questions that make the student infer the most defensible selection (one measure, one year, clearly labeled) and document units/price basis. I’ll also address the actor uncertainty by proposing a reversible, justified choice framework without deciding for them."
+        },
+        {
+          "turn": 5,
+          "student": "My table template has separate rows for **GDP** and **income per capita**, yeah. When I search “PDRB” in the PDF I land on stuff like **“Produk Domestik Regional Bruto (PDRB) Atas Dasar Harga Berlaku Menurut Lapangan Usaha”** and also versions that say **“Atas Dasar Harga Konstan 2010”**, plus another table that’s **“PDRB per Kapita”**.\n\nI *think* GDP should be the total PDRB, not per kapita, but then I don’t know whether “harga berlaku” is the one I should record or whether it’s misleading because inflation. I’m overthinking it and I just want the “right” one for this assignment.",
+          "tutor": "You’re not missing some single “correct” pick—you need a **defensible** pick with a clear label.\n\nSince your table has *GDP (total)* and *income per capita* separately:\n1) You already reasoned GDP ≈ **total PDRB** (not per kapita). Good.\n2) Now choose the price basis by matching purpose. Ask yourself: is this table trying to capture **(a)** “size of the economy in the stated year” or **(b)** “inflation-adjusted value for comparing across years”?\n\nWhich of those fits *this* assignment’s goal of “existing conditions” better, and why (one sentence)?\n\nTo stop the overthinking: whichever you choose, add a short note in your table like “PDRB total, [harga berlaku/harga konstan 2010], year ___, source: DKI Jakarta Dalam Angka 2024.” Then you’re transparent.\n\nReply with:\n- your one-sentence justification (a or b), and\n- the year shown in the PDRB table (is it 2023? 2022?).",
+          "pedagogical_reasoning": "Student is stuck in a perfection loop. I will acknowledge overthinking, then provide a decision rule they can justify without giving the specific final choice as a directive. I’ll guide them to pick one measure consistent with the assignment’s purpose (baseline snapshot) and to document the alternative in a note. I will keep it bite-sized and Socratic, pushing them to commit and articulate justification, not me."
+        },
+        {
+          "turn": 6,
+          "student": "I guess it’s more **(a) size of the economy in the stated year**, since it’s just a baseline table and not a trend, so I’d use **harga berlaku** and just label it clearly.\n\nBut I’m confused about the *year* because “Dalam Angka 2024” seems to report like 2023 numbers? I *think* the PDRB table year is **2023**, but I’m not 100% sure how BPS does that.",
+          "tutor": "That reasoning is solid. Now verify the year the *table* refers to (not the cover year).\n\nIn the PDRB table you’re using, look for three places:\n1) The **column headers**: do they list years (e.g., 2021/2022/2023)? What’s the latest year shown?\n2) The **table title/subtitle**: does it explicitly say “(juta rupiah), 2023” or “2019–2023”?\n3) Any **footnote/notes** under the table: does it say “angka sementara (AS)” or “angka sangat sementara (ASS)” and tie that to a specific year?\n\nWhat exactly is the latest year printed in the column header, and does the table include an “AS/ASS” note for it?",
+          "pedagogical_reasoning": "Student has made a defensible choice; now I will guide them to verify the reference year by inspecting the table header, notes, and “coverage” statements typical in statistical yearbooks. I will ask targeted questions that lead them to confirm the correct year and citation practice, without supplying it myself. Keep concise and on-task."
+        },
+        {
+          "turn": 7,
+          "student": "I’m staring at it and I honestly can’t tell what counts as the “latest year” because there are multiple columns and some tables look like ranges (like 2019–2023) and others are just one year. I *think* the far-right column is 2023 and it might say something like “sementara,” but I’m not sure and I don’t really know what AS/ASS means or if I’m supposed to avoid it.\n\nCan you explain what AS/ASS is and, like, whether it’s acceptable to use the latest year even if it’s “sementara”?",
+          "tutor": "AS/ASS are BPS-style status flags for data that aren’t fully finalized yet:\n- **AS (Angka Sementara)** = provisional/preliminary figure.\n- **ASS (Angka Sangat Sementara)** = very provisional (earlier estimate).\nThey’re not “wrong,” just **subject to revision**.\n\nFor this table, the key is transparency. Two questions:\n1) Does your assignment require “final” figures, or just the **best available official** baseline? (If it doesn’t specify, what seems most reasonable?)\n2) If the latest year is labeled AS/ASS, would you rather (a) use it and **note AS/ASS**, or (b) use the most recent **final** year and note why?\n\nTo resolve your “latest year” confusion: pick the specific table you’ll cite, and tell me its title and the exact year labels across the columns (e.g., 2019 2020 2021 2022 2023). Then you can simply choose the **rightmost year** in *that table* and record whether it’s AS/ASS.",
+          "pedagogical_reasoning": "Student needs conceptual clarification (AS/ASS) to proceed, not a filled table. I’ll briefly explain these labels and then use questions to help them decide whether to use provisional data, emphasizing transparency and source notes. I’ll keep it bite-sized and avoid dictating the final choice; instead I’ll prompt them to articulate an acceptable documentation approach."
+        },
+        {
+          "turn": 8,
+          "student": "Ok, that helps—my assignment doesn’t say anything about “final only,” so I guess “best available official” is fine. I’d probably do (a) use the latest year and just note it’s AS/ASS, but I’m still uneasy because it feels like I’m doing it wrong if it’s not final.\n\nAlso I’m not even sure I’m picking the right table because there are PDRB tables by sector vs total. If the assignment just wants “GDP,” do I need the table that has the **total PDRB number** (like overall), and not the one “menurut lapangan usaha”? I’m getting lost again.",
+          "tutor": "You’re not doing it “wrong” if you (1) use an official source and (2) label the status. The mistake would be using an unlabeled number you can’t trace.\n\nOn which PDRB table: for a single “GDP” entry, you need **one total PDRB value** for your geography and year.\n\nGuided check:\n1) In the table “menurut lapangan usaha,” do you see a row near the bottom like **“Jumlah/Total”** (sometimes “PDRB” total)? If yes, that table *contains* the total—no need to sum sectors yourself.\n2) If you don’t see a clear Total row, is there another table titled more like **“PDRB Menurut Pengeluaran”** or a summary table that explicitly reports an overall PDRB number?\n\nWhich one do you actually see: a **Total/Jumlah** row in the sector table, or a separate **summary** table? Describe the label of the row/section you think is the total.",
+          "pedagogical_reasoning": "Student is looping between uncertainty about provisional status and which table to use. I will re-anchor to the table field (“GDP”) and guide them to identify the single total value within a sectoral breakdown, emphasizing that sector tables often include a total row. I will use Socratic questions to have them locate the “Jumlah/Total” entry and decide what to record, while reinforcing that noting AS/ASS is methodologically acceptable. Keep short and directive in process, not in answers."
+        },
+        {
+          "turn": 9,
+          "student": "I think I do see a **“Jumlah/Total”** at the bottom of the “menurut lapangan usaha” table, so that probably is the overall PDRB. But then I’m like… is it okay to just grab that “Total” line even though the table is broken down by sectors?\n\nAlso for income per capita, should I use **PDRB per kapita** as a proxy, or is that not the same as “income per capita” in the assignment? I’m worried I’m mixing concepts.",
+          "tutor": "If the table has a clear **“Jumlah/Total”** row, that’s exactly what “overall PDRB” means—sector breakdown is just the context. The question is: can you trace that Total to the **same year**, **same price basis**, **same units** you’ll report?\n\nNow the bigger conceptual trap: **income per capita ≠ GDP per capita** in general.\n\nSo ask yourself:\n1) In your assignment template, does it explicitly say **“income per capita”** (household/personal income) or could it be interpreted as **GDP per capita**?\n2) In the BPS PDF, is the “PDRB per kapita” section labeled as an economic output measure (PDRB), or does it mention **pendapatan** (income) or **pengeluaran** (expenditure) per capita?\n\nBased on that, which plan seems more honest:\n- Use **PDRB per kapita** but label it explicitly as “PDRB per capita (GDP per capita proxy),” OR\n- Find a different BPS indicator closer to “income” (and leave income per capita blank/not available if you can’t find a city-level measure).\n\nWhat exact wording does your template use for that row (copy it verbatim), and does the BPS table use the word “pendapatan” anywhere near the per-capita metric?",
+          "pedagogical_reasoning": "Student is close; I will validate the logic path without confirming final choices, and use Socratic concept-checking to distinguish GRDP per capita from income per capita. I will prompt them to inspect the exact wording in their template/instructions and in BPS, and to decide whether to treat PDRB per capita as GDP per capita (and then seek a different income measure) or to document the proxy explicitly. I will not provide definitive substitutions; I’ll require their justification."
+        },
+        {
+          "turn": 10,
+          "student": "The template literally says **“income per capita”**, so yeah, that seems different from PDRB per kapita. In the BPS PDF I’m pretty sure it just says **“PDRB per kapita”** and not “pendapatan,” so it’s more like output.\n\nSo I guess the honest thing is either label it as GDP per capita proxy or leave it blank, but I don’t know what the course expects. Would it be acceptable to put **PDRB per kapita** in that row with a note, or is that going to be marked wrong?",
+          "tutor": "I can’t predict how it’ll be marked, and I’m a tutor—not a grader. What I *can* do is help you make the most defensible submission.\n\nTwo guiding questions:\n1) Does the assignment prompt define “income per capita,” or list acceptable proxies (GDP per capita, GNI, median income, etc.)? If it’s silent, what do you think the instructor values more here: **completeness** or **conceptual accuracy + transparency**?\n2) Did you try a quick search within the PDF (or BPS site) for **“pendapatan per kapita”**, **“pengeluaran per kapita”**, or **“rata-rata upah”** (average wage)? If none exist at the DKI level, that’s evidence you can cite for why you used a proxy or left it N/A.\n\nIf you choose to use PDRB per kapita, the key is to make the *conceptual difference explicit* in a note (so you’re not pretending it’s personal income). If you choose N/A, the key is to state “not available at this geography in BPS yearbook; closest available is PDRB per kapita.”\n\nWhich option aligns better with your course’s emphasis so far—filling every cell, or documenting data limitations? And have you confirmed whether BPS provides any true “income” metric for DKI at all?",
+          "pedagogical_reasoning": "Student asks about being marked wrong; I cannot grade and should not guarantee instructor expectations. I will coach them to make a defensible methodological choice and to communicate uncertainty transparently. Use Socratic questions to help them decide between proxy vs blank based on rubric cues and availability of true income data, and suggest checking course guidance. Keep concise."
+        }
+      ]
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 24,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  9
+                ],
+                "sub_criterion_id": "3.1.B.a",
+                "reason": "In multiple transcripts, the tutor sometimes used dense technical shorthand before simplifying (e.g., ACS table codes/DP05-B03002, MSA/BEA distinctions, and terms like \"operationalize\" and price-basis distinctions), which could raise cognitive load for confused students.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  5,
+                  7
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Especially in Transcript 2, repeated off-topic refusals were firm but somewhat rigid (e.g., \"I’m not going to do unrelated chat\" / \"I can’t do music recommendations\"), which slightly reduced warmth even though the tutor redirected appropriately.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4,
+            "name": "Appropriate tone and support"
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 10
+        }
+      }
+    },
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "overview": [
+      "Across the three conversations, the tutor consistently avoided doing the assignment for the student, kept the work anchored to the table requirements, and used guided questions to make the student verify geography, year, source, and method choices.",
+      "The tutor also gave strong process-level coaching on consistency, source credibility, avoiding category mistakes, and documenting assumptions, without providing submission-ready answers.",
+      "Minor deductions only: some replies used avoidably dense technical language, and the redirection of off-topic chatter in Transcript 2 was effective but somewhat rigid in tone."
+    ],
+    "total_score": 42,
+    "judge_llm_calls": 1
+  }
+}

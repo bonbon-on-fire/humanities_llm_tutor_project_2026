@@ -31,8 +31,9 @@ from judge.run_judge_batch_gpt import JudgeError, JudgeResult, judge_transcript_
 BATCHES_DIR = _REPO_ROOT / "transcripts" / "batches"
 
 # ---------------------------------------------------------------------------
-# Parallel workers — change this value to control concurrency.
+# Change these values to control batch type and concurrency.
 # ---------------------------------------------------------------------------
+BATCH_TYPE = "03"
 PARALLEL_WORKERS = 6
 
 
@@ -110,8 +111,8 @@ def main(argv: list[str] | None = None) -> int:
         description="Grade all batch files of a given type with GPT batch judge."
     )
     parser.add_argument(
-        "--batch-type", required=True,
-        help="Batch type number: 01, 02, or 03.",
+        "--batch-type", default=BATCH_TYPE,
+        help=f"Batch type number: 01, 02, or 03 (default: {BATCH_TYPE}).",
     )
     parser.add_argument(
         "--prompt", default="judge_05",

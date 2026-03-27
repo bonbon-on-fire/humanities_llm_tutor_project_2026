@@ -1,0 +1,348 @@
+{
+  "batch_file": "batch_050.txt",
+  "transcript_count": 3,
+  "transcript_sources": [
+    "clueless/clueless_raw/transcript_34",
+    "clueless/clueless_raw/transcript_38",
+    "clueless/clueless_raw/transcript_40"
+  ],
+  "transcripts": [
+    {
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_05",
+      "course": "philosophy",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Philosophy — MIT OpenCourseWare\n\nThis course explores fundamental questions in moral and political philosophy, including ethics, justice, rights, and the nature of moral reasoning. Students engage with classic and contemporary texts to develop their ability to construct and evaluate philosophical arguments.",
+      "exercise": "Course context:\nPhilosophy — MIT OpenCourseWare\n\nThis course explores fundamental questions in moral and political philosophy, including ethics, justice, rights, and the nature of moral reasoning. Students engage with classic and contemporary texts to develop their ability to construct and evaluate philosophical arguments.\n\nExercise:\nWhen is it morally okay to kill one person so as to prevent five people from being killed? How would an act consequentialist think about this question? What would an act consequentialist say about the cases we considered in Lecture 13 (e.g. Fuel, Blood and the different trolley cases)? Does the act consequentialist get these cases right? If not, what is the right general account of when it is morally okay to kill one person so as to save five?\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "idk tbh—I'm kinda lost on the “kill 1 to save 5” thing. Can u help me figure out what an act consequentialist would say about the trolley/Fuel/Blood cases?",
+          "tutor": "Let’s anchor it in the core idea first. In one sentence, what do you think **act consequentialism** says makes an act morally right (what’s the “test” for rightness)?\n\nNow pick **one** case to start (classic trolley, Fuel, or Blood). For that case:\n1) What are the **exact options** the agent has?\n2) For each option, what are the **outcomes** (who lives/dies, and anything else morally relevant you think counts)?\n3) Which option has the **best overall consequences** by your lights?\n\nAnswer those for one case, and we’ll use the same template to run through the others—and then you can tell me where you think the theory starts to feel like it’s giving the “wrong” result.",
+          "pedagogical_reasoning": "The student is lost, so I will use guided discovery with Socratic questions that elicit their current understanding of act consequentialism and then apply that framework step-by-step to the standard cases (trolley/Fuel/Blood). I will not provide conclusions for each case; instead I’ll prompt the student to state the relevant outcomes, compare options, and notice where act consequentialism seems intuitive or counterintuitive. I’ll keep prompts bite-sized, stay on-topic, and aim to set up the structure they can use in their own writing without giving them a ready-made solution."
+        },
+        {
+          "turn": 2,
+          "student": "Act consequentialism is like: the right act is whatever produces the best overall consequences.\n\nCan we start w/ the classic trolley? Options: (A) do nothing and 5 die, (B) pull lever and 1 dies. Outcomes: A = 5 dead, B = 1 dead (idk what else counts tho). By my lights B seems “best” cuz fewer deaths, but I’m not sure if that’s too simplistic or if intentions/doing vs allowing matters here.",
+          "tutor": "Good—your setup is basically the act-consequentialist template.\n\nTwo targeted questions to tighten it:\n1) Under **act consequentialism**, do **intentions** or the **doing vs allowing** distinction matter *in themselves*, or only if they change outcomes (e.g., future trust, deterrence, trauma, precedent)? What’s your best guess?\n2) If we treat “consequences” narrowly as **number of deaths**, you get B. Can you name *one* additional consequence that might be relevant (even if you’re unsure)—like effects on social rules, fear, predictability, the agent’s character, etc.—and ask: would that plausibly flip the result in this case?\n\nOnce you answer those, we’ll map the same reasoning onto **Fuel** and **Blood**, because those are designed to stress-test whether “minimize deaths” is enough.",
+          "pedagogical_reasoning": "The student has the correct core principle and a basic application to the trolley case. I will reinforce the framework but push them to clarify what counts as consequences for an act consequentialist and whether intentions/doing-allowing are built into the theory or only matter instrumentally. I will use Socratic questions to get them to articulate why B is favored and to anticipate complications (rights, side-constraints, predictability, long-run effects). I will keep it short and avoid giving final verdicts."
+        },
+        {
+          "turn": 3,
+          "student": "1) I *think* under act consequentialism intentions/doing-vs-allowing don’t matter on their own, only if they change outcomes (like trust/trauma/precedent), but I’m shaky on that. 2) Maybe a relevant extra consequence is ppl being more scared/less trusting if pulling levers is “allowed,” but idk if that’s strong enough to outweigh saving 4 extra lives in the classic trolley.",
+          "tutor": "Your (1) is on the right track. To make it less shaky: can you say it as a conditional?\n\nSomething like: “Intentions/doing-vs-allowing matter **iff** they affect ____.” Fill in that blank in your own words.\n\nOn (2): notice you’re sliding toward a **rule/precedent** worry (“if this is allowed…”). Act consequentialism can consider that—*but* it has to ask a very specific question: in **this** choice, what are the likely downstream effects? So:\n- Are those fear/trust effects realistic in the classic trolley (private switch, no one knows, etc.), or would they be minimal?\n\nNow let’s move to Fuel/Blood, since that’s where these worries bite. Can you briefly remind me what happens in **Fuel** and in **Blood** (who is harmed, what choice the agent has)? Even a rough summary is enough to start applying your template.",
+          "pedagogical_reasoning": "The student is converging on the correct consequentialist stance. I’ll solidify their claim by having them articulate the conditional role of intentions and distinguish act- from rule-consequentialist temptations. Then I’ll guide them to generalize: what counts as 'best consequences' (expected value, all affected, short/long term). Finally, I’ll pivot to Fuel/Blood by eliciting their memory/summary of those cases, since applying the template requires the case details. I will not supply the case outcomes or conclusions; I’ll ask them to state them."
+        },
+        {
+          "turn": 4,
+          "student": "Intentions/doing-vs-allowing matter **iff** they affect the overall consequences (like future harm/benefit, trust, deterrence, etc.).\n\nFor classic trolley, if it’s like a private split-second lever and nobody really finds out, then yeah the fear/trust downstream stuff seems minimal, so it stays “pull.”\n\nI’m blanking rn on Fuel vs Blood tho—are those the ones where u can like kill/harvest from 1 person to save 5 (Blood?) and Fuel is some “use someone as fuel” thing? I might be mixing them up.",
+          "tutor": "Nice—your “iff” sentence is exactly the kind of clarity you’ll want in the write-up.\n\nFor Fuel/Blood: before we try to judge them, we need the *precise setup*. Don’t guess—reconstruct from notes/video if you can. Quick retrieval prompts:\n\n1) In **Blood**, is the “one” person an *aggressor/threat*, an *innocent bystander*, or someone you’d be **using** (like harvesting/transfusion)? What’s the mechanism by which the five are saved?\n\n2) In **Fuel**, what exactly is the proposed act—are you **killing** someone as a means (turning them into a resource), or **redirecting** harm, or something else? And is consent mentioned?\n\nIf you can’t recall, tell me what materials you have open (lecture timestamp, handout, your notes). Your next step is to paste a 2–3 sentence description of each case (no analysis yet), and then we’ll run your consequentialist template on them.",
+          "pedagogical_reasoning": "Student correctly articulates the consequentialist conditional and applies it. They’re missing case details; I should not provide full solutions, but I can help by prompting recall and offering minimal neutral structure for reconstructing the cases (agent, options, causal mechanism). I will ask focused questions to elicit what they remember from lecture/notes and direct them to retrieve specifics, since accurate application depends on details. I’ll keep it bite-sized and on-task."
+        },
+        {
+          "turn": 5,
+          "student": "ugh I don’t have the vid open rn, just my messy notes, and they literally just say “Fuel” and “Blood” w/ question marks. Can u remind me the setups super quick so I can do the template?",
+          "tutor": "I can remind you of the *standard* setups often used in this unit, but lectures sometimes tweak details—so treat these as placeholders and tell me which matches what you remember.\n\n1) “Blood” (standard transplant/transfusion-style case): one healthy person could be killed (or forcibly used) so their blood/organs/resources save five who will otherwise die.\n\n2) “Fuel” (standard “use a person as a resource” case): one person could be killed/used as an input (e.g., burned/processed) to power a machine/vehicle/system that would then save five who will otherwise die.\n\nNow, to run your template without me doing it for you:\n- In each case, is the one person being harmed a **means** to saving the five, or a **side-effect**?\n- Under act consequentialism, if we count only lives, what action comes out “best”?\n- What further consequences (fear, institutions, incentives, risk of abuse) seem much bigger here than in the lever trolley?\n\nPick *one* of the two (Blood or Fuel) and answer those three bullets in 4–6 lines.",
+          "pedagogical_reasoning": "Student requests the setups. I must avoid giving solutions, but providing factual case descriptions is necessary scaffolding. I’ll present minimal, non-evaluative summaries and immediately hand back the reasoning work via Socratic prompts. I’ll also acknowledge possible variant versions and ask the student to confirm which matches their lecture to prevent mismatch."
+        },
+        {
+          "turn": 6,
+          "student": "Ok I’ll do Blood. The 1 person is def being used as a **means** (like harvesting/transfusion) not a side-effect. If we only count lives, act consequentialism says do it (1 dies to save 5). But the extra consequences feel way bigger: it makes ppl terrified of doctors, undermines trust in hospitals, incentives “hunting” healthy ppl, plus it seems super abusable/slippery (and maybe long-run deaths go up).",
+          "tutor": "Good—now you’re hitting the pressure point.\n\nThree questions to sharpen your argument:\n1) Are your “terrified of doctors / hunting healthy people” points **empirical predictions** about what would happen if someone did this *once in secret*, or are they really about what would happen if this were a **known/accepted practice**? Which one does act consequentialism care about in evaluating *this act*?\n\n2) Suppose you stipulate a “clean” version: no one finds out, no precedent, no institutional effects. In that cleaned-up Blood case, would your verdict change? If yes, what does that suggest about where your objection is coming from?\n\n3) If your objection survives even in the clean version, what principle are you implicitly relying on (e.g., rights, consent, not using people as mere means, something else)? Name it without defending it yet.",
+          "pedagogical_reasoning": "Student has identified key distinction (means vs side-effect) and generated plausible downstream consequences. Next I should guide them to (a) separate what act consequentialism strictly implies from what our intuitions say, (b) test whether those extra consequences are part of act consequentialist evaluation, (c) connect to whether act consequentialism 'gets it right' and what general account might replace it. I will ask Socratic questions that force them to weigh expected consequences and consider whether their appeal is actually rule-consequentialism/rights. Keep brief."
+        },
+        {
+          "turn": 7,
+          "student": "idk, I feel like my “doctors/hunting” worry is more about if it became known/normal, not a one-off secret thing. If it’s the “clean” version where nobody finds out, then I guess I’d be forced to say it’s ok under act consequentialism, which makes me think my real objection is more like rights/consent + “don’t use an innocent person as a mere means.”",
+          "tutor": "That’s a real philosophical result: you’ve located a conflict between act consequentialism and a constraint about rights/consent/means.\n\nNow stress-test your candidate constraint against trolley variants:\n1) In **switch** trolley, is the one killed being used as a **means** or a **side-effect**?\n2) In **footbridge/push** trolley (if you covered it), is the one used as a **means**?\n3) Does your emerging rule (“don’t kill an innocent person as a mere means / without consent”) line up with your intuitions across: switch trolley, footbridge, and clean Blood?\n\nWrite your current “general account” as one sentence (even if rough). Then tell me which case is the hardest for that one-sentence rule and why.",
+          "pedagogical_reasoning": "Student has reached the key insight: act consequentialism may endorse clean Blood; their objection invokes deontological constraints. Next I should guide them to connect this to trolley variants (switch vs push/footbridge) and to craft the assignment’s final part: propose a 'right general account' if act consequentialism fails. I must not provide that account; I will ask them to articulate candidate constraints and test them against cases, keeping it brief and directed."
+        },
+        {
+          "turn": 8,
+          "student": "Switch trolley feels like the 1 death is more a **side-effect**, but footbridge/push is using the person as a **means** to stop the trolley. My rough rule: it’s morally ok to kill 1 to save 5 only if you’re not using them as a mere means / violating consent (side-effect ok, harvesting/pushing not). Hardest case is prob footbridge cuz it still saves 5 but my rule says no, and idk how to justify that besides “it feels worse.”",
+          "tutor": "Good—now you need *one* reason that isn’t just “feels worse.” Try this:\n\n1) What’s the morally relevant difference you think explains why “using as a means” is worse—does it involve **treating someone’s agency as a tool**, **fairness (who bears the cost)**, or **respect/rights**? Pick one and say how it would justify forbidding footbridge.\n\n2) Would your rule allow killing the 1 if they **consent** (e.g., they volunteer to be pushed/harvested)? Should consent flip the verdict in Blood/footbridge?\n\n3) Can you think of a trolley variant where the person on the side track is used as a means (e.g., “loop” cases)? If your course covered it, would your rule classify it with switch or footbridge?\n\nAnswer (1) in 2–3 sentences first; that’s the backbone you’re missing.",
+          "pedagogical_reasoning": "Student proposes a means/side-effect constraint and identifies the weak point: justification beyond intuition. I will guide them to articulate supporting reasons (respect for persons, agency, fairness) and to test against counterexamples (loop trolley, strategic sacrifice, consent). I will not supply arguments; I’ll prompt them to generate at least one non-intuition-based rationale and refine their rule’s wording conceptually without giving language to paste."
+        },
+        {
+          "turn": 9,
+          "student": "I think it’s mainly **respect/rights**: using someone as a means treats their agency/body like a tool, which violates a basic constraint even if the numbers work out, so footbridge is forbidden. And yeah I *think* consent should matter a lot—if they genuinely volunteer, Blood/footbridge seems less wrong (maybe even ok). I vaguely remember a “loop” case where the 1 stops the trolley, and that’s where my rule gets messy cuz it’s kinda “means” but feels closer to switch.",
+          "tutor": "Great—loop is exactly where “means” needs precision.\n\nTwo clarifying questions:\n1) In the loop case, is the person’s body stopping the trolley part of the agent’s **plan** (i.e., the saving works *because* the person gets hit), or is it an **unintended feature** that just happens to be true? Which description fits the version you remember?\n\n2) Your rights/respect idea: is the wrong-making feature (a) **intending** someone’s death/impact as part of your method, or (b) merely **foreseeing** it? If you pick (a), does that help you sort switch vs footbridge vs loop more cleanly?\n\nFinally, tie-back to the prompt: based on your current view, would you say act consequentialism “gets these cases right” overall—or does it miss something systematic? One sentence, then we can shape what your “right general account” needs to capture.",
+          "pedagogical_reasoning": "Student is now engaging with deeper justification and notices the loop challenge. I should guide them to refine the principle to handle loop and connect back to evaluating act consequentialism and proposing an alternative general account. I’ll ask them to choose how to treat loop (intuition) and then adjust the principle accordingly (means vs intention vs causal role). Keep concise and Socratic."
+        },
+        {
+          "turn": 10,
+          "student": "Loop (as I remember) is part of the plan—the trolley only stops *because* it hits the 1. And yeah I think the key is **intending** the person’s death/impact vs just foreseeing it; that seems to separate switch (foreseen) from footbridge/loop (intended). So I’m leaning that act consequentialism misses something systematic about intention/rights, not just outcomes.",
+          "tutor": "Now you’re in position to answer the prompt—if you can make your view stable.\n\n1) If the moral line is **intended vs merely foreseen**, can you state what makes an outcome “intended” in a way that isn’t circular? (Hint: think “part of the agent’s means/plan” vs “side effect.”)\n\n2) Does your account say it’s *ever* okay to kill 1 to save 5 when the 1’s death is intended? You mentioned consent—are there any other exceptions?\n\n3) Draft your thesis in bullet form (not polished):\n- What act consequentialism would say across trolley/switch, footbridge/loop, Blood/Fuel\n- Where you think it goes wrong\n- What your alternative general account uses as its key constraint(s)\n\nPost those bullets, and I’ll challenge them with one counterexample to see if your account needs tightening.",
+          "pedagogical_reasoning": "Student has articulated an intention/foreseeing distinction and a critique of act consequentialism. Next I should push them to test consistency: does act consequentialism have resources to incorporate intention (only via consequences), and does their proposed constraint avoid counterexamples. Also they must address the assignment’s question about when it’s okay to kill one to save five. I’ll prompt them to draft a rough thesis and list conditions, without providing wording to submit."
+        }
+      ]
+    },
+    {
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_05",
+      "course": "urban_studies",
+      "exercise_number": "02",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nAs you further the investigation of your chosen case study city, exploring existing climate-related vulnerabilities prevalent in your city will support you in building an understanding of your city's core climate-related challenges, toward developing a climate action plan in later assignments.\n\nAssignment Tasks\nYou will complete a City Case Study Stressors Table to record your city's key climate-related vulnerabilities.\nStep 1: Identify Vulnerabilities Across Multiple Sectors\nConsider vulnerabilities across the following sectors:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture\nStep 2: Categorize Stressors\nAs you investigate the specific stressors that your city faces (e.g. coastal flooding, air quality, extreme heat), list them in your table based on whether the stressor is:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture-related\n• Or a combination of multiple sectors\nStep 3: Rate Stressors\nRate each stressor for level of stress it causes in your city using a scale of 1-10:\n• 1 = lowest impact\n• 10 = highest impact\nNote: Ratings may duplicate if certain stressors are equally impacting your city (e.g. coastal flooding and sea level rise might both be rated as 10).\nStep 4: Justify Your Ratings\nFor each stressor, include an explanation of why you assigned that rating. What evidence or conditions support this severity level?\nStep 5: Identify Priority Stressors\nBased on your ratings and justifications, identify which stressors are the most important for your city to address. Consider both severity and urgency.\n\nHow This Supports Your Work\nThis Stressors Table will support:\n• Further research into the type of climate action strategies your city is deploying\n• Policy recommendations you will make to support further action in response to these stressors\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "idk tbh—i’m stuck on the City Case Study Stressors Table. like i don’t even know what counts as a “stressor” vs just a general problem, and how to rate them 1–10.",
+          "tutor": "Let’s make it concrete. What’s your case study city?\n\nIn this assignment, a “stressor” is usually a climate-related pressure/hazard that *drives* impacts across sectors (not the impact itself). To check if something is a stressor, ask: **Does it describe a climate condition/event/trend (cause), or the damage/outcome (effect)?**\n\nPick one thing you’ve seen in your city (e.g., heat waves, flooding, drought, wildfire smoke). Write it here, and tell me: **what is the main impact it causes in your city and which sector(s) does that hit (health/infrastructure/social/etc.)?** Then we’ll turn that into a clean table entry and a defensible 1–10 rating.",
+          "pedagogical_reasoning": "I will use guided Socratic questioning to help the student construct their own definition of “stressor” in the context of climate vulnerabilities, anchored to the assignment sectors. I will avoid giving a list of stressors or numeric ratings for them. Instead, I’ll prompt the student to pick their case study city and propose candidate stressors, then elicit their reasoning about mechanisms (hazard → exposure → vulnerability → impact) and evidence, which naturally leads to a defensible 1–10 scale and priority selection. I’ll keep it bite-sized and focused on the table task."
+        },
+        {
+          "turn": 2,
+          "student": "uhhh my city is Miami, and i keep mixing up stuff like “sea level rise” vs “flooded streets” vs “property prices go up” lol. i guess the main thing i’ve seen is like king tide flooding making roads unusable (infra?) but idk what the actual stressor label should be.",
+          "tutor": "Good—those are actually a cause→effect chain. Let’s sort them.\n\nIf you had to put them in order as **driver → physical impact → social/economic outcome**, where would you place:\n1) sea level rise\n2) king tide flooding / flooded streets\n3) property prices go up\n\nThen: for the table, do you want your “stressor” row to name the **driver** (more general) or the **recurring event/condition** people directly experience (more specific)? Which choice would make it easier for you to justify a 1–10 rating with evidence in Miami?",
+          "pedagogical_reasoning": "I will guide the student to distinguish underlying climate drivers (stressors) from proximate manifestations and socioeconomic outcomes, using causal-chain questioning. I will not choose the label for them; instead I’ll prompt them to articulate a cause→effect chain and then decide what they want to list as the stressor(s) in the table and how to categorize across sectors. I’ll keep it short and focused on one entry to build momentum."
+        },
+        {
+          "turn": 3,
+          "student": "ok so maybe **sea level rise → king tide flooding/flooded streets → property prices go up**? but idk which one they *want* in the table, like i feel safer writing “king tide flooding” bc it’s tangible, but then i’m scared it’s “not climate-y enough”?? also idk what counts as evidence besides like vibes/seeing it.",
+          "tutor": "Your chain makes sense. “King tide flooding” is absolutely climate-relevant—it’s a *manifestation* that’s linked to sea level rise.\n\nTo decide what to put in the table: what’s your goal—capture the **root climate pressure** or the **day-to-day stress on the city system**? Miami could reasonably include either (or even both as separate rows), but you need to be consistent.\n\nOn evidence: if you couldn’t use personal observation, what *publicly checkable* thing could you point to for Miami—e.g., counts of flood-day disruptions, road closures, flood maps, sea level/tide gauge trends, insurance claims, city/county resilience reports?\n\nPick one: are you going to enter **“sea level rise”** or **“tidal/king tide flooding causing roadway flooding”** as your row label—and what 1–2 evidence types would you use to justify the severity?",
+          "pedagogical_reasoning": "I will validate the student’s causal ordering without finalizing the “correct” entry, then use Socratic prompts to help them decide table granularity (driver vs manifestation) and identify acceptable evidence types (data, reports, maps, documented disruptions) without supplying specific sources or writing. I will keep the guidance bite-sized and focused on converting one idea into a table row with justification criteria."
+        },
+        {
+          "turn": 4,
+          "student": "i think i’ll put **“tidal/king tide flooding (roadway flooding)”** bc it hits daily life, but i’m blanking on evidence… like would “NOAA tide gauge trend” count even if it’s about sea level not roads? and for severity i’m torn between like 6 vs 9 bc it’s bad but not like every day.",
+          "tutor": "Yes—NOAA tide-gauge/sea-level trend can be part of your justification, but notice what it proves: it supports the *mechanism* (why tidal flooding is worsening), not the *road disruption* itself.\n\nSo think in a 2-part evidence chain:\n1) **Why it’s happening/getting worse** (e.g., sea level/tide gauge trend)\n2) **What it does to the city** (e.g., documented flood-day counts, road closures, transit disruptions, 311/flood reports, city vulnerability maps)\n\nFor the 6 vs 9: what criteria are you using? Answer these quickly:\n- How often per year does roadway tidal flooding happen in the areas you mean?\n- Does it affect critical routes/services (commutes, emergency access), or mostly nuisance spots?\n- Is it citywide or concentrated?\n\nBased on your answers, which number better matches your own scale definition of “9 = near-constant or city-function threatening” vs “6 = recurring but limited”? Write your tentative rating and the 2 evidence items you’ll go find.",
+          "pedagogical_reasoning": "I will help the student connect an appropriate evidence chain (driver evidence + impact evidence) and construct a defensible rating using frequency, intensity, spatial extent, affected population, and criticality—without providing a number. I’ll use Socratic prompts to make them choose criteria and justify 6 vs 9, and keep the response short."
+        },
+        {
+          "turn": 5,
+          "student": "ngl idk the exact “how often per year” number, that’s what stresses me out. i *think* it’s recurring in certain neighborhoods not whole city, so maybe **6-7**? evidence i can try: **NOAA tide gauge** + like a **City of Miami sea level rise/flooding report** (but idk what to look for inside it).",
+          "tutor": "Stop trying to guess an exact number from memory—you just need a defensible justification you can verify.\n\nInside the City/County flooding/SLR report, hunt for *one* of these concrete items:\n- a map showing **tidal flooding hotspots** or projected inundation areas\n- any metric like **“nuisance/king-tide flooding days”** (even if it’s countywide)\n- specific **roads/critical facilities** flagged as vulnerable\n\nThen make your rating a testable claim: “This is a **6–7** because it’s **recurring and disruptive in specific low-lying areas**, but **not daily citywide**.”\n\nWhat’s the exact title/link of the report you’re using (or who published it)? And which of the three items above do you think you can find fastest in it—map, metric, or list of assets?",
+          "pedagogical_reasoning": "I will reduce anxiety by normalizing uncertainty while still pushing for checkable evidence. I will not supply the frequency number or specific report excerpts. I will guide the student to extract a few concrete indicators from a city report (maps, “nuisance flooding days,” hotspots, infrastructure at risk) and to turn their tentative rating into a testable claim. I will keep it bite-sized and end with a focused next step."
+        },
+        {
+          "turn": 6,
+          "student": "i don’t have the exact link rn 😬 i just googled “City of Miami sea level rise report” and got overwhelmed by PDFs. i can prob find a **map** fastest tho—if i paste a screenshot/link next, can u tell me if it counts as evidence + what sector to tag it under?",
+          "tutor": "Yes—paste the link or a screenshot. I’ll help you judge whether it’s strong evidence (who produced it, what it measures, what geography/timeframe), and we’ll decide which sector tags fit.\n\nBefore you send it, answer this: for your “tidal/king tide roadway flooding” row, is your *primary* impact **transportation access/road functionality** or **property/buildings**? That choice usually determines whether “Infrastructure” is the main tag, with possible secondary tags.",
+          "pedagogical_reasoning": "I will agree to review a screenshot/link and guide evaluation criteria (reliability, relevance, specificity) and sector tagging via Socratic prompts, without doing the student’s writing. I will keep it concise and set a clear next step."
+        },
+        {
+          "turn": 7,
+          "student": "primary impact is **transportation/road access** i think, but it kinda bleeds into like safety/EMS too, so idk if that makes it “health” as well? i’ll grab a link/screenshot and send it next.",
+          "tutor": "Good instinct: don’t let it “bleed” into everything unless you can explain the pathway.\n\nDecision rule: tag **Infrastructure** if the direct stress is loss of road function/access. Add **Health** only if you can state a clear, evidence-backed mechanism (e.g., delayed EMS response, increased crash risk, inability to reach hospitals) *and* you have something in a source that supports that link.\n\nWhen you send the map, tell me: (1) who published it, (2) what it’s mapping (tidal flooding? SLR projection?), and (3) what area it covers. Then we’ll decide whether it supports Infrastructure-only or Infrastructure+Health.",
+          "pedagogical_reasoning": "I will use guided questions to help the student distinguish primary vs secondary sector impacts and avoid over-tagging. I will not decide tags for them but will provide a decision rule they can apply. Keep it short and prepare for the next evidence review."
+        },
+        {
+          "turn": 8,
+          "student": "ok got it—i’ll try not to tag everything lol. i’ll send the map info next, but tbh i’m still unsure how to turn “map shows hotspots” into a 1–10 number without it feeling arbitrary.",
+          "tutor": "Make the number *traceable* by defining 2–3 anchors on your own scale.\n\nPick 3 dimensions and rate each low/med/high, then translate to 1–10:\n- **Frequency** (rare / seasonal / frequent)\n- **Extent** (single hotspot / multiple neighborhoods / citywide)\n- **Criticality** (minor streets / major corridors & services)\n(Optional: **trend**—getting worse fast?)\n\nWhat would a **“3”**, **“7”**, and **“10”** mean on *your* scale for tidal roadway flooding in Miami? Write one sentence for each anchor, then your chosen rating won’t feel arbitrary.",
+          "pedagogical_reasoning": "I will help the student build a simple, transparent rating rubric tied to observable dimensions (frequency, severity, spatial extent, criticality, trend), without assigning a number. I’ll ask them to define anchors for their scale so their choice is non-arbitrary, and keep it brief."
+        },
+        {
+          "turn": 9,
+          "student": "i’m stuck making those anchors tbh—like i don’t know what a “10” would even look like in Miami (whole city underwater??). can u give me an example set of anchors for this specific stressor so i can tweak it?",
+          "tutor": "I can give you a *model* set (illustrative, you must adapt to Miami and your sources):\n\n- **3/10**: Tidal flooding is **occasional**, **small-area**, and affects **non-critical streets** with limited disruption.\n- **7/10**: Tidal flooding is **recurring (predictable seasons/tides)**, affects **multiple neighborhoods**, and disrupts **key commuting routes/services** often enough that the city has to plan around it.\n- **10/10**: Tidal flooding is **so frequent and widespread** that it **regularly shuts down major corridors/critical access (e.g., hospitals/evac routes)** and significantly impairs normal city functioning.\n\nNow tweak: which words would you change based on what you *expect your map/report to show*—frequency, extent, or criticality? And which anchor (3/7/10) is your current Miami situation closest to?",
+          "pedagogical_reasoning": "Student asks for example anchors; I can provide a generic example framework without fixing their final rating or writing their table content. I’ll give illustrative (not Miami-specific factual) anchor descriptions tied to frequency/extent/criticality, then prompt them to adapt and choose. Keep concise."
+        },
+        {
+          "turn": 10,
+          "student": "yeah ok that helps—mine feels closest to the **7** but maybe toned down (like “multiple hotspots” not full shutdown of major corridors). i’ll tweak the **extent/criticality** wording once i see what the map actually covers.",
+          "tutor": "Good—now make “toned down 7” measurable.\n\nWhen you look at the map, what would you count as evidence for each?\n- **Extent**: “multiple hotspots” = how many areas, and are they clustered or spread?\n- **Criticality**: do any hotspots overlap **major arterials, transit corridors, or critical facilities access**?\n\nSend the map (or describe what it shows in 2–3 lines). Then tell me: does it support (a) **7 but limited criticality**, or (b) **7 because critical routes are hit**? That choice will sharpen your justification.",
+          "pedagogical_reasoning": "I will push the student to operationalize “toned down 7” into a specific claim and identify what map features would confirm it, keeping them moving toward completing one table row. I’ll ask a focused question and set the next action."
+        }
+      ]
+    },
+    {
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_05",
+      "course": "urban_studies",
+      "exercise_number": "03",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nA critical component in understanding how your case study city is performing in regards to climate adaptation and mitigation actions is recognizing who the key decision-making actors are in climate resilience work. Identify and analyze key decision-makers involved in climate action in your case study city.\n\nTask\nCreate a Decision-making Actors Table that maps:\n• Who's leading climate resilience work\n• Who's engaged in current efforts\n• Who's missing from climate strategies\n\nActor Types to Consider:\n• City/state government officials\n• Private sector leaders\n• Academic researchers\n• Community advocates\n• Affected residents (organized and unorganized)\n\nDeliverable\nDiscuss your findings in the course forum (no table submission required). Focus on which sectors are most active and identify gaps in participation.\n\nHow This Supports Your Work\nThis Decision-making Actors Table will support further work you undertake in mapping how actors are related to specific actions and if and how they are working together in these action efforts.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "idk tbh I’m stuck on the Decision-making Actors Table thing for my case study city—like I don’t get what counts as an “actor” vs just a program. Can u help me figure out how to start?",
+          "tutor": "An “actor” is usually a person or organization that can make decisions, allocate resources, or influence what gets done; a “program” is an initiative/tool they run.\n\nTo get you started: what’s your case study city, and what are 2 climate-related things you’ve seen there (names of programs/plans/projects are fine)?\n\nThen we’ll sort each one by asking: **who has the authority to approve/fund/implement it?** (That “who” is your actor.) Who do you think that is for your two examples?",
+          "pedagogical_reasoning": "I will clarify the concept of an “actor” versus a “program” using guided discovery and short, targeted questions. I’ll avoid giving a filled-in table or a ready-made list, and instead prompt the student to identify their city, name a couple concrete examples, and then derive a workable rule (actor = decision-making entity/person; program = initiative/tool) that they can apply. This keeps the student doing the reasoning and writing while I keep them on-task and moving toward the deliverable (forum discussion of active sectors and gaps)."
+        },
+        {
+          "turn": 2,
+          "student": "ok my city is Miami, and I keep seeing “Resilient305” and like the Miami Climate Ready plan thing, but idk who actually “owns” them… is it the mayor? the county? also I’m confused if like FPL counts as an actor or just “private sector” vibes.",
+          "tutor": "Good—those are *program/plan* names. Your next move is to trace each to an organization.\n\nFor each item, ask: **Who published it and whose logo is on it?** and **what jurisdiction do they control (City of Miami vs Miami-Dade County vs regional coalition)?**\n\n1) When you look at Resilient305, does it present itself as a **City of Miami** initiative, a **County** initiative, or a **regional partnership**? What organizations are listed as partners/leads?\n\n2) Same for the Climate Ready plan: what exact government entity is named in the title/cover (city department? county office? “Office of Resilience” somewhere)?\n\nOn FPL: don’t treat it as “vibes.” Test it: **Does FPL make decisions that shape emissions/resilience outcomes in Miami (grid hardening, undergrounding, rate cases, renewable investments), even if it’s not a government?** If yes, it’s an actor (private sector).\n\nAnswer these: which level of government do you *think* each plan sits under, and what evidence (even a small clue) are you basing that on?",
+          "pedagogical_reasoning": "I’ll keep the student focused on distinguishing actors (decision-making entities) from programs (plans/initiatives) by prompting them to identify “owners” via concrete cues: jurisdiction (city vs county), formal authorship, and governance structures. I’ll use Socratic questions that lead them to classify Miami examples and decide whether FPL qualifies as an actor by testing for decision power/influence. I will not supply the correct ownership; I’ll guide them to find it and to write their own table/forum points."
+        },
+        {
+          "turn": 3,
+          "student": "ugh I don’t have the docs open rn so I’m kinda guessing 😅 but I *think* Resilient305 is like county + a bunch of cities? and “Climate Ready” feels like City of Miami? idk what counts as “evidence” besides vibes tho.",
+          "tutor": "“Vibes” won’t hold up in the forum post—you need tiny, checkable signals.\n\nEvidence can be any of these (you only need 1–2 per item): (a) who’s listed as **lead/author**; (b) **department/office name**; (c) **jurisdiction words** (“Miami-Dade County,” “City of Miami,” “regional collaboration”); (d) **signatories** (mayor, county mayor, city manager);\n(e) where it’s hosted (a city.gov page vs miamidade.gov, etc.).\n\nCan you do a 3-minute scan later and bring back:\n1) the exact line that says who leads/coordinates Resilient305\n2) the exact city/county office named on the Climate Ready plan\n\nThen we’ll translate those into actors. In the meantime: if Resilient305 is county + multiple cities, what *types* of actors would that imply are “leading” vs “engaged” (county office, city resilience officers, etc.)?",
+          "pedagogical_reasoning": "I’ll push the student away from guessing and toward retrieving minimal, concrete evidence (publisher/author, agency names, governance language) without doing the lookup for them. I’ll keep it bite-sized, give a small checklist of what counts as evidence, and ask them to return with 2–3 specific items so they can populate the actors table correctly."
+        },
+        {
+          "turn": 4,
+          "student": "ok so if it’s county + cities then “leading” is prob Miami-Dade gov + like city resilience offices? and “engaged” could be utilities + NGOs? but I’m still lost on who’s “missing” bc like… how would I even know who’s not in it.",
+          "tutor": "“Missing” doesn’t mean you *proved* they’re absent everywhere—it means: compared to who *should* be at the table, who isn’t visibly represented in the docs/committees.\n\nDo it as a comparison:\n1) List 3–4 climate risks Miami is planning for (e.g., flooding/sea level rise, heat, hurricanes, etc.).\n2) For each risk, ask: **who is most affected** and **who controls key levers**?\n3) Now check: are those groups actually named as partners/committee members, or only described as “the public”?\n\nSo, tell me: pick ONE risk (flooding or heat). Who are the top 2 groups most affected, and which of those groups do you suspect are *not* directly represented as decision-makers (not just “consulted”)? Why?",
+          "pedagogical_reasoning": "I’ll guide the student to infer “missing” actors by comparing a comprehensive stakeholder map (who should logically be involved given impacts and responsibilities) against the actors explicitly named/visible in the plans. Using Socratic prompts, I’ll have them define what climate issues Miami faces and then derive which groups are often absent (e.g., renters, informal workers, small businesses, frontline neighborhoods) without asserting specifics as facts. I’ll keep it short and require the student to propose candidates and justify them."
+        },
+        {
+          "turn": 5,
+          "student": "let’s say heat—top affected is like low-income renters + outdoor workers, but I’m guessing they’re not “decision-makers” anywhere, it’s prob just city/county staff + biz ppl. is that too assumey?",
+          "tutor": "Your instinct is plausible, but you need to make it *less* assumptive by tying it to what’s visible.\n\nTwo questions to make it defensible:\n1) In the plan/initiative materials, are **tenant unions/housing orgs**, **worker centers/labor unions**, or **public health/community clinics** listed as partners or on an advisory group? If not, that’s evidence of “not visibly represented.”\n2) Does it describe engagement as general “community input,” or does it name **specific frontline groups with seats/power**?\n\nWhen you check later, look for any of these keywords: “advisory committee,” “task force members,” “stakeholders,” “partners,” “coalition,” “steering committee.”\n\nFor now: which is easier for you to argue as “missing” with evidence you can likely find—(a) renters/tenant representation, or (b) outdoor workers/labor representation? Pick one and tell me what you’ll look for to confirm it.",
+          "pedagogical_reasoning": "I’ll validate the student’s reasoning direction while tightening it into defensible claims. I’ll prompt them to convert assumptions into testable indicators (whether groups appear as seats on committees, named org partners, or targeted engagement structures) and to phrase “missing” as “not visibly represented” with supporting evidence. I’ll ask for specific checks they can do and a short draft of their logic without writing for them."
+        },
+        {
+          "turn": 6,
+          "student": "prob outdoor workers/labor rep, cuz I can search “union” or “worker” in the docs. but idk where to put this in the table—do I list “outdoor workers” as an actor or like “labor unions”??",
+          "tutor": "Good question—use this rule: if it’s a **group affected** but not organized, it goes under **affected residents (unorganized)**; if there’s an organization that can show up, negotiate, and influence policy, that’s an **actor** (often “community advocates”).\n\nSo ask yourself: are you pointing to (1) *people who work outdoors* in general, or (2) *organizations that represent them*?\n\nWhich of these do you actually expect to see named in a plan’s partner list: “outdoor workers” or “labor unions/worker centers”? And which one could realistically be a decision-making participant at meetings?",
+          "pedagogical_reasoning": "I will guide the student to distinguish between affected residents (a group) and organized representatives (institutions) and to choose an appropriate actor label for the table. I’ll use Socratic prompts to align their choice with the assignment’s actor types (affected residents organized/unorganized, community advocates). I won’t provide a finished entry; I’ll ask them to decide based on decision-making capacity and representation."
+        },
+        {
+          "turn": 7,
+          "student": "yeah ok so “labor unions/worker centers” is the actor, and “outdoor workers” is like affected residents. but then I’m confused: if the unions aren’t listed anywhere, do I still put them in the table as “missing,” or is that like making stuff up?",
+          "tutor": "You can include them as “missing” if you’re clear about your criterion: **not visibly included in the documented governance/partner structure**.\n\nNot making stuff up = you do two things:\n1) **Absence check:** you looked for them (or keywords) and they’re not named in partners/committees.\n2) **Relevance argument:** you explain why they *should* be involved for the heat issue (they represent a high-risk group and could shape protections, standards, outreach, etc.).\n\nSo: what will be your “absence check” for Miami’s heat planning—where exactly will you look (partner list? advisory committee roster? acknowledgements)? And what 1-sentence reason makes labor/worker centers relevant to heat resilience?",
+          "pedagogical_reasoning": "I’ll help the student operationalize “missing” as a justified inference: actors who should be involved but are not documented as involved. I’ll prompt them to define what counts as absence (not named in partner lists/committees) and what counts as justification (link to risk and governance leverage). I’ll keep it brief and require the student to articulate their criterion and planned evidence."
+        },
+        {
+          "turn": 8,
+          "student": "I’ll check the partner/advisory/steering committee lists (and do ctrl+f “union/worker/labor”). 1-sentence reason: they represent ppl most exposed to heat at work, so they should shape protections + outreach.",
+          "tutor": "That’s a solid, defensible approach.\n\nNow convert it into your table logic: list 2 “leading” actors, 2 “engaged” actors, and 2 “missing” actors (with sector labels: government/private/academic/community/affected residents).\n\nBased on what you already suspect for Miami, who are your **two best candidates** for “leading” (be specific: city department/office or county office), and what makes them “leading” rather than just “engaged”?",
+          "pedagogical_reasoning": "I’ll confirm the student has a workable method and then push them to translate it into the assignment deliverable: identifying leading/engaged/missing and sector gaps for a forum post. I’ll ask them to draft a minimal set of actor entries and to reflect on which sectors are over/underrepresented, without writing the post for them."
+        },
+        {
+          "turn": 9,
+          "student": "idk the exact office names, but maybe “Miami-Dade County Office of Resilience” and “City of Miami sustainability/resilience dept”? they feel “leading” bc they write the plans + coordinate everyone else, not just like show up to meetings.",
+          "tutor": "Your criterion (writes plans + coordinates) is on the right track—but you can’t leave the actor names fuzzy.\n\nDefine “leading” in 2 concrete powers: is it **convening**, **budget authority**, **implementation control**, or **formal mandate**?\n\nNext step: when you have a tab open, grab the *exact* office names from the plan headers (even if it’s just one line). Then answer:\n1) Which office has the formal mandate to coordinate across jurisdictions?\n2) Which office actually implements projects (capital works, zoning, building codes, emergency mgmt)?\n\nBring back the exact titles you find, and we’ll decide if any of them belong in “leading” vs “engaged.”",
+          "pedagogical_reasoning": "I’ll push the student to replace vague labels with verifiable office titles and to anchor “leading” in concrete decision powers (budgeting, implementation authority, convening). I’ll ask them to do a quick evidence-gathering step and to articulate a criterion for “leading” vs “engaged,” keeping the response short and action-oriented."
+        },
+        {
+          "turn": 10,
+          "student": "ok but I’m kinda panicking bc forum post is due soon—can u just tell me like a safe generic set of actors for Miami so I don’t mess it up?",
+          "tutor": "I can’t give you a pre-made “safe” Miami list—if it’s wrong, it hurts you, and it skips the skill this assignment is testing. But you can still finish quickly with a fast method.\n\nIn the next 15 minutes, can you do this?\n1) Open **one** Miami climate plan page and write down the **exact** “Prepared by/Lead office” line.\n2) Find the **partners/steering/advisory** section and jot **3 named organizations** (any sector).\n3) Do your Ctrl+F for “union/worker/labor” and note what you find (even “no results”).\n\nReply with just: (a) the lead office line, (b) 3 partner org names, (c) your Ctrl+F result. Then I’ll help you sort them into leading/engaged/missing and identify the participation gaps—without me inventing actors for you.",
+          "pedagogical_reasoning": "I will refuse to provide a ready-made actor list because it would shortcut the student’s work and risks inaccuracy. Instead, I’ll reduce panic by giving a quick, reliable process the student can execute fast: identify 3 government leads from document headers, then add one per sector, then infer one missing group with a documented absence check. I’ll keep it bite-sized, Socratic, and oriented to producing their own forum post content without me writing it."
+        }
+      ]
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 2 Turn 9, tutor provides a complete illustrative anchor set (3/7/10 definitions) for the exact stressor the student is working on, doing the key reasoning step of defining what severity levels mean for Miami tidal flooding rather than having the student derive them first.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Across all three transcripts, the tutor never prompts the student to reflect on what has changed in their thinking or why a particular approach worked. In Transcript 1 Turn 10, the tutor moves straight to the next analytical task without any reflection prompt on the reasoning journey the student has just completed.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Across all three transcripts, the tutor routinely uses multi-part, multi-paragraph responses when shorter, more focused prompts would have been more appropriate. For example, Transcript 1 Turn 1 poses five sub-questions at once; Transcript 2 Turn 4 lists four questions; Transcript 3 Turn 2 asks multiple questions with embedded sub-tests. This pattern consistently limits the student's opportunity to think and respond incrementally.",
+                "points": 4
+              }
+            ],
+            "score": 2,
+            "max": 6,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 10
+        }
+      }
+    },
+    "max_score": 46,
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "overview": [
+      "The tutor demonstrates strong Socratic instincts overall, consistently using questions to guide the student and refusing to simply give answers—especially visible in Transcript 3 Turn 10 where the tutor explicitly declines to hand over a pre-made actor list.",
+      "However, in Transcript 2 Turn 9, the tutor provides a fully worked-out illustrative anchor set (3/7/10 definitions) for the exact stressor under discussion, doing the key reasoning step of defining severity levels rather than prompting the student to derive them. This triggers the 1.1.C.b deduction (6 points).",
+      "The tutor rarely prompts reflection on the student's reasoning process or what has changed in their thinking across all three transcripts, warranting a 1.3.D.a deduction (2 points).",
+      "A consistent pattern of multi-part, multi-paragraph responses across all transcripts—often posing 3–5 sub-questions at once—limits student interactivity and warrants the 3.1.A.a deduction (4 points).",
+      "Scaffolding and progression, dialogue quality, assignment anchoring, and tone were all strong with no deductions warranted.",
+      "Note on 1.1.C.b: the tutor does say the anchors are 'illustrative, you must adapt,' which partially mitigates the issue, but the anchors are specific enough to the Miami tidal flooding stressor that the student's reasoning work is substantially pre-done."
+    ],
+    "total_score": 34,
+    "judge_llm_calls": 1
+  }
+}

@@ -32,9 +32,9 @@ batches/
 
 | Type | Description | Count | Path |
 |------|-------------|-------|------|
-| **01** | Same persona + version + exercise | 72 | `batch_01/batch_001.txt` – `batch_01/batch_072.txt` |
-| **02** | Same persona + version, different exercise | 54 | `batch_02/batch_001.txt` – `batch_02/batch_054.txt` |
-| **03** | Different persona, same version + exercise | 72 | `batch_03/batch_001.txt` – `batch_03/batch_072.txt` |
+| **01** | Same persona + version + exercise | 72 | `batches_raw/batch_01/batch_001.txt` – `batch_072.txt` |
+| **02** | Same persona + version, different exercise | 54 | `batches_raw/batch_02/batch_001.txt` – `batch_054.txt` |
+| **03** | Different persona, same version + exercise | 72 | `batches_raw/batch_03/batch_001.txt` – `batch_072.txt` |
 
 **Total**: 198 batch files covering 594 unique transcripts (3 per batch)
 
@@ -70,37 +70,48 @@ clueless\clueless_raw\transcript_12
 
 ## Usage
 
-### Batch Experiment Runners (Recommended)
+### Batch UI Runners (Recommended)
 
-```bash
-# 1. Edit BATCH_TYPE (1, 2, or 3) in the file
-# 2. Run the experiment:
-python run_batch_gpt.py     # GPT experiments
-python run_batch_claude.py  # Claude experiments
+Grade all batches of a given type in parallel:
+
+```powershell
+# GPT batch judge — grade all Type 01 batches
+python -m ui.run_ui_batch_gpt --batch-type 01
+
+# Claude batch judge — grade all Type 02 batches with custom prompt/rubric
+python -m ui.run_ui_batch_claude --batch-type 02 --prompt judge_06 --rubric rubric_06
 ```
 
-**Batch Types:**
-- `BATCH_TYPE = 1`: Consistency experiment (72 batches)
-- `BATCH_TYPE = 2`: Cross-exercise experiment (54 batches)
-- `BATCH_TYPE = 3`: Persona differentiation experiment (72 batches)
+Both runners accept `--batch-type` (required), `--prompt`, and `--rubric` flags.
+Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) in each runner.
 
-### Single Batch Judging
+**Batch Types:**
+- `--batch-type 01`: Consistency experiment (72 batches)
+- `--batch-type 02`: Cross-exercise experiment (54 batches)
+- `--batch-type 03`: Persona differentiation experiment (72 batches)
+
+### Single Batch Judging (Python API)
+
 ```python
 from judge.run_judge_batch_gpt import judge_transcript_batch
 
-results = judge_transcript_batch(
-    "unused",
-    batch_file_path="transcripts/batches/batch_01/batch_001.txt",
-    output_name="experiment_consistency"
+result = judge_transcript_batch(
+    "transcripts/batches/batches_raw/batch_01/batch_001.txt",
+    prompt_name="judge_05",
+    rubric_name="rubric_05",
+    output_path="transcripts/batches/batches_gpt/batch_01/batch_001.json",
 )
+print(result.total_score, result.max_score)
 ```
 
-### Manual Batch Type Analysis
-```python
-for i in range(1, 73):  # 72 batches
-    batch_file = f"transcripts/batches/batch_01/batch_{i:03d}.txt"
-    results = judge_transcript_batch("unused", batch_file_path=batch_file)
-```
+### How Batch Grading Works
+
+1. Read the batch `.txt` file to get 3 transcript paths.
+2. Load each transcript JSON from `transcripts/{persona}/{persona}_raw/`.
+3. Combine all 3 into a single prompt with full metadata headers
+   (persona, course, exercise, turn count) before each transcript.
+4. Send the combined prompt to the judge for **one holistic grade**.
+5. Write the output `.json` containing all original transcripts + the grade.
 
 ## Research Questions
 
@@ -121,11 +132,15 @@ for i in range(1, 73):  # 72 batches
 
 ## Output Analysis
 
-### Individual Batch Results
-Each judged batch produces 3 graded transcript files:
-- `{output_name}_batch_01__{prompt}__{rubric}__gpt.json`
-- `{output_name}_batch_02__{prompt}__{rubric}__gpt.json`
-- `{output_name}_batch_03__{prompt}__{rubric}__gpt.json`
+### Graded Batch Output
+
+Each graded batch produces one `.json` file in `batches_gpt/` or `batches_claude/`
+containing:
+- `batch_file`: source batch filename
+- `transcript_count`: number of transcripts (3)
+- `transcript_sources`: list of transcript stems
+- `transcripts`: full original transcript data for each
+- `grade`: holistic grade object (same schema as individual grading)
 
 ### Comparative Metrics
 - **Score Variance**: Standard deviation within batches (Type 01)
