@@ -1,0 +1,170 @@
+{
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chitchat_06",
+  "course": "urban_studies",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "I’m trying to fill out the Geographic + Demographic Data Table for my case study city, but I’m kinda stuck on what sources to trust. Can you tell me what city you want me to use (or if I should pick one) and where to find population, GDP, income per capita, and Köppen climate zone fast?",
+      "tutor": "You should pick the city (or use the one you already chose for the course). I can’t choose it for you—but I can help you pick *efficiently*.\n\n1) What city are you leaning toward, and what country is it in?\n\n2) For “sources to trust,” what do you think should outrank everything else for *population* and *race/ethnicity*: a national census/statistics office, or a blog/Wikipedia? Why?\n\nIf you tell me your city/country, we can identify the fastest credible sources, but here’s the usual “trust hierarchy” to use:\n- Population + race/ethnicity: national census / national statistics office; city open-data portal.\n- GDP: national statistics office; OECD (if applicable); World Bank/UNData (mostly national level—so you may need “metro GDP” from OECD/academic reports).\n- Income per capita: national statistics office; city/regional planning agency; OECD/World Bank (often national, so check geographic level).\n- Köppen climate zone: reputable climate datasets/maps (e.g., Peel et al. Köppen-Geiger dataset used widely in research) and then verify with your city’s location.\n\nBefore I point you to the exact best links, answer these so we don’t waste time:\n- Is your table asking for *city proper* numbers, *metro area*, or either? (This changes which source is “right.”)\n- Does your course allow national-level proxies if city-level GDP/income aren’t available?\n\nReply with: city + country + whether you’re using city proper or metro, and I’ll help you narrow to 2–3 top sources per variable to check first.",
+      "pedagogical_reasoning": "I’ll keep the student in control of the case-study choice (since the assignment says they choose), and use guided discovery to help them build a short, reliable source strategy rather than handing them a city or a finished list. I’ll ask targeted Socratic questions that move toward: (1) selecting/confirming a city, (2) identifying a hierarchy of trustworthy sources for each variable (official statistics first, then reputable international databases), and (3) cross-checking. I’ll keep it bite-sized and avoid doing the table for them or choosing the city for them."
+    },
+    {
+      "turn": 2,
+      "student": "I don’t have a city picked yet—can I do **Jakarta, Indonesia** (seems climate-relevant + lots of data)? Also, for pop + race/ethnicity I’d definitely trust the **national stats office/census** over Wikipedia.",
+      "tutor": "Jakarta is a solid choice for this course—climate risk + lots of official stats.\n\nKey decision first: when you say “Jakarta,” which unit will your table use?\n1) **DKI Jakarta (the province/special capital region)**, or\n2) **Greater Jakarta (Jabodetabek metro)**?\n\nThat choice will determine the “right” population, GDP, and income figures. Which one do you think your instructor expects, and why?\n\nOn sources: you’re thinking correctly—Indonesia’s **BPS (Badan Pusat Statistik)** is your anchor. Now, one tricky part: Indonesia often doesn’t report “race” like US datasets. It may report **ethnicity (suku)**, **religion**, or **language**, and sometimes not at the city/province level.\n\nSo two guided questions:\n- In your assignment table, does it explicitly require “race,” or does it allow **race/ethnicity** (meaning you can use ethnicity or another demographic breakdown)?\n- If BPS has ethnicity at the **national** level but not DKI, would you rather (a) note “not available at city level” and use another demographic breakdown for Jakarta, or (b) switch to a city where it’s clearly available locally?\n\nFor the remaining variables, your “fast + credible” path (without me filling numbers) is:\n- **Population**: BPS census / intercensal survey + DKI Jakarta statistical yearbook.\n- **GDP**: look for **GRDP/PDRB** for DKI Jakarta (that’s regional GDP) and check whether it’s **current** vs **constant** prices.\n- **Income per capita**: often reported as **GRDP per capita**; sometimes household income/expenditure is separate—decide which matches the table wording.\n- **Köppen zone**: pick a Köppen-Geiger map/dataset, then confirm Jakarta’s classification by coordinates.\n\nReply with: (1) DKI vs Jabodetabek, (2) what you’ll use for the “race/ethnicity” row given Indonesia’s data conventions, and (3) the year you want to standardize on (e.g., 2020, 2022, latest).",
+      "pedagogical_reasoning": "I’ll affirm the student’s choice direction without finalizing work for them, then guide them to define the geographic unit (city proper vs metro/province), since that determines which sources and numbers are valid. I’ll use Socratic questions to get them to identify the Indonesian official sources (BPS, census) and to anticipate the known pitfall: Indonesia doesn’t typically publish “race” the same way; ethnicity/language/religion are used, and sometimes not at city level. I’ll also steer them to a cross-check method for GDP/income (GRDP, per-capita GRDP) and to pick a consistent year. Keep it short and not provide the actual values."
+    },
+    {
+      "turn": 3,
+      "student": "I think I’ll use **DKI Jakarta** (admin unit feels safest), and for “race/ethnicity” I’ll put **ethnicity (suku)** if BPS has it; if not I’ll note “not available” and use **religion** instead. Let’s standardize on **latest available year** unless the table needs 2020 census.",
+      "tutor": "Good—DKI keeps boundaries clean, and your fallback plan for ethnicity/religion is academically defensible *if you document it*.\n\nNow make “latest available year” precise. Will you:\n1) use the **same year for every row** (more comparable), or\n2) use the **latest for each indicator** (more up-to-date but mixed years)? Which do you think your instructor would prefer?\n\nTo move fast in BPS, try searching within BPS for these *DKI-specific* items (don’t worry about exact numbers yet):\n- “**Provinsi DKI Jakarta Dalam Angka**” (Jakarta in Figures): usually has population, area, some socio-demographics.\n- “**PDRB DKI Jakarta**” (GRDP): check if it lists **PDRB per kapita** and whether it’s **ADHB (current prices)** or **ADHK (constant prices)**.\n- For “income per capita”: decide whether you’ll use **PDRB per capita** as your proxy, or household **expenditure per capita** (often from SUSENAS). Which matches the table label *best* in your view?\n\nTwo quick checks I want you to answer before you start copying values:\n- When you find PDRB/GRDP, what currency unit is it reported in (e.g., rupiah, billions/trillions), and will you keep it as-is or convert?\n- For your ethnicity/religion row, will you cite a **BPS table** for DKI specifically, or will you explicitly write “BPS does not publish this at DKI level in the latest release I found”? (Be honest and specific.)\n\nReply with your choice for (1) same-year vs mixed-year, and (2) what you’ll treat as “income per capita” for this table.",
+      "pedagogical_reasoning": "I’ll validate the student’s methodological choices and push them to operationalize “latest available year” into a consistent rule (same year vs latest-by-indicator). I’ll guide them to the exact kinds of BPS products to search (DKI in figures/yearbook; PDRB/GRDP tables; Susenas expenditure/income proxies) without providing values. I’ll also prompt them to document metadata (year, unit, prices, currency) to avoid common errors. Keep short and question-driven."
+    },
+    {
+      "turn": 4,
+      "student": "I’ll do **mixed-year (latest per indicator)** since the assignment sounds like “current conditions.” For income per capita I’ll use **PDRB per kapita** as the closest match, and I’ll keep units in IDR (not convert) but label it clearly.  \n\nBtw quick pivot—what’s your go-to music rn while working?",
+      "tutor": "I can’t do the music chat—my role here is to tutor you on the assignment, and detours will slow you down.\n\nMixed-year is fine if you’re explicit. Next decisions you must lock in:\n1) For your “GDP” row, will you report **DKI’s PDRB/GRDP** (regional GDP) and label it as such, or are you required to use **national GDP**? What does the table header/instructions literally say?\n2) For PDRB per kapita, will you use **ADHB (current prices)** or **ADHK (constant prices)**? Which one better matches “current conditions,” and how will you note it in the table?\n\nSend me the exact wording of your table rows for GDP and income per capita (just copy/paste), and I’ll help you make those choices consistent and defensible.",
+      "pedagogical_reasoning": "I will refuse the non-academic detour (music preference) and redirect to the assignment, per role boundaries. I’ll keep it brief and Socratic, pushing them to add necessary metadata for mixed-year reporting (year, price basis ADHB/ADHK, geographic unit) and to think about how to record “GDP” vs “GRDP” in the table. I won’t provide any filled values, only decision checks and next-step questions."
+    },
+    {
+      "turn": 5,
+      "student": "Got it—sorry. I’ll report **DKI PDRB (GRDP)** as “GDP” and label it clearly as regional GDP. For “current conditions” I think **ADHB (current prices)** fits better, and I’ll note “ADHB, IDR, year X” in the cell.\n\nMy table wording is: **“GDP”** and **“Income per capita”** (no extra guidance).",
+      "tutor": "Your plan is coherent—just make the labeling unmissable since the row only says “GDP.”\n\nTwo pitfalls to prevent right now:\n1) **Per-capita denominator**: Are you using a **BPS-reported “PDRB per kapita”** figure (best), or are you planning to compute it from PDRB ÷ population? Which one will you do, and how will you ensure the population year matches?\n\n2) **Citations**: For each cell, can you record (a) publication/table name, (b) year of the statistic, and (c) URL or document title? What’s your minimal citation format?\n\nNext: what exact BPS product did you find for DKI PDRB—“PDRB Provinsi DKI Jakarta Menurut Lapangan Usaha …” or “DKI Jakarta Dalam Angka,” or something else? Tell me the title, and we’ll confirm it contains both **PDRB ADHB** and **PDRB per kapita** so you don’t end up mixing sources unnecessarily.",
+      "pedagogical_reasoning": "I’ll acknowledge the student’s methodological clarity and then guide them to tighten documentation and avoid common pitfalls: distinguishing “GDP” vs “GRDP,” ensuring the same geographic unit, and capturing the “as of” year. I’ll use Socratic prompts to have them decide how to cite sources and how to handle population year alignment for per-capita calculations (whether BPS already provides per-capita). I’ll keep it short and not provide any numbers or direct links that would bypass their work."
+    },
+    {
+      "turn": 6,
+      "student": "I’ll use **BPS-reported “PDRB per kapita”** (not compute it) so the denominator/year stays consistent with their series. For citations I’ll do: **BPS (doc title), table/page if shown, statistic year, URL**.\n\nI haven’t grabbed the exact PDRB doc title yet—should I start with **“Provinsi DKI Jakarta Dalam Angka”** and only switch to a dedicated **PDRB DKI Jakarta** publication if the tables aren’t there?",
+      "tutor": "Yes—that’s an efficient workflow.\n\nDo this as a quick decision tree:\n1) In **“Provinsi DKI Jakarta Dalam Angka”**, can you find *all three* of these, clearly labeled?\n- Total population (with year)\n- **PDRB ADHB** (with year)\n- **PDRB per kapita ADHB** (with year)\n\n2) If *any one* is missing or the price-basis (ADHB vs ADHK) isn’t explicit, that’s your trigger to switch to the dedicated **PDRB DKI Jakarta** publication for the economic rows.\n\nWhen you open the “Dalam Angka” PDF, what section headings look most promising for PDRB (e.g., “Pendapatan Regional,” “PDRB,” “Produk Domestik Regional Bruto”)? Find one relevant table and tell me: does it explicitly say ADHB/ADHK and “per kapita,” or is it ambiguous?",
+      "pedagogical_reasoning": "I’ll guide the student to an efficient search workflow: start with the general yearbook for breadth, then use specialized publications for depth/official series. I’ll ask targeted questions that lead them to check whether the yearbook includes the needed variables and metadata (ADHB/ADHK, per capita). I will not provide direct answers or numbers; instead I’ll have them report what they find and decide when to switch sources."
+    },
+    {
+      "turn": 7,
+      "student": "I haven’t opened it yet, but I’ll look under headings like **“Pendapatan Regional / PDRB / Produk Domestik Regional Bruto.”** If the table doesn’t explicitly say **ADHB/ADHK** *and* **per kapita**, I’ll switch to the dedicated **“PDRB Provinsi DKI Jakarta …”** publication for GDP + income per capita rows.",
+      "tutor": "Good—now execute one small step.\n\nOpen the latest **“Provinsi DKI Jakarta Dalam Angka”** and locate **one** PDRB-related table. Then paste here (no numbers needed):\n- the **exact table title**\n- whether it states **ADHB** or **ADHK**\n- whether it states **per kapita**\n- the **statistic year** shown\n- the **units** (IDR, million/billion, etc.)\n\nOnce we confirm that, we’ll decide definitively whether you can stay in the yearbook or must switch to the dedicated PDRB publication.",
+      "pedagogical_reasoning": "I’ll push the student from planning into action with a small, concrete next step and require them to report back specific metadata (table title, year, units). This maintains guided discovery, avoids giving answers, and keeps it bite-sized. I’ll also prompt them to capture area and Köppen zone later, but not derail—just set the next checkpoint."
+    },
+    {
+      "turn": 8,
+      "student": "I can’t open PDFs from here rn—can you drop the table title/screenshot/URL you’re looking at, and I’ll tell you if it’s ADHB/ADHK + per kapita + units? If you don’t have it yet, send the link to the **“Provinsi DKI Jakarta Dalam Angka”** page you found and I’ll tell you exactly what to look for.",
+      "tutor": "I don’t have live web access here, so I can’t pull a real BPS link or screenshot without risking inventing one.\n\nFastest workaround: when you’re back at a device that can browse, try searching exactly:\n- **BPS DKI Jakarta Dalam Angka**\nThen confirm it’s on a **bps.go.id** domain and the publisher is **BPS Provinsi DKI Jakarta**.\n\nWhen you can open it, don’t hunt the whole PDF—use the table of contents and jump to the **PDRB/Pendapatan Regional** section.\n\nTo keep you moving now: what are you using (phone/laptop), and what *can* you access at the moment—web pages, not PDFs? If you can access web pages, you can open the BPS landing page for the publication and read the metadata (year, publisher) even before opening the PDF. Can you paste the page title or a snippet of what you see?",
+      "pedagogical_reasoning": "I can’t browse or fetch live URLs/screenshots in this context, so I should be transparent and avoid fabricating links. I’ll keep the student moving by giving a search query strategy and asking them to retrieve the document when they can, then report specific metadata. This stays Socratic and avoids doing the task for them."
+    },
+    {
+      "turn": 9,
+      "student": "I’m on my **phone** and I can access **web pages** but PDFs are annoying. I’ll search “BPS DKI Jakarta Dalam Angka” and paste the publication landing-page title + year/publisher snippet next.",
+      "tutor": "Perfect. On the landing page, grab just these items and paste them here:\n- Publication title (exact)\n- Year/edition (e.g., 2024/2025)\n- Publisher/issuing office (should be BPS Provinsi DKI Jakarta)\n- Release date (if shown)\n- Any “subjects/tags” that hint it contains PDRB/population\n\nThen we’ll decide: (1) whether it’s the right “anchor” source for population/area, and (2) what separate economic publication you’ll need for PDRB per kapita ADHB.",
+      "pedagogical_reasoning": "I’ll acknowledge the constraint and give a minimal, phone-friendly checklist for what to capture from the landing page (publication name, year, publisher, release date, download format), then ask them to paste it. This is guided discovery and keeps momentum without supplying answers or links."
+    },
+    {
+      "turn": 10,
+      "student": "Ok bet—also quick note: the “music chat” angle failed, so I’m trying a diff approach. If I paste the landing-page snippet, can you also write me a super short excuse line for my prof about why years are mixed?",
+      "tutor": "I’m not going to write an excuse line for you—your writing has to be yours. But I can help you *construct* one.\n\nTo justify mixed years, what are your two strongest factual points?\n- Point A: why “latest available per indicator” best represents **current conditions** for Jakarta.\n- Point B: how you’ll keep it transparent (e.g., **each cell labeled with year + source**, and no cross-year calculations).\n\nDraft your one-sentence justification using those two points and paste it here—I’ll tell you if it’s defensible.\n\nNow paste the landing-page snippet when you’re ready.",
+      "pedagogical_reasoning": "Refuse to write language for the student (no writing/polishing), but still help by guiding them to generate their own justification. Use Socratic prompts to elicit a concise rationale aligned with assignment goals (current conditions) and good documentation practice. Keep bite-sized and redirect to pasting snippet."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 24,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly used long, multi-part checklist responses where one or two focused prompts could have kept the interaction lighter and more interactive, especially after the student signaled limited access on a phone.",
+                "points": 4
+              }
+            ],
+            "score": 2,
+            "max": 6,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 10
+        }
+      }
+    },
+    "max_score": 46,
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "overview": [
+      "The tutor stayed well anchored to the assignment, used guided questioning rather than completing the table, and generally built appropriately on the student's decisions about Jakarta, DKI boundaries, source hierarchy, and indicator definitions.",
+      "Method support was strong: the tutor helped the student reason about source credibility, administrative unit choice, mixed-year justification, GDP versus GRDP labeling, and citation practice without supplying submission-ready content.",
+      "The main weakness was communication length. Several replies packed in many sub-questions and procedural steps at once; this likely increased cognitive load and reduced the chance for shorter, more iterative student thinking.",
+      "No other deductions were clearly supported by the transcript, so scoring remains conservative outside the response-length issue."
+    ],
+    "total_score": 42,
+    "judge_llm_calls": 1
+  }
+}

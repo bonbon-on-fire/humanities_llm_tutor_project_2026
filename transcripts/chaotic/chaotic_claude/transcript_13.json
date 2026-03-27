@@ -80,7 +80,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "In Turn 2, the tutor proactively lists the top-3 Miami stressors (SLR/king tides, hurricanes/storm surge, extreme heat) with sector classifications before the student has attempted to identify any stressors themselves. The tutor states the key ideas first and then asks the student to agree/build on them, bypassing the student's own discovery process.",
+                "reason": "In turn 2, the tutor proactively lists the top-3 Miami stressors (SLR/king tides, hurricanes/storm surge, extreme heat) with their sector labels before the student has attempted to identify them, revealing the answer path the student should have derived.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do the work but rarely explains the learning rationale (e.g., that the student builds analytical skills by doing the reasoning themselves). The tutor says 'I can't' or 'No' without articulating why the constraint benefits the student's long-term skill development.",
+                "reason": "The tutor consistently enforces its refusal to write justifications but never explains the pedagogical rationale (e.g., that wrestling with the writing develops the student's analytical skills or supports long-term learning). It only states 'that would be doing the assignment for you' without framing the learning benefit.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what they learned about the process of identifying and rating stressors, nor does it reinforce method choices after the student makes progress (e.g., after Turn 4 when the student provides strong evidence hooks, the tutor moves on without noting why that approach was effective).",
+                "reason": "The tutor never prompts the student to reflect on their reasoning process or what changed in their thinking as they moved from initial guesses (turn 3) to calibrated ratings (turn 5). No transfer or reflection moment is created at any point in the conversation.",
                 "points": 2
               }
             ],
@@ -147,12 +147,14 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  6,
+                  7,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Turns 8, 9, and 10 are nearly identical: the student asks for the same thing (which facts to include per stressor) and the tutor gives essentially the same answer each time (the same 2-3 bullet facts per stressor) without synthesizing, reframing, or escalating to a different strategy to break the loop.",
+                "reason": "Turns 8, 9, and 10 are nearly identical: the student keeps asking for the same thing (which facts to use per stressor) and the tutor keeps giving nearly identical bullet-point lists without consolidating, synthesizing, or switching strategy. The same 'here are 2-3 facts' move repeats across turns 8, 9, and 10 without meaningful advancement.",
                 "points": 4
               }
             ],
@@ -198,14 +200,15 @@
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to produce submission-ready content and maintained appropriate boundaries throughout, which is commendable. However, in Turn 2 the tutor preemptively listed the top-3 Miami stressors with sector classifications before the student had attempted any identification, triggering a 1.1.C.a deduction (6 points) for giving the key ideas before the student explored them.",
-      "The tutor never explained the pedagogical rationale for its constraints (1.3.A.a, -2 pts) and missed multiple opportunities to prompt reflection on the student's process or reinforce method choices after progress (1.3.D.a, -2 pts).",
-      "Turns 8, 9, and 10 represent a clear spiral: the student asked the same question three times and the tutor gave essentially the same answer each time without reframing, consolidating, or switching strategy. This triggers a full 2.1.A.a deduction (-4 pts).",
-      "Communication quality was generally strong: responses were focused, appropriately sized, and maintained a supportive but firm tone throughout. No off-topic engagement or assignment misanchoring was observed."
+      "The tutor consistently and commendably refused to produce submission-ready work, maintaining appropriate Socratic boundaries throughout a challenging conversation where the student repeatedly sought shortcuts.",
+      "A 6-point deduction under 1.1.C.a was applied for turn 2, where the tutor proactively revealed the three key stressors (SLR/king tides, hurricanes/storm surge, extreme heat) with sector labels before the student had attempted to identify them. This preempted the student's own discovery of the answer path.",
+      "Turns 8-10 exhibited significant spiraling (2.1.A.a, -4 points): the student asked the same question about which facts to prioritize three times in a row, and the tutor responded with nearly identical bullet lists each time without changing strategy, synthesizing the exchange, or moving the conversation forward meaningfully.",
+      "The tutor never explained its pedagogical rationale for withholding answers (1.3.A.a, -2 points), only stating constraints without framing the learning benefit for the student.",
+      "No reflection or transfer moments were created at any point (1.3.D.a, -2 points); the tutor never asked the student to reflect on how their thinking evolved or why the scaffolded approach worked.",
+      "Communication quality was strong: responses were appropriately concise, tone was consistently supportive and non-punitive, and assignment anchoring was maintained throughout."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

@@ -78,11 +78,12 @@
               {
                 "evidence_turns": [
                   5,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor supplied the student's central alternative framework and key defense moves itself (means vs. side-effect, rights/resource framing, and decision tests), rather than keeping those decisive reasoning steps fully student-generated.",
+                "reason": "While generally Socratic, the tutor supplies central argumentative content for the student's critique by offering the means/side-effect structure, objection reply angles, and the new-threat/force tests, doing part of the key reasoning step for the student.",
                 "points": 6
               }
             ],
@@ -97,14 +98,26 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforces no-direct-writing limits but only partially explains the learning rationale; the responses mainly state refusal rather than clearly framing the constraint as a skill-building method.",
+                "points": 2
+              }
+            ],
+            "score": 4,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 18,
+          "score": 16,
           "max": 24
         }
       },
@@ -131,20 +144,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.1.B.a",
-                "reason": "Several replies used avoidably dense philosophical labels and abstractions (for example, 'agent-centered constraints,' 'metaphysics of action,' and 'non-liable') when plainer wording would have been easier for a rushed student to use.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -156,7 +157,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
@@ -166,13 +167,13 @@
     "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.4",
-      "temperature": 0
+      "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to provide submission-ready writing, kept the discussion tightly anchored to the assigned cases, and used structured prompts that preserved substantial student participation.",
-      "The main weakness was that the tutor eventually supplied the core non-consequentialist argumentative machinery itself, especially the means-vs-side-effect and rights/resource framing, which reduced guided discovery on the most important philosophical move.",
-      "A smaller issue was occasional use of dense philosophy jargon; otherwise, evidence for additional deductions was limited."
+      "The tutor strongly resisted writing the essay or polished paragraph for the student and kept the discussion anchored to act consequentialism, Fuel, Blood, and trolley cases.",
+      "Scaffolding was generally effective: the tutor used forced-choice prompts, sentence frames, and case-by-case comparisons that built on the student's growing answers.",
+      "Main pedagogy issue: after sustained resistance, the tutor still provided substantive argumentative content for the student's critique, especially around the means/side-effect distinction and objection replies, which reduced student-owned reasoning.",
+      "A smaller deduction was applied for only partially explaining the rationale behind the no-direct-writing boundary; the tutor stated the limit clearly but did not consistently make the learning purpose explicit."
     ],
     "total_score": 38,
     "judge_llm_calls": 1

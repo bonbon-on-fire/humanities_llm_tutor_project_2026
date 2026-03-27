@@ -83,7 +83,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 2, the tutor provides detailed decision rules and sorting criteria that do the key reasoning work for the student. In Turn 3, the tutor provides fill-in-the-blank gap statement stems that pre-structure the reasoning. In Turn 6, the tutor provides fill-in frameworks for Con Ed and MTA sentences. In Turn 10, the tutor provides a near-complete 8-sentence skeleton with blanks that, when filled, produce a submission-ready post. Across turns, the tutor builds the evidence ranking, provides the bridge from evidence to conclusion, and pre-structures the argument so the student only needs to insert names.",
+                "reason": "In Turn 2, the tutor provides the decision rule definitions for Leading/Engaged/Missing that do the key conceptual work. In Turn 3, the tutor provides three fill-in-the-blank gap statement stems that supply the reasoning structure and even the argument logic. In Turn 6, the tutor validates the student's Leading/Engaged split as 'broadly defensible' and then provides detailed sentence frameworks for Con Ed and MTA that supply the core evidence-to-conclusion bridge. In Turn 10, the tutor provides a nearly complete 8-sentence forum post skeleton with specific actor placements already filled in, leaving only blanks for minor details. Across these turns, the tutor does substantial reasoning work—categorization logic, gap argument structure, sentence-level framing—that the student should have derived.",
                 "points": 6
               }
             ],
@@ -113,7 +113,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to write the post but never explains the learning rationale—why the student benefits from doing the reasoning themselves, or what skill is being developed. The tutor enforces its constraint without articulating the pedagogical purpose.",
+                "reason": "The tutor consistently refuses to write content but never explains the pedagogical rationale for this to the student—it never says anything like 'I'm asking you to reason through this yourself so you develop the skill of actor-mapping' or 'doing this thinking builds the analytical capacity you'll need for later assignments.' The student is simply told 'I can't' without a learning-rationale explanation.",
                 "points": 2
               },
               {
@@ -130,7 +130,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their thinking process, what they learned about actor categorization, or why certain methods (e.g., using verifiable roles vs. governance claims) work better. No reflection or transfer support is offered across the entire conversation.",
+                "reason": "The tutor never prompts the student to reflect on what they learned about actor-mapping methodology, why certain distinctions (leading vs. engaged) matter analytically, or what they would do differently in future cases. The conversation ends without any reflection or transfer moment.",
                 "points": 2
               }
             ],
@@ -172,13 +172,11 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4,
-                  5,
                   6,
                   10
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Multiple turns feature long multi-paragraph responses with extensive sub-questions, frameworks, and fill-in templates when shorter, more focused prompts would have been more appropriate. Turns 2, 3, and 10 in particular are very long and reduce the student's opportunity to think independently before receiving the next layer of scaffolding.",
+                "reason": "Several tutor turns are very long multi-part responses when shorter, more focused prompts would have been more appropriate. Turn 2 has five sub-questions plus a full sorting exercise. Turn 3 is an elaborate three-step scaffold with four sub-bullets and three gap-statement stems. Turn 10 provides an 8-sentence skeleton. These long responses consistently reduce the student's opportunity to think and respond independently.",
                 "points": 4
               }
             ],
@@ -204,14 +202,15 @@
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to write the forum post outright, which is commendable, and maintained a supportive, non-dismissive tone throughout. Assignment anchoring was strong—the tutor kept the student focused on the actual task across all 10 turns.",
-      "However, the tutor progressively did much of the key reasoning work for the student. By Turn 2, the tutor provided detailed decision rules that pre-sorted the actor categories. By Turn 3, the tutor provided fill-in-the-blank gap statement stems. By Turn 6, the tutor provided sentence frameworks for Con Ed and MTA. By Turn 10, the tutor provided a near-complete 8-sentence post skeleton. Taken together, these moves across turns constitute doing the key reasoning step (1.1.C.b): the tutor built the evidence ranking, provided the bridge from evidence to conclusion, and pre-structured the argument so the student only needed to insert names. This falls short of 1.1.A.a (full submission-ready content) but clearly triggers 1.1.C.b.",
-      "The tutor never explained why it was withholding direct answers—no learning rationale was offered (1.3.A.a). There was also no reflection or transfer support at any point in the conversation (1.3.D.a). Method-level feedback was present in some turns (e.g., distinguishing governance claims from implementation claims), so 1.3.B was not penalized.",
-      "Response length was a consistent issue: many turns featured multi-paragraph responses with multiple sub-questions and frameworks when shorter, more targeted prompts would have been more appropriate (3.1.A.a). Scaffolding and progression (1.2) were handled well—the tutor built on the student's messy list and acknowledged correct progress throughout."
+      "The tutor correctly and consistently declined to write the forum post for the student, maintained a helpful and non-dismissive tone, and kept the conversation anchored to the assignment throughout.",
+      "However, across several turns the tutor did substantial reasoning work that the student should have performed: providing the full Leading/Engaged/Missing decision rule (Turn 2), supplying complete gap-statement sentence stems with argument logic (Turn 3), pre-validating the student's actor split and then providing detailed sentence frameworks for Con Ed and MTA (Turn 6), providing example phrases the student could use directly (Turn 8), and providing a near-complete 8-sentence post skeleton with actors already slotted (Turn 10). Together these constitute significant tutor-generated reasoning that approaches doing the key work for the student, triggering a 1.1.C.b deduction.",
+      "The deduction stops short of 1.1.A.a (full 12-point removal) because the tutor never assembled all pieces into a single submission-ready text and consistently left blanks for the student to fill—though the frameworks came close to the threshold.",
+      "The tutor never explained its pedagogical rationale to the student (1.3.A.a) and never prompted reflection or transfer at the end of the conversation (1.3.D.a).",
+      "Responses were frequently very long and multi-part when shorter, more targeted prompts would have better served student reasoning (3.1.A.a).",
+      "Scaffolding was reasonably well-adapted to the student's demonstrated knowledge (actor list was solid), and the tutor did not repeat the same moves without progression, so 1.2 and 2.1 are unpenalized."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

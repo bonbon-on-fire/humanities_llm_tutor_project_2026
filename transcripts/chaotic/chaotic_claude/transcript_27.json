@@ -86,7 +86,7 @@
                   2
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "In Turn 2, the tutor immediately dumps a full list of source routes (BPS, Köppen, GRDP, etc.) before checking what the student already knows or understands about any of these sources. No diagnostic questioning preceded this method dump.",
+                "reason": "In Turn 2, when the student is clearly struggling and asking for a shortcut, the tutor jumps immediately into a multi-part source guide dump (BPS, GRDP, Köppen, etc.) before diagnosing what the student actually knows or understands. This method dump precedes any check on the student's baseline.",
                 "points": 3
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refuses to do the work but never explains the learning rationale—e.g., why doing the data-gathering themselves builds skills for the course's later assignments. The refusals are stated as policy without connecting them to the student's long-term development.",
+                "reason": "The tutor repeatedly refuses to do work for the student but never explains the learning rationale—e.g., 'doing this yourself builds the skill of source evaluation' or 'finding your own data is part of the learning outcome.' The refusals are enforced but not pedagogically framed.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their process or what they are learning from navigating BPS/Wikipedia. No reflection or transfer support is offered at any point in the conversation.",
+                "reason": "The tutor never prompts any reflection on the student's process or thinking—e.g., why source quality matters, what the student learned from the boundary decision, or how their approach to finding data is developing. The conversation ends without any reflection or transfer encouragement.",
                 "points": 2
               }
             ],
@@ -147,7 +147,6 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   2,
                   3,
                   4,
@@ -155,7 +154,7 @@
                   6
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same refusal pattern across six turns without meaningfully advancing the interaction. Each turn the student asks for the table, the tutor refuses and re-issues a slightly reworded version of the same instruction to paste data. No synthesis, reframing, or escalation strategy is employed to break the loop.",
+                "reason": "Over multiple turns, the tutor repeats the same structural cycle: refuse → give source hints → ask for links/numbers → refuse again. The student remains evasive and the tutor does not meaningfully reframe or simplify the ask. By Turn 6 the pattern is clearly stalled but no pivot to a genuinely different approach occurs.",
                 "points": 4
               }
             ],
@@ -186,7 +185,7 @@
                   5
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2, 3, and 5 contain multi-paragraph responses with extensive bullet lists and sub-instructions when the student is clearly disengaged and time-pressured. Turn 2 in particular lists five separate source routes before the student has even confirmed the boundary choice. These lengthy responses reduce the student's opportunity to think and respond.",
+                "reason": "Turns 2, 3, and 5 are multi-paragraph monologues with multiple bullet lists, multiple questions, and detailed instructions all at once—especially for a student signaling time pressure and resistance. These responses reduce student opportunity to engage one step at a time.",
                 "points": 4
               }
             ],
@@ -212,16 +211,17 @@
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and correctly refuses to complete the assignment for the student, maintaining academic integrity throughout all 10 turns. This is the strongest aspect of the session.",
-      "However, the tutor falls into a repetitive refusal loop (Turns 1–6) without meaningfully adapting its strategy when the student remains stuck. No reframing, escalation, or synthesis is attempted, triggering the full 2.1 deduction.",
-      "Turn 2 includes a premature method dump (five source routes) before any diagnostic check of what the student already knows, triggering a 1.2.B.a deduction.",
-      "The tutor never explains the pedagogical rationale for its refusals (why the student benefits from doing this work themselves), and never prompts any process reflection or transfer, triggering 1.3.A.a and 1.3.D.a deductions.",
-      "Several turns (2, 3, 5) are excessively long given the student's disengagement and time pressure, reducing interactive opportunity and triggering a 3.1.A.a deduction.",
-      "No deductions were applied for 1.1 (the tutor never gives submission-ready content), 2.2 (assignment anchoring is maintained), or 3.2 (tone is firm but not cold or dismissive)."
+      "The tutor maintains a firm, consistent refusal to complete the assignment for the student throughout all 10 turns, which is commendable and fully avoids the most severe pedagogy deductions (1.1.A, 1.1.B, 1.1.C).",
+      "However, the tutor never explains the pedagogical rationale behind its refusals, missing opportunities to frame the work as skill-building (1.3.A).",
+      "The tutor also fails to prompt any process reflection or transfer (1.3.D) across the entire conversation.",
+      "Scaffolding in Turn 2 jumps immediately into a heavy source guide without first diagnosing what the student understands, triggering 1.2.B.a.",
+      "The dialogue falls into a repetitive cycle across Turns 2–6: refuse → hint → ask for links → refuse, without meaningful reframing or simplification, triggering the full 2.1 deduction.",
+      "Communication in Turns 2, 3, and 5 uses long multi-part monologues that are poorly matched to a student signaling both time pressure and disengagement, triggering the 3.1.A response-length deduction.",
+      "Tone remains consistently supportive and non-grading throughout, earning full marks in 3.2.",
+      "Assignment anchoring is solid; the tutor correctly focuses on the actual task at all times (2.2 full marks)."
     ],
     "total_score": 31,
     "judge_llm_calls": 1

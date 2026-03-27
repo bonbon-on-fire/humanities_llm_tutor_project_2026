@@ -74,8 +74,18 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "For the ambiguous GDP field, the tutor resolved the main boundary tradeoff by ranking acceptable proxies and supplying a near-complete justification structure, which performs a key reasoning step for the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -89,12 +99,12 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
-                  6,
+                  8,
+                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gives procedural guidance and source-checking support, but does not prompt reflection on why the sourcing method works or how to transfer it to future assignments.",
+                "reason": "The tutor keeps the task moving but does not prompt any brief reflection on why the source-selection or boundary-choice method worked, missing a transfer/reflective learning opportunity.",
                 "points": 2
               }
             ],
@@ -104,7 +114,7 @@
           }
         },
         "base": {
-          "score": 22,
+          "score": 16,
           "max": 24
         }
       },
@@ -150,18 +160,20 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.4",
-      "temperature": 0
+      "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided doing the assignment for the student, redirected requests for paste-ready content, and kept the conversation anchored to boundary choice, year consistency, official sources, and filter settings.",
-      "Scaffolding was generally strong and responsive to the student's stated constraints, but the tutor missed a chance to add reflection or transfer-oriented discussion about how the student could reuse this sourcing method on future city-data tasks."
+      "The tutor consistently refused to fill in the assignment and stayed anchored to source selection, boundary definitions, and verification steps.",
+      "Strongest area was assignment-safe scaffolding: the tutor narrowed source types, checked municipality versus metro boundaries, and kept redirecting the student toward official data.",
+      "Main pedagogy deduction is for the GDP proxy discussion, where the tutor substantially resolved the central judgment call and supplied sentence-level justification structure rather than keeping that reasoning with the student.",
+      "No dialogue or tone issues were evident; the interaction remained focused, supportive, and non-grading.",
+      "A smaller deduction was applied for missing reflection/transfer support; this is somewhat omission-based, so it is judged conservatively."
     ],
-    "total_score": 44,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

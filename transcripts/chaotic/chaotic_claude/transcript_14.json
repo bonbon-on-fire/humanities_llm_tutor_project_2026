@@ -80,7 +80,7 @@
                   8
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 8, the tutor provides three pre-phrased indicator sentences ('Greater frequency of high-tide (sunny-day) flooding events...', 'More days with hazardous heat index...', 'Large share of the metro in storm surge/evacuation zones...') that are generic enough to be dropped directly into justifications. This does a key reasoning step for the student—selecting and phrasing the evidence—rather than guiding the student to derive it.",
+                "reason": "In Turn 8, the tutor provides three ready-to-use indicator phrases (e.g., 'frequency of high-tide (sunny-day) flooding events,' 'days with hazardous heat index,' 'large share of the metro in storm surge/evacuation zones') described as usable without verifying exact numbers. These are not just hints but near-complete phrasings the student can directly insert, performing the key evidence-selection step for the student.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do the work but never explains the pedagogical rationale—e.g., that the student builds research and reasoning skills by doing this themselves. The tutor says 'that's the assignment' or 'I'm a tutor, not a ghostwriter' but never frames why active engagement benefits the student's learning.",
+                "reason": "The tutor consistently refuses to do work for the student but never explains the pedagogical rationale (e.g., developing research skills, active reasoning, long-term skill building). It only states 'that's the assignment' or 'I'm a tutor, not a ghostwriter' without explaining why the student benefits from doing it themselves.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their reasoning process or what they learned from building the stressors table. No reflection or transfer support is offered at any point in the conversation.",
+                "reason": "The tutor never prompts the student to reflect on their reasoning process or what they learned about climate vulnerability analysis. No turn asks 'why does that indicator matter?' or 'what does this tell you about Miami's priorities?' The conversation ends without any process reflection.",
                 "points": 2
               }
             ],
@@ -158,7 +158,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same pattern across nearly every turn: refuse the student's request, then offer a template/blank-fill structure. The student repeatedly asks for the same thing (pre-written content) and the tutor's response pattern does not meaningfully evolve—it keeps offering slightly different scaffolding templates without synthesizing progress or shifting strategy.",
+                "reason": "The tutor cycles repeatedly through the same pattern: refuse to do the work, provide a template/prompt structure, ask the student to fill in blanks. Despite the student's persistent refusal to engage, the tutor does not meaningfully reframe its approach, shift strategy, or address the root cause of the student's disengagement. The conversation spirals without productive synthesis.",
                 "points": 4
               }
             ],
@@ -186,14 +186,10 @@
                 "evidence_turns": [
                   2,
                   3,
-                  4,
-                  6,
-                  7,
-                  8,
-                  9
+                  4
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Many tutor turns are multi-paragraph with multiple sub-questions, numbered lists, and bolded templates when shorter, more focused prompts would have been more appropriate. For example, Turns 2, 3, 4, and 6 each contain extensive scaffolding blocks that overwhelm rather than invite student response.",
+                "reason": "Multiple early responses are excessively long. Turn 2 lists three stressors with three sub-prompts each across multiple bullet points. Turn 3 provides two blank-fill structures per stressor plus source-finding instructions. Turn 4 adds a decision rule plus another multi-part prompt. These multi-paragraph responses reduce student opportunity to think and respond incrementally.",
                 "points": 4
               }
             ],
@@ -219,17 +215,14 @@
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and correctly refuses to write submission-ready content for the student across all 10 turns, maintaining appropriate academic integrity boundaries throughout.",
-      "However, in Turn 8 the tutor provides three pre-phrased indicator sentences generic enough to be inserted directly into justifications, which constitutes doing a key reasoning step for the student (1.1.C.b, -6 points).",
-      "The tutor never explains the pedagogical rationale for its refusals—it says 'that's the assignment' or 'I'm a tutor, not a ghostwriter' but never articulates why the student benefits from doing this work themselves (1.3.A.a, -2 points).",
-      "No reflection or transfer support is offered at any point; the tutor moves from one scaffolding attempt to the next without prompting the student to consider what they are learning (1.3.D.a, -2 points).",
-      "The tutor's response pattern becomes repetitive across turns: refuse → offer template/blank-fill structure. Despite the student's persistent resistance, the tutor does not meaningfully shift strategy, synthesize progress, or try a fundamentally different approach (2.1.A.a, -4 points).",
-      "Many individual turns are excessively long with multiple sub-questions and nested templates, reducing the student's opportunity to think and respond incrementally (3.1.A.a, -4 points).",
-      "Assignment anchoring and tone are handled well throughout; the tutor stays on task and maintains a firm but non-punitive tone."
+      "The tutor consistently and appropriately refused to generate submission-ready content, maintaining academic integrity throughout all ten turns. Assignment anchoring was strong, and the tutor correctly identified the student's misframing requests each time.",
+      "However, in Turn 8 the tutor crossed a line by providing three complete, polished indicator phrases described as usable without verification. This is the key evidence-selection step for the assignment and constitutes doing the reasoning work for the student (1.1.C.b, -6 points).",
+      "The tutor never explained the pedagogical rationale for its refusals—it only cited 'that's the assignment' rather than explaining how doing the work themselves builds the skills the course aims to develop (1.3.A.a, -2 points). No reflective or transfer-oriented prompts appeared at any point (1.3.D.a, -2 points).",
+      "Despite the student's persistent disengagement, the tutor repeated the same template-and-refuse cycle across nine turns without switching strategies, summarizing progress, or addressing why the student was avoiding the work (2.1.A.a, -4 points).",
+      "Several early responses were unnecessarily long, with multiple nested prompts per stressor that reduced student thinking space (3.1.A.a, -4 points). Tone remained respectful and appropriately framed as coaching throughout."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

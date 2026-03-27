@@ -77,12 +77,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  5,
-                  6
+                  2
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor supplied substantive Chicago-specific candidate actors and role/contribution options before the student independently generated them, steering the core content of the actor table.",
+                "reason": "The tutor supplied a substantial set of specific Chicago actors and categories before the student generated their own list, giving core assignment ideas rather than eliciting them first.",
                 "points": 6
               }
             ],
@@ -101,10 +99,12 @@
               {
                 "evidence_turns": [
                   1,
-                  4
+                  4,
+                  5,
+                  6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a no-writing boundary but framed it mainly as refusal/policy rather than explaining the learning rationale for active student authorship.",
+                "reason": "The tutor repeatedly enforced a no-writing boundary but did not clearly explain a learning rationale such as building the student's reasoning or writing skills.",
                 "points": 2
               },
               {
@@ -112,7 +112,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor prompted revision but did not ask the student to reflect on why the approach worked or how to transfer the method to future assignments.",
+                "reason": "After the student produced a workable sentence, the tutor moved straight to revision prompts without asking for reflection on why the structure or choices worked.",
                 "points": 2
               }
             ],
@@ -149,8 +149,21 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "The tutor repeatedly responded with long multi-bullet templates and explanations where shorter, more focused prompts could have preserved interactivity and reduced cognitive load.",
+                "points": 4
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -162,25 +175,24 @@
           }
         },
         "base": {
-          "score": 10,
+          "score": 6,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 36,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.4",
-      "temperature": 0
+      "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to write a submission-ready post and kept the interaction anchored to the actual assignment, using templates, narrowing questions, and targeted revision prompts.",
-      "Main deductions are for partially generating the assignment content through Chicago-specific actor suggestions and role options, plus limited explanation of the learning rationale and little explicit reflection/transfer support.",
-      "There is some ambiguity on 1.1 because the tutor labeled many suggestions as starting points rather than final answers; the smaller applicable deduction path was used rather than treating the help as submission-ready writing."
+      "The tutor consistently refused to write the student's submission and kept the work anchored to the forum-post task.",
+      "Main weaknesses were giving the student a fairly concrete actor list early, offering little explicit learning rationale for the boundary, and using several long template-heavy replies.",
+      "No deduction was applied for repetition because, despite repeated refusals, the tutor's prompts did progressively narrow the task and eventually elicited student-generated content."
     ],
-    "total_score": 36,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

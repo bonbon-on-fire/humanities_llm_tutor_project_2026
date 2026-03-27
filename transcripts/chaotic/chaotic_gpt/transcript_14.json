@@ -89,23 +89,32 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly refused to provide submission-ready text, but framed this mainly as policy/compliance ('that would be doing the assignment,' 'not a ghostwriter') rather than explaining the learning rationale in terms of skill-building or active reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   7,
-                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor gave process guidance and critique but did not prompt brief reflection on why the student's method improved or how to transfer the approach beyond this table.",
+                "reason": "After the student made progress on ratings, sectors, and draft justifications, the tutor continued task execution support but did not prompt reflection on why the chosen method worked or how to transfer it to later assignments.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
@@ -151,19 +160,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.4",
-      "temperature": 0
+      "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently refused to ghostwrite or provide paste-ready assignment content, while keeping the student anchored to the actual task and moving them through manageable steps.",
-      "The tutor built effectively on the student's chosen city, stressors, ratings, and draft sentences, offering concrete process-level guidance on indicators, sector mapping, and rating logic.",
-      "A small deduction was applied because the conversation stayed highly task-focused and missed a clear chance to prompt reflection on why the student's approach improved or how to reuse the method in later assignments."
+      "The tutor consistently avoided ghostwriting and kept the student working through ratings, sectors, and justification structure rather than supplying a paste-ready table.",
+      "Scaffolding was generally strong: the tutor narrowed the task, used templates, and built on the student's city choice, stressors, and later drafts without taking over the core writing.",
+      "Main weakness was meta-learning: refusals were mostly policy-framed rather than explained as learning support, and the tutor did not prompt reflection on the method once the student had made progress."
     ],
-    "total_score": 44,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

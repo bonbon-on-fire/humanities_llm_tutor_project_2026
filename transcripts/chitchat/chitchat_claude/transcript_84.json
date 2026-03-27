@@ -1,0 +1,215 @@
+{
+  "tutor_prompt": "tutor_03",
+  "student_persona": "chitchat_05",
+  "course": "urban_studies",
+  "exercise_number": "01",
+  "turn_size": 10,
+  "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+  "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+  "turns": 10,
+  "exchanges": [
+    {
+      "turn": 1,
+      "student": "Hey—I'm working on the Urban Studies climate action assignment, and I need help filling out the Geographic & Demographic Data Table for my case study city. Can you help me figure out what exact fields to include and where to find reliable sources?",
+      "tutor": "Yes—but first, what city did you choose (and what year you’re using for population/income/GDP)? Those two choices affect which sources are “best.”\n\nAt minimum, your table should mirror the prompt’s required fields. Based on that, what columns do you think are *non-negotiable*? (List them back to me in your own words.)\n\nFor reliable sources, start with a “top tier” hierarchy:\n1) Official city or national statistics office (census, statistical yearbook)\n2) City open-data portal / planning department reports\n3) Reputable international datasets (World Bank, OECD, UN Data/UN-Habitat) when local data is missing\n4) Peer-reviewed or major NGO reports only as backup\n\nOnce you tell me your city, I’ll help you map each required field to 1–2 likely source types. Also: do you want to add any optional fields tied to climate vulnerability (e.g., elevation, coastal exposure, poverty rate)? If yes, name 2–3 you think matter and why.",
+      "pedagogical_reasoning": "I will keep the student focused on the specific assignment deliverable (a Geographic & Demographic Data Table). Using guided discovery, I’ll prompt them to name their city and what they’ve already found, then lead them to define the minimum required fields from the prompt and add a small number of justified optional fields. I’ll also scaffold source selection by asking them to choose among authoritative source types (national statistics, city open data, World Bank/OECD/UN) without doing the data collection for them. I’ll keep it bite-sized and end with concrete next questions that move directly toward completing the table."
+    },
+    {
+      "turn": 2,
+      "student": "I picked Miami (FL), and I’m thinking 2022 for pop/income and 2022 or 2023 for GDP (depending what’s available). Non‑negotiable columns imo: location (lat/long + country/state), total population, race/ethnicity breakdown, physical area (km²), income per capita, GDP, and Köppen climate zone. Optional vuln fields I kinda wanna add: avg elevation, % in floodplain/sea-level-rise exposure, and poverty rate (bc flooding + inequality feel huge there).",
+      "tutor": "Good—your required columns match the assignment. Now the make-or-break step: what *geographic unit* is “Miami” for your table?\n\n1) Are you using **City of Miami (municipal)**, **Miami-Dade County**, or **Miami metro (MSA)**? Pick one and stick to it for population/race/area/income. Which one will you use, and why?\n\n2) For **population + race/ethnicity (2022)**: which dataset fits your chosen geography better—**Decennial Census** or **ACS 1-year / 5-year**? What tradeoff are you making (timeliness vs precision/coverage)?\n\n3) For **income per capita**: do you mean **personal income per capita** (economic accounts) or **per capita income (ACS)**? They’re not the same. Which definition do you want, and what’s your reason?\n\n4) For **GDP**: are you okay using an **MSA GDP** (common, easy) even if your other fields are “City of Miami,” or do you want everything to match one geography? (Mismatch is the #1 table mistake.)\n\n5) For your optional vulnerability fields, match each to a likely “authoritative” source type:\n- Avg elevation: city/county GIS, USGS, or NOAA\n- Floodplain / SLR exposure: FEMA flood maps vs NOAA SLR layers vs county resilience GIS\n- Poverty rate: ACS\nWhich of these do you think will be most defensible to cite in an urban studies class, and why?\n\nReply with: (a) your chosen geography, and (b) one source candidate you plan to use for each required field (even just the agency name like “US Census ACS,” “BEA,” “City GIS”).",
+      "pedagogical_reasoning": "I will validate the student’s field list (without adding completed values), then guide them to make key definitional choices that determine correct sources: which “Miami” geography (city vs metro), consistent year alignment, and which definitions for GDP and income per capita. I’ll use Socratic questions to prompt them to identify appropriate authoritative sources (Census/ACS, city GIS, NOAA/USGS, BEA) and to plan a citation strategy. I will keep it short and action-oriented, asking them to decide and report back with specific links/series names rather than me fetching data."
+    },
+    {
+      "turn": 3,
+      "student": "I’m gonna use **City of Miami (municipal)** so everything stays consistent w/ the actual city govt boundary. Sources I’m thinking: location/area = City of Miami GIS or Census Gazetteer; population + race/ethnicity + poverty + per-capita income = **US Census ACS 5-year (2022)**; GDP is the tricky one—maybe **BEA** but that’d be metro, so I might drop GDP or note it as MSA-only; Köppen zone = a published Köppen map/dataset (NOAA or a peer-reviewed/global Köppen layer). For vuln: elevation = **USGS/NOAA DEM**, flood/SLR exposure = **FEMA NFHL + NOAA SLR viewer layers**.",
+      "tutor": "Your plan is coherent—nice job keeping the geography consistent. Now tighten the “exactly what goes in the cell + how it’s defensible.”\n\n1) **ACS 5-year (2022)**: are you using the **2018–2022** 5-year release? (That’s usually what “2022 ACS 5-year” means.) Can you write that exact vintage in your table notes?\n\n2) **Race/ethnicity breakdown**: which specific breakdown will you use—(a) Hispanic/Latino vs not, plus race categories, or (b) race alone? In ACS these come from different tables. What categories will you report so it’s clear and not double-counting?\n\n3) **Per-capita income**: will you use the ACS variable literally called “Per capita income (past 12 months)”? If yes, what’s your citation plan (table/variable ID), so a reader can reproduce it?\n\n4) **GDP problem**: before dropping it, decide what the assignment expects. If you keep GDP as MSA-only, what will you put in the **“Geography”** or **“Notes”** column to flag the mismatch? Alternatively, can you justify replacing GDP with a city-level proxy you can source consistently (e.g., city budget, taxable sales, employment)? Which is more aligned with the course goal of “existing conditions”?\n\n5) **Flood/SLR exposure**: what is the *metric*? % of city land area in FEMA SFHA? % of parcels? % of population? Pick one that you can actually compute or find reported. Which will you choose?\n\nReply with your decisions for #2, #4, and #5 (just the choices), and then we’ll make sure your table headings and notes are unambiguous.",
+      "pedagogical_reasoning": "I will reinforce the student’s consistency choice (municipal boundary) and then use Socratic prompts to resolve remaining ambiguities: ACS vintage, exact ACS tables/variables, handling GDP mismatch, and how to operationalize flood/SLR exposure as a measurable field. I will push them to specify “what exactly will you enter in the cell” and “how will you compute it” without doing the computation for them. I will keep it brief and require them to commit to a plan and citeable dataset names."
+    },
+    {
+      "turn": 4,
+      "student": "#2: I’ll report **Hispanic/Latino (any race)**, then for **Not Hispanic/Latino** I’ll list race categories (White, Black, Asian, etc.) so it doesn’t double-count.\n\n#4: I’ll **keep GDP as MSA-only (Miami–Fort Lauderdale–West Palm Beach MSA)** and flag it clearly in a **Notes/Geography mismatch** column; feels closer to “existing conditions” than swapping in some random proxy.\n\n#5: I’ll use **% of City land area in FEMA SFHA (100-year floodplain)** since that’s a clean metric I can defend and replicate.",
+      "tutor": "Good decisions—those are defensible and reproducible.\n\nNow make your table “audit-proof”:\n\n1) Add 2 helper columns: **Year/Vintage** and **Source (agency + dataset/table/series ID + URL)**. Will you do that?\n\n2) For your ACS race/ethnicity plan: which ACS table(s) will you pull from? (Don’t guess—look it up.) When you find them, send me the **table ID(s)** you’re using.\n\n3) For **GDP (MSA-only)**: in BEA, will you use **GDP by metropolitan area (current dollars)** or **real GDP**? Which aligns with your other nominal $ figures (income)? Pick one and note the unit.\n\n4) For **% land area in FEMA SFHA**: what’s your method—\n- (a) GIS overlay: intersect City boundary polygon with FEMA SFHA polygon, compute areas, divide; or\n- (b) find a published % from a city/county report.\nWhich one will you do, and what tool will you use (ArcGIS Online/QGIS/etc.)?\n\nNext step: reply with (i) the ACS table ID(s) you found, (ii) BEA GDP choice (nominal vs real), and (iii) which method/tool you’ll use for the FEMA %.",
+      "pedagogical_reasoning": "I will confirm the student’s choices and guide them to the final step: specifying exact table structure, reproducibility details (dataset/table IDs, units), and a simple workflow to compute the floodplain percentage. I will ask targeted questions that force clarity without doing the work: which ACS table IDs, which BEA series, how to compute area intersection, and what units/coordinate systems. Keep it bite-sized and require them to bring back specific identifiers/links they find."
+    },
+    {
+      "turn": 5,
+      "student": "I’ll add those helper columns (Year/Vintage + full Source w/ IDs + URL).\n\nFor the ACS table IDs, can I circle back after I look them up real quick on data.census.gov? (I don’t wanna guess and be wrong.)\n\nBEA GDP: I’ll use **GDP by metropolitan area, current dollars (nominal)** so it’s consistent with ACS dollar figures.\n\nFEMA % method: **(a) GIS overlay** using **ArcGIS Online** (city boundary polygon intersect SFHA, compute areas, then %).",
+      "tutor": "Yes—circle back after you look them up; don’t guess.\n\nWhile you’re on data.census.gov, can you bring back **the exact table IDs** for:\n1) Total population (City of Miami)\n2) Hispanic/Latino + Not Hispanic by race breakdown (your scheme)\n3) Poverty rate\n4) Per capita income\nAlso confirm the **vintage** shown (e.g., 2018–2022 ACS 5-year).\n\nFor the FEMA SFHA overlay, decide now so it’s consistent: will you count **all SFHA zones** (A, AE, AO, AH, VE, etc.) as “in SFHA”? And will your area output be **km²** (convert from m²)?\n\nReply with the table IDs + vintage and your SFHA-zone rule.",
+      "pedagogical_reasoning": "I will affirm the plan and keep the student moving forward by setting a tight, concrete lookup task for ACS tables and a reproducible GIS workflow checklist without performing it. I’ll ask for specific deliverables (table IDs and key parameters) and pre-empt common pitfalls (ACS vintage, margins of error, coordinate/units, which SFHA zones). I’ll keep it short and ask them to report back with what they find."
+    },
+    {
+      "turn": 6,
+      "student": "I haven’t pulled the ACS tables yet, so I can’t give the exact IDs/vintage without looking at data.census.gov first (I don’t want to make up IDs). For the FEMA rule: I’ll count **all SFHA zones** (all **A- and V-zone** variants like A/AE/AO/AH/VE, etc.) as “in SFHA,” and I’ll report the intersected area in **km²** (convert from m²) plus the **% of total city land area**.",
+      "tutor": "Good SFHA rule—just make sure you write it verbatim in your Notes.\n\nFor the ACS lookup, do this quick, reproducible routine and report back what you see:\n1) In data.census.gov, filter **Geography → Place → Florida → Miami city, Florida**.\n2) Filter **Year → 2022** and **Survey → ACS 5-year** (confirm it displays **2018–2022**).\n3) Search one concept at a time: “per capita income”, “poverty”, “hispanic or latino by race”, “total population”.\n\nWhen you return, paste **only**: table title + table ID + vintage for each.\n\nOne more decision for the FEMA %: is your denominator **land area only** (recommended) or **land+water**? Which will you use, and which boundary source (Census place boundary vs City GIS) will define “total area”?",
+      "pedagogical_reasoning": "I will keep the student on task and use guided discovery by giving a tight, checkable procedure for finding ACS table IDs without supplying them. I’ll also reinforce their FEMA rule and prompt them to document assumptions (land-only vs land+water, boundary source). I will ask for the next concrete deliverable to maintain momentum."
+    },
+    {
+      "turn": 7,
+      "student": "Got it—I'll use **land area only** as the denominator, and I’ll define the boundary using the **Census place boundary** (so it matches the “Miami city, Florida” ACS geography cleanly). I’ll go grab the ACS table titles/IDs/vintage and paste them back exactly.",
+      "tutor": "Land-only + Census place boundary is a solid consistency move.\n\nOne thing to watch: if you use the **Census place boundary** for ACS, use that **same polygon** for the FEMA overlay too (otherwise your % won’t match your stated geography). Will you commit to that?\n\nWhen you paste the ACS results, include for each: **(1) table ID, (2) table name, (3) geography shown, (4) vintage (e.g., 2018–2022), (5) the specific line/estimate you’ll use** (you can name the row, not the number).\n\nSend those, and I’ll sanity-check that your race/ethnicity scheme won’t double-count and that your required columns are all covered.",
+      "pedagogical_reasoning": "I will acknowledge the key consistency choice and set clear next steps, prompting the student to verify one potential mismatch: Census boundary vs city GIS for flood overlay, and how to keep everything aligned. I’ll ask for the specific ACS outputs next and suggest a minimal documentation checklist, without doing any writing or calculations for them."
+    },
+    {
+      "turn": 8,
+      "student": "Yep I’ll commit to using the **same Census place polygon** for the FEMA overlay so the % matches the ACS geography.\n\nI don’t have the ACS table outputs in front of me yet, so I can’t paste the exact table IDs/lines without looking them up first; I’ll send (ID, name, geography, 2018–2022 vintage, and the exact estimate row) right after I pull them from data.census.gov.",
+      "tutor": "Good—then the next productive step is just data capture.\n\nWhen you’re on each ACS table, make sure you record two things that students often miss:\n1) **Estimate vs %**: are you grabbing counts or percentages for race/poverty? Which will you report in your table?\n2) **MOE**: will you ignore MOE, or add a small note that ACS estimates have margins of error?\n\nCome back with the table metadata you listed. If you want, paste a screenshot or copy/paste of the header area of each table—then we can verify you’re pulling from the right geography and vintage.",
+      "pedagogical_reasoning": "I will maintain momentum by giving the student a short checklist for what to capture from data.census.gov and a self-check to avoid common ACS interpretation errors (MOE, percent vs count, race categories). I will not provide table IDs or numbers; instead I’ll prompt the student to return with concrete artifacts. I’ll keep the response brief and focused on the assignment."
+    },
+    {
+      "turn": 9,
+      "student": "For race/ethnicity I’ll report **% of total population** (cleaner for comparison), and for poverty I’ll report the **poverty rate (%)**; I’ll also add a brief note that **ACS estimates have MOE** (but I probably won’t put MOE values in the main table unless required).\n\nI’ll grab the table headers/metadata from data.census.gov and paste them back (or screenshot) so we can confirm the right geography + 2018–2022 ACS 5-year vintage.",
+      "tutor": "Using % for race and poverty rate is fine—just be precise about the denominator.\n\nTwo checks to do when you pull the tables:\n1) Race/ethnicity: is your % explicitly **“Percent of total population”** for each category, or are you calculating it? If calculating, what denominator row will you use?\n2) Poverty: does the table define the rate as **% of people for whom poverty status is determined** (common in ACS)? If so, will you label it that way in Notes so you don’t imply it’s % of all residents?\n\nSend the table IDs + the exact percent rows you plan to use, and we’ll verify they match your intended denominators.",
+      "pedagogical_reasoning": "I will confirm the student’s metric choices and push one key conceptual check: percentages require a consistent denominator and careful handling of “of total population” vs “of population for whom poverty status is determined.” I’ll ask targeted questions to ensure they capture the correct rows and avoid mislabeling. I’ll also direct them to bring back the table IDs/rows so we can validate without me providing answers. Keep it brief."
+    },
+    {
+      "turn": 10,
+      "student": "Ok quick side q tho—while I’m digging in data.census.gov, what’s ur go-to hype music rn?",
+      "tutor": "I can’t help with non-academic stuff like music picks—I’m here to tutor you through the assignment.\n\nWhat’s the first ACS table you found on data.census.gov (table ID + title) for **Miami city, Florida**—population or race/ethnicity?",
+      "pedagogical_reasoning": "I will refuse the non-academic request and redirect to the assignment, per role constraints. I’ll keep it brief and Socratic by asking a concrete next-step question about their ACS lookup so they re-engage with the task."
+    }
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12,
+            "name": "Socratic method and guided discovery"
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6,
+            "name": "Scaffolding and progression"
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is asking questions rather than providing answers, nor does it articulate any learning rationale (e.g., developing research skills, independent data literacy) behind its Socratic approach throughout the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "As the student makes good methodological decisions (consistent geography, SFHA zone definition, denominator choices), the tutor moves on without ever prompting the student to reflect on why those choices worked or what they learned about data sourcing practice.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6,
+            "name": "Meta-learning and methodology feedback"
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly asks the student to return with ACS table IDs across turns 5, 6, 7, 8, and 9 without consolidating or advancing the conversation. The student acknowledges each time that they haven't looked them up yet, yet the tutor cycles through the same request with minimal variation rather than suggesting a different approach or moving to a different part of the table.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4,
+            "name": "Redundancy and spiraling"
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8,
+            "name": "Assignment anchoring"
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Turns 1, 2, 3, and 4 are multi-paragraph, multi-question responses with 4–5 numbered sub-questions each. The tutor consistently delivers dense information blocks and multiple simultaneous questions instead of one focused prompt, reducing the student's opportunity to engage deeply with any single point before the next is introduced.",
+                "points": 4
+              }
+            ],
+            "score": 2,
+            "max": 6,
+            "name": "Bite-sized and clear responses"
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4,
+            "name": "Appropriate tone and support"
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 10
+        }
+      }
+    },
+    "max_score": 46,
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "overview": [
+      "The tutor maintains a strong Socratic approach throughout, never providing direct answers or doing the student's reasoning work, and correctly redirects the single off-topic prompt in turn 10.",
+      "Scaffolding and assignment anchoring are handled well: the tutor builds logically from geography choice to source selection to methodological precision, and always re-grounds the student to the actual assignment task.",
+      "The main weakness in pedagogy is meta-learning: the tutor never explains its own tutoring rationale or invites the student to reflect on what methodological lessons they are learning.",
+      "A significant dialogue quality deduction applies because the ACS table ID request spirals across five turns (5–9) without consolidation or a strategy change, even though the student repeatedly signals they haven't done the lookup yet.",
+      "Communication length is a recurring issue in early turns, where 4–5 simultaneous numbered questions appear in single responses; later turns improve somewhat but the pattern is established early.",
+      "Tone is consistently supportive and non-grading throughout; no deductions are warranted in section 3.2."
+    ],
+    "total_score": 34,
+    "judge_llm_calls": 1
+  }
+}

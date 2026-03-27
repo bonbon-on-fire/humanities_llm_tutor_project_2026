@@ -77,17 +77,15 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4,
-                  5,
                   6,
                   7
                 ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor increasingly performed the central rating judgment by steering relative severity, narrowing the student to two exact digit-sets, and then confirming the exact list (10, 9, 9, 8, 8), which covers a key reasoning step of the table.",
-                "points": 6
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "Tutor narrowed the student's assessment choice to two exact ratings sets and then told the student to enter the chosen digits, supplying the core rated judgments for the table.",
+                "points": 12
               }
             ],
-            "score": 6,
+            "score": 0,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -101,11 +99,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
                   7
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "Tutor gave a usable method for ranking but did not prompt reflection on why that method worked or how to transfer it to later city-case assignments.",
+                "reason": "Once a consistent ratings set was chosen, the tutor moved back to sentence production instead of prompting brief reflection on why the comparison method worked or how to reuse it later.",
                 "points": 2
               }
             ],
@@ -115,26 +112,15 @@
           }
         },
         "base": {
-          "score": 16,
+          "score": 10,
           "max": 24
         }
       },
       "2_dialogue_quality": {
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "After the student kept pressing for paste-ready text, the tutor repeated the same refusal-plus-template move across multiple turns without a stronger synthesis or a new strategy to break the loop.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4,
             "name": "Redundancy and spiraling"
           },
@@ -146,7 +132,7 @@
           }
         },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
@@ -172,19 +158,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.4",
-      "temperature": 0
+      "model": "gpt-5.4"
     },
     "overview": [
-      "Tutor strongly resisted giving fully paste-ready submission text and stayed anchored to the assignment, with generally clear, bite-sized prompts.",
-      "Main pedagogy issue: although the tutor refused full justifications, it still did substantial core reasoning by offering exact rating patterns and confirming the final digit list, so a moderate deduction was warranted rather than the full near-submission-ready penalty.",
-      "Later turns became repetitive: the tutor kept cycling through refusal plus fill-in templates instead of changing tactics enough to resolve the stalled interaction."
+      "Tutor stayed tightly anchored to the assignment, repeatedly refused paste-ready prose, and provided concrete scaffolds such as sector mapping, ranking criteria, evidence prompts, and sentence shells.",
+      "The main deduction is for turns 6-7, where the tutor effectively supplied the exact ratings list by offering two tutor-generated digit sets and then instructing the student to enter the selected one; that is direct assignment work on a core assessed judgment.",
+      "A smaller deduction was applied for missing reflection/transfer support after the ratings were settled. No dialogue-quality or communication deductions were taken because the tutor remained clear, supportive, and task-focused despite student pressure."
     ],
-    "total_score": 34,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

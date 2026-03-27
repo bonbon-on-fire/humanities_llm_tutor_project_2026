@@ -80,7 +80,7 @@
                   3
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "In Turn 3, the tutor provides a fully enumerated list of 7 Miami-specific stressor rows with sector labels already assigned. While ratings and justifications are withheld, the tutor does the key reasoning step of identifying and framing all 7 stressors, which is a core part of the assignment (Step 1: Identify Vulnerabilities). The student is left only to fill in numbers and sentences.",
+                "reason": "In Turn 3, the tutor provides a list of 7 fully labeled, sector-tagged stressor prompts for Miami (e.g., 'Chronic coastal flooding / sunny-day flooding (sectors: infrastructure + social)'). This does a significant portion of the key reasoning work—identifying stressors, naming them precisely, and categorizing them by sector—that the assignment requires the student to do. Although the tutor withholds ratings and justifications, generating the complete stressor list with sector tags is a decisive content-identification step that the student was supposed to work through.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces its 'I can't do this for you' policy but never explains the learning rationale—e.g., that doing the identification and rating work builds the analytical skills needed for later assignments in the course. The refusals are stated as policy without connecting them to the student's long-term skill development.",
+                "reason": "The tutor enforces its 'I can't do this for you' policy consistently but never explains to the student why this is pedagogically beneficial—e.g., that doing the reasoning themselves builds the analytical skills needed for later assignments or for the final climate action plan. The rationale given is always framed as academic integrity ('that's your work'), not learning rationale.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on their reasoning process or what they learned from the rating/justification exercise. There is no moment where the tutor asks the student to articulate why a method worked or what changed in their thinking.",
+                "reason": "The tutor never pauses to prompt reflection on the student's process or thinking—e.g., noting what the student got right and why that approach worked, or asking what changed in their understanding across turns. The conversation ends without any moment of synthesis or reinforcement of the method the student used.",
                 "points": 2
               }
             ],
@@ -177,7 +177,7 @@
                   8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Throughout the conversation, the tutor repeatedly uses multi-paragraph, heavily structured responses with multiple sub-questions and bullet lists when shorter, more focused prompts would have been more appropriate. For example, Turn 1 asks three multi-part questions at once; Turn 2 lists five sector prompts plus a rating method plus two evidence questions; Turn 3 lists all 7 stressors with sector labels. This pattern consistently reduces the student's opportunity to think and respond incrementally.",
+                "reason": "Across multiple turns (1, 2, 3, 4, 5, 6, 7), the tutor consistently delivers long multi-paragraph replies with embedded sub-questions, templates, numbered lists, and methods. While the intent is to scaffold, the volume of content in each response reduces the student's opportunity to think and respond, and likely contributes to the student repeatedly trying to shortcut. Shorter, more focused prompts with one task at a time would have been more appropriate.",
                 "points": 4
               }
             ],
@@ -203,17 +203,14 @@
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and appropriately refused to complete the assignment for the student, maintaining academic integrity throughout all 10 turns.",
-      "The most significant deduction (1.1.C.b, -6 points) is for Turn 3, where the tutor pre-identified all 7 Miami-specific stressors with sector labels, doing the core Step 1 identification work of the assignment. While ratings and justifications were withheld, the stressor identification is itself a key reasoning step the student should have performed.",
-      "The tutor never explained the pedagogical rationale for its refusals (1.3.A.a, -2 points) and missed all opportunities to prompt process reflection (1.3.D.a, -2 points), limiting meta-learning value.",
-      "Response length was consistently excessive (3.1.A.a, -4 points): most tutor turns contained multiple bullet lists, sub-questions, and structured frameworks simultaneously, which reduced student cognitive engagement and contributed to the student's repeated attempts to shortcut the process.",
-      "Scaffolding and progression (1.2) were handled well: the tutor built on student inputs (city choice, hazard identification, ranking) across turns without ignoring correct student contributions.",
-      "Dialogue quality was strong: the tutor maintained assignment focus, redirected off-task requests appropriately, and avoided redundant cycling.",
-      "Tone was supportive and non-punitive throughout, including the firm but constructive refusal in Turn 10 regarding fabricated citations."
+      "The tutor consistently and correctly refuses to do the student's work for them, maintaining academic integrity throughout all 10 turns. It also redirects effectively each time the student requests shortcuts, keeps the conversation anchored to the assignment, and avoids redundancy by advancing the task in each turn.",
+      "The primary deduction in 1.1 is for Turn 3, where the tutor provides a fully labeled, sector-tagged list of 7 Miami stressors. Although ratings and justifications were withheld, generating the complete stressor list with sector labels performs a key intellectual task (identifying and categorizing stressors) that the assignment explicitly asks the student to do (Steps 1 and 2). This is the core content-identification reasoning step the student should have worked through, not received ready-made.",
+      "In 1.3, the tutor never explains the pedagogical rationale for its constraints (only frames refusals as academic integrity), and it never prompts any process reflection or synthesis across the conversation, missing opportunities to reinforce the student's method and support transfer.",
+      "In 3.1, the tutor's responses are consistently long and multi-part, often delivering templates, numbered sub-questions, methods, and source suggestions simultaneously. This likely overwhelms a struggling student and may have contributed to repeated shortcut requests. More bite-sized prompts with one clear task per turn would have been more effective.",
+      "No deductions were applied for dialogue quality (2.1, 2.2): the tutor kept the conversation on task, did not validate misframings, and advanced the conversation each turn without spiraling. Tone was consistently supportive and non-punitive. No formal grading language was used."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

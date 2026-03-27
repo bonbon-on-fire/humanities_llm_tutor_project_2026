@@ -77,24 +77,15 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5
+                  5,
+                  10
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "Tutor supplied a pasteable 10-row table template with polished row-label wording the student could directly reuse in the submission.",
-                "points": 6
-              },
-              {
-                "evidence_turns": [
-                  6,
-                  7,
-                  9
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor did key assignment reasoning by endorsing MMR as a proxy, ranking likely data sources, and giving the fallback decision path for GDP/income geography.",
+                "reason": "Tutor provided paste-ready row labels and citation/source-note templates that the student could insert directly into the submission, which is final wording help rather than guided discovery.",
                 "points": 6
               }
             ],
-            "score": 0,
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -105,14 +96,34 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Tutor repeatedly enforced the boundary against doing the assignment, but did not clearly explain the learning rationale beyond saying it would be 'doing the assignment for you.'",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.D.a",
+                "reason": "Tutor never prompted the student to reflect on why the source-selection and labeling method worked or how to transfer that method to similar tasks.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 12,
+          "score": 14,
           "max": 24
         }
       },
@@ -122,13 +133,13 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
+                  2,
                   4,
                   8,
                   9
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Across multiple turns, the tutor repeated the same 'open the site and paste back the table title/document title' move instead of adapting when the student could not browse easily.",
+                "reason": "Across multiple turns, the tutor repeated the same refusal-plus-navigation pattern ('tell me what you see/find and I’ll confirm') without enough synthesis or a new strategy, even as the student kept signaling time pressure and access problems.",
                 "points": 4
               }
             ],
@@ -151,24 +162,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor repeatedly gave long, multi-part replies and lists where shorter interactive prompts would have preserved more room for student thinking and faster progress.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -180,25 +175,24 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 26,
+    "total_base_score": 32,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.4",
-      "temperature": 0
+      "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor appropriately refused to fill out the full table and kept the conversation anchored to assignment definitions, official sources, and honest geographic labeling.",
-      "Main deductions come from crossing into paste-ready assignment wording and doing key proxy/source-choice reasoning for the student, plus repeated browse-and-report loops and consistently long responses.",
-      "A close-call judgment was whether the table template counted as direct writing help; the deduction was applied because the row labels were already polished enough for near-direct submission use."
+      "Tutor consistently kept the conversation anchored to the assignment and avoided filling in the actual Mumbai data table, instead guiding source choice, definitions, and labeling.",
+      "Main deductions come from giving paste-ready wording for row labels/source notes, limited explicit explanation of the learning rationale for its boundary-setting, and repeated refusal/navigation cycles without enough strategic synthesis when the student stayed pressed for time.",
+      "Because the assignment is a structured data table rather than an essay, the direct-work evidence was somewhat ambiguous; the smaller deduction was applied for final wording help rather than the harsher full-answer penalty."
     ],
-    "total_score": 26,
+    "total_score": 32,
     "judge_llm_calls": 1
   }
 }

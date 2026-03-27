@@ -74,8 +74,19 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "Tutor supplied key components of the student's final principle (necessity and proportionality) and a near-final argumentative structure, doing part of the central reasoning/design work.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -92,7 +103,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor checked coherence and application, but did not prompt reflection on why the student's method worked or how to transfer it beyond this specific prompt.",
+                "reason": "The tutor ended by prompting more content application, but did not ask the student to reflect on why the method for building the argument worked or what changed in their reasoning.",
                 "points": 2
               }
             ],
@@ -102,7 +113,7 @@
           }
         },
         "base": {
-          "score": 22,
+          "score": 16,
           "max": 24
         }
       },
@@ -148,19 +159,17 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 38,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.4",
-      "temperature": 0
+      "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor consistently avoided giving submission-ready content and instead used guided questions, templates, and short diagnostic prompts to keep the student doing the core reasoning.",
-      "The conversation stayed tightly anchored to the philosophy assignment and moved in manageable steps from act consequentialism to a student-generated principle distinguishing Switch and Footbridge.",
-      "Only a small deduction was applied for limited reflection/transfer support: the tutor checked coherence and application, but did not explicitly help the student reflect on why this method would generalize to similar moral cases."
+      "The tutor consistently refused to provide paste-ready assignment text and kept the exchange anchored to constructing the student's own argument.",
+      "Main deduction: the tutor moved beyond guidance by supplying substantive conditions and structure for the student's final principle; there was also little explicit reflection on the method used."
     ],
-    "total_score": 44,
+    "total_score": 38,
     "judge_llm_calls": 1
   }
 }

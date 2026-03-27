@@ -1,62 +1,41 @@
 """
-Batch runner that scores raw transcripts with the GPT judge.
+Batch runner that grades all raw transcripts using the GPT judge.
 
-Input transcripts are read from:
-    transcripts/{persona_type}/{persona_type}_raw/
+Reads from transcripts/{persona}/{persona}_raw/ and writes graded copies
+to transcripts/{persona}/{persona}_gpt/.
 
-Judged transcripts are written to:
-    transcripts/{persona_type}/{persona_type}_gpt/
-
-Edit config lists in this file, then run:
+Usage:
     python -m ui.run_ui_gpt
+    python -m ui.run_ui_gpt --prompt judge_06 --rubric rubric_06
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
-import re
 import shutil
+import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from typing import Any
 
-from judge.run_judge_gpt import JudgeError, judge_transcript
-from students.run_student import list_personas
+from dotenv import load_dotenv
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
-_JUDGE_PROMPTS_DIR = _REPO_ROOT / "judge" / "prompts"
-_JUDGE_RUBRICS_DIR = _REPO_ROOT / "judge" / "rubrics"
-_TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+load_dotenv(_REPO_ROOT / ".env")
 
-_RAW_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
-    "chaotic": "chaotic_raw",
-    "chitchat": "chitchat_raw",
-    "clueless": "clueless_raw",
-}
-_GPT_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
-    "chaotic": "chaotic_gpt",
-    "chitchat": "chitchat_gpt",
-    "clueless": "clueless_gpt",
-}
+from judge.run_judge_gpt import JudgeError, judge_transcript
+
+TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
 
 # ---------------------------------------------------------------------------
-# Batch config (edit these directly)
+# Parallel workers — change this value to control concurrency.
 # ---------------------------------------------------------------------------
-
-# Judge prompt/rubric versions.
-JUDGE_PROMPTS: list[str] = ["judge_05"]
-JUDGE_RUBRICS: list[str] = ["rubric_05"]
-
-# Which student personas to process (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["chaotic_01"]
-
-# Per persona type, list transcript stems from the *_raw folder.
-# Use stem format without ".json" (example: "transcript_01").
-# Empty list means "all transcript_*.json files in that raw folder".
-RAW_TRANSCRIPTS: dict[str, list[str]] = {
-    "chaotic": [],
-    "chitchat": [],
-    "clueless": [],
-}
+PARALLEL_WORKERS = 6
 
 
 def _require_openai_api_key() -> None:
@@ -67,194 +46,160 @@ def _require_openai_api_key() -> None:
     )
 
 
-def _discover_stems(directory: Path, suffix: str) -> list[str]:
-    if not directory.exists():
-        return []
-    return sorted(path.stem for path in directory.glob(f"*{suffix}"))
+def _discover_raw_transcripts() -> list[Path]:
+    """Find all transcript_*.json files inside any *_raw/ subfolder."""
+    return sorted(TRANSCRIPTS_DIR.glob("*/*_raw/transcript_*.json"))
 
 
-def _discover_judge_prompts() -> list[str]:
-    return _discover_stems(_JUDGE_PROMPTS_DIR, ".txt")
-
-
-def _discover_judge_rubrics() -> list[str]:
-    return _discover_stems(_JUDGE_RUBRICS_DIR, ".md")
-
-
-def _parse_persona_name(prompt_name: str) -> tuple[str, str]:
-    match = re.match(r"^([a-zA-Z0-9]+)_(\d{2})$", prompt_name)
-    if not match:
-        raise ValueError(
-            f"Persona '{prompt_name}' must use '<type>_<NN>' format (example: chaotic_01)."
-        )
-    return match.group(1), match.group(2)
-
-
-def _normalize_transcript_stem(name: str) -> str:
-    stem = (name or "").strip()
-    if stem.endswith(".json"):
-        stem = stem[:-5]
-    if not stem:
-        raise ValueError("Transcript name cannot be empty.")
-    if "/" in stem or "\\" in stem:
-        raise ValueError(
-            f"Transcript '{name}' must be a file stem only (no directory separators)."
-        )
-    return stem
-
-
-def _raw_dir_for(persona_type: str) -> Path:
-    return _TRANSCRIPTS_DIR / persona_type / _RAW_SUBDIR_BY_PERSONA_TYPE[persona_type]
-
-
-def _gpt_dir_for(persona_type: str) -> Path:
-    return _TRANSCRIPTS_DIR / persona_type / _GPT_SUBDIR_BY_PERSONA_TYPE[persona_type]
-
-
-def _discover_raw_transcript_stems(persona_type: str) -> list[str]:
-    raw_dir = _raw_dir_for(persona_type)
-    if not raw_dir.exists():
-        return []
-    stems: list[str] = []
-    for path in sorted(raw_dir.glob("transcript_*.json")):
-        stems.append(path.stem)
-    return stems
-
-
-def _validate_config() -> None:
-    _require_openai_api_key()
-
-    if not JUDGE_PROMPTS:
-        raise ValueError("JUDGE_PROMPTS must contain at least one item.")
-    if not JUDGE_RUBRICS:
-        raise ValueError("JUDGE_RUBRICS must contain at least one item.")
-    if not STUDENT_PERSONAS:
-        raise ValueError("STUDENT_PERSONAS must contain at least one item.")
-
-    available_prompts = set(_discover_judge_prompts())
-    available_rubrics = set(_discover_judge_rubrics())
-    available_personas = set(list_personas())
-
-    for prompt in JUDGE_PROMPTS:
-        if prompt not in available_prompts:
-            raise ValueError(f"Unknown judge prompt: {prompt}")
-    for rubric in JUDGE_RUBRICS:
-        if rubric not in available_rubrics:
-            raise ValueError(f"Unknown judge rubric: {rubric}")
-
-    selected_types: set[str] = set()
-    for persona in STUDENT_PERSONAS:
-        if persona not in available_personas:
-            raise ValueError(f"Unknown student persona: {persona}")
-        persona_type, _ = _parse_persona_name(persona)
-        if persona_type not in _RAW_SUBDIR_BY_PERSONA_TYPE:
-            raise ValueError(f"Unsupported persona type: {persona_type}")
-        selected_types.add(persona_type)
-
-    for persona_type in selected_types:
-        raw_dir = _raw_dir_for(persona_type)
-        configured = RAW_TRANSCRIPTS.get(persona_type, [])
-        if configured:
-            for item in configured:
-                stem = _normalize_transcript_stem(item)
-                raw_path = raw_dir / f"{stem}.json"
-                if not raw_path.exists():
-                    raise ValueError(f"Raw transcript not found: {raw_path}")
-        else:
-            discovered = _discover_raw_transcript_stems(persona_type)
-            if not discovered:
-                raise ValueError(
-                    f"No raw transcripts found for persona type '{persona_type}' in {raw_dir}"
-                )
-
-
-def _iter_persona_types() -> list[str]:
-    ordered: list[str] = []
-    seen: set[str] = set()
-    for persona in STUDENT_PERSONAS:
-        persona_type, _ = _parse_persona_name(persona)
-        if persona_type not in seen:
-            seen.add(persona_type)
-            ordered.append(persona_type)
-    return ordered
-
-
-def _selected_raw_stems(persona_type: str) -> list[str]:
-    configured = RAW_TRANSCRIPTS.get(persona_type, [])
-    if configured:
-        return sorted({_normalize_transcript_stem(item) for item in configured})
-    return _discover_raw_transcript_stems(persona_type)
-
-
-def _copy_raw_to_gpt_target(
-    *,
-    persona_type: str,
-    source_stem: str,
-) -> Path:
-    source_path = _raw_dir_for(persona_type) / f"{source_stem}.json"
-    target_dir = _gpt_dir_for(persona_type)
+def _provider_target_path(raw_path: Path, provider: str) -> Path:
+    """Map a raw transcript path to its graded counterpart folder."""
+    persona_dir = raw_path.parent.parent
+    persona_type = persona_dir.name
+    target_dir = persona_dir / f"{persona_type}_{provider}"
     target_dir.mkdir(parents=True, exist_ok=True)
-    target_filename = f"{source_stem}.json"
-    target_path = target_dir / target_filename
-    shutil.copyfile(source_path, target_path)
-    return target_path
+    return target_dir / raw_path.name
 
 
-def main() -> int:
+def _relative_stem(path: Path) -> str:
+    """Return the transcript name relative to TRANSCRIPTS_DIR without .json."""
+    rel = path.relative_to(TRANSCRIPTS_DIR).as_posix()
+    return rel[:-5] if rel.endswith(".json") else rel
+
+
+def _grade_one(
+    raw_path: Path,
+    target_path: Path,
+    *,
+    prompt_name: str,
+    rubric_name: str,
+) -> dict[str, Any]:
+    """Copy a raw transcript to its target path, then grade it in place."""
+    if target_path.exists():
+        print(
+            f"  [WARN] Overwriting existing file: "
+            f"{target_path.relative_to(_REPO_ROOT)}"
+        )
+    shutil.copyfile(raw_path, target_path)
+
+    result = judge_transcript(
+        _relative_stem(target_path),
+        prompt_name=prompt_name,
+        rubric_name=rubric_name,
+        output_name=target_path.stem,
+    )
+
+    graded = json.loads(result.output_path.read_text(encoding="utf-8"))
+    grade = graded.get("grade", {})
+    section_scores: list[str] = []
+    for sid, section in grade.get("sections", {}).items():
+        base = section.get("base", {})
+        section_scores.append(f"{sid}={base.get('score', '?')}/{base.get('max', '?')}")
+
+    return {
+        "raw_path": raw_path,
+        "name": _relative_stem(target_path),
+        "score": result.total_score,
+        "max_score": result.max_score,
+        "output_path": result.output_path,
+        "section_scores": "  ".join(section_scores),
+    }
+
+
+_progress_lock = threading.Lock()
+_progress_done = 0
+
+
+def _print_result(info: dict[str, Any], total: int) -> None:
+    global _progress_done
+    with _progress_lock:
+        _progress_done += 1
+        n = _progress_done
+    print(
+        f"[GPT Judge] [{n}/{total}] "
+        f"score={info['score']}/{info['max_score']}  "
+        f"source={info['raw_path'].relative_to(_REPO_ROOT)}  "
+        f"saved={info['output_path'].relative_to(_REPO_ROOT)}"
+    )
+    print(f"            {info['section_scores']}")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Grade all raw transcripts with GPT judge into *_gpt folders."
+    )
+    parser.add_argument(
+        "--prompt", default="judge_05",
+        help="Judge prompt stem (default: judge_05).",
+    )
+    parser.add_argument(
+        "--rubric", default="rubric_05",
+        help="Judge rubric stem (default: rubric_05).",
+    )
+    args = parser.parse_args(argv)
+
     try:
-        _validate_config()
-    except (RuntimeError, ValueError) as error:
+        _require_openai_api_key()
+    except RuntimeError as error:
         print(str(error))
         return 1
 
+    raw_files = _discover_raw_transcripts()
+    if not raw_files:
+        print(f"No raw transcripts found under {TRANSCRIPTS_DIR}")
+        return 1
+
+    workers = PARALLEL_WORKERS
+    print(
+        f"[GPT Judge] Grading {len(raw_files)} transcripts  "
+        f"prompt={args.prompt}  rubric={args.rubric}  parallel={workers}"
+    )
+
+    tasks: list[tuple[Path, Path]] = []
+    for raw_path in raw_files:
+        target_path = _provider_target_path(raw_path, "gpt")
+        tasks.append((raw_path, target_path))
+
+    global _progress_done
+    _progress_done = 0
+    total = len(tasks)
+    all_scores: list[dict[str, Any]] = []
+    failed = 0
+
     try:
-        for persona_type in _iter_persona_types():
-            stems = _selected_raw_stems(persona_type)
-            for source_stem in stems:
-                for prompt_name in JUDGE_PROMPTS:
-                    for rubric_name in JUDGE_RUBRICS:
-                        target_path = _copy_raw_to_gpt_target(
-                            persona_type=persona_type,
-                            source_stem=source_stem,
-                        )
-                        relative_stem = str(
-                            target_path.relative_to(_TRANSCRIPTS_DIR)
-                        ).replace("\\", "/")
-                        if relative_stem.endswith(".json"):
-                            relative_stem = relative_stem[:-5]
-
-                        result = judge_transcript(
-                            relative_stem,
-                            prompt_name=prompt_name,
-                            rubric_name=rubric_name,
-                            output_name=source_stem,
-                        )
-
-                        # Read back graded file for section breakdown
-                        graded = json.loads(result.output_path.read_text(encoding="utf-8"))
-                        grade = graded.get("grade", {})
-                        section_scores = []
-                        for sid, section in grade.get("sections", {}).items():
-                            base = section.get("base", {})
-                            section_scores.append(f"{sid}={base.get('score', '?')}/{base.get('max', '?')}")
-
-                        print(
-                            "[GPT Judge] "
-                            f"persona_type={persona_type} "
-                            f"source={source_stem}.json "
-                            f"prompt={prompt_name} "
-                            f"rubric={rubric_name} "
-                            f"score={result.total_score}/{result.max_score} "
-                            f"saved={target_path.relative_to(_REPO_ROOT)}"
-                        )
-                        print(f"            {'  '.join(section_scores)}")
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = {
+                pool.submit(
+                    _grade_one, raw_path, target_path,
+                    prompt_name=args.prompt, rubric_name=args.rubric,
+                ): (raw_path, target_path)
+                for raw_path, target_path in tasks
+            }
+            for future in as_completed(futures):
+                raw_path, _ = futures[future]
+                try:
+                    info = future.result()
+                    all_scores.append(info)
+                    _print_result(info, total)
+                except JudgeError as error:
+                    failed += 1
+                    with _progress_lock:
+                        _progress_done += 1
+                        n = _progress_done
+                    print(
+                        f"[GPT Judge] [{n}/{total}] FAILED "
+                        f"source={raw_path.relative_to(_REPO_ROOT)}: {error}"
+                    )
     except KeyboardInterrupt:
         print("\nGPT judging interrupted.")
         return 130
-    except JudgeError as error:
-        print(f"Judge failed: {error}")
-        return 1
 
+    scores_only = [s["score"] for s in all_scores]
+    mean_score = sum(scores_only) / len(scores_only) if scores_only else 0.0
+    print(
+        f"\n[GPT Judge] Done. "
+        f"graded={len(all_scores)}  failed={failed}  "
+        f"mean={mean_score:.1f}"
+    )
     return 0
 
 

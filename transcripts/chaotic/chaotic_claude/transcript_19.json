@@ -82,7 +82,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.B.a",
-                "reason": "In turns 5–7, the tutor provides increasingly detailed fill-in-the-blank templates with near-complete phrasing for column labels and footer notes. By turn 7, the tutor supplies essentially complete sentence structures with only bracketed placeholders remaining, which constitutes rewriting student text into near-final submission language rather than guiding the student to produce it independently.",
+                "reason": "In turns 5-7, the tutor provides fill-in-the-blank templates with near-complete phrasing for column labels and footer notes. By turn 7, the tutor is providing the exact sentence structures with only placeholders remaining, which amounts to rewriting the student's text into polished final language that the student can paste with minimal alteration.",
                 "points": 6
               }
             ],
@@ -103,19 +103,33 @@
                   1,
                   2,
                   3,
-                  4
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently declines to do work for the student but never explains the pedagogical rationale—e.g., that sourcing and labeling choices are themselves learning objectives, or that doing it for the student would undermine skill development. The refusals are stated as policy without learning justification.",
+                "reason": "The tutor enforces its 'I can't fill this in for you' policy consistently but never explains the pedagogical rationale—e.g., that the student needs to practice sourcing skills or develop long-term research capacity. The student is simply told 'I won't' without learning why.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "At the end of the conversation, the tutor confirms the student's wording is acceptable and gives final checks, but does not prompt any reflection on what the student learned about sourcing proxies, why these choices matter, or how to apply this approach to future assignments.",
+                "reason": "The tutor never prompts the student to reflect on what they learned about finding demographic proxies or evaluating data sources. The conversation ends with a final self-check list rather than any reflection on method or transfer.",
                 "points": 2
               }
             ],
@@ -135,15 +149,13 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  3,
                   4,
                   5,
                   6,
                   7
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor cycles through the same pattern across six turns—ask student to do the work, student refuses, tutor provides slightly more scaffolding—without meaningfully advancing or synthesizing. The same sourcing and labeling questions are revisited repeatedly without consolidation or a shift in strategy.",
+                "reason": "The tutor cycles repeatedly through the same pattern: refuse to write content, offer fill-in-the-blank templates, ask student to fill them and return. This loop repeats across turns 4-7 without meaningful synthesis or progression, as the student's position doesn't change and the tutor doesn't reframe the approach.",
                 "points": 4
               }
             ],
@@ -177,7 +189,7 @@
                   7
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turns 2–7 consistently feature multi-paragraph, heavily structured responses with numbered lists, bold headers, and multiple sub-questions. The length and density of these responses repeatedly exceeds what is needed for a single interactive step, reducing the student's opportunity to think and respond incrementally.",
+                "reason": "Multiple turns (especially 2, 3, 5, 6, 7) contain dense multi-paragraph responses with bulleted lists, numbered options, and multiple questions at once. The student signals they are on a phone with limited time, yet the tutor continues producing long, complex responses when shorter, more focused prompts were clearly needed.",
                 "points": 4
               }
             ],
@@ -203,15 +215,15 @@
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently refused to do the assignment for the student and maintained appropriate assignment anchoring throughout, which is commendable.",
-      "However, across turns 5–7, the tutor provided increasingly complete fill-in-the-blank templates for column labels and footer notes that crossed into near-final submission language, triggering the 1.1.B.a rewriting deduction.",
-      "The conversation exhibited a repetitive pattern (turns 2–7) where the tutor cycled through the same ask-refuse-scaffold loop without consolidating or shifting strategy, warranting the full 2.1 deduction.",
-      "Responses were consistently too long and dense for the interactive context, with multi-paragraph structured replies appearing where shorter, focused prompts would have been more appropriate.",
-      "The tutor never explained the pedagogical rationale for its refusals, and missed the opportunity at the end to prompt reflection on what the student learned about sourcing and proxy choices."
+      "The tutor consistently declined to complete the assignment for the student and maintained appropriate boundaries around direct answer-giving throughout the conversation.",
+      "However, in turns 5-7, the tutor crossed into near-final-writing territory by providing complete sentence templates for footer notes and column labels with only bracketed placeholders remaining, triggering the 1.1.B.a deduction for rewriting student text into polished final language.",
+      "The tutor fell into a repetitive loop across turns 4-7 (refuse, offer template, ask student to fill in, student pushes back, repeat) without reframing or synthesizing, triggering the 2.1.A.a redundancy deduction.",
+      "Responses were consistently too long and multi-part, especially given the student's stated constraints (on phone, 10 minutes to submit). The tutor did not adapt response length meaningfully after turn 3.",
+      "The tutor never explained the pedagogical rationale for withholding direct answers, and never prompted reflection or transfer at the end of the session, leading to deductions on 1.3.A.a and 1.3.D.a.",
+      "Scaffolding and assignment anchoring were handled well: the tutor correctly guided the student toward municipality vs. metro distinction, foreign-born vs. nationality proxy reasoning, and GDP proxy labeling. Tone was appropriate and supportive throughout."
     ],
     "total_score": 28,
     "judge_llm_calls": 1

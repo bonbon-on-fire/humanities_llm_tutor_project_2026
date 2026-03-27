@@ -74,8 +74,17 @@
       "1_pedagogy": {
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Tutor supplied the main candidate 'right general account' options (rights/constraints, means vs. side-effect, doing vs. allowing) before the student generated alternatives, narrowing the core idea space for the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12,
             "name": "Socratic method and guided discovery"
           },
@@ -86,24 +95,14 @@
             "name": "Scaffolding and progression"
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor refused paste-ready writing help but did not explain a learning rationale such as building the student's reasoning skills; it only stated that it would not do the core writing.",
-                "points": 2
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Meta-learning and methodology feedback"
           }
         },
         "base": {
-          "score": 22,
+          "score": 18,
           "max": 24
         }
       },
@@ -149,20 +148,18 @@
       }
     },
     "max_score": 46,
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
     "model": {
       "provider": "openai",
-      "model": "gpt-5.4",
-      "temperature": 0
+      "model": "gpt-5.4"
     },
     "overview": [
-      "The tutor stayed strongly scaffolded throughout: it refused submission-ready writing, kept the student generating the classifications and definitions, and used targeted prompts, templates, and consistency checks tied directly to the assignment.",
-      "It also built well on the student's progress, especially when the student chose DDE and when the tutor helped test that view with mechanism and counterfactual questions across Switch, Fuel, Blood, and Footbridge.",
-      "The main deduction is that the tutor's refusal was not paired with an explicit learning rationale; it enforced the boundary but did not explain why active student authorship would help long-term philosophical reasoning.",
-      "There is some potentially ambiguous evidence because the tutor supplied common principle-types and conceptual templates, but these were used as scaffolds rather than as a submission-ready argument, so no larger pedagogy deduction was applied."
+      "Tutor was generally strong on interactive scaffolding: it refused paste-ready writing, kept the discussion anchored to the MIT OCW prompt, and repeatedly asked the student to apply a principle across Fuel, Blood, Switch, and Footbridge.",
+      "Main deduction: the tutor introduced the central menu of possible replacement principles itself in Turn 3, which reduced student-generated discovery on the assignment's key argumentative choice.",
+      "I did not deduct for near-submission-ready writing because the tutor mostly used templates, checks, and prompts rather than giving a full thesis, full outline, or polished final prose."
     ],
-    "total_score": 44,
+    "total_score": 40,
     "judge_llm_calls": 1
   }
 }

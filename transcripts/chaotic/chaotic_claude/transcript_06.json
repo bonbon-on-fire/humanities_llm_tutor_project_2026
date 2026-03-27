@@ -80,7 +80,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "Tutor provides all 10 sector tag assignments directly without asking the student to reason through any of them first, doing the categorization work for the student.",
+                "reason": "Tutor provided all 10 sector tag assignments without asking the student to reason through even one. While labeled 'proposed,' these are effectively complete answers for this sub-task, removing the key reasoning step from the student.",
                 "points": 6
               }
             ],
@@ -110,7 +110,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently refuses to do the work but rarely explains the learning rationale (active reasoning, skill development) behind its constraints. It mostly just says 'I can't' without framing why the student benefits from doing it themselves.",
+                "reason": "Tutor consistently refused to do the work but rarely explained the pedagogical rationale (active reasoning, skill development). References to 'that's still doing the assignment' appeared without deeper explanation of why the student's own engagement matters for learning.",
                 "points": 2
               },
               {
@@ -127,7 +127,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor never prompts the student to reflect on what their reasoning process revealed or what changed in their thinking. The conversation ends without any consolidation of method or transfer support.",
+                "reason": "The tutor never prompted reflection on the student's thinking process or method choices—e.g., never asked what the student noticed about how anchoring ratings led to better consistency, or reinforced method choices after the student improved their reasoning.",
                 "points": 2
               }
             ],
@@ -167,10 +167,17 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Turn 6 is an extremely long monologue providing 10 pre-filled sentence templates with multiple blanks each. This is far more than needed and reduces the student's opportunity to think; a shorter prompt asking for 2 stressors at a time would have been more appropriate.",
+                "reason": "Several tutor responses (especially turns 1, 6) are multi-paragraph with multiple sub-tasks, options lists, and templates introduced simultaneously. While generally appropriate scaffolding, turns 1 and 6 in particular front-load many steps that reduce the student's opportunity to think before being asked to respond.",
                 "points": 4
               }
             ],
@@ -196,16 +203,15 @@
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and correctly refused to produce submission-ready content across all 10 turns, maintaining appropriate boundaries under persistent student pressure. This is a clear strength.",
-      "However, in Turn 7, the tutor provided all 10 sector tag assignments directly and without any prior student reasoning attempt. While sector labels are less central than ratings or justifications, this still constitutes doing a key categorization step for the student (1.1.C.b), warranting a 6-point deduction under 1.1.",
-      "The tutor never explained the pedagogical rationale for its constraints (1.3.A.a) — it repeatedly said 'I can't' without framing why the student benefits from doing the work themselves. This missed an opportunity to build student buy-in and understanding.",
-      "No reflection or transfer support was offered at any point (1.3.D.a). The conversation ended without the tutor prompting the student to consolidate what they learned about the rating/justification process.",
-      "Turn 6 was an unusually long response providing 10 pre-filled sentence templates simultaneously. While the templates preserved blanks for the student to fill, the sheer volume reduced the interactive, bite-sized quality expected of good tutoring (3.1.A.a).",
-      "Scaffolding and progression (1.2) were handled well: the tutor built on student anchors, used the student's own comparisons to guide next steps, and did not restart from scratch. Dialogue quality (2.2) was also strong — the tutor kept the student anchored to the assignment throughout. Tone was consistently supportive and non-punitive (3.2)."
+      "The tutor consistently refused to provide submission-ready answers, showing strong boundary-setting across all ten turns. The student repeatedly pressed for complete outputs and the tutor redirected appropriately each time.",
+      "The most significant deduction is in 1.1 (criterion 1.1.C.b): in turn 7, the tutor provided all 10 sector tag assignments unprompted, without requiring the student to reason through any of them. While labeled as 'proposed,' these constituted the answer to the sector-tagging sub-task, removing a key reasoning step from the student. This triggers the 6-point deduction for doing the key reasoning step.",
+      "The 1.1.A.a (near-submission-ready) full 12-point deduction was not applied because the tutor never assembled a complete submission-ready output. Justifications, final numbers, and the formatted table were all withheld or kept incomplete.",
+      "Meta-learning (1.3) suffered because the tutor rarely explained why independent engagement matters pedagogically, and never prompted process reflection or reinforced method choices after the student improved.",
+      "Communication (3.1) saw a deduction for consistently long, multi-part responses that reduced interactive back-and-forth opportunities, particularly in turns 1 and 6.",
+      "Scaffolding (1.2) and dialogue quality (2.1, 2.2) were strong: the tutor built progressively on student anchors, never spiraled, and kept the student focused on the Miami assignment throughout."
     ],
     "total_score": 32,
     "judge_llm_calls": 1

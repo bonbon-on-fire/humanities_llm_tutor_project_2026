@@ -472,3 +472,24 @@ web_ui/
   - Individual graded outputs named: `{output_name}_batch_{index:02d}__{prompt_name}__{rubric_name}__{provider}.json`
 - **Usage**: `judge_transcript_batch("unused", batch_file_path="judge/transcript_batches/batch_01_001.txt")`
 - **Benefits**: Enables holistic grading experiments where LLM judges multiple transcripts together for comparative analysis.
+
+### 03/27/2026 — GPT judge known issues
+
+#### Issue 1: GPT judge returning identical perfect scores
+
+- **Symptom**: All GPT-graded transcripts returned 46/46 (or 47/47 for rubric_04) with zero deductions and empty overviews, regardless of transcript content.
+- **Root cause**: GPT-5.2+ returns a list of content blocks including a `ReasoningBlock(type='reasoning')` that has no `.text` attribute. The `_extract_text_from_model_content()` function fell through to `str(item)`, converting the reasoning block into a Python repr string (single-quoted dict) prepended to the actual grade JSON. Then `extract_json_object()` in `utils/parsing.py` found the **first** `{` — which was in the reasoning block's string, not the grade JSON. `ast.literal_eval()` successfully parsed it as `{'id': 'rs_...', 'summary': [], 'type': 'reasoning'}`. This dict was treated as the grade payload: no sections found → empty deductions → max score for every criterion.
+
+#### Issue 2: Stale output files from rubric_04 runs on disk
+
+- **Symptom**: Some `chaotic_gpt/` files showed `max_score=47` and criterion 3.3 ("Formatting and medium") despite running with `--rubric rubric_05` (which has `max_score=46` and no criterion 3.3).
+- **Root cause**: Files were left over from a previous run that used `rubric_04`. Subsequent runs either didn't reach those files (interrupted) or wrote to a different process context (background task). The stale files were never overwritten.
+
+#### Issue 3: Parallel execution race condition
+
+- **Symptom**: When using `--parallel 4`, many transcripts failed with `Transcript not found` errors. Only a handful of files persisted on disk after a "successful" run.
+- **Root cause**: The original parallel implementation copied all 288 raw files upfront in a sequential loop, then submitted all grading tasks to a `ThreadPoolExecutor`. Workers started immediately and tried to read files that hadn't been copied yet (the copy loop was still running for later files).
+
+#### Issue 4: GPT grading leniency
+
+- **Symptom**: GPT-5.2 with `reasoning_effort=medium` gave perfect 46/46 to 43% of transcripts. Claude on the same transcripts ranged 22-42. This is a model/prompt behavior issue, not a code bug.

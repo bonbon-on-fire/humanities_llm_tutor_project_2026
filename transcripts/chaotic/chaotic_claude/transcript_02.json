@@ -92,19 +92,15 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation the tutor enforces its no-direct-answer policy but never explicitly explains the learning rationale (e.g., that the student builds stronger reasoning skills by deriving the rule themselves). The closest it comes is 'that would be doing the submission,' which is a policy statement, not a pedagogical rationale.",
+                "reason": "The tutor consistently guides the student through questions without ever explaining why it is declining to write answers for the student (i.e., the learning rationale—active reasoning, skill development). In turn 1, it says 'My job is to help you build your own argument' and in turn 8 'that would be doing the submission,' but never explains how wrestling with the argument themselves develops philosophical skill or long-term ability. The rationale given is primarily about submission integrity, not learning benefit.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  2,
-                  4,
-                  5,
-                  7,
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "The tutor consistently moves forward to the next analytical step without pausing to help the student reflect on why a method worked or what changed in their thinking. For example, after the student successfully derives the substitution/selection tests in Turn 7, the tutor immediately assigns the next task without reinforcing the method or asking the student to articulate what made that approach effective.",
+                "reason": "The tutor never prompts the student to reflect on how their thinking evolved (e.g., from a simple AC rule to a refined substitution/selection-under-description principle). No turn asks 'what changed in your reasoning?' or reinforces the method choices the student made. The conversation ends with more case analysis questions rather than any reflection or transfer prompt.",
                 "points": 2
               }
             ],
@@ -141,26 +137,8 @@
       "3_communication_quality": {
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.1.A.a",
-                "reason": "The tutor's responses are consistently multi-paragraph with multiple numbered sub-questions per turn. While the questions are well-structured, the tutor repeatedly asks 2–3 questions at once across nearly every turn rather than focusing on one targeted prompt, reducing the student's opportunity to think and respond incrementally. Turns 1, 4, 7, 8, 9, and 10 are particularly dense.",
-                "points": 4
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 6,
             "max": 6,
             "name": "Bite-sized and clear responses"
           },
@@ -172,30 +150,28 @@
           }
         },
         "base": {
-          "score": 6,
+          "score": 10,
           "max": 10
         }
       }
     },
     "max_score": 46,
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor does an excellent job refusing to write submission-ready content and consistently redirects the student toward their own reasoning through Socratic questioning and scaffolded prompts.",
-      "Criterion 1.1: No deductions. The tutor never gives the student a final answer, never rewrites their text, and never states the key conclusion before the student derives it. The student genuinely builds the substitution/selection-under-description framework through their own reasoning across turns 4–7.",
-      "Criterion 1.2: No deductions. The tutor consistently builds on the student's prior correct steps (e.g., acknowledging the AC rule in Turn 2, the counterfactual test in Turn 5, the parallel analysis in Turn 7) and scaffolds progression logically.",
-      "Criterion 1.3: Two deductions (4 points). The tutor enforces its no-direct-answer policy without explaining the learning rationale to the student (1.3.A.a, -2 pts). The tutor also consistently moves to the next task without prompting reflection on why the student's method worked or what changed in their thinking (1.3.D.a, -2 pts). No deduction for 1.3.B as the tutor does give method-level feedback (e.g., 'your counterfactual/causal-role test is exactly where Loop bites').",
-      "Criterion 2.1: No deductions. The conversation progresses clearly from AC definition → Switch/Footbridge → rule formulation → stress-testing → Blood/Fuel, with no spiraling.",
-      "Criterion 2.2: No deductions. The tutor keeps the conversation anchored to the assignment throughout, even when the student tries to get paste-ready answers.",
-      "Criterion 3.1: Four-point deduction (3.1.A.a). The tutor's responses are consistently multi-paragraph with 2–3 numbered sub-questions per turn across nearly all 10 turns. While the questions are well-crafted, the pattern of asking multiple questions simultaneously reduces the student's opportunity for focused, incremental thinking. A more bite-sized approach (one question at a time) would have been more appropriate.",
-      "Criterion 3.2: No deductions. The tone is consistently supportive and coaching-oriented ('Good,' 'That's not hand-wavy anymore'), and the tutor never implies formal grading."
+      "The tutor demonstrates excellent Socratic practice throughout: it consistently refuses to write submission-ready content (turns 1, 8, 9), uses targeted follow-up questions to advance student reasoning, builds on student answers turn-by-turn (e.g., moving from AC definition → Switch → Footbridge → Loop refinement → Blood/Fuel), and scaffolds the student's increasingly sophisticated intended/foreseen distinction into a substitution/selection-under-description test.",
+      "No deductions were warranted for 1.1: the tutor never provides the final claim, the final rule wording, or the case verdicts—those remain genuinely undone by the end of the transcript. The student's own turns carry the reasoning.",
+      "No deductions for 1.2: the tutor consistently acknowledges valid student progress (e.g., 'your AC rule + Switch application are on target,' 'That's not hand-wavy anymore') and builds directly on it rather than restarting.",
+      "Deductions in 1.3 arise from two gaps: (a) the tutor's stated rationale for not writing the essay is framed around submission integrity ('doing the submission') rather than the learning benefit of active reasoning—the rubric requires explaining the tutoring rationale in terms of skill development; (b) no turn prompts the student to reflect on how their thinking changed or what the process taught them about philosophical argumentation.",
+      "No deductions for 1.3.B: the tutor gives substantive method-level feedback (e.g., flagging that 'using as a means' is a label that needs an operational test, identifying the Loop stress-case, pointing out hand-waviness).",
+      "Dialogue quality is strong: the conversation advances each turn, there is no spiraling or redundancy, the tutor stays anchored to the assignment, and off-topic requests (paste-in answer) are redirected immediately.",
+      "Communication quality is good: responses are structured and numbered, length is appropriate to each turn's complexity, and tone is supportive without being condescending or grade-like."
     ],
-    "total_score": 38,
+    "total_score": 42,
     "judge_llm_calls": 1
   }
 }

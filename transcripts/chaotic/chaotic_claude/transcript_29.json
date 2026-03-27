@@ -92,16 +92,10 @@
                   1,
                   2,
                   3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
+                  4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces its no-writing policy but never explains the learning rationale (e.g., that doing the reasoning builds the student's own analytical skills for future assignments). It only says 'that would be doing the assignment' without connecting the constraint to skill development.",
+                "reason": "The tutor consistently refuses to do the student's work but never explains the learning rationale (e.g., that filling in their own justifications builds critical thinking or research skills needed for later assignments). Constraints are enforced without articulating why this benefits the student.",
                 "points": 2
               },
               {
@@ -110,7 +104,7 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.D.a",
-                "reason": "After the student successfully revises sentence #1 in turn 10, the tutor moves straight to two more tweaks without prompting any reflection on what made the revision better or what the student learned from the process.",
+                "reason": "After the student produces a markedly improved sentence in turn 10, the tutor does not prompt any reflection on what changed in their thinking or what made the revision stronger as a method. The conversation ends with two more tweaks requested but no process-level consolidation.",
                 "points": 2
               }
             ],
@@ -151,12 +145,10 @@
               {
                 "evidence_turns": [
                   2,
-                  3,
-                  5,
-                  9
+                  3
                 ],
                 "sub_criterion_id": "3.1.A.a",
-                "reason": "Several tutor turns are very long multi-paragraph responses when shorter, more focused prompts would have been more appropriate. Turn 2 lists 11 stressor options with a full template; turn 3 provides 10 sentence stems; turn 5 asks 8 sub-questions across 4 stressors; turn 9 gives detailed multi-point feedback for all 4 sentences at once. This pattern consistently reduces the student's opportunity to think and respond incrementally.",
+                "reason": "Turns 2 and 3 are unusually long: turn 2 delivers a full 11-item stressor menu with instructions before the student has done any work, and turn 3 provides 10 sentence stems back-to-back. These multi-paragraph outputs reduce student opportunity to think and respond, though later turns become appropriately short and interactive.",
                 "points": 4
               }
             ],
@@ -182,15 +174,14 @@
     "max_base_score": 46,
     "model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6",
-      "temperature": 0
+      "model": "claude-sonnet-4-6"
     },
     "overview": [
-      "The tutor consistently and correctly refused to do the assignment for the student, maintaining a Socratic stance throughout all 10 turns despite persistent pressure. It guided the student from vague requests to actual draft sentences through scaffolded steps (stressor menu → bullet notes → rough sentences → revision), which is strong guided discovery.",
-      "Scaffolding was well-executed: the tutor built on each student contribution, acknowledged progress (e.g., 'Good—those are usable hooks' in turn 5, 'Much stronger' in turn 10), and moved the student forward incrementally without restarting.",
-      "The main pedagogy weakness is in meta-learning: the tutor never explained why it was withholding direct answers in terms of the student's learning development, and it missed the opportunity at the end to prompt reflection on what made the revision successful.",
-      "The primary communication issue is response length. Several turns (2, 3, 5, 9) are very long and information-dense, presenting multiple sub-questions or extensive lists at once. Given the student's stated time pressure and resistance, shorter, more focused prompts would have been more effective and interactive.",
-      "No issues were found with assignment anchoring, redundancy/spiraling, tone, or grading stance. The tutor stayed on task throughout and maintained a supportive, non-punitive tone."
+      "The tutor maintains a strong Socratic stance throughout: it firmly refuses to produce copy-paste ratings, justifications, or polished sentences, redirecting the student at every turn toward doing the actual reasoning work. No submission-ready content is produced.",
+      "Scaffolding is solid: the tutor progressively narrows the task (menu → bullets → rough sentences → concrete revisions), builds on each student contribution, and correctly diagnoses the student's point of confusion at each stage.",
+      "The main pedagogy weakness is in meta-learning (1.3): the tutor never explains why it won't write for the student in terms of learning benefit, and misses a clear opportunity at the end of turn 10 to help the student reflect on what made their revision stronger.",
+      "Communication quality is strong in most turns, but turns 2 and 3 are notably long — delivering a full stressor list and 10 sentence stems in single responses before checking student understanding, reducing student thinking opportunity.",
+      "Tone is consistently warm, patient, and encouraging ('Good—those are usable hooks'; 'Much stronger'). No grading language or punitive framing is used."
     ],
     "total_score": 38,
     "judge_llm_calls": 1
