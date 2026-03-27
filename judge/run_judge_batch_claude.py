@@ -2,6 +2,13 @@
 
 from __future__ import annotations
 
+# ========================================
+# BATCH RUNNER CONFIGURATION
+# ========================================
+BATCH_TYPE = 1  # Change to 1, 2, or 3 to run all batches of that type
+RUN_ALL_BATCHES = False  # Set to True to run all batches of BATCH_TYPE
+# ========================================
+
 import json
 import os
 from datetime import datetime, timezone
@@ -258,3 +265,77 @@ def judge_transcript_batch(
         ))
     
     return results
+
+
+def run_all_batches_of_type(batch_type: int) -> None:
+    """Run all batches for a specific batch type."""
+    # Batch type configuration
+    batch_configs = {
+        1: {"count": 72, "name": "consistency"},
+        2: {"count": 54, "name": "cross_exercise"},
+        3: {"count": 72, "name": "persona_diff"}
+    }
+    
+    if batch_type not in batch_configs:
+        print(f"❌ Invalid batch_type: {batch_type}. Must be 1, 2, or 3.")
+        return
+    
+    config = batch_configs[batch_type]
+    batch_prefix = f"batch_{batch_type:02d}"
+    experiment_name = config["name"]
+    total_batches = config["count"]
+    
+    print(f"🚀 Starting Claude {experiment_name} experiment")
+    print(f"📁 Processing {total_batches} batches: {batch_prefix}_001.txt through {batch_prefix}_{total_batches:03d}.txt")
+    print()
+    
+    results = []
+    failed_batches = []
+    
+    for i in range(1, total_batches + 1):
+        batch_file = f"judge/transcript_batches/{batch_prefix}_{i:03d}.txt"
+        output_name = f"{experiment_name}_claude_{i:03d}"
+        
+        print(f"Processing {batch_prefix}_{i:03d}.txt... ", end="", flush=True)
+        
+        try:
+            batch_results = judge_transcript_batch(
+                "unused",
+                batch_file_path=batch_file,
+                output_name=output_name
+            )
+            results.extend(batch_results)
+            print(f"✅ {len(batch_results)} transcripts graded")
+        except Exception as e:
+            failed_batches.append((i, str(e)))
+            print(f"❌ FAILED: {e}")
+    
+    # Summary
+    print()
+    print("=" * 50)
+    print("📊 EXPERIMENT SUMMARY")
+    print("=" * 50)
+    print(f"Experiment: {experiment_name} (Type {batch_type:02d})")
+    print(f"Total batches: {total_batches}")
+    print(f"Successful: {total_batches - len(failed_batches)}")
+    print(f"Failed: {len(failed_batches)}")
+    print(f"Total transcripts processed: {len(results)}")
+    
+    if failed_batches:
+        print("\n❌ Failed batches:")
+        for batch_num, error in failed_batches:
+            print(f"  - {batch_prefix}_{batch_num:03d}.txt: {error}")
+    
+    print(f"\n🎉 Claude {experiment_name} experiment complete!")
+
+
+if __name__ == "__main__":
+    if RUN_ALL_BATCHES:
+        run_all_batches_of_type(BATCH_TYPE)
+    else:
+        print("Set RUN_ALL_BATCHES = True to run batch experiments")
+        print(f"Current configuration: BATCH_TYPE = {BATCH_TYPE}")
+        print("Available batch types:")
+        print("  1 = Consistency experiment (72 batches)")
+        print("  2 = Cross-exercise experiment (54 batches)")
+        print("  3 = Persona differentiation experiment (72 batches)")

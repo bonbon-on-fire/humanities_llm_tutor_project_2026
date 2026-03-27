@@ -108,15 +108,17 @@ results = judge_transcript_batch(
 )
 ```
 
-### Bundle Generation
+### Batch Experiments
 
-Generate transcript bundles for experiments:
+Run complete batch experiments with simple configuration:
 
 ```bash
-python create_batch.py
+# Edit BATCH_TYPE (1, 2, or 3) in the file, then run:
+python run_batch_gpt.py     # GPT experiments
+python run_batch_claude.py  # Claude experiments
 ```
 
-This creates three batch types in `judge/transcript_batches/`:
+Available batch types in `judge/transcript_batches/`:
 - **Type 01**: Same persona + same version + same exercise (72 batches)
 - **Type 02**: Same persona + same version + different exercise (54 batches)  
 - **Type 03**: Different persona + same version + same exercise (72 batches)

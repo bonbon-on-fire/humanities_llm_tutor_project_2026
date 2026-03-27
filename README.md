@@ -26,7 +26,13 @@ python -m terminal_ui
 # Interactive pipeline: select tutor, student, course, exercise, run conversation
 ```
 
-### Transcript Batches
+### Run Batch Experiments
+```bash
+# Edit BATCH_TYPE (1, 2, or 3) in the file, then run:
+python run_batch_gpt.py     # GPT batch experiments
+python run_batch_claude.py  # Claude batch experiments
+```
+
 Pre-generated batches for experiments are available in `judge/transcript_batches/` with 198 batch files across 3 experiment types.
 
 ## Project Structure
@@ -41,6 +47,8 @@ Pre-generated batches for experiments are available in `judge/transcript_batches
 │   ├── run_judge_batch_gpt.py   # Batch GPT judge for bundles
 │   ├── run_judge_batch_claude.py # Batch Claude judge for bundles
 │   └── transcript_batches/      # Batch files for judging experiments
+├── run_batch_gpt.py     # GPT batch experiment runner
+├── run_batch_claude.py  # Claude batch experiment runner
 ├── transcripts/         # Generated conversation transcripts
 ├── web_ui/              # Flask web interface
 ├── terminal_ui/         # Command-line interface
@@ -92,6 +100,16 @@ results = judge_transcript_batch(
     "unused",
     batch_file_path="judge/transcript_batches/batch_01_001.txt"
 )
+```
+
+### Batch Experiments (Recommended)
+```python
+# Edit BATCH_TYPE in run_batch_gpt.py (1, 2, or 3), then:
+# python run_batch_gpt.py
+
+# Type 1: Consistency (72 batches)
+# Type 2: Cross-exercise (54 batches) 
+# Type 3: Persona differentiation (72 batches)
 ```
 
 ### Generate Conversations

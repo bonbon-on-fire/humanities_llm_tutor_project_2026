@@ -48,6 +48,22 @@ clueless\clueless_raw\transcript_12
 
 ## Usage
 
+### Batch Experiment Runners (Recommended)
+
+The easiest way to run experiments is using the dedicated runner scripts:
+
+```bash
+# 1. Edit BATCH_TYPE (1, 2, or 3) in the file
+# 2. Run the experiment:
+python run_batch_gpt.py     # GPT experiments
+python run_batch_claude.py  # Claude experiments
+```
+
+**Batch Types:**
+- `BATCH_TYPE = 1`: Consistency experiment (72 batches)
+- `BATCH_TYPE = 2`: Cross-exercise experiment (54 batches)
+- `BATCH_TYPE = 3`: Persona differentiation experiment (72 batches)
+
 ### Single Batch Judging
 ```python
 from judge.run_judge_batch_gpt import judge_transcript_batch
@@ -60,25 +76,13 @@ results = judge_transcript_batch(
 )
 ```
 
-### Batch Type Analysis
+### Manual Batch Type Analysis
 ```python
 # Analyze all Type 01 batches (consistency experiment)
 for i in range(1, 73):  # 72 batches
     batch_file = f"judge/transcript_batches/batch_01_{i:03d}.txt"
     results = judge_transcript_batch("unused", batch_file_path=batch_file)
     # Analyze score variance within batch...
-
-# Analyze all Type 02 batches (cross-exercise experiment)  
-for i in range(1, 55):  # 54 batches
-    batch_file = f"judge/transcript_batches/batch_02_{i:03d}.txt"
-    results = judge_transcript_batch("unused", batch_file_path=batch_file)
-    # Compare scores across exercises...
-
-# Analyze all Type 03 batches (persona differentiation experiment)
-for i in range(1, 73):  # 72 batches
-    batch_file = f"judge/transcript_batches/batch_03_{i:03d}.txt"
-    results = judge_transcript_batch("unused", batch_file_path=batch_file)
-    # Analyze persona-specific patterns...
 ```
 
 ## Research Questions
