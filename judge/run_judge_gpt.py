@@ -900,10 +900,15 @@ def main(argv: list[str] | None = None) -> int:
         f"with prompt={args.prompt} rubric={args.rubric} parallel={workers}"
     )
 
-    # Copy all raw files to target paths first (fast, sequential)
+    # Build task list (target paths created but files not yet copied)
     tasks: list[tuple[Path, Path]] = []
     for raw_path in raw_files:
         target_path = _provider_target_path(raw_path, "gpt")
+        tasks.append((raw_path, target_path))
+
+    def _grade_one(raw_path: Path, target_path: Path) -> dict[str, Any]:
+        # Copy raw file immediately before grading (avoids race condition
+        # where parallel workers try to read files not yet copied).
         shutil.copyfile(raw_path, target_path)
 
         # LOG 2: file_copy
@@ -912,35 +917,46 @@ def main(argv: list[str] | None = None) -> int:
                    target_path=str(target_path.relative_to(_REPO_ROOT)),
                    raw_file_size_bytes=raw_path.stat().st_size)
 
-        tasks.append((raw_path, target_path))
-
-    def _grade_one(raw_path: Path, target_path: Path) -> dict[str, Any]:
         result = judge_transcript(
             _relative_stem(target_path),
             prompt_name=args.prompt,
             rubric_name=args.rubric,
             output_name=target_path.stem,
         )
+
+        # Read back the graded file to get section breakdown
+        graded = json.loads(result.output_path.read_text(encoding="utf-8"))
+        grade = graded.get("grade", {})
+        section_scores = []
+        for sid, section in grade.get("sections", {}).items():
+            base = section.get("base", {})
+            section_scores.append(f"{sid}={base.get('score', '?')}/{base.get('max', '?')}")
+
         return {
             "raw_path": raw_path,
             "name": _relative_stem(target_path),
             "score": result.total_score,
             "max_score": result.max_score,
             "output_path": result.output_path,
+            "section_scores": "  ".join(section_scores),
         }
 
     all_scores: list[dict[str, Any]] = []
     try:
+        def _print_result(info: dict[str, Any]) -> None:
+            print(
+                "[GPT Judge] "
+                f"source={info['raw_path'].relative_to(_REPO_ROOT)} "
+                f"saved={info['output_path'].relative_to(_REPO_ROOT)} "
+                f"score={info['score']}/{info['max_score']}"
+            )
+            print(f"            {info['section_scores']}")
+
         if workers <= 1:
             for raw_path, target_path in tasks:
                 info = _grade_one(raw_path, target_path)
                 all_scores.append(info)
-                print(
-                    "[GPT Judge] "
-                    f"source={info['raw_path'].relative_to(_REPO_ROOT)} "
-                    f"saved={info['output_path'].relative_to(_REPO_ROOT)} "
-                    f"score={info['score']}/{info['max_score']}"
-                )
+                _print_result(info)
         else:
             with ThreadPoolExecutor(max_workers=workers) as pool:
                 futures = {
@@ -951,12 +967,7 @@ def main(argv: list[str] | None = None) -> int:
                     try:
                         info = future.result()
                         all_scores.append(info)
-                        print(
-                            "[GPT Judge] "
-                            f"source={info['raw_path'].relative_to(_REPO_ROOT)} "
-                            f"saved={info['output_path'].relative_to(_REPO_ROOT)} "
-                            f"score={info['score']}/{info['max_score']}"
-                        )
+                        _print_result(info)
                     except JudgeError as error:
                         raw_path, _ = futures[future]
                         print(f"[GPT Judge] FAILED source={raw_path.relative_to(_REPO_ROOT)}: {error}")

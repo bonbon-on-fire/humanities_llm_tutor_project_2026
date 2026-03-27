@@ -13,6 +13,7 @@ Edit config lists in this file, then run:
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import shutil
@@ -42,8 +43,8 @@ _CLAUDE_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
 # ---------------------------------------------------------------------------
 
 # Judge prompt/rubric versions.
-JUDGE_PROMPTS: list[str] = ["judge_03"]
-JUDGE_RUBRICS: list[str] = ["rubric_04"]
+JUDGE_PROMPTS: list[str] = ["judge_05"]
+JUDGE_RUBRICS: list[str] = ["rubric_05"]
 
 # Which student personas to process (from students/personas/*.txt, without extension).
 STUDENT_PERSONAS: list[str] = ["chaotic_01"]
@@ -226,6 +227,15 @@ def main() -> int:
                             rubric_name=rubric_name,
                             output_name=source_stem,
                         )
+
+                        # Read back graded file for section breakdown
+                        graded = json.loads(result.output_path.read_text(encoding="utf-8"))
+                        grade = graded.get("grade", {})
+                        section_scores = []
+                        for sid, section in grade.get("sections", {}).items():
+                            base = section.get("base", {})
+                            section_scores.append(f"{sid}={base.get('score', '?')}/{base.get('max', '?')}")
+
                         print(
                             "[Claude Judge] "
                             f"persona_type={persona_type} "
@@ -235,6 +245,7 @@ def main() -> int:
                             f"score={result.total_score}/{result.max_score} "
                             f"saved={target_path.relative_to(_REPO_ROOT)}"
                         )
+                        print(f"              {'  '.join(section_scores)}")
     except KeyboardInterrupt:
         print("\nClaude judging interrupted.")
         return 130

@@ -4,12 +4,15 @@ from __future__ import annotations
 
 import ast
 import argparse
+import hashlib
 import json
+import logging
 import os
 import re
 import shutil
 import sys
 import warnings
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,6 +43,84 @@ TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
 
 _DEFAULT_ANTHROPIC_MODEL = "claude-sonnet-4-6"
 _MAX_ATTEMPTS = 3
+
+# ---------------------------------------------------------------------------
+# Structured JSONL debug logging
+# ---------------------------------------------------------------------------
+_LOG_PATH = _REPO_ROOT / "logs" / "judge_claude_debug.jsonl"
+
+
+class _JsonLogFormatter(logging.Formatter):
+    """Emit one JSON object per line for jq / DuckDB consumption."""
+
+    def format(self, record: logging.LogRecord) -> str:
+        payload: dict[str, Any] = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "level": record.levelname,
+            "event": getattr(record, "event", ""),
+            "transcript_name": getattr(record, "transcript_name", ""),
+        }
+        for key, value in record.__dict__.items():
+            if key.startswith("_log_"):
+                field_name = key[5:]
+                if isinstance(value, str) and len(value) > 50_000:
+                    value = value[:50_000]
+                    payload[field_name + "_truncated"] = True
+                payload[field_name] = value
+        return json.dumps(payload, ensure_ascii=False, default=str)
+
+
+def _setup_debug_logger() -> logging.Logger:
+    logger = logging.getLogger("judge_claude_debug")
+    logger.setLevel(logging.DEBUG)
+    _LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    handler = logging.FileHandler(_LOG_PATH, mode="a", encoding="utf-8")
+    handler.setFormatter(_JsonLogFormatter())
+    logger.addHandler(handler)
+    logger.propagate = False
+    return logger
+
+
+_debug_log = _setup_debug_logger()
+
+
+def _log_event(event: str, transcript_name: str = "", level: int = logging.INFO, **fields: Any) -> None:
+    extra = {"event": event, "transcript_name": transcript_name}
+    for key, value in fields.items():
+        extra[f"_log_{key}"] = value
+    _debug_log.log(level, "", extra=extra)
+
+
+def _sha256_short(text: str) -> str:
+    return hashlib.sha256(text.encode()).hexdigest()[:16]
+
+
+def _extract_deduction_summary(payload: dict[str, Any]) -> dict[str, dict[str, int]]:
+    """Walk sections/criteria/deductions and return {criterion_id: {count, total_points}}."""
+    summary: dict[str, dict[str, int]] = {}
+    sections = payload.get("sections")
+    if not isinstance(sections, dict):
+        return summary
+    for section in sections.values():
+        if not isinstance(section, dict):
+            continue
+        criteria = section.get("criteria")
+        if not isinstance(criteria, dict):
+            continue
+        for cid, criterion in criteria.items():
+            if not isinstance(criterion, dict):
+                continue
+            deductions = criterion.get("deductions", [])
+            if not isinstance(deductions, list):
+                deductions = []
+            total_pts = sum(
+                max(0, int(d.get("points", 0))) for d in deductions if isinstance(d, dict)
+            )
+            summary[str(cid)] = {"count": len(deductions), "total_points": total_pts}
+    return summary
+
+
+# ---------------------------------------------------------------------------
 
 _RUBRIC_SPECS: dict[str, dict[str, Any]] = {
     "rubric_04": {
@@ -147,6 +228,7 @@ class _JudgeState(TypedDict):
     system_prompt: str
     conversation_text: str
     num_turns: int
+    transcript_name: str
     last_output: NotRequired[str]
     last_error: NotRequired[str]
     grade_json: NotRequired[dict[str, Any]]
@@ -515,6 +597,7 @@ def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_
     model = ChatAnthropic(model=model_name, temperature=0, api_key=api_key)
 
     def judge_node(state: _JudgeState) -> dict[str, Any]:
+        tname = state.get("transcript_name", "")
         messages = [SystemMessage(content=state["system_prompt"])]
         if state.get("last_error") and state.get("last_output"):
             messages.append(
@@ -525,22 +608,87 @@ def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_
                 )
             )
         messages.append(HumanMessage(content=state["conversation_text"]))
+        attempt = int(state.get("attempts", 0)) + 1
+
+        # LOG 6: judge_node_input
+        _log_event("judge_node_input", tname,
+                   attempt=attempt,
+                   num_messages=len(messages),
+                   message_roles=[m.type for m in messages],
+                   human_message_length=len(messages[-1].content),
+                   human_message_hash=_sha256_short(messages[-1].content),
+                   has_repair_prompt=bool(state.get("last_error")))
+
         resp = model.invoke(messages)
         content = _extract_text_from_model_content(resp.content)
-        return {"last_output": content, "attempts": int(state.get("attempts", 0)) + 1}
+
+        # LOG 7: judge_node_output
+        resp_meta = getattr(resp, "response_metadata", {}) or {}
+        _log_event("judge_node_output", tname,
+                   attempt=attempt,
+                   raw_content_type=type(resp.content).__name__,
+                   raw_content_length=len(str(resp.content)),
+                   extracted_text_length=len(content),
+                   extracted_text_hash=_sha256_short(content),
+                   extracted_text_first_500=content[:500],
+                   extracted_text_last_500=content[-500:],
+                   has_deductions_in_raw=bool(re.search(r'"deductions"\s*:\s*\[(?!\s*\])', content)),
+                   deduction_count_estimate=content.count('"points"'),
+                   response_model=resp_meta.get("model_name", ""),
+                   usage_tokens=resp_meta.get("token_usage", {}))
+
+        return {"last_output": content, "attempts": attempt}
 
     def validate_node(state: _JudgeState) -> dict[str, Any]:
+        tname = state.get("transcript_name", "")
         try:
             parsed = _parse_json_from_model_output(state.get("last_output", ""))
+
+            # LOG 8: json_parsed
+            _log_event("json_parsed", tname,
+                       parsed_keys=list(parsed.keys()),
+                       has_sections="sections" in parsed,
+                       section_ids=list(parsed.get("sections", {}).keys()) if isinstance(parsed.get("sections"), dict) else [],
+                       deductions_summary=_extract_deduction_summary(parsed))
+
             parsed = _sanitize_grade_payload(parsed)
+
+            # LOG 9: payload_sanitized
+            _log_event("payload_sanitized", tname,
+                       deductions_per_criterion=_extract_deduction_summary(parsed),
+                       overview_length=len(parsed.get("overview", [])))
+
             validated = _validate_grade_payload(
                 parsed,
                 num_turns=int(state["num_turns"]),
                 enforce_sub_criterion_ids=enforce_sub_criterion_ids,
                 rubric_name=rubric_name,
             )
+
+            # LOG 10: payload_validated
+            scores_per_criterion: dict[str, dict[str, int]] = {}
+            for section in validated.get("sections", {}).values():
+                if isinstance(section, dict):
+                    for cid, crit in section.get("criteria", {}).items():
+                        if isinstance(crit, dict):
+                            scores_per_criterion[str(cid)] = {
+                                "score": crit.get("score", 0),
+                                "max": crit.get("max", 0),
+                            }
+            _log_event("payload_validated", tname,
+                       total_score=validated.get("total_score"),
+                       max_score=validated.get("max_score"),
+                       scores_per_criterion=scores_per_criterion,
+                       deductions_per_criterion=_extract_deduction_summary(validated),
+                       overview_items=len(validated.get("overview", [])))
+
             return {"grade_json": _order_grade_payload(validated), "last_error": None}
         except JudgeError as e:
+            # LOG 11: validation_error
+            _log_event("validation_error", tname, level=logging.WARNING,
+                       error_message=str(e),
+                       attempt=state.get("attempts", 0),
+                       raw_output_first_500=str(state.get("last_output", ""))[:500])
             return {"grade_json": None, "last_error": str(e)}
 
     graph = StateGraph(_JudgeState)
@@ -593,6 +741,15 @@ def judge_transcript(
     if not isinstance(exchanges, list) or not exchanges:
         raise JudgeError("Transcript must contain a non-empty 'exchanges' array.")
 
+    # LOG 3: transcript_loaded
+    _log_event("transcript_loaded", name,
+               source_path=str(source_path),
+               num_exchanges=len(exchanges),
+               exchange_lengths=[len(json.dumps(e)) for e in exchanges],
+               context_length=len(str(transcript.get("context", ""))),
+               exercise_length=len(str(transcript.get("exercise", ""))),
+               student_persona=str(transcript.get("student_persona", "")))
+
     normalized_rubric = rubric_name.strip().lower()
     model_name = os.environ.get("ANTHROPIC_MODEL", _DEFAULT_ANTHROPIC_MODEL)
     graph = _create_judge_graph(
@@ -601,12 +758,30 @@ def judge_transcript(
         enforce_sub_criterion_ids=normalized_rubric in {"rubric_04", "rubric_05", "rubric_06"},
         rubric_name=normalized_rubric,
     )
+    system_prompt = load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name)
+    conversation_text = _format_conversation_for_judge(transcript)
+
+    # LOG 5: system_prompt_loaded
+    _log_event("system_prompt_loaded", name,
+               prompt_name=prompt_name, rubric_name=rubric_name,
+               system_prompt_length=len(system_prompt),
+               system_prompt_hash=_sha256_short(system_prompt))
+
+    # LOG 4: conversation_formatted
+    _log_event("conversation_formatted", name,
+               conversation_text_length=len(conversation_text),
+               conversation_text_hash=_sha256_short(conversation_text),
+               conversation_text_first_200=conversation_text[:200],
+               conversation_text_last_200=conversation_text[-200:],
+               num_turns_in_text=conversation_text.count("Turn "))
+
     result = graph.invoke(
         {
             "attempts": 0,
-            "system_prompt": load_judge_prompt(prompt_name=prompt_name, rubric_name=rubric_name),
-            "conversation_text": _format_conversation_for_judge(transcript),
+            "system_prompt": system_prompt,
+            "conversation_text": conversation_text,
             "num_turns": len(exchanges),
+            "transcript_name": name,
         }
     )
     grade_json = result.get("grade_json")
@@ -630,6 +805,23 @@ def judge_transcript(
         else source_path.with_name(f"{output_name}.json")
     )
     output_path.write_text(json.dumps(out_transcript, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    # LOG 12: judge_complete
+    all_deductions_empty = all(
+        len(crit.get("deductions", [])) == 0
+        for sect in grade_payload.get("sections", {}).values()
+        if isinstance(sect, dict)
+        for crit in sect.get("criteria", {}).values()
+        if isinstance(crit, dict)
+    )
+    _log_event("judge_complete", name,
+               total_score=int(grade_payload["total_score"]),
+               max_score=int(grade_payload["max_score"]),
+               judge_llm_calls=int(grade_payload.get("judge_llm_calls", 0)),
+               output_path=str(output_path),
+               all_deductions_empty=all_deductions_empty,
+               overview_empty=len(grade_payload.get("overview", [])) == 0)
+
     return JudgeResult(
         total_score=int(grade_payload["total_score"]),
         max_score=int(grade_payload["max_score"]),
@@ -660,6 +852,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--prompt", default="judge_05", help="Judge prompt stem (default: judge_05).")
     parser.add_argument("--rubric", default="rubric_05", help="Judge rubric stem (default: rubric_05).")
+    parser.add_argument("--parallel", type=int, default=1, help="Number of parallel workers (default: 1).")
     args = parser.parse_args(argv)
 
     try:
@@ -673,32 +866,106 @@ def main(argv: list[str] | None = None) -> int:
         print(f"No raw transcripts found under {TRANSCRIPTS_DIR}")
         return 1
 
+    model_name = os.environ.get("ANTHROPIC_MODEL", _DEFAULT_ANTHROPIC_MODEL)
+    workers = max(1, args.parallel)
+
+    # LOG 1: run_start
+    _log_event("run_start", "",
+               prompt_name=args.prompt, rubric_name=args.rubric,
+               model_name=model_name,
+               raw_file_count=len(raw_files),
+               raw_file_list=[str(f.relative_to(_REPO_ROOT)) for f in raw_files])
+
     print(
         f"[Claude Judge] Grading {len(raw_files)} transcripts "
-        f"with prompt={args.prompt} rubric={args.rubric}"
+        f"with prompt={args.prompt} rubric={args.rubric} parallel={workers}"
     )
+
+    # Build task list (target dirs created but files not yet copied)
+    tasks: list[tuple[Path, Path]] = []
+    for raw_path in raw_files:
+        target_path = _provider_target_path(raw_path, "claude")
+        tasks.append((raw_path, target_path))
+
+    def _grade_one(raw_path: Path, target_path: Path) -> dict[str, Any]:
+        # Copy raw file immediately before grading (avoids race condition).
+        shutil.copyfile(raw_path, target_path)
+
+        # LOG 2: file_copy
+        _log_event("file_copy", _relative_stem(target_path),
+                   raw_path=str(raw_path.relative_to(_REPO_ROOT)),
+                   target_path=str(target_path.relative_to(_REPO_ROOT)),
+                   raw_file_size_bytes=raw_path.stat().st_size)
+
+        result = judge_transcript(
+            _relative_stem(target_path),
+            prompt_name=args.prompt,
+            rubric_name=args.rubric,
+            output_name=target_path.stem,
+        )
+
+        # Read back the graded file to get section breakdown
+        graded = json.loads(result.output_path.read_text(encoding="utf-8"))
+        grade = graded.get("grade", {})
+        section_scores = []
+        for sid, section in grade.get("sections", {}).items():
+            base = section.get("base", {})
+            section_scores.append(f"{sid}={base.get('score', '?')}/{base.get('max', '?')}")
+
+        return {
+            "raw_path": raw_path,
+            "name": _relative_stem(target_path),
+            "score": result.total_score,
+            "max_score": result.max_score,
+            "output_path": result.output_path,
+            "section_scores": "  ".join(section_scores),
+        }
+
+    def _print_result(info: dict[str, Any]) -> None:
+        print(
+            "[Claude Judge] "
+            f"source={info['raw_path'].relative_to(_REPO_ROOT)} "
+            f"saved={info['output_path'].relative_to(_REPO_ROOT)} "
+            f"score={info['score']}/{info['max_score']}"
+        )
+        print(f"              {info['section_scores']}")
+
+    all_scores: list[dict[str, Any]] = []
     try:
-        for raw_path in raw_files:
-            target_path = _provider_target_path(raw_path, "claude")
-            shutil.copyfile(raw_path, target_path)
-            result = judge_transcript(
-                _relative_stem(target_path),
-                prompt_name=args.prompt,
-                rubric_name=args.rubric,
-                output_name=target_path.stem,  # keep transcript_XX.json filename
-            )
-            print(
-                "[Claude Judge] "
-                f"source={raw_path.relative_to(_REPO_ROOT)} "
-                f"saved={result.output_path.relative_to(_REPO_ROOT)} "
-                f"score={result.total_score}/{result.max_score}"
-            )
+        if workers <= 1:
+            for raw_path, target_path in tasks:
+                info = _grade_one(raw_path, target_path)
+                all_scores.append(info)
+                _print_result(info)
+        else:
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                futures = {
+                    pool.submit(_grade_one, raw_path, target_path): (raw_path, target_path)
+                    for raw_path, target_path in tasks
+                }
+                for future in as_completed(futures):
+                    try:
+                        info = future.result()
+                        all_scores.append(info)
+                        _print_result(info)
+                    except JudgeError as error:
+                        raw_path, _ = futures[future]
+                        print(f"[Claude Judge] FAILED source={raw_path.relative_to(_REPO_ROOT)}: {error}")
     except KeyboardInterrupt:
         print("\nClaude judging interrupted.")
         return 130
     except JudgeError as error:
         print(f"Judge failed: {error}")
         return 1
+
+    # LOG 13: run_complete
+    scores_only = [s["score"] for s in all_scores]
+    mean_score = sum(scores_only) / len(scores_only) if scores_only else 0.0
+    variance = (sum((s - mean_score) ** 2 for s in scores_only) / len(scores_only)) if scores_only else 0.0
+    _log_event("run_complete", "",
+               transcripts_processed=len(all_scores),
+               all_scores=all_scores,
+               score_variance=round(variance, 4))
 
     return 0
 
