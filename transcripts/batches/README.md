@@ -8,7 +8,7 @@ The batch system enables **holistic grading experiments** where multiple transcr
 
 ## Folder Structure
 
-```
+```text
 batches/
 ├── batches_raw/           # Source batch files (input)
 │   ├── batch_01/          # Type 01: 72 batches (batch_001.txt - batch_072.txt)
@@ -31,7 +31,7 @@ batches/
 ## Batch Types
 
 | Type | Description | Count | Path |
-|------|-------------|-------|------|
+| ---- | ----------- | ----- | ---- |
 | **01** | Same persona + version + exercise | 72 | `batches_raw/batch_01/batch_001.txt` – `batch_072.txt` |
 | **02** | Same persona + version, different exercise | 54 | `batches_raw/batch_02/batch_001.txt` – `batch_054.txt` |
 | **03** | Different persona, same version + exercise | 72 | `batches_raw/batch_03/batch_001.txt` – `batch_072.txt` |
@@ -59,7 +59,7 @@ batches/
 
 Each batch file contains 3 transcript paths (one per line):
 
-```
+```text
 # Batch Type X - Batch Y
 # Generated batch with 3 transcripts
 

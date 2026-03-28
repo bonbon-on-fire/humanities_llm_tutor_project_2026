@@ -33,6 +33,7 @@ load_dotenv(_REPO_ROOT / ".env")
 # ---------------------------------------------------------------------------
 
 def _require_openai_api_key() -> str:
+    """Return the OpenAI API key from the environment or raise RuntimeError if absent."""
     key = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")
     if not key:
         raise RuntimeError(
@@ -78,6 +79,8 @@ def load_system_prompt(
 # ---------------------------------------------------------------------------
 
 class TutorState(TypedDict):
+    """LangGraph state carrying the accumulated conversation message list."""
+
     messages: Annotated[list, operator.add]
 
 
@@ -163,6 +166,7 @@ def _normalize_tutor_ai_message(msg: BaseMessage) -> AIMessage:
 
 
 def _fenced_json(text: str) -> str | None:
+    """Extract JSON content from the first Markdown code fence (```json ... ```) in text."""
     m = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.DOTALL)
     return m.group(1).strip() if m else None
 
@@ -191,6 +195,7 @@ def _sanitize_text_for_transport(text: str) -> str:
 
 
 def _sanitize_message_content(msg: BaseMessage) -> BaseMessage:
+    """Return a clean copy of msg with control characters stripped from content."""
     content = msg.content if isinstance(msg.content, str) else str(msg.content)
     safe = _sanitize_text_for_transport(content)
     if isinstance(msg, HumanMessage):

@@ -38,6 +38,7 @@ PARALLEL_WORKERS = 6
 
 
 def _require_openai_api_key() -> None:
+    """Raise RuntimeError if OPENAI_API_KEY is not set in the environment."""
     if os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY"):
         return
     raise RuntimeError(
@@ -94,6 +95,7 @@ _progress_done = 0
 
 
 def _print_result(info: dict[str, Any], total: int) -> None:
+    """Print a one-line progress and score summary for a completed batch grading task."""
     global _progress_done
     with _progress_lock:
         _progress_done += 1
@@ -107,6 +109,7 @@ def _print_result(info: dict[str, Any], total: int) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """CLI entry point: grade all batch files of a given type using the GPT batch judge in parallel."""
     parser = argparse.ArgumentParser(
         description="Grade all batch files of a given type with GPT batch judge."
     )

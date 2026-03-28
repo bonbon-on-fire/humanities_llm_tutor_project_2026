@@ -22,7 +22,7 @@ python -m visualization.run_visualization
 Written to `visualization/outputs/`:
 
 | # | File | Description |
-|---|------|-------------|
+| - | ---- | ----------- |
 | 1 | `individual_grades_gpt_vs_claude.png` | Line chart of total scores per transcript (individual judging), sorted by persona/course/exercise. |
 | 2 | `batch_01_grades_gpt_vs_claude.png` | Batch Type 01 (same persona + version + exercise) — 72 batches. |
 | 3 | `batch_02_grades_gpt_vs_claude.png` | Batch Type 02 (same persona + version, different exercise) — 54 batches. |

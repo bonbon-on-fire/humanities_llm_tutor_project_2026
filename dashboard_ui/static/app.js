@@ -1,27 +1,43 @@
 (function () {
   const DEFAULT_MAX_SCORE = 47;
 
+  /** Returns the current URL pathname. */
   function getPath() {
     return window.location.pathname;
   }
 
+  /**
+   * Parse the pathname to detect a /transcript/:group/:version URL.
+   * @returns {{group: string, version: string}|null}
+   */
   function isTranscriptPage() {
     const m = getPath().match(/^\/transcript\/([^/]+)\/([^/]+)\/?$/);
     return m ? { group: m[1], version: m[2] } : null;
   }
 
+  /** Hide all .page elements and show the one with the given id. */
   function showPage(id) {
     document.querySelectorAll("#main .page").forEach((p) => p.classList.add("hidden"));
     const el = document.getElementById(id);
     if (el) el.classList.remove("hidden");
   }
 
+  /**
+   * Build a label array [0, 1, ..., maxScore] for chart x-axis.
+   * @param {number} maxScore
+   */
   function scoreLabels(maxScore) {
     const labels = [];
     for (let s = 0; s <= maxScore; s++) labels.push(s);
     return labels;
   }
 
+  /**
+   * Count occurrences of each integer score in [0..maxScore]; null/undefined entries are skipped.
+   * @param {(number|null|undefined)[]} scores
+   * @param {number} maxScore
+   * @returns {number[]}
+   */
   function histogram(scores, maxScore) {
     const counts = [];
     for (let i = 0; i <= maxScore; i++) counts[i] = 0;
@@ -31,6 +47,15 @@
     return counts;
   }
 
+  /**
+   * Render or replace a Chart.js bar chart on the given canvas showing score distribution.
+   * Destroys any existing chart instance stored on window[canvasId + "Chart"] before redrawing.
+   * @param {string} canvasId - DOM id of the <canvas> element
+   * @param {number[]} scores - raw score values to histogram
+   * @param {string} label - dataset label prefix
+   * @param {string} color - bar fill/border color
+   * @param {number} maxScore - upper bound of the x-axis
+   */
   function drawChart(canvasId, scores, label, color, maxScore) {
     const counts = histogram(scores, maxScore);
     const ctx = document.getElementById(canvasId);
@@ -74,6 +99,12 @@
     });
   }
 
+  /**
+   * Infer the maximum score from gpt_max/claude_max fields across the row list;
+   * falls back to DEFAULT_MAX_SCORE when no finite values are present.
+   * @param {object[]} list
+   * @returns {number}
+   */
   function inferMaxScore(list) {
     const maxes = list
       .flatMap((t) => [t.gpt_max, t.claude_max])
@@ -82,11 +113,22 @@
     return Math.max(...maxes);
   }
 
+  /**
+   * Parse x as an integer; returns Infinity for non-numeric values (used for sort ordering
+   * so that missing/non-numeric entries sort to the end).
+   * @param {*} x
+   * @returns {number}
+   */
   function parseNumericOrInfinity(x) {
     const n = Number.parseInt(String(x || ""), 10);
     return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
   }
 
+  /**
+   * Render the full dashboard: score charts + sortable transcript table.
+   * Sets up column-header click handlers for client-side sorting.
+   * @param {object[]} list - combined transcript and batch row objects
+   */
   function renderDashboard(list) {
     const maxScore = inferMaxScore(list);
     const gptScores = list.map((t) => t.gpt_score).filter((s) => s != null);
@@ -97,6 +139,12 @@
     let sortKey = "group";
     let sortDir = 1;
 
+    /**
+     * Return the display label for a row's group column:
+     * student_persona for individual transcripts, group name for batch rows.
+     * @param {object} t
+     * @returns {string}
+     */
     function displayedGroup(t) {
       if (t.kind === "transcript") {
         return String((t.metadata && t.metadata.student_persona) || t.group || "");
@@ -104,6 +152,10 @@
       return String(t.group || "");
     }
 
+    /**
+     * Re-sort and re-render the transcript table body according to current sortKey/sortDir.
+     * Numeric columns (score, version, exercise) fall back to string compare when equal.
+     */
     function renderTable() {
       const sorted = [...list].sort((a, b) => {
         if (sortKey === "group") {
@@ -184,6 +236,12 @@
     renderTable();
   }
 
+  /**
+   * Safely escape a string for insertion into innerHTML.
+   * Uses a temporary DOM element so the browser handles all entity encoding.
+   * @param {*} s
+   * @returns {string}
+   */
   function escapeHtml(s) {
     if (s == null) return "";
     const div = document.createElement("div");
@@ -191,6 +249,15 @@
     return div.innerHTML;
   }
 
+  /**
+   * Render an evaluator's grade panel (score, overview bullets, section criteria, deductions)
+   * into container. Shows an error message when grade is absent.
+   * @param {HTMLElement} container - element to populate
+   * @param {object|null} grade - grade summary object from the API
+   * @param {string} evaluatorLabel - display name (e.g. "GPT evaluator")
+   * @param {string} cssClass - CSS class applied to container (e.g. "gpt" or "claude")
+   * @param {string|null} errorMessage - shown instead of the default when grade is null
+   */
   function renderGradeReport(container, grade, evaluatorLabel, cssClass, errorMessage) {
     if (!grade) {
       const message = errorMessage || `No ${evaluatorLabel} grade available.`;
@@ -246,6 +313,11 @@
     container.innerHTML = html;
   }
 
+  /**
+   * Render the full transcript detail view: metadata header, raw batch text or turn-by-turn
+   * exchanges, and both GPT and Claude grade panels appended to #transcript-content.
+   * @param {object} data - transcript detail object returned by /api/transcripts/:group/:version
+   */
   function renderTranscript(data) {
     const meta = data.metadata || {};
     let html = '<div class="meta-top">';
@@ -289,6 +361,10 @@
     content.appendChild(claudeEl);
   }
 
+  /**
+   * Fetch all dashboard rows from /api/transcripts and render the dashboard page.
+   * Shows a loading placeholder while the request is in flight, and an error row on failure.
+   */
   async function loadDashboard() {
     showPage("dashboard-page");
     const tbody = document.getElementById("transcripts-tbody");
@@ -308,6 +384,12 @@
     }
   }
 
+  /**
+   * Fetch a single transcript detail from /api/transcripts/:group/:version and render it.
+   * Shows a loading placeholder while the request is in flight.
+   * @param {string} group
+   * @param {string} version
+   */
   async function loadTranscript(group, version) {
     showPage("transcript-page");
     const content = document.getElementById("transcript-content");
@@ -322,6 +404,10 @@
     }
   }
 
+  /**
+   * Decide which page to render based on the current URL: transcript detail or dashboard.
+   * Called on initial load and on every popstate event.
+   */
   function route() {
     const transcript = isTranscriptPage();
     if (transcript) {

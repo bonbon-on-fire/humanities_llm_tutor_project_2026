@@ -17,6 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 def _resolve_transcripts_dir() -> Path:
+    """Locate the transcripts directory: respects TRANSCRIPTS_DIR env var, then tries common repo-relative paths."""
     if os.environ.get("TRANSCRIPTS_DIR"):
         return Path(os.environ["TRANSCRIPTS_DIR"]).resolve()
 
@@ -35,6 +36,7 @@ TRANSCRIPTS_DIR = _resolve_transcripts_dir()
 
 
 def _discover_persona_groups() -> list[str]:
+    """Return persona group names (e.g. chaotic, chitchat) found under TRANSCRIPTS_DIR."""
     if not TRANSCRIPTS_DIR.is_dir():
         return []
 
@@ -50,14 +52,17 @@ def _discover_persona_groups() -> list[str]:
 
 
 def _batch_raw_root() -> Path:
+    """Absolute path to the batches_raw directory."""
     return TRANSCRIPTS_DIR / "batches" / "batches_raw"
 
 
 def _batch_provider_root(provider: str) -> Path:
+    """Absolute path to batches_<provider> directory (e.g. batches_gpt, batches_claude)."""
     return TRANSCRIPTS_DIR / "batches" / f"batches_{provider}"
 
 
 def _discover_batch_groups() -> list[str]:
+    """Return sorted list of batch group names found inside batches_raw (e.g. batch_01, batch_02)."""
     root = _batch_raw_root()
     if not root.is_dir():
         return []
@@ -65,6 +70,7 @@ def _discover_batch_groups() -> list[str]:
 
 
 def _load_json(path: Path) -> dict | None:
+    """Load and return a JSON object from path, or None on error or missing file."""
     if not path.exists():
         return None
     try:
@@ -76,6 +82,7 @@ def _load_json(path: Path) -> dict | None:
 
 
 def _load_text(path: Path) -> str | None:
+    """Read and return the text content of path, or None if missing or unreadable."""
     if not path.exists():
         return None
     try:
@@ -85,6 +92,7 @@ def _load_text(path: Path) -> str | None:
 
 
 def _grade_summary(data: dict | None) -> dict | None:
+    """Extract a flat grade summary dict from a transcript data dict; returns None if no grade object present."""
     if not data or "grade" not in data or not isinstance(data["grade"], dict):
         return None
     g = data["grade"]
@@ -106,6 +114,7 @@ def _grade_summary(data: dict | None) -> dict | None:
 
 
 def _extract_display_number(stem: str) -> str:
+    """Convert a file stem like transcript_07 to the display number string '7'."""
     match = re.match(r"^[^_]+_(\d+)", stem)
     if not match:
         return stem
@@ -113,6 +122,7 @@ def _extract_display_number(stem: str) -> str:
 
 
 def _stem_sort_key(stem: str) -> tuple[int, int, str]:
+    """Sorting key for stems: numeric stems sort before non-numeric, numerically ascending."""
     match = re.match(r"^[^_]+_(\d+)", stem)
     if not match:
         return (1, 0, stem)
@@ -120,22 +130,26 @@ def _stem_sort_key(stem: str) -> tuple[int, int, str]:
 
 
 def _json_stems(path: Path) -> set[str]:
+    """Return the set of JSON file stems (without extension) inside path."""
     if not path.is_dir():
         return set()
     return {f.stem for f in path.glob("*.json")}
 
 
 def _txt_stems(path: Path) -> set[str]:
+    """Return the set of .txt file stems (without extension) inside path."""
     if not path.is_dir():
         return set()
     return {f.stem for f in path.glob("*.txt")}
 
 
 def _transcript_path_for(*, group: str, provider: str, stem: str) -> Path:
+    """Construct the filesystem path for a transcript JSON file."""
     return TRANSCRIPTS_DIR / group / f"{group}_{provider}" / f"{stem}.json"
 
 
 def _counterpart_candidates(*, group: str, provider: str, raw_stem: str) -> list[Path]:
+    """Find all graded JSON files in the provider folder matching raw_stem (exact or suffixed)."""
     provider_dir = TRANSCRIPTS_DIR / group / f"{group}_{provider}"
     if not provider_dir.is_dir():
         return []
@@ -149,6 +163,7 @@ def _counterpart_candidates(*, group: str, provider: str, raw_stem: str) -> list
 
 
 def _resolve_counterpart(*, group: str, provider: str, raw_stem: str) -> tuple[Path | None, str | None]:
+    """Resolve exactly one graded counterpart for raw_stem; returns (path, None) or (None, error_message)."""
     candidates = _counterpart_candidates(group=group, provider=provider, raw_stem=raw_stem)
     if not candidates:
         return None, f"No {provider.upper()} counterpart found for `{raw_stem}`."
@@ -160,6 +175,7 @@ def _resolve_counterpart(*, group: str, provider: str, raw_stem: str) -> tuple[P
 
 
 def _normalized_transcript_payload(data: dict) -> dict:
+    """Return transcript data dict with grade-related keys stripped for content-equality checks."""
     return {
         k: v
         for k, v in data.items()
@@ -168,6 +184,7 @@ def _normalized_transcript_payload(data: dict) -> dict:
 
 
 def _check_transcript_match(*, raw_data: dict, judged_data: dict, provider: str) -> str | None:
+    """Return an error message if graded transcript content diverges from raw, else None."""
     raw_payload = _normalized_transcript_payload(raw_data)
     judged_payload = _normalized_transcript_payload(judged_data)
     if raw_payload != judged_payload:
@@ -179,11 +196,13 @@ def _check_transcript_match(*, raw_data: dict, judged_data: dict, provider: str)
 
 
 def _raw_stems_for_group(group: str) -> list[str]:
+    """Return numerically sorted raw transcript stems for a persona group."""
     raw_dir = TRANSCRIPTS_DIR / group / f"{group}_raw"
     return sorted(_json_stems(raw_dir), key=_stem_sort_key)
 
 
 def _counterpart_result(*, group: str, provider: str, raw_stem: str, raw_data: dict) -> tuple[dict | None, str | None]:
+    """Load, validate, and summarise the graded counterpart for a raw transcript. Returns (grade_summary, error_message)."""
     counterpart_path, resolve_error = _resolve_counterpart(
         group=group,
         provider=provider,
@@ -214,6 +233,7 @@ def _counterpart_result(*, group: str, provider: str, raw_stem: str, raw_data: d
 
 
 def _parse_batch_sources(raw_text: str) -> list[str]:
+    """Parse a batch .txt file body into a list of forward-slash transcript path stems, skipping comment lines."""
     sources: list[str] = []
     for line in raw_text.splitlines():
         item = line.strip()
@@ -224,6 +244,7 @@ def _parse_batch_sources(raw_text: str) -> list[str]:
 
 
 def _batch_counterpart_path(*, provider: str, batch_group: str, batch_stem: str) -> Path:
+    """Path to the graded JSON output for a batch stem."""
     return _batch_provider_root(provider) / batch_group / f"{batch_stem}.json"
 
 
@@ -234,6 +255,7 @@ def _batch_counterpart_result(
     batch_stem: str,
     raw_sources: list[str],
 ) -> tuple[dict | None, str | None]:
+    """Load and validate the graded result for a batch stem; returns (grade_summary, error_message)."""
     path = _batch_counterpart_path(
         provider=provider,
         batch_group=batch_group,
@@ -269,11 +291,13 @@ def _batch_counterpart_result(
 
 
 def _batch_version_stems(batch_group: str) -> list[str]:
+    """Return sorted batch file stems for a given batch group."""
     raw_dir = _batch_raw_root() / batch_group
     return sorted(_txt_stems(raw_dir), key=_stem_sort_key)
 
 
 def _batch_metadata(batch_group: str, raw_sources: list[str], gpt_grade: dict | None, claude_grade: dict | None) -> dict:
+    """Build the metadata dict displayed in the dashboard row for a batch entry."""
     return {
         "tutor_prompt": "batch",
         "student_persona": f"{len(raw_sources)} transcript(s)",
@@ -287,6 +311,7 @@ def _batch_metadata(batch_group: str, raw_sources: list[str], gpt_grade: dict | 
 
 
 def _list_transcript_rows() -> list[dict]:
+    """Build dashboard rows for all persona transcript runs (raw + graded counterparts)."""
     out: list[dict] = []
     for group in _discover_persona_groups():
         for raw_stem in _raw_stems_for_group(group):
@@ -329,6 +354,7 @@ def _list_transcript_rows() -> list[dict]:
 
 
 def _list_batch_rows() -> list[dict]:
+    """Build dashboard rows for all batch runs (raw .txt files + graded JSON counterparts)."""
     out: list[dict] = []
     for batch_group in _discover_batch_groups():
         raw_group_dir = _batch_raw_root() / batch_group
@@ -378,25 +404,30 @@ def _list_batch_rows() -> list[dict]:
 
 
 def list_dashboard_rows() -> list[dict]:
+    """Return combined dashboard rows for all transcript and batch runs."""
     return _list_transcript_rows() + _list_batch_rows()
 
 
 @app.route("/")
 def index():
+    """Serve the single-page application shell."""
     return render_template("index.html")
 
 
 @app.route("/api/transcripts")
 def api_list_transcripts():
+    """Return all dashboard rows (transcripts + batches) as a JSON array."""
     return jsonify(list_dashboard_rows())
 
 
 def _is_batch_group(group: str) -> bool:
+    """True if group refers to a batch group (e.g. batch_01) rather than a persona group."""
     return group in _discover_batch_groups()
 
 
 @app.route("/api/transcripts/<group>/<version>")
 def api_get_transcript(group: str, version: str):
+    """Return full detail for one transcript or batch run as JSON; 404 if not found."""
     if _is_batch_group(group):
         raw_text = _load_text(_batch_raw_root() / group / f"{version}.txt")
         if raw_text is None:
@@ -476,6 +507,7 @@ def api_get_transcript(group: str, version: str):
 
 @app.route("/transcript/<group>/<version>")
 def transcript_page(group: str, version: str):
+    """Serve the SPA shell for a transcript detail URL; client-side routing handles the rest."""
     return render_template("index.html")
 
 

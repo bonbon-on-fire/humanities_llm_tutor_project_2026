@@ -5,7 +5,7 @@ for the Humanities LLM Tutor project.
 
 ## Folder Structure
 
-```
+```text
 transcripts/
 ├── chaotic/                   # Chaotic student persona
 │   ├── chaotic_raw/           # 96 raw (ungraded) transcripts
@@ -33,7 +33,7 @@ transcripts/
 ## Counts
 
 | Persona   | Raw | GPT-graded | Claude-graded | Total |
-|-----------|-----|------------|---------------|-------|
+| --------- | --- | ---------- | ------------- | ----- |
 | chaotic   | 96  | 96         | 96            | 288   |
 | chitchat  | 96  | 96         | 96            | 288   |
 | clueless  | 96  | 96         | 96            | 288   |
@@ -101,7 +101,7 @@ Graded transcripts additionally contain a top-level `grade` object:
 ### Key Fields
 
 | Field | Description |
-|-------|-------------|
+| ----- | ----------- |
 | `tutor_prompt` | Tutor system prompt version used |
 | `student_persona` | Student persona identifier (e.g. `chaotic_01`, `chitchat_02`) |
 | `course` | Course name: `philosophy` or `urban_studies` |
@@ -115,7 +115,7 @@ Graded transcripts additionally contain a top-level `grade` object:
 ## Student Personas
 
 | Persona | Behavior |
-|---------|----------|
+| ------- | -------- |
 | **chaotic** | Challenges boundaries, tests edge cases, requests direct answers |
 | **chitchat** | Goes off-topic, needs redirection to assignment |
 | **clueless** | Genuinely confused, needs scaffolding and patience |

@@ -44,6 +44,7 @@ _LOG_PATH = _REPO_ROOT / "logs" / "judge_batch_gpt_debug.jsonl"
 
 class _JsonLogFormatter(logging.Formatter):
     def format(self, record: logging.LogRecord) -> str:
+        """Serialize a log record to a compact JSONL line, including all _log_* extra fields; truncates string values over 50k chars."""
         payload: dict[str, Any] = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "level": record.levelname,
@@ -61,6 +62,7 @@ class _JsonLogFormatter(logging.Formatter):
 
 
 def _setup_debug_logger() -> logging.Logger:
+    """Create (or retrieve) the file-based JSONL logger for GPT batch judge debug events."""
     logger = logging.getLogger("judge_batch_gpt_debug")
     if logger.handlers:
         return logger
@@ -77,6 +79,7 @@ _debug_log = _setup_debug_logger()
 
 
 def _log_event(event: str, batch_name: str = "", level: int = logging.INFO, **fields: Any) -> None:
+    """Write a structured debug event to the batch judge JSONL log file."""
     extra = {"event": event, "batch_name": batch_name}
     for key, value in fields.items():
         extra[f"_log_{key}"] = value
@@ -84,6 +87,7 @@ def _log_event(event: str, batch_name: str = "", level: int = logging.INFO, **fi
 
 
 def _sha256_short(text: str) -> str:
+    """Return the first 16 hex chars of the SHA-256 hash of text."""
     return hashlib.sha256(text.encode()).hexdigest()[:16]
 
 

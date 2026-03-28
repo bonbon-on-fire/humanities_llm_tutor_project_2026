@@ -14,70 +14,65 @@ An LLM tutor for MIT OpenCourseWare (OCW) focused on humanities and social scien
 pip install -r requirements.txt
 ```
 
-### Run the Web UI
-```bash
-python -m web_ui
-# Open http://localhost:5000
-```
-
-### Run Terminal UI
-```bash
-python -m terminal_ui
-# Interactive pipeline: select tutor, student, course, exercise, run conversation
+### Run Dashboard UI
+```powershell
+python -m dashboard_ui.run_dashboard_ui
+# Open http://127.0.0.1:5001
 ```
 
 ### Run Batch Experiments
-```bash
-# Edit BATCH_TYPE (1, 2, or 3) in the file, then run:
-python run_batch_gpt.py     # GPT batch experiments
-python run_batch_claude.py  # Claude batch experiments
+```powershell
+python -m ui.run_ui_raw     # Generate raw transcripts
+python -m ui.run_ui_gpt     # Grade transcripts with GPT
+python -m ui.run_ui_claude  # Grade transcripts with Claude
 ```
 
 Pre-generated batches for experiments are available in `transcripts/batches/` with 198 batch files across 3 experiment types.
 
 ## Project Structure
 
-```
+```text
 ├── curriculum/          # Courses and exercises (philosophy, urban_studies)
 ├── students/            # Student persona prompts (chaotic, chitchat, clueless)
 ├── tutor/               # Tutor system prompts and LangGraph engine
 ├── judge/               # LLM-based grading system
-│   ├── run_judge_gpt.py         # Single transcript GPT judge
-│   ├── run_judge_claude.py      # Single transcript Claude judge
-│   ├── run_judge_batch_gpt.py   # Batch GPT judge for bundles
-│   ├── run_judge_batch_claude.py # Batch Claude judge for bundles
-│   └── ...
-├── run_batch_gpt.py     # GPT batch experiment runner
-├── run_batch_claude.py  # Claude batch experiment runner
+│   ├── run_judge_gpt.py          # Single transcript GPT judge
+│   ├── run_judge_claude.py       # Single transcript Claude judge
+│   ├── run_judge_batch_gpt.py    # Batch GPT judge for bundles
+│   └── run_judge_batch_claude.py # Batch Claude judge for bundles
+├── ui/                  # Batch runners: raw generation + GPT/Claude judging
+│   ├── run_ui_raw.py             # Generate raw transcripts
+│   ├── run_ui_gpt.py             # Grade all raw transcripts with GPT
+│   ├── run_ui_claude.py          # Grade all raw transcripts with Claude
+│   ├── run_ui_batch_gpt.py       # Grade batch bundles with GPT
+│   └── run_ui_batch_claude.py    # Grade batch bundles with Claude
 ├── transcripts/         # Generated conversation transcripts
 │   └── batches/         # 198 batch files for judging experiments
-├── web_ui/              # Flask web interface
-├── terminal_ui/         # Command-line interface
-├── dashboard_ui/        # Transcript/batch review dashboard
+├── dashboard_ui/        # Flask web dashboard for browsing results
 ├── visualization/       # Score analysis and plotting
-└── ui/                  # Batch generation scripts
+└── utils/               # Shared parsing utilities
 ```
 
 ## Key Features
 
-### 🎓 **Socratic Tutoring**
+### Socratic Tutoring
 - Never gives direct answers
 - Uses guided discovery and bite-sized responses
 - Maintains academic integrity (no submission-ready solutions)
 - Provides formative feedback without grades
 
-### 👥 **Student Personas**
+### Student Personas
 - **Chaotic**: Challenges boundaries, tests edge cases
 - **Chitchat**: Goes off-topic, needs redirection
 - **Clueless**: Genuinely confused, needs scaffolding
 
-### 📊 **LLM-based Grading**
+### LLM-based Grading
 - Rubric-based scoring (current: 46 points max)
 - GPT and Claude judge comparison
 - Single transcript and batch judging modes
 - Robust JSON parsing and validation
 
-### 🔬 **Batch Experiments**
+### Batch Experiments
 - **Type 01**: Same persona + version + exercise (72 batches)
 - **Type 02**: Same persona + version, different exercise (54 batches)
 - **Type 03**: Different persona, same version + exercise (72 batches)
@@ -132,7 +127,7 @@ from students.run_student import get_next_student_message
 ## Environment Variables
 
 | Variable | Required | Description |
-|----------|----------|-------------|
+| -------- | -------- | ----------- |
 | `OPENAI_API_KEY` | Yes | OpenAI API key |
 | `ANTHROPIC_API_KEY` | For Claude | Anthropic API key |
 | `OPENAI_MODEL` | No | Model name (default: `gpt-5.4`) |
