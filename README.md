@@ -53,7 +53,7 @@ Pre-generated batches for experiments are available in `transcripts/batches/` wi
 │   └── batches/         # 198 batch files for judging experiments
 ├── web_ui/              # Flask web interface
 ├── terminal_ui/         # Command-line interface
-├── transcripts_ui/      # Transcript viewer dashboard
+├── dashboard_ui/        # Transcript/batch review dashboard
 ├── visualization/       # Score analysis and plotting
 └── ui/                  # Batch generation scripts
 ```

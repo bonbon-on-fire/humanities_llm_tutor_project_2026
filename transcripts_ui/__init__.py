@@ -1,2 +1,2 @@
-"""Transcripts UI package."""
+"""Compatibility package redirecting to dashboard_ui."""
 

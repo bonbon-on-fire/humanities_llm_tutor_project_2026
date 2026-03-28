@@ -110,7 +110,7 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 - **Terminal UI** (`python -m terminal_ui`): interactive pipeline — selects tutor prompt, student persona, course, exercise, number of turns; runs tutor vs student; saves transcript; invokes judge.
 - **Web UI** (`python -m web_ui`): Flask-based browser chat with config panel for tutor prompt, student persona, course, exercise; student-bot turn button; debug reasoning display.
-- **Transcripts UI** (`python -m transcripts_ui.run_transcripts_ui`): Flask dashboard that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`) and attaches GPT/Claude score panels from counterpart files in `.../{persona}_gpt` and `.../{persona}_claude`, with explicit per-provider errors for missing/ambiguous/mismatched pairs.
+- **Dashboard UI** (`python -m dashboard_ui.run_dashboard_ui`): Flask dashboard that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`), includes batch rows from `transcripts/batches/batches_raw`, and attaches GPT/Claude score panels from corresponding counterpart files (with explicit per-provider errors for missing/ambiguous/mismatched pairs).
 
 ---
 
