@@ -1,15 +1,15 @@
-"""
-Interactive batch runner that grades transcript bundles using either GPT or Claude batch judge.
+﻿"""
+Interactive bundle runner that grades transcript bundles using either GPT or Claude bundle judge.
 
-Reads batch files from transcripts/batches/batches_raw/batch_XX/ and writes
-graded results to transcripts/batches/batches_gpt/batch_XX/ or 
-transcripts/batches/batches_claude/batch_XX/.
+Reads bundle files from transcripts/bundles/bundles_raw/bundle_XX/ and writes
+graded results to transcripts/bundles/bundles_gpt/bundle_XX/ or 
+transcripts/bundles/bundles_claude/bundle_XX/.
 
 Run with interactive CLI:
-    python -m ui.run_ui_batch_judge
+    python -m ui.run_ui_bundle_judge
 
 Or run with command-line arguments:
-    python -m ui.run_ui_batch_judge --provider gpt --batch-type 01 --prompt judge_05 --rubric rubric_05
+    python -m ui.run_ui_bundle_judge --provider gpt --bundle-type 01 --prompt judge_05 --rubric rubric_05
 """
 
 from __future__ import annotations
@@ -41,63 +41,63 @@ from ui.cli_utils import (
     prompt_single_selection,
 )
 
-BATCHES_DIR = _REPO_ROOT / "transcripts" / "batches"
+BUNDLES_DIR = _REPO_ROOT / "transcripts" / "bundles"
 
 # ---------------------------------------------------------------------------
-# Change these values to control batch type and concurrency.
+# Change these values to control bundle type and concurrency.
 # ---------------------------------------------------------------------------
-DEFAULT_BATCH_TYPE = "03"
+DEFAULT_BUNDLE_TYPE = "03"
 PARALLEL_WORKERS = 6
 
 
-def _discover_batch_types() -> list[str]:
-    """Find all available batch types (e.g., ['01', '02', '03'])."""
-    raw_dir = BATCHES_DIR / "batches_raw"
+def _discover_bundle_types() -> list[str]:
+    """Find all available bundle types (e.g., ['01', '02', '03'])."""
+    raw_dir = BUNDLES_DIR / "bundles_raw"
     if not raw_dir.exists():
         return []
-    batch_types = []
+    bundle_types = []
     for path in raw_dir.iterdir():
-        if path.is_dir() and path.name.startswith("batch_"):
-            batch_type = path.name[6:]  # Remove "batch_" prefix
-            if batch_type.isdigit():
-                batch_types.append(batch_type.zfill(2))
-    return sorted(batch_types)
+        if path.is_dir() and path.name.startswith("bundle_"):
+            bundle_type = path.name[6:]  # Remove "bundle_" prefix
+            if bundle_type.isdigit():
+                bundle_types.append(bundle_type.zfill(2))
+    return sorted(bundle_types)
 
 
-def _discover_batch_files(batch_type: str) -> list[Path]:
-    """Find all batch_*.txt files for the given batch type."""
-    raw_dir = BATCHES_DIR / "batches_raw" / f"batch_{batch_type}"
+def _discover_bundle_files(bundle_type: str) -> list[Path]:
+    """Find all bundle_*.txt files for the given bundle type."""
+    raw_dir = BUNDLES_DIR / "bundles_raw" / f"bundle_{bundle_type}"
     if not raw_dir.exists():
         return []
-    return sorted(raw_dir.glob("batch_*.txt"))
+    return sorted(raw_dir.glob("bundle_*.txt"))
 
 
-def _output_path_for(batch_file: Path, batch_type: str, provider: str) -> Path:
-    """Map a raw batch file to its graded output path based on provider."""
-    out_dir = BATCHES_DIR / f"batches_{provider}" / f"batch_{batch_type}"
+def _output_path_for(bundle_file: Path, bundle_type: str, provider: str) -> Path:
+    """Map a raw bundle file to its graded output path based on provider."""
+    out_dir = BUNDLES_DIR / f"bundles_{provider}" / f"bundle_{bundle_type}"
     out_dir.mkdir(parents=True, exist_ok=True)
-    return out_dir / batch_file.with_suffix(".json").name
+    return out_dir / bundle_file.with_suffix(".json").name
 
 
-def _grade_one_batch(
-    batch_file: Path,
+def _grade_one_bundle(
+    bundle_file: Path,
     output_path: Path,
     *,
     provider: str,
     prompt_name: str,
     rubric_name: str,
 ) -> dict[str, Any]:
-    """Grade a single batch file using the specified provider and return summary info."""
+    """Grade a single bundle file using the specified provider and return summary info."""
     if output_path.exists():
         print(
             f"  [WARN] Overwriting existing file: "
             f"{output_path.relative_to(_REPO_ROOT)}"
         )
 
-    from judge.run_judge_batch import judge_transcript_batch
+    from judge.run_judge_bundle import judge_transcript_bundle
 
-    result = judge_transcript_batch(
-        str(batch_file),
+    result = judge_transcript_bundle(
+        str(bundle_file),
         provider=provider,
         prompt_name=prompt_name,
         rubric_name=rubric_name,
@@ -105,7 +105,7 @@ def _grade_one_batch(
     )
 
     return {
-        "batch_file": batch_file,
+        "bundle_file": bundle_file,
         "score": result.total_score,
         "max_score": result.max_score,
         "output_path": result.output_path,
@@ -117,7 +117,7 @@ _progress_done = 0
 
 
 def _print_result(info: dict[str, Any], total: int, provider: str) -> None:
-    """Print a one-line progress and score summary for a completed batch grading task."""
+    """Print a one-line progress and score summary for a completed bundle grading task."""
     global _progress_done
     with _progress_lock:
         _progress_done += 1
@@ -125,16 +125,16 @@ def _print_result(info: dict[str, Any], total: int, provider: str) -> None:
     
     provider_label = provider.upper()
     print(
-        f"[{provider_label} Batch Judge] [{n}/{total}] "
+        f"[{provider_label} Bundle Judge] [{n}/{total}] "
         f"score={info['score']}/{info['max_score']}  "
-        f"batch={info['batch_file'].name}  "
+        f"bundle={info['bundle_file'].name}  "
         f"saved={info['output_path'].relative_to(_REPO_ROOT)}"
     )
 
 
 def _get_interactive_config() -> tuple[str, str, str, str]:
-    """Get batch judge configuration through interactive CLI prompts."""
-    print("=== Batch Transcript Judging Configuration ===")
+    """Get bundle judge configuration through interactive CLI prompts."""
+    print("=== Bundle Transcript Judging Configuration ===")
     
     # Provider selection
     provider = prompt_single_selection(
@@ -143,14 +143,14 @@ def _get_interactive_config() -> tuple[str, str, str, str]:
         required=True,
     )
     
-    # Batch type selection
-    available_batch_types = _discover_batch_types()
-    if not available_batch_types:
-        raise RuntimeError("No batch types found in transcripts/batches/batches_raw/")
+    # Bundle type selection
+    available_bundle_types = _discover_bundle_types()
+    if not available_bundle_types:
+        raise RuntimeError("No bundle types found in transcripts/bundles/bundles_raw/")
     
-    batch_type = prompt_single_selection(
-        "Batch type",
-        available_batch_types,
+    bundle_type = prompt_single_selection(
+        "Bundle type",
+        available_bundle_types,
         required=True,
     )
     
@@ -176,21 +176,21 @@ def _get_interactive_config() -> tuple[str, str, str, str]:
         required=True,
     )
     
-    return provider, batch_type, prompt_name, rubric_name
+    return provider, bundle_type, prompt_name, rubric_name
 
 
 def _parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Grade all batch files of a given type with GPT or Claude batch judge",
+        description="Grade all bundle files of a given type with GPT or Claude bundle judge",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   # Interactive mode (default)
-  python -m ui.run_ui_batch_judge
+  python -m ui.run_ui_bundle_judge
   
   # Command-line mode
-  python -m ui.run_ui_batch_judge --provider gpt --batch-type 01 --prompt judge_05 --rubric rubric_05
+  python -m ui.run_ui_bundle_judge --provider gpt --bundle-type 01 --prompt judge_05 --rubric rubric_05
         """,
     )
     parser.add_argument(
@@ -198,8 +198,8 @@ Examples:
         help="Judge provider to use: gpt or claude",
     )
     parser.add_argument(
-        "--batch-type",
-        help="Batch type number (e.g., 01, 02, 03)",
+        "--bundle-type",
+        help="Bundle type number (e.g., 01, 02, 03)",
     )
     parser.add_argument(
         "--prompt",
@@ -213,8 +213,8 @@ Examples:
     return parser.parse_args()
 
 
-def _run_batch_judging(provider: str, batch_type: str, prompt_name: str, rubric_name: str) -> int:
-    """Run the batch judging process with the given configuration."""
+def _run_bundle_judging(provider: str, bundle_type: str, prompt_name: str, rubric_name: str) -> int:
+    """Run the bundle judging process with the given configuration."""
     # Check API key based on provider
     try:
         if provider == "gpt":
@@ -225,20 +225,20 @@ def _run_batch_judging(provider: str, batch_type: str, prompt_name: str, rubric_
         print(f"API key error: {error}")
         return 1
 
-    batch_type = batch_type.zfill(2)
-    batch_files = _discover_batch_files(batch_type)
-    if not batch_files:
+    bundle_type = bundle_type.zfill(2)
+    bundle_files = _discover_bundle_files(bundle_type)
+    if not bundle_files:
         print(
-            f"No batch files found under "
-            f"{BATCHES_DIR / 'batches_raw' / f'batch_{batch_type}'}"
+            f"No bundle files found under "
+            f"{BUNDLES_DIR / 'bundles_raw' / f'bundle_{bundle_type}'}"
         )
         return 1
 
     # Show summary and get confirmation
     summary = (
-        f"Will grade {len(batch_files)} batch files using:\n"
+        f"Will grade {len(bundle_files)} bundle files using:\n"
         f"  • Provider: {provider.upper()}\n"
-        f"  • Batch type: {batch_type}\n"
+        f"  • Bundle type: {bundle_type}\n"
         f"  • Judge prompt: {prompt_name}\n"
         f"  • Judge rubric: {rubric_name}\n"
         f"  • Parallel workers: {PARALLEL_WORKERS}"
@@ -251,13 +251,13 @@ def _run_batch_judging(provider: str, batch_type: str, prompt_name: str, rubric_
     workers = PARALLEL_WORKERS
     provider_label = provider.upper()
     print(
-        f"[{provider_label} Batch Judge] Grading {len(batch_files)} batches (type {batch_type})  "
+        f"[{provider_label} Bundle Judge] Grading {len(bundle_files)} bundles (type {bundle_type})  "
         f"prompt={prompt_name}  rubric={rubric_name}  parallel={workers}"
     )
 
     tasks: list[tuple[Path, Path]] = []
-    for bf in batch_files:
-        tasks.append((bf, _output_path_for(bf, batch_type, provider)))
+    for bf in bundle_files:
+        tasks.append((bf, _output_path_for(bf, bundle_type, provider)))
 
     global _progress_done
     _progress_done = 0
@@ -269,7 +269,7 @@ def _run_batch_judging(provider: str, batch_type: str, prompt_name: str, rubric_
         with ThreadPoolExecutor(max_workers=workers) as pool:
             futures = {
                 pool.submit(
-                    _grade_one_batch, bf, out,
+                    _grade_one_bundle, bf, out,
                     provider=provider,
                     prompt_name=prompt_name, 
                     rubric_name=rubric_name,
@@ -288,17 +288,17 @@ def _run_batch_judging(provider: str, batch_type: str, prompt_name: str, rubric_
                         _progress_done += 1
                         n = _progress_done
                     print(
-                        f"[{provider_label} Batch Judge] [{n}/{total}] FAILED "
-                        f"batch={bf.name}: {error}"
+                        f"[{provider_label} Bundle Judge] [{n}/{total}] FAILED "
+                        f"bundle={bf.name}: {error}"
                     )
     except KeyboardInterrupt:
-        print(f"\n{provider_label} batch judging interrupted.")
+        print(f"\n{provider_label} bundle judging interrupted.")
         return 130
 
     scores_only = [s["score"] for s in all_scores]
     mean_score = sum(scores_only) / len(scores_only) if scores_only else 0.0
     print(
-        f"\n[{provider_label} Batch Judge] Done. "
+        f"\n[{provider_label} Bundle Judge] Done. "
         f"graded={len(all_scores)}  failed={failed}  "
         f"mean={mean_score:.1f}"
     )
@@ -306,18 +306,18 @@ def _run_batch_judging(provider: str, batch_type: str, prompt_name: str, rubric_
 
 
 def main(argv: list[str] | None = None) -> int:
-    """CLI entry point: get config via interactive prompts or args, then run batch judging."""
+    """CLI entry point: get config via interactive prompts or args, then run bundle judging."""
     args = _parse_args()
     
     # Determine if we should use interactive mode
-    use_interactive = not all([args.provider, args.batch_type, args.prompt, args.rubric])
+    use_interactive = not all([args.provider, args.bundle_type, args.prompt, args.rubric])
     
     try:
         if use_interactive:
-            provider, batch_type, prompt_name, rubric_name = _get_interactive_config()
+            provider, bundle_type, prompt_name, rubric_name = _get_interactive_config()
         else:
             provider = args.provider
-            batch_type = args.batch_type
+            bundle_type = args.bundle_type
             prompt_name = args.prompt
             rubric_name = args.rubric
             
@@ -325,8 +325,8 @@ def main(argv: list[str] | None = None) -> int:
             if not provider:
                 print("Error: --provider is required in non-interactive mode")
                 return 1
-            if not batch_type:
-                print("Error: --batch-type is required in non-interactive mode")
+            if not bundle_type:
+                print("Error: --bundle-type is required in non-interactive mode")
                 return 1
             if not prompt_name:
                 print("Error: --prompt is required in non-interactive mode")
@@ -335,7 +335,7 @@ def main(argv: list[str] | None = None) -> int:
                 print("Error: --rubric is required in non-interactive mode")
                 return 1
         
-        return _run_batch_judging(provider, batch_type, prompt_name, rubric_name)
+        return _run_bundle_judging(provider, bundle_type, prompt_name, rubric_name)
         
     except (RuntimeError, ValueError) as error:
         print(f"Error: {error}")

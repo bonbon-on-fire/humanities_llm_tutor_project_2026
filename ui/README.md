@@ -1,4 +1,4 @@
-# UI Module
+﻿# UI Module
 
 Terminal runners for transcript generation and judge scoring with interactive CLI support.
 
@@ -57,29 +57,29 @@ The script automatically discovers all raw transcripts in `*_raw` folders, copie
 - Overwrites existing graded files with warning
 - Interactive confirmation before processing
 
-### 3) Judge batch files (GPT or Claude)
+### 3) Judge bundle files (GPT or Claude)
 
 **Interactive mode (default):**
 ```powershell
-python -m ui.run_ui_batch_judge
+python -m ui.run_ui_bundle_judge
 ```
 
 This will prompt you to select from numbered options:
 - **Judge provider**: gpt or claude (required)
-- **Batch type**: Available from `transcripts/batches/batches_raw/batch_*/` (required)
+- **Bundle type**: Available from `transcripts/bundles/bundles_raw/bundle_*/` (required)
 - **Judge prompt**: Available from `judge/prompts/judge_*.txt` (required)
 - **Judge rubric**: Available from `judge/rubrics/rubric_*.md` (required)
 
 **Command-line mode:**
 ```powershell
-# Grade batch files with GPT
-python -m ui.run_ui_batch_judge --provider gpt --batch-type 01 --prompt judge_05 --rubric rubric_05
+# Grade bundle files with GPT
+python -m ui.run_ui_bundle_judge --provider gpt --bundle-type 01 --prompt judge_05 --rubric rubric_05
 
-# Grade batch files with Claude
-python -m ui.run_ui_batch_judge --provider claude --batch-type 02 --prompt judge_06 --rubric rubric_06
+# Grade bundle files with Claude
+python -m ui.run_ui_bundle_judge --provider claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
 ```
 
-The script processes batch files from `transcripts/batches/batches_raw/batch_XX/` and writes results to `transcripts/batches/batches_{provider}/batch_XX/`.
+The script processes bundle files from `transcripts/bundles/bundles_raw/bundle_XX/` and writes results to `transcripts/bundles/bundles_{provider}/bundle_XX/`.
 
 **Features:**
 - Parallel processing (6 workers by default)
@@ -114,17 +114,17 @@ Judged transcripts are saved to provider-specific folders:
 
 Each output file uses the same stem as raw input: `transcript_XX.json`
 
-### Batch judged runs (`ui.run_ui_batch_judge`)
+### Bundle judged runs (`ui.run_ui_bundle_judge`)
 
-Batch results are saved to provider-specific folders:
+Bundle results are saved to provider-specific folders:
 
-**GPT batch judged:**
-- `transcripts/batches/batches_gpt/batch_XX/`
+**GPT bundle judged:**
+- `transcripts/bundles/bundles_gpt/bundle_XX/`
 
-**Claude batch judged:**
-- `transcripts/batches/batches_claude/batch_XX/`
+**Claude bundle judged:**
+- `transcripts/bundles/bundles_claude/bundle_XX/`
 
-Each output file converts from `batch_XX.txt` to `batch_XX.json`
+Each output file converts from `bundle_XX.txt` to `bundle_XX.json`
 
 ## Transcript schema (core fields)
 

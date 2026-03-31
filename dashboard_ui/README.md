@@ -1,6 +1,6 @@
-# Transcripts Dashboard
+﻿# Transcripts Dashboard
 
-Flask dashboard to browse transcript and batch results and compare GPT vs Claude grades.
+Flask dashboard to browse transcript and bundle results and compare GPT vs Claude grades.
 
 ## Structure
 
@@ -37,14 +37,14 @@ Then open [http://127.0.0.1:5001](http://127.0.0.1:5001).
 - Override with env var `TRANSCRIPTS_DIR` if needed.
 - Included row sources:
   - Persona raw transcripts in `transcripts/<group>/<group>_raw/*.json`
-  - Batch raw files in `transcripts/batches/batches_raw/<group>/*.txt`
+  - Bundle raw files in `transcripts/bundles/bundles_raw/<group>/*.txt`
 - Graded counterparts:
   - Persona: `.../<group>_gpt/*.json`, `.../<group>_claude/*.json`
-  - Batch: `transcripts/batches/batches_gpt/<group>/*.json`, `transcripts/batches/batches_claude/<group>/*.json`
+  - Bundle: `transcripts/bundles/bundles_gpt/<group>/*.json`, `transcripts/bundles/bundles_claude/<group>/*.json`
 
 ## Features
 
-- Dashboard rows include both transcript runs and batch runs.
+- Dashboard rows include both transcript runs and bundle runs.
 - Headers use `Group` and `Version`.
 - Score panels show explicit errors when GPT/Claude counterparts are missing, unreadable, ambiguous, or mismatched.
 

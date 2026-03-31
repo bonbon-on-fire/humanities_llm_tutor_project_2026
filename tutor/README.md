@@ -1,4 +1,4 @@
-# Tutor
+﻿# Tutor
 
 LangGraph-based Socratic tutor for MIT OCW humanities courses. The tutor guides students through assignments using guided discovery — it never gives the answer directly.
 
@@ -11,7 +11,7 @@ tutor/
   prompts/
     tutor_01.txt       — baseline system prompt
     tutor_02.txt       — revised system prompt variant
-    tutor_03.txt       — latest concise-response variant used in batch runs
+    tutor_03.txt       — latest concise-response variant used in bundle runs
 ```
 
 - `run_tutor.py` builds the LangGraph, invokes the LLM, and parses structured JSON response fields (pedagogical reasoning + student-facing answer).

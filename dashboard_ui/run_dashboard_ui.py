@@ -1,5 +1,5 @@
-"""
-Dashboard UI - Flask app to browse transcript and batch grading results.
+﻿"""
+Dashboard UI - Flask app to browse transcript and bundle grading results.
 """
 
 from __future__ import annotations
@@ -51,19 +51,19 @@ def _discover_persona_groups() -> list[str]:
     return groups
 
 
-def _batch_raw_root() -> Path:
-    """Absolute path to the batches_raw directory."""
-    return TRANSCRIPTS_DIR / "batches" / "batches_raw"
+def _bundle_raw_root() -> Path:
+    """Absolute path to the bundles_raw directory."""
+    return TRANSCRIPTS_DIR / "bundles" / "bundles_raw"
 
 
-def _batch_provider_root(provider: str) -> Path:
-    """Absolute path to batches_<provider> directory (e.g. batches_gpt, batches_claude)."""
-    return TRANSCRIPTS_DIR / "batches" / f"batches_{provider}"
+def _bundle_provider_root(provider: str) -> Path:
+    """Absolute path to bundles_<provider> directory (e.g. bundles_gpt, bundles_claude)."""
+    return TRANSCRIPTS_DIR / "bundles" / f"bundles_{provider}"
 
 
-def _discover_batch_groups() -> list[str]:
-    """Return sorted list of batch group names found inside batches_raw (e.g. batch_01, batch_02)."""
-    root = _batch_raw_root()
+def _discover_bundle_groups() -> list[str]:
+    """Return sorted list of bundle group names found inside bundles_raw (e.g. bundle_01, bundle_02)."""
+    root = _bundle_raw_root()
     if not root.is_dir():
         return []
     return sorted(p.name for p in root.iterdir() if p.is_dir())
@@ -232,8 +232,8 @@ def _counterpart_result(*, group: str, provider: str, raw_stem: str, raw_data: d
     return grade, None
 
 
-def _parse_batch_sources(raw_text: str) -> list[str]:
-    """Parse a batch .txt file body into a list of forward-slash transcript path stems, skipping comment lines."""
+def _parse_bundle_sources(raw_text: str) -> list[str]:
+    """Parse a bundle .txt file body into a list of forward-slash transcript path stems, skipping comment lines."""
     sources: list[str] = []
     for line in raw_text.splitlines():
         item = line.strip()
@@ -243,26 +243,26 @@ def _parse_batch_sources(raw_text: str) -> list[str]:
     return sources
 
 
-def _batch_counterpart_path(*, provider: str, batch_group: str, batch_stem: str) -> Path:
-    """Path to the graded JSON output for a batch stem."""
-    return _batch_provider_root(provider) / batch_group / f"{batch_stem}.json"
+def _bundle_counterpart_path(*, provider: str, bundle_group: str, bundle_stem: str) -> Path:
+    """Path to the graded JSON output for a bundle stem."""
+    return _bundle_provider_root(provider) / bundle_group / f"{bundle_stem}.json"
 
 
-def _batch_counterpart_result(
+def _bundle_counterpart_result(
     *,
     provider: str,
-    batch_group: str,
-    batch_stem: str,
+    bundle_group: str,
+    bundle_stem: str,
     raw_sources: list[str],
 ) -> tuple[dict | None, str | None]:
-    """Load and validate the graded result for a batch stem; returns (grade_summary, error_message)."""
-    path = _batch_counterpart_path(
+    """Load and validate the graded result for a bundle stem; returns (grade_summary, error_message)."""
+    path = _bundle_counterpart_path(
         provider=provider,
-        batch_group=batch_group,
-        batch_stem=batch_stem,
+        bundle_group=bundle_group,
+        bundle_stem=bundle_stem,
     )
     if not path.exists():
-        return None, f"No {provider.upper()} counterpart found for `{batch_group}/{batch_stem}`."
+        return None, f"No {provider.upper()} counterpart found for `{bundle_group}/{bundle_stem}`."
 
     judged_data = _load_json(path)
     if not judged_data:
@@ -275,13 +275,13 @@ def _batch_counterpart_result(
     if judged_sources and judged_sources != raw_sources:
         return None, (
             f"{provider.upper()} counterpart transcript_sources mismatch for "
-            f"`{batch_group}/{batch_stem}`."
+            f"`{bundle_group}/{bundle_stem}`."
         )
     transcript_count = judged_data.get("transcript_count")
     if isinstance(transcript_count, int) and transcript_count != len(raw_sources):
         return None, (
             f"{provider.upper()} counterpart transcript_count mismatch for "
-            f"`{batch_group}/{batch_stem}`."
+            f"`{bundle_group}/{bundle_stem}`."
         )
 
     grade = _grade_summary(judged_data)
@@ -290,23 +290,23 @@ def _batch_counterpart_result(
     return grade, None
 
 
-def _batch_version_stems(batch_group: str) -> list[str]:
-    """Return sorted batch file stems for a given batch group."""
-    raw_dir = _batch_raw_root() / batch_group
+def _bundle_version_stems(bundle_group: str) -> list[str]:
+    """Return sorted bundle file stems for a given bundle group."""
+    raw_dir = _bundle_raw_root() / bundle_group
     return sorted(_txt_stems(raw_dir), key=_stem_sort_key)
 
 
-def _batch_metadata(batch_group: str, raw_sources: list[str], gpt_grade: dict | None, claude_grade: dict | None) -> dict:
-    """Build the metadata dict displayed in the dashboard row for a batch entry."""
+def _bundle_metadata(bundle_group: str, raw_sources: list[str], gpt_grade: dict | None, claude_grade: dict | None) -> dict:
+    """Build the metadata dict displayed in the dashboard row for a bundle entry."""
     return {
-        "tutor_prompt": "batch",
+        "tutor_prompt": "bundle",
         "student_persona": f"{len(raw_sources)} transcript(s)",
         "course": "varied",
         "exercise_number": "varied",
         "turns": len(raw_sources),
-        "batch_transcript_count": len(raw_sources),
-        "batch_has_gpt_grade": gpt_grade is not None,
-        "batch_has_claude_grade": claude_grade is not None,
+        "bundle_transcript_count": len(raw_sources),
+        "bundle_has_gpt_grade": gpt_grade is not None,
+        "bundle_has_claude_grade": claude_grade is not None,
     }
 
 
@@ -353,39 +353,39 @@ def _list_transcript_rows() -> list[dict]:
     return out
 
 
-def _list_batch_rows() -> list[dict]:
-    """Build dashboard rows for all batch runs (raw .txt files + graded JSON counterparts)."""
+def _list_bundle_rows() -> list[dict]:
+    """Build dashboard rows for all bundle runs (raw .txt files + graded JSON counterparts)."""
     out: list[dict] = []
-    for batch_group in _discover_batch_groups():
-        raw_group_dir = _batch_raw_root() / batch_group
-        for batch_stem in _batch_version_stems(batch_group):
-            raw_path = raw_group_dir / f"{batch_stem}.txt"
+    for bundle_group in _discover_bundle_groups():
+        raw_group_dir = _bundle_raw_root() / bundle_group
+        for bundle_stem in _bundle_version_stems(bundle_group):
+            raw_path = raw_group_dir / f"{bundle_stem}.txt"
             raw_text = _load_text(raw_path)
             if raw_text is None:
                 continue
-            raw_sources = _parse_batch_sources(raw_text)
+            raw_sources = _parse_bundle_sources(raw_text)
 
-            gpt_grade, gpt_error = _batch_counterpart_result(
+            gpt_grade, gpt_error = _bundle_counterpart_result(
                 provider="gpt",
-                batch_group=batch_group,
-                batch_stem=batch_stem,
+                bundle_group=bundle_group,
+                bundle_stem=bundle_stem,
                 raw_sources=raw_sources,
             )
-            claude_grade, claude_error = _batch_counterpart_result(
+            claude_grade, claude_error = _bundle_counterpart_result(
                 provider="claude",
-                batch_group=batch_group,
-                batch_stem=batch_stem,
+                bundle_group=bundle_group,
+                bundle_stem=bundle_stem,
                 raw_sources=raw_sources,
             )
             out.append(
                 {
-                    "kind": "batch",
-                    "group": batch_group,
-                    "version": _extract_display_number(batch_stem),
-                    "route_group": batch_group,
-                    "route_version": batch_stem,
-                    "metadata": _batch_metadata(
-                        batch_group=batch_group,
+                    "kind": "bundle",
+                    "group": bundle_group,
+                    "version": _extract_display_number(bundle_stem),
+                    "route_group": bundle_group,
+                    "route_version": bundle_stem,
+                    "metadata": _bundle_metadata(
+                        bundle_group=bundle_group,
                         raw_sources=raw_sources,
                         gpt_grade=gpt_grade,
                         claude_grade=claude_grade,
@@ -404,8 +404,8 @@ def _list_batch_rows() -> list[dict]:
 
 
 def list_dashboard_rows() -> list[dict]:
-    """Return combined dashboard rows for all transcript and batch runs."""
-    return _list_transcript_rows() + _list_batch_rows()
+    """Return combined dashboard rows for all transcript and bundle runs."""
+    return _list_transcript_rows() + _list_bundle_rows()
 
 
 @app.route("/")
@@ -416,44 +416,44 @@ def index():
 
 @app.route("/api/transcripts")
 def api_list_transcripts():
-    """Return all dashboard rows (transcripts + batches) as a JSON array."""
+    """Return all dashboard rows (transcripts + bundles) as a JSON array."""
     return jsonify(list_dashboard_rows())
 
 
-def _is_batch_group(group: str) -> bool:
-    """True if group refers to a batch group (e.g. batch_01) rather than a persona group."""
-    return group in _discover_batch_groups()
+def _is_bundle_group(group: str) -> bool:
+    """True if group refers to a bundle group (e.g. bundle_01) rather than a persona group."""
+    return group in _discover_bundle_groups()
 
 
 @app.route("/api/transcripts/<group>/<version>")
 def api_get_transcript(group: str, version: str):
-    """Return full detail for one transcript or batch run as JSON; 404 if not found."""
-    if _is_batch_group(group):
-        raw_text = _load_text(_batch_raw_root() / group / f"{version}.txt")
+    """Return full detail for one transcript or bundle run as JSON; 404 if not found."""
+    if _is_bundle_group(group):
+        raw_text = _load_text(_bundle_raw_root() / group / f"{version}.txt")
         if raw_text is None:
             return jsonify({"error": "Transcript not found"}), 404
-        raw_sources = _parse_batch_sources(raw_text)
-        gpt_grade, gpt_error = _batch_counterpart_result(
+        raw_sources = _parse_bundle_sources(raw_text)
+        gpt_grade, gpt_error = _bundle_counterpart_result(
             provider="gpt",
-            batch_group=group,
-            batch_stem=version,
+            bundle_group=group,
+            bundle_stem=version,
             raw_sources=raw_sources,
         )
-        claude_grade, claude_error = _batch_counterpart_result(
+        claude_grade, claude_error = _bundle_counterpart_result(
             provider="claude",
-            batch_group=group,
-            batch_stem=version,
+            bundle_group=group,
+            bundle_stem=version,
             raw_sources=raw_sources,
         )
         return jsonify(
             {
-                "kind": "batch",
+                "kind": "bundle",
                 "group": group,
                 "version": _extract_display_number(version),
                 "route_group": group,
                 "route_version": version,
-                "metadata": _batch_metadata(
-                    batch_group=group,
+                "metadata": _bundle_metadata(
+                    bundle_group=group,
                     raw_sources=raw_sources,
                     gpt_grade=gpt_grade,
                     claude_grade=claude_grade,

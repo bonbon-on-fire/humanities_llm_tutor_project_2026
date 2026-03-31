@@ -1,11 +1,11 @@
-"""
+﻿"""
 Build GPT vs Claude grading comparison charts.
 
 Reads judged transcripts from:
     transcripts/<persona_type>/<persona_type>_gpt/transcript_*.json
     transcripts/<persona_type>/<persona_type>_claude/transcript_*.json
-    transcripts/batches/batches_gpt/batch_01/*.json
-    transcripts/batches/batches_claude/batch_01/*.json
+    transcripts/bundles/bundles_gpt/bundle_01/*.json
+    transcripts/bundles/bundles_claude/bundle_01/*.json
 
 Usage:
     python -m visualization.run_visualization
@@ -266,14 +266,14 @@ def _safe_import_matplotlib():
 
 
 # ---------------------------------------------------------------------------
-# Batch data model and reading
+# Bundle data model and reading
 # ---------------------------------------------------------------------------
 
 @dataclass(frozen=True)
-class BatchGradeRow:
-    """A single graded batch result row for visualization."""
+class BundleGradeRow:
+    """A single graded bundle result row for visualization."""
 
-    batch_name: str
+    bundle_name: str
     total_score: float
     max_score: float
     transcript_sources: list[str]
@@ -282,8 +282,8 @@ class BatchGradeRow:
     section_maxes: dict[str, float] = field(default_factory=dict)
 
 
-def _read_batch_grade(path: Path) -> BatchGradeRow | None:
-    """Load a graded batch JSON and return a BatchGradeRow, or None on error."""
+def _read_bundle_grade(path: Path) -> BundleGradeRow | None:
+    """Load a graded bundle JSON and return a BundleGradeRow, or None on error."""
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
@@ -301,8 +301,8 @@ def _read_batch_grade(path: Path) -> BatchGradeRow | None:
 
     persona_types = tuple(sorted({str(s).split("/", 1)[0].strip() for s in sources if "/" in str(s)}))
 
-    return BatchGradeRow(
-        batch_name=path.stem.strip(),
+    return BundleGradeRow(
+        bundle_name=path.stem.strip(),
         total_score=_parse_score(grade.get("total_score")),
         max_score=_parse_score(grade.get("max_score")),
         transcript_sources=[str(s) for s in sources],
@@ -312,14 +312,14 @@ def _read_batch_grade(path: Path) -> BatchGradeRow | None:
     )
 
 
-def _read_batch_rows(batches_dir: Path, provider: str, batch_type: str) -> list[BatchGradeRow]:
-    """Load all graded batch JSON files for a given provider and batch type."""
-    provider_dir = batches_dir / f"batches_{provider}" / f"batch_{batch_type}"
+def _read_bundle_rows(bundles_dir: Path, provider: str, bundle_type: str) -> list[BundleGradeRow]:
+    """Load all graded bundle JSON files for a given provider and bundle type."""
+    provider_dir = bundles_dir / f"bundles_{provider}" / f"bundle_{bundle_type}"
     if not provider_dir.exists():
         return []
-    rows: list[BatchGradeRow] = []
-    for path in sorted(provider_dir.glob("batch_*.json")):
-        row = _read_batch_grade(path)
+    rows: list[BundleGradeRow] = []
+    for path in sorted(provider_dir.glob("bundle_*.json")):
+        row = _read_bundle_grade(path)
         if row is not None:
             rows.append(row)
     return rows
@@ -351,11 +351,11 @@ def _filter_individual_rows_by_version(rows: list[GradeRow], *, version: str) ->
     return [r for r in rows if r.student_persona.lower().endswith(suffix)]
 
 
-def _filter_batch_rows(rows: list[BatchGradeRow], allowed_personas: set[str]) -> list[BatchGradeRow]:
-    """Keep batch rows that include at least one allowed persona family."""
+def _filter_bundle_rows(rows: list[BundleGradeRow], allowed_personas: set[str]) -> list[BundleGradeRow]:
+    """Keep bundle rows that include at least one allowed persona family."""
 
     allowed = {p.lower() for p in allowed_personas}
-    filtered: list[BatchGradeRow] = []
+    filtered: list[BundleGradeRow] = []
     for row in rows:
         if any(p.lower() in allowed for p in row.persona_types):
             filtered.append(row)
@@ -920,27 +920,27 @@ def _chart_sub_subsection_correlation_heatmap(
 
 
 # ---------------------------------------------------------------------------
-# Chart: Line chart — batch_01 scores
+# Chart: Line chart — bundle_01 scores
 # ---------------------------------------------------------------------------
 
-def _chart_batch_scores(
-    gpt_rows: list[BatchGradeRow],
-    claude_rows: list[BatchGradeRow],
-    batch_type: str,
+def _chart_bundle_scores(
+    gpt_rows: list[BundleGradeRow],
+    claude_rows: list[BundleGradeRow],
+    bundle_type: str,
     out_dir: Path,
     *,
     persona_label: str,
     output_name: str,
     chart_idx: int = 2,
 ) -> None:
-    """Generate a line chart comparing GPT vs Claude total scores for a specific batch type."""
+    """Generate a line chart comparing GPT vs Claude total scores for a specific bundle type."""
     plt = _safe_import_matplotlib()
 
-    gpt_by_name = {r.batch_name: r for r in gpt_rows}
-    claude_by_name = {r.batch_name: r for r in claude_rows}
+    gpt_by_name = {r.bundle_name: r for r in gpt_rows}
+    claude_by_name = {r.bundle_name: r for r in claude_rows}
 
-    def _batch_sort_key(name: str) -> int:
-        """Sort batch names by numeric suffix (e.g. ``batch_001`` < ``batch_010``)."""
+    def _bundle_sort_key(name: str) -> int:
+        """Sort bundle names by numeric suffix (e.g. ``bundle_001`` < ``bundle_010``)."""
 
         parts = name.split("_")
         try:
@@ -950,7 +950,7 @@ def _chart_batch_scores(
 
     all_names = sorted(
         set(gpt_by_name) | set(claude_by_name),
-        key=_batch_sort_key,
+        key=_bundle_sort_key,
     )
 
     x = list(range(len(all_names)))
@@ -967,8 +967,8 @@ def _chart_batch_scores(
     fig, ax = plt.subplots(figsize=(16, 7))
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=3)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=3)
-    ax.set_title(f"Batch Type {batch_type} ({persona_label}) — Total Score Per Batch: GPT vs Claude")
-    ax.set_xlabel(f"Batch index (batch_001 – batch_{len(all_names):03d})")
+    ax.set_title(f"Bundle Type {bundle_type} ({persona_label}) — Total Score Per Bundle: GPT vs Claude")
+    ax.set_xlabel(f"Bundle index (bundle_001 – bundle_{len(all_names):03d})")
     ax.set_ylabel("Total Score")
     ax.grid(True, alpha=0.3)
     ax.legend()
@@ -978,7 +978,7 @@ def _chart_batch_scores(
     lines = []
     lines.append(f"Pearson r = {pearson_v:.3f}" if pearson_v is not None else "Pearson r = N/A")
     lines.append(f"Spearman ρ = {spearman_v:.3f}" if spearman_v is not None else "Spearman ρ = N/A")
-    lines.append(f"Paired batches: {len(paired_g)}")
+    lines.append(f"Paired bundles: {len(paired_g)}")
     if paired_g:
         lines.append(f"GPT mean: {sum(paired_g)/len(paired_g):.1f}   Claude mean: {sum(paired_c)/len(paired_c):.1f}")
     ax.text(
@@ -998,10 +998,10 @@ def _chart_batch_scores(
 # ---------------------------------------------------------------------------
 
 def main() -> int:
-    """Entry point: load all graded transcript and batch data, generate comparison charts, print summary."""
+    """Entry point: load all graded transcript and bundle data, generate comparison charts, print summary."""
     repo_root = Path(__file__).resolve().parent.parent
     transcripts_dir = repo_root / "transcripts"
-    batches_dir = transcripts_dir / "batches"
+    bundles_dir = transcripts_dir / "bundles"
     out_dir = repo_root / "visualization" / "outputs"
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -1103,28 +1103,28 @@ def main() -> int:
         )
         chart_idx += 1
 
-    batch_type = "01"
-    batch_gpt_all = _read_batch_rows(batches_dir, "gpt", batch_type)
-    batch_claude_all = _read_batch_rows(batches_dir, "claude", batch_type)
-    print(f"Loaded batch_{batch_type} GPT: {len(batch_gpt_all)} batches   Claude: {len(batch_claude_all)} batches")
+    bundle_type = "01"
+    bundle_gpt_all = _read_bundle_rows(bundles_dir, "gpt", bundle_type)
+    bundle_claude_all = _read_bundle_rows(bundles_dir, "claude", bundle_type)
+    print(f"Loaded bundle_{bundle_type} GPT: {len(bundle_gpt_all)} bundles   Claude: {len(bundle_claude_all)} bundles")
 
     for persona in ("chaotic", "cooperative", "clueless"):
-        batch_gpt = _filter_batch_rows(batch_gpt_all, {persona})
-        batch_claude = _filter_batch_rows(batch_claude_all, {persona})
-        print(f"Loaded batch_{batch_type} {persona} GPT: {len(batch_gpt)} batches   Claude: {len(batch_claude)} batches")
-        if batch_gpt or batch_claude:
-            _chart_batch_scores(
-                batch_gpt,
-                batch_claude,
-                batch_type,
+        bundle_gpt = _filter_bundle_rows(bundle_gpt_all, {persona})
+        bundle_claude = _filter_bundle_rows(bundle_claude_all, {persona})
+        print(f"Loaded bundle_{bundle_type} {persona} GPT: {len(bundle_gpt)} bundles   Claude: {len(bundle_claude)} bundles")
+        if bundle_gpt or bundle_claude:
+            _chart_bundle_scores(
+                bundle_gpt,
+                bundle_claude,
+                bundle_type,
                 out_dir,
                 persona_label=persona,
-                output_name=f"batch_{batch_type}_grades_{persona}_gpt_vs_claude.png",
+                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude.png",
                 chart_idx=chart_idx,
             )
             chart_idx += 1
         else:
-            print(f"  No {persona} batch_{batch_type} graded files found. Skipping chart.")
+            print(f"  No {persona} bundle_{bundle_type} graded files found. Skipping chart.")
 
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0

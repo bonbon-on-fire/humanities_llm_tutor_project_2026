@@ -1,5 +1,5 @@
-"""
-Interactive batch runner that grades all raw transcripts using either GPT or Claude judge.
+﻿"""
+Interactive bundle runner that grades all raw transcripts using either GPT or Claude judge.
 
 Reads from transcripts/{persona}/{persona}_raw/ and writes graded copies
 to transcripts/{persona}/{persona}_gpt/ or transcripts/{persona}/{persona}_claude/.

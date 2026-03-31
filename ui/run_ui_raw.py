@@ -1,5 +1,5 @@
-"""
-Interactive batch runner that generates raw (unjudged) tutor/student transcripts.
+﻿"""
+Interactive bundle runner that generates raw (unjudged) tutor/student transcripts.
 
 Run with interactive CLI:
     python -m ui.run_ui_raw
@@ -50,7 +50,7 @@ _RAW_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
 _TUTOR_CALL_MAX_RETRIES = 2
 
 # ---------------------------------------------------------------------------
-# Default batch config (can be overridden by CLI)
+# Default bundle config (can be overridden by CLI)
 # ---------------------------------------------------------------------------
 
 DEFAULT_TUTOR_PROMPTS: list[str] = ["tutor_03"]
@@ -78,8 +78,8 @@ class RunConfig:
 
 
 @dataclass(frozen=True)
-class BatchConfig:
-    """Configuration for the entire batch run."""
+class BundleConfig:
+    """Configuration for the entire bundle run."""
     tutor_prompts: list[str]
     student_personas: list[str]
     course_exercises: list[tuple[str, str]]
@@ -170,8 +170,8 @@ def _next_transcript_number(output_dir: Path) -> str:
     return f"{next_num:02d}"
 
 
-def _validate_batch_config(config: BatchConfig) -> None:
-    """Validate the batch config against available assets; raises ValueError/RuntimeError on bad config."""
+def _validate_bundle_config(config: BundleConfig) -> None:
+    """Validate the bundle config against available assets; raises ValueError/RuntimeError on bad config."""
     _require_openai_api_key()
     if config.turn_size <= 0:
         raise ValueError("Turn size must be a positive integer.")
@@ -333,26 +333,26 @@ def _save_raw_transcript(
     return transcript_name, transcript_path
 
 
-def _iter_runs(batch_config: BatchConfig):
-    """Yield (RunConfig, trial_number) for every combination in the batch config matrix."""
-    for tutor_prompt in batch_config.tutor_prompts:
-        for persona_name in batch_config.student_personas:
+def _iter_runs(bundle_config: BundleConfig):
+    """Yield (RunConfig, trial_number) for every combination in the bundle config matrix."""
+    for tutor_prompt in bundle_config.tutor_prompts:
+        for persona_name in bundle_config.student_personas:
             persona_type, persona_version = _parse_persona_name(persona_name)
-            for course, exercise_number in batch_config.course_exercises:
-                for trial in range(1, batch_config.trials + 1):
+            for course, exercise_number in bundle_config.course_exercises:
+                for trial in range(1, bundle_config.trials + 1):
                     config = RunConfig(
                         tutor_prompt=tutor_prompt,
                         persona_type=persona_type,
                         persona_version=persona_version,
                         course=course,
                         exercise_number=exercise_number,
-                        turn_size=batch_config.turn_size,
+                        turn_size=bundle_config.turn_size,
                     )
                     yield config, trial
 
 
-def _get_interactive_config() -> BatchConfig:
-    """Get batch configuration through interactive CLI prompts."""
+def _get_interactive_config() -> BundleConfig:
+    """Get bundle configuration through interactive CLI prompts."""
     print("=== Raw Transcript Generation Configuration ===")
     
     # Tutor prompts
@@ -414,7 +414,7 @@ def _get_interactive_config() -> BatchConfig:
     if trials is None:
         trials = DEFAULT_TRIALS
     
-    return BatchConfig(
+    return BundleConfig(
         tutor_prompts=selected_tutor_prompts,
         student_personas=selected_personas,
         course_exercises=selected_course_exercises,
@@ -473,8 +473,8 @@ Examples:
     return parser.parse_args()
 
 
-def _get_config_from_args(args: argparse.Namespace) -> BatchConfig:
-    """Convert command-line arguments to BatchConfig."""
+def _get_config_from_args(args: argparse.Namespace) -> BundleConfig:
+    """Convert command-line arguments to BundleConfig."""
     # Use defaults if not specified
     tutor_prompts = args.tutor or DEFAULT_TUTOR_PROMPTS
     student_personas = args.personas or DEFAULT_STUDENT_PERSONAS
@@ -484,7 +484,7 @@ def _get_config_from_args(args: argparse.Namespace) -> BatchConfig:
     else:
         course_exercises = DEFAULT_COURSE_EXERCISES
     
-    return BatchConfig(
+    return BundleConfig(
         tutor_prompts=tutor_prompts,
         student_personas=student_personas,
         course_exercises=course_exercises,
@@ -493,35 +493,35 @@ def _get_config_from_args(args: argparse.Namespace) -> BatchConfig:
     )
 
 
-def _run_batch(batch_config: BatchConfig) -> int:
-    """Run the batch generation with the given configuration."""
+def _run_bundle(bundle_config: BundleConfig) -> int:
+    """Run the bundle generation with the given configuration."""
     try:
-        _validate_batch_config(batch_config)
+        _validate_bundle_config(bundle_config)
     except (RuntimeError, ValueError) as error:
         print(f"Configuration error: {error}")
         return 1
 
     # Show summary and get confirmation
-    persona_groups = group_personas_by_type(batch_config.student_personas)
+    persona_groups = group_personas_by_type(bundle_config.student_personas)
     total_combinations = (
-        len(batch_config.tutor_prompts) *
-        len(batch_config.student_personas) *
-        len(batch_config.course_exercises) *
-        batch_config.trials
+        len(bundle_config.tutor_prompts) *
+        len(bundle_config.student_personas) *
+        len(bundle_config.course_exercises) *
+        bundle_config.trials
     )
     
     summary_lines = [
         f"Will generate {total_combinations} raw transcripts:",
-        f"  • {len(batch_config.tutor_prompts)} tutor prompt(s): {', '.join(batch_config.tutor_prompts)}",
-        f"  • {len(batch_config.student_personas)} student persona(s) across {len(persona_groups)} type(s)",
+        f"  • {len(bundle_config.tutor_prompts)} tutor prompt(s): {', '.join(bundle_config.tutor_prompts)}",
+        f"  • {len(bundle_config.student_personas)} student persona(s) across {len(persona_groups)} type(s)",
     ]
     for persona_type, personas in persona_groups.items():
         summary_lines.append(f"    - {persona_type}: {', '.join(personas)}")
     
     summary_lines.extend([
-        f"  • {len(batch_config.course_exercises)} course/exercise combination(s): {', '.join(f'{c}/{e}' for c, e in batch_config.course_exercises)}",
-        f"  • {batch_config.turn_size} turns per conversation",
-        f"  • {batch_config.trials} trial(s) per configuration",
+        f"  • {len(bundle_config.course_exercises)} course/exercise combination(s): {', '.join(f'{c}/{e}' for c, e in bundle_config.course_exercises)}",
+        f"  • {bundle_config.turn_size} turns per conversation",
+        f"  • {bundle_config.trials} trial(s) per configuration",
     ])
     
     if not confirm_proceed("\n".join(summary_lines)):
@@ -530,7 +530,7 @@ def _run_batch(batch_config: BatchConfig) -> int:
 
     try:
         failed_runs = 0
-        for config, trial in _iter_runs(batch_config):
+        for config, trial in _iter_runs(bundle_config):
             assignment_text = _build_assignment_text(
                 config.course,
                 config.exercise_number,
@@ -543,7 +543,7 @@ def _run_batch(batch_config: BatchConfig) -> int:
                 failed_runs += 1
                 print(
                     "[Run Failed] "
-                    f"trial={trial}/{batch_config.trials} "
+                    f"trial={trial}/{bundle_config.trials} "
                     f"tutor={config.tutor_prompt} "
                     f"persona={config.student_persona} "
                     f"course={config.course} "
@@ -558,8 +558,8 @@ def _run_batch(batch_config: BatchConfig) -> int:
                 exchanges,
             )
             print(
-                "[Raw Batch] "
-                f"trial={trial}/{batch_config.trials} "
+                "[Raw Bundle] "
+                f"trial={trial}/{bundle_config.trials} "
                 f"tutor={config.tutor_prompt} "
                 f"persona={config.student_persona} "
                 f"course={config.course} "
@@ -568,9 +568,9 @@ def _run_batch(batch_config: BatchConfig) -> int:
                 f"saved={transcript_path.relative_to(_REPO_ROOT)}"
             )
         if failed_runs:
-            print(f"[Raw Batch] completed with {failed_runs} failed run(s).")
+            print(f"[Raw Bundle] completed with {failed_runs} failed run(s).")
     except KeyboardInterrupt:
-        print("\nRaw batch interrupted.")
+        print("\nRaw bundle interrupted.")
         return 130
     except FileNotFoundError as error:
         print(f"Missing curriculum file: {error.filename}")
@@ -580,7 +580,7 @@ def _run_batch(batch_config: BatchConfig) -> int:
 
 
 def main() -> int:
-    """CLI entry point: get config via interactive prompts or args, then run batch generation."""
+    """CLI entry point: get config via interactive prompts or args, then run bundle generation."""
     args = _parse_args()
     
     # Determine if we should use interactive mode
@@ -593,11 +593,11 @@ def main() -> int:
     
     try:
         if use_interactive:
-            batch_config = _get_interactive_config()
+            bundle_config = _get_interactive_config()
         else:
-            batch_config = _get_config_from_args(args)
+            bundle_config = _get_config_from_args(args)
         
-        return _run_batch(batch_config)
+        return _run_bundle(bundle_config)
         
     except (RuntimeError, ValueError) as error:
         print(f"Error: {error}")

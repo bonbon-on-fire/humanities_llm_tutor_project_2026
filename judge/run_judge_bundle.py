@@ -1,4 +1,4 @@
-"""Unified batch judge (GPT + Claude)."""
+﻿"""Unified bundle judge (GPT + Claude)."""
 
 from __future__ import annotations
 
@@ -36,24 +36,24 @@ Provider = Literal["gpt", "claude"]
 TRANSCRIPTS_DIR = REPO_ROOT / "transcripts"
 
 
-def _parse_batch_file(batch_file_path: Path) -> list[str]:
-    """Read batch .txt and return normalized transcript stems (no extension)."""
+def _parse_bundle_file(bundle_file_path: Path) -> list[str]:
+    """Read bundle .txt and return normalized transcript stems (no extension)."""
 
-    if not batch_file_path.exists():
-        raise JudgeError(f"Batch file not found: {batch_file_path}")
+    if not bundle_file_path.exists():
+        raise JudgeError(f"Bundle file not found: {bundle_file_path}")
     stems: list[str] = []
-    for line in batch_file_path.read_text(encoding="utf-8").splitlines():
+    for line in bundle_file_path.read_text(encoding="utf-8").splitlines():
         s = line.strip()
         if not s or s.startswith("#"):
             continue
         stems.append(s.replace("\\", "/"))
     if not stems:
-        raise JudgeError(f"No transcript paths in batch file: {batch_file_path}")
+        raise JudgeError(f"No transcript paths in bundle file: {bundle_file_path}")
     return stems
 
 
 def _load_transcripts(stems: list[str]) -> list[tuple[str, dict[str, Any]]]:
-    """Load and validate transcript JSON docs referenced by batch stems."""
+    """Load and validate transcript JSON docs referenced by bundle stems."""
 
     rows: list[tuple[str, dict[str, Any]]] = []
     for stem in stems:
@@ -73,7 +73,7 @@ def _load_transcripts(stems: list[str]) -> list[tuple[str, dict[str, Any]]]:
     return rows
 
 
-def _format_batch_conversation(transcripts: list[tuple[str, dict[str, Any]]]) -> tuple[str, int]:
+def _format_bundle_conversation(transcripts: list[tuple[str, dict[str, Any]]]) -> tuple[str, int]:
     """Compose multi-transcript judge input text plus total turn count."""
 
     parts: list[str] = []
@@ -104,20 +104,20 @@ def _format_batch_conversation(transcripts: list[tuple[str, dict[str, Any]]]) ->
     return "\n".join(parts).strip(), total_turns
 
 
-def judge_transcript_batch(
-    batch_file_path: str,
+def judge_transcript_bundle(
+    bundle_file_path: str,
     *,
     provider: Provider,
     prompt_name: str = "judge_05",
     rubric_name: str = "rubric_05",
     output_path: str | None = None,
 ) -> JudgeResult:
-    """Judge all transcripts listed in one batch file and save a batch-grade JSON."""
+    """Judge all transcripts listed in one bundle file and save a bundle-grade JSON."""
 
-    batch_path = Path(batch_file_path).resolve()
-    stems = _parse_batch_file(batch_path)
+    bundle_path = Path(bundle_file_path).resolve()
+    stems = _parse_bundle_file(bundle_path)
     transcripts = _load_transcripts(stems)
-    conversation_text, total_turns = _format_batch_conversation(transcripts)
+    conversation_text, total_turns = _format_bundle_conversation(transcripts)
 
     if provider == "gpt":
         model_name = os.environ.get("OPENAI_MODEL", DEFAULT_OPENAI_MODEL)
@@ -140,7 +140,7 @@ def judge_transcript_batch(
     )
     grade_json = result.get("grade_json")
     if grade_json is None:
-        raise JudgeError(f"Batch judge failed: {result.get('last_error')}")
+        raise JudgeError(f"Bundle judge failed: {result.get('last_error')}")
 
     payload = dict(grade_json)
     payload["model"] = {"provider": "openai" if provider == "gpt" else "anthropic", "model": model_name}
@@ -150,7 +150,7 @@ def judge_transcript_batch(
     payload = _order_grade_payload(payload)
 
     out_doc: dict[str, Any] = {
-        "batch_file": batch_path.name,
+        "bundle_file": bundle_path.name,
         "provider": provider,
         "prompt_name": prompt_name,
         "rubric_name": rubric_name,
@@ -160,18 +160,18 @@ def judge_transcript_batch(
     if output_path:
         out = Path(output_path).resolve()
     else:
-        out = batch_path.with_suffix(".json")
+        out = bundle_path.with_suffix(".json")
     out.write_text(json.dumps(out_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return JudgeResult(total_score=int(payload["total_score"]), max_score=int(payload["max_score"]), output_path=out)
 
 
-def judge_transcript_batch_gpt(
-    batch_file_path: str, *, prompt_name: str = "judge_05", rubric_name: str = "rubric_05", output_path: str | None = None
+def judge_transcript_bundle_gpt(
+    bundle_file_path: str, *, prompt_name: str = "judge_05", rubric_name: str = "rubric_05", output_path: str | None = None
 ) -> JudgeResult:
-    """GPT-specific convenience wrapper for batch judging."""
+    """GPT-specific convenience wrapper for bundle judging."""
 
-    return judge_transcript_batch(
-        batch_file_path,
+    return judge_transcript_bundle(
+        bundle_file_path,
         provider="gpt",
         prompt_name=prompt_name,
         rubric_name=rubric_name,
@@ -179,13 +179,13 @@ def judge_transcript_batch_gpt(
     )
 
 
-def judge_transcript_batch_claude(
-    batch_file_path: str, *, prompt_name: str = "judge_05", rubric_name: str = "rubric_05", output_path: str | None = None
+def judge_transcript_bundle_claude(
+    bundle_file_path: str, *, prompt_name: str = "judge_05", rubric_name: str = "rubric_05", output_path: str | None = None
 ) -> JudgeResult:
-    """Claude-specific convenience wrapper for batch judging."""
+    """Claude-specific convenience wrapper for bundle judging."""
 
-    return judge_transcript_batch(
-        batch_file_path,
+    return judge_transcript_bundle(
+        bundle_file_path,
         provider="claude",
         prompt_name=prompt_name,
         rubric_name=rubric_name,
@@ -196,28 +196,28 @@ def judge_transcript_batch_claude(
 __all__ = [
     "JudgeError",
     "JudgeResult",
-    "judge_transcript_batch",
-    "judge_transcript_batch_gpt",
-    "judge_transcript_batch_claude",
+    "judge_transcript_bundle",
+    "judge_transcript_bundle_gpt",
+    "judge_transcript_bundle_claude",
 ]
 
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Judge one transcript batch with GPT or Claude.")
-    parser.add_argument("batch_file_path", help="Path to batch .txt file")
+    parser = argparse.ArgumentParser(description="Judge one transcript bundle with GPT or Claude.")
+    parser.add_argument("bundle_file_path", help="Path to bundle .txt file")
     parser.add_argument("--provider", choices=["gpt", "claude"], default="gpt")
     parser.add_argument("--prompt", default="judge_05")
     parser.add_argument("--rubric", default="rubric_05")
     args = parser.parse_args()
-    result = judge_transcript_batch(
-        args.batch_file_path,
+    result = judge_transcript_bundle(
+        args.bundle_file_path,
         provider=args.provider,  # type: ignore[arg-type]
         prompt_name=args.prompt,
         rubric_name=args.rubric,
     )
-    print(f"Batch grade: {result.total_score}/{result.max_score}")
+    print(f"Bundle grade: {result.total_score}/{result.max_score}")
     print(f"Output: {result.output_path}")
 
 

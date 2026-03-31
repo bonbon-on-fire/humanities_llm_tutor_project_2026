@@ -1,4 +1,4 @@
-# Judge
+﻿# Judge
 
 LLM-based grader that scores tutor–student conversation transcripts against a rubric.
 
@@ -11,7 +11,7 @@ Current defaults in code:
 ```text
 judge/
   run_judge.py                 — unified single-transcript judge core (provider: gpt|claude)
-  run_judge_batch.py           — unified batch judge core (provider: gpt|claude)
+  run_judge_bundle.py           — unified bundle judge core (provider: gpt|claude)
   README.md
   prompts/
     judge_01.txt           — baseline prompt template
@@ -71,9 +71,9 @@ result = judge_transcript("chaotic/chaotic_claude/transcript_01", provider="clau
 print(result.total_score, result.max_score)
 ```
 
-### Batch Judging (all raw transcripts individually)
+### Bundle Judging (all raw transcripts individually)
 
-Grade every raw transcript across all persona types using the batch runners
+Grade every raw transcript across all persona types using the bundle runners
 in `ui/`:
 
 ```powershell
@@ -94,37 +94,37 @@ python -m ui.run_ui_claude --prompt judge_06 --rubric rubric_06
 Parallelism is controlled by the `PARALLEL_WORKERS` constant at the top of
 each runner file (default: 6).
 
-### Batch Judging (combined multi-transcript batches)
+### Bundle Judging (combined multi-transcript bundles)
 
 Grade transcript bundles where multiple transcripts are combined into one
 prompt for holistic/comparative evaluation:
 
 ```python
-from judge.run_judge_batch import judge_transcript_batch
+from judge.run_judge_bundle import judge_transcript_bundle
 
-result = judge_transcript_batch(
-    "transcripts/batches/batches_raw/batch_01/batch_001.txt",
+result = judge_transcript_bundle(
+    "transcripts/bundles/bundles_raw/bundle_01/bundle_001.txt",
     provider="gpt",
     prompt_name="judge_05",
     rubric_name="rubric_05",
-    output_path="transcripts/batches/batches_gpt/batch_01/batch_001.json",
+    output_path="transcripts/bundles/bundles_gpt/bundle_01/bundle_001.json",
 )
 print(result.total_score, result.max_score)
 ```
 
-To grade all batches of a given type, use the batch UI runners:
+To grade all bundles of a given type, use the bundle UI runners:
 
 ```powershell
-# GPT — grade all batch_01 bundles
-python -m ui.run_ui_batch_gpt --batch-type 01
+# GPT — grade all bundle_01 bundles
+python -m ui.run_ui_bundle_gpt --bundle-type 01
 
-# Claude — grade all batch_02 bundles
-python -m ui.run_ui_batch_claude --batch-type 02 --prompt judge_06 --rubric rubric_06
+# Claude — grade all bundle_02 bundles
+python -m ui.run_ui_bundle_claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
 ```
 
-Batch files live in `transcripts/batches/batches_raw/batch_XX/` and output
-goes to `transcripts/batches/batches_gpt/batch_XX/` (or `batches_claude/`).
-Each batch file lists 3 transcript paths; they are combined into a single
+Bundle files live in `transcripts/bundles/bundles_raw/bundle_XX/` and output
+goes to `transcripts/bundles/bundles_gpt/bundle_XX/` (or `bundles_claude/`).
+Each bundle file lists 3 transcript paths; they are combined into a single
 prompt with full metadata headers and graded holistically.
 
 ## Rubric summary

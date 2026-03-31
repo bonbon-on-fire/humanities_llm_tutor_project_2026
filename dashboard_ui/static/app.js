@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   const DEFAULT_MAX_SCORE = 47;
 
   /** Returns the current URL pathname. */
@@ -127,7 +127,7 @@
   /**
    * Render the full dashboard: score charts + sortable transcript table.
    * Sets up column-header click handlers for client-side sorting.
-   * @param {object[]} list - combined transcript and batch row objects
+   * @param {object[]} list - combined transcript and bundle row objects
    */
   function renderDashboard(list) {
     const maxScore = inferMaxScore(list);
@@ -141,7 +141,7 @@
 
     /**
      * Return the display label for a row's group column:
-     * student_persona for individual transcripts, group name for batch rows.
+     * student_persona for individual transcripts, group name for bundle rows.
      * @param {object} t
      * @returns {string}
      */
@@ -314,7 +314,7 @@
   }
 
   /**
-   * Render the full transcript detail view: metadata header, raw batch text or turn-by-turn
+   * Render the full transcript detail view: metadata header, raw bundle text or turn-by-turn
    * exchanges, and both GPT and Claude grade panels appended to #transcript-content.
    * @param {object} data - transcript detail object returned by /api/transcripts/:group/:version
    */
@@ -329,7 +329,7 @@
     html += "</div>";
 
     if (data.raw_text) {
-      html += '<details class="meta-block"><summary>Raw Batch File</summary><pre style="white-space:pre-wrap;font-size:0.85rem;margin:0.5rem 0 0">' + escapeHtml(data.raw_text) + "</pre></details>";
+      html += '<details class="meta-block"><summary>Raw Bundle File</summary><pre style="white-space:pre-wrap;font-size:0.85rem;margin:0.5rem 0 0">' + escapeHtml(data.raw_text) + "</pre></details>";
     }
     if (meta.context) {
       html += '<details class="meta-block"><summary>Context</summary><pre style="white-space:pre-wrap;font-size:0.85rem;margin:0.5rem 0 0">' + escapeHtml(meta.context) + "</pre></details>";

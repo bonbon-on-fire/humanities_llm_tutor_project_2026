@@ -1,4 +1,4 @@
-# Humanities LLM Tutor Project 2026
+﻿# Humanities LLM Tutor Project 2026
 
 ## Quick Start
 
@@ -54,8 +54,8 @@ The result is a complete research pipeline: generate conversations in bulk acros
 The system has four loosely coupled layers:
 
 - **Conversation pipeline**: Two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop. Each agent is independently configurable via system prompt files.
-- **Judge pipeline**: A separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric. Supports both single-transcript and batch (holistic, 3-transcript) grading.
-- **Batch experiment system**: Three experiment types — consistency, cross-exercise, persona differentiation — each covering 198 pre-generated batch files with zero transcript overlap.
+- **Judge pipeline**: A separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric. Supports both single-transcript and bundle (holistic, 3-transcript) grading.
+- **Bundle experiment system**: Three experiment types — consistency, cross-exercise, persona differentiation — each covering 198 pre-generated bundle files with zero transcript overlap.
 - **Dashboard + visualization**: A Flask web app for browsing transcripts side-by-side with GPT/Claude grades, and a matplotlib chart module for Pearson r / Spearman rho correlation analysis.
 
 ### Key Components
@@ -66,11 +66,11 @@ The system has four loosely coupled layers:
 
 **Judge (`judge/run_judge.py`)**: Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure (up to 3 attempts), and writes the grade back into the transcript file.
 
-**Batch Judge (`judge/run_judge_batch.py`)**: Combines 3 transcripts into one prompt for holistic, comparative grading using selected provider (`gpt` or `claude`) — allowing consistency/persona differentiation analysis across a set.
+**Bundle Judge (`judge/run_judge_bundle.py`)**: Combines 3 transcripts into one prompt for holistic, comparative grading using selected provider (`gpt` or `claude`) — allowing consistency/persona differentiation analysis across a set.
 
-**UI Runners (`ui/`)**: Five parallelized batch runners (ThreadPoolExecutor, default 6 workers) for raw generation and GPT/Claude judging of individual and batch transcripts. All accept `--prompt` and `--rubric` CLI flags.
+**UI Runners (`ui/`)**: Five parallelized bundle runners (ThreadPoolExecutor, default 6 workers) for raw generation and GPT/Claude judging of individual and bundle transcripts. All accept `--prompt` and `--rubric` CLI flags.
 
-**Dashboard (`dashboard_ui/`)**: Flask app that discovers all transcripts and batch files on disk, loads GPT and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
+**Dashboard (`dashboard_ui/`)**: Flask app that discovers all transcripts and bundle files on disk, loads GPT and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
 
 ## Code in Action: Conversation Example
 
@@ -164,14 +164,14 @@ result = judge_transcript(
 print(result.total_score, result.max_score)  # e.g. 38, 46
 ```
 
-**5. Grade a batch of 3 transcripts together**
+**5. Grade a bundle of 3 transcripts together**
 
 ```python
-result = judge_transcript_batch(
-    "transcripts/batches/batches_raw/batch_01/batch_001.txt",
+result = judge_transcript_bundle(
+    "transcripts/bundles/bundles_raw/bundle_01/bundle_001.txt",
     prompt_name="judge_05",
     rubric_name="rubric_05",
-    output_path="transcripts/batches/batches_gpt/batch_01/batch_001.json",
+    output_path="transcripts/bundles/bundles_gpt/bundle_01/bundle_001.json",
 )
 ```
 
@@ -203,7 +203,7 @@ humanities_llm_tutor_project_2026/
 │
 ├── judge/
 │   ├── run_judge.py              # Unified single-transcript judge (provider gpt/claude)
-│   ├── run_judge_batch.py        # Unified batch judge (provider gpt/claude)
+│   ├── run_judge_bundle.py        # Unified bundle judge (provider gpt/claude)
 │   ├── prompts/             # judge_01..06.txt
 │   └── rubrics/             # rubric_01..06.md (current: rubric_05)
 │
@@ -211,14 +211,14 @@ humanities_llm_tutor_project_2026/
 │   ├── run_ui_raw.py        # Generate raw transcripts (edit config at top)
 │   ├── run_ui_gpt.py        # Grade all raw transcripts with GPT
 │   ├── run_ui_claude.py     # Grade all raw transcripts with Claude
-│   ├── run_ui_batch_gpt.py  # Grade batch bundles with GPT
-│   └── run_ui_batch_claude.py  # Grade batch bundles with Claude
+│   ├── run_ui_bundle_gpt.py  # Grade bundle bundles with GPT
+│   └── run_ui_bundle_claude.py  # Grade bundle bundles with Claude
 │
 ├── transcripts/
 │   ├── chaotic/             # chaotic_raw/, chaotic_gpt/, chaotic_claude/
 │   ├── cooperative/         # cooperative_raw/, cooperative_gpt/, cooperative_claude/
 │   ├── clueless/            # clueless_raw/, clueless_gpt/, clueless_claude/
-│   └── batches/             # batches_raw/, batches_gpt/, batches_claude/
+│   └── bundles/             # bundles_raw/, bundles_gpt/, bundles_claude/
 │
 ├── dashboard_ui/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
@@ -254,9 +254,9 @@ humanities_llm_tutor_project_2026/
 - **Location:** `transcripts/<persona>/<persona>_raw/transcript_NN.json`
 - **Format:** JSON with run metadata, `exchanges` array, and (after grading) a `grade` object. See `transcripts/README.md` for the full schema.
 
-#### 4. Batch Files
+#### 4. Bundle Files
 
-- **Location:** `transcripts/batches/batches_raw/batch_XX/batch_NNN.txt`
+- **Location:** `transcripts/bundles/bundles_raw/bundle_XX/bundle_NNN.txt`
 - **Format:** Plain text, one transcript path stem per line (comments with `#` are skipped). Three paths per file.
 
 #### 5. UI Runner Config
@@ -271,7 +271,7 @@ The full pipeline is working end-to-end, with:
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
 - 2 courses: `philosophy` (1 exercise) and `urban_studies` (3 exercises)
 - 288 raw transcripts × 3 persona types = 864 total transcript files (raw + GPT-graded + Claude-graded)
-- 198 batch files across 3 experiment types (72 + 54 + 72), covering 594 unique transcripts
+- 198 bundle files across 3 experiment types (72 + 54 + 72), covering 594 unique transcripts
 - Rubric versioned up to `rubric_06` (current default: `rubric_05`, 46 pts)
 - Dashboard fully functional for side-by-side GPT/Claude grade comparison
 - Visualization outputs Pearson r and Spearman rho between GPT and Claude scores
@@ -284,13 +284,13 @@ The full pipeline is working end-to-end, with:
 
 **LLM judge output validation**: Judge responses sometimes came back with float scores, missing fields, or malformed JSON. Built a multi-strategy extraction pipeline (raw JSON → fenced code block → brace extraction → `ast.literal_eval`) with up to 3 repair-and-retry cycles.
 
-**Batch experiment design**: Ensuring zero transcript overlap within each batch type while maintaining balanced coverage across personas and courses required a careful grouping algorithm. Each of the 198 batches contains exactly 3 unique transcripts, and no transcript appears twice in the same batch type.
+**Bundle experiment design**: Ensuring zero transcript overlap within each bundle type while maintaining balanced coverage across personas and courses required a careful grouping algorithm. Each of the 198 bundles contains exactly 3 unique transcripts, and no transcript appears twice in the same bundle type.
 
 **GPT vs Claude grade alignment**: Initial rubric versions produced high inter-judge variance. Migrating to `rubric_05` (simplified scoring, no malus deductions, mandatory sub-criterion IDs on deductions) measurably improved GPT/Claude correlation.
 
 ## Future Possibilities
 
-- Statistical analysis of batch experiment results (score variance, exercise difficulty effects, persona differentiation scores)
+- Statistical analysis of bundle experiment results (score variance, exercise difficulty effects, persona differentiation scores)
 - Additional student persona families and course subjects
 - Human-in-the-loop evaluation to calibrate the LLM judge against human graders
 - Streaming live conversations through the dashboard UI
@@ -298,7 +298,7 @@ The full pipeline is working end-to-end, with:
 
 ## TL;DR
 
-I built a full research pipeline that simulates adversarial Socratic tutoring conversations between an LLM tutor and student bots, grades those conversations automatically using GPT and Claude as judges, and compares the two judges across 864 transcripts and 198 batch experiment files — with a web dashboard for browsing results and a visualization module for correlation analysis.
+I built a full research pipeline that simulates adversarial Socratic tutoring conversations between an LLM tutor and student bots, grades those conversations automatically using GPT and Claude as judges, and compares the two judges across 864 transcripts and 198 bundle experiment files — with a web dashboard for browsing results and a visualization module for correlation analysis.
 
 ---
 

@@ -1,6 +1,6 @@
-# Transcripts
+﻿# Transcripts
 
-Generated tutor-student conversation transcripts and batch experiment files
+Generated tutor-student conversation transcripts and bundle experiment files
 for the Humanities LLM Tutor project.
 
 ## Folder Structure
@@ -19,13 +19,13 @@ transcripts/
 │   ├── clueless_raw/          # 96 raw transcripts
 │   ├── clueless_gpt/          # 96 GPT-graded transcripts
 │   └── clueless_claude/       # 96 Claude-graded transcripts
-├── batches/                   # Multi-transcript batch experiments
-│   ├── batches_raw/           # 198 batch definition files (.txt)
-│   ├── batches_gpt/           # GPT batch-graded output (.json)
-│   ├── batches_claude/        # Claude batch-graded output (.json)
-│   ├── batch_01.md            # Type 01 experiment docs
-│   ├── batch_02.md            # Type 02 experiment docs
-│   └── batch_03.md            # Type 03 experiment docs
+├── bundles/                   # Multi-transcript bundle experiments
+│   ├── bundles_raw/           # 198 bundle definition files (.txt)
+│   ├── bundles_gpt/           # GPT bundle-graded output (.json)
+│   ├── bundles_claude/        # Claude bundle-graded output (.json)
+│   ├── bundle_01.md            # Type 01 experiment docs
+│   ├── bundle_02.md            # Type 02 experiment docs
+│   └── bundle_03.md            # Type 03 experiment docs
 └── README.md
 ```
 
@@ -38,7 +38,7 @@ transcripts/
 | clueless    | 96  | 96         | 96            | 288     |
 | **Total**   | 288 | 288        | 288           | **864** |
 
-Batch files: 198 (72 + 54 + 72 across 3 experiment types).
+Bundle files: 198 (72 + 54 + 72 across 3 experiment types).
 
 ## Subfolder Convention
 
@@ -151,25 +151,25 @@ python -m ui.run_ui_claude
 Both accept `--prompt` and `--rubric` flags. Output goes to the respective
 `_gpt` or `_claude` subfolder.
 
-### Batch Grading
+### Bundle Grading
 
-The batch system enables holistic grading experiments where multiple transcripts
+The bundle system enables holistic grading experiments where multiple transcripts
 are judged together, allowing the LLM to make comparative assessments rather than
-evaluating transcripts in isolation. Each batch file lists 3 transcript paths;
+evaluating transcripts in isolation. Each bundle file lists 3 transcript paths;
 they are combined into a single prompt and graded as one unit.
 
 ```powershell
-# Grade all Type 01 batches with GPT
-python -m ui.run_ui_batch_gpt --batch-type 01
+# Grade all Type 01 bundles with GPT
+python -m ui.run_ui_bundle_gpt --bundle-type 01
 
-# Grade all Type 02 batches with Claude
-python -m ui.run_ui_batch_claude --batch-type 02 --prompt judge_06 --rubric rubric_06
+# Grade all Type 02 bundles with Claude
+python -m ui.run_ui_bundle_claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
 ```
 
-Both runners accept `--batch-type` (required), `--prompt`, and `--rubric` flags.
+Both runners accept `--bundle-type` (required), `--prompt`, and `--rubric` flags.
 Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) in each runner.
 
-#### Batch Types
+#### Bundle Types
 
 | Type | Description | Count |
 | ---- | ----------- | ----- |
@@ -177,44 +177,44 @@ Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) in each runner.
 | **02** | Same persona + version, different exercise — tests cross-exercise validity | 54 |
 | **03** | Different persona, same version + exercise — tests persona differentiation | 72 |
 
-**Total**: 198 batch files covering 594 unique transcripts (3 per batch).
+**Total**: 198 bundle files covering 594 unique transcripts (3 per bundle).
 
 #### Experimental Design
 
-- **Zero overlap**: each transcript appears in exactly one batch per type — no duplicates within a type.
+- **Zero overlap**: each transcript appears in exactly one bundle per type — no duplicates within a type.
 - **Type 01** controls persona, version, and exercise (what varies: random trial selection).
 - **Type 02** controls persona and version (what varies: exercise).
 - **Type 03** controls version and exercise (what varies: persona).
 - All available raw transcripts across `chaotic`, `cooperative`, and `clueless` are included, covering both `philosophy` and `urban_studies` courses.
 
-#### Batch File Format
+#### Bundle File Format
 
-Each `.txt` batch file in `batches_raw/batch_XX/` lists 3 transcript path stems:
+Each `.txt` bundle file in `bundles_raw/bundle_XX/` lists 3 transcript path stems:
 
 ```text
-# Batch Type X - Batch Y
-# Generated batch with 3 transcripts
+# Bundle Type X - Bundle Y
+# Generated bundle with 3 transcripts
 
 chaotic\chaotic_raw\transcript_01
 cooperative\cooperative_raw\transcript_05
 clueless\clueless_raw\transcript_12
 ```
 
-#### How Batch Grading Works
+#### How Bundle Grading Works
 
-1. Read the batch `.txt` file to get 3 transcript path stems.
+1. Read the bundle `.txt` file to get 3 transcript path stems.
 2. Load each transcript JSON from `transcripts/{persona}/{persona}_raw/`.
 3. Combine all 3 into a single prompt with metadata headers (persona, course, exercise, turn count) before each transcript.
 4. Send the combined prompt to the judge for one holistic grade.
-5. Write the output `.json` to `batches_gpt/` or `batches_claude/` containing all original transcripts plus the grade.
+5. Write the output `.json` to `bundles_gpt/` or `bundles_claude/` containing all original transcripts plus the grade.
 
-#### Graded Batch Output Schema
+#### Graded Bundle Output Schema
 
-Each graded batch JSON contains:
+Each graded bundle JSON contains:
 
 ```json
 {
-  "batch_file": "batch_001.txt",
+  "bundle_file": "bundle_001.txt",
   "transcript_count": 3,
   "transcript_sources": ["chaotic/chaotic_raw/transcript_01", "..."],
   "transcripts": [ ... ],
@@ -224,17 +224,17 @@ Each graded batch JSON contains:
 
 The `grade` object follows the same schema as individual transcript grading.
 
-#### Single Batch Judging (Python API)
+#### Single Bundle Judging (Python API)
 
 ```python
-from judge.run_judge_batch import judge_transcript_batch
+from judge.run_judge_bundle import judge_transcript_bundle
 
-result = judge_transcript_batch(
-    "transcripts/batches/batches_raw/batch_01/batch_001.txt",
+result = judge_transcript_bundle(
+    "transcripts/bundles/bundles_raw/bundle_01/bundle_001.txt",
     provider="gpt",
     prompt_name="judge_05",
     rubric_name="rubric_05",
-    output_path="transcripts/batches/batches_gpt/batch_01/batch_001.json",
+    output_path="transcripts/bundles/bundles_gpt/bundle_01/bundle_001.json",
 )
 print(result.total_score, result.max_score)
 ```
@@ -245,11 +245,11 @@ print(result.total_score, result.max_score)
 - **Type 02 — Cross-exercise validity**: Are some exercises systematically harder? How should exercise difficulty be calibrated?
 - **Type 03 — Persona differentiation**: Can the judge distinguish between different student types? Are scoring standards appropriately adapted per persona?
 
-#### Batch Type Documentation
+#### Bundle Type Documentation
 
-- [batch_01.md](batches/batch_01.md) — Type 01 detailed explanation
-- [batch_02.md](batches/batch_02.md) — Type 02 detailed explanation
-- [batch_03.md](batches/batch_03.md) — Type 03 detailed explanation
+- [bundle_01.md](bundles/bundle_01.md) — Type 01 detailed explanation
+- [bundle_02.md](bundles/bundle_02.md) — Type 02 detailed explanation
+- [bundle_03.md](bundles/bundle_03.md) — Type 03 detailed explanation
 
 ## Visualization
 

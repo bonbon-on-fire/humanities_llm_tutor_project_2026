@@ -1,4 +1,4 @@
-# Humanities LLM Tutor Project 2026 — Planning Document
+﻿# Humanities LLM Tutor Project 2026 — Planning Document
 
 Use this document to capture project vision, scope, obstacles, and decisions. Update it as the project evolves.
 
@@ -110,7 +110,7 @@ Concrete examples that illustrate where the current design can fail and what we 
 
 - **Terminal UI** (`python -m terminal_ui`): interactive pipeline — selects tutor prompt, student persona, course, exercise, number of turns; runs tutor vs student; saves transcript; invokes judge.
 - **Web UI** (`python -m web_ui`): Flask-based browser chat with config panel for tutor prompt, student persona, course, exercise; student-bot turn button; debug reasoning display.
-- **Dashboard UI** (`python -m dashboard_ui.run_dashboard_ui`): Flask dashboard that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`), includes batch rows from `transcripts/batches/batches_raw`, and attaches GPT/Claude score panels from corresponding counterpart files (with explicit per-provider errors for missing/ambiguous/mismatched pairs).
+- **Dashboard UI** (`python -m dashboard_ui.run_dashboard_ui`): Flask dashboard that uses raw transcripts as the source of truth (`transcripts/{persona}/{persona}_raw`), includes bundle rows from `transcripts/bundles/bundles_raw`, and attaches GPT/Claude score panels from corresponding counterpart files (with explicit per-provider errors for missing/ambiguous/mismatched pairs).
 
 ---
 
@@ -375,7 +375,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 - Uses `tutor.run_tutor` API (prompt version selectable).
 - Uses `judge.judge_transcript()` with selectable judge prompt and rubric versions.
 - Assignment context loaded as `curriculum/{course}/course.txt` + `exercise_{num}.txt` (combined and passed to both tutor and student).
-- Added `python -m terminal_ui.run_batch` to automate persona × exercise × `N` trials with transcript generation and judge scoring.
+- Added `python -m terminal_ui.run_bundle` to automate persona × exercise × `N` trials with transcript generation and judge scoring.
 - Added `python -m ui.run_ui_raw` to automate persona × exercise × `N` raw transcript generation before judge evaluation, with outputs routed to `transcripts/{persona_type}/{persona_type}_raw/`.
 - Added `python -m ui.run_ui_gpt` and `python -m ui.run_ui_claude` to score selected raw transcripts by provider and write judged copies to `transcripts/{persona_type}/{persona_type}_gpt/` and `transcripts/{persona_type}/{persona_type}_claude/`.
 - Transcripts saved to `transcripts/{persona_type}/transcript_XX.json`.
@@ -456,21 +456,21 @@ web_ui/
 
 - Updated `visualization/README.md` to reflect JSON-based inputs and removed references to `transcripts_compiled*.csv`.
 
-### 03/20/2026 — Batch judging system (completed)
+### 03/20/2026 — Bundle judging system (completed)
 
 - **Problem**: Need to judge transcript bundles together for comparative analysis experiments.
-- **Solution**: Created parallel batch judge runners that process multiple transcripts in a single LLM call.
+- **Solution**: Created parallel bundle judge runners that process multiple transcripts in a single LLM call.
 - **Implementation**:
-  - `judge/run_judge_batch_gpt.py` — GPT batch judge for transcript bundles
-  - `judge/run_judge_batch_claude.py` — Claude batch judge for transcript bundles  
-  - `create_batch.py` — Script to generate 198 transcript bundles across 3 experiment types
-  - Batch types with zero overlap within each type:
-    - Type 01 (72 batches): Same persona + same version + same exercise
-    - Type 02 (54 batches): Same persona + same version + different exercise
-    - Type 03 (72 batches): Different persona + same version + same exercise
-  - Batch files stored in `transcripts/batches/batch_##/batch_###.txt`
-  - Individual graded outputs named: `{output_name}_batch_{index:02d}__{prompt_name}__{rubric_name}__{provider}.json`
-- **Usage**: `judge_transcript_batch("unused", batch_file_path="transcripts/batches/batch_01/batch_001.txt")`
+  - `judge/run_judge_bundle_gpt.py` — GPT bundle judge for transcript bundles
+  - `judge/run_judge_bundle_claude.py` — Claude bundle judge for transcript bundles  
+  - `create_bundle.py` — Script to generate 198 transcript bundles across 3 experiment types
+  - Bundle types with zero overlap within each type:
+    - Type 01 (72 bundles): Same persona + same version + same exercise
+    - Type 02 (54 bundles): Same persona + same version + different exercise
+    - Type 03 (72 bundles): Different persona + same version + same exercise
+  - Bundle files stored in `transcripts/bundles/bundle_##/bundle_###.txt`
+  - Individual graded outputs named: `{output_name}_bundle_{index:02d}__{prompt_name}__{rubric_name}__{provider}.json`
+- **Usage**: `judge_transcript_bundle("unused", bundle_file_path="transcripts/bundles/bundle_01/bundle_001.txt")`
 - **Benefits**: Enables holistic grading experiments where LLM judges multiple transcripts together for comparative analysis.
 
 ### 03/27/2026 — GPT judge known issues
