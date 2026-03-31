@@ -44,7 +44,7 @@ _TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
 _TUTOR_GREETING = "Hi. What would you like to work on today?"
 _RAW_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
     "chaotic": "chaotic_raw",
-    "chitchat": "chitchat_raw",
+    "cooperative": "cooperative_raw",
     "clueless": "clueless_raw",
 }
 _TUTOR_CALL_MAX_RETRIES = 2

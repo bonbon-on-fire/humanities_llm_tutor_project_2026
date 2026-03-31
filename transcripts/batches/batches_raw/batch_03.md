@@ -1,7 +1,7 @@
 # Batch Type 03: Different Persona + Same Version + Same Exercise
 
 This batch type groups transcripts that share exercise and version but differ in student persona:
-- **Different student personas** (e.g., `chaotic_01`, `chitchat_01`, `clueless_01`)
+- **Different student personas** (e.g., `chaotic_01`, `cooperative_01`, `clueless_01`)
 - **Same persona version** (e.g., all version `01`)
 - **Same exercise** (e.g., all `philosophy/exercise_01`)
 

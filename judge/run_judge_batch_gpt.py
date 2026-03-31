@@ -27,17 +27,33 @@ judge_transcript_batch = judge_transcript_batch_gpt
 __all__ = ["JudgeError", "JudgeResult", "judge_transcript_batch", "run_all_batches_of_type"]
 
 
+def _resolve_batch_dir() -> Path:
+    primary = Path("transcripts/batches/batches_raw")
+    fallback = Path("judge/transcript_batches")
+    if primary.exists():
+        return primary
+    if fallback.exists():
+        return fallback
+    return primary
+
+
 def run_all_batches_of_type(batch_type: int) -> None:
     count = _BATCH_TYPE_COUNTS.get(batch_type)
     if count is None:
         raise JudgeError(f"Invalid batch type: {batch_type}. Expected 1, 2, or 3.")
     prefix = f"batch_{batch_type:02d}"
+    raw_root = _resolve_batch_dir()
+    in_dir = raw_root / prefix if (raw_root / prefix).exists() else raw_root
+    out_root = Path("transcripts/batches/batches_gpt")
+    out_dir = out_root / prefix
+    out_dir.mkdir(parents=True, exist_ok=True)
     print(f"Running GPT batch type {batch_type:02d} ({count} files)")
     failures = 0
     for i in range(1, count + 1):
-        batch_file = Path("judge/transcript_batches") / f"{prefix}_{i:03d}.txt"
-        out_name = f"{prefix}_{i:03d}__{JUDGE_PROMPT}__{RUBRIC_NAME}__gpt.json"
-        out_path = batch_file.with_name(out_name)
+        batch_file = in_dir / f"batch_{i:03d}.txt"
+        if not batch_file.exists():
+            batch_file = in_dir / f"{prefix}_{i:03d}.txt"
+        out_path = out_dir / f"batch_{i:03d}.json"
         try:
             result = judge_transcript_batch(
                 str(batch_file),

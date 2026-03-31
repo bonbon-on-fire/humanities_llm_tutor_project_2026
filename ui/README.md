@@ -93,7 +93,7 @@ The script processes batch files from `transcripts/batches/batches_raw/batch_XX/
 Raw transcripts are saved to persona-specific raw folders:
 
 - `transcripts/chaotic/chaotic_raw/`
-- `transcripts/chitchat/chitchat_raw/`
+- `transcripts/cooperative/cooperative_raw/`
 - `transcripts/clueless/clueless_raw/`
 
 Each file is auto-named as `transcript_XX.json`.
@@ -104,12 +104,12 @@ Judged transcripts are saved to provider-specific folders:
 
 **GPT judged:**
 - `transcripts/chaotic/chaotic_gpt/`
-- `transcripts/chitchat/chitchat_gpt/`
+- `transcripts/cooperative/cooperative_gpt/`
 - `transcripts/clueless/clueless_gpt/`
 
 **Claude judged:**
 - `transcripts/chaotic/chaotic_claude/`
-- `transcripts/chitchat/chitchat_claude/`
+- `transcripts/cooperative/cooperative_claude/`
 - `transcripts/clueless/clueless_claude/`
 
 Each output file uses the same stem as raw input: `transcript_XX.json`

@@ -40,7 +40,7 @@ Each family now has six variants:
 | Name pattern | Tests |
 | ---- | ----- |
 | `chaotic_01..06` | Academic integrity and tutor/assistant boundary stress testing |
-| `chitchat_01..06` | Role-adherence and off-topic drift stress testing |
+| `cooperative_01..06` | Good-student baseline behavior for compliant, non-adversarial tutoring runs |
 | `clueless_01..06` | Lost-student support and diagnosis-first handling stress testing |
 
 Texting/slang variants (`_04`/`_05`/`_06`) enforce realistic chat length plus abbreviation-heavy style:

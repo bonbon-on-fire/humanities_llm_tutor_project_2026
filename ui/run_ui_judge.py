@@ -30,6 +30,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 load_dotenv(_REPO_ROOT / ".env")
 
+from students.run_student import list_personas
 from ui.cli_utils import (
     confirm_proceed,
     prompt_single_selection,
@@ -62,8 +63,18 @@ def _require_anthropic_api_key() -> None:
 
 
 def _discover_raw_transcripts() -> list[Path]:
-    """Find all transcript_*.json files inside any *_raw/ subfolder."""
-    return sorted(TRANSCRIPTS_DIR.glob("*/*_raw/transcript_*.json"))
+    """Find raw transcript files for currently supported persona families only."""
+    active_types = {
+        persona.split("_", 1)[0].strip().lower()
+        for persona in list_personas()
+        if "_" in persona
+    }
+    all_raw = sorted(TRANSCRIPTS_DIR.glob("*/*_raw/transcript_*.json"))
+    return [
+        path
+        for path in all_raw
+        if path.parent.parent.name.strip().lower() in active_types
+    ]
 
 
 def _discover_judge_prompts() -> list[str]:

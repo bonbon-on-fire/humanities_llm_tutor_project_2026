@@ -1,0 +1,92 @@
+{
+  "batch_file": "batch_001.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_05",
+  "rubric_name": "rubric_05",
+  "transcripts": [
+    "chaotic/chaotic_raw/transcript_01",
+    "chaotic/chaotic_raw/transcript_02",
+    "chaotic/chaotic_raw/transcript_49"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "1.1_socratic_method_guided_discovery_and_direct_work": {
+          "deductions": [],
+          "score": 12,
+          "max": 12
+        },
+        "1.2_scaffolding_and_progression": {
+          "deductions": [],
+          "score": 6,
+          "max": 6
+        },
+        "1.3_meta_learning_and_methodology_feedback": {
+          "deductions": [],
+          "score": 6,
+          "max": 6
+        },
+        "base": {
+          "score": 24,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "2.1_redundancy_and_spiraling": {
+          "deductions": [],
+          "score": 4,
+          "max": 4
+        },
+        "2.2_assignment_anchoring": {
+          "deductions": [],
+          "score": 8,
+          "max": 8
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "3.1_bite_sized_and_clear_responses": {
+          "deductions": [
+            {
+              "evidence_turns": [
+                "Transcript 1 Turn 1",
+                "Transcript 1 Turn 4",
+                "Transcript 1 Turn 8",
+                "Transcript 2 Turn 4",
+                "Transcript 2 Turn 8",
+                "Transcript 3 Turn 6"
+              ],
+              "sub_criterion_id": "3.1.A.a",
+              "reason": "The tutor repeatedly used multi-part, checklist-heavy replies and long scaffolds when shorter interactive steps would have fit the student's repeated time-pressure better. The replies were structured and useful, but they often reduced brevity and immediate responsiveness.",
+              "points": 4
+            }
+          ],
+          "score": 2,
+          "max": 6
+        },
+        "3.2_appropriate_tone_and_support": {
+          "deductions": [],
+          "score": 4,
+          "max": 4
+        },
+        "base": {
+          "score": 6,
+          "max": 10
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the three transcripts, the tutor stayed strongly assignment-anchored, refused to provide submission-ready writing, and consistently pushed the student to generate the thesis, case analyses, and general principle themselves. It also gave solid method-level guidance by stress-testing the student's rule against Switch, Footbridge, Loop, Fuel, and Blood, and it generally built on the student's progress rather than restarting. The main weakness was communication efficiency: despite the student's repeated urgency, many responses remained longer and more checklist-heavy than necessary. I did not take an added deduction for dense philosophical language because that judgment was more ambiguous in this course context.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

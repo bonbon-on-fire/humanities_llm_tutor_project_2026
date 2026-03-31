@@ -11,10 +11,12 @@ Current defaults in code:
 ```text
 judge/
   __init__.py                  — package exports (lazy-loads from run_judge_gpt)
-  run_judge_gpt.py             — GPT judge: single-transcript scoring API (OpenAI)
-  run_judge_claude.py          — Claude judge: single-transcript scoring API (Anthropic)
-  run_judge_batch_gpt.py       — GPT judge: batch (combined multi-transcript) scoring API
-  run_judge_batch_claude.py    — Claude judge: batch (combined multi-transcript) scoring API
+  run_judge_unified.py         — shared single-transcript judge core (GPT + Claude)
+  run_judge_gpt.py             — GPT single-transcript wrapper (imports from unified core)
+  run_judge_claude.py          — Claude single-transcript wrapper (imports from unified core)
+  run_judge_batch_unified.py   — shared batch judge core (GPT + Claude)
+  run_judge_batch_gpt.py       — GPT batch wrapper + batch-type runner
+  run_judge_batch_claude.py    — Claude batch wrapper + batch-type runner
   README.md
   prompts/
     judge_01.txt           — baseline prompt template

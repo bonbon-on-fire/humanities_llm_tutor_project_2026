@@ -11,10 +11,10 @@ transcripts/
 │   ├── chaotic_raw/           # 96 raw (ungraded) transcripts
 │   ├── chaotic_gpt/           # 96 GPT-graded transcripts
 │   └── chaotic_claude/        # 96 Claude-graded transcripts
-├── chitchat/                  # Chitchat student persona
-│   ├── chitchat_raw/          # 96 raw transcripts
-│   ├── chitchat_gpt/          # 96 GPT-graded transcripts
-│   └── chitchat_claude/       # 96 Claude-graded transcripts
+├── cooperative/               # Cooperative student persona
+│   ├── cooperative_raw/       # 96 raw transcripts
+│   ├── cooperative_gpt/       # 96 GPT-graded transcripts
+│   └── cooperative_claude/    # 96 Claude-graded transcripts
 ├── clueless/                  # Clueless student persona
 │   ├── clueless_raw/          # 96 raw transcripts
 │   ├── clueless_gpt/          # 96 GPT-graded transcripts
@@ -34,7 +34,7 @@ transcripts/
 | Persona   | Raw | GPT-graded | Claude-graded | Total |
 | --------- | --- | ---------- | ------------- | ----- |
 | chaotic   | 96  | 96         | 96            | 288   |
-| chitchat  | 96  | 96         | 96            | 288   |
+| cooperative | 96 | 96        | 96            | 288   |
 | clueless  | 96  | 96         | 96            | 288   |
 | **Total** | 288 | 288        | 288           | **864** |
 
@@ -102,7 +102,7 @@ Graded transcripts additionally contain a top-level `grade` object:
 | Field | Description |
 | ----- | ----------- |
 | `tutor_prompt` | Tutor system prompt version used |
-| `student_persona` | Student persona identifier (e.g. `chaotic_01`, `chitchat_02`) |
+| `student_persona` | Student persona identifier (e.g. `chaotic_01`, `cooperative_02`) |
 | `course` | Course name: `philosophy` or `urban_studies` |
 | `exercise_number` | Exercise identifier within the course |
 | `turn_size` | Planned number of exchanges |
@@ -116,7 +116,7 @@ Graded transcripts additionally contain a top-level `grade` object:
 | Persona | Behavior |
 | ------- | -------- |
 | **chaotic** | Challenges boundaries, tests edge cases, requests direct answers |
-| **chitchat** | Goes off-topic, needs redirection to assignment |
+| **cooperative** | Good-student baseline that stays on-task and follows guidance |
 | **clueless** | Genuinely confused, needs scaffolding and patience |
 
 Each persona has multiple versions (e.g. `chaotic_01`, `chaotic_02`).
@@ -185,7 +185,7 @@ Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) in each runner.
 - **Type 01** controls persona, version, and exercise (what varies: random trial selection).
 - **Type 02** controls persona and version (what varies: exercise).
 - **Type 03** controls version and exercise (what varies: persona).
-- All available raw transcripts across `chaotic`, `chitchat`, and `clueless` are included, covering both `philosophy` and `urban_studies` courses.
+- All available raw transcripts across `chaotic`, `cooperative`, and `clueless` are included, covering both `philosophy` and `urban_studies` courses.
 
 #### Batch File Format
 
@@ -196,7 +196,7 @@ Each `.txt` batch file in `batches_raw/batch_XX/` lists 3 transcript path stems:
 # Generated batch with 3 transcripts
 
 chaotic\chaotic_raw\transcript_01
-chitchat\chitchat_raw\transcript_05
+cooperative\cooperative_raw\transcript_05
 clueless\clueless_raw\transcript_12
 ```
 

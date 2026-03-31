@@ -36,7 +36,7 @@ TRANSCRIPTS_DIR = _resolve_transcripts_dir()
 
 
 def _discover_persona_groups() -> list[str]:
-    """Return persona group names (e.g. chaotic, chitchat) found under TRANSCRIPTS_DIR."""
+    """Return persona group names (e.g. chaotic, cooperative) found under TRANSCRIPTS_DIR."""
     if not TRANSCRIPTS_DIR.is_dir():
         return []
 

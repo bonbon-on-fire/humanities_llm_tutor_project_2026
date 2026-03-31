@@ -1069,7 +1069,7 @@ def main() -> int:
         chart_idx += 1
 
         # Persona-specific heatmaps per provider.
-        for persona in ("chaotic", "chitchat", "clueless"):
+        for persona in ("chaotic", "cooperative", "clueless"):
             persona_rows = _filter_individual_rows(provider_rows, {persona})
             _chart_subsection_correlation_heatmap(
                 persona_rows,
@@ -1094,7 +1094,7 @@ def main() -> int:
     batch_claude_all = _read_batch_rows(batches_dir, "claude", batch_type)
     print(f"Loaded batch_{batch_type} GPT: {len(batch_gpt_all)} batches   Claude: {len(batch_claude_all)} batches")
 
-    for persona in ("chaotic", "chitchat", "clueless"):
+    for persona in ("chaotic", "cooperative", "clueless"):
         batch_gpt = _filter_batch_rows(batch_gpt_all, {persona})
         batch_claude = _filter_batch_rows(batch_claude_all, {persona})
         print(f"Loaded batch_{batch_type} {persona} GPT: {len(batch_gpt)} batches   Claude: {len(batch_claude)} batches")

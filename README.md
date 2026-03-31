@@ -195,7 +195,7 @@ humanities_llm_tutor_project_2026/
 │
 ├── students/
 │   ├── run_student.py       # Shared LangGraph engine for all personas
-│   └── personas/            # chaotic_01..06, chitchat_01..06, clueless_01..06
+│   └── personas/            # chaotic_01..06, cooperative_01..06, clueless_01..06
 │
 ├── tutor/
 │   ├── run_tutor.py         # LangGraph engine + prompt loading + response parsing
@@ -218,7 +218,7 @@ humanities_llm_tutor_project_2026/
 │
 ├── transcripts/
 │   ├── chaotic/             # chaotic_raw/, chaotic_gpt/, chaotic_claude/
-│   ├── chitchat/            # chitchat_raw/, chitchat_gpt/, chitchat_claude/
+│   ├── cooperative/         # cooperative_raw/, cooperative_gpt/, cooperative_claude/
 │   ├── clueless/            # clueless_raw/, clueless_gpt/, clueless_claude/
 │   └── batches/             # batches_raw/, batches_gpt/, batches_claude/
 │
@@ -270,7 +270,7 @@ humanities_llm_tutor_project_2026/
 
 The full pipeline is working end-to-end, with:
 
-- 3 persona families × 6 variants each (chaotic, chitchat, clueless) — 18 student personas total
+- 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
 - 2 courses: `philosophy` (1 exercise) and `urban_studies` (3 exercises)
 - 288 raw transcripts × 3 persona types = 864 total transcript files (raw + GPT-graded + Claude-graded)
 - 198 batch files across 3 experiment types (72 + 54 + 72), covering 594 unique transcripts

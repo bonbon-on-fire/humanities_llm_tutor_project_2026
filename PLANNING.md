@@ -154,8 +154,8 @@ students/
     chaotic_01.md      — human-readable summary (few sentences: what this persona tests)
     chaotic_02.txt
     chaotic_02.md
-    chitchat_01.txt
-    chitchat_01.md
+    cooperative_01.txt
+    cooperative_01.md
     clueless_01.txt
     clueless_01.md
 ```
@@ -179,7 +179,7 @@ msg = get_next_student_message(
 - All `persona.md` files (4 files) — dead files, not used by any code
 - All per-student `README.md` files (4 files) — outdated, wrong import paths
 - All nested `__init__.py` files (8 files) — no more nested packages
-- Entire folder tree: `chaotic_student/`, `chitchat_student/`, `clueless_student/` subdirectories
+- Entire folder tree: `chaotic_student/`, `cooperative_student/`, `clueless_student/` subdirectories
 
 **What's new:**
 - `students/run_student.py` — one shared engine; `prompt_name` parameter selects the persona
@@ -358,7 +358,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
 | Step | What | Discovery |
 | ---- | ---- | --------- |
 | 0 | Tutor prompt version | Scans `tutor/prompts/*.txt` |
-| 1 | Student persona type | `chaotic`, `chitchat`, `clueless` |
+| 1 | Student persona type | `chaotic`, `cooperative`, `clueless` |
 | 2 | Persona version | Scans `students/personas/{type}_*.txt` |
 | 3 | Course | Scans `curriculum/` subfolder names |
 | 4 | Exercise | Scans `curriculum/{course}/exercise_*.txt` |
