@@ -30,6 +30,7 @@ load_dotenv(_REPO_ROOT / ".env")
 # ---------------------------------------------------------------------------
 
 def _require_openai_api_key() -> str:
+    """Return the OpenAI API key from the environment or raise RuntimeError if absent."""
     key = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")
     if not key:
         raise RuntimeError(
@@ -64,12 +65,15 @@ def load_prompt(prompt_name: str) -> str:
 # ---------------------------------------------------------------------------
 
 class StudentBotState(TypedDict):
+    """LangGraph state for the student bot, carrying messages, optional assignment text, and planned turn count."""
+
     messages: Annotated[list[BaseMessage], add_messages]
     assignment: NotRequired[str]
     turn_size: NotRequired[int]
 
 
 def _student_role_contract() -> str:
+    """Return the shared non-negotiable role constraint prompt injected into every student persona."""
     # Shared hard constraints for all student personas.
     return (
         "ROLE CONTRACT (NON-NEGOTIABLE):\n"
@@ -83,6 +87,7 @@ def _student_role_contract() -> str:
 
 
 def _looks_tutor_like(text: str) -> bool:
+    """Heuristic check: return True if the text exhibits tutor-like framing markers (numbered agendas, tutoring language, etc.)."""
     lowered = (text or "").lower()
     markers = (
         "to get started",
@@ -98,11 +103,13 @@ def _looks_tutor_like(text: str) -> bool:
 
 
 def _last_message_is_tutor(state: StudentBotState) -> bool:
+    """True if the last message in state is a HumanMessage (the tutor's turn in the reversed message convention)."""
     messages = state.get("messages") or []
     return bool(messages) and isinstance(messages[-1], HumanMessage)
 
 
 def _build_student_agent_node(persona: str, model: ChatOpenAI):
+    """Return a LangGraph node function that generates the next student message given the conversation state."""
     def student_agent(state: StudentBotState) -> dict:
         messages = state.get("messages") or []
         if not messages:
@@ -173,6 +180,7 @@ def _sanitize_text_for_transport(text: str) -> str:
 
 
 def _sanitize_message_content(msg: BaseMessage) -> BaseMessage:
+    """Return a clean copy of msg with control characters stripped from content."""
     content = msg.content if isinstance(msg.content, str) else str(msg.content)
     safe = _sanitize_text_for_transport(content)
     if isinstance(msg, HumanMessage):

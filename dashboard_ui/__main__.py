@@ -1,4 +1,4 @@
-from .run_transcripts_ui import app
+from .run_dashboard_ui import app
 
 
 if __name__ == "__main__":

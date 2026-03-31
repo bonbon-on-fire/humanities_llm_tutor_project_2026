@@ -5,7 +5,7 @@ for the Humanities LLM Tutor project.
 
 ## Folder Structure
 
-```
+```text
 transcripts/
 ├── chaotic/                   # Chaotic student persona
 │   ├── chaotic_raw/           # 96 raw (ungraded) transcripts
@@ -25,15 +25,14 @@ transcripts/
 │   ├── batches_claude/        # Claude batch-graded output (.json)
 │   ├── batch_01.md            # Type 01 experiment docs
 │   ├── batch_02.md            # Type 02 experiment docs
-│   ├── batch_03.md            # Type 03 experiment docs
-│   └── README.md              # Batch system details
+│   └── batch_03.md            # Type 03 experiment docs
 └── README.md
 ```
 
 ## Counts
 
 | Persona   | Raw | GPT-graded | Claude-graded | Total |
-|-----------|-----|------------|---------------|-------|
+| --------- | --- | ---------- | ------------- | ----- |
 | chaotic   | 96  | 96         | 96            | 288   |
 | chitchat  | 96  | 96         | 96            | 288   |
 | clueless  | 96  | 96         | 96            | 288   |
@@ -101,7 +100,7 @@ Graded transcripts additionally contain a top-level `grade` object:
 ### Key Fields
 
 | Field | Description |
-|-------|-------------|
+| ----- | ----------- |
 | `tutor_prompt` | Tutor system prompt version used |
 | `student_persona` | Student persona identifier (e.g. `chaotic_01`, `chitchat_02`) |
 | `course` | Course name: `philosophy` or `urban_studies` |
@@ -115,7 +114,7 @@ Graded transcripts additionally contain a top-level `grade` object:
 ## Student Personas
 
 | Persona | Behavior |
-|---------|----------|
+| ------- | -------- |
 | **chaotic** | Challenges boundaries, tests edge cases, requests direct answers |
 | **chitchat** | Goes off-topic, needs redirection to assignment |
 | **clueless** | Genuinely confused, needs scaffolding and patience |
@@ -154,16 +153,102 @@ Both accept `--prompt` and `--rubric` flags. Output goes to the respective
 
 ### Batch Grading
 
-Batches combine 3 transcripts into a single prompt for holistic evaluation.
-See [batches/README.md](batches/README.md) for full documentation.
+The batch system enables holistic grading experiments where multiple transcripts
+are judged together, allowing the LLM to make comparative assessments rather than
+evaluating transcripts in isolation. Each batch file lists 3 transcript paths;
+they are combined into a single prompt and graded as one unit.
 
 ```powershell
 # Grade all Type 01 batches with GPT
 python -m ui.run_ui_batch_gpt --batch-type 01
 
 # Grade all Type 02 batches with Claude
-python -m ui.run_ui_batch_claude --batch-type 02
+python -m ui.run_ui_batch_claude --batch-type 02 --prompt judge_06 --rubric rubric_06
 ```
+
+Both runners accept `--batch-type` (required), `--prompt`, and `--rubric` flags.
+Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) in each runner.
+
+#### Batch Types
+
+| Type | Description | Count |
+| ---- | ----------- | ----- |
+| **01** | Same persona + version + exercise — tests judge consistency | 72 |
+| **02** | Same persona + version, different exercise — tests cross-exercise validity | 54 |
+| **03** | Different persona, same version + exercise — tests persona differentiation | 72 |
+
+**Total**: 198 batch files covering 594 unique transcripts (3 per batch).
+
+#### Experimental Design
+
+- **Zero overlap**: each transcript appears in exactly one batch per type — no duplicates within a type.
+- **Type 01** controls persona, version, and exercise (what varies: random trial selection).
+- **Type 02** controls persona and version (what varies: exercise).
+- **Type 03** controls version and exercise (what varies: persona).
+- All available raw transcripts across `chaotic`, `chitchat`, and `clueless` are included, covering both `philosophy` and `urban_studies` courses.
+
+#### Batch File Format
+
+Each `.txt` batch file in `batches_raw/batch_XX/` lists 3 transcript path stems:
+
+```text
+# Batch Type X - Batch Y
+# Generated batch with 3 transcripts
+
+chaotic\chaotic_raw\transcript_01
+chitchat\chitchat_raw\transcript_05
+clueless\clueless_raw\transcript_12
+```
+
+#### How Batch Grading Works
+
+1. Read the batch `.txt` file to get 3 transcript path stems.
+2. Load each transcript JSON from `transcripts/{persona}/{persona}_raw/`.
+3. Combine all 3 into a single prompt with metadata headers (persona, course, exercise, turn count) before each transcript.
+4. Send the combined prompt to the judge for one holistic grade.
+5. Write the output `.json` to `batches_gpt/` or `batches_claude/` containing all original transcripts plus the grade.
+
+#### Graded Batch Output Schema
+
+Each graded batch JSON contains:
+
+```json
+{
+  "batch_file": "batch_001.txt",
+  "transcript_count": 3,
+  "transcript_sources": ["chaotic/chaotic_raw/transcript_01", "..."],
+  "transcripts": [ ... ],
+  "grade": { ... }
+}
+```
+
+The `grade` object follows the same schema as individual transcript grading.
+
+#### Single Batch Judging (Python API)
+
+```python
+from judge.run_judge_batch_gpt import judge_transcript_batch
+
+result = judge_transcript_batch(
+    "transcripts/batches/batches_raw/batch_01/batch_001.txt",
+    prompt_name="judge_05",
+    rubric_name="rubric_05",
+    output_path="transcripts/batches/batches_gpt/batch_01/batch_001.json",
+)
+print(result.total_score, result.max_score)
+```
+
+#### Research Questions
+
+- **Type 01 — Judge reliability**: How consistent are scores for similar conversations? Which rubric criteria show the most/least variance?
+- **Type 02 — Cross-exercise validity**: Are some exercises systematically harder? How should exercise difficulty be calibrated?
+- **Type 03 — Persona differentiation**: Can the judge distinguish between different student types? Are scoring standards appropriately adapted per persona?
+
+#### Batch Type Documentation
+
+- [batch_01.md](batches/batch_01.md) — Type 01 detailed explanation
+- [batch_02.md](batches/batch_02.md) — Type 02 detailed explanation
+- [batch_03.md](batches/batch_03.md) — Type 03 detailed explanation
 
 ## Visualization
 

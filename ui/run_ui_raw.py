@@ -69,10 +69,12 @@ class RunConfig:
 
     @property
     def student_persona(self) -> str:
+        """Full persona identifier combining type and zero-padded version (e.g. chaotic_01)."""
         return f"{self.persona_type}_{self.persona_version}"
 
 
 def _require_openai_api_key() -> None:
+    """Raise RuntimeError if OPENAI_API_KEY is not set in the environment."""
     if os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY"):
         return
     raise RuntimeError(
@@ -81,22 +83,26 @@ def _require_openai_api_key() -> None:
 
 
 def _discover_stems(directory: Path, suffix: str) -> list[str]:
+    """Return sorted file stems (without extension) for files matching the given suffix in directory."""
     if not directory.exists():
         return []
     return sorted(path.stem for path in directory.glob(f"*{suffix}"))
 
 
 def _discover_tutor_prompts() -> list[str]:
+    """Return available tutor prompt names from tutor/prompts/."""
     return _discover_stems(_TUTOR_PROMPTS_DIR, ".txt")
 
 
 def _discover_courses() -> list[str]:
+    """Return available course folder names from curriculum/."""
     if not _CURRICULUM_DIR.exists():
         return []
     return sorted(path.name for path in _CURRICULUM_DIR.iterdir() if path.is_dir())
 
 
 def _discover_exercises(course: str) -> list[str]:
+    """Return zero-padded exercise numbers available for a course (e.g. ['01', '02'])."""
     course_dir = _CURRICULUM_DIR / course
     if not course_dir.exists():
         return []
@@ -109,6 +115,7 @@ def _discover_exercises(course: str) -> list[str]:
 
 
 def _parse_persona_name(prompt_name: str) -> tuple[str, str]:
+    """Split a persona name like 'chaotic_01' into (type, version) tuple; raises ValueError on bad format."""
     match = re.match(r"^([a-zA-Z0-9]+)_(\d{2})$", prompt_name)
     if not match:
         raise ValueError(
@@ -118,11 +125,13 @@ def _parse_persona_name(prompt_name: str) -> tuple[str, str]:
 
 
 def _load_course_context(course: str) -> str:
+    """Read and return the shared course context text from curriculum/<course>/course.txt."""
     course_dir = _CURRICULUM_DIR / course
     return (course_dir / "course.txt").read_text(encoding="utf-8").strip()
 
 
 def _build_assignment_text(course: str, exercise_number: str, turn_size: int) -> str:
+    """Build the full assignment string: course context + exercise text + run configuration note."""
     course_dir = _CURRICULUM_DIR / course
     course_text = _load_course_context(course)
     exercise_text = (
@@ -139,6 +148,7 @@ def _build_assignment_text(course: str, exercise_number: str, turn_size: int) ->
 
 
 def _next_transcript_number(output_dir: Path) -> str:
+    """Return the next available zero-padded transcript number in output_dir (filling gaps)."""
     used_numbers: set[int] = set()
     if output_dir.exists():
         for path in output_dir.glob("transcript_*.json"):
@@ -152,6 +162,7 @@ def _next_transcript_number(output_dir: Path) -> str:
 
 
 def _validate_manual_config() -> None:
+    """Validate the TUTOR_PROMPTS, STUDENT_PERSONAS, COURSE_EXERCISES, TURN_SIZE, and TRIALS config constants against available assets; raises ValueError/RuntimeError on bad config."""
     _require_openai_api_key()
     if TURN_SIZE <= 0:
         raise ValueError("TURN_SIZE must be a positive integer.")
@@ -190,6 +201,7 @@ def _validate_manual_config() -> None:
 
 
 def _is_retryable_openai_payload_error(error: Exception) -> bool:
+    """True if the error looks like a transient OpenAI JSON payload parse failure that is safe to retry."""
     text = str(error).lower()
     return (
         "badrequesterror" in text
@@ -198,6 +210,7 @@ def _is_retryable_openai_payload_error(error: Exception) -> bool:
 
 
 def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str, object]]:
+    """Run a full multi-turn tutor/student conversation and return the list of exchange dicts."""
     system_prompt = load_system_prompt(
         config.tutor_prompt,
         assignment_override=assignment_text,
@@ -284,6 +297,7 @@ def _save_raw_transcript(
     assignment_text: str,
     exchanges: list[dict[str, object]],
 ) -> tuple[str, Path]:
+    """Serialize and save a raw transcript JSON; returns (transcript_name, output_path)."""
     raw_subdir = _RAW_SUBDIR_BY_PERSONA_TYPE[config.persona_type]
     output_dir = _TRANSCRIPTS_DIR / config.persona_type / raw_subdir
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -311,6 +325,7 @@ def _save_raw_transcript(
 
 
 def _iter_runs():
+    """Yield (RunConfig, trial_number) for every combination in the TUTOR_PROMPTS × STUDENT_PERSONAS × COURSE_EXERCISES × TRIALS matrix."""
     for tutor_prompt in TUTOR_PROMPTS:
         for persona_name in STUDENT_PERSONAS:
             persona_type, persona_version = _parse_persona_name(persona_name)
@@ -328,6 +343,7 @@ def _iter_runs():
 
 
 def main() -> int:
+    """CLI entry point: validate config, run all combinations, save raw transcripts."""
     try:
         _validate_manual_config()
     except (RuntimeError, ValueError) as error:

@@ -1,2 +1,0 @@
-"""Transcripts UI package."""
-

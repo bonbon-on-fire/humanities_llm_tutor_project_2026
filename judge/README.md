@@ -78,7 +78,7 @@ print(result.total_score, result.max_score)
 Grade every raw transcript across all persona types using the batch runners
 in `ui/`:
 
-```bash
+```powershell
 # GPT judge — grades all *_raw/ transcripts into *_gpt/ folders
 python -m ui.run_ui_gpt
 
@@ -88,7 +88,7 @@ python -m ui.run_ui_claude
 
 Both runners accept `--prompt` and `--rubric` flags to select versions:
 
-```bash
+```powershell
 python -m ui.run_ui_gpt --prompt judge_06 --rubric rubric_06
 python -m ui.run_ui_claude --prompt judge_06 --rubric rubric_06
 ```
@@ -115,7 +115,7 @@ print(result.total_score, result.max_score)
 
 To grade all batches of a given type, use the batch UI runners:
 
-```bash
+```powershell
 # GPT — grade all batch_01 bundles
 python -m ui.run_ui_batch_gpt --batch-type 01
 

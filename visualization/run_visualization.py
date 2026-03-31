@@ -38,10 +38,12 @@ class GradeRow:
 
     @property
     def persona_type(self) -> str:
+        """Extract persona family prefix (e.g. 'chaotic') from the full persona identifier."""
         return (self.student_persona.split("_", 1)[0] or self.student_persona).strip()
 
     @property
     def transcript_key(self) -> str:
+        """Composite key used to align GPT and Claude rows for the same conversation."""
         return "|".join([
             self.student_persona,
             self.course,
@@ -55,6 +57,7 @@ class GradeRow:
 # ---------------------------------------------------------------------------
 
 def _parse_score(x: Any) -> float:
+    """Parse any value as a float score; returns NaN on failure."""
     try:
         return float(str(x or "").strip())
     except (TypeError, ValueError):
@@ -62,6 +65,7 @@ def _parse_score(x: Any) -> float:
 
 
 def _extract_section_scores(grade: dict[str, Any]) -> tuple[dict[str, float], dict[str, float]]:
+    """Extract per-section (score, max) pairs from a grade dict; returns (scores_dict, maxes_dict)."""
     scores: dict[str, float] = {}
     maxes: dict[str, float] = {}
     sections = grade.get("sections")
@@ -79,6 +83,7 @@ def _extract_section_scores(grade: dict[str, Any]) -> tuple[dict[str, float], di
 
 
 def _read_judged_transcript(path: Path) -> GradeRow | None:
+    """Load a single graded transcript JSON and return a GradeRow, or None if unreadable or ungraded."""
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
@@ -104,6 +109,7 @@ def _read_judged_transcript(path: Path) -> GradeRow | None:
 
 
 def _read_provider_rows(transcripts_dir: Path, provider_suffix: str) -> list[GradeRow]:
+    """Scan all *_{provider_suffix}/transcript_*.json files under transcripts_dir and return GradeRow list."""
     rows: list[GradeRow] = []
     for path in sorted(transcripts_dir.glob(f"*/*_{provider_suffix}/transcript_*.json")):
         row = _read_judged_transcript(path)
@@ -117,12 +123,14 @@ def _read_provider_rows(transcripts_dir: Path, provider_suffix: str) -> list[Gra
 # ---------------------------------------------------------------------------
 
 def _sort_key(row: GradeRow) -> tuple:
+    """Sorting key for GradeRow: by persona type, persona name, course, exercise number, transcript number."""
     tnum = int(row.transcript_name.split("_")[-1]) if "_" in row.transcript_name else 0
     ex_num = int(row.exercise_number) if row.exercise_number.isdigit() else 0
     return (row.persona_type, row.student_persona, row.course, ex_num, tnum)
 
 
 def _pearson(xs: list[float], ys: list[float]) -> float | None:
+    """Compute Pearson r for paired lists; returns None if fewer than 2 pairs."""
     if len(xs) != len(ys) or len(xs) < 2:
         return None
     mx = sum(xs) / len(xs)
@@ -135,6 +143,7 @@ def _pearson(xs: list[float], ys: list[float]) -> float | None:
 
 
 def _avg_ranks(values: list[float]) -> list[float]:
+    """Assign average ranks to a list of values, handling ties by averaging tied positions."""
     n = len(values)
     indexed = sorted(enumerate(values), key=lambda iv: iv[1])
     ranks = [0.0] * n
@@ -151,12 +160,14 @@ def _avg_ranks(values: list[float]) -> list[float]:
 
 
 def _spearman(xs: list[float], ys: list[float]) -> float | None:
+    """Compute Spearman rho as Pearson r of the rank lists; returns None if fewer than 2 pairs."""
     if len(xs) != len(ys) or len(xs) < 2:
         return None
     return _pearson(_avg_ranks(xs), _avg_ranks(ys))
 
 
 def _safe_import_matplotlib():
+    """Import matplotlib with the non-interactive Agg backend; raises RuntimeError with install hint if missing."""
     try:
         import matplotlib
         matplotlib.use("Agg")
@@ -175,6 +186,8 @@ def _safe_import_matplotlib():
 
 @dataclass(frozen=True)
 class BatchGradeRow:
+    """A single graded batch result row for visualization."""
+
     batch_name: str
     total_score: float
     max_score: float
@@ -184,6 +197,7 @@ class BatchGradeRow:
 
 
 def _read_batch_grade(path: Path) -> BatchGradeRow | None:
+    """Load a graded batch JSON and return a BatchGradeRow, or None on error."""
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
@@ -210,6 +224,7 @@ def _read_batch_grade(path: Path) -> BatchGradeRow | None:
 
 
 def _read_batch_rows(batches_dir: Path, provider: str, batch_type: str) -> list[BatchGradeRow]:
+    """Load all graded batch JSON files for a given provider and batch type."""
     provider_dir = batches_dir / f"batches_{provider}" / f"batch_{batch_type}"
     if not provider_dir.exists():
         return []
@@ -230,6 +245,7 @@ def _chart_line_scores(
     claude_rows: list[GradeRow],
     out_dir: Path,
 ) -> None:
+    """Generate a line chart comparing GPT vs Claude total scores for individual transcripts, including Pearson r and Spearman rho annotations."""
     plt = _safe_import_matplotlib()
 
     gpt_by_key = {r.transcript_key: r for r in gpt_rows}
@@ -290,6 +306,7 @@ def _chart_batch_scores(
     *,
     chart_idx: int = 2,
 ) -> None:
+    """Generate a line chart comparing GPT vs Claude total scores for a specific batch type."""
     plt = _safe_import_matplotlib()
 
     gpt_by_name = {r.batch_name: r for r in gpt_rows}
@@ -352,6 +369,7 @@ def _chart_batch_scores(
 # ---------------------------------------------------------------------------
 
 def main() -> int:
+    """Entry point: load all graded transcript and batch data, generate comparison charts, print summary."""
     repo_root = Path(__file__).resolve().parent.parent
     transcripts_dir = repo_root / "transcripts"
     batches_dir = transcripts_dir / "batches"

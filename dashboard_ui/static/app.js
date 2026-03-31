@@ -1,27 +1,43 @@
 (function () {
   const DEFAULT_MAX_SCORE = 47;
 
+  /** Returns the current URL pathname. */
   function getPath() {
     return window.location.pathname;
   }
 
+  /**
+   * Parse the pathname to detect a /transcript/:group/:version URL.
+   * @returns {{group: string, version: string}|null}
+   */
   function isTranscriptPage() {
     const m = getPath().match(/^\/transcript\/([^/]+)\/([^/]+)\/?$/);
-    return m ? { persona: m[1], num: m[2] } : null;
+    return m ? { group: m[1], version: m[2] } : null;
   }
 
+  /** Hide all .page elements and show the one with the given id. */
   function showPage(id) {
     document.querySelectorAll("#main .page").forEach((p) => p.classList.add("hidden"));
     const el = document.getElementById(id);
     if (el) el.classList.remove("hidden");
   }
 
+  /**
+   * Build a label array [0, 1, ..., maxScore] for chart x-axis.
+   * @param {number} maxScore
+   */
   function scoreLabels(maxScore) {
     const labels = [];
     for (let s = 0; s <= maxScore; s++) labels.push(s);
     return labels;
   }
 
+  /**
+   * Count occurrences of each integer score in [0..maxScore]; null/undefined entries are skipped.
+   * @param {(number|null|undefined)[]} scores
+   * @param {number} maxScore
+   * @returns {number[]}
+   */
   function histogram(scores, maxScore) {
     const counts = [];
     for (let i = 0; i <= maxScore; i++) counts[i] = 0;
@@ -31,6 +47,15 @@
     return counts;
   }
 
+  /**
+   * Render or replace a Chart.js bar chart on the given canvas showing score distribution.
+   * Destroys any existing chart instance stored on window[canvasId + "Chart"] before redrawing.
+   * @param {string} canvasId - DOM id of the <canvas> element
+   * @param {number[]} scores - raw score values to histogram
+   * @param {string} label - dataset label prefix
+   * @param {string} color - bar fill/border color
+   * @param {number} maxScore - upper bound of the x-axis
+   */
   function drawChart(canvasId, scores, label, color, maxScore) {
     const counts = histogram(scores, maxScore);
     const ctx = document.getElementById(canvasId);
@@ -74,6 +99,12 @@
     });
   }
 
+  /**
+   * Infer the maximum score from gpt_max/claude_max fields across the row list;
+   * falls back to DEFAULT_MAX_SCORE when no finite values are present.
+   * @param {object[]} list
+   * @returns {number}
+   */
   function inferMaxScore(list) {
     const maxes = list
       .flatMap((t) => [t.gpt_max, t.claude_max])
@@ -82,6 +113,22 @@
     return Math.max(...maxes);
   }
 
+  /**
+   * Parse x as an integer; returns Infinity for non-numeric values (used for sort ordering
+   * so that missing/non-numeric entries sort to the end).
+   * @param {*} x
+   * @returns {number}
+   */
+  function parseNumericOrInfinity(x) {
+    const n = Number.parseInt(String(x || ""), 10);
+    return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
+  }
+
+  /**
+   * Render the full dashboard: score charts + sortable transcript table.
+   * Sets up column-header click handlers for client-side sorting.
+   * @param {object[]} list - combined transcript and batch row objects
+   */
   function renderDashboard(list) {
     const maxScore = inferMaxScore(list);
     const gptScores = list.map((t) => t.gpt_score).filter((s) => s != null);
@@ -89,44 +136,52 @@
     drawChart("chart-gpt", gptScores, "GPT", "#a65dea", maxScore);
     drawChart("chart-claude", claudeScores, "Claude", "#ff893a", maxScore);
 
-    let sortKey = "persona";
+    let sortKey = "group";
     let sortDir = 1;
 
-    function transcriptNumberSortValue(t) {
-      const raw = String(t.display_number || t.number || "");
-      const n = Number.parseInt(raw, 10);
-      return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
+    /**
+     * Return the display label for a row's group column:
+     * student_persona for individual transcripts, group name for batch rows.
+     * @param {object} t
+     * @returns {string}
+     */
+    function displayedGroup(t) {
+      if (t.kind === "transcript") {
+        return String((t.metadata && t.metadata.student_persona) || t.group || "");
+      }
+      return String(t.group || "");
     }
 
-    function exerciseSortValue(t) {
-      const raw = String((t.metadata && t.metadata.exercise_number) || "");
-      const n = Number.parseInt(raw, 10);
-      return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
-    }
-
+    /**
+     * Re-sort and re-render the transcript table body according to current sortKey/sortDir.
+     * Numeric columns (score, version, exercise) fall back to string compare when equal.
+     */
     function renderTable() {
       const sorted = [...list].sort((a, b) => {
-        if (sortKey === "persona") {
-          const personaCompare = String(a.persona || "").localeCompare(String(b.persona || ""));
-          if (personaCompare !== 0) return sortDir * personaCompare;
-          const transcriptCompare = transcriptNumberSortValue(a) - transcriptNumberSortValue(b);
-          if (transcriptCompare !== 0) return sortDir * transcriptCompare;
+        if (sortKey === "group") {
+          const groupCompare = displayedGroup(a).localeCompare(displayedGroup(b));
+          if (groupCompare !== 0) return sortDir * groupCompare;
+          const versionCompare = parseNumericOrInfinity(a.version) - parseNumericOrInfinity(b.version);
+          if (versionCompare !== 0) return sortDir * versionCompare;
           const courseCompare = String((a.metadata && a.metadata.course) || "").localeCompare(
             String((b.metadata && b.metadata.course) || "")
           );
           if (courseCompare !== 0) return sortDir * courseCompare;
-          return sortDir * (exerciseSortValue(a) - exerciseSortValue(b));
+          return sortDir * (
+            parseNumericOrInfinity(a.metadata && a.metadata.exercise_number) -
+            parseNumericOrInfinity(b.metadata && b.metadata.exercise_number)
+          );
         }
-        if (sortKey === "number") {
-          const aNum = transcriptNumberSortValue(a);
-          const bNum = transcriptNumberSortValue(b);
+        if (sortKey === "version") {
+          const aNum = parseNumericOrInfinity(a.version);
+          const bNum = parseNumericOrInfinity(b.version);
           if (aNum !== bNum) return sortDir * (aNum - bNum);
-          return sortDir * String(a.number || "").localeCompare(String(b.number || ""));
+          return sortDir * String(a.version || "").localeCompare(String(b.version || ""));
         }
         if (sortKey === "course") {
-          const aCourse = String((a.metadata && a.metadata.course) || "");
-          const bCourse = String((b.metadata && b.metadata.course) || "");
-          return sortDir * aCourse.localeCompare(bCourse);
+          return sortDir * String((a.metadata && a.metadata.course) || "").localeCompare(
+            String((b.metadata && b.metadata.course) || "")
+          );
         }
         if (sortKey === "exercise") {
           const aEx = String((a.metadata && a.metadata.exercise_number) || "");
@@ -152,13 +207,13 @@
         .map(
           (t) =>
             `<tr>
-          <td>${escapeHtml((t.metadata && t.metadata.student_persona) || t.persona)}</td>
-          <td>${escapeHtml(t.display_number || t.number || "—")}</td>
+          <td>${escapeHtml(displayedGroup(t) || "—")}</td>
+          <td>${escapeHtml(t.version || "—")}</td>
           <td>${escapeHtml((t.metadata && t.metadata.course) || "—")}</td>
           <td>${escapeHtml((t.metadata && t.metadata.exercise_number) || "—")}</td>
           <td class="num"><span class="score-cell">${t.gpt_score != null ? t.gpt_score + "/" + (t.gpt_max != null ? t.gpt_max : maxScore) : "—"}</span></td>
           <td class="num"><span class="score-cell">${t.claude_score != null ? t.claude_score + "/" + (t.claude_max != null ? t.claude_max : maxScore) : "—"}</span></td>
-          <td><a href="/transcript/${encodeURIComponent(t.persona)}/${encodeURIComponent(t.number)}">Read</a></td>
+          <td><a href="/transcript/${encodeURIComponent(t.route_group || t.group)}/${encodeURIComponent(t.route_version || t.version)}">Read</a></td>
         </tr>`
         )
         .join("");
@@ -176,11 +231,17 @@
         renderTable();
       };
     });
-    const personaTh = document.querySelector('#transcripts-table thead th[data-sort="persona"]');
-    if (personaTh) personaTh.classList.add("sorted-asc");
+    const groupTh = document.querySelector('#transcripts-table thead th[data-sort="group"]');
+    if (groupTh) groupTh.classList.add("sorted-asc");
     renderTable();
   }
 
+  /**
+   * Safely escape a string for insertion into innerHTML.
+   * Uses a temporary DOM element so the browser handles all entity encoding.
+   * @param {*} s
+   * @returns {string}
+   */
   function escapeHtml(s) {
     if (s == null) return "";
     const div = document.createElement("div");
@@ -188,6 +249,15 @@
     return div.innerHTML;
   }
 
+  /**
+   * Render an evaluator's grade panel (score, overview bullets, section criteria, deductions)
+   * into container. Shows an error message when grade is absent.
+   * @param {HTMLElement} container - element to populate
+   * @param {object|null} grade - grade summary object from the API
+   * @param {string} evaluatorLabel - display name (e.g. "GPT evaluator")
+   * @param {string} cssClass - CSS class applied to container (e.g. "gpt" or "claude")
+   * @param {string|null} errorMessage - shown instead of the default when grade is null
+   */
   function renderGradeReport(container, grade, evaluatorLabel, cssClass, errorMessage) {
     if (!grade) {
       const message = errorMessage || `No ${evaluatorLabel} grade available.`;
@@ -243,6 +313,11 @@
     container.innerHTML = html;
   }
 
+  /**
+   * Render the full transcript detail view: metadata header, raw batch text or turn-by-turn
+   * exchanges, and both GPT and Claude grade panels appended to #transcript-content.
+   * @param {object} data - transcript detail object returned by /api/transcripts/:group/:version
+   */
   function renderTranscript(data) {
     const meta = data.metadata || {};
     let html = '<div class="meta-top">';
@@ -253,6 +328,9 @@
     html += '<span><strong>Turns:</strong> ' + escapeHtml(String(meta.turns != null ? meta.turns : "—")) + "</span>";
     html += "</div>";
 
+    if (data.raw_text) {
+      html += '<details class="meta-block"><summary>Raw Batch File</summary><pre style="white-space:pre-wrap;font-size:0.85rem;margin:0.5rem 0 0">' + escapeHtml(data.raw_text) + "</pre></details>";
+    }
     if (meta.context) {
       html += '<details class="meta-block"><summary>Context</summary><pre style="white-space:pre-wrap;font-size:0.85rem;margin:0.5rem 0 0">' + escapeHtml(meta.context) + "</pre></details>";
     }
@@ -276,14 +354,17 @@
     renderGradeReport(gptEl, data.grade_gpt, "GPT evaluator", "gpt", data.gpt_error);
     renderGradeReport(claudeEl, data.grade_claude, "Claude evaluator", "claude", data.claude_error);
 
-    const titleId = data.display_number || data.number;
-    document.getElementById("transcript-title").textContent = `${data.persona} / ${titleId}`;
+    document.getElementById("transcript-title").textContent = `${data.group} / ${data.version}`;
     const content = document.getElementById("transcript-content");
     content.innerHTML = html;
     content.appendChild(gptEl);
     content.appendChild(claudeEl);
   }
 
+  /**
+   * Fetch all dashboard rows from /api/transcripts and render the dashboard page.
+   * Shows a loading placeholder while the request is in flight, and an error row on failure.
+   */
   async function loadDashboard() {
     showPage("dashboard-page");
     const tbody = document.getElementById("transcripts-tbody");
@@ -293,7 +374,7 @@
       const list = await r.json();
       if (!r.ok) throw new Error(list.error || "Failed to load");
       if (list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" class="error">No raw transcripts found. Run `ui.run_ui_raw` first.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" class="error">No transcript rows found.</td></tr>';
         return;
       }
       renderDashboard(list);
@@ -303,12 +384,18 @@
     }
   }
 
-  async function loadTranscript(persona, num) {
+  /**
+   * Fetch a single transcript detail from /api/transcripts/:group/:version and render it.
+   * Shows a loading placeholder while the request is in flight.
+   * @param {string} group
+   * @param {string} version
+   */
+  async function loadTranscript(group, version) {
     showPage("transcript-page");
     const content = document.getElementById("transcript-content");
     content.innerHTML = '<p class="loading">Loading transcript...</p>';
     try {
-      const r = await fetch("/api/transcripts/" + encodeURIComponent(persona) + "/" + encodeURIComponent(num));
+      const r = await fetch("/api/transcripts/" + encodeURIComponent(group) + "/" + encodeURIComponent(version));
       const data = await r.json();
       if (!r.ok) throw new Error(data.error || "Not found");
       renderTranscript(data);
@@ -317,10 +404,14 @@
     }
   }
 
+  /**
+   * Decide which page to render based on the current URL: transcript detail or dashboard.
+   * Called on initial load and on every popstate event.
+   */
   function route() {
     const transcript = isTranscriptPage();
     if (transcript) {
-      loadTranscript(transcript.persona, transcript.num);
+      loadTranscript(transcript.group, transcript.version);
     } else {
       loadDashboard();
     }

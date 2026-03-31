@@ -40,6 +40,7 @@ _LOG_PATH = _REPO_ROOT / "logs" / "judge_claude_debug.jsonl"
 
 class _JsonLogFormatter(logging.Formatter):
     def format(self, record: logging.LogRecord) -> str:
+        """Serialize a log record to a compact JSONL line, including all _log_* extra fields; truncates string values over 50k chars."""
         payload: dict[str, Any] = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "level": record.levelname,
@@ -57,6 +58,7 @@ class _JsonLogFormatter(logging.Formatter):
 
 
 def _setup_debug_logger() -> logging.Logger:
+    """Create (or retrieve) the file-based JSONL logger for Claude judge debug events."""
     logger = logging.getLogger("judge_claude_debug")
     if logger.handlers:
         return logger
@@ -73,6 +75,7 @@ _debug_log = _setup_debug_logger()
 
 
 def _log_event(event: str, transcript_name: str = "", level: int = logging.INFO, **fields: Any) -> None:
+    """Write a structured debug event to the JSONL log file."""
     extra = {"event": event, "transcript_name": transcript_name}
     for key, value in fields.items():
         extra[f"_log_{key}"] = value
@@ -80,6 +83,7 @@ def _log_event(event: str, transcript_name: str = "", level: int = logging.INFO,
 
 
 def _sha256_short(text: str) -> str:
+    """Return the first 16 hex chars of the SHA-256 hash of text (used as a compact content fingerprint)."""
     return hashlib.sha256(text.encode()).hexdigest()[:16]
 
 
@@ -196,6 +200,7 @@ class _JudgeState(TypedDict):
 # ---------------------------------------------------------------------------
 
 def _coerce_int(value: Any, *, default: int = 0) -> int:
+    """Coerce value to int, rounding floats; returns default for unparseable input."""
     if isinstance(value, bool):
         return int(value)
     if isinstance(value, int):
@@ -214,6 +219,7 @@ def _coerce_int(value: Any, *, default: int = 0) -> int:
 
 
 def _sanitize_text(value: Any) -> str:
+    """Return value as a string, converting None to empty string."""
     if value is None:
         return ""
     if isinstance(value, str):
@@ -222,6 +228,7 @@ def _sanitize_text(value: Any) -> str:
 
 
 def _normalize_json_value(value: Any) -> Any:
+    """Recursively convert all dict keys to str and sets/tuples to lists for safe JSON serialization."""
     if value is None or isinstance(value, (str, int, float, bool)):
         return value
     if isinstance(value, dict):
@@ -232,10 +239,12 @@ def _normalize_json_value(value: Any) -> Any:
 
 
 def _env_truthy(name: str) -> bool:
+    """Return True if the env var is set to a truthy string (1, true, yes, on)."""
     return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def _require_anthropic_api_key() -> str:
+    """Return the Anthropic API key from the environment or raise JudgeError if absent."""
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         raise JudgeError("ANTHROPIC_API_KEY environment variable is required but not set.")
@@ -247,6 +256,7 @@ def _require_anthropic_api_key() -> str:
 # ---------------------------------------------------------------------------
 
 def _fenced_json(text: str) -> str | None:
+    """Extract the first JSON object from a Markdown code fence (```json ... ```)."""
     match = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.DOTALL)
     return match.group(1).strip() if match else None
 
@@ -279,6 +289,7 @@ def _extract_text_from_model_content(content: Any) -> str:
 
 
 def _parse_json_from_model_output(output_text: str) -> dict[str, Any]:
+    """Try multiple strategies (raw JSON, fenced code block, brace extraction, ast.literal_eval) to extract a dict from model output; raises JudgeError on failure."""
     text = _sanitize_text(output_text).strip()
     candidates = [text, _fenced_json(text), extract_json_object(text)]
     for candidate in candidates:
@@ -309,6 +320,7 @@ def _parse_json_from_model_output(output_text: str) -> dict[str, Any]:
 # ---------------------------------------------------------------------------
 
 def _normalize_deduction(item: Any, *, enforce_sub_criterion_ids: bool) -> dict[str, Any]:
+    """Normalise a raw deduction dict: validate evidence_turns, coerce points to non-negative int, optionally enforce sub_criterion_id."""
     if not isinstance(item, dict):
         item = {}
     evidence_raw = item.get("evidence_turns")
@@ -338,6 +350,7 @@ def _normalize_deduction(item: Any, *, enforce_sub_criterion_ids: bool) -> dict[
 
 
 def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """Ensure grade payload has required top-level keys; migrate legacy 'summary' to 'overview'."""
     payload = _normalize_json_value(payload)
     if not isinstance(payload, dict):
         raise JudgeError("Grade payload must be a JSON object.")
@@ -353,6 +366,7 @@ def _sanitize_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def _rubric_spec(rubric_name: str) -> dict[str, Any]:
+    """Return the rubric spec dict for the given rubric name, or raise JudgeError if unknown."""
     key = rubric_name.strip().lower()
     if key not in _RUBRIC_SPECS:
         available = ", ".join(sorted(_RUBRIC_SPECS.keys()))
@@ -367,6 +381,7 @@ def _validate_grade_payload(
     enforce_sub_criterion_ids: bool,
     rubric_name: str,
 ) -> dict[str, Any]:
+    """Validate and normalise a grade payload against the rubric spec: compute per-criterion scores from deductions, clamp to max, aggregate section and total scores."""
     del num_turns
     spec = _rubric_spec(rubric_name)
     sections_in = payload.get("sections")
@@ -437,6 +452,7 @@ def _validate_grade_payload(
 
 
 def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """Return a new dict with grade fields in the canonical key order expected by callers."""
     ordered: dict[str, Any] = {"sections": payload["sections"]}
     for key in ("max_score", "total_base_score", "max_base_score"):
         if key in payload:
@@ -451,6 +467,7 @@ def _order_grade_payload(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def _extract_deduction_summary(payload: dict[str, Any]) -> dict[str, dict[str, int]]:
+    """Return a dict mapping criterion id → {count, total_points} summarising all deductions in a grade payload."""
     summary: dict[str, dict[str, int]] = {}
     sections = payload.get("sections")
     if not isinstance(sections, dict):
@@ -479,6 +496,7 @@ def _extract_deduction_summary(payload: dict[str, Any]) -> dict[str, dict[str, i
 # ---------------------------------------------------------------------------
 
 def _grade_schema_for_prompt(rubric_name: str) -> dict[str, Any]:
+    """Build a JSON schema example object for injecting into the judge system prompt."""
     spec = _rubric_spec(rubric_name)
     sections: dict[str, Any] = {}
     for section_id, section_spec in spec["sections"].items():
@@ -518,6 +536,7 @@ def _grade_schema_for_prompt(rubric_name: str) -> dict[str, Any]:
 
 
 def load_judge_prompt(*, prompt_name: str = "judge_05", rubric_name: str = "rubric_05") -> str:
+    """Load the judge prompt template, inject the rubric and output schema, and return the full system prompt string."""
     prompt_path = PROMPTS_DIR / f"{prompt_name}.txt"
     rubric_path = RUBRICS_DIR / f"{rubric_name}.md"
     if not prompt_path.exists():
@@ -538,6 +557,7 @@ def load_judge_prompt(*, prompt_name: str = "judge_05", rubric_name: str = "rubr
 # ---------------------------------------------------------------------------
 
 def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
+    """Format a transcript dict as a plain-text block (CONTEXT / EXERCISE / TRANSCRIPT) for the judge prompt."""
     lines: list[str] = []
     context = _sanitize_text(transcript.get("context")).strip()
     exercise = _sanitize_text(transcript.get("exercise")).strip()
@@ -573,6 +593,7 @@ def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
 # ---------------------------------------------------------------------------
 
 def _judge_repair_prompt(last_error: str) -> str:
+    """Build the repair instruction HumanMessage content when the previous judge output failed validation."""
     return (
         "Your previous response could not be validated as the required grade JSON.\n"
         f"Validation error: {last_error}\n"
@@ -581,10 +602,12 @@ def _judge_repair_prompt(last_error: str) -> str:
 
 
 def _build_anthropic_model(*, model_name: str, api_key: str):
+    """Create a ChatAnthropic instance with a fixed 8192-token output limit."""
     return ChatAnthropic(model=model_name, api_key=api_key, max_tokens=8192)
 
 
 def _create_judge_graph(*, model_name: str, api_key: str, enforce_sub_criterion_ids: bool, rubric_name: str):
+    """Build and compile the two-node LangGraph (judge → validate → route) for transcript grading."""
     model = _build_anthropic_model(model_name=model_name, api_key=api_key)
 
     def judge_node(state: _JudgeState) -> dict[str, Any]:
@@ -820,6 +843,7 @@ def judge_transcript(
 
 
 def _default_output_path(*, transcript_path: Path, prompt_name: str, rubric_name: str, provider: str) -> Path:
+    """Compute the default output filename by appending prompt/rubric/provider identifiers to the source stem."""
     stem = transcript_path.stem
     filename = f"{stem}__{prompt_name}__{rubric_name}__{provider}.json"
     return transcript_path.with_name(filename)

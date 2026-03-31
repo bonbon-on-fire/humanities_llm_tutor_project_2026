@@ -39,6 +39,7 @@ PARALLEL_WORKERS = 6
 
 
 def _require_anthropic_api_key() -> None:
+    """Raise RuntimeError if ANTHROPIC_API_KEY is not set in the environment."""
     if os.environ.get("ANTHROPIC_API_KEY"):
         return
     raise RuntimeError(
@@ -110,6 +111,7 @@ _progress_done = 0
 
 
 def _print_result(info: dict[str, Any], total: int) -> None:
+    """Print a one-line progress and score summary for a completed grading task."""
     global _progress_done
     with _progress_lock:
         _progress_done += 1
@@ -124,6 +126,7 @@ def _print_result(info: dict[str, Any], total: int) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """CLI entry point: grade all raw transcripts using the Claude judge in parallel."""
     parser = argparse.ArgumentParser(
         description="Grade all raw transcripts with Claude judge into *_claude folders."
     )
