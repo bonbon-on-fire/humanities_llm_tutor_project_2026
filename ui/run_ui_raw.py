@@ -1,15 +1,20 @@
 """
-Batch runner that generates raw (unjudged) tutor/student transcripts.
+Interactive batch runner that generates raw (unjudged) tutor/student transcripts.
 
-Edit the config lists in this file, then run:
+Run with interactive CLI:
     python -m ui.run_ui_raw
+
+Or run with command-line arguments:
+    python -m ui.run_ui_raw --tutor tutor_03 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -22,6 +27,13 @@ from tutor.run_tutor import (
     get_tutor_reply,
     load_system_prompt,
     parse_tutor_response,
+)
+from ui.cli_utils import (
+    confirm_proceed,
+    group_personas_by_type,
+    parse_persona_type_and_version,
+    prompt_integer,
+    prompt_numbered_selection,
 )
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -38,24 +50,14 @@ _RAW_SUBDIR_BY_PERSONA_TYPE: dict[str, str] = {
 _TUTOR_CALL_MAX_RETRIES = 2
 
 # ---------------------------------------------------------------------------
-# Batch config (edit these directly)
+# Default batch config (can be overridden by CLI)
 # ---------------------------------------------------------------------------
 
-# Which tutor prompts to run (from tutor/prompts/*.txt, without extension).
-TUTOR_PROMPTS: list[str] = ["tutor_03"]
-
-# Which student personas to run (from students/personas/*.txt, without extension).
-STUDENT_PERSONAS: list[str] = ["clueless_01"]
-
-# Which course/exercise combinations to run.
-# Exercise numbers should be zero-padded strings like "01".
-COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01")]
-
-# Turn size per conversation (student+tutor exchanges).
-TURN_SIZE: int = 10
-
-# How many trials for each matrix combination.
-TRIALS: int = 2
+DEFAULT_TUTOR_PROMPTS: list[str] = ["tutor_03"]
+DEFAULT_STUDENT_PERSONAS: list[str] = ["clueless_01"]
+DEFAULT_COURSE_EXERCISES: list[tuple[str, str]] = [("philosophy", "01")]
+DEFAULT_TURN_SIZE: int = 10
+DEFAULT_TRIALS: int = 2
 
 
 @dataclass(frozen=True)
@@ -71,6 +73,16 @@ class RunConfig:
     def student_persona(self) -> str:
         """Full persona identifier combining type and zero-padded version (e.g. chaotic_01)."""
         return f"{self.persona_type}_{self.persona_version}"
+
+
+@dataclass(frozen=True)
+class BatchConfig:
+    """Configuration for the entire batch run."""
+    tutor_prompts: list[str]
+    student_personas: list[str]
+    course_exercises: list[tuple[str, str]]
+    turn_size: int
+    trials: int
 
 
 def _require_openai_api_key() -> None:
@@ -116,12 +128,7 @@ def _discover_exercises(course: str) -> list[str]:
 
 def _parse_persona_name(prompt_name: str) -> tuple[str, str]:
     """Split a persona name like 'chaotic_01' into (type, version) tuple; raises ValueError on bad format."""
-    match = re.match(r"^([a-zA-Z0-9]+)_(\d{2})$", prompt_name)
-    if not match:
-        raise ValueError(
-            f"Persona '{prompt_name}' must use '<type>_<NN>' format (example: chaotic_01)."
-        )
-    return match.group(1), match.group(2)
+    return parse_persona_type_and_version(prompt_name)
 
 
 def _load_course_context(course: str) -> str:
