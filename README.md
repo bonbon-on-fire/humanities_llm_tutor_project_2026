@@ -1,4 +1,4 @@
-﻿# Humanities LLM Tutor Project 2026
+# Humanities LLM Tutor Project 2026
 
 ## Quick Start
 
@@ -22,8 +22,8 @@ python -m ui.run_ui_raw
 
 ### 3. Grade Transcripts
 ```powershell
-python -m ui.run_ui_gpt     # Grade all raw transcripts with GPT
-python -m ui.run_ui_claude  # Grade all raw transcripts with Claude
+python -m ui.run_ui_judge --provider gpt    # Grade all raw transcripts with GPT
+python -m ui.run_ui_judge --provider claude # Grade all raw transcripts with Claude
 ```
 
 ### 4. Browse Results
@@ -68,7 +68,7 @@ The system has four loosely coupled layers:
 
 **Bundle Judge (`judge/run_judge_bundle.py`)**: Combines 3 transcripts into one prompt for holistic, comparative grading using selected provider (`gpt` or `claude`) — allowing consistency/persona differentiation analysis across a set.
 
-**UI Runners (`ui/`)**: Five parallelized bundle runners (ThreadPoolExecutor, default 6 workers) for raw generation and GPT/Claude judging of individual and bundle transcripts. All accept `--prompt` and `--rubric` CLI flags.
+**UI Runners (`ui/`)**: Three parallelized runners (ThreadPoolExecutor, default 6 workers) — raw generation, individual transcript judging, and bundle judging. All judge runners accept `--prompt` and `--rubric` CLI flags.
 
 **Dashboard (`dashboard_ui/`)**: Flask app that discovers all transcripts and bundle files on disk, loads GPT and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
 
@@ -208,11 +208,9 @@ humanities_llm_tutor_project_2026/
 │   └── rubrics/             # rubric_01..06.md (current: rubric_05)
 │
 ├── ui/
-│   ├── run_ui_raw.py        # Generate raw transcripts (edit config at top)
-│   ├── run_ui_gpt.py        # Grade all raw transcripts with GPT
-│   ├── run_ui_claude.py     # Grade all raw transcripts with Claude
-│   ├── run_ui_bundle_gpt.py  # Grade bundle bundles with GPT
-│   └── run_ui_bundle_claude.py  # Grade bundle bundles with Claude
+│   ├── run_ui_raw.py          # Generate raw transcripts
+│   ├── run_ui_judge.py        # Grade raw transcripts (--provider gpt|claude)
+│   └── run_ui_bundle_judge.py # Grade bundle files (--provider gpt|claude)
 │
 ├── transcripts/
 │   ├── chaotic/             # chaotic_raw/, chaotic_gpt/, chaotic_claude/

@@ -1,4 +1,4 @@
-﻿# Judge
+# Judge
 
 LLM-based grader that scores tutor–student conversation transcripts against a rubric.
 
@@ -71,24 +71,24 @@ result = judge_transcript("chaotic/chaotic_claude/transcript_01", provider="clau
 print(result.total_score, result.max_score)
 ```
 
-### Bundle Judging (all raw transcripts individually)
+### Judging All Transcripts Individually
 
-Grade every raw transcript across all persona types using the bundle runners
+Grade every raw transcript across all persona types using the judge runner
 in `ui/`:
 
 ```powershell
 # GPT judge — grades all *_raw/ transcripts into *_gpt/ folders
-python -m ui.run_ui_gpt
+python -m ui.run_ui_judge --provider gpt
 
 # Claude judge — grades all *_raw/ transcripts into *_claude/ folders
-python -m ui.run_ui_claude
+python -m ui.run_ui_judge --provider claude
 ```
 
-Both runners accept `--prompt` and `--rubric` flags to select versions:
+Both commands accept `--prompt` and `--rubric` flags to select versions:
 
 ```powershell
-python -m ui.run_ui_gpt --prompt judge_06 --rubric rubric_06
-python -m ui.run_ui_claude --prompt judge_06 --rubric rubric_06
+python -m ui.run_ui_judge --provider gpt --prompt judge_06 --rubric rubric_06
+python -m ui.run_ui_judge --provider claude --prompt judge_06 --rubric rubric_06
 ```
 
 Parallelism is controlled by the `PARALLEL_WORKERS` constant at the top of
@@ -112,14 +112,14 @@ result = judge_transcript_bundle(
 print(result.total_score, result.max_score)
 ```
 
-To grade all bundles of a given type, use the bundle UI runners:
+To grade all bundles of a given type, use the bundle UI runner:
 
 ```powershell
 # GPT — grade all bundle_01 bundles
-python -m ui.run_ui_bundle_gpt --bundle-type 01
+python -m ui.run_ui_bundle_judge --provider gpt --bundle-type 01
 
 # Claude — grade all bundle_02 bundles
-python -m ui.run_ui_bundle_claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
+python -m ui.run_ui_bundle_judge --provider claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
 ```
 
 Bundle files live in `transcripts/bundles/bundles_raw/bundle_XX/` and output

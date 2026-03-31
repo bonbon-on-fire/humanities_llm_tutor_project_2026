@@ -1,4 +1,4 @@
-﻿# Transcripts
+# Transcripts
 
 Generated tutor-student conversation transcripts and bundle experiment files
 for the Humanities LLM Tutor project.
@@ -142,13 +142,13 @@ Raw transcripts are produced by the tutor-student simulation pipeline:
 
 ```powershell
 # Grade all raw transcripts with GPT
-python -m ui.run_ui_gpt
+python -m ui.run_ui_judge --provider gpt
 
 # Grade all raw transcripts with Claude
-python -m ui.run_ui_claude
+python -m ui.run_ui_judge --provider claude
 ```
 
-Both accept `--prompt` and `--rubric` flags. Output goes to the respective
+Both commands accept `--prompt` and `--rubric` flags. Output goes to the respective
 `_gpt` or `_claude` subfolder.
 
 ### Bundle Grading
@@ -160,14 +160,14 @@ they are combined into a single prompt and graded as one unit.
 
 ```powershell
 # Grade all Type 01 bundles with GPT
-python -m ui.run_ui_bundle_gpt --bundle-type 01
+python -m ui.run_ui_bundle_judge --provider gpt --bundle-type 01
 
 # Grade all Type 02 bundles with Claude
-python -m ui.run_ui_bundle_claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
+python -m ui.run_ui_bundle_judge --provider claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
 ```
 
-Both runners accept `--bundle-type` (required), `--prompt`, and `--rubric` flags.
-Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) in each runner.
+Both commands accept `--provider` (required), `--bundle-type` (required), `--prompt`, and `--rubric` flags.
+Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) at the top of `run_ui_bundle_judge.py`.
 
 #### Bundle Types
 

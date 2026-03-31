@@ -1,5 +1,5 @@
-﻿"""
-Interactive bundle runner that generates raw (unjudged) tutor/student transcripts.
+"""
+Interactive runner that generates raw (unjudged) tutor/student transcripts.
 
 Run with interactive CLI:
     python -m ui.run_ui_raw
