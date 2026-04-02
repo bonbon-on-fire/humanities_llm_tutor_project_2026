@@ -16,6 +16,8 @@ You must grade only from provided evidence in the transcript and assignment cont
 
 - Assignment context (`context`) and exercise (`exercise`)
 - Full conversation transcript (all turns)
+- In bundle mode, the input will contain multiple transcript blocks labeled like `TRANSCRIPT X OF N`.
+- In bundle mode, treat all transcript blocks as one long combined transcript (single evidence space) for one holistic grade.
 - Authoritative rubric:
 
 <<<RUBRIC_START>>>
@@ -37,6 +39,8 @@ You must grade only from provided evidence in the transcript and assignment cont
 - Keep all values within allowed ranges and maintain internal consistency.
 - Use exact maxima: `max_base_score=46`, `max_score=46`.
 - Include all required sections and criterion IDs exactly as required by schema.
+- For bundle input, produce one final JSON grade for the whole bundle.
+- Do not grade transcript blocks individually, do not keep separate transcript-level subtotals, and do not average per-transcript scores.
 
 ## Output
 
