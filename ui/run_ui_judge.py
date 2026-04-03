@@ -42,6 +42,8 @@ TRANSCRIPTS_DIR = _REPO_ROOT / "transcripts"
 # Parallel workers — change this value to control concurrency.
 # ---------------------------------------------------------------------------
 PARALLEL_WORKERS = 6
+# Temporary output folder version suffix. Set to "" to disable.
+OUTPUT_VERSION_SUFFIX = "v2"
 
 
 def _require_openai_api_key() -> None:
@@ -97,7 +99,8 @@ def _provider_target_path(raw_path: Path, provider: str) -> Path:
     """Map a raw transcript path to its graded counterpart folder."""
     persona_dir = raw_path.parent.parent
     persona_type = persona_dir.name
-    target_dir = persona_dir / f"{persona_type}_{provider}"
+    target_suffix = f"_{OUTPUT_VERSION_SUFFIX.strip()}" if OUTPUT_VERSION_SUFFIX.strip() else ""
+    target_dir = persona_dir / f"{persona_type}_{provider}{target_suffix}"
     target_dir.mkdir(parents=True, exist_ok=True)
     return target_dir / raw_path.name
 
