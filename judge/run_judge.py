@@ -305,13 +305,16 @@ def _format_conversation_for_judge(transcript: dict[str, Any]) -> str:
 
 
 def _normalize_criterion_keys(sections: dict[str, Any]) -> dict[str, Any]:
-    """Normalize criterion keys inside each section from underscore to dot notation.
+    """Normalize criterion keys inside each section to short ``X.Y`` dot-notation.
 
-    Some model responses use ``"1_1"`` instead of ``"1.1"`` as criterion dict keys.
-    This converts any all-digit underscore-joined key (e.g. ``"2_2"``) to its
-    dot-notation equivalent (``"2.2"``) before the grade is written to disk.
-    Section-level keys like ``"1_pedagogy"`` are left intact because they contain
-    non-digit parts.
+    Handles all observed model output variants before the grade is written to disk:
+
+    * ``'1.1'``                                  → ``'1.1'``  (already correct)
+    * ``'1_1'``                                  → ``'1.1'``  (pure underscore)
+    * ``'1.1_socratic_method_guided_discovery'`` → ``'1.1'``  (dot-prefix + description)
+    * ``'1_1_socratic_method_guided_discovery'`` → ``'1.1'``  (underscore-prefix + description)
+
+    Section-level keys like ``'1_pedagogy'`` are left intact.
     """
     out: dict[str, Any] = {}
     for sid, section in sections.items():
@@ -324,8 +327,8 @@ def _normalize_criterion_keys(sections: dict[str, Any]) -> dict[str, Any]:
             continue
         normalized: dict[str, Any] = {}
         for cid, val in criteria.items():
-            parts = str(cid).split("_")
-            dot_cid = ".".join(parts) if len(parts) > 1 and all(p.isdigit() for p in parts) else str(cid)
+            m = re.match(r"^(\d+)[._](\d+)", str(cid))
+            dot_cid = f"{m.group(1)}.{m.group(2)}" if m else str(cid)
             normalized[dot_cid] = val
         out[sid] = {**section, "criteria": normalized}
     return out

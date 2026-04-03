@@ -88,20 +88,55 @@ def _extract_section_scores(grade: dict[str, Any]) -> tuple[dict[str, float], di
 
 
 def _normalize_criterion_id(cid: str) -> str:
-    """Normalize criterion ID to dot-notation; converts '1_1' → '1.1', '2_2' → '2.2', etc.
+    """Normalize any criterion key to short ``X.Y`` dot-notation.
 
-    Some judge runs emit underscore separators instead of dots (e.g. ``1_1`` vs ``1.1``).
-    Normalizing here prevents duplicate subsection columns in charts.
-    Only all-digit parts trigger conversion, so IDs like ``1_pedagogy`` are left intact.
+    Handles all observed model output variants:
+
+    * ``'1.1'``                                    → ``'1.1'``  (already correct)
+    * ``'1_1'``                                    → ``'1.1'``  (pure underscore)
+    * ``'1.1_socratic_method_guided_discovery'``   → ``'1.1'``  (dot-prefix + description)
+    * ``'1_1_socratic_method_guided_discovery'``   → ``'1.1'``  (underscore-prefix + description)
+
+    Keys that do not start with a ``digit . digit`` or ``digit _ digit`` pattern
+    (e.g. section keys like ``'1_pedagogy'``) are returned unchanged.
     """
-    parts = str(cid).split("_")
-    if len(parts) > 1 and all(p.isdigit() for p in parts):
-        return ".".join(parts)
+    import re
+    m = re.match(r"^(\d+)[._](\d+)", str(cid))
+    if m:
+        return f"{m.group(1)}.{m.group(2)}"
     return str(cid)
 
 
+def _criterion_score_max(criterion: dict[str, Any]) -> tuple[Any, Any]:
+    """Return (score, max) from a criterion dict, handling two schema variants.
+
+    Schema A (newer runs): score nested under ``criterion["base"]``.
+    Schema B (older runs): score directly in ``criterion`` as ``criterion["score"]``.
+    Returns ``(None, None)`` when neither pattern is present.
+    """
+    if "score" in criterion or "max" in criterion:
+        return criterion.get("score"), criterion.get("max")
+    base = criterion.get("base")
+    if isinstance(base, dict) and ("score" in base or "max" in base):
+        return base.get("score"), base.get("max")
+    return None, None
+
+
 def _extract_subsection_scores(grade: dict[str, Any]) -> tuple[dict[str, float], dict[str, float]]:
-    """Extract per-subsection (criterion) score/max pairs from grade sections."""
+    """Extract per-subsection (criterion) score/max pairs from grade sections.
+
+    Handles all three schema variants observed in the corpus:
+
+    * Schema A – newer runs: criterion value is ``{"deductions": [...], "base": {"score": N, "max": M}}``
+      with short ``X.Y`` keys (e.g. ``"1.1"``).
+    * Schema B – older runs: criterion value is ``{"deductions": [...], "score": N, "max": M}``
+      with full underscore keys (e.g. ``"1_1_socratic_method_..."``).
+    * Missing criteria – only ``"deductions"`` and ``"base"`` keys present at the section level;
+      these sections are skipped because there is nothing to extract at the subsection level.
+
+    Both flat keys (criteria directly in the section dict) and nested keys (criteria under
+    ``section["criteria"]``) are supported.
+    """
     scores: dict[str, float] = {}
     maxes: dict[str, float] = {}
     sections = grade.get("sections")
@@ -111,15 +146,32 @@ def _extract_subsection_scores(grade: dict[str, Any]) -> tuple[dict[str, float],
     for _, section in sections.items():
         if not isinstance(section, dict):
             continue
+
         criteria = section.get("criteria")
-        if not isinstance(criteria, dict):
+        if isinstance(criteria, dict):
+            for cid, criterion in criteria.items():
+                if not isinstance(criterion, dict):
+                    continue
+                score, max_ = _criterion_score_max(criterion)
+                if score is None and max_ is None:
+                    continue
+                normalized = _normalize_criterion_id(str(cid))
+                scores[normalized] = _parse_score(score)
+                maxes[normalized] = _parse_score(max_)
             continue
-        for cid, criterion in criteria.items():
+
+        # Flat shape: subsection ids are direct keys under the section object.
+        for cid, criterion in section.items():
+            if cid in {"base", "deductions", "criteria"}:
+                continue
             if not isinstance(criterion, dict):
                 continue
+            score, max_ = _criterion_score_max(criterion)
+            if score is None and max_ is None:
+                continue
             normalized = _normalize_criterion_id(str(cid))
-            scores[normalized] = _parse_score(criterion.get("score"))
-            maxes[normalized] = _parse_score(criterion.get("max"))
+            scores[normalized] = _parse_score(score)
+            maxes[normalized] = _parse_score(max_)
     return scores, maxes
 
 
@@ -1068,6 +1120,15 @@ def main() -> int:
         out_dir,
         chart_idx=chart_idx,
         output_name="section_discrepancy_by_rubric_section_gpt_vs_claude.png",
+    )
+    chart_idx += 1
+
+    _chart_subsection_discrepancies(
+        gpt_all_rows,
+        claude_all_rows,
+        out_dir,
+        chart_idx=chart_idx,
+        output_name="subsection_discrepancy_by_subsection_gpt_vs_claude.png",
     )
     chart_idx += 1
 
