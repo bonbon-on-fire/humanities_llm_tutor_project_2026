@@ -264,6 +264,16 @@ def _sort_key(row: GradeRow) -> tuple:
     return (row.persona_type, row.student_persona, row.course, ex_num, tnum)
 
 
+def _title_variant_suffix(output_name: str) -> str:
+    """Return a chart title suffix based on output filename variant."""
+    stem = Path(output_name).stem.lower()
+    if stem.endswith("_v2"):
+        return " (v2)"
+    if stem.endswith("_v3"):
+        return " (v3)"
+    return ""
+
+
 def _transcript_num(row: GradeRow) -> int:
     """Extract numeric suffix from transcript_name like transcript_17."""
     if "_" in row.transcript_name:
@@ -478,7 +488,7 @@ def _chart_line_scores(
             paired_c.append(c.total_score)
 
     fig, ax = plt.subplots(figsize=(16, 7))
-    title_suffix = " (v2)" if output_name.endswith("_v2.png") else ""
+    title_suffix = _title_variant_suffix(output_name)
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=2.5)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=2.5)
     ax.set_title(f"Total Score Per Transcript ({persona_label}): GPT vs Claude{title_suffix}")
@@ -652,7 +662,7 @@ def _chart_section_discrepancies(
 
     x = list(range(len(section_ids_sorted)))
     fig, ax = plt.subplots(figsize=(12, 7))
-    title_suffix = " (v2)" if output_name.endswith("_v2.png") else ""
+    title_suffix = _title_variant_suffix(output_name)
     bars = ax.bar(x, mean_abs, color="#6f42c1", alpha=0.8)
     ax.set_title(f"Rubric Section Discrepancy (GPT vs Claude){title_suffix}")
     ax.set_xlabel("Rubric Section")
@@ -738,7 +748,7 @@ def _chart_subsection_discrepancies(
 
     x = list(range(len(subsection_ids_sorted)))
     fig, ax = plt.subplots(figsize=(13, 7))
-    title_suffix = " (v2)" if output_name.endswith("_v2.png") else ""
+    title_suffix = _title_variant_suffix(output_name)
     bars = ax.bar(x, mean_abs, color="#2f7ed8", alpha=0.85)
     ax.set_title(f"Subsection Discrepancy (GPT vs Claude){title_suffix}")
     ax.set_xlabel("Rubric Subsection")
@@ -898,7 +908,7 @@ def _chart_subsection_correlation_heatmap(
 
     fig, ax = plt.subplots(figsize=(10, 8))
     filename = output_name or f"subsection_correlation_heatmap_{provider_label.lower()}_{persona_label}_normalized.png"
-    title_suffix = " (v2)" if filename.endswith("_v2.png") else ""
+    title_suffix = _title_variant_suffix(filename)
     im = ax.imshow(corr_matrix, cmap="coolwarm", vmin=-1, vmax=1)
     nonempty_rows = sum(1 for values in normalized_rows if values)
     ax.set_title(
@@ -1062,7 +1072,7 @@ def _chart_bundle_scores(
             paired_c.append(c.total_score)
 
     fig, ax = plt.subplots(figsize=(16, 7))
-    title_suffix = " (v2)" if output_name.endswith("_v2.png") else ""
+    title_suffix = _title_variant_suffix(output_name)
     ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=3)
     ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=3)
     ax.set_title(f"Bundle Type {bundle_type} ({persona_label}) — Total Score Per Bundle: GPT vs Claude{title_suffix}")
@@ -1235,6 +1245,69 @@ def main() -> int:
     else:
         print("No *_v2 graded transcript folders found. Skipping _v2 chart generation.")
 
+    # v3 charts: use only *_gpt_v3 / *_claude_v3 graded transcript folders.
+    gpt_v3_rows = _read_provider_rows_variant(transcripts_dir, "gpt", "_v3")
+    claude_v3_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_v3")
+    print(f"Loaded GPT v3: {len(gpt_v3_rows)} transcripts   Claude v3: {len(claude_v3_rows)} transcripts")
+    if gpt_v3_rows or claude_v3_rows:
+        _chart_section_discrepancies(
+            gpt_v3_rows,
+            claude_v3_rows,
+            out_dir,
+            chart_idx=chart_idx,
+            output_name="section_discrepancy_by_rubric_section_gpt_vs_claude_v3.png",
+        )
+        chart_idx += 1
+
+        _chart_subsection_discrepancies(
+            gpt_v3_rows,
+            claude_v3_rows,
+            out_dir,
+            chart_idx=chart_idx,
+            output_name="subsection_discrepancy_by_subsection_gpt_vs_claude_v3.png",
+        )
+        chart_idx += 1
+
+        _chart_line_scores(
+            gpt_v3_rows,
+            claude_v3_rows,
+            out_dir,
+            persona_label="all_transcripts_v3",
+            output_name="individual_grades_all_transcripts_gpt_vs_claude_v3.png",
+            chart_idx=chart_idx,
+        )
+        chart_idx += 1
+
+        _chart_subsection_correlation_heatmap(
+            gpt_v3_rows + claude_v3_rows,
+            out_dir,
+            provider_label="all_providers",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized_v3.png",
+        )
+        chart_idx += 1
+        _chart_subsection_correlation_heatmap(
+            gpt_v3_rows,
+            out_dir,
+            provider_label="gpt",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_gpt_all_personas_normalized_v3.png",
+        )
+        chart_idx += 1
+        _chart_subsection_correlation_heatmap(
+            claude_v3_rows,
+            out_dir,
+            provider_label="claude",
+            persona_label="all_personas",
+            chart_idx=chart_idx,
+            output_name="subsection_correlation_heatmap_claude_all_personas_normalized_v3.png",
+        )
+        chart_idx += 1
+    else:
+        print("No *_v3 graded transcript folders found. Skipping _v3 chart generation.")
+
     bundle_type = "01"
     bundle_gpt_all = _read_bundle_rows(bundles_dir, "gpt", bundle_type)
     bundle_claude_all = _read_bundle_rows(bundles_dir, "claude", bundle_type)
@@ -1284,6 +1357,33 @@ def main() -> int:
             chart_idx += 1
         else:
             print(f"  No {persona} bundle_{bundle_type} v2 graded files found. Skipping chart.")
+
+    bundle_gpt_v3_all = _read_bundle_rows_variant(bundles_dir, "gpt", bundle_type, "_v3")
+    bundle_claude_v3_all = _read_bundle_rows_variant(bundles_dir, "claude", bundle_type, "_v3")
+    print(
+        f"Loaded bundle_{bundle_type} v3 GPT: {len(bundle_gpt_v3_all)} bundles   "
+        f"Claude v3: {len(bundle_claude_v3_all)} bundles"
+    )
+    for persona in ("chaotic", "cooperative", "clueless"):
+        bundle_gpt_v3 = _filter_bundle_rows(bundle_gpt_v3_all, {persona})
+        bundle_claude_v3 = _filter_bundle_rows(bundle_claude_v3_all, {persona})
+        print(
+            f"Loaded bundle_{bundle_type} v3 {persona} GPT: {len(bundle_gpt_v3)} bundles   "
+            f"Claude v3: {len(bundle_claude_v3)} bundles"
+        )
+        if bundle_gpt_v3 or bundle_claude_v3:
+            _chart_bundle_scores(
+                bundle_gpt_v3,
+                bundle_claude_v3,
+                bundle_type,
+                out_dir,
+                persona_label=f"{persona}_v3",
+                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude_v3.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
+        else:
+            print(f"  No {persona} bundle_{bundle_type} v3 graded files found. Skipping chart.")
 
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0
