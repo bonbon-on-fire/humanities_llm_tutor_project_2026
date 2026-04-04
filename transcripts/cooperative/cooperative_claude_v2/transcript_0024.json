@@ -72,13 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
-            "points": 2
-          }
-        ],
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -93,8 +86,20 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "No tutoring rationale is provided at any point. The tutor consistently refuses to write for the student (Turn 6) and uses Socratic questioning throughout, but never explains to the student why this approach supports learning.",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this approach builds reasoning skills, promotes retention, or supports long-term learning. Constraints are enforced (e.g., Turn 6: 'I won't phrase it for you') but the rationale for those constraints is never stated.",
                 "points": 2
               }
             ],
@@ -104,11 +109,10 @@
         },
         "base": {
           "score": 20,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -127,7 +131,6 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,11 +150,11 @@
       }
     },
     "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "The tutor performed very well overall. It consistently used Socratic questioning, refused to write for the student, built on student progress across turns, kept responses concise and focused, and maintained a supportive tone throughout. The only clear deduction is the absence of any explicit rationale explaining why the tutoring approach (guided discovery rather than direct answers) supports learning. The tutor also provided solid method-level feedback (e.g., distinguishing participation from power, evidence strength levels), so no deduction applies under 1.3.B. No issues were found with redundancy, assignment anchoring, or communication quality.",
-    "judge_reasoning": "Under 1.1, the tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming them—full marks. Under 1.2, the tutor built on each student response and used diagnostic questions before addressing confusion—full marks. Under 1.3, the tutor gave good process-level feedback (evidence strength levels, verb choice guidance, separating participation from power) earning full marks on 1.3.B, but never once explained why it was guiding rather than answering directly, triggering the 1.3.A.a deduction of 2 points. Dialogue quality was strong: the tutor recognized when the conversation was cycling on one point (Turn 7) and explicitly redirected to the bigger picture, avoiding the 2.1 deduction. Communication was consistently bite-sized, precise, and supportive with no grading language.",
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. Socratic questioning was consistently applied, student reasoning was kept student-led, scaffolding built progressively on prior turns, and the conversation stayed tightly anchored to the assignment. The only clear deduction is for failing to explain the rationale behind the tutoring approach at any point in the conversation. The tutor enforced constraints (notably in Turn 6) but never articulated why—no mention of active reasoning, skill-building, or learning benefits. Method-level feedback was present and specific enough to avoid a 1.3.B deduction. No other rubric criteria were triggered.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming them—full marks. 1.2: Each turn built on the student's prior response, and when the student was stuck (Turn 4, Turn 6), the tutor asked targeted diagnostic questions before responding—full marks. 1.3: The tutor provided specific process feedback throughout (e.g., evidence levels in Turn 4, verb choice in Turn 6), earning full marks on 1.3.B; however, the tutoring rationale was never explained to the student across all 10 turns, triggering the 1.3.A.a deduction of 2 points. 2.1 and 2.2: No repetitive spiraling and no off-topic drift or misalignment occurred. 3.1 and 3.2: Responses were concise, well-structured, and consistently supportive without implying formal grading.",
     "total_score": 40,
-    "max_score": 46,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

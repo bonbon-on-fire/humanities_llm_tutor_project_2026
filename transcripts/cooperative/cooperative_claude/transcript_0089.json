@@ -72,43 +72,107 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student to find evidence themselves rather than simply providing a rating or example rating. There is no moment where the tutor articulates that this approach builds analytical skill, supports retention, or prepares the student for later assignments. The tutoring constraints are enforced but never justified.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In Turn 4, the student successfully articulates a clear 8-vs-9 distinction after struggling in Turn 3. The tutor moves forward without prompting any reflection on what changed in the student's thinking or why that reasoning worked. The opportunity to reinforce the method is missed.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student to find evidence before rating, or why it is not simply providing the answer. There is no moment where the tutor articulates the rationale for its Socratic approach (e.g., that building the reasoning independently supports retention or skill development).",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.3.B.b",
+                "reason": "In Turn 5, when the student asks what counts as strong vs. weak evidence, the tutor provides a useful but brief list. However, it does not give method-level feedback on the student's own thinking process or explain why specificity and locality matter for rating justification—it stays at the level of examples rather than coaching the student's reasoning method.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student makes clear progress in Turns 7–8, recognizing they should gather evidence before rating. The tutor affirms this but does not prompt any reflection on what changed in the student's thinking or why the evidence-first approach is better methodology.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 18,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 44,
-    "overview": "The tutor performs strongly overall, consistently using Socratic questioning, avoiding direct answers, scaffolding the student's reasoning step by step, and keeping responses concise and focused. Two minor deductions apply: the tutor never explains the rationale for its guided-discovery approach, and it misses a clear opportunity to prompt reflection after the student makes a notable improvement in Turn 4.",
-    "judge_reasoning": "Criterion 1.1 is fully intact: the tutor never gives a ready-to-submit rating or reasoning chain, always redirecting the student to gather evidence and test their own logic. Criterion 1.2 is fully intact: the tutor builds on each student response and does not restart from scratch. Criterion 1.3 loses 2 points under 1.3.A.a because across all 10 turns the tutor never once explains why it is asking the student to derive the rating rather than providing it—no mention of skill-building, retention, or assignment preparation. An additional 2 points are deducted under 1.3.C.a because after the student's clear improvement in Turn 4 (articulating a principled 8-vs-9 distinction), the tutor simply moves forward without asking the student to reflect on what shifted in their thinking. Dialogue quality and communication quality are both full marks: responses are bite-sized, well-anchored to the assignment, non-repetitive, and supportive in tone without implying formal grading.",
-    "total_score": 40,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently refusing to give ratings or conclusions and instead prompting the student to build their own reasoning framework. Scaffolding is well-executed, building from abstract criteria to concrete evidence-gathering. Deductions are concentrated in 1.3: the tutor never explains why it is guiding rather than answering, misses an opportunity to give deeper method-level feedback on evidence quality, and does not prompt reflection when the student reaches the key insight about evidence-first reasoning.",
+    "judge_reasoning": "Criteria 1.1 and 1.2 are fully intact: the tutor never provides submission-ready content, never does the reasoning for the student, and consistently builds on student progress with targeted follow-up questions. For 1.3, three deductions apply: (A) the tutoring rationale is never articulated—the tutor enforces evidence-first reasoning without once explaining why this approach supports learning; (B) in Turn 5, the feedback on evidence quality stays at the example level rather than coaching the student's reasoning method; and (C) when the student reaches the correct insight in Turns 7–8, the tutor affirms but does not prompt reflection on what changed. Dialogue quality is strong with no repetition or drift. Communication is concise and appropriately toned throughout.",
+    "total_score": 38,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

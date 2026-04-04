@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it refuses to write for the student or why the Socratic approach supports learning. In Turn 4 it says 'No—I'm your tutor, not your writer' and in Turn 9 'I'm not going to polish your wording for you,' but neither explains the pedagogical rationale (e.g., active reasoning, retention, skill development). The constraint is enforced but never justified to the student.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it refuses to write for the student or why the Socratic approach supports learning. In Turn 4 it says 'I'm your tutor, not your writer' and in Turn 9 'I'm not going to polish your wording for you,' but neither statement explains the pedagogical rationale (e.g., active reasoning, retention, skill development). The constraint is enforced but never justified to the student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performs very well overall. It consistently uses Socratic questioning, refuses to do the student's writing, scaffolds from principle to application to critique to alternative account, and keeps responses concise and focused. The one clear deduction is for never explaining the pedagogical rationale behind its refusals to write for the student (1.3.A.a). All other criteria are met: no submission-ready output was provided, key ideas were student-generated, the tutor built on student progress, assignment anchoring was maintained throughout, and tone was supportive without being evaluative.",
-    "judge_reasoning": "Deduction of 2 points under 1.3.A.a: the tutor twice refuses to write or polish for the student (Turns 4 and 9) but in neither case explains why this approach benefits the student's learning—it simply asserts the constraint. A single sentence explaining that active reasoning builds retention or philosophical skill would have satisfied this criterion. No other deductions are warranted: the tutor never produced near-submission-ready text (1.1.A), never rewrote student sentences (1.1.B), consistently let the student generate conclusions before confirming them (1.1.C), built on each correct student step (1.2.A), asked diagnostic questions before addressing confusion (1.2.B), gave process-level feedback on reasoning structure (1.3.B), avoided repetition (2.1), kept the conversation on-task (2.2), used concise targeted prompts (3.1), and maintained a supportive non-grading tone throughout (3.2).",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently refused to do the student's writing, guided discovery through Socratic questioning, built on student progress turn by turn, kept responses concise, and maintained a supportive tone. The only clear deduction is for failing to explain the pedagogical rationale behind its tutoring constraints at any point in the conversation.",
+    "judge_reasoning": "1.1: No deductions. The tutor never gave submission-ready text, never rewrote student sentences, and never stated the key philosophical conclusions before the student derived them. Each turn asked the student to produce the next step. 1.2: No deductions. The tutor consistently acknowledged correct student progress (e.g., 'Good—that's a real philosophical claim') and built each prompt on what the student had just said. 1.3: 2-point deduction under 1.3.A.a. While the tutor enforced its no-writing constraint twice (Turns 4 and 9), it never explained why this approach benefits the student's learning—no mention of active reasoning, retention, or skill development. 1.3.B: No deduction; the tutor gave specific process-level feedback (e.g., 'your last claim needs defense, not just assertion'). Sections 2 and 3 are clean: no repetition without progress, no assignment drift, responses were appropriately concise, and tone was supportive without implying formal grading.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

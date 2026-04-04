@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied Jakarta-specific actor categories and then explicitly gave the reasoning bridge the student should use ('government is most active because it has formal decision-making power/resources' and the resident groups are missing because they are affected but underrepresented). That completed a key interpretive step rather than leaving the central reasoning fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -97,7 +103,7 @@
                   4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced a no-ghostwriting boundary, but did not clearly explain the learning rationale behind that constraint in terms of skill-building, retention, or active reasoning.",
+                "reason": "The tutor repeatedly stated role limits ('I can't write the forum post for you,' 'not ghostwriter') but never explained why those constraints support the student's learning, reasoning, or retention.",
                 "points": 2
               },
               {
@@ -107,20 +113,20 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student moved from uncertainty to a solid sentence, the tutor praised the result and checked for supporting examples, but did not prompt reflection on what changed in the student's reasoning or why the improved approach worked.",
+                "reason": "After the student moved from resistance to producing a solid sentence, the tutor praised it and checked for supporting examples, but did not ask the student to reflect on what changed in their reasoning or why the new approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -132,13 +138,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -150,14 +156,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly within a tutoring role, avoided submission-ready writing, and kept the student anchored to the specific assignment throughout. The main weaknesses were meta-level: the tutor did not explicitly explain why the writing boundary supports learning, and missed a reflection opportunity once the student improved. Some turns were somewhat rigid because the student repeatedly pushed for copy-paste help, but the tutor still kept responses concise and task-focused, so I did not deduct for tone or redundancy.",
-    "judge_reasoning": "I gave full credit for guided discovery because the tutor consistently refused to draft the forum post and instead used prompts, outlines, and critique requests to keep authorship with the student. I also kept full credit for scaffolding and assignment anchoring because the tutor steadily narrowed the task into manageable steps tied directly to the actor-table prompt. I deducted under 1.3.A.a because the tutor stated role boundaries without clearly explaining the pedagogical reason for them, and under 1.3.C.a because after the student produced a successful sentence, the tutor did not ask the student to reflect on what changed in their reasoning. No other deductions were clearly supported by the transcript.",
-    "total_score": 40,
+    "overview": "The tutor consistently refused to ghostwrite, kept the exchange anchored to the actual assignment, and used concise prompts that eventually got the student to produce their own sentence. The main ambiguity is whether the Jakarta-specific actor categories and reasoning bullets crossed into doing too much of the central reasoning; I applied the smaller 1.1 deduction rather than the full 12-point removal because the tutor still did not provide a submission-ready forum post.",
+    "judge_reasoning": "The strongest aspect of this tutoring was boundary-setting without drifting off task: the tutor stayed focused on the actor-table assignment, redirected repeated requests for a copy-paste answer, and kept responses short and usable. However, in later turns the tutor moved beyond pure scaffolding by providing the key reasoning bridge connecting the student's actor list to the final takeaway about government authority and underrepresented residents, which fits 1.1.C.b. I also deducted under 1.3 because the tutor never explained why the no-ghostwriting constraint supports learning, and after the student's improvement the tutor did not prompt reflection on what changed. I did not deduct for repetition because, despite repeated refusals, the conversation still progressed through outline, actor categories, and a student-authored final sentence.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,98 +72,125 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 3, the student explicitly says they are confused about 'basically all of it' and asks to be walked through every category from scratch. Rather than asking a diagnostic question to identify where exactly the confusion lies, the tutor simply lists all categories again with brief descriptors—essentially repeating the same move from Turn 2 without probing what specifically the student doesn't understand.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly expressed confusion (Turns 3, 8, 9), the tutor tended to respond with fuller explanations or structured lists rather than first diagnosing what specifically the student did not understand. For example, in Turn 3 the student said they were confused about 'basically all of it,' and the tutor responded with a full walkthrough of all categories rather than probing which specific part was unclear. In Turn 9, the student asked for an explanation of city proper vs. metro, and the tutor immediately provided the full distinction without first checking what the student already knew.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student never clearly succeeds at a step in a way that would trigger a reflection prompt, but there are moments (e.g., Turn 4 where the student correctly identifies 'country and region' for location, Turn 10 where the student correctly identifies 'official city boundary') where the tutor moves on without reinforcing what the student got right or prompting reflection on why that reasoning worked.",
-            "points": 2
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explained why it was guiding the student through questions rather than simply providing answers. There is no moment in the conversation where the tutor articulates that this approach supports active reasoning, retention, or skill development. The tutor does decline to fill in a row in Turn 7, but does not explain the pedagogical rationale for that refusal.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  3,
+                  5,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student never clearly succeeded from a failed attempt in a way that prompted reflection, but there were moments of partial progress (e.g., Turn 4 where the student correctly identified country/region for location, Turn 10 where the student settled on city boundary). The tutor did not prompt reflection on what changed in the student's thinking or reinforce the method choices made.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than just providing answers. There is no explicit rationale given for the tutoring approach (e.g., explaining that working through the reasoning builds skills or retention). The closest is Turn 7 where the tutor says 'that would cross into doing the assignment,' but this is a constraint statement, not an explanation of the pedagogical rationale.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              5,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  5,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The conversation repeatedly cycles on the same confusion without meaningful synthesis or advancement. The student expresses being lost or overwhelmed in nearly every turn (Turns 3, 5, 7, 8, 9), and the tutor responds with variations of the same structured list or question approach without successfully reframing, simplifying, or consolidating. By Turn 10, the tutor acknowledges 'We've circled this enough,' confirming the pattern. The tutor did not switch strategies effectively to break the spiral.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles repeatedly on the same pattern: student expresses confusion, tutor re-explains or re-lists the same concepts, student remains confused and asks again. By Turns 8-10, the tutor is still trying to get the student to pick a single row to attempt, using essentially the same prompting strategy without meaningfully reframing, simplifying, or switching approach. The conversation spirals without synthesis or escalation to a different strategy.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              8
-            ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "In Turn 8, the tutor opens with 'You're overcomplicating it.' While not severely dismissive, this phrasing risks sounding mildly condescending to an already anxious student, potentially discouraging further participation rather than building confidence.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 31,
+    "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates solid Socratic discipline overall—refusing to complete rows for the student, consistently redirecting to student-led attempts, and maintaining assignment focus throughout. However, the conversation suffers from significant repetition without adaptation: the tutor uses the same prompting strategy across 10 turns without successfully breaking the student's confusion spiral or switching to a more targeted diagnostic approach. Key deductions include failure to diagnose confusion before responding (Turn 3), no explicit pedagogical rationale given for the tutoring approach, no reflection prompts after student partial successes, and pattern-level repetition without synthesis. A mild tone issue appears in Turn 8.",
-    "judge_reasoning": "Section 1 loses 7 points: 3 for failing to diagnose before responding in Turn 3 (tutor re-lists categories instead of probing what specifically confuses the student), 2 for never explaining the tutoring rationale beyond a brief constraint statement in Turn 7, and 2 for missing reflection opportunities after student partial successes (e.g., Turns 4 and 10). Section 2 loses 4 points for clear pattern-level repetition: the tutor cycles the same 'pick one category' prompt across multiple turns without reframing, simplifying, or escalating to a different strategy, leaving the student in the same confused state by Turn 10 as Turn 2. Section 3 loses 2 points for the mildly condescending 'You're overcomplicating it' opener in Turn 8, which risks discouraging an already anxious student. No deductions are applied for 1.1 criteria as the tutor consistently avoids doing the assignment for the student.",
-    "total_score": 31,
+    "overview": "The tutor maintained appropriate boundaries throughout, never doing the assignment for the student, and kept responses concise and well-structured. However, the conversation suffered from a persistent spiral where the student remained confused across nearly all 10 turns without the tutor successfully diagnosing the root of the confusion or switching strategies. The tutor also never explained its pedagogical rationale for guiding rather than telling, and missed opportunities to prompt reflection on student progress.",
+    "judge_reasoning": "1.1 receives full marks: the tutor consistently refused to complete assignment work, used questions to guide the student, and avoided giving submission-ready content. 1.2 loses 3 points for 1.2.B.a: when the student expressed broad confusion (Turns 3, 8, 9), the tutor jumped to explanations rather than first diagnosing what specifically was unclear. 1.3 loses 4 points: the tutor never articulated why it was using a guided approach (1.3.A.a) and missed opportunities to prompt reflection after moments of student progress (1.3.C.a). 2.1 loses all 4 points: the conversation visibly spiraled with the student expressing confusion in nearly every turn and the tutor repeating similar structured-list moves without effective reframing or synthesis, as the tutor itself acknowledged in Turn 10. 2.2 and section 3 receive full marks as the tutor stayed on-task, maintained appropriate tone, and kept responses clear and bite-sized.",
+    "total_score": 33,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

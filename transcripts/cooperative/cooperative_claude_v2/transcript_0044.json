@@ -72,25 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.1.A.a",
-            "reason": "In Turn 10, the tutor asks the student to 'list 3–5 actors under leading, 3–5 under engaged, and 2–3 missing, with a short reason for each.' While framed as rough work, this is essentially asking the student to produce the near-complete deliverable structure (the Decision-making Actors Table mapped to the three assignment categories). However, the student is doing the actual content generation, and the tutor is not providing the answers—only the structural prompt. This is borderline but does not clearly cross into the tutor doing the work. No deduction applied.",
-            "points": 0
-          },
-          {
-            "evidence_turns": [
-              3,
-              4
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 3, the student expresses genuine fuzziness about where city authority ends versus national authority. The tutor in Turn 4 responds with a follow-up question but does not first diagnose the specific nature of the confusion (e.g., whether the student lacks knowledge of Jakarta's governance structure or is confused about the conceptual distinction). The tutor jumps to asking for concrete roles without checking what the student already understands about the city-national split. This is a mild instance but does not clearly trigger the full deduction since the tutor does ask probing questions rather than dumping a full method explanation.",
-            "points": 0
-          }
-        ],
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -103,18 +84,35 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -133,24 +131,6 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "3.2.B.b",
-            "reason": "Throughout the conversation, the tutor gives evaluative feedback ('That's a solid start,' 'This is strong,' 'That logic is good') without consistently clarifying that this is formative coaching rather than official grading. While the tone is supportive, the evaluative language could be misread as grading-like assessment. However, the feedback is clearly coaching-oriented in context and the student is unlikely to mistake it for official grading. This is a borderline case; applying a minor deduction.",
-            "points": 2
-          }
-        ],
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -158,40 +138,23 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "3.2.B.b",
-                "reason": "Tutor uses evaluative language ('solid start,' 'strong,' 'good') without clarifying formative framing. Borderline case—context makes coaching intent clear, but explicit formative framing is absent throughout.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
         },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
     "total_base_score": 40,
-    "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic method throughout, consistently prompting the student to generate ideas, classify actors, and stress-test reasoning rather than providing answers. The conversation progresses logically from identification to classification to gap analysis to synthesis. The tutor explicitly refuses to phrase things for the student in Turn 9, which is exemplary. One borderline deduction is applied for the absence of explicit formative framing when giving evaluative feedback, though the coaching intent is clear from context. No major deductions were warranted for pedagogy or dialogue quality.",
-    "judge_reasoning": "Pedagogy (22/24): The tutor maintains strong Socratic discipline throughout all 10 turns, never providing the answer before the student attempts reasoning. Key idea generation is consistently student-led, scaffolding builds progressively, and the tutor provides method-level feedback (e.g., 'your main weakness is vagueness, not direction'). The tutor explains the rationale for its approach implicitly through the filter framework introduced in Turn 1. No deductions for 1.1, 1.2, or 1.3 are clearly warranted; the full 22 reflects a near-perfect performance with only minor ambiguities. Dialogue quality (12/12): No repetition without progress, no assignment drift, and the tutor re-anchors appropriately throughout. Communication quality (6/8): The tutor's responses are appropriately concise and interactive. A 2-point deduction is applied under 3.2.B.b because the tutor uses evaluative language ('solid start,' 'strong,' 'good logic') across multiple turns without ever clarifying that feedback is formative coaching rather than official assessment, which could be misread as grading.",
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. Socratic method was consistently applied—questions drove student reasoning at every turn, no answers were given prematurely, and the student did the key intellectual work throughout. Scaffolding was well-paced and built on student progress. The one clear deduction is the absence of any explicit rationale explaining why the tutor uses guided questioning rather than direct answers; this meta-learning element was never surfaced. Method-level feedback was present and specific (e.g., 'your main weakness is vagueness, not direction'), so no deduction applies there. All other criteria were met.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming or refining them—no deductions apply. 1.2: The tutor built on each student response, acknowledged correct steps, and used diagnostic questions before redirecting; no deductions apply. 1.3: The tutor gave specific, process-level feedback throughout (e.g., distinguishing influence from authority, flagging vagueness), so 1.3.B is intact. However, the tutor never once explained why it was guiding rather than telling—no rationale about learning benefits was offered—triggering the 1.3.A.a deduction of 2 points. Dialogue quality and communication quality were both strong: responses were concise, interactive, on-task, and supportive throughout, with no redundancy, drift, or tone issues.",
     "total_score": 40,
-    "max_score": 46,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

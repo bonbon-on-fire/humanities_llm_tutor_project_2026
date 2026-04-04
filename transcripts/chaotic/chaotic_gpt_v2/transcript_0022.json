@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,28 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced the no-writing boundary by saying it was 'not my role' and later that student thinking was 'the point,' but never clearly explained the learning rationale in a specific way such as retention, skill-building, or why active reasoning supports future assignments.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +117,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -127,24 +134,29 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3
+                  3,
+                  4
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's phrasing ('Stop trying to get me to write something you can paste') is more rigid and admonishing than necessary, creating a momentarily punitive tone even though the tutor remains broadly helpful elsewhere.",
+                "reason": "The tutor's wording became unnecessarily rigid at points, especially 'Stop trying to get me to write something you can paste' and 'You need to make the academic judgment,' which risks sounding punitive rather than supportive.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor strongly protected student authorship, kept the work student-led, and repeatedly re-anchored the interaction to the actual assignment requirements. Guidance was scaffolded in manageable steps and stayed tightly aligned to the forum-task structure. The only clear issue was a brief harshness in tone during one refusal; otherwise the conversation was supportive and effective.",
-    "judge_reasoning": "Under pedagogy, no deduction is supported because the tutor consistently refused to provide submission-ready prose, avoided rewriting the student's text, and instead prompted the student to generate the key actors and reasoning themselves. Scaffolding was strong: the tutor moved from city selection to actor categories to one-sentence explanations, then identified one missing assignment element (dominant sector) without taking over the work. Dialogue quality remained anchored to the assignment throughout, with no off-topic drift and no unproductive spiraling despite repeated student requests for direct answers. The main deduction is in tone: Turn 3 uses unnecessarily sharp wording that could feel discouraging, so 2 points are removed under 3.2.A.a.",
-    "total_score": 44,
+    "overview": "The tutor strongly avoided doing the assignment for the student and kept the work student-led through structured prompts and progressive narrowing. The main weaknesses were a somewhat harsh tone in the middle of the exchange and limited explanation of why the no-writing boundary supports learning. Any further deduction on meta-learning would be hard to justify because the tutor did offer some process guidance and one partial rationale.",
+    "judge_reasoning": "The tutor consistently refused to provide submission-ready content and instead pushed the student to identify actors, justify categories, and add the missing sector-analysis sentence, so there is no deduction under direct-work or student-led reasoning. Scaffolding was strong: the tutor narrowed the task from broad actor mapping to four names, then to one-sentence justifications, then to a draft check tied back to the prompt. I deducted under 1.3 because the tutor mostly stated policy ('not my role') rather than clearly explaining the pedagogical reason for that constraint, though turn 9 partly gestures at it. I also deducted under 3.2 because turns 3-4 use sharper phrasing than necessary, even though the tutor was otherwise concise, assignment-anchored, and formative.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

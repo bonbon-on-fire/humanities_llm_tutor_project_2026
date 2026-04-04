@@ -72,34 +72,22 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 11,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor resolves the central methodological tradeoff for the student by recommending a scope rule ('mostly city boundary') and how to handle exceptions, rather than keeping that key reasoning step student-led.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  8
+                  3,
+                  6,
+                  9
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student says they are confused about the whole process, the tutor gives a full step-by-step method dump instead of first diagnosing which part of the process is unclear.",
+                "reason": "When the student signaled broad confusion, the tutor often moved straight into explanations or method steps rather than first diagnosing the precise sticking point. This happened with the category walkthrough, the sourcing rules, and the city-proper versus metro distinction.",
                 "points": 3
               }
             ],
@@ -113,20 +101,20 @@
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor refuses to fill in a row but does not explain the learning rationale behind that constraint beyond saying it would cross into doing the assignment.",
+                "reason": "The tutor stated a constraint ('that would cross into doing the assignment') but did not explain why this tutoring limit supports the student's learning, such as helping them practice reasoning or retain the process.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [
@@ -136,10 +124,11 @@
                   3,
                   6,
                   7,
-                  8
+                  8,
+                  10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Across multiple turns, the tutor repeatedly asks the student to pick one category or draft one row without sufficiently changing strategy, synthesizing, or simplifying, while the student remains confused.",
+                "reason": "Across multiple turns, the tutor repeated the same pattern of asking the student to pick one category or row and try it, even as the student remained stuck. The conversation advanced only minimally before the tutor finally summarized a rule at the end.",
                 "points": 4
               }
             ],
@@ -151,13 +140,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -173,21 +162,25 @@
                   10
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Phrases like 'You're overcomplicating it,' 'Don't spiral on this,' and 'We've circled this enough' create a somewhat rigid and dismissive tone that could reduce student comfort while confused.",
+                "reason": "Phrases like 'You're overcomplicating it,' 'Don't spiral on this,' and 'We've circled this enough' created a somewhat brusque tone that could discourage a confused student rather than maintain supportive trust.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 25,
+    "total_base_score": 31,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment and avoided giving completed Jakarta content, but several turns became repetitive and only partly responsive to the student's underlying confusion. Some deductions are based on borderline evidence, so the score reflects the smaller supported penalties rather than assuming stronger failure.",
-    "judge_reasoning": "The largest pedagogy deduction comes from the tutor eventually deciding the key scope choice for the student, especially by recommending city-boundary use and exception-labeling rather than having the student derive that approach. Scaffolding was mixed: the tutor often asked focused questions and built some structure, but at least once responded to broad confusion with a method dump instead of diagnosing the blockage first. Dialogue quality dropped because the tutor repeatedly returned to 'pick one row/category' without changing tactics despite the student's continued confusion. Communication was generally clear and concise, but a few phrases sounded impatient or dismissive.",
-    "total_score": 25,
+    "overview": "The tutor stayed anchored to the assignment, avoided doing the student's work, and generally kept responses concise. Main weaknesses were repetitive prompting without enough strategic shift, limited diagnosis of the student's exact confusion before explaining, and a few brusque phrasing choices. I did not deduct under 1.1 because the tutor withheld submission-ready content and kept the student responsible for filling the table, though some assignment guidance was fairly direct.",
+    "judge_reasoning": "The strongest part of the tutoring was restraint: the tutor did not provide a completed Jakarta table or near-ready submission text, and the exchange remained mostly focused on the assignment. However, the tutor repeatedly responded to confusion by supplying explanations or reiterating 'pick one row' rather than first isolating what the student understood, which supports the 1.2.B deduction. The conversation also spiraled because that same move was repeated across several turns without enough reframing, summary, or simplification, justifying the full 2.1 deduction. Finally, the tutor never explicitly explained the learning rationale behind withholding direct completion help, and some lines in the later turns sounded noticeably less supportive.",
+    "total_score": 31,
     "max_score": 46,
     "model": {
       "provider": "openai",

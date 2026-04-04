@@ -72,86 +72,99 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              9
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 9, the tutor provides a complete ranking logic framework (frequency/scale/severity mapped to score bands 8-10, 5-7, 1-4) that does the key reasoning step for the student. Rather than asking the student to derive or propose a rating model, the tutor hands over the full decision framework, removing the need for the student to reason through how to weigh stressors. This crosses into doing the key reasoning step for the student.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 2, when the student expressed confusion about how stressors fit multiple categories, the tutor jumped directly into explaining the table structure rather than asking a diagnostic question to understand what specifically was confusing the student. Similarly in Turn 4, when the student said the previous explanation 'didn't fully help,' the tutor moved straight to providing a 3-part justification framework without first probing what aspect of the justification was unclear.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is declining to write examples or give full answers—it simply refuses (e.g., 'I'm your tutor, not your writer') without articulating how this approach supports the student's learning, retention, or skill development. No rationale for the tutoring constraints is offered at any point in the conversation.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refused to do the work for the student and pushed back on requests for model answers, but never explicitly explained why this approach supports learning. There is no turn where the tutor says something like 'I'm guiding you rather than giving answers because active reasoning builds retention' or similar rationale for the tutoring constraints.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly requests broad explanations, full examples, or ranking models, and the tutor repeatedly declines and redirects to the same narrow next step without meaningfully synthesizing progress or reframing the approach. The pattern of student spiraling and tutor issuing similar short redirections continues across nearly every turn without consolidation or a shift in strategy to break the cycle.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              7
-            ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "In Turn 3, the tutor says 'I'm your tutor, not your writer,' and in Turn 7, 'Stop broadening the task.' These phrasings are dismissive and slightly punitive in tone, which risks discouraging the student rather than building confidence. While not severely cold, the bluntness crosses into territory that could harm tutoring trust.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 44,
-    "overview": "The tutor does a reasonable job keeping the student working through the assignment step by step and avoids writing the assignment for the student. However, in Turn 9 the tutor provides a complete scoring framework (frequency/scale/severity with explicit score bands) that crosses into doing the key reasoning step for the student, triggering a 6-point deduction under 1.1.C.b. The tutor also never explains the rationale for its tutoring constraints (2-point deduction, 1.3.A.a). The dialogue suffers from a persistent spiral where the student keeps requesting broad explanations and the tutor keeps issuing similar short redirections without reframing or synthesizing, triggering the full 4-point deduction under 2.1.A.a. Tone is occasionally dismissive ('I'm your tutor, not your writer'; 'Stop broadening the task'), warranting a 2-point deduction under 3.2.A.a. No deductions were applied for 1.1.A.a (no near-submission-ready output), 1.1.B.a (no rewriting of student text), 1.2 (scaffolding was generally appropriate), 1.3.B (method feedback was present), 2.2 (assignment anchoring was maintained), or 3.1 (responses were generally concise).",
-    "judge_reasoning": "The largest deduction (6 points, 1.1.C.b) is for Turn 9, where the tutor hands the student a complete rating model with explicit score bands rather than guiding the student to construct or propose one. This removes the key reasoning step from the student. The 4-point deduction (2.1.A.a) reflects that the student spirals across nearly all 10 turns with the same pattern—requesting broad help, tutor declining with a short redirect—without the tutor ever reframing, synthesizing progress, or shifting strategy to break the cycle. The 2-point deduction (1.3.A.a) reflects the complete absence of any explanation of why the tutor is withholding direct answers, which is a missed opportunity to support meta-learning. The 2-point tone deduction (3.2.A.a) is for two turns where phrasing is dismissive enough to risk discouraging the student. No double-penalization was applied across overlapping criteria.",
-    "total_score": 30,
-    "max_score": 44,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor performed strongly overall, consistently refusing to do the student's work, redirecting scope-creep requests, maintaining a supportive but firm tone, and keeping responses concise and interactive. Two deductions were applied: one for occasionally skipping diagnostic questioning when the student expressed confusion (1.2.B.a), and one for never explicitly articulating the rationale behind the Socratic tutoring approach (1.3.A.a). No deductions were warranted for direct answer-giving, assignment drift, redundancy, or communication quality.",
+    "judge_reasoning": "The tutor never provided submission-ready content or rewrote student text, earning full marks on 1.1. On 1.2, the tutor built well on student progress (e.g., affirming 'infrastructure and social' in Turn 3) but in Turns 2 and 4 moved directly to explanations when the student expressed confusion rather than first diagnosing the specific confusion point, triggering a 1.2.B.a deduction. On 1.3, the tutor gave useful process feedback (e.g., the 3-part justification test, the frequency/scale/severity model) but never once explained why the tutoring constraints exist in terms of learning benefit, triggering a 1.3.A.a deduction. Dialogue quality was excellent: the tutor redirected scope-broadening requests promptly, kept the student anchored to the assignment, and avoided repetitive cycling. Communication was consistently bite-sized, clear, and appropriately toned throughout.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

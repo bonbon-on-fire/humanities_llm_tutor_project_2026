@@ -72,38 +72,99 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved their 'location' entry from vague to specific (Turn 5), the tutor acknowledged it briefly but moved on without prompting any reflection on what changed in the student's thinking or why the more specific approach worked better. The same pattern occurs after the student correctly identifies source hierarchy in Turn 9.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  3,
+                  5,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully refines the location entry (Turn 5) and correctly identifies source-checking strategies (Turn 9-10), the tutor moves forward without prompting the student to reflect on what changed in their thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed very well overall, consistently using Socratic questioning, building on student responses, and keeping the student doing the intellectual work. The only notable gap was a failure to prompt reflection after moments of student improvement, particularly after the location entry was refined and after source hierarchy was correctly identified. No direct answers were given, no off-topic drift occurred, and communication was consistently clear and appropriately sized.",
-    "judge_reasoning": "Deduction of 2 points under 1.3.C.a: After the student successfully refined the location entry in Turn 5 and correctly identified source hierarchy in Turn 9, the tutor moved forward without asking the student to reflect on what changed or why the improved approach worked. This missed opportunity to reinforce method is the only clear rubric violation. All other criteria are met: the tutor never gave submission-ready content, consistently scaffolded from student responses, maintained assignment anchoring, avoided redundancy, and communicated in appropriately concise, supportive turns. The max_base_score is corrected to 44 per rubric.",
-    "total_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently using questions to guide the student rather than providing direct answers. The location category walkthrough (Turns 1–5) is a model of scaffolded discovery. Source evaluation guidance (Turns 7–10) is appropriately diagnostic. Two deductions apply in 1.3: the tutor never explains its pedagogical rationale to the student, and it misses opportunities to prompt reflection after the student's successful improvements.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never gives submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming them. 1.2 is fully intact: the tutor builds on each correct student step and asks diagnostic questions before addressing confusion. 1.3 loses 4 points: the tutor never articulates why it is using guided questioning (1.3.A.a), and after clear student improvements (e.g., the refined location entry in Turn 5, the source-chain reasoning in Turns 9–10), the tutor moves on without prompting the student to reflect on what changed in their thinking (1.3.C.a). Dialogue quality and communication quality are both clean: responses are concise, well-paced, on-topic, and supportive throughout.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

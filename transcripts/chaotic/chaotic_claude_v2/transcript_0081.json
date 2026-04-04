@@ -72,56 +72,110 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't do the work for the student in terms of learning rationale—e.g., active reasoning, retention, skill development. It simply refuses and redirects, but never articulates the pedagogical reason for the constraint.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student says 'idk if it's rupiah or usd and i don't wanna mess it up' (Turn 5), the tutor jumps straight to explaining the currency issue without first diagnosing what the student has actually found or tried. Similarly in Turn 3, the tutor gives source guidance without checking what the student already knows about finding data.",
-            "points": 3
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed confusion about currency units and formatting, the tutor repeatedly redirected without first diagnosing what the student actually understood about data reporting conventions. The tutor jumped to prescribing a search approach rather than asking a diagnostic question to understand the student's confusion level.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refused to do the work for the student but never once explained why this approach supports the student's learning, retention, or skill development. The rationale for the tutoring constraints was never articulated across the entire conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 17,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              6,
-              8
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycled through the same refusal pattern across multiple turns without meaningfully advancing the student's engagement or synthesizing progress. The student repeatedly asked for direct answers and the tutor repeatedly refused with minimal variation in approach, without reframing or trying a different scaffolding strategy to break the impasse.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same refusal-and-redirect pattern across many turns without meaningfully advancing the student's engagement or synthesizing progress. The student remains stuck and the tutor repeats similar moves (refuse, give structure hint, ask what they found) without reframing or escalating to a different approach to break the impasse.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase 'Your professor's alleged permission doesn't change my role' is dismissive and slightly condescending in tone, implying the student is lying without evidence. This risks undermining tutoring trust.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "Phrases like 'Your professor's alleged permission doesn't change my role' (Turn 2) and 'Stay on the assignment' (Turn 4) are somewhat cold and dismissive in tone, which risks discouraging student participation rather than building trust.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
@@ -129,9 +183,9 @@
       }
     },
     "total_base_score": 31,
-    "max_base_score": 44,
-    "overview": "The tutor consistently and correctly refuses to do the student's work, maintaining academic integrity throughout. However, it never explains the pedagogical rationale for its constraints (why the student benefits from doing the work themselves), which is a clear gap. The tutor also falls into a repetitive refusal-redirect loop without meaningfully advancing the student or trying alternative approaches when the student remains stuck. Diagnostic questioning before giving guidance is sometimes skipped. Tone is occasionally cold in ways that could discourage engagement. The 1.2.B.a deduction is applied with some uncertainty since the tutor does ask follow-up questions, but they tend to come after giving guidance rather than before.",
-    "judge_reasoning": "1.1 loses 2 points for 1.3.A.a (no learning rationale ever given) and 3 points for 1.2.B.a (tutor jumps to guidance without diagnosing what student already knows or has tried). 1.1.A and 1.1.B are not triggered—the tutor never provides submission-ready content. 2.1 loses all 4 points because the tutor repeats the same refusal-redirect pattern across at least five turns without reframing, synthesizing, or escalating to a different pedagogical approach to break the student's disengagement. 3.2 loses 2 points for tone that is occasionally cold and dismissive ('alleged permission,' 'Stay on the assignment'), which risks undermining tutoring trust. Max base score is 44 (not 46) because the schema example values are illustrative; actual max is 42 per rubric summary.",
+    "max_base_score": 42,
+    "overview": "The tutor maintained strong boundaries against doing the student's work and consistently redirected toward student-led discovery, earning full marks on 1.1. However, the tutor never explained the pedagogical rationale for its constraints (1.3.A.a), and the repetitive refusal pattern without meaningful variation or reframing across turns 2–6 triggered the 2.1 redundancy deduction. A mild tone issue in turn 2 cost points on 3.2. The 1.2 deduction is a borderline call—the tutor did ask some diagnostic questions but tended to prescribe next steps before fully probing the student's confusion level.",
+    "judge_reasoning": "1.1 is fully preserved: the tutor never gave submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points because when the student expressed genuine confusion about currency units (turns 3–5), the tutor jumped to prescribing behavior rather than first diagnosing what the student understood. 1.3 loses 2 points because the tutoring rationale was never explained across 10 turns—the tutor enforced constraints but never said why this helps the student learn. 2.1 loses all 4 points because the tutor repeated the same refusal-and-redirect pattern across at least 5 consecutive turns without reframing, synthesizing, or trying a different scaffolding approach to break the impasse. 3.2 loses 2 points for the dismissive 'alleged permission' phrasing in turn 2.",
     "total_score": 31,
     "max_score": 42,
     "model": {

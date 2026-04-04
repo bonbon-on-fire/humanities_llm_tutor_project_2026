@@ -72,79 +72,113 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Turn 10, the tutor directly confirms 'Yes—that's a strong, clear format for this assignment,' giving the student a final, submission-ready structural answer without requiring the student to reason through or validate it themselves. While this is a borderline case (it is a format question, not content), the tutor had repeatedly deflected similar requests and then capitulated with a direct confirmation that resolves the student's stated uncertainty completely, effectively doing the final decision-making step for the student.",
+                "points": 0
+              }
             ],
-            "sub_criterion_id": "1.1.C.a",
-            "reason": "In Turn 10, the tutor directly confirms 'Yes—that's a strong, clear format for this assignment' when the student asks for confirmation of the exact table format (Category | Value | Unit | Year | Source). The student proposed the answer and the tutor validated it outright, but this is borderline; the tutor did not generate the format independently. However, across the conversation the tutor largely avoids giving conclusions first. This instance is the clearest case but is mild. No deduction applied here as the student generated the format and tutor confirmed.",
-            "points": 0
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              2,
-              3,
-              7,
-              8
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly signals the same confusion across many turns (uncertainty about what 'enough detail' means, wanting a model or example). The tutor consistently responds with re-statements of the same decision rules rather than diagnosing why the student keeps looping—e.g., whether the student lacks confidence, lacks a concrete source, or has a deeper conceptual gap. The tutor does not attempt diagnostic questioning to identify the root cause of the student's persistent uncertainty before re-explaining.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turns 2 and 3, the student explicitly signals confusion about why both GDP and income per capita are needed and asks for a simple rundown. The tutor in Turn 2 provides a structured list of entry types (essentially a near-complete walkthrough of all required categories) without first diagnosing what specifically the student already understood. In Turn 7, when the student asks for a full explanation of the whole assignment, the tutor gives a broad summary paragraph rather than asking a targeted diagnostic question. The tutor repeatedly provides information dumps before checking what the student already knows.",
-            "points": 3
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states 'I'm not going to fill Jakarta in for you. My role is to help you make the choice.' in Turn 4, which provides a brief rationale for the tutoring constraint. This satisfies the minimum requirement for explaining tutoring rationale at least once.",
+                "points": 0
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "Throughout the entire conversation, the tutor enforces a Socratic approach and refuses to fill in answers for the student, but never explicitly explains why this approach supports learning—e.g., never says anything like 'I'm asking you to work through this yourself because active reasoning builds retention' or similar. The rationale for the tutoring constraints is never articulated.",
-            "points": 2
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 19,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5,
-              6,
-              7,
-              8
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student cycles through the same request (wanting a model, a summary, a complete example) across Turns 5–8, and the tutor repeatedly responds with the same list of row categories and the same 'build your own' instruction without meaningfully reframing, synthesizing, or switching strategy. The tutor acknowledges the loop in Turn 8 ('We've circled this idea a few times') but does not change approach in a way that breaks the cycle—just repeats the same row list again.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly asks for a model table, a full explanation, or a broad summary across Turns 5–8, and the tutor cycles through similar responses (decision rules, big-picture summaries) without meaningfully advancing the student's understanding or switching to a substantially different approach. By Turn 8, the tutor explicitly notes 'We've circled this idea a few times,' acknowledging the spiral, but the pattern persisted for several turns before this acknowledgment and the tutor's responses remained structurally similar throughout.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              8
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "In Turn 8, the tutor says 'Stop re-asking and turn it into a draft,' which is mildly dismissive and could discourage the student from asking clarifying questions. While the frustration is understandable given the looping, the phrasing is somewhat punitive in tone rather than supportively redirecting.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "In Turn 8, the tutor opens with 'We've circled this idea a few times. Stop re-asking and turn it into a draft.' The directive 'Stop re-asking' is somewhat dismissive and could discourage the student from asking legitimate clarifying questions. While the overall tone is generally supportive, this phrasing is mildly punitive.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
@@ -152,11 +186,11 @@
       }
     },
     "total_base_score": 33,
-    "max_base_score": 44,
-    "overview": "The tutor consistently avoids doing the assignment for the student and maintains a Socratic stance throughout, which is a clear strength. However, the conversation suffers from notable repetition across Turns 5–8 where the student spirals and the tutor cycles through similar responses without meaningfully reframing or advancing. The tutor never explains the rationale for the tutoring approach, missing an opportunity to build meta-learning. There are also instances of information dumps before diagnosing student confusion. One mildly dismissive remark in Turn 8 slightly undermines tone. The tutor's confirmation in Turn 10 is appropriate since the student generated the format independently.",
-    "judge_reasoning": "Deductions applied: (1) 1.2.B.a (-3): In Turns 2 and 7, the tutor provides structured summaries and broad explanations without first diagnosing what the student already understands, constituting a method dump before checking comprehension. (2) 1.3.A.a (-2): The tutor never explains why the Socratic/non-answer-giving approach supports learning across the entire conversation. (3) 2.1.A.a (-4): The student spirals across Turns 5–8 asking for model tables and full explanations; the tutor acknowledges the loop in Turn 8 but cycles through similar responses for multiple turns without effective reframing or strategy change. (4) 3.2.A.a (-2): 'Stop re-asking' in Turn 8 is mildly dismissive. No deductions for 1.1.A.a or 1.1.B.a as the tutor consistently avoids providing submission-ready content or rewriting student text.",
+    "max_base_score": 42,
+    "overview": "The tutor generally maintained a Socratic stance and avoided giving direct assignment content, successfully deflecting multiple student requests for model answers. However, the tutor struggled to break a persistent loop where the student kept requesting the same type of reassurance across many turns, repeating the same decision-rule list without diagnosing the underlying confusion or switching strategy. The tone became slightly dismissive in Turn 8. The tutor did provide a rationale for its tutoring approach in Turn 4. The 1.1 deduction for Turn 10 was not applied as the format confirmation, while direct, is a structural/procedural matter rather than substantive assignment content.",
+    "judge_reasoning": "1.1 received no deduction: the tutor consistently refused to provide substantive content answers and the Turn 10 format confirmation is a borderline procedural matter that does not constitute submission-ready assignment output. 1.2 received a 3-point deduction for failing to diagnose the root cause of the student's persistent confusion—the tutor repeated the same decision rules without probing why the student kept looping. 2.1 received a full 4-point deduction because the tutor cycled through the same row-list and 'build your own' instruction across at least four turns without meaningfully reframing or switching strategy, even after explicitly acknowledging the loop. 3.2 received a 2-point deduction for the mildly dismissive 'Stop re-asking' phrasing in Turn 8, which risks discouraging student participation.",
     "total_score": 33,
-    "max_score": 44,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

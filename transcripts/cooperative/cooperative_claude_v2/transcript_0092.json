@@ -72,69 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 4, the tutor provides a direct, clean definitional split ('Organized residents: have groups, meetings, spokespeople, or advocacy channels. Unorganized residents: affected individually, but without stable representation or regular access.') rather than guiding the student to derive this distinction themselves. While brief, this is a rewrite/provision of the conceptual framework the student was asking for, rather than scaffolded discovery.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development. The rationale for the tutoring constraints is never stated.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The tutoring rationale is never made explicit.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              6
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Turn 1 opens with a multi-part framework dump (3 questions plus a classification rule) before the student has even named their city or actors. Turn 6 similarly lists four bullet-point evidence categories in a single response. While most turns are appropriately concise, these early and mid-conversation monologue moments slightly exceed what a single focused prompt would require.",
-            "points": 0
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performs strongly overall, maintaining a Socratic, question-driven approach throughout the conversation without providing submission-ready content. The student does the key reasoning work at every stage. The primary deduction is for failing to explain the tutoring rationale at any point (1.3.A.a). A borderline case exists in Turn 4 where the tutor provides a direct definitional split, but this is brief and functional rather than doing the student's reasoning for them, so no deduction was applied under 1.1. Communication is generally bite-sized and well-paced; the Turn 1 framework introduction is slightly dense but not egregiously so.",
-    "judge_reasoning": "The tutor consistently uses probing questions and asks the student to justify classifications rather than providing them, satisfying 1.1 fully. Scaffolding builds progressively on student responses across all 10 turns (1.2 intact). The sole clear deduction is under 1.3.A.a: the tutor never once explains why it is guiding rather than telling, missing an opportunity to reinforce meta-learning. No assignment drift, no redundancy, no tone issues, and no grading language were observed. The Turn 4 definitional split was considered for 1.1.C.b but judged as a clarifying tool rather than a key reasoning step the student needed to derive, so no deduction was applied there.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently used Socratic questioning, avoided giving direct answers, scaffolded the student's thinking progressively, and maintained a supportive and appropriately concise tone throughout. The only clear deduction is for failing to explain the rationale behind the tutoring approach at any point in the conversation (1.3.A.a). No other rubric criteria were triggered.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming or refining them—no deductions apply. 1.2: The tutor built on each student response, acknowledged correct progress, and used diagnostic questions before redirecting—no deductions apply. 1.3: The tutor gave useful process-level feedback (e.g., distinguishing influence from authority, testing evidence types) satisfying 1.3.B, but never once explained why it was guiding rather than telling—no rationale for the Socratic constraints was offered, triggering the 1.3.A.a deduction of 2 points. 2.1 and 2.2: The conversation advanced steadily without repetition or off-topic drift. 3.1 and 3.2: Responses were concise, well-structured, and maintained a coaching tone without implying formal grading.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

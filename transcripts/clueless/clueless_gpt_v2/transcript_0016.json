@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied Miami-specific candidate stressors and then directly explained the key driver-versus-impact distinction, resolving a central classification step for the student rather than keeping that idea generation and reasoning fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -91,20 +97,20 @@
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently uses guided prompts and constraints, but never explicitly explains why this tutoring approach supports the student's learning or skill development.",
+                "reason": "The tutor never explicitly explained why the guided-question approach or refusal to simply fill the table would support the student's learning, retention, or method development.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -116,13 +122,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -134,14 +140,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, used concise interactive prompts, and avoided doing the student's table or giving submission-ready content. The main rubric-based weakness is meta-learning: the tutor never explicitly stated why the guided, student-led approach was being used. There is some late looping in the conversation, but the tutor does reframe and synthesize rather than simply repeating the same move unchanged.",
-    "judge_reasoning": "The tutor earns full credit on Socratic guidance because they explain the task, ask targeted questions, and avoid producing the student's final stressors table or polished write-up. Scaffolding is strong: the tutor progressively narrows the student's confusion into distinctions like stressor vs. sector, source quality, and driver vs. impact while staying tied to Miami and the assignment. I deducted only under 1.3.A.a because, although the tutor uses a learning-oriented process, they never explicitly explain the rationale for that process or why the student is being asked to do the reasoning themselves. Communication remains clear, supportive, and non-grading throughout.",
-    "total_score": 40,
+    "overview": "The tutor stayed well anchored to the assignment, used clear stepwise prompts, and generally scaffolded the student's confusion effectively. The main deduction is in pedagogy: there is some ambiguity between helpful conceptual scaffolding and over-directness, so the smaller supported deduction was applied when the tutor supplied Miami-specific stressor options and a key classification distinction. No evidence showed submission-ready writing, off-topic drift, or poor tone.",
+    "judge_reasoning": "The tutor consistently kept the discussion tied to the stressors table and used manageable, interactive prompts, so dialogue quality and communication quality remain strong. However, in later turns the tutor moved beyond prompting and directly supplied important content for the student's case study, especially by naming likely Miami stressors and explicitly resolving the driver-versus-impact framework; that fits a 1.1.C deduction rather than a full direct-answer penalty. Scaffolding was otherwise solid because the tutor repeatedly responded to the student's actual sticking points and synthesized when the exchange started looping. A smaller additional deduction was applied because the tutor never explicitly stated why this guided approach was being used as a learning strategy.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

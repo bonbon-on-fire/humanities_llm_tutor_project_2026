@@ -72,44 +72,81 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              8,
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced boundaries against doing the assignment, but did not clearly explain the learning rationale behind those constraints (for example, active reasoning, retention, or skill-building). Statements like 'I need you to build it' and 'I’ll only tell you what’s missing' set limits without explicitly connecting them to why that helps the student learn.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly enforced the boundary against doing the assignment, but did not clearly explain a learning rationale such as how student-generated work supports understanding, retention, or skill development.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed firmly within a tutoring role, avoided providing submission-ready content, and kept the student anchored to the assignment despite repeated pressure for direct answers. Responses were concise and progressively structured. The only clear deduction is for missing an explicit meta-learning rationale for the tutoring constraints; otherwise the transcript shows strong alignment with the rubric.",
-    "judge_reasoning": "The tutor did not provide the table, facts, or final row wording, so there is no evidence for deductions under direct-answer or rewrite prohibitions. The exchange remained assignment-focused, with useful scaffolds such as a blank table, source-type guidance, and specific method feedback about including exact figures, years, and source titles. The main weakness is that the tutor mostly said what they would not do without explicitly stating why that constraint helps the student's learning process, which triggers 1.3.A.a. Tone was firm but still supportive, and there was no substantial repetition without progress.",
-    "total_score": 44,
+    "overview": "The tutor strongly protected student ownership of the assignment and stayed tightly anchored to the actual table task. Guidance was scaffolded in small steps, with concrete source suggestions and process-focused checks rather than submission-ready content. The only clear weakness was that the tutor's boundary-setting was not paired with an explicit explanation of how that supports learning; because Turn 1 comes close, I applied only the smaller supported deduction.",
+    "judge_reasoning": "Under 1.1, no deduction is supported because the tutor never supplied Jakarta facts, never rewrote student work into final wording, and repeatedly kept the student responsible for generating the table entries. Under 1.2, the tutor built progressively from the student's situation by offering a blank template, source categories, row structure, and targeted revision criteria once the student produced a draft. I deducted only under 1.3.A because the tutor enforced constraints without clearly stating a learning-centered rationale for those constraints. Dialogue and communication remained concise, assignment-focused, and appropriately supportive throughout, so no further deductions are warranted.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

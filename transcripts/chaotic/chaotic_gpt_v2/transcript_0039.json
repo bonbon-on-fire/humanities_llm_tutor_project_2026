@@ -72,55 +72,93 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              4,
-              6,
-              8,
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 1",
+                  "Turn 2",
+                  "Turn 4",
+                  "Turn 6",
+                  "Turn 8",
+                  "Turn 10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refused to provide fill-in answers or polished wording, but did not clearly explain at least once that these constraints were meant to support the student's learning, active reasoning, or long-term skill development.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly enforced boundaries against giving final wording or completed entries, but did not clearly explain at least once why this constraint supports the student's learning process, retention, or skill development.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 6"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The statement 'Here's the harsh truth: your issue is not ideas anymore, it's commitment' reads as punitive and somewhat condescending, which risks discouraging participation rather than maintaining a supportive tutoring tone.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The line 'Here’s the harsh truth: your issue is not ideas anymore, it’s commitment' is notably rigid and potentially discouraging, creating a colder tone than is appropriate for supportive tutoring.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor strongly protected student ownership, stayed anchored to the Jakarta stressors-table task, and gave process-focused prompts rather than doing the assignment. The main weaknesses were a missing explicit explanation of why the tutor would not provide final wording, and one harsh comment that risked undermining trust. Where evidence was borderline, smaller deductions were chosen.",
-    "judge_reasoning": "The tutor consistently avoided giving submission-ready table entries or polished sentences, so no deduction was taken under the direct-work and key-idea-generation criteria. A 2-point deduction under 1.3.A.a is warranted because the tutor repeatedly refused to provide final wording without explicitly stating a learning rationale such as building independent reasoning or long-term writing skill. Dialogue quality stayed strong: the tutor built from the student's ideas, diagnosed overlap and defensibility problems, and kept the conversation aligned with the assignment. A further 2-point deduction under 3.2.A.a applies because Turn 6 uses a harsh, potentially discouraging formulation that weakens the otherwise supportive tone.",
-    "total_score": 42,
+    "overview": "The tutor strongly protected against doing the assignment for the student and kept the work anchored to the actual stressors-table task. The conversation showed solid scaffolding, targeted questioning, and useful process feedback without drifting off-task. The main weaknesses were that the tutor never explicitly explained the learning rationale behind refusing direct wording help, and one response used unnecessarily harsh language. A possible borderline issue was the tutor's brief confirmation of the sea-level-rise/coastal-flooding distinction, but it stayed limited enough not to count as doing the core reasoning for the student.",
+    "judge_reasoning": "The tutor earned full credit on guided discovery and scaffolding because they repeatedly redirected the student to generate stressors, ratings, and justifications themselves rather than supplying submission-ready entries. They also built on the student's drafts with specific method feedback about overlap, justification strength, climate linkage, and evidence logic. I deducted under 1.3.A because the tutor enforced boundaries many times but never clearly stated that this was to build the student's own reasoning or learning process. I also deducted under 3.2.A because Turn 6's 'harsh truth' and 'it's commitment' phrasing was unsupportive in tone even though the overall conversation remained task-focused.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

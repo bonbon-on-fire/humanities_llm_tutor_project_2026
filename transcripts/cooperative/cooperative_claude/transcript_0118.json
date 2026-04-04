@@ -72,43 +72,106 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The Socratic method is applied consistently but its rationale is never stated.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In Turn 10, the student correctly identifies the weakness in their own draft and articulates the right fix. This is a clear improvement from earlier vague reasoning. The tutor affirms and moves forward but does not prompt the student to reflect on what changed in their thinking or why the self-correction worked—missing a reinforcement opportunity.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student produces a solid draft in Turn 9 (an improvement from earlier vague thinking), the tutor critiques it and moves forward without prompting the student to reflect on what changed in their thinking or why the structured approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 9, the tutor says 'This is a good draft with clear logic. Using my own judgment, not your instructor's rubric'—while the disclaimer is present, the phrasing 'good draft with clear logic' reads as a near-evaluative judgment without clearly framing it as formative coaching guidance rather than assessment.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic practice throughout: it consistently avoids giving direct answers, uses diagnostic questions to probe student understanding, builds on student responses turn by turn, and keeps the student doing the reasoning work. The draft in Turn 9 is student-generated and the tutor critiques it rather than rewriting it. Two deductions apply: the tutor never explains its pedagogical rationale (why it guides rather than tells), and it misses a reflection prompt after the student's successful self-correction in Turn 10. Dialogue quality and communication quality are both strong—responses are concise, well-anchored to the assignment, and appropriately toned throughout.",
-    "judge_reasoning": "1.1 is fully intact: the tutor never provides submission-ready content, never rewrites student text, and never reveals conclusions before the student reasons toward them. 1.2 is fully intact: the tutor consistently builds on student progress (e.g., Turn 3→4 naming specific offices, Turn 9→10 targeting the weakest claim) and uses diagnostic questions before elaborating. 1.3 loses 2 points under 1.3.A.a because the tutor applies constraints without ever explaining why this approach benefits learning. 1.3 loses another 2 points under 1.3.C.a because after the student's strong self-correction in Turn 10, the tutor moves directly to next steps without prompting reflection on what changed. Dialogue quality is clean: no repetition without progress, no assignment drift, and no misframing goes uncorrected. Communication quality is strong: responses are brief and targeted, tone is supportive and non-evaluative throughout.",
-    "total_score": 40,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently using questions to guide the student rather than providing answers, and scaffolding well from broad categories to specific evidence. The main weaknesses are: (1) no explicit rationale for the tutoring approach is ever offered to the student; (2) after the student's draft improves in Turn 9, the tutor misses the opportunity to prompt reflection on what changed; (3) a minor formative-framing concern in Turn 9 where evaluative language could be mistaken for grading. The 3.2.B.b deduction is applied with some uncertainty since the tutor does include a disclaimer, but the overall framing still leans evaluative.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led through probing questions. 1.2 receives full marks: the tutor builds on each student response and diagnoses confusion before redirecting. 1.3 loses 4 points: the tutor never explains why it is using a Socratic approach (1.3.A.a), and after the student's draft in Turn 9 represents clear progress, the tutor critiques and moves on without prompting reflection on what improved (1.3.C.a). Dialogue quality is perfect: no repetition without progress, no assignment drift, and no off-topic engagement. Communication quality loses 2 points under 3.2.B.b because Turn 9's 'good draft with clear logic' phrasing, despite a partial disclaimer, could reasonably be read as evaluative rather than purely formative coaching.",
+    "total_score": 38,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

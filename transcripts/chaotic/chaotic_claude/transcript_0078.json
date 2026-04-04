@@ -72,55 +72,119 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't provide answers—it simply refuses repeatedly without articulating the pedagogical rationale (e.g., active reasoning builds retention, skill development, long-term learning). A single clear explanation of why guided discovery serves the student better than direct answers is absent throughout the conversation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "When the student makes genuine progress in Turn 8 (correctly identifying that Push feels wrong and that body count may be insufficient), the tutor acknowledges it briefly but immediately moves to the next task without prompting reflection on what changed in the student's thinking or why that reasoning step worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it won't write the answers for the student in terms of learning rationale—it simply refuses and redirects. There is no moment where the tutor says something like 'I'm asking you to do this yourself because active reasoning builds retention and philosophical skill.' The refusals are consistent but the pedagogical rationale behind the tutoring constraints is never articulated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When the student makes genuine progress (e.g., Turn 4 correctly identifying act consequentialism, Turn 6 correctly setting up the Fuel comparison, Turn 8 identifying Push as a counterexample), the tutor acknowledges it briefly but never prompts the student to reflect on what changed in their thinking or why their reasoning worked. The tutor moves immediately to the next step without reinforcing the method choices the student made.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through essentially the same refusal-and-redirect pattern across nearly every turn (Turns 2–9) without meaningfully reframing, simplifying, or synthesizing. By Turn 9 the student is still being asked to write 4 sentences using the same 4-part scaffold introduced in Turn 7, with no escalation in strategy or consolidation of what has already been established.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In the later turns (7–10), the tutor repeatedly presents the same 4-part scaffold (theory, cases, objection, principle) in nearly identical form across multiple turns without meaningfully advancing the student's understanding or synthesizing what has already been established. The student is clearly stuck on the final principle step, but the tutor cycles through the same prompt structure rather than reframing, simplifying, or trying a different approach to break the impasse.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Several tutor turns (e.g., Turns 2, 5, 7, 8, 9) present multi-part numbered lists when a single focused prompt would have been more appropriate given the student's evident disengagement and time pressure. The repeated 4-part scaffolds become verbose rather than interactive.",
-            "points": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "In Turn 1, the tutor's opening line 'I can't write the full response for you. I'm your tutor, not your ghostwriter.' has a dismissive, slightly condescending edge ('not your ghostwriter') that could discourage the student. While the rest of the conversation maintains a more neutral tone, this initial framing risks damaging tutoring trust at the outset.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 32,
+    "total_base_score": 34,
     "max_base_score": 44,
-    "overview": "The tutor consistently refuses to do the student's work and maintains a Socratic stance throughout, which is commendable. However, the conversation suffers from significant pattern-level repetition: the same refusal-and-numbered-list structure repeats across nearly every turn without meaningful reframing or strategy escalation. The tutor also never explains the pedagogical rationale for its constraints, misses a reflection opportunity after the student's genuine breakthrough in Turn 8, and frequently deploys multi-part lists where a single focused question would be more effective.",
-    "judge_reasoning": "Section 1 loses 4 points: 2 for never articulating why guided discovery is used (1.3.A.a) and 2 for failing to prompt reflection after the student's Turn 8 improvement (1.3.C.a). No deductions apply to 1.1 or 1.2—the tutor never gives submission-ready content, builds on student answers (e.g., affirming the act/consequences answer in Turn 4), and generally scaffolds progressively. Section 2 loses the full 4 points for 2.1 because the tutor repeats the same refusal-plus-numbered-list move across eight consecutive turns without switching to summary, reframing, or targeted simplification even as the student spirals. Section 3 loses 4 points for 3.1.A.a because multi-paragraph numbered lists recur throughout when shorter, more targeted prompts were clearly warranted given the student's disengagement.",
-    "total_score": 32,
+    "overview": "The tutor consistently and correctly refuses to produce submission-ready content, maintains assignment anchoring throughout, and uses Socratic questioning effectively in the early turns. The main weaknesses are: (1) the tutor never explains the pedagogical rationale for its constraints, missing an opportunity to help the student understand why active reasoning matters; (2) the tutor fails to prompt reflection when the student makes genuine progress; (3) in the later turns, the tutor falls into a repetitive pattern of presenting the same 4-part scaffold without reframing or adapting when the student remains stuck; and (4) the opening 'not your ghostwriter' remark is mildly dismissive. The 2.1 deduction is the most significant, as turns 7–10 show clear pattern-level repetition without synthesis or strategic pivot.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces submission-ready text, never rewrites student sentences, and consistently keeps idea generation student-led by asking targeted questions before revealing any conclusions. 1.2 receives full marks: the tutor builds on student progress (e.g., affirming the act consequentialism definition in Turn 4, the Fuel setup in Turn 6) and uses diagnostic questioning before elaborating. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a), and after student breakthroughs in Turns 4, 6, and 8, the tutor never prompts reflection on what changed in the student's thinking (1.3.C.a). 2.1 loses all 4 points because Turns 7–10 show the tutor cycling through the same 4-part prompt structure without reframing, simplifying, or trying a different approach when the student is clearly stuck on the final principle step. 3.2 loses 2 points for the 'not your ghostwriter' remark in Turn 1, which is mildly condescending and risks undermining trust at the start of the session.",
+    "total_score": 34,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

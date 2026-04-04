@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 17,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,60 +79,45 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "The student repeatedly signaled broad conceptual confusion and asked for clarification of the big picture, but the tutor mostly responded with new framing questions or partial explanations instead of first isolating whether the confusion was about assignment scope, level of interpretation, or category meaning.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
                 "evidence_turns": [
-                  5,
-                  6
+                  "Turn 5",
+                  "Turn 6"
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced constraints by refusing a full example and sentence template, but did not clearly explain the learning rationale in terms of active reasoning, retention, or long-term skill development.",
+                "reason": "The tutor set boundaries on giving a full example or sentence template, but did not clearly explain how those limits would help the student learn through their own reasoning; the explanation stayed at the level of not doing the assignment for them.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  8,
-                  9
+                  "Turn 2",
+                  "Turn 3",
+                  "Turn 4",
+                  "Turn 8",
+                  "Turn 9"
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly returned to similar broad-summary explanations of how the categories fit together while the student kept stating that the approach was not landing. Although there was some reframing, the interaction still spiraled on the same concept without enough consolidation or a stronger shift in strategy.",
+                "reason": "The tutor repeatedly returned to the same broad framing of the table as baseline/exposure-vulnerability-capacity while the student remained confused, without enough strategic shift, synthesis, or reframing to break the loop.",
                 "points": 4
               }
             ],
@@ -148,13 +129,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -165,28 +146,32 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4,
-                  6,
-                  7,
-                  8,
-                  9
+                  "Turn 4",
+                  "Turn 6",
+                  "Turn 7",
+                  "Turn 8",
+                  "Turn 9"
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Several responses use rigid or mildly dismissive phrasing such as 'You’re overcomplicating it a bit,' 'No—I won’t give you sentence language,' and 'Now stop looping,' which risks discouraging a confused student.",
+                "reason": "Several replies became somewhat rigid or admonishing, including 'You're overcomplicating it,' 'No—I won't give you sentence language,' 'Stop hunting,' and 'Now stop looping,' which could discourage participation even though the tutor remained task-focused.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 31,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed aligned to the assignment and avoided giving submission-ready content, which preserves student ownership. The main weakness was effectiveness: the student's confusion was not sharply diagnosed, so the exchange became repetitive with limited progress. I used a conservative reading where evidence was mixed, since the tutor did attempt some reframing and scaffolding.",
-    "judge_reasoning": "The strongest part of the conversation is that the tutor did not do the assignment for the student or provide polished final wording. Major deductions come from the repeated failure to pinpoint the student's confusion before responding, which led to a looping discussion of the same broad concept across multiple turns. I also deducted for missing an explicit learning rationale when refusing direct help and for a somewhat rigid tone in several responses. Assignment anchoring remained strong throughout, so no deductions were taken there.",
-    "total_score": 31,
+    "overview": "The tutor kept the work student-led and avoided producing submission-ready content, so no deduction was taken under 1.1. The main weaknesses were repeated reframing without enough progress after persistent confusion, limited explanation of why tutoring constraints supported learning, and a tone that sometimes became brusque. Where evidence was somewhat mixed, I chose the smaller deduction and kept full credit for scaffolding because the tutor usually did respond to the student's stated confusion rather than ignoring it.",
+    "judge_reasoning": "The tutor's strongest area was maintaining boundaries: they did not write the table for the student, rewrite prose, or supply a submission-ready interpretation. The biggest deduction came under dialogue quality because the conversation cycled through the same big-picture explanation several times while the student kept saying it was not landing. I also deducted for meta-learning because the tutor explained boundaries as assignment limits rather than explicitly linking them to learning benefits, and for tone because several redirections sounded sharp. I did not deduct for assignment anchoring or clarity, since the tutor stayed on task and responses were generally concise.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

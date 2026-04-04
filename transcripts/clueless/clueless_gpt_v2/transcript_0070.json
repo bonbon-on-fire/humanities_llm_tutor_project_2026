@@ -72,42 +72,103 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4,
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly signaled confusion, the tutor often responded with broad explanatory frameworks before first diagnosing the exact sticking point or checking what the student already understood.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor enforced constraints against copying a full example and against phrasing the student's forum post, but did not clearly explain the pedagogical rationale in terms of learning, retention, or skill-building. Statements like 'you need to build the table yourself' imposed the constraint without an explicit why.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced limits on giving models or phrasing ('build the table yourself,' 'I won't phrase it for you') but did not explicitly explain why those constraints would help the student's learning or long-term skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's wording was sometimes rigid or abrupt ('No—you need to build the table yourself,' 'Now stop second-guessing,' 'I won't phrase it for you'), which could make the interaction feel less supportive even though the overall intent remained instructional.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 35,
     "max_base_score": 46,
-    "overview": "The tutor kept the work student-led, used guided questions effectively, and stayed tightly anchored to the assignment task. The main clear deduction is for not explicitly explaining the learning rationale behind refusing to provide a model table or wording help. Tone was somewhat firm in places, but the evidence for a tone penalty was not strong enough to justify deduction.",
-    "judge_reasoning": "The tutor avoided near-submission-ready output and consistently pushed the student to generate categories, hypotheses, and evidence tests independently, so no deduction was warranted under 1.1. Scaffolding was generally strong: the tutor narrowed the task, supplied usable heuristics, and built on the student's evolving guesses rather than restarting. The clearest issue was under 1.3.A.a, because the tutor set boundaries on copying and phrasing without explicitly stating a pedagogical rationale such as helping the student practice analysis or improve long-term skill. Dialogue quality remained focused and non-redundant, and communication was concise, clear, and mostly supportive.",
-    "total_score": 44,
+    "overview": "The tutor stayed well anchored to the assignment, avoided giving submission-ready content, and generally used guided prompts that moved the student toward a workable actor-mapping process. Deductions are limited to moments where the tutor answered confusion with broad explanation before diagnosis, failed to explain the learning rationale behind withholding direct phrasing/modeling, and occasionally used a somewhat rigid tone. Where evidence was somewhat mixed, smaller deductions were chosen rather than broader penalties.",
+    "judge_reasoning": "The strongest aspect of the conversation was pedagogy under 1.1: the tutor consistently avoided writing the forum post or table for the student and kept the student generating the actual claims. I deducted under 1.2 because, across several turns, the student repeatedly said they were confused and the tutor often responded first with generalized frameworks instead of diagnosing the exact uncertainty. I deducted under 1.3 because the tutor imposed constraints on giving examples and wording without explicitly stating why that supports learning. I also deducted under 3.2 because a few turns used blunt phrasing that risked sounding rigid, though the tutor remained assignment-focused and mostly constructive overall.",
+    "total_score": 35,
     "max_score": 46,
     "model": {
       "provider": "openai",

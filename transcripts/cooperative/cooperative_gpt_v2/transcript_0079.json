@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,28 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor gave process directions such as 'test it first' and 'keep it rough,' but did not clearly explain why these constraints support the student's learning or long-term skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +117,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,14 +135,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 46,
+    "total_base_score": 44,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly Socratic and assignment-focused throughout, keeping the student responsible for generating the core distinctions and tentative rule. A borderline area was meta-rationale, but statements like \"test it first\" and \"your principle has to survive the cases\" gave enough explanation of the tutoring approach to avoid deduction.",
-    "judge_reasoning": "No deduction was supported under 1.1 because the tutor did not provide submission-ready claims or polished final wording; instead, the tutor repeatedly asked the student to choose cases, articulate differences, and draft a rough principle in their own words. No deduction was supported under 1.2 or 1.3 because the tutor built on correct student progress, diagnosed the Fuel confusion with targeted questions, and gave specific process feedback about testing whether the student's rule was sufficient across cases. Dialogue quality remained focused on the prompt and progressed steadily without repetitive spiraling or off-topic drift. Communication was concise, clear, supportive, and framed as coaching rather than grading.",
-    "total_score": 46,
+    "overview": "The tutor sustained a strong Socratic, student-led discussion and stayed closely anchored to the philosophy prompt. I found only one modest issue: the tutor directed the student to keep ideas rough and test principles through cases, but never made the learning rationale fully explicit. If that phrasing were interpreted as sufficient rationale, this conversation could plausibly score full points.",
+    "judge_reasoning": "The tutor consistently avoided giving submission-ready content and instead used targeted questions to have the student derive distinctions such as outcomes versus means, side effects, necessity, and proportionality. Scaffolding was strong: the tutor built on each student response, narrowed the next step, and gave specific method feedback like identifying that the student's rule was 'stated, not tested.' Dialogue quality and tone were also strong, with no off-topic drift, no repetition without progress, and a supportive formative stance throughout. The only deduction is for not clearly stating why the tutor was withholding polished answers or insisting on rough testing of principles as a learning strategy.",
+    "total_score": 44,
     "max_score": 46,
     "model": {
       "provider": "openai",

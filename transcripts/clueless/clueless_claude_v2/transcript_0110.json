@@ -72,66 +72,90 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 10, the tutor provides a near-complete step-by-step process dump ('Here's the process—use it, don't overthink it') that essentially outlines the entire assignment workflow for the student. While it stops short of filling in the table itself, it rewrites the assignment instructions into a ready-to-follow guide, crossing into doing the methodological work for the student rather than guiding discovery.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student says 'I'm spiraling' and then asks for the tutor to just tell them which 3 stressors to pick, the tutor jumps directly into a comparison framework without first diagnosing what specifically is causing the confusion—whether it's the climate-link criterion, the evidence-finding process, or something else. Similarly in Turn 8, when the student says the rating part 'makes no sense,' the tutor immediately provides a 3-check method without probing what specifically is unclear about the rating scale.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student says they feel lost on 'all of it,' the tutor does not ask diagnostic questions to identify which specific part is confusing. Instead, the tutor immediately delivers a full method dump covering all five steps of the assignment without first checking what the student already understands or where exactly the confusion lies.",
-            "points": 3
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor says 'I'm not going to choose your 3 for you—that's your assignment' but never explains why this constraint supports the student's learning, retention, or skill development. No rationale for the Socratic approach is offered at any point in the conversation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "Throughout the entire conversation, the tutor never explains why it is guiding rather than giving direct answers—for example, why the student must choose their own stressors or derive their own ratings. In Turn 7, the tutor says 'I'm not going to choose your 3 for you—that's your assignment' but does not explain the pedagogical rationale (e.g., active reasoning, skill development, retention).",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 13,
+          "score": 17,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 33,
+    "total_base_score": 37,
     "max_base_score": 42,
-    "overview": "The tutor demonstrates strong Socratic discipline for most of the conversation, consistently redirecting the student to self-generate answers and using targeted questions. However, Turn 10 is a significant lapse: the tutor delivers a full process dump that essentially re-explains the entire assignment in step-by-step form without first diagnosing what specifically confused the student. This triggers deductions under 1.1.B.a and 1.2.B.a. Additionally, the tutor never explains the pedagogical rationale for its approach across the full conversation, triggering a 1.3.A.a deduction. Dialogue quality and communication quality are strong throughout.",
-    "judge_reasoning": "1.1.B.a is triggered in Turn 10 because the tutor's five-step process summary crosses from guiding into doing the methodological work for the student, providing near-submission-ready procedural scaffolding rather than eliciting it through questioning. 1.1.A.a is not triggered because the tutor does not fill in actual table content or provide final claim-plus-reasoning. 1.2.B.a is triggered in Turn 10 because the tutor responds to a vague 'I'm lost on all of it' with a full method dump rather than first asking diagnostic questions to locate the specific confusion. 1.3.A.a is triggered because the tutor never articulates why it withholds direct answers—Turn 7's 'that's your assignment' is a constraint statement, not a learning rationale. No deductions apply to dialogue quality or communication quality: the tutor stays on-task, avoids repetition, maintains a supportive tone, and keeps responses concise and clear throughout.",
-    "total_score": 33,
+    "overview": "The tutor does well overall: avoids giving direct answers, keeps the student doing the reasoning work, maintains a supportive tone, and stays on-task throughout. The main weaknesses are a failure to explain the rationale for the Socratic constraints (1.3.A.a) and occasional jumps to providing frameworks without first diagnosing the specific source of student confusion (1.2.B.a). No submission-ready content was provided, and the tutor consistently redirected the student back to their own reasoning.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides direct answers, never gives submission-ready content, and consistently pushes the student to reason through choices themselves. 1.2 loses 3 points under 1.2.B.a because in Turns 6-8, when the student expresses confusion or spiraling, the tutor immediately offers structured frameworks rather than first asking diagnostic questions to identify the precise confusion point. 1.3 loses 2 points under 1.3.A.a because while the tutor enforces the constraint of not giving answers (Turn 7), it never explains why this approach benefits the student's learning. Dialogue quality and communication quality are both strong: the tutor avoids repetition, stays anchored to the assignment, uses concise responses, and maintains an appropriate supportive tone throughout.",
+    "total_score": 37,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

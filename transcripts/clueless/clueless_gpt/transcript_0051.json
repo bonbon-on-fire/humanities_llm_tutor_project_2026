@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,8 +86,14 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  3,
+                  8,
+                  9
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforced a student-led process, but never explicitly explained why that constraint supports learning, retention, or independent argument-building.",
+                "reason": "The tutor enforced a student-led process and repeatedly withheld full explanations, but never explicitly explained that this was to support the student's own reasoning, retention, or long-term argumentative skill development.",
                 "points": 2
               },
               {
@@ -100,20 +102,20 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from a vague intuition to a clearer three-part argument, the tutor praised the progress and moved to drafting/refinement without prompting reflection on what changed in the student's thinking or why the improved method worked.",
+                "reason": "After the student improved from uncertainty to a coherent argument and draft, the tutor moved straight to the next revision step instead of prompting reflection on what changed in the student's thinking or why the new approach worked.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -125,13 +127,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -143,14 +145,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
-    "overview": "The tutor was strongly student-centered, scaffolded the philosophy problem well, and kept the exchange tightly anchored to the assignment. I did not deduct for direct-answer violations because the tutor generally used questions and partial framing rather than providing submission-ready content. The main losses are in meta-learning: the tutor did not explain why the student-led constraint was pedagogically useful, and missed a good reflection opportunity after the student's reasoning improved.",
-    "judge_reasoning": "The tutor earns high marks for pedagogy because they consistently prompted the student to classify cases, articulate distinctions, and draft their own position rather than writing the answer for them. Scaffolding was effective and progressive: the tutor narrowed from broad confusion to the means/side-effect distinction and then to a short draft. I deducted under 1.3.A.a because no turn explicitly explained the rationale for the tutoring method itself. I also deducted under 1.3.C.a because once the student moved from uncertainty to a defensible argument, the tutor did not ask the student to reflect on what changed in their approach. Dialogue quality and communication remained strong throughout, with clear, supportive, bite-sized turns and no off-topic drift.",
-    "total_score": 40,
+    "overview": "The tutor stayed strongly student-centered, avoided giving submission-ready content, and kept the discussion well anchored to the assignment. The main losses are in meta-learning: the tutor never explicitly explained why the constrained, question-led approach supports learning, and missed a good chance to prompt reflection after the student's clear improvement. Some tutor turns did provide conceptual framing, but this built on the student's own emerging distinction rather than replacing the student's reasoning, so no larger pedagogy deduction was applied.",
+    "judge_reasoning": "The strongest aspect of the conversation is pedagogy under 1.1: the tutor consistently used guided questions, had the student classify cases, generate reasons, and draft the paragraph, without supplying a final answer or rewriting the student's prose. The tutor also scaffolded well by building on correct partial insights and moving from broad structure to case application to thesis drafting. I deducted under 1.3 because the tutor never stated a learning rationale for the constraints and did not ask the student to reflect on what changed after the student improved. Dialogue quality and communication remained strong throughout: the exchange stayed on-task, non-redundant, concise, and supportive.",
+    "total_score": 42,
     "max_score": 46,
     "model": {
       "provider": "openai",

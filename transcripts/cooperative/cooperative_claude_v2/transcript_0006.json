@@ -72,39 +72,98 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In the final turn the tutor states 'this is a very good draft philosophically' and 'clear structure, accurate statement of act consequentialism, and a real alternative principle' without clarifying that this is formative coaching rather than official evaluation. The phrasing could reasonably be read as a grading judgment rather than supportive guidance.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performs very well overall. It consistently uses Socratic questioning, avoids giving the student submission-ready text, scaffolds progression from basic act consequentialism to a nuanced means/side-effect distinction, and maintains a supportive and appropriately concise tone throughout. The only clear deduction is the absence of any explicit rationale for the tutoring approach (1.3.A.a). All other criteria are met: the student generates the key ideas, the tutor builds on correct student progress, responses are bite-sized, and the conversation stays anchored to the assignment.",
-    "judge_reasoning": "1.1: The tutor never provides a near-submission-ready answer, never rewrites student text, and consistently asks the student to derive conclusions before confirming them. No deductions apply. 1.2: The tutor acknowledges and builds on each correct student step and uses diagnostic questions before elaborating. No deductions apply. 1.3: The tutor gives useful process-level feedback (e.g., 'test it instead of assuming it works,' 'be precise') satisfying 1.3.B, but never explains why it is using guided questioning rather than direct instruction, triggering a 2-point deduction under 1.3.A.a. 2.1 and 2.2: No repetition without progress, no off-topic drift, and no misunderstood assignment framing goes uncorrected. 3.1 and 3.2: Responses are consistently short and focused; tone is supportive and formative throughout.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently asking questions that push the student to derive distinctions themselves rather than supplying answers. Scaffolding is well-sequenced—each turn builds on the student's prior response—and the tutor avoids rewriting or completing the student's work. Two deductions apply: the tutor never explains the rationale for its guided-discovery approach (1.3.A.a), and the final evaluative comment in Turn 10 reads more like a grade than formative coaching (3.2.B.b). No other rubric violations are clearly supported by the evidence.",
+    "judge_reasoning": "1.1: The tutor never gives submission-ready text, never rewrites student sentences, and consistently lets the student generate key ideas before confirming them—no deductions warranted. 1.2: Each turn builds directly on what the student said and the tutor probes confusion before redirecting—no deductions. 1.3: The tutoring rationale (why questions rather than answers) is never stated across all ten turns, triggering the 1.3.A.a deduction; method-level feedback is present (e.g., 'test it instead of assuming it works'), so 1.3.B is not deducted. 2.1/2.2: No repetition without progress and no off-topic drift observed. 3.1: Responses are concise and well-targeted. 3.2: The final turn's phrasing ('very good draft philosophically,' 'clear structure') sounds evaluative without a formative framing caveat, warranting a 3.2.B.b deduction.",
+    "total_score": 38,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

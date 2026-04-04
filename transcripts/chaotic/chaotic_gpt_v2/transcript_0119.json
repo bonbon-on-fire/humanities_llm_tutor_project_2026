@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 22
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -93,24 +89,25 @@
                 "evidence_turns": [
                   1,
                   2,
+                  4,
                   7,
                   8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced boundaries against giving a ready-to-post response, but did not clearly explain at least once how this constraint supports the student's learning, reasoning practice, or long-term skill development.",
+                "reason": "The tutor consistently enforced boundaries against drafting or polishing the student's forum post, but did not clearly explain why those constraints support learning (such as strengthening the student's own reasoning or retention). Phrases like 'My role is to help you build it yourself' describe role limits more than tutoring rationale.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,13 +119,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -136,18 +133,34 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor remained focused and not abusive, but the repeated blunt refusals ('No') and phrasing like 'Don't outsource the key judgment' and 'I'll give blunt feedback' created a somewhat rigid tone that was less supportive than ideal.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed firmly student-led, refused submission-ready writing, and kept the exchange anchored to the assignment. The only clear deduction is for not explicitly explaining why those constraints support learning. Some generic Boston actor/missing-group prompts came close to supplying ideas, but not clearly enough to trigger a 1.1 deduction because the tutor still withheld the final judgment and wording. Reported overall max follows the required output configuration despite rubric-internal max inconsistencies.",
-    "judge_reasoning": "The tutor performed well on the core pedagogy requirements: they consistently refused to produce a paste-ready forum post, redirected the student into identifying the city, finding sources, and generating a draft, and then gave targeted feedback on what evidence was still needed. I deducted only under 1.3.A.a because the tutor stated boundaries multiple times without clearly articulating why doing the thinking and writing independently would help the student learn. I did not deduct for repetition because the conversation still progressed from city choice to search strategy to draft revision. I also did not deduct for tone, since the tutor was firm but remained task-focused and broadly supportive.",
-    "total_score": 40,
+    "overview": "The tutor strongly protected against doing the assignment for the student and kept the conversation tightly anchored to the actual task. I kept full credit on guided discovery despite some hinting about likely missing groups, because the tutor did not provide a submission-ready claim or complete the key judgment for the student. Main deductions are for not explicitly explaining the learning rationale behind the refusals and for a somewhat rigid tone.",
+    "judge_reasoning": "The tutor's biggest strength was pedagogy under 1.1: across the conversation, they refused to provide a ready-to-post response, refused polishing, and pushed the student to identify the city, actors, and evidence themselves. Scaffolding was also solid because the tutor progressively narrowed the task into manageable steps, gave search terms, and built feedback off the student's rough idea in Turn 10. I deducted under 1.3.A because the tutor set constraints repeatedly without clearly explaining how those constraints help the student learn. I also deducted under 3.2.A because the repeated blunt refusals and rigid phrasing made the tone less supportive, even though the tutor stayed task-focused and formative overall.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

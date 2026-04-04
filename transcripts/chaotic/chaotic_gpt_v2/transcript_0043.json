@@ -72,42 +72,101 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they had already looked and were still stuck, the tutor did not first diagnose what specifically was confusing or what sources the student had found; instead, the tutor immediately redirected to producing a rough attempt and a fill-in structure.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly states that it will not write or rewrite the student's post, but it does not clearly explain why this constraint supports learning outcomes such as active reasoning, retention, or skill development.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced anti-ghostwriting constraints repeatedly, but did not clearly explain the learning rationale behind those constraints (such as helping the student practice analysis, retain the method, or build long-term skill).",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Some phrasing was unnecessarily rigid and potentially discouraging, especially 'Stop trying to outsource the list' and 'We’ve gone in circles,' which could harm tutoring trust even though the tutor remained on-task.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 35,
     "max_base_score": 46,
-    "overview": "Strong process-oriented tutoring: the tutor consistently refused to ghostwrite, kept the work student-led, and redirected the student back to the assignment with usable scaffolds. I applied only a small deduction because the tutor enforced constraints without clearly explaining the learning rationale behind them. Firmness and repetition were present, but I did not deduct further because the tutor still varied its prompts, acknowledged progress, and stayed anchored to the task.",
-    "judge_reasoning": "The tutor did well under the core pedagogy criteria: it never provided submission-ready content, did not rewrite the student's lines, and repeatedly pushed the student to generate actor names, roles, and reasoning independently. It also scaffolded the task through categories, a role-based structure, and formula-style prompts, while building on the student's partial progress in later turns. The main deduction is under 1.3.A.a, because saying 'I can't write the forum post for you' and 'I'm your tutor, not your ghostwriter' enforces a boundary but does not explicitly explain how that boundary helps the student learn. I did not deduct for redundancy or tone because, despite recurring refusals, the tutor changed formats across turns and remained generally supportive and formative.",
-    "total_score": 44,
+    "overview": "The tutor strongly avoided doing the assignment for the student and kept the conversation anchored to the actual task. Deductions are limited to weak diagnosis when the student reported being stuck, lack of an explicit learning-based rationale for the tutoring constraints, and a somewhat harsh tone in a few turns. No deduction was applied for repetition because the tutor generally varied the prompts and kept moving the student back toward producing their own content.",
+    "judge_reasoning": "The tutor's strongest performance was in 1.1: they consistently refused to provide submission-ready text, names, or polished forum wording, and kept idea generation student-led. A deduction in 1.2 is warranted because when the student said they were stuck after looking already, the tutor did not first probe the specific confusion before prescribing the next step. A deduction in 1.3 applies because the tutor explained boundaries in role terms ('I won't write it for you') but did not explicitly connect those boundaries to learning goals. Communication was generally concise and clear, but a 3.2 tone deduction is supported by sharper phrasing that could feel punitive.",
+    "total_score": 35,
     "max_score": 46,
     "model": {
       "provider": "openai",

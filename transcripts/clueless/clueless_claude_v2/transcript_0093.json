@@ -72,71 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 3, the tutor provides a detailed decision framework (4-point test with explicit if/then rules) that does the key reasoning work for the student—essentially resolving how to categorize any actor before the student attempts it. While framed as a tool, the tutor fully explains the logic and mapping rather than guiding the student to derive it.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says something like 'I'm asking you to work through this yourself because active reasoning builds retention and transferable skills.' Constraints are enforced but the rationale for the tutoring approach is never articulated.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is withholding direct answers or scripted examples—it only says 'I'm not going to write or script the post for you' in Turn 6 without explaining how this supports the student's learning, retention, or skill development. No rationale for the Socratic approach is offered across the full conversation.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              5,
-              6,
-              9
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Several tutor turns (especially Turn 3 and Turn 6) contain multi-part structured lists and multi-paragraph explanations where a single focused question would have been more appropriate for an interactive tutoring exchange. Turn 3 in particular delivers a full 4-point decision framework plus a follow-up offer, which is more monologue than dialogue.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
     "total_base_score": 40,
-    "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic discipline overall—consistently refusing to write the assignment, redirecting off-topic requests, and pressing the student to justify claims. The main weaknesses are: (1) occasional over-explanation that front-loads reasoning frameworks before the student attempts to derive them (Turn 3's 4-point test), (2) never explaining the pedagogical rationale for the guided approach, and (3) some responses are longer and more structured than necessary for the interactive context. No major violations of direct answer-giving or submission-ready output were found.",
-    "judge_reasoning": "1.1 loses 2 points: Turn 3's 4-point categorization test with explicit if/then mapping edges toward doing the key reasoning step for the student (1.1.C.b), but because it is framed as a scaffold and the student is still asked to apply it, the deduction is borderline—I apply 0 points here to avoid double-penalizing with 3.1. 1.3 loses 2 points because the tutor never once explains why it is guiding rather than telling, missing the meta-learning rationale requirement entirely (1.3.A.a). 3.1 loses 2 points because Turns 3 and 6 deliver multi-part structured lists where shorter, more targeted prompts would have been more appropriate for the interactive format. No deductions apply to dialogue quality: the tutor consistently re-anchors to the assignment, avoids off-topic drift, and does not repeat the same moves without progress.",
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently refused to do the assignment for the student, used Socratic questioning throughout, scaffolded from confusion to clarity, maintained a supportive tone, kept responses concise, and stayed anchored to the assignment. The only clear deduction is the absence of any explicit meta-learning rationale explaining why the tutor was guiding rather than providing answers directly.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently asked the student to generate ideas before confirming them—no deductions warranted. 1.2: The tutor built on each student response (e.g., affirming 'mayor's office' as a reasonable start before pushing for justification) and diagnosed confusion before responding (e.g., Turn 2 correctly identified the lead/engaged/missing distinction as the core confusion)—no deductions. 1.3: The tutor gave useful process-level feedback throughout (e.g., 'stop treating the labels as about who is most important'), satisfying 1.3.B; however, across all 10 turns the tutor never once explained why it was guiding rather than answering directly, triggering the 1.3.A.a deduction of 2 points. Sections 2 and 3 are clean: no repetition without progress, no assignment drift, responses were appropriately concise, tone was firm but supportive, and no grading language was used.",
     "total_score": 40,
-    "max_score": 44,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

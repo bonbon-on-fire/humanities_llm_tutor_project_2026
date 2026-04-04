@@ -72,72 +72,91 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              9
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 9, the tutor explicitly provides the full reasoning bridge for the priority statement: 'name the top 2 priorities first, then say they rank highest because they are both severe and urgent and affect multiple systems; add extreme heat as a third because it harms vulnerable groups and strains energy demand.' This gives the student the complete logical structure and content of the answer before the student derives it, doing the key reasoning step for them.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 9, the tutor says 'Use this logic: name the top 2 priorities first, then say they rank highest because they are both severe and urgent and affect multiple systems; add extreme heat as a third because it harms vulnerable groups and strains energy demand.' This gives the student the full reasoning bridge and the exact logical structure for the priority statement before the student attempts to derive it, doing the key reasoning step for them.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is refusing to write entries for the student or why the student must do the reasoning themselves. There is no rationale offered about active learning, skill development, or retention at any point in the conversation.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  7,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully improved their entries (e.g., Turn 7 produced a much stronger extreme heat entry than Turn 6, and Turn 8 produced a solid flooding entry), the tutor moved on without prompting reflection on what changed in the student's thinking or why the improved version worked better.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully improves entries (e.g., Turn 7 extreme heat revision is praised as 'much better'), the tutor moves on without prompting reflection on what changed in the student's thinking or why the revised approach worked better.",
-            "points": 2
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 14,
+          "score": 16,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 36,
     "max_base_score": 44,
-    "overview": "The tutor consistently refused to do the assignment for the student and maintained a Socratic stance through most of the conversation. However, in Turn 9, the tutor crossed a significant line by providing the full logical structure and content of the priority statement before the student attempted it, which constitutes doing the key reasoning step for the student (1.1.C.b, -6 points). The tutor also never explained the rationale for its tutoring constraints (1.3.A.a, -2 points) and missed opportunities to prompt reflection after student improvement (1.3.C.a, -2 points). Dialogue quality and communication quality were strong throughout.",
-    "judge_reasoning": "The primary deduction is under 1.1.C.b: in Turn 9, the tutor explicitly scripted the logic and content of the priority statement ('name the top 2 priorities first, then say they rank highest because... add extreme heat as a third because...'), which is the key reasoning step the student needed to perform. This is a clear case of the tutor doing the reasoning bridge for the student before the student attempts it. The 1.1.A.a full-12-point deduction was considered but not applied because the tutor's Turn 9 guidance, while problematic, did not produce a near-submission-ready full assignment output across turns—the student still had to write the sentences. The 1.3.A.a deduction applies because the tutor never once explained why it was refusing to write entries, missing the opportunity to frame its constraints as pedagogically motivated. The 1.3.C.a deduction applies because after praising improved student entries (Turns 7, 8, 10), the tutor consistently moved on without asking the student to reflect on what made the revision stronger.",
-    "total_score": 34,
+    "overview": "The tutor maintained a strong Socratic stance throughout most of the conversation, consistently refusing to write entries for the student and pushing for Miami-specific evidence. The main deduction is in 1.1 for Turn 9, where the tutor provided the complete logical structure and content of the priority statement before the student attempted it, effectively doing the key reasoning step. A smaller deduction applies to 1.3 for missing reflection prompts after student improvement. All other criteria were well-handled.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is warranted because in Turn 9 the tutor did not merely scaffold but fully scripted the priority statement logic—naming which stressors to prioritize, the exact rationale for each, and the order—before the student wrote anything. This crosses from guidance into doing the reasoning for the student. The 1.3.C.a deduction (2 points) applies because after clear student improvement (notably Turn 7's stronger heat entry), the tutor never asked the student to reflect on what made the revision better. No deductions apply to 1.1.A or 1.1.B because the tutor consistently refused to write or polish entries. Scaffolding (1.2) was strong throughout, building on student progress and diagnosing confusion appropriately. Dialogue quality and communication quality were both excellent—responses were concise, on-task, and supportive without being evaluative.",
+    "total_score": 36,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

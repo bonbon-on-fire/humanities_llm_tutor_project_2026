@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 17,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor directly supplied a key interpretive step—stating that act consequentialism judges by consequences rather than intention, directness, or indirectness—rather than fully eliciting that distinction from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -89,7 +94,7 @@
                   5
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student said they were lost on the lecture cases, the tutor responded with a quick conceptual explanation and then another question rather than first diagnosing which specific case or point of confusion the student lacked.",
+                "reason": "When the student said they were lost on the lecture cases, the tutor immediately gave a mini-explanation of the cases' point instead of first diagnosing what the student already remembered or which case distinctions were unclear.",
                 "points": 3
               }
             ],
@@ -103,20 +108,20 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a constraint against providing a full model answer but did not explain the learning rationale for that constraint, only stating role boundaries.",
+                "reason": "The tutor enforced a tutoring boundary ('I'm your tutor, not a writer for the assignment') but did not clearly explain why this constraint supports the student's learning, reasoning, or retention.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 11,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -128,13 +133,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -146,14 +151,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 37,
+    "total_base_score": 31,
     "max_base_score": 46,
-    "overview": "The tutor largely used guided questioning, kept the student generating the core ideas, and avoided giving submission-ready prose. Main deductions are for not first diagnosing the student's specific confusion about the lecture cases and for not explicitly explaining the pedagogical reason behind refusing to provide a full model version. Turn 10 is somewhat firm, but overall the exchange stayed supportive, concise, and well anchored to the assignment.",
-    "judge_reasoning": "No deduction was taken under 1.1 because the tutor did not provide a finished answer or rewrite the student's work; instead, the tutor consistently pushed the student to state positions in their own words. A 1.2.B.a deduction applies because, when the student explicitly said they were lost on Fuel/Blood/trolley, the tutor gave a general framing rather than first identifying the exact misunderstanding. A 1.3.A.a deduction applies because the tutor's refusal to provide a full version in Turn 10 lacked an explicit learning rationale such as promoting independent reasoning or retention. Otherwise, the conversation progressed without repetition, stayed on the assignment, and used mostly short, clear prompts.",
-    "total_score": 37,
+    "overview": "The tutor was generally concise, supportive, and well anchored to the assignment, with a clear progression from defining act consequentialism to formulating an objection. Major deductions come from pedagogy: the tutor directly supplied one important philosophical implication instead of keeping that inference student-led, and the tutor did limited diagnosis when the student reported confusion about the lecture cases. Some evidence was borderline, so deductions were kept to the smaller supported set.",
+    "judge_reasoning": "The tutor mostly used guided questioning and resisted writing the student's answer, so there was no deduction for near-submission-ready output. However, in Turn 4 the tutor gave a central interpretive move about act consequentialism's indifference to intention/directness, which fits the rubric's concern about doing a key reasoning step for the student. In Turn 5, after the student said they were lost, the tutor responded with explanation rather than first diagnosing the specific confusion. The conversation remained focused, non-redundant, clear, and supportive throughout, which preserved full credit in dialogue and communication quality.",
+    "total_score": 31,
     "max_score": 46,
     "model": {
       "provider": "openai",

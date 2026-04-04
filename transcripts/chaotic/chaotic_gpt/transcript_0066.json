@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "After the student already named likely priority stressors, the tutor supplied the key bridge from evidence to conclusion by telling the student exactly why the top two rank highest and how to frame extreme heat as third. This did not become full final wording, but it did perform a central reasoning step for the priority claim.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -90,30 +95,25 @@
           "1.3": {
             "deductions": [
               {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforced a no-writing/no-polishing boundary, but never explicitly explained why that constraint supports the student's learning, retention, or skill development.",
-                "points": 2
-              },
-              {
                 "evidence_turns": [
-                  7,
-                  10
+                  6,
+                  7
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from weaker drafts to stronger, more specific entries, the tutor affirmed the result and moved on without prompting reflection on what changed in the student's reasoning and why the revision worked better.",
+                "reason": "The student improved the extreme heat entry after earlier feedback, but the tutor only confirmed it was better and moved on without asking the student to reflect on what changed in the reasoning or why the revision worked.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -125,13 +125,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 10,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -140,17 +140,21 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor kept the work student-led, refused to provide submission-ready table entries, and used concise prompts that stayed tightly anchored to the assignment. The main gaps were meta-level: the tutor did not explain the learning rationale behind the constraints and missed chances to prompt reflection after the student improved. Tone was somewhat firm, but the evidence for a tone deduction was ambiguous, so no deduction was taken there.",
-    "judge_reasoning": "This was a strong tutoring conversation under the pedagogy and dialogue portions of the rubric: the tutor consistently prevented near-submission-ready output, required the student to generate and defend ideas, and scaffolded the table one entry at a time. The tutor also stayed focused on the actual task and used short, interactive turns rather than long explanations. Deductions are limited to 1.3 because the tutor never stated why the refusal to polish or draft supported learning, and after clear student improvement the tutor did not ask the student to reflect on what changed in the reasoning. I did not deduct for tone or repetition because, although the refusals were firm, they remained functional and the conversation continued to progress.",
-    "total_score": 42,
+    "overview": "The tutor consistently kept the student doing the drafting work, stayed tightly anchored to the assignment, and used concise step-by-step prompting. Small deductions reflect one borderline moment where the tutor supplied much of the priority-ranking logic, plus a missed reflection prompt after a successful revision. That 1.1 deduction is somewhat uncertain because the tutor still refused to provide paste-ready final wording.",
+    "judge_reasoning": "The tutor performed strongly on scaffolding, assignment anchoring, and concise interactive guidance: it repeatedly redirected requests for completed table entries back into student drafting and evidence-based justification. I deducted under 1.1 because in Turn 9 the tutor effectively gave the reasoning skeleton for the priority statement, which crossed into doing a key reasoning step even though the student still had to write the final sentences. I also deducted under 1.3.C because after the student's heat-stressor entry improved, the tutor did not ask the student to reflect on what changed in the reasoning. No other deductions were warranted because the conversation remained on-task, non-grading, and generally supportive.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

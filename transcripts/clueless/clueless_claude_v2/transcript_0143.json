@@ -72,51 +72,55 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 2, the tutor provides a full breakdown of all five actor types with explanations of their influence before the student has attempted any reasoning. The tutor does the key reasoning step of categorizing and explaining each actor type rather than guiding the student to derive these distinctions. This is a borderline case since the student explicitly asked for the big picture, but the tutor essentially pre-loads the entire conceptual framework rather than asking diagnostic questions first.",
-            "points": 6
-          },
-          {
-            "evidence_turns": [
-              2
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student said they were 'still kinda lost' and asked for the big picture, the tutor jumped straight to a full explanation of all actor types rather than first diagnosing what specifically was confusing the student. A diagnostic question (e.g., 'What part of the decision-maker definition isn't clicking?') would have been more appropriate before delivering a comprehensive framework dump.",
-            "points": 3
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 2, the student says they are 'still kinda lost' and asks for the big picture. The tutor immediately delivers a full breakdown of all five actor types with descriptions rather than first asking a diagnostic question to understand what specifically the student doesn't understand. This is a method dump before checking what the student already knows.",
+                "points": 3
+              }
+            ],
             "score": 3,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor refuses to give a model answer in Turn 4 but never explains why this supports the student's learning—no rationale about active reasoning, retention, or skill development is offered anywhere in the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 13,
+          "score": 17,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -127,13 +131,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -144,11 +149,11 @@
         }
       }
     },
-    "total_base_score": 33,
+    "total_base_score": 37,
     "max_base_score": 42,
-    "overview": "The tutor generally maintained a Socratic approach, refused to give a model answer (Turn 4), and kept the student working toward their own conclusions. The main weakness was in Turn 2, where the tutor pre-loaded the entire actor-type framework without first diagnosing what specifically confused the student, which triggered both a 1.1.C.b deduction (doing the key reasoning step) and a 1.2.B.a deduction (failing to diagnose before responding). The 1.1.C.b deduction is the stronger of the two and the 1.2.B.a is applied separately as it addresses a distinct behavior. Dialogue quality and communication quality were strong throughout.",
-    "judge_reasoning": "The primary deduction is in 1.1.C.b: in Turn 2, the tutor delivered a complete, pre-structured breakdown of all five actor types with explanations before the student had attempted any categorization, effectively doing the key conceptual reasoning step for the student. This triggers the 6-point deduction under 1.1.C.b. A separate 3-point deduction under 1.2.B.a is warranted because the tutor responded to the student's expressed confusion with a full framework dump rather than first asking diagnostic questions to identify the specific sticking point. No 1.1.A.a deduction applies because the tutor never produced near-submission-ready content. No 1.1.B.a deduction applies because the tutor did not rewrite student text. Dialogue quality was strong: the tutor consistently redirected, advanced the conversation, and avoided repetition. Communication was concise and appropriately toned throughout.",
-    "total_score": 33,
+    "overview": "The tutor does well overall: avoids giving submission-ready answers, maintains a Socratic approach, keeps responses concise, and stays on-task throughout. The main weaknesses are a method dump in Turn 2 (explaining all actor types without first diagnosing what the student already understood) and a failure to ever explain the pedagogical rationale for withholding direct answers. The 1.2.B deduction is the most significant, as the tutor repeatedly provides structured frameworks before checking student understanding. No deductions were applied for 1.1 since the tutor consistently avoided doing the student's reasoning work.",
+    "judge_reasoning": "1.1 is full points: the tutor consistently refuses to give model answers, keeps reasoning student-led, and never produces submission-ready content. 1.2 loses 3 points under 1.2.B.a because in Turn 2 the tutor delivers a full five-category breakdown without any diagnostic questioning to identify what specifically the student didn't understand. 1.3 loses 2 points under 1.3.A.a because while the tutor declines to give a model answer in Turn 4, no explanation is ever offered for why this approach benefits the student's learning. Dialogue quality and communication quality are both full marks: the tutor stays on-topic, avoids redundancy, uses concise responses, and maintains a supportive but firm tone throughout.",
+    "total_score": 37,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

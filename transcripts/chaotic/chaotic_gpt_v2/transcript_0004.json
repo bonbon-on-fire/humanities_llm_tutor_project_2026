@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,29 +84,17 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  4,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforces no-ghostwriting boundaries and keeps the student doing the writing, but does not clearly explain that this constraint is meant to improve the student's own learning, reasoning, or retention.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 24,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,13 +106,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -139,24 +123,28 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1
+                  "Turn 1"
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The opening response is notably blunt and rigid ('No. I’m your tutor, not your ghostwriter'), which risks undermining rapport even though later turns are more constructive and supportive.",
+                "reason": "The opening response is noticeably rigid and dismissive ('your instructor’s alleged permission doesn’t change that'), which risks harming rapport even though later turns are more supportive.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 42,
     "max_base_score": 46,
-    "overview": "The tutor strongly avoided ghostwriting, kept idea generation student-led, and scaffolded the student toward a workable argument tied to the prompt. The main ambiguity is whether the tutor's role-boundary statements count as a learning rationale; I resolved that conservatively with a small deduction because the tutor rarely made the pedagogical purpose explicit. I also applied a tone deduction because the first refusal was sharper than necessary.",
-    "judge_reasoning": "This was a strong tutoring interaction on the core pedagogy dimensions: the tutor refused to provide submission-ready philosophy writing, repeatedly redirected the student into generating claims, and built the discussion in manageable argumentative steps. I did not deduct under guided discovery or scaffolding because the tutor consistently used the student's own emerging distinctions about side effects versus means and advanced the work without taking over the reasoning. I deducted under 1.3.A because the tutor enforced constraints without clearly stating that the constraint existed to support the student's learning process. I also deducted under 3.2.A because the initial refusal was curt enough to risk discouraging the student, though the rest of the conversation was more helpful and formative.",
-    "total_score": 38,
+    "overview": "The tutor strongly avoided ghostwriting, kept idea generation student-led, and scaffolded the response around the actual assignment parts. The conversation stayed well anchored to the prompt and progressed through increasingly specific student-authored claims. I chose the smaller deduction only for tone, because the first reply was harsher than necessary; other potentially ambiguous areas, such as meta-learning rationale, were minimally but sufficiently addressed through repeated emphasis on reasoning over wording.",
+    "judge_reasoning": "Under 1.1, the tutor consistently refused to provide submission-ready prose and instead required the student to generate claims, case applications, and the final principle. Under 1.2 and 2.2, the tutor organized the task into clear subparts, built on the student's progress, and repeatedly redirected back to the assignment rather than drifting. I did not deduct under 1.3 because the tutor gave concrete method-level guidance and at least some rationale by emphasizing reasoning rather than wording. The main supported deduction is 3.2.A.a: the opening boundary-setting was unnecessarily sharp, even though the remainder of the exchange was constructive and formative.",
+    "total_score": 42,
     "max_score": 46,
     "model": {
       "provider": "openai",

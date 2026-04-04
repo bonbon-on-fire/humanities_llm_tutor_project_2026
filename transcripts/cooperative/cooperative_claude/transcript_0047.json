@@ -72,43 +72,107 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale is given for the Socratic approach in terms of learning benefits, retention, or skill development.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "By Turn 9-10, the student clearly improves from vague categorization to evidence-anchored logic. The tutor affirms the improvement but does not prompt the student to reflect on what changed in their thinking or why the revised approach is stronger methodologically.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this approach builds independent analytical skills, aids retention, or supports long-term learning. Constraints are enforced implicitly but the rationale is never stated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "By Turn 9-10 the student has clearly improved from early confusion to a well-structured, evidence-anchored framework. The tutor affirms the progress but does not prompt the student to reflect on what changed in their thinking or why the evidence-test approach worked better than their initial framing.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 10 the tutor says 'Yes—this is solid by my own judgment, not your instructor's rubric,' which is a reasonable disclaimer, but earlier evaluative statements like 'Basically right' (Turn 9) and 'Good' (Turn 8) are delivered without any formative framing clarifying they are coaching guidance rather than official evaluation. The overall pattern leans evaluative without consistent coaching-oriented framing.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic practice throughout: it consistently avoids giving direct answers, uses diagnostic questions, builds on student progress, and keeps key idea generation student-led. The conversation progresses logically from confusion to a well-structured draft. Minor deductions apply for the absence of any explicit meta-learning rationale (why the guided approach benefits the student) and for missing a reflection prompt after the student's clear improvement in Turn 9-10.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never provides near-submission-ready output, never rewrites student text, and never states conclusions before the student reasons toward them). Scaffolding (1.2) is well-executed: the tutor builds on each student response and uses diagnostic questions before redirecting. The two pedagogy deductions are for 1.3.A.a (no tutoring rationale ever stated) and 1.3.C.a (no reflection prompt after the student's visible improvement from fuzzy to evidence-anchored logic in Turns 9-10). Dialogue quality is clean: no repetition without progress, no assignment drift, and no off-topic engagement. Communication quality is strong: responses are concise, well-structured, and consistently supportive without implying formal grading.",
-    "total_score": 40,
+    "overview": "The tutor demonstrates strong Socratic practice throughout: it never gives the student the answer, consistently asks the student to generate evidence and reasoning, and scaffolds well from broad confusion to a structured, evidence-anchored actor table. No near-submission-ready content was produced. The main weaknesses are in meta-learning: the tutor never explains why it is guiding rather than telling (1.3.A), and misses the opportunity to prompt reflection on what changed in the student's thinking after clear improvement (1.3.C). A minor deduction is applied for evaluative framing that is not consistently marked as coaching rather than grading (3.2.B). The 3.2.B deduction is a close call given the Turn 10 disclaimer; the smaller deduction is applied per ambiguity guidance.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces submission-ready content, never rewrites student text, and consistently asks the student to derive categories and evidence before confirming. 1.2 receives full marks: the tutor builds on each student response, acknowledges partial progress, and uses diagnostic questions before redirecting. 1.3 loses 4 points: no explicit rationale for the Socratic approach is ever given (1.3.A.a), and after the student's clear improvement in Turns 9-10 the tutor moves forward without prompting reflection on what changed (1.3.C.a). 1.3.B is not penalized because the tutor does give method-level feedback (e.g., 'the weakness is not your categories—it's your evidence threshold'). Dialogue quality is full: no repetition without progress, no assignment drift, no misframing. Communication quality loses 2 points under 3.2.B.b because evaluative phrases like 'Basically right' and 'Good' appear without consistent coaching-framing, though the Turn 10 disclaimer partially mitigates this.",
+    "total_score": 38,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,26 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a constraint against wordsmithing the student's sentence ('I'm not going to wordsmith it for you—you need to do the writing') but did not explain why that constraint supports the student's learning, reasoning, or long-term writing skill.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +115,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,14 +133,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor kept the conversation strongly student-led and assignment-focused, helping the student build a defensible method for boundary selection, source hierarchy, year anchoring, economic metadata, and climate-zone handling without supplying submission-ready table content. The exchange progressed cleanly from one decision point to the next and repeatedly built on the student's prior answers. Tone was occasionally brisk, but the transcript does not clearly show it becoming unsupportive enough to justify a deduction.",
-    "judge_reasoning": "No deduction is supported under 1.1 because the tutor consistently used guided questions and checks rather than giving a finished table, final claims, or polished wording for the student. No deduction is supported under 1.2 or 1.3 because the tutor built directly on student progress, diagnosed issues like boundary mismatch and data comparability, and provided clear method-level guidance such as source hierarchy and metadata tracking. Dialogue quality merits full credit because the conversation stayed tightly anchored to the assignment and advanced without repetitive spiraling. Communication also merits full credit overall: responses were concise and interactive, and although some phrasing was firm, the overall stance remained supportive and formative rather than grading-oriented.",
-    "total_score": 44,
+    "overview": "The tutor stayed strongly process-focused, guided the student through boundary/year/source decisions with effective questioning, and remained closely anchored to the assignment. The only clear deduction is that the tutor imposed a no-wordsmithing constraint without explicitly stating a learning rationale. Some phrasing was somewhat stern, but the evidence was not strong enough to justify an additional tone deduction.",
+    "judge_reasoning": "The tutor consistently used guided discovery rather than producing submission-ready table content, and the conversation progressed logically from city boundary to source hierarchy to metadata and climate-zone handling. The tutor also built on the student's answers turn by turn and kept the discussion tightly aligned with the actual assignment task. I deducted only under 1.3.A because the tutor refused to wordsmith the student's note in turn 4 without explaining how that constraint benefits learning or skill development. I did not deduct elsewhere because the tutor's feedback was specific and methodological, and the dialogue remained clear, interactive, and on task.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

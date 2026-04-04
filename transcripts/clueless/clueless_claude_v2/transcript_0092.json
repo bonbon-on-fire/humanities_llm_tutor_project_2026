@@ -72,65 +72,109 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 5, the tutor provides a fully worked classification example for two actor types (city environment department and university lab), including the actor, evidence, classification, and reasoning. This does the key reasoning step for the student rather than guiding the student to derive it. The student had asked for 'a full example of how one actor gets classified' and the tutor obliged by completing the entire reasoning chain.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 5, the tutor provides a fully worked example of how to classify two actors (city environment department as 'leading' and university lab as 'engaged'), including the evidence and reasoning for each. This does the key reasoning step for the student rather than prompting the student to derive the classification logic themselves. The tutor essentially models the complete analytical process before the student has attempted it.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              3,
-              7,
-              9
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than providing direct answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The tutor does refuse to write the forum post in Turn 7 but gives no rationale for why.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers or drafting the post. In Turn 7, the tutor declines to write the forum post but only says 'I'm your tutor, not your writer' without explaining how this approach supports the student's learning, skill development, or retention. No rationale for the tutoring constraints is offered at any point in the conversation.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              3,
-              6,
-              7,
-              9
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly asks for the whole assignment to be explained from scratch (Turns 1, 3, 7, 9), and the tutor repeatedly provides a full re-explanation of the same framework (3 buckets, leading/engaged/missing, sectors) without meaningfully synthesizing prior progress or reframing the approach. By Turn 9, the tutor gives essentially the same recap as Turn 1 without diagnosing why the student keeps feeling lost or switching to a different strategy.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly asks for full explanations or recaps ('can u just explain the whole thing from the start,' 'walk me through the whole process end to end,' 'can u just show me what a forum post would look like,' 'can u recap the whole assignment one more time but simpler'). The tutor responds each time with another structured list or explanation rather than consolidating, reframing, or diagnosing why the student keeps feeling lost. By Turn 9, the tutor provides essentially the same three-bucket framework as Turn 1 without meaningfully advancing the student's understanding or switching strategy.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 32,
+    "total_base_score": 30,
     "max_base_score": 42,
-    "overview": "The tutor demonstrates solid Socratic instincts overall—declining to write the forum post, consistently asking the student to try before confirming, and keeping the student anchored to Boston and the assignment structure. However, three notable issues reduce the score: (1) In Turn 5, the tutor provides a fully worked classification example that does the core reasoning work for the student before the student attempts it, triggering a 1.1.C.b deduction. (2) The tutor never explains why it is guiding rather than answering directly, missing the meta-learning rationale requirement. (3) The student spirals through multiple 'explain it all again' requests across Turns 1, 3, 7, and 9, and the tutor responds each time with a similar structured list rather than diagnosing the root confusion or switching strategy, triggering the 2.1.A.a deduction. Communication quality is strong throughout—responses are concise, well-structured, and supportive.",
-    "judge_reasoning": "The 1.1.C.b deduction (6 points) is warranted because Turn 5 provides a complete worked example—actor, evidence, classification, and reasoning—for two actor types before the student has attempted any classification, effectively doing the key analytical step for the student. The 1.3.A.a deduction (2 points) applies because the tutor never articulates why it uses guided questioning rather than direct answers, even when the student repeatedly requests full explanations or a drafted post. The 2.1.A.a deduction (4 points) is supported by the pattern across Turns 1, 3, 7, and 9 where the student expresses the same confusion and requests full re-explanations, and the tutor responds with structurally similar lists rather than diagnosing the underlying confusion or reframing the approach. No deductions apply to communication quality, assignment anchoring, or scaffolding—the tutor consistently redirects to Boston, builds on student responses, and maintains a supportive tone.",
-    "total_score": 32,
+    "overview": "The tutor maintains a generally Socratic approach and avoids writing the assignment for the student, but falls into two notable problems: (1) in Turn 5, the tutor provides a fully worked classification example that does the core reasoning work for the student rather than eliciting it; (2) the tutor cycles through the same three-bucket framework multiple times across the conversation without synthesizing progress or changing strategy when the student remains stuck. The tutor also never explains the rationale for its guided approach. Communication quality and assignment anchoring are strong throughout.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is applied for Turn 5, where the tutor constructs a complete actor classification example including actor, evidence, classification, and reasoning for two actor types—doing the central reasoning work the student should perform. The 2.1.A.a deduction (4 points) is applied because the tutor repeats the same leading/engaged/missing framework explanation in Turns 1, 3, 7, and 9 without consolidating prior student progress or switching to a different pedagogical strategy when the student keeps expressing confusion. The 1.3.A.a deduction (2 points) is applied because the tutor never explains why it is using guided questioning rather than direct answers, missing an opportunity to build meta-learning awareness. No deductions are applied for 1.1.A (the tutor does not produce submission-ready content), 1.2 (the tutor builds on student responses and asks diagnostic questions), 2.2 (the tutor stays on-task throughout), or communication quality (responses are concise and supportive).",
+    "total_score": 30,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

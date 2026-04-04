@@ -72,35 +72,36 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              9
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 9, the tutor names two specific stressors ('extreme heat and air quality/health burden') and suggests two more ('water scarcity or infrastructure strain'), effectively doing the key reasoning step of identifying which stressors are relevant for Jakarta. While the tutor asks the student to choose and rate them, supplying the candidate list removes the core intellectual work of stressor identification from the student.",
-            "points": 6
-          }
-        ],
         "criteria": {
           "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 9, the tutor names two specific stressors ('extreme heat and air quality/health burden') and suggests two more ('water scarcity or infrastructure strain'), effectively doing the stressor-identification work for the student rather than prompting the student to generate candidates independently. This gives the student the key content pieces rather than guiding discovery.",
+                "points": 6
+              }
+            ],
             "score": 6,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 2,
-            "max": 4,
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains why it refuses to write answers for the student in terms of learning rationale—e.g., active reasoning, retention, or skill development. It simply says 'that's not my role' or 'I won't do the assignment for you' without articulating the pedagogical benefit to the student.",
+                "reason": "The tutor never explicitly explains why it refuses to write answers for the student in terms of learning rationale (e.g., active reasoning, retention, skill development). It simply says 'that's not my role' or 'I won't do the assignment for you' without connecting the constraint to the student's learning benefit.",
                 "points": 2
               }
-            ]
+            ],
+            "score": 2,
+            "max": 4
           }
         },
         "base": {
@@ -109,13 +110,14 @@
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -126,28 +128,38 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 10, the tutor says 'I'm using my own judgment, not your instructor's rubric,' which, while intended to disclaim authority, could be read as implying the tutor is making evaluative judgments about correctness. The formative framing is ambiguous and the disclaimer is awkward rather than clearly coaching-oriented.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 42,
-    "overview": "The tutor consistently refused to produce submission-ready content and maintained a firm, appropriate boundary throughout a challenging interaction with a resistant student. Tone was supportive without being permissive, responses were concise, and the tutor kept the student anchored to the assignment. The primary deduction is for Turn 9, where the tutor named specific stressor candidates (extreme heat, air quality, water scarcity, infrastructure strain), which crosses into doing the key identification work the assignment requires of the student. A secondary deduction applies because the tutor never articulated a learning rationale for its constraints—it only asserted role boundaries without explaining why student-led reasoning supports learning.",
-    "judge_reasoning": "1.1.C.b is triggered in Turn 9: the tutor supplies a list of four specific stressors for Jakarta, removing the core intellectual task of stressor identification from the student. This is the decisive evidence-to-conclusion step the assignment is designed to develop. The 6-point deduction under 1.1 is applied here (capped at 12 total for 1.1, no additional 1.1.A or 1.1.B triggers found). 1.3.A.a is triggered because across all 10 turns the tutor never explains the pedagogical rationale for its refusals—phrases like 'that's not my role' or 'you need to write it' assert a constraint without explaining how student-led work builds skills or understanding. No deductions apply to dialogue quality or communication quality: the tutor avoided repetition, stayed on-task, used short focused prompts, and maintained a firm but non-punitive tone throughout.",
-    "total_score": 34,
+    "overview": "The tutor consistently refused to complete the assignment for the student and maintained appropriate boundaries across all ten turns. However, in Turn 9, the tutor named specific stressor candidates (extreme heat, air quality, water scarcity, infrastructure strain) rather than prompting the student to generate them, which crosses into doing key idea generation for the student (1.1.C.b). The tutor also never articulated a learning rationale for its constraints (1.3.A.a), and a minor tone/framing issue appeared in Turn 10. The deduction for 1.1.C.b is the most significant, as it represents the tutor supplying substantive content the student should have produced. The 3.2.B.b deduction is borderline; the tutor's disclaimer was awkward but not clearly harmful.",
+    "judge_reasoning": "The primary deduction is under 1.1.C.b: in Turn 9, the tutor directly named four specific stressor candidates for Jakarta, which constitutes doing the key reasoning/identification step the student was supposed to perform. This triggers the 6-point deduction under 1.1.C. The 1.3.A.a deduction applies because across all ten turns the tutor never explained why refusing to write answers supports the student's learning—it only asserted its role without pedagogical rationale. The 3.2.B.b deduction is applied for the ambiguous evaluative framing in Turn 10, where the tutor's disclaimer about 'my own judgment' muddied the formative coaching stance. No deductions apply to scaffolding (1.2), dialogue quality (2.1, 2.2), or response clarity (3.1), as the tutor built on student progress, stayed on task, and kept responses focused throughout.",
+    "total_score": 32,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

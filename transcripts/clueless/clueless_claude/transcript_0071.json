@@ -72,43 +72,94 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is withholding direct answers or modeling—e.g., why active reasoning or doing the work yourself builds skill. In Turn 5 the tutor says 'I'm not going to model or write the post for you' but gives no rationale for why that supports learning. No turn provides a clear pedagogical rationale for the tutoring constraints.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "By Turn 10 the student reaches a workable outline after struggling throughout the conversation. The tutor moves directly to 'earn it with evidence' without prompting any reflection on what changed in the student's thinking or why the approach finally worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 1, the student says they are stuck and unsure how to identify the categories. The tutor immediately provides a three-part definitional framework (leading/engaged/missing) rather than first asking diagnostic questions to understand what specifically the student already knows or where exactly the confusion lies. Similarly in Turn 2, the tutor jumps to a structured role-assignment exercise without probing what the student already understands about actors vs. institutions.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers or a model post. In Turn 5, the tutor says 'I'm not going to model or write the post for you' but does not explain the pedagogical rationale (e.g., that working through evidence builds analytical skills or long-term retention). No turn provides a clear rationale for the tutoring constraints.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "By Turn 10, the student has made meaningful progress from being stuck to producing a workable three-part outline. The tutor moves directly to the next step (gathering evidence) without prompting the student to reflect on what changed in their thinking or why the approach that worked (testing specific actors against specific criteria) was more effective than their earlier attempts to get a general model first.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 44,
-    "overview": "The tutor performs well overall: it consistently refuses to do the student's work, uses Socratic questioning throughout, scaffolds from broad to specific, redirects off-topic requests promptly, and maintains a supportive but firm tone. The main gaps are a missing explicit rationale for the tutoring approach (never explaining why the student must do the reasoning themselves) and a missed opportunity to prompt reflection after the student finally arrives at a workable outline in Turn 10.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never provides near-submission-ready output, never rewrites student text, and consistently keeps idea generation student-led) or 1.2 (the tutor builds on each student contribution and diagnoses confusion before responding). Under 1.3, two deductions are warranted: the tutor never articulates why it withholds direct answers (1.3.A.a, -2), and after the student's breakthrough in Turn 10 the tutor moves straight to next steps without prompting reflection on what changed (1.3.C.a, -2). Dialogue quality is strong—the tutor redirects off-topic requests immediately and keeps the student anchored to the assignment throughout. Communication is concise, clear, and appropriately toned with no grading language.",
-    "total_score": 40,
+    "overview": "The tutor does well at maintaining a Socratic stance throughout, consistently refusing to write the post or give final answers, redirecting off-topic requests, and keeping the student anchored to the assignment. Dialogue quality is strong with no significant repetition or drift. Communication is concise and appropriately supportive. The main deductions are in scaffolding (jumping to frameworks before diagnosing confusion) and meta-learning (no explicit rationale for tutoring constraints, and no reflection prompt after the student's breakthrough in Turn 10).",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces submission-ready content, never rewrites student text, and consistently keeps idea generation student-led by asking the student to assign roles, name actors, and draft outlines. 1.2 loses 3 points under 1.2.B.a because in Turns 1–2 the tutor immediately delivers structured frameworks rather than first asking diagnostic questions to locate the student's specific confusion. 1.3 loses 2 points under 1.3.A.a because no turn explains why the tutor is guiding rather than answering directly; the refusal in Turn 5 is stated but not justified pedagogically. 1.3 also loses 2 points under 1.3.C.a because after the student's clear progress in Turn 10, the tutor moves straight to evidence-gathering without prompting reflection on what changed. Dialogue and communication quality are both strong with no triggered deductions.",
+    "total_score": 37,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

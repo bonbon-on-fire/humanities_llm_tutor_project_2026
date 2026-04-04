@@ -72,38 +72,97 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The tutor never prompts the student to reflect on what changed in their thinking after they improved (e.g., after Turn 8 when the student successfully applied the 3-test framework, or after Turn 9 when heat notes looked strong). The tutor moves forward without reinforcing the method choices that led to improvement.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers — no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully produces a defensible rough table in Turn 9 (an improvement from earlier vague attempts), the tutor moves straight to critiquing water scarcity without prompting any reflection on what changed in the student's thinking or why the heat entry worked well.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor consistently applied Socratic, guided-discovery methods throughout the conversation, never giving the student answers but instead prompting them to generate evidence, apply criteria, and build their own justifications. Scaffolding was well-structured and built progressively on student responses. The only clear deduction is the absence of any meta-reflective prompt after the student demonstrated improvement—the tutor moved forward without asking the student to articulate what changed in their thinking or why the new approach worked better.",
-    "judge_reasoning": "1.1: No near-submission-ready output was provided; the tutor consistently asked questions and prompted the student to supply evidence and reasoning. Key ideas remained student-led throughout. 1.2: The tutor built on each student response and did not restart from scratch; no diagnostic failures were evident. 1.3: The tutor explained the rationale for evidence-based rating (Turn 1, Turn 5) and gave specific process feedback (e.g., 'exposure alone is a start, not a strong justification'). However, after the student improved from vague to structured reasoning (notably Turns 8–9), the tutor never paused to ask the student what changed or why the new approach worked, triggering a 1.3.C.a deduction of 2 points. Dialogue quality was strong—no redundancy, no off-topic drift, and the assignment was kept in focus throughout. Communication was concise and appropriately supportive with no tone or grading-stance issues.",
-    "total_score": 42,
+    "overview": "The tutor performs strongly across most dimensions: it never gives submission-ready answers, consistently uses Socratic questioning, scaffolds well from broad to specific, maintains appropriate tone, and keeps responses concise and focused. Two deductions apply under 1.3: the tutor never explains its pedagogical rationale to the student, and it misses a clear opportunity to prompt reflection after the student's successful rough-table attempt in Turn 9.",
+    "judge_reasoning": "1.1 is fully intact — the tutor never provides direct answers, final wording, or submission-ready content; all key reasoning steps are left to the student. 1.2 is fully intact — the tutor consistently builds on student progress (e.g., affirming the 3-part structure in Turn 4, validating the paired-evidence logic in Turn 6) and diagnoses confusion before responding. Under 1.3, a 2-point deduction applies for 1.3.A.a because the tutor enforces a guided-discovery approach throughout but never once explains to the student why it is doing so (e.g., to build independent analytical skills). A second 2-point deduction applies for 1.3.C.a because after the student produces a noticeably improved rough table in Turn 9, the tutor immediately pivots to critique without pausing to ask what changed or why the heat entry succeeded. Dialogue quality and communication quality are both clean — no repetition without progress, no assignment drift, responses are appropriately brief and interactive, and tone is consistently supportive without implying formal grading.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

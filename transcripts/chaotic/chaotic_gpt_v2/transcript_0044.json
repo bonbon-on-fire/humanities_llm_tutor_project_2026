@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,29 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced that they would not write or polish the post, but did not clearly explain how this constraint supports the student's learning, reasoning, or long-term writing skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +118,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,14 +136,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed consistently process-focused, refused submission-ready writing, and kept the student generating the actual content. The exchange remained tightly anchored to the assignment and advanced through small, concrete revisions. A possible ambiguity is that the tutor’s explanation for refusing direct writing help was brief, but it still functioned as a clear tutoring rationale rather than a bare refusal.",
-    "judge_reasoning": "No rubric-triggering deductions were clearly supported by the transcript. The tutor did not provide near-submission-ready output, did not rewrite the student’s text into final wording, and repeatedly pushed the student to supply the core judgments, examples, and revisions. The tutor also scaffolded well by building on the student’s progress, giving specific process feedback like adding a concrete example and clarifying the participation gap, while keeping replies concise and supportive. Because the conversation remained assignment-focused, non-redundant, and formative in tone, full criterion scores were retained throughout.",
-    "total_score": 42,
+    "overview": "The tutor strongly protected against doing the student's forum post for them and consistently redirected the conversation into student-led drafting tied to the assignment categories. The dialogue stayed anchored to Jakarta, the required actor types, and the forum-post deliverable, with clear progress across turns. The only notable weakness was meta-learning explanation: the tutor stated boundaries clearly but did not explicitly frame why those boundaries support learning.",
+    "judge_reasoning": "Under 1.1, no deduction is warranted because the tutor never produced submission-ready prose, never rewrote the student's paragraph, and kept the key content choices student-led throughout the exchange. Under 1.2, the tutor built on the student's progress by acknowledging workable ideas and asking for increasingly specific revisions rather than restarting or ignoring partial success. A 1.3.A deduction applies because the tutor repeatedly said they would not write the post, but did not clearly explain the learning rationale behind that constraint beyond role boundaries. Dialogue quality and communication remained strong: the tutor stayed on task, avoided spiraling despite repeated student pressure, and used short, actionable prompts with a generally supportive tone.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,32 +72,94 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding rather than answering directly—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student makes clear progress across turns (e.g., arriving at the city-proper consistency rule in Turn 7), but the tutor never pauses to prompt reflection on what changed in the student's thinking or why the improved approach worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student makes clear improvements across turns (e.g., arriving at the city-proper consistency rule in Turn 7, the currency convention in Turn 9). The tutor moves forward each time without prompting the student to reflect on what changed in their thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +168,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performs strongly overall: it never gives direct answers or near-submission-ready content, consistently uses Socratic questioning, scaffolds well from easy to harder categories, maintains a supportive tone, and keeps responses concise and focused. Two deductions apply: the tutor never explains its tutoring rationale to the student, and it misses the opportunity to prompt reflection after the student's clear improvement on the boundary-consistency issue.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never provides direct answers, rewrites student text, or pre-empts student reasoning) or 1.2 (it builds on each correct student step and diagnoses confusion before responding). Under 1.3, the tutor omits any explicit rationale for its Socratic approach (1.3.A.a, -2) and does not prompt the student to reflect on what changed after the successful boundary-consistency resolution in Turns 6–7 (1.3.C.a, -2). Dialogue quality is clean: no repetition without progress, no assignment misunderstanding left uncorrected, and no off-topic drift. Communication quality is strong: responses are short, targeted, and consistently coaching-oriented without implying formal grading.",
+    "overview": "The tutor performs very well overall. It consistently uses Socratic questioning, never gives away answers, builds on student progress, stays anchored to the assignment, and maintains a supportive and appropriately concise tone throughout all 10 turns. The primary gaps are in meta-learning: the tutor never explains its pedagogical rationale to the student, and it misses opportunities to prompt reflection after the student successfully improves their thinking.",
+    "judge_reasoning": "1.1 is full marks: the tutor never produces submission-ready content, never rewrites student text, and consistently lets the student generate key ideas through guided questioning. 1.2 is full marks: the tutor builds on each correct student step and uses targeted follow-up questions rather than method dumps. 1.3 loses 4 points: the tutor never articulates why it is guiding rather than telling (1.3.A.a), and after clear student improvements—such as the boundary-consistency rule in Turn 7 or the currency convention in Turn 9—the tutor simply advances without prompting the student to reflect on what changed (1.3.C.a). Sections 2 and 3 are full marks: the conversation progresses without repetition or drift, stays tightly assignment-anchored, uses bite-sized responses, and maintains a consistently supportive, non-evaluative tone.",
     "total_score": 40,
     "max_score": 44,
     "model": {

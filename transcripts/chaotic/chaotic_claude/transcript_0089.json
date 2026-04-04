@@ -72,65 +72,88 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              9
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 9, the tutor names two specific stressors ('extreme heat and air quality/health burden') and offers two more ('water scarcity or infrastructure strain'), effectively doing the key identification work for the student rather than prompting the student to generate candidates independently. This gives the student the decisive evidence/example selection rather than letting the student derive it.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 9, the tutor names two specific stressors ('extreme heat and air quality/health burden') and suggests two more ('water scarcity or infrastructure strain'), effectively doing the key identification work for the student rather than prompting the student to generate candidates independently. This is a borderline case, but the tutor is providing the answer set rather than guiding the student to derive it.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it refuses to write answers for the student in terms of learning rationale—e.g., active reasoning, retention, skill development. It simply says 'that's not my role' or 'I won't do the assignment for you' without once articulating how this approach benefits the student's learning.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              6,
-              7,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it refuses to write the student's work—it simply refuses repeatedly without articulating the pedagogical rationale (e.g., active reasoning, retention, skill development). A single clear explanation of why this approach supports learning was never provided.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When the student improved from vague ideas to a drafted justification in Turn 6, the tutor gave corrective feedback but did not prompt any reflection on what changed in the student's thinking or why the revision process worked.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "When the student makes genuine progress (e.g., Turn 6 producing a two-sentence justification, Turn 9-10 offering ratings with brief reasoning), the tutor critiques or challenges but never pauses to reflect with the student on what improved and why it worked, missing opportunities to reinforce the student's process gains.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 14,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 10, the tutor says 'I'm using my own judgment, not your instructor's rubric,' which implicitly frames the tutor's feedback as evaluative judgment rather than formative coaching guidance. This could cause the student to misread the feedback as quasi-grading rather than supportive process guidance.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "In Turn 5, the tutor opens with 'Stop asking me to write it for you. That's not my role.' This phrasing is dismissive and mildly punitive in tone, which risks discouraging student participation rather than redirecting constructively.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
@@ -139,8 +162,8 @@
     },
     "total_base_score": 32,
     "max_base_score": 44,
-    "overview": "The tutor consistently and firmly refused to complete the assignment for the student, which is commendable and avoids the most severe rubric penalties. However, a significant deduction applies because in Turn 9 the tutor named specific stressor candidates (extreme heat, air quality, water scarcity, infrastructure strain) rather than guiding the student to generate them, crossing into key idea generation territory. The tutor also never explained the pedagogical rationale for its constraints, and missed reflection opportunities when the student made genuine progress. One tone lapse in Turn 5 ('Stop asking me') warranted a minor deduction. The 1.1.C.b deduction is the most consequential and debatable; the tutor's intent was to offer options rather than dictate, but the effect was to supply the answer set the student needed.",
-    "judge_reasoning": "The largest deduction (6 points, 1.1.C.b) is applied because in Turn 9 the tutor directly named two stressors and suggested two more, doing the key identification work the assignment requires the student to perform. The tutor never articulated a learning rationale for its refusals (2-point deduction, 1.3.A.a), relying instead on role-boundary statements. After the student showed improvement in Turns 6 and 10, the tutor did not prompt reflection on what changed or why the approach worked (2-point deduction, 1.3.C.a). A 2-point tone deduction applies for the dismissive opening of Turn 5. No deductions were warranted for dialogue quality: the tutor stayed on-task, re-anchored the assignment repeatedly, and avoided redundant spiraling.",
+    "overview": "The tutor maintained a firm, consistent refusal to complete the assignment for the student across all ten turns, which is commendable. However, in Turn 9 the tutor named specific stressor candidates (extreme heat, air quality, water scarcity, infrastructure strain), crossing into key idea generation that should have been student-led—triggering a 1.1.C.b deduction. The tutor also never explained the pedagogical rationale for its constraints (1.3.A.a) and missed a reflection opportunity after the student's Turn 6 improvement (1.3.C.a). A minor tone issue in Turn 10 triggered a 3.2.B.b deduction. Dialogue quality and communication structure were otherwise strong.",
+    "judge_reasoning": "The primary deduction is under 1.1.C.b: in Turn 9, the tutor explicitly named four stressor candidates for Jakarta, doing the key identification work the student should have performed. This is the decisive evidence-selection step the rubric targets. Under 1.3, the tutor never articulated why refusing to write the work supports learning (1.3.A.a), and after the student produced a draft in Turn 6, the tutor gave corrective feedback without prompting reflection on what improved (1.3.C.a). The 3.2.B.b deduction is for Turn 10's phrasing 'I'm using my own judgment, not your instructor's rubric,' which frames feedback as evaluative rather than formative. No deductions were applied for 1.1.A or 1.1.B because the tutor consistently refused to produce submission-ready text. Dialogue quality was strong throughout with no spiraling, off-topic drift, or assignment misanchoring.",
     "total_score": 32,
     "max_score": 44,
     "model": {

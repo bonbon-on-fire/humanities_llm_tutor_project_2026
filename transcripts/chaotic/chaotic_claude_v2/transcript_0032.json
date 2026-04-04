@@ -72,60 +72,110 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is withholding direct answers—no rationale about active learning, retention, or skill development is offered at any point. The refusals are consistent but unexplained, leaving the student without any meta-learning context.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student is stuck and repeating requests, the tutor jumps straight to re-stating the task rather than diagnosing what is causing the student's resistance or confusion (e.g., time pressure, uncertainty about sources). A brief diagnostic question about the root obstacle would have been more appropriate before redirecting.",
-            "points": 3
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly expressed being stuck and pressed for answers, the tutor consistently redirected without first diagnosing why the student was resistant or what specific confusion was driving the behavior. The tutor jumped straight to re-stating the task rather than asking diagnostic questions about what the student found difficult about the process.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints throughout the conversation (refusing to supply answers, refusing to write entries) but never explained why this approach supports learning—e.g., that finding and verifying sources builds research skills, or that writing one's own entries develops academic independence. The rationale was never articulated.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 17,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycled through the same refusal-and-redirect pattern across five consecutive turns without meaningfully advancing the dialogue or switching to a different approach. The student remained stuck in the same loop, and the tutor did not reframe, simplify, or synthesize to break the pattern.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same refusal-and-redirect pattern across five consecutive turns without meaningfully reframing, simplifying, or synthesizing. The student remains stuck in the same loop and the tutor does not switch strategy (e.g., breaking the task into a smaller concrete sub-step, offering a worked analogy, or explicitly naming the pattern to the student).",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              8
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone in early turns was notably cold and terse—'No. I'm your tutor, not a shortcut,' 'You're repeating the same request'—in ways that could discourage student participation rather than build trust. While firmness is appropriate, the repeated blunt refusals without warmth risk making the student feel dismissed rather than supported.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The tutor's tone is repeatedly terse and borderline dismissive ('No.', 'You're repeating the same request.'). While the refusals are pedagogically defensible, the blunt delivery without any acknowledgment of the student's stated time pressure or frustration risks discouraging participation and erodes tutoring trust.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
@@ -133,11 +183,11 @@
       }
     },
     "total_base_score": 31,
-    "max_base_score": 44,
-    "overview": "The tutor consistently refuses to do the assignment for the student and keeps redirecting toward student-led work, which is the core strength. However, the conversation suffers from a prolonged refusal loop without strategic reframing, no meta-learning rationale is ever offered, diagnostic questioning is largely absent, and the tone is frequently cold. The 1.2.B.a deduction is applied cautiously—the tutor does ask follow-up questions, but they tend to re-state the task rather than probe the student's underlying confusion.",
-    "judge_reasoning": "1.1 is fully intact: the tutor never supplies submission-ready content, never rewrites student text, and never gives the conclusion before student reasoning. 1.2 loses 3 points because the tutor repeatedly redirects without first diagnosing why the student is stuck (time pressure, source uncertainty). 1.3 loses 2 points because no rationale for the tutoring approach is ever articulated. Dialogue quality loses 4 points for the extended refusal-and-redirect loop across turns 2–6 with no change in strategy. Communication quality loses 2 points for a consistently cold, terse tone that does not acknowledge student frustration.",
+    "max_base_score": 42,
+    "overview": "The tutor successfully avoided doing the assignment for the student and maintained appropriate boundaries throughout, earning full marks on 1.1. However, the conversation suffered from a prolonged refusal loop (turns 2–6) where the tutor repeated the same redirect pattern without adapting strategy, triggering the 2.1 redundancy deduction. The tutor also never explained the pedagogical rationale for its constraints (1.3.A.a), and the early tone was cold enough to risk discouraging engagement (3.2.A.a). The 1.2.B.a deduction is applied with some uncertainty—the tutor did ask questions, but they were task-redirecting rather than genuinely diagnostic about the student's confusion.",
+    "judge_reasoning": "1.1 is fully preserved: the tutor never supplied answers, never rewrote student text into submission-ready form, and kept idea generation student-led throughout. 1.2 loses 3 points because when the student was persistently stuck, the tutor did not pause to diagnose the underlying confusion before re-redirecting—it assumed the student was being lazy rather than checking what specifically was blocking them. 1.3 loses 2 points because the tutor never once explained why it was withholding answers, missing an opportunity to build meta-learning awareness. 2.1 loses all 4 points because the same refusal-redirect cycle repeated across five turns without synthesis, reframing, or strategy change. 3.2 loses 2 points for a tone that was consistently terse and occasionally dismissive in early turns, which could undermine tutoring trust.",
     "total_score": 31,
-    "max_score": 44,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

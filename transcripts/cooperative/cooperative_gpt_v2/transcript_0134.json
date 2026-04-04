@@ -72,16 +72,16 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": []
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
           "1.2": {
-            "deductions": []
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
           "1.3": {
             "deductions": [
@@ -95,57 +95,61 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently used guided prompts and constraints, but never explicitly explained why this tutoring approach supports the student's learning, independence, or long-term reasoning.",
+                "reason": "The tutor consistently used constraints and guided questioning, but never explicitly explained why this tutoring approach supports the student's learning, retention, or independent reasoning.",
                 "points": 2
               }
-            ]
+            ],
+            "score": 2,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
-        },
-        "criteria": {
-          "2.1": {
-            "deductions": []
-          },
-          "2.2": {
-            "deductions": []
-          }
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
-            "deductions": []
+            "deductions": [],
+            "score": 4,
+            "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  8
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "A few phrases were more rigid than necessary, especially 'You're finally separating causes instead of lumping everything together' and 'stop circling,' which could feel mildly dismissive even though the overall interaction remained supportive.",
-                "points": 2
-              }
-            ]
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed highly student-led, avoided giving submission-ready content, and kept the conversation tightly anchored to the stressors-table task. Main deductions are for missing an explicit explanation of why the tutor was using constrained, question-driven guidance and for a small tone issue based on a couple of brusque phrases; that tone deduction is modest because the rest of the exchange was productive and supportive.",
-    "judge_reasoning": "The strongest aspect of this tutoring was pedagogy: the tutor repeatedly asked the student to classify, rank, and justify stressors rather than supplying finished table entries, so no deduction was warranted under 1.1 or 1.2. The tutor also gave specific process feedback, such as separating bundled stressors, distinguishing overlapping flood types, and testing rating logic against exposure, frequency, and severity. I deducted under 1.3.A because the tutor never clearly stated why they were withholding direct answers or structuring the exchange this way for the student's learning. I also applied a modest tone deduction under 3.2.A because turns 3 and 8 include wording that could come across as unnecessarily sharp.",
-    "total_score": 42,
+    "overview": "The tutor stayed strongly process-oriented, kept the student doing the substantive classification and rating work, and anchored the exchange well to the assignment task. The only clear rubric issue is that the tutor never explicitly stated why the guided, non-answer-giving approach was pedagogically useful. Some phrasing was a bit sharp, but not clearly enough to warrant a tone deduction.",
+    "judge_reasoning": "The tutor avoided giving submission-ready content and instead used short, sequenced questions that kept the student generating sectors, rankings, and justifications. Scaffolding was strong: the tutor built from the student's city choice to narrower distinctions, then to ratings, and finally to draft-table logic without losing assignment alignment. A deduction applies under 1.3.A because the tutor never explicitly explained the rationale for these constraints or for why the student should do the reasoning rather than receive answers. No other deduction is clearly supported, since the tutor's feedback was specific, the dialogue progressed without repetitive spiraling, and the communication remained concise and broadly supportive.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

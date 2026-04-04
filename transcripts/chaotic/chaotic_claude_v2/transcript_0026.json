@@ -72,38 +72,43 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.1.C.a",
-            "reason": "In Turn 5, the student proposes a thesis and asks if it is 'safe enough to use.' The tutor responds 'That's a plausible thesis, using my own judgment' — effectively confirming the thesis before the student has done the reasoning work to derive it independently. This tells the student the correct interpretation before full student exploration, which is a key idea generation failure.",
-            "points": 6
-          },
-          {
-            "evidence_turns": [
-              9
-            ],
-            "sub_criterion_id": "1.1.C.a",
-            "reason": "In Turn 9, the student presents a sentence and asks if it is acceptable. The tutor says 'Yes — using my own judgment, that is a clear and philosophically relevant sentence.' While the student did write the sentence, the tutor's affirmation here is borderline; however, this is already captured in the Turn 5 deduction and should not be double-penalized. No additional deduction applied here.",
-            "points": 0
-          }
-        ],
         "criteria": {
           "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "In Turn 5, the tutor says 'That's a plausible thesis, using my own judgment' — effectively validating the student's thesis before the student has done the reasoning work to derive it. This tells the student the conclusion (the thesis is safe to use) before the student has explored and reasoned through the cases themselves.",
+                "points": 6
+              }
+            ],
             "score": 6,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains why it refuses to write answers for the student — it never articulates that the reason is to support active reasoning, retention, or skill development. It simply says 'I can't write a submission-ready response for you' or 'I'm your tutor, not your ghostwriter' without explaining the pedagogical rationale behind this constraint.",
+                "reason": "The tutor consistently enforces constraints (refusing to write paragraphs, verdicts, or thesis statements) but never explains why this approach supports learning, retention, or skill development. No rationale for the tutoring method is offered at any point in the conversation.",
                 "points": 2
               }
             ],
@@ -113,30 +118,43 @@
         },
         "base": {
           "score": 14,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Turns 6–9 show the tutor cycling repeatedly on the same micro-task (write your own thesis/sentence) without synthesizing or advancing the conversation. The student keeps asking for polishing help and the tutor keeps refusing with the same structural prompt, without reframing, summarizing progress, or moving the student forward to the broader assignment.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
@@ -148,7 +166,7 @@
                   9
                 ],
                 "sub_criterion_id": "3.2.B.b",
-                "reason": "In Turns 5 and 9, the tutor says 'That's a plausible thesis, using my own judgment' and 'Yes — using my own judgment, that is a clear and philosophically relevant sentence.' While the tutor qualifies with 'my own judgment,' the phrasing still sounds evaluative and quasi-grading in nature. However, the qualifier does partially mitigate the concern. Given ambiguity, a deduction is applied but only once.",
+                "reason": "In Turns 5 and 9, the tutor says 'using my own judgment' when validating the student's thesis and sentence, but this qualifier is brief and may not sufficiently clarify the formative, non-grading nature of the feedback. The phrasing 'that is a clear and philosophically relevant sentence' in Turn 9 reads as evaluative/final rather than coaching-oriented, and the student could reasonably interpret it as an official endorsement for submission.",
                 "points": 2
               }
             ],
@@ -162,12 +180,12 @@
         }
       }
     },
-    "total_base_score": 32,
-    "max_base_score": 46,
-    "overview": "The tutor consistently refused to write submission-ready content and maintained a Socratic stance throughout, redirecting the student to do their own reasoning. However, in Turn 5, the tutor confirmed the student's proposed thesis as 'plausible' before the student had fully reasoned through the cases, which constitutes giving the conclusion before student-led derivation (1.1.C.a, -6 pts). The tutor also never explained the pedagogical rationale for its constraints (1.3.A.a, -2 pts). In Turns 5 and 9, the tutor used evaluative language that could be read as quasi-grading (3.2.B.b, -2 pts). Scaffolding and dialogue quality were otherwise strong, with no redundancy, off-topic drift, or assignment misalignment issues.",
-    "judge_reasoning": "The primary deduction is under 1.1.C.a: in Turn 5, the tutor validated the student's thesis as 'plausible' before the student had worked through the individual cases (Fuel, Blood, trolley variants), effectively confirming the key interpretive conclusion before student exploration was complete. This triggers the 6-point deduction for giving the conclusion before student reasoning. The tutor never articulated why it was withholding direct answers — it only stated constraints without explaining the learning rationale, triggering the 2-point deduction under 1.3.A.a. The evaluative phrasing in Turns 5 and 9 ('plausible thesis, using my own judgment'; 'clear and philosophically relevant sentence') reads as quasi-grading feedback rather than formative coaching, warranting a 2-point deduction under 3.2.B.b. All other criteria were well-handled: responses were concise, tone was supportive, scaffolding built on student progress, and the tutor consistently redirected submission requests.",
-    "total_score": 32,
-    "max_score": 46,
+    "total_base_score": 28,
+    "max_base_score": 42,
+    "overview": "The tutor consistently refused to do the assignment for the student and maintained appropriate boundaries throughout. However, several rubric violations were identified: the tutor validated the student's thesis in Turn 5 before the student had reasoned through the cases (1.1.C.a), never explained the rationale for the tutoring approach (1.3.A.a), fell into repetitive cycling on the thesis-polishing sub-task without advancing the conversation (2.1.A.a), and gave evaluative feedback in Turns 5 and 9 that could be read as final grading rather than formative coaching (3.2.B.b). The 1.1.C.a deduction is the most significant: telling the student their thesis is 'plausible' before they've worked through the cases undermines the Socratic process. The 2.1.A.a deduction reflects four consecutive turns of the same refusal-and-prompt pattern without synthesis or reframing.",
+    "judge_reasoning": "The primary deduction in 1.1 is for 1.1.C.a: in Turn 5, the tutor validates the student's proposed thesis as 'plausible' before the student has done the reasoning work to derive it from the cases, effectively giving the conclusion before the student earns it. This triggers the 6-point deduction under 1.1.C. No 1.1.A or 1.1.B violations were found, as the tutor consistently refused to write paragraphs, verdicts, or polished sentences. In 1.3, the tutor never once explained why it refuses to write for the student or how this supports learning, triggering the 2-point deduction for 1.3.A.a. In 2.1, Turns 6–9 show a clear pattern of repetition without synthesis: the tutor cycles on the same 'write it yourself' prompt without reframing, summarizing, or moving the student forward, warranting the full 4-point deduction. In 3.2, the tutor's evaluative language in Turns 5 and 9 ('plausible thesis,' 'clear and philosophically relevant sentence') reads as final judgment rather than formative coaching, despite the 'using my own judgment' qualifier, triggering a 2-point deduction for 3.2.B.b.",
+    "total_score": 28,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

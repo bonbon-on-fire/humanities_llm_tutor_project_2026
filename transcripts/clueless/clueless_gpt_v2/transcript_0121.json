@@ -72,58 +72,94 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor repeatedly supplied the central reasoning path for the student by introducing and reinforcing the key 'means vs side effect' distinction and, in the final turn, directly summarizing the student's view. This still stopped short of a full submission-ready answer, but it reduced student-led generation of the core principle.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In the final turn, the tutor rewrote the student's position into polished, ready-to-use wording ('Your view says outcomes are not the only thing that matter...'), which crosses from process coaching into final-writing help.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              3,
-              4
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student asked for a simple walkthrough of Fuel vs. Blood, the tutor first responded with abstract comparison questions rather than diagnosing that the student had forgotten the setups. The student then had to clarify that the angle did not help and that they needed a factual reminder.",
-            "points": 3
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              6
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  6,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor used constraints such as 'use this structure, not a finished answer' and kept prompting the student to generate ideas, but never explicitly explained why this tutoring approach supports learning or retention.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor imposed process constraints ('use this structure, not a finished answer') but did not explain why this student-led approach supports learning, retention, or independent argument construction.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 13,
-          "max": 24
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 35,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor was generally supportive, concise, and well anchored to the assignment, with clear efforts to keep the student reasoning through the cases. The main deductions are pedagogical: one missed diagnosis of the student's confusion, no explicit explanation of why the tutor was withholding a finished answer, and a borderline but supportable instance of polished rewrite help in the last turn. I did not deduct under 1.1.A because the tutor never produced a full submission-ready response to the entire prompt.",
-    "judge_reasoning": "The strongest deduction is under 1.1.B.a because the tutor's final two-sentence contrast between act consequentialism and the student's view functions as polished final wording rather than pure process guidance. A further deduction applies under 1.2.B.a because the tutor initially answered the wrong problem: the student needed the Fuel/Blood scenarios refreshed, but the tutor first gave an abstract framework. Finally, under 1.3.A.a, the tutor never explicitly justified the tutoring constraint of not giving a finished answer. Outside those issues, the conversation remained focused, non-redundant, supportive, and tightly connected to the assignment.",
-    "total_score": 35,
+    "overview": "The tutor was generally supportive, concise, and well anchored to the assignment, with clear step-by-step prompting and no major off-topic drift. The main weakness was pedagogical: the tutor too often supplied the key moral distinction driving the student's answer rather than keeping that central idea fully student-led. I applied a smaller set of deductions where the evidence was somewhat mixed, because some directiveness also served legitimate clarification when the student forgot the cases.",
+    "judge_reasoning": "The strongest deduction is under 1.1 because the tutor repeatedly introduced the decisive 'using a person as a means' versus 'foreseen side effect' framework before the student had fully derived it, especially in turns 4, 5, 8, and 10. I did not deduct for submission-ready output because the tutor never produced a full essay answer or polished paragraph, and most turns still asked the student to apply ideas. Scaffolding and assignment anchoring were strong: the tutor built on student progress, re-grounded the prompt, and suggested a workable outline. Communication quality was also strong, with brief, clear, supportive replies and no grading-style stance.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

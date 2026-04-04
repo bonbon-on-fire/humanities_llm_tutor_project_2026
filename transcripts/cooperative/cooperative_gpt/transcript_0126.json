@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,24 +86,29 @@
           "1.3": {
             "deductions": [
               {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor maintains a student-led process, but never explicitly explains why these tutoring constraints support learning or philosophical skill-building.",
+                "points": 2
+              },
+              {
                 "evidence_turns": [
                   7
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to a coherent rough argument, the tutor moved directly into further refinement instead of prompting reflection on what changed in the student's reasoning or why the new approach worked.",
+                "reason": "After the student improved from confusion to a coherent four-part draft, the tutor moved directly to refinement questions instead of prompting reflection on what changed in the student's reasoning and why it worked.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -119,13 +120,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -137,14 +138,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor was consistently Socratic, concise, and well anchored to the assignment, with the student generating the core distinctions rather than receiving a ready-to-submit answer. I made only one deduction. There was some ambiguity about 1.3.A, but I chose the smaller deduction approach because turn 8 does give a minimal rationale for not supplying possibly inaccurate lecture details.",
-    "judge_reasoning": "The tutor avoided doing the student's philosophical reasoning for them and instead used short, progressive questions to help the student distinguish act consequentialism from the student's own critique. Scaffolding was strong: the tutor built from the student's answers, introduced a useful 4-part structure in turn 6, and handled the missing Fuel details by refusing to guess and by giving a classification method instead. Dialogue stayed focused and non-redundant, and the tone was supportive and clearly coaching-oriented. I deducted only under 1.3.C because, after the student's clear improvement in turn 7, the tutor did not ask for reflection on what changed in the student's method or why the new structure worked.",
-    "total_score": 42,
+    "overview": "The tutor was consistently Socratic, assignment-focused, and concise, with no near-submission-ready writing or off-topic drift. The main weaknesses were meta-level: the tutor did not explain the learning rationale behind the student-led constraints and missed a good opportunity to ask for reflection after the student's reasoning improved. There was some mild leading toward the side-effect/means distinction, but the student introduced the core contrast first, so I did not deduct under 1.1.",
+    "judge_reasoning": "The tutor scores strongly on pedagogy and dialogue because they used short guided questions, built directly on the student's answers, and kept the conversation anchored to act consequentialism and the Fuel/Blood/trolley cases. They avoided giving a polished thesis or finished paragraph, instead asking the student to generate distinctions and structure their own argument. I deducted under 1.3 because the tutor never explicitly stated why the student-led method was pedagogically useful, and after the student's successful draft in Turn 7, the tutor refined content without prompting reflection on what changed in the student's reasoning. Communication remained supportive, concise, and clearly formative throughout.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

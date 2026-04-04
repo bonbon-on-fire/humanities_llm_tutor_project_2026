@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 16,
-          "max": 22
-        },
         "criteria": {
           "1.1": {
             "deductions": [
@@ -84,7 +80,7 @@
                   6
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "When the student blanked, the tutor supplied a substantial Jakarta-specific explanation of flooding, including the main causal conditions, exposure, and consequences that justify a high severity rating. That moved beyond prompting and did a key reasoning step for the student, though it stopped short of a fully copyable final row.",
+                "reason": "The tutor supplied the core cause-exposure-consequence reasoning for why Jakarta flooding is serious ('heavy rainfall,' 'low-lying coastal areas,' 'dense urban development,' exposed people/infrastructure, and resulting disruptions), which does part of the key reasoning needed for the student's justification instead of keeping that inference fully student-led.",
                 "points": 6
               }
             ],
@@ -97,17 +93,26 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a constraint ('I’m not going to fill a row for you') but did not clearly explain the learning rationale behind that constraint, such as supporting the student's own reasoning or long-term skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -119,13 +124,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -137,14 +142,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "Overall, the tutor was effective at keeping the work interactive, assignment-anchored, and emotionally supportive. The main concern is that one turn gave the student a fairly rich Jakarta flooding rationale they could directly mine for the table; because the tutor still refused to provide a finished row, I applied the smaller student-led-reasoning deduction rather than a harsher direct-answer deduction.",
-    "judge_reasoning": "The strongest deduction is under 1.1 because turn 6 provided most of the substantive flooding justification instead of eliciting it first from the student. Otherwise, the tutor consistently scaffolded the task well, built on partial answers, and redirected the student back to the exact assignment components. Dialogue quality was strong: there was no major repetition without progress, and the tutor kept the discussion tightly tied to the stressors-table requirements. Communication was also clear and supportive, with short prompts and formative coaching rather than grading language.",
-    "total_score": 36,
+    "overview": "Overall, the tutor was supportive, assignment-focused, and usually scaffolded well through short prompts and structured heuristics. The main ambiguity is turn 6: it did not become a full submission-ready row, but it did provide substantive reasoning the student could directly mine, so a moderate 1.1 deduction was applied rather than the harsher 1.1.A penalty.",
+    "judge_reasoning": "The tutor generally used guided discovery, acknowledged student progress, and kept the conversation tightly anchored to the stressors-table task. The major deduction is under 1.1 because turn 6 supplied much of the central reasoning for Jakarta flooding severity instead of eliciting that reasoning from the student. A smaller deduction under 1.3 applies because the tutor stated they would not do the row for the student, but did not explicitly explain why that constraint supports learning. No deductions were taken for dialogue quality or communication because the tutor redirected well, avoided off-topic drift, and maintained a supportive, non-grading tone throughout.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

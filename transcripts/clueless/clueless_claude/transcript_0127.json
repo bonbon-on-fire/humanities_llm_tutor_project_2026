@@ -72,84 +72,90 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 3, the tutor directly provides the full reasoning for all three data points (population, area, climate zone), explaining what each one helps infer about risk, exposure, and planning needs. This does the key reasoning step for the student rather than prompting the student to derive it. The student had asked for a 'more complete' explanation, and the tutor complied by giving the bridge from data to climate relevance directly.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 3, the tutor directly provides the reasoning for all three data points (population, area, climate zone) with complete explanations rather than guiding the student to derive them. The tutor states 'Population: tells you how many people could be exposed and how hard service delivery or evacuation may be' and similar full explanations for the other two, doing the key reasoning step for the student before asking a follow-up question.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 5, the tutor lists all the required assignment categories directly (location, population, race/ethnicity breakdown, physical area, income per capita, GDP, Koppen climate zone), essentially reading out the assignment requirements rather than guiding the student to identify which categories matter and why. This resolves the student's confusion by giving the answer rather than scaffolding discovery.",
-            "points": 0
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              3
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through reasoning rather than providing direct answers. In Turn 4, the tutor says 'I'm not going to write Jakarta's explanation for you. My role is to help you build it,' which is close but does not explain the pedagogical rationale (e.g., active reasoning, retention, skill development). No turn explicitly connects the tutoring approach to learning benefits.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from vague answers (Turns 3-4) to solid one-sentence reasoning (Turns 7-8), the tutor moves on without prompting any reflection on what changed in the student's thinking or why the improved approach worked better.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student expressed confusion in Turn 3, the tutor jumped straight to providing full explanations for all three data points rather than first diagnosing what specifically the student didn't understand. A diagnostic question (e.g., 'What do you mean by weather for climate zone?') would have been more appropriate before giving a full method dump.",
-            "points": 3
-          },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through reasoning rather than just providing answers. When the student asks for direct explanations (Turns 3, 4, 5), the tutor declines but does not explain that this approach supports learning, skill development, or retention.",
-            "points": 2
-          },
-          {
-            "evidence_turns": [
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully articulates the elevation and coastal location reasoning in Turns 7-8 (an improvement from the vague responses in Turn 3), the tutor moves on without prompting any reflection on what changed in the student's thinking or reinforcing the method that worked.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 11,
+          "score": 14,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 31,
+    "total_base_score": 34,
     "max_base_score": 44,
-    "overview": "The tutor generally maintains a Socratic approach and avoids writing the assignment for the student, but critically undermines guided discovery in Turn 3 by providing complete reasoning for all three data points before the student attempts them. The 1.1.C.b deduction is the most significant finding. A secondary deduction for 1.2.B.a is applied for Turn 3's method dump without prior diagnosis. The tutor also never explains its pedagogical rationale and misses a reflection opportunity after student improvement. Dialogue quality and communication quality are strong throughout.",
-    "judge_reasoning": "The primary deduction (6 points, 1.1.C.b) is triggered in Turn 3 where the tutor provides complete, ready-to-use reasoning for all three data categories rather than guiding the student to derive them—this is the key reasoning step done for the student. The second deduction (3 points, 1.2.B.a) applies to the same turn: the tutor responded to vague student answers with a full explanation dump rather than first diagnosing what specifically the student misunderstood. Two meta-learning deductions apply: the tutor never explains why it withholds direct answers (1.3.A.a, -2 points), and it misses the opportunity to prompt reflection after the student's successful reasoning in Turns 7-8 (1.3.C.a, -2 points). The Turn 5 listing of required categories was not separately penalized as it largely mirrors the assignment prompt itself and the 1.1.C.b deduction is already applied. Dialogue and communication quality are strong with no evidence of repetition, off-topic drift, or tone issues.",
-    "total_score": 31,
+    "overview": "The tutor generally maintained a Socratic approach, refused to write Jakarta's explanation directly, and kept responses concise and well-scaffolded. The primary deduction is in 1.1 for Turn 3, where the tutor gave away the full reasoning for all three data categories after the student asked for a 'more complete' explanation—doing the key reasoning step the student should have worked through. The tutor also missed opportunities to explain its pedagogical rationale and to prompt reflection after student improvement.",
+    "judge_reasoning": "The 6-point deduction under 1.1.C.b is warranted because in Turn 3 the tutor directly provided the climate-relevance reasoning for all three data points (population, area, climate zone), which is the core intellectual work the student needed to do. This is a clear instance of the tutor doing the key reasoning step rather than guiding the student to derive it. The 1.3 deductions are applied because the tutor never articulated why it was using a guided approach (1.3.A.a) and missed the opportunity to prompt reflection after the student's reasoning improved from vague to solid (1.3.C.a). No deductions were applied to dialogue quality or communication quality, as the tutor maintained good assignment anchoring, avoided redundancy, kept responses appropriately brief, and used a supportive tone throughout.",
+    "total_score": 34,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

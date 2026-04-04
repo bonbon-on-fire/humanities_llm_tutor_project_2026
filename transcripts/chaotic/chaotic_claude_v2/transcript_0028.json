@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it won't write the answer for the student—i.e., it never articulates a rationale grounded in learning benefits (active reasoning, retention, skill development). It simply refuses and redirects, but the pedagogical 'why' is never stated.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it refuses to write the answer for the student—i.e., it never articulates the pedagogical rationale (active reasoning, retention, skill development) behind its constraints. It simply says 'I can't write a submission-ready response for you' and 'No' repeatedly without once explaining that this approach is designed to build the student's own reasoning capacity.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performed very well overall. It consistently refused to produce submission-ready content, guided the student through Socratic questioning, built on student progress turn by turn, and maintained a supportive but firm tone. The one clear deduction is for never explaining the pedagogical rationale behind its tutoring constraints—it enforced the 'no writing for you' rule throughout but never told the student why this approach supports their learning. No other rubric criteria were clearly triggered.",
-    "judge_reasoning": "1.1: The tutor never produced near-submission-ready output, never rewrote student text, and consistently let the student generate key ideas before confirming them—full marks. 1.2: The tutor built on each student contribution (e.g., affirming the means/side-effect distinction the student raised, then pushing for deeper justification) and asked targeted questions rather than dumping information—full marks. 1.3: The tutor gave useful process-level feedback (e.g., 'you assert it more than argue for it') satisfying 1.3.B, but never once explained why it was refusing to write for the student in terms of learning benefits, triggering the 1.3.A.a deduction of 2 points. 2.1–2.2: No repetitive spiraling, no off-topic drift, and the tutor kept the student anchored to the prompt throughout—full marks. 3.1–3.2: Responses were concise and interactive; tone was firm but supportive without being cold or grading-like—full marks.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently refused to write submission-ready content, guided the student through Socratic questioning, built on student progress turn by turn, maintained a supportive tone, and kept responses concise and focused. The only clear deduction is for failing to explain the pedagogical rationale behind its tutoring constraints at any point in the conversation. The tutor also provided reasonably good process feedback in Turn 7 (noting the means/side-effect distinction needed more defense), satisfying 1.3.B. No other rubric criteria were triggered.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming them—full marks. 1.2: The tutor built on each student contribution (e.g., affirming the means/side-effect insight in Turn 4 and scaffolding from there) and asked diagnostic questions before elaborating—full marks. 1.3: The tutor gave useful process feedback in Turn 7 (flagging that the means/side-effect distinction was asserted rather than argued), satisfying 1.3.B; however, across all ten turns the tutor never once explained why it was refusing to write the answer—no mention of active reasoning, retention, or skill-building rationale—triggering the 1.3.A.a deduction of 2 points. Dialogue quality and communication quality were strong throughout: no repetitive spiraling, no off-topic drift, no long monologues, and a consistently supportive tone without grading language.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

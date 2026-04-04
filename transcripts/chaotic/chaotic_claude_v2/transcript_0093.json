@@ -72,47 +72,98 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              9
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Turn 9, the tutor directly provides two named Boston offices (Boston Environment Department, Boston Planning Department) and a specific plan (Climate Ready Boston) after the student explicitly asked for exactly that information to finish the assignment. While the tutor frames this as 'starting points to verify,' these are the precise named actors and plan the student needed to complete the forum post. Combined with the student's already-formed argument from Turn 8, this contribution fills the remaining factual gap in the student's submission-ready answer, effectively giving answer pieces that together with prior student work become submission-ready.",
+                "points": 12
+              }
             ],
-            "sub_criterion_id": "1.1.A.a",
-            "reason": "In Turn 9, the tutor provides three specific named answers—'Boston Environment Department,' 'Boston Planning Department,' and 'Climate Ready Boston'—directly in response to the student's request for exactly those items. While framed as 'starting points to verify,' these are the precise factual answers the student needed to complete the assignment. The tutor had successfully resisted this request across multiple prior turns but relented here, giving the student submission-ready content (two offices and one plan) that the student then directly incorporated verbatim into their Turn 10 forum post answer. This constitutes giving answer pieces that become submission-ready.",
-            "points": 12
+            "score": 0,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor enforces constraints throughout (refusing to write the post, refusing sentence starters, refusing to fill buckets) but never explicitly explains why this approach supports the student's learning—e.g., that active reasoning builds retention, develops analytical skills, or prepares them for future assignments. The rationale is implicit at best.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is refusing to write the post or give direct answers in terms of learning rationale—e.g., that active reasoning builds retention or skill. The tutor simply says 'I'm not allowed' or 'I'm your tutor, not a ghostwriter' without connecting the constraint to the student's long-term learning benefit.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 10,
-          "max": 24
+          "score": 2,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 46,
-    "overview": "The tutor demonstrated strong resistance to ghostwriting across most of the conversation, consistently redirecting the student toward their own reasoning and using scaffolded prompts effectively. However, in Turn 9, the tutor broke down and directly provided the two Boston offices and one plan the student had explicitly requested—content the student then used verbatim in their final answer. This triggered the 1.1.A.a deduction (all 12 points). Additionally, the tutor never articulated why the tutoring constraints exist, missing the meta-learning rationale requirement. Dialogue quality and communication quality were strong throughout.",
-    "judge_reasoning": "The 1.1.A.a deduction is warranted because in Turn 9 the tutor gave the student exactly the named offices and plan they requested, which the student immediately incorporated into their submission-ready Turn 10 answer. Despite strong resistance across eight prior turns, this single lapse constitutes providing answer pieces that together become submission-ready content, triggering the full 12-point deduction. The 1.3.A.a deduction applies because the tutor never once explained the pedagogical rationale for refusing to write the post—e.g., that doing the reasoning themselves builds analytical skills or prepares them for future work. No deductions apply to dialogue quality (the tutor consistently re-anchored to the assignment and avoided off-topic drift) or communication quality (responses were concise, well-structured, and supportive in tone).",
-    "total_score": 30,
-    "max_score": 46,
+    "total_base_score": 22,
+    "max_base_score": 42,
+    "overview": "The tutor maintained strong boundaries and good Socratic scaffolding for most of the conversation, consistently refusing to write the post, provide sentence starters, or fill in actor lists. However, in Turn 9, the tutor directly named two Boston offices and a specific climate plan—exactly what the student had been requesting—after the student's Turn 8 response had already established a near-complete argument. This crosses the 1.1.A.a threshold because those named pieces, combined with the student's prior reasoning, constitute submission-ready content. The 1.1.A.a deduction removes all 12 points from criterion 1.1. The tutor also never articulated a learning rationale for its constraints, triggering a 1.3.A.a deduction. All other criteria (scaffolding, dialogue quality, communication) were handled well.",
+    "judge_reasoning": "The decisive deduction is 1.1.A.a: in Turn 9, after the student had already produced a coherent two-part argument in Turn 8, the tutor provided the exact named offices and plan the student needed to substantiate that argument. The rubric penalizes giving 'answer pieces across turns that together become submission-ready,' and this final factual contribution completed the student's post. The 12-point deduction for 1.1 is therefore fully applied. A 2-point deduction under 1.3.A.a is also warranted because the tutor never explained why refusing to give direct answers supports the student's learning—it only cited role constraints ('I'm not allowed,' 'I'm your tutor, not a ghostwriter') without connecting this to skill development or retention. All other rubric criteria show no clear evidence of violation: scaffolding built progressively on student responses, dialogue stayed on-task, responses were concise, and tone was firm but not dismissive.",
+    "total_score": 22,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -92,13 +88,13 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +106,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -127,24 +123,29 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  5
+                  5,
+                  9
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The phrasing 'Stop circling back to the same request' is more rigid than supportive while the student is clearly stressed, which risks discouraging participation even though the boundary itself is appropriate.",
+                "reason": "The tutor is mostly supportive, but phrases like \"Stop circling back to the same request\" and \"Now stop delaying\" introduce a somewhat rigid, admonishing tone that could increase pressure for an already panicked student.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor consistently avoided producing submission-ready work and kept the student doing the core reasoning, while staying tightly anchored to the assignment. The main weakness was one notably rigid refusal, though the overall interaction remained structured and generally supportive. Because the rubric maxima are internally inconsistent, scoring here follows the stated deduction logic with only the clearly supported deduction applied.",
-    "judge_reasoning": "The tutor did well on pedagogy: they refused repeated requests for a finished forum post, used prompts, checklists, and targeted questions, and asked the student to supply the core claims rather than writing them. They also gave useful process-level feedback by identifying vague parts of the student's reasoning and specifying what needed to be verified or justified. Dialogue quality was strong because the tutor stayed focused on the actual assignment and progressively narrowed the student's choices instead of drifting off-task. The only clear deduction is for tone, since the Turn 5 response sounded unnecessarily sharp given the student's panic.",
-    "total_score": 42,
+    "overview": "The tutor strongly maintained tutoring boundaries and kept the student doing the intellectual work, while still giving usable structure for the assignment. The conversation stayed anchored to the forum-post task and generally progressed through targeted prompts, checklists, and criteria for stronger evidence. The only clear deduction is for occasional rigid phrasing; I chose the smaller deduction because those lines can also be read as firm boundary-setting rather than outright dismissiveness.",
+    "judge_reasoning": "Under 1.1, the tutor consistently refused to provide submission-ready text and instead asked the student to identify actors, evidence, and gaps, so no deduction is supported. Under 1.2 and 1.3, the tutor built on the student's partial answers, narrowed weak points like vague office names and unsupported actor choices, and explained at least once that the constraint was to help the student think rather than draft for them. Dialogue quality remained strong because the tutor repeatedly re-grounded the work in the assignment categories and did not substantially drift off-topic, while responses were short and clear. The main weakness is tone: in later turns, the tutor used somewhat sharp wording that could feel pressuring to a stressed student, so 3.2.A.a is deducted.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

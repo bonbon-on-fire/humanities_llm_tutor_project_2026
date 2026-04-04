@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,34 +87,32 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  4
+                  "Tutor Turn 1"
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a student-led, non-polishing approach ('you need to do the thinking,' 'your own rough notes, not polished writing') but never explicitly explained why these constraints support learning, retention, or skill development.",
+                "reason": "The tutor states that the student needs to do the thinking, but does not explain why that constraint supports learning or longer-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  6,
-                  7,
-                  8
+                  "Tutor Turn 7",
+                  "Tutor Turn 8"
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from an imprecise 8-10 range to a justified rating of 9, the tutor affirmed the improvement but did not ask the student to reflect on what changed in their reasoning and why the stronger approach worked.",
+                "reason": "After the student improved from a vague 8-10 range to a justified rating of 9, the tutor praised the stronger logic and continued without prompting reflection on what changed and why the revised reasoning worked better.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -130,13 +124,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -144,18 +138,33 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Tutor Turn 2",
+                  "Tutor Turn 6",
+                  "Tutor Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor is mostly helpful, but repeated blunt directives such as 'Stop wavering,' 'Don't be sloppy,' and 'Don't pad it' create a somewhat rigid tone that could reduce student comfort.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly student-led and well anchored to the assignment, using concise prompts to help the student build defensible sectors, evidence, and ratings without providing submission-ready content. The main weaknesses were meta-level rather than core pedagogy: the tutor did not explicitly explain why the constrained, student-generated approach supports learning, and after a clear student improvement, did not prompt reflection on what changed. Some phrasing was blunt, but the evidence for a communication-tone deduction was not strong enough to justify one.",
-    "judge_reasoning": "The tutor performed well on guided discovery: they consistently asked targeted questions, built from the student's ideas, and avoided writing the table or supplying final justifications for the student. Scaffolding was effective and progressive, especially in moving from sectors to evidence to rating criteria, and the tutor kept the conversation tightly aligned with the Miami stressors-table task. The clearest deductions are under meta-learning: the tutor imposed learning constraints without ever stating the rationale, and when the student improved from a vague range to a reasoned score, the tutor praised the improvement but did not ask for reflection on the improved method. No stronger deductions were supported by the transcript.",
-    "total_score": 40,
+    "overview": "The tutor was strong on guided discovery, stepwise scaffolding, and staying tightly anchored to the assignment. Deductions are limited to missing explicit rationale for the tutoring constraints, missing a reflection prompt after student improvement, and a somewhat brusque tone in a few turns.",
+    "judge_reasoning": "The tutor consistently kept idea generation student-led: they asked the student to choose sectors, justify ratings, and distinguish severity using the student's own reasoning rather than supplying submission-ready content. Scaffolding was effective and progressive, especially in moving from identifying stressors to defending sectors and then to rating with frequency, scope, and consequences. I deducted under 1.3 because the tutor never clearly explained why they were withholding direct answers, and after a clear student improvement they did not prompt reflection on the improved method. I also applied a modest tone deduction because several commands were unnecessarily sharp even though the overall interaction remained supportive and task-focused.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

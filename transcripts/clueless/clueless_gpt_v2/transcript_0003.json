@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 16,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [
@@ -83,10 +79,11 @@
                 "evidence_turns": [
                   3,
                   5,
+                  7,
                   8
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor introduced the central 'side effect vs. means' distinction and the outcome-vs.-method framing before the student independently generated that key interpretive path, which steered the core argument rather than fully eliciting it from the student.",
+                "reason": "The tutor introduced the conversation's key interpretive path before the student generated it, especially by supplying the central 'side effect vs means' distinction and framing the paper as asking whether outcomes alone are enough. That moved the decisive idea generation toward the tutor rather than keeping it student-led.",
                 "points": 6
               }
             ],
@@ -99,21 +96,46 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a step-by-step, non-answer-giving approach ('we’ll build it step by step,' 'not a full lecture') but did not clearly explain why that constraint supports the student's learning or long-term reasoning skills.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across many turns, the tutor repeated the same questioning pattern around the 'means or side effect' distinction while the student remained confused. The tutor did not adequately switch to a synthesizing summary, a clearer explanation, or a different scaffold once the student kept signaling confusion.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -121,13 +143,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -139,14 +161,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 30,
     "max_base_score": 46,
-    "overview": "The tutor stayed assignment-focused, supportive, and mostly scaffolded the student's thinking in manageable steps. The main deduction is for supplying the conversation's central philosophical distinction ('means vs. side effect') rather than having the student derive that core idea independently. Because the tutor still avoided giving submission-ready prose or a full final argument, no larger deduction was applied.",
-    "judge_reasoning": "The tutor did well on structure: it broke the prompt into parts, kept the exchange interactive, and repeatedly narrowed the task to one manageable comparison at a time. It also provided process-level coaching such as using a comparison grid, isolating a single test, and turning intuitions into principles. The major issue under the rubric is that the tutor introduced the decisive analytical framework itself across turns 3, 5, and 8, which reduced student-led idea generation on the core argument. Otherwise, the tutor remained concise, formative, and well anchored to the assignment.",
-    "total_score": 36,
+    "overview": "The tutor stayed on task, kept a supportive tone, and avoided giving a submission-ready answer. Main deductions come from introducing the central philosophical distinction too early and then repeating that same framework without enough adaptation while the student remained confused. There is some ambiguity because the tutor's prompts were genuinely scaffolded, so deductions were limited to the clearest rubric triggers.",
+    "judge_reasoning": "The strongest positive evidence is that the tutor preserved a guided, interactive format and kept the conversation anchored to the assignment. However, under 1.1 the tutor supplied the core 'means versus side effect' distinction and the paper's main pressure point before the student independently developed those ideas. Under 2.1, the tutor continued using the same question-driven move even after repeated student statements of confusion, rather than switching to a clearer synthesis or alternative explanation. I also deducted under 1.3.A because the tutor imposed process constraints without explicitly stating why that method helps the student's learning.",
+    "total_score": 30,
     "max_score": 46,
     "model": {
       "provider": "openai",

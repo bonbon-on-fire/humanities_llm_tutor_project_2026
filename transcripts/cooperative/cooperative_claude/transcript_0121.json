@@ -72,32 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student makes clear progress in Turn 8 (articulating the means/side-effect distinction well after earlier fuzziness), the tutor moves directly to integration without prompting any reflection on what changed in the student's thinking or why the new formulation worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully articulates a coherent alternative principle in Turn 9 (an improvement from earlier fuzzy thinking), the tutor moves directly to pressing on the hardest case without prompting any reflection on what changed in the student's thinking or why the reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +160,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic practice throughout: it never gives the student the answer, consistently prompts the student to derive distinctions and test principles, scaffolds well from basic act-consequentialism to nuanced means/side-effect reasoning, and maintains a supportive, focused tone. Two modest deductions apply: the tutor never explains its pedagogical rationale to the student, and it misses a natural reflection moment after the student's breakthrough in Turn 8.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never produces near-submission-ready output, never rewrites student text, and never states the key idea before the student), 1.2 (the tutor consistently builds on student progress and diagnoses confusion before responding), 2.1 (the conversation advances without repetitive cycling), 2.2 (the tutor stays anchored to the assignment throughout), or 3.1/3.2 (responses are concise, clear, and appropriately toned). A 2-point deduction under 1.3.A.a is warranted because the tutor never once explains why it is asking questions rather than providing answers, leaving the pedagogical rationale implicit. A further 2-point deduction under 1.3.C.a applies because after the student's notable improvement in articulating the means/side-effect distinction (Turn 8), the tutor moves straight to synthesis without inviting the student to reflect on what shifted in their thinking.",
+    "overview": "The tutor demonstrates strong Socratic technique throughout: it never gives away answers, consistently prompts the student to derive distinctions themselves, builds on student progress turn by turn, and maintains clear assignment anchoring. The main weaknesses are in meta-learning: the tutor never explains its pedagogical rationale to the student, and misses a clear opportunity to prompt reflection after the student's notable improvement in Turn 9.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never provides submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming them. 1.2 is fully intact: the tutor builds on each student contribution and uses diagnostic questions before elaborating. 1.3 loses 4 points: 2 for never explaining the rationale behind the Socratic approach (1.3.A.a), and 2 for failing to prompt reflection after the student's successful synthesis in Turn 9 (1.3.C.a). Dialogue quality and communication quality are both clean: responses are concise, well-targeted, tone is supportive and non-evaluative, and there is no off-topic drift or redundant cycling.",
     "total_score": 40,
     "max_score": 44,
     "model": {

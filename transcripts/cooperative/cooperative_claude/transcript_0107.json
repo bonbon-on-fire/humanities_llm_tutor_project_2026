@@ -72,32 +72,87 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than just providing answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improves (e.g., from vague climate searches to finding a scientific paper, or from 'appears to fall in' to understanding the need for verification), the tutor moves forward without prompting the student to reflect on what changed in their thinking or why the new approach worked better.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through discovery rather than simply providing answers. There is no moment where the tutor articulates that this approach builds research skills, retention, or independent reasoning. Constraints are enforced implicitly but the rationale is never stated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully identifies a scientific paper as a better source (Turn 6) following earlier confusion about vague searching (Turn 5), the tutor moves directly to the next verification step without prompting the student to reflect on what changed in their search approach or why the new method worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +161,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performs strongly overall, consistently using Socratic questioning, building on student progress, and keeping responses concise and well-anchored to the assignment. The main gaps are the absence of any explicit rationale for the tutoring approach and a missed opportunity to prompt reflection after the student's notable improvements (e.g., finding a scientific paper after vague searching, or recognizing the weakness of 'appears to fall in').",
-    "judge_reasoning": "No deductions apply to 1.1 (the tutor never gives near-submission-ready answers, never rewrites student text, and consistently lets the student generate key ideas before confirming them). Scaffolding (1.2) is well-executed: the tutor builds on each correct student step and asks diagnostic questions before addressing confusion. Two deductions apply in 1.3: the tutor never explains why it is guiding rather than telling (1.3.A.a), and after clear student improvements the tutor moves on without prompting reflection on what changed (1.3.C.a). Dialogue quality is strong throughout—no repetition without progress, no assignment drift, and no off-topic engagement. Communication is consistently bite-sized, precise, and supportive with no grading language.",
+    "overview": "The tutor performs strongly across most dimensions. Socratic method is well-maintained throughout: the tutor consistently asks questions before providing information, avoids giving direct answers, and keeps the student doing the reasoning work. Scaffolding is effective—each turn builds on the student's prior response. Dialogue quality is excellent with no redundancy or off-topic drift. Communication is concise and appropriately supportive. Two deductions apply in 1.3: the tutor never explains the rationale for its guided-discovery approach, and misses a clear opportunity to prompt reflection after the student's successful pivot to a scientific source.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming or redirecting. 1.2 receives full marks: the tutor builds on each student response and uses diagnostic questions before addressing confusion (e.g., Turn 2 diagnosing city vs. metro confusion before explaining). 1.3 loses 2 points under 1.3.A.a because across all 10 turns the tutor never once explains why it is guiding rather than telling—no mention of skill-building, retention, or learning rationale. 1.3 loses another 2 points under 1.3.C.a because after the student's successful improvement in Turn 6 (finding a scientific paper after struggling with vague searches), the tutor immediately pivots to verification tasks without asking the student to reflect on what changed in their approach. Dialogue and communication quality are both clean with no evidence supporting deductions.",
     "total_score": 40,
     "max_score": 44,
     "model": {

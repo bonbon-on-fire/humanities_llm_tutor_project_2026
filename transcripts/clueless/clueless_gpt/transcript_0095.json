@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,48 +87,37 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  9
+                  "Turn 1",
+                  "Turn 9"
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced limits such as 'you need to do the identifying' and 'I'm not writing it for you' without explicitly explaining at any point that this constraint supports the student's learning process, active reasoning, or retention.",
+                "reason": "The tutor enforced constraints like 'you need to do the identifying' and 'I'm not writing it for you' but never explained why this student-led approach supports learning or later assignments.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  5,
-                  6
+                  "Turn 6",
+                  "Turn 7"
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to a plausible distinction ('probably mayor's office'), the tutor advanced the task but did not prompt reflection on what changed in the student's thinking or why the new reasoning worked.",
+                "reason": "After the student improved from broad confusion to a plausible distinction ('probably mayor's office'), the tutor continued coaching content without prompting reflection on what changed in the student's reasoning or why the new distinction worked.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8,
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor kept returning to very similar city-specific prompting even after the student repeatedly signaled they were still trying to understand the assignment before choosing a city. This created a repetitive pattern without enough synthesis or reframing until very late in the conversation.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4
           },
           "2.2": {
@@ -140,13 +125,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -157,25 +142,30 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
-                  4
+                  "Turn 1",
+                  "Turn 3",
+                  "Turn 4"
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Phrases like 'Fine' and the blunt 'Too vague' made the tone somewhat rigid and mildly dismissive, which could reduce trust for a confused student.",
+                "reason": "The tutor's wording was occasionally blunt or rigid ('you need to do the identifying,' 'Fine,' 'Too vague'), which could make the interaction feel less supportive even though the help remained task-focused.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment, kept most responses concise, and avoided doing the student's actual forum post or city-specific reasoning for them. Deductions come mainly from repeated prompting for a city before the student was ready, missing explanation of why the tutor was withholding direct writing help, and a slightly terse tone in a few places. There was also a missed chance to prompt reflection after the student's small improvement. The redundancy deduction is somewhat judgment-based because the tutor did vary examples somewhat, but the repeated city-focused prompts still outweighed that.",
-    "judge_reasoning": "The strongest aspect of this conversation is pedagogy around not completing the assignment for the student: the tutor explained the task structure and categories without producing submission-ready content. However, the tutor did not explicitly explain why they were refusing to write or identify the actors for the student, which the rubric requires as tutoring rationale. Dialogue quality suffered because the tutor repeatedly pushed city-specific application even after the student said they were still trying to understand the assignment before choosing a city. Communication was generally clear and bite-sized, but a few phrases were noticeably curt.",
-    "total_score": 36,
+    "overview": "The tutor stayed well anchored to the assignment, avoided doing the student's forum post, and consistently used guided questions rather than providing submission-ready content. Deductions are concentrated in meta-learning and tone: the tutor did not explain the learning rationale for withholding direct answers, missed a reflection opportunity after student improvement, and occasionally sounded blunt. I considered a possible scaffolding deduction because the student remained unsure for much of the exchange, but the tutor did repeatedly reframe and simplify the task, so that criterion stays full.",
+    "judge_reasoning": "The strongest aspect of this tutoring was pedagogical restraint: the tutor explained the task, clarified what counts as an actor, and kept the actual city-specific reasoning with the student, so 1.1 remains full. The tutor also stayed tightly aligned with the assignment and off-topic drift never occurred, supporting full dialogue-quality scores. However, the tutor never explained why the student needed to do the identifying themselves, which triggers 1.3.A, and after the student showed a better distinction at Turn 6, the tutor did not ask the student to reflect on what changed, triggering 1.3.C. Communication was generally clear and bite-sized, but the tone was at times brusque enough to warrant a deduction under 3.2.A.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

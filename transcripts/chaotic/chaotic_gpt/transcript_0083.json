@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -96,39 +92,24 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from an uncertain guess (\"af or am maybe\") to a reasoned answer about a brief dry dip pointing to Am, the tutor did not prompt reflection on what changed in the student's reasoning or why that method worked.",
+                "reason": "After the student moved from an unformed guess ('af or am maybe?') to a more reasoned answer ('brief dip i think, so it’s am?'), the tutor acknowledged the direction but did not prompt reflection on what changed in the student's thinking or why the improved reasoning worked.",
                 "points": 2
               }
             ],
             "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  6,
-                  7,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly used the same refusal-plus-question pattern across many turns without enough synthesis or reframing, even as the student remained stuck and resistant. Although the questions varied slightly, the overall interaction spiraled around the same move rather than consolidating progress more effectively.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4
           },
           "2.2": {
@@ -136,13 +117,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -150,18 +131,33 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally firm and task-focused, but phrasing such as 'No,' 'We’re going in circles,' and 'Now stop stalling' made the tone intermittently rigid and potentially discouraging rather than consistently supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed firmly within a tutoring role, avoided giving submission-ready content, and kept the assignment anchored to Jakarta's required table fields. The main weaknesses were conversational repetition and a missed chance to ask the student to reflect after making a better climate-zone inference. Tone was firm and at moments borderline rigid, but the stronger, clearer deduction fit dialogue repetition rather than supportiveness.",
-    "judge_reasoning": "I kept full credit for 1.1 because the tutor consistently refused to provide exact figures, codes, or a filled table, and instead asked the student to reason through source choice, population scope, and climate classification. I also kept full credit for 1.2 and most of 1.3 because the tutor provided usable process guidance such as using a consistent administrative level and structuring the table as Category | Value | Source, and explained why direct copying would defeat the learning goal. I deducted under 1.3.C because when the student improved from \"af or am maybe?\" to a justified \"brief dip... so it's am?\" response, the tutor did not ask the student to reflect on what reasoning changed. I deducted fully under 2.1 because many turns repeated the same refusal-and-prompt pattern without enough reframing or synthesis, leading to a stalled interaction.",
-    "total_score": 38,
+    "overview": "The tutor strongly protected against doing the assignment for the student and kept the work student-led through repeated prompts, narrowing choices, and small next steps tied to the Jakarta data table. The conversation stayed anchored to the assignment and mostly advanced despite student resistance. I did not deduct for repetition because the tutor varied the scaffolds enough to keep some forward motion, though the interaction was close to spiraling. Main weaknesses were a missed reflection opportunity after student improvement and a somewhat harsh tone in several turns.",
+    "judge_reasoning": "The tutor earned full credit on 1.1 because they consistently refused to provide submission-ready content, did not rewrite student work, and used questions to keep the student doing the reasoning. Full credit on 1.2 and 2.2 is supported by the tutor's stepwise scaffolding and repeated re-grounding in the actual table fields and source-verification process. I deducted under 1.3.C because, once the student improved their climate-zone reasoning, the tutor did not ask the student to reflect on what changed or why the reasoning now worked. I also deducted under 3.2.A because several replies were unnecessarily blunt or rigid, which weakened the supportive tutoring stance.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

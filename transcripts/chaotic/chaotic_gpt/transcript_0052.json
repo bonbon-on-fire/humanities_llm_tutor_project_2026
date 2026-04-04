@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "When the student asked how to explain why Footbridge differs, the tutor supplied the core candidate distinctions ('used as a means,' 'intentional harm,' 'direct personal force/contact'). This gave the central reasoning path for the student's later objection instead of fully eliciting it from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -93,33 +98,31 @@
                 "evidence_turns": [
                   3,
                   5,
-                  7,
                   9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced a no-writing-for-you constraint, but did not explicitly explain that this was to support the student's own reasoning, retention, or long-term skill development.",
+                "reason": "The tutor repeatedly enforced a no-writing-for-you boundary but did not clearly explain a learning rationale such as promoting active reasoning, retention, or independent writing skill.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  6,
-                  10
+                  6
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from earlier uncertainty to clearer paragraphs and opening sentences, the tutor affirmed the work and redirected to next steps without prompting reflection on what changed in the student's method or why the revision worked.",
+                "reason": "After the student improved from a weaker intuition-based contrast to a stronger rights/inviolability paragraph, the tutor did not prompt reflection on what changed in the student's reasoning or why the revision worked better.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -131,13 +134,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -149,14 +152,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly process-oriented, refused to ghostwrite, and kept the student doing the core argumentative work while remaining tightly anchored to the assignment. The main losses are in meta-learning: the tutor never explicitly explained why the no-writing constraint helps learning, and missed opportunities to ask the student to reflect after clear improvement.",
-    "judge_reasoning": "The strongest aspect of this conversation is pedagogy under 1.1: despite repeated student requests for polished prose, the tutor did not provide submission-ready text and instead used prompts, structure, and sentence frames with blanks. The tutor also scaffolded effectively by building on the student's developing claim, objection, and outline rather than restarting or ignoring progress. I deducted under 1.3 because the tutor enforced boundaries without stating a learning rationale, and after successful revisions in later turns did not ask the student to reflect on what changed in their reasoning. Dialogue quality and communication remained strong: the exchange stayed on task, responses were concise, and the tone was firm but supportive rather than punitive.",
-    "total_score": 40,
+    "overview": "The tutor maintained strong assignment focus, kept responses concise, and consistently pushed the student to produce their own wording rather than handing over submission-ready prose. The main pedagogical weakness was that the tutor supplied the key Footbridge distinction options, which partially reduced student-led idea generation. There were also smaller meta-learning gaps: the tutor did not clearly explain why those constraints support learning, and missed a chance to prompt reflection after the student's reasoning improved.",
+    "judge_reasoning": "I started from full credit and deducted primarily under 1.1 because the tutor introduced the central 'means vs. side effect / intention / direct force' framework in Turn 3, which is a key argumentative move for this prompt. I did not deduct for near-submission-ready writing because the tutor repeatedly refused to draft paragraphs or polished sentences and kept the student doing the actual composition. Scaffolding, assignment anchoring, clarity, and tone were strong throughout: the tutor built on student progress, kept the conversation on the prompt, and used clear, bite-sized guidance. Additional deductions under 1.3 are warranted because the tutor never gave an explicit learning rationale for the boundary-setting and did not ask the student to reflect after a successful revision.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

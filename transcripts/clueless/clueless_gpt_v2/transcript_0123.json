@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  7
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor introduced the central interpretive path and key distinction itself by framing the cases as about redirecting harm versus using a person as a means, then defining means versus side effect before the student had independently derived that line of reasoning.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -88,17 +94,26 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a constraint ('I’m your tutor, so I’m not going to spell out each case for you') without clearly explaining a learning-focused rationale such as active reasoning, retention, or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +125,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,14 +143,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed consistently in a guided-discovery mode, avoided giving submission-ready content, and kept the student doing the core argumentative work. The conversation remained well anchored to the assignment and progressed through manageable prompts. A mildly firm refusal in Turn 3 could have risked sounding rigid, but it was immediately tied to diagnosing the sticking point, so no clear rubric deduction was warranted.",
-    "judge_reasoning": "I did not apply deductions because the tutor avoided direct answer-giving and instead used questions, outlines, and partial conceptual prompts that left the student to formulate the final position. The tutor built on student progress, diagnosed confusion by narrowing to one case at a time, and gave at least one rationale for the tutoring constraint by saying the sticking point needed to be fixed before proceeding. Dialogue quality was strong: the tutor redirected requests for full case explanations back to the assignment task and did not allow off-topic drift. Communication stayed concise, supportive, and clearly formative rather than grading-oriented.",
-    "total_score": 42,
+    "overview": "The tutor was generally effective at scaffolding, staying anchored to the assignment, and keeping the exchange interactive and concise. The main weakness was that the tutor supplied the conversation's key means-versus-side-effect distinction rather than fully eliciting it from the student; this was close enough to guided teaching that I applied the smaller relevant deduction rather than treating it as submission-ready output.",
+    "judge_reasoning": "Most of the conversation shows solid tutoring practice: the tutor asked focused questions, built on student answers, and kept the work tied to act consequentialism and the lecture cases. I deducted under 1.1 because the tutor introduced the decisive conceptual distinction itself in turns 5 and 7, which reduced student-led idea generation even though the tutor still avoided writing the student's final response. I also deducted under 1.3.A because the tutor refused to 'spell out' the cases without explicitly explaining why that constraint supports learning. I did not deduct elsewhere because the tutor remained supportive, concise, and assignment-focused throughout.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,59 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.1.A.a",
-            "reason": "In Turn 10, the tutor provides a complete, numbered, step-by-step walkthrough of the entire table-building process (7 steps covering hazards, stressors, rows, sectors, ratings, justifications, and priorities). This is near-submission-ready procedural scaffolding that carries the full reasoning work for the student, effectively doing the assignment planning for them rather than guiding the student to derive the process themselves.",
-            "points": 12
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              3
-            ],
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "In Turn 3, the tutor describes what a 'useful row usually has' (listing all four components) without giving method-level feedback on the student's actual thinking process or explaining why this structure supports the assignment goals. The feedback is informational rather than process-oriented.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this approach builds independent reasoning, retention, or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Turn 8-9, the student makes genuine progress by correctly identifying the stressor/impact distinction in Turn 10. The tutor affirms this ('Good. That distinction is finally clearer.') but immediately moves on to the next task without prompting the student to reflect on what changed in their thinking or why the distinction now makes sense.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In Turn 8-9, the student makes genuine progress (correctly identifying the stressor/impact distinction in Turn 10), but the tutor in Turn 10 moves directly to providing the full process list without prompting the student to reflect on what changed in their thinking or why the distinction finally clicked.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 28,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor demonstrated strong Socratic discipline throughout most of the conversation, consistently refusing to give direct answers and redirecting the student to derive their own conclusions. However, in Turn 10, the tutor broke this pattern significantly by providing a complete 7-step procedural walkthrough of the entire assignment process after the student requested it. This constitutes near-submission-ready assignment output under 1.1.A.a, triggering the full 12-point deduction. Additional minor deductions apply for meta-learning gaps: the tutor did not explain the rationale for its tutoring constraints (1.3.A.a is not triggered as the tutor does implicitly model the approach, but 1.3.B.b applies in Turn 3 for vague structural description), and missed a reflection opportunity after the student's breakthrough in Turn 10.",
-    "judge_reasoning": "The dominant deduction is 1.1.A.a triggered by Turn 10, where the tutor—after successfully guiding the student through 9 turns of Socratic questioning—capitulated to the student's request for a full explanation and provided a complete 7-step process covering every element of the assignment. This is exactly the kind of near-submission-ready procedural output the rubric penalizes, as it carries the full reasoning work for the student. The 1.3.B.b deduction in Turn 3 is warranted because the tutor described table structure in informational terms without connecting it to the student's specific reasoning process. The 1.3.C.a deduction applies because after the student's genuine breakthrough on stressor vs. impact in Turn 10, the tutor immediately pivoted to the full process dump rather than prompting reflection on what changed. Dialogue quality and communication quality were strong throughout: the tutor maintained assignment anchoring, avoided off-topic drift, kept responses concise and interactive, and maintained a supportive tone without grading language.",
-    "total_score": 28,
+    "overview": "The tutor demonstrates strong Socratic discipline throughout, consistently refusing to supply rows or answers and instead redirecting the student to apply their own reasoning. Scaffolding is well-paced and builds on student responses. The main weaknesses are the absence of any explicit rationale for the tutoring approach (why questions rather than answers) and a missed opportunity to prompt reflection after the student's breakthrough on the stressor/impact distinction in Turn 10.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently asks the student to generate ideas before confirming them. 1.2 receives full marks: the tutor builds on each student response and uses diagnostic questions before addressing confusion. 1.3 loses 2 points under 1.3.A.a because the tutor never explains why it is using a guided-discovery approach rather than direct instruction, and 2 points under 1.3.C.a because after the student correctly resolves the stressor/impact confusion in Turn 10, the tutor moves directly to the next task without prompting reflection on what changed. Dialogue quality and communication quality are both strong: responses are concise, well-anchored to the assignment, and maintain a supportive but appropriately firm tone throughout.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

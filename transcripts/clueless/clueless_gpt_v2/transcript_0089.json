@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,27 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a process-over-answer boundary ('You need the pattern,' 'Process, not answer') but did not clearly explain why this tutoring constraint supports the student's learning, retention, or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +116,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -130,21 +136,25 @@
                   5
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The line 'That’s avoidance' is more rigid and dismissive than supportive coaching, creating unnecessary friction for a student who is explicitly confused.",
+                "reason": "The line 'That's avoidance' reads as somewhat harsh and potentially discouraging when the student was expressing confusion, making the tone less supportive than ideal.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, used guided questions, and consistently pushed the student to generate the content rather than supplying a Jakarta-ready table. Evidence for stronger deductions was limited, so most criteria remain at full credit. The main clear issue was tone in one turn, where the tutor's phrasing risked sounding dismissive.",
-    "judge_reasoning": "The tutor did not provide submission-ready content, rewrite student work, or do the core reasoning for the student; instead, the tutor repeatedly asked the student to classify, rate, and justify stressors. Scaffolding was generally effective: the tutor built from the student's answers, clarified stressor versus consequence, and gave usable process structures for ratings and evidence. The conversation also stayed aligned with the assignment, and responses were concise rather than overly long. The main deduction is for tone, because calling the student's request 'avoidance' was unnecessarily sharp and could undermine trust.",
-    "total_score": 42,
+    "overview": "The tutor stayed strongly anchored to the assignment, avoided giving submission-ready content, and used generally effective scaffolding through questions, distinctions, and row-building logic. Deductions are limited to missing an explicit explanation for why the tutor was withholding direct answers and one notably unsupportive phrasing choice. Tone was otherwise mostly serviceable, so the smaller deduction was applied only where clearly supported.",
+    "judge_reasoning": "The tutor preserved student ownership throughout and did not provide a finished Jakarta stressors table, polished wording, or a complete claim-evidence product, so no deduction was warranted under 1.1. Scaffolding was generally solid: the tutor clarified stressor vs. consequence, explained sector overlap, and broke rating/justification into usable parts while building on the student's answers. However, although the tutor repeatedly insisted on process over answer, the conversation never clearly stated why that constraint helps learning, which triggers 1.3.A.a. The main communication issue was turn 5's 'That's avoidance,' which is stricter and less supportive than ideal, justifying a tone deduction under 3.2.A.a.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

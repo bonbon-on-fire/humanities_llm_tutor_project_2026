@@ -72,57 +72,87 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              8
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In turns 8-9, when the student admits they haven't looked at any source yet, the tutor jumps straight to providing the source name (BPS–Statistics Indonesia) and a specific search query rather than first diagnosing what the student already knows about finding official statistics or asking what they've tried. This is a method dump before checking what the student understands.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 8, when the student asks for the best population year/number, the tutor jumps straight to advising 'use the most recent official population figure' and 'avoid mixing city-proper and metro numbers' without first diagnosing what the student already knows or asking a diagnostic question. This is a minor instance but represents a pattern of responding directly rather than probing first.",
-            "points": 0
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it won't do the work for the student—no rationale about active learning, skill development, or retention is offered at any point in the conversation. The tutor simply refuses without explaining the pedagogical purpose.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 24,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Several tutor responses (especially Turns 2, 8, 9) include multi-part instructions or lists when a single focused prompt would have been more appropriate. Turn 2 in particular provides the full table format plus additional optional rows plus a follow-up question all at once, which is more of a monologue than a bite-sized interactive step.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor consistently refused to do the student's work for them, maintained a Socratic stance throughout, and kept the student moving toward their own answers. No submission-ready content was provided. The main weakness is that some responses (particularly Turn 2) were somewhat dense and multi-part rather than bite-sized and interactive. The 1.2.B.a deduction was ultimately not applied as the evidence was ambiguous—the tutor's direct guidance in Turn 8 could reasonably be seen as appropriate scaffolding rather than skipping diagnosis, so no deduction was taken there.",
-    "judge_reasoning": "Section 1 (Pedagogy): The tutor never gave submission-ready answers, consistently redirected the student to do their own work, and built on student progress (e.g., affirming the location sentence in Turn 7 before moving on). No deductions are warranted. Section 2 (Dialogue Quality): The tutor stayed on-task throughout, re-anchored the student when they tried to get the tutor to do the work, and did not engage with off-topic content. No deductions. Section 3 (Communication Quality): Turn 2 provides the full table format, optional additional rows, and a follow-up question simultaneously—this is a multi-part monologue where a more focused, step-by-step approach would have been better. A 2-point deduction under 3.1.A.a is applied. Tone was consistently supportive and non-grading throughout.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor consistently refused to do the student's work and maintained appropriate boundaries throughout the conversation. Socratic method was generally well-applied—the tutor broke tasks into components, asked the student to supply facts, and validated student-generated content rather than providing it. The main weaknesses are: (1) no meta-learning rationale was ever offered for why the tutor operates as it does, and (2) in turns 8-9, when the student admitted they hadn't consulted any source, the tutor skipped diagnostic questioning and went straight to naming the source and providing a search query, which is a minor method dump. The 1.2 deduction is the most significant finding; the 1.3 deduction is clear-cut.",
+    "judge_reasoning": "1.1: The tutor never provided submission-ready content, never rewrote student text, and consistently kept idea generation student-led—full marks. 1.2: The tutor generally scaffolded well, but in turns 8-9 the student explicitly said they hadn't looked at any source yet; instead of asking diagnostic questions (e.g., 'What do you know about official statistics sources for Indonesia?'), the tutor immediately named BPS and gave a search string, triggering the 1.2.B.a deduction. 1.3: The tutor never once explained why it was refusing to write content for the student—no mention of learning rationale, skill-building, or retention—triggering the 1.3.A.a deduction. No 1.3.B deduction is warranted because the tutor did give process-level feedback (e.g., boundary consistency, source citation practice). Dialogue quality and communication quality were strong throughout: responses were concise, tone was firm but not dismissive, and the tutor kept the student anchored to the assignment.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,25 +86,32 @@
           "1.3": {
             "deductions": [
               {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently used a student-led, question-based approach but never explicitly explained why this constraint supports learning, retention, or independent skill development.",
+                "points": 2
+              },
+              {
                 "evidence_turns": [
-                  1,
+                  4,
+                  5,
+                  9,
                   10
                 ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforced a student-led, stepwise process, but did not explicitly explain at least once why these constraints support learning, retention, or skill development.",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from uncertainty about source choice and table structure to a clear, workable table skeleton, the tutor affirmed the progress and advanced the task without prompting reflection on what changed in the student's reasoning or why the improved approach worked.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -120,13 +123,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -138,14 +141,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "Strong tutoring conversation overall: the tutor stayed firmly in guided-discovery mode, kept the student doing the interpretive and organizational work, and repeatedly anchored decisions to the actual assignment. The only clear deduction is for not explicitly stating why the tutor was withholding direct answers and using this process for the student's learning. I did not deduct for reflection-after-improvement because the conversation showed progress, but not a clearly defined failed-attempt-then-success sequence requiring that prompt.",
-    "judge_reasoning": "The tutor earned full credit on Socratic guidance because they never produced submission-ready content, instead asking the student to define categories, set source rules, and draft a table structure themselves across Turns 1-10. Scaffolding was strong and cumulative: the tutor built on correct student ideas about city-versus-metro GDP, ACS definitions, and comparability notes rather than restarting or dumping methods. The main deduction is under 1.3.A.a, since the tutor never clearly said why this student-led process was pedagogically beneficial. Dialogue quality and communication remained strong: the exchange stayed on-task, avoided repetition, used concise prompts, and maintained a supportive formative tone.",
-    "total_score": 42,
+    "overview": "The tutor stayed strongly within a guided-discovery role, kept the conversation anchored to the assignment, and avoided giving submission-ready content. Scaffolding was effective and incremental, especially around source defensibility and comparability notes. The main weakness was meta-learning: the tutor never explained why the student-led questioning approach was being used, and after clear student improvement, the tutor did not ask for reflection on the process that led to success.",
+    "judge_reasoning": "Under 1.1, no deduction is supported because the tutor never supplied final data values, a finished table, or polished submission-ready prose; instead, the tutor relied on prompts and decision rules. Under 1.2, the tutor consistently built on the student's progress and addressed the student's actual uncertainties about geography, ACS sourcing, GDP scope, and Köppen source quality. The main deductions fall under 1.3: there was no explicit rationale for the tutoring constraints, and when the student improved to a solid draft framework, the tutor moved straight to the next task rather than prompting reflection on the improved method. Dialogue and communication remained strong overall: concise, supportive, and tightly anchored to the assignment.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 2",
+                  "Turn 3"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor introduced the central means-vs-side-effect distinction before the student had generated that interpretive path, which steered the student toward the key conclusion rather than keeping the core idea fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -91,23 +97,24 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9
+                  "Turn 7",
+                  "Turn 9"
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor maintained a boundary against doing the student's writing ('I’ll critique the logic, not write it for you') but did not clearly explain why that constraint supports the student's learning, reasoning, or retention.",
+                "reason": "The tutor maintained a coaching stance and avoided writing the paragraph for the student, but never clearly explained why that constraint supports the student's learning or argument-building process.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -119,13 +126,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -137,14 +144,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly Socratic, kept idea generation student-led, and consistently anchored discussion to the assignment's philosophical distinctions. The only clear rubric issue is that the tutor did not explicitly state a learning rationale for the tutoring constraint against writing the student's paragraph; this was close, so only the rubric's limited deduction was applied.",
-    "judge_reasoning": "This was a strong tutoring conversation under the rubric. The tutor avoided giving submission-ready claims or prose, instead using targeted questions to help the student derive the act consequentialist view, test cases, and formulate a general rule. Scaffolding was effective and responsive, with clear progression from identifying the rule to stress-testing objections. I deducted only under 1.3.A.a because, although the tutor said they would critique rather than write, they never explicitly explained that this boundary was for the student's own learning or skill development.",
-    "total_score": 40,
+    "overview": "This was a strong, well-scaffolded tutoring exchange: the tutor stayed interactive, kept the student doing the argumentative work, and remained tightly anchored to the actual philosophy prompt and cases. The main weakness is that the tutor introduced the decisive means-versus-side-effect distinction quite early, which partially pre-shaped the student's thesis path. That deduction is somewhat interpretive because the tutor framed it through questions rather than delivering a full answer outright.",
+    "judge_reasoning": "The tutor avoided giving submission-ready prose, used short prompts, and consistently built the conversation toward the student's own thesis, objection, and outline. Dialogue quality was strong because the tutor stayed on task, advanced the discussion each turn, and redirected the student toward concrete application in Fuel, Blood, and trolley variants. The largest deduction is under 1.1 because the tutor supplied the central analytical distinction before the student independently reached it, reducing student-led idea generation. A smaller deduction applies under 1.3 because the tutor never explicitly explained why they were withholding direct writing help in service of learning.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,60 +72,100 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it refuses to write the answer for the student—it simply says 'No' or 'I'm your tutor, not your ghostwriter' without once articulating that the refusal is because active reasoning builds retention, skill, or understanding. A single clear rationale for the tutoring constraint is absent across all ten turns.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces constraints (refusing to write or polish the student's work) but never explicitly explains why this approach supports learning—e.g., that active reasoning builds retention, develops philosophical skill, or prepares the student for future independent work. The rationale given is always 'I won't write it for you' without a pedagogical explanation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "After the student repeatedly asks for the tutor to write or polish the answer (turns 5, 6, 7, 8), the tutor cycles through the same refusal pattern and re-lists the same structural outline multiple times without meaningfully advancing the dialogue or reframing the approach. By turn 6, the tutor explicitly notes 'we're going in circles' but continues the same move rather than switching strategy.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly asks for the tutor to write or polish the answer across turns 2–6, and the tutor cycles through the same refusal-plus-skeleton pattern without meaningfully advancing the dialogue or reframing the approach. By turn 6 the tutor itself acknowledges 'we're going in circles,' yet the response is still another structural outline rather than a different pedagogical move (e.g., targeted simplification, a concrete example, or a diagnostic question about what specifically is blocking the student). This constitutes pattern-level repetition without synthesis.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Turn 6 provides a four-point structural outline that largely repeats what was already given in turns 3–5, making it longer than necessary given the student's demonstrated understanding. However, most other responses are reasonably concise, so this is a borderline case and the deduction is applied once.",
-            "points": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 4,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 32,
+    "total_base_score": 36,
     "max_base_score": 42,
-    "overview": "The tutor consistently refused to do the student's work, maintained appropriate boundaries, and guided the student through a productive scaffolding sequence that resulted in a solid draft by turn 9. However, three notable weaknesses appear: (1) the tutoring rationale was never explained—the tutor just said 'no' without articulating why active reasoning supports learning; (2) the dialogue spiraled for several turns with the same refusal-plus-skeleton pattern rather than shifting strategy; (3) some responses were longer than needed given the student's demonstrated progress. The communication quality deduction is applied for the repeated structural outline in turn 6, which was redundant given prior turns.",
-    "judge_reasoning": "Pedagogy (1.1): The tutor never gave submission-ready content, never rewrote student text, and consistently kept idea generation student-led—no deductions under 1.1. Scaffolding (1.2): The tutor built on each student contribution and did not misdiagnose confusion—no deductions. Meta-learning (1.3): The tutor never once explained why it was refusing to write the answer in terms of learning benefit, triggering the 1.3.A.a deduction of 2 points. Dialogue quality (2.1): The tutor's own acknowledgment in turn 6 that 'we're going in circles' confirms pattern-level repetition; the same refusal-plus-outline move was repeated across turns 2–6 without a meaningful strategic shift, warranting the full 4-point deduction. Assignment anchoring (2.2): No misunderstanding of the assignment occurred and no off-topic drift required redirection—no deductions. Communication (3.1): Turn 6's four-point outline was redundant given prior scaffolding and longer than needed, triggering the 4-point deduction; most other turns were appropriately concise. Tone (3.2): The tutor maintained a supportive, non-grading tone throughout—no deductions.",
-    "total_score": 32,
+    "overview": "The tutor maintained a strong Socratic stance throughout, consistently refusing to write or polish the student's work and guiding the student to produce their own thesis, case analysis, and general rule. The student ultimately produced a solid philosophical paragraph largely through their own effort. Two deductions were applied: one for failing to explain the pedagogical rationale behind the tutoring constraints (1.3.A.a), and one for pattern-level repetition without meaningful reframing when the student kept requesting ghostwriting (2.1.A.a). The redundancy deduction is the most significant—the tutor acknowledged the loop but did not switch strategy. No deductions were applied for direct answer-giving, scaffolding failures, tone issues, or assignment anchoring.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided submission-ready content, never rewrote student text, and consistently kept key idea generation student-led through skeleton prompts and targeted questions. 1.2 receives full marks: the tutor built on each student contribution (e.g., affirming the raw thesis in turn 3, building on the side-effect/means distinction in turn 8) and diagnosed confusion appropriately. 1.3 loses 2 points because the tutor never articulated why the Socratic approach benefits the student's learning—every refusal was stated as a boundary ('I'm your tutor, not your ghostwriter') without a learning-rationale explanation. 2.1 loses all 4 points because from turns 5–8 the tutor repeated the same structural outline and refusal pattern without reframing, simplifying, or switching to a different pedagogical move, even after self-diagnosing the loop in turn 6. 2.2, 3.1, and 3.2 receive full marks: the tutor stayed on-task, kept responses concise and clear, and maintained a supportive, non-grading tone throughout.",
+    "total_score": 36,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

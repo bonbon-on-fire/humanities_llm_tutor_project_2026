@@ -72,58 +72,102 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor supplied likely core answer content before the student independently derived it, first by suggesting the city's environment secretariat as the lead actor and later by restating 'leader' and 'engaged' actor choices. This did not become submission-ready writing, but it did narrow the student's key idea generation on central parts of the task.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.a",
-            "reason": "The tutor supplied the likely lead actor ('start with the city’s environment secretariat') before the student verified it, which gives the key conclusion path before the student fully reasons it out.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly enforced anti-ghostwriting limits but did not clearly explain a learning rationale such as why student-generated reasoning or drafting supports retention or skill development.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-ghostwriting boundary, but did not clearly explain how that constraint supports learning, reasoning practice, or long-term skill development. The explanation stayed at the level of role boundaries and submission ownership.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 14,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              4,
-              8,
-              10
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several responses use rigid or mildly scolding phrasing, such as 'I'm your tutor, not a ghostwriter' and 'Don't outsource the core fact-finding,' which can weaken a supportive tutoring tone even though the tutor remains task-focused.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The tutor stayed on task, but repeated phrasing such as 'I’m your tutor, not a ghostwriter,' 'Don’t outsource the core fact-finding,' and 'not your substitute writer' made the tone somewhat rigid and potentially discouraging.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 32,
     "max_base_score": 46,
-    "overview": "The tutor strongly avoided ghostwriting and kept the conversation anchored to the assignment with short, actionable prompts. Main deductions come from one turn that gave a key actor conclusion too early, the lack of an explicit learning-rationale explanation for the tutoring constraints, and a somewhat rigid tone. Where evidence was borderline, deductions were kept limited rather than expanded across overlapping criteria.",
-    "judge_reasoning": "The tutor did well on the core anti-ghostwriting standard: they refused to draft the forum post, did not rewrite the student’s sentence, and repeatedly pushed the student to supply names, evidence, and rough wording. I deducted under 1.1.C.a because turn 5 gave the likely lead actor for Mexico City before the student had identified and supported it independently, which partially short-circuited student-led idea generation. I also deducted under 1.3.A.a because, although the tutor enforced boundaries, they never explained why those boundaries help learning. Finally, the tone remained mostly professional but was rigid enough in several turns to justify a 3.2.A.a deduction.",
-    "total_score": 34,
+    "overview": "The tutor was effective at refusing ghostwriting, keeping the exchange anchored to the assignment, and breaking the task into manageable next steps. A smaller pedagogy deduction was applied because the tutor gave likely actor choices on key parts of the answer path, though not a submission-ready post.",
+    "judge_reasoning": "The tutor consistently avoided writing the student's forum post and usually responded with short, actionable prompts tied to the assignment. The main deduction is under 1.1 because the tutor still supplied likely substantive answer content at turns 5 and 10, which reduced student-led generation of central actor selections. I also deducted under 1.3 because the tutor never clearly explained the learning rationale behind the refusal to draft the response. Communication was generally clear, but some phrasing was more rigid than supportive, so tone lost points as well.",
+    "total_score": 32,
     "max_score": 46,
     "model": {
       "provider": "openai",

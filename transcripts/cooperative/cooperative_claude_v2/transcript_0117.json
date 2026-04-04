@@ -72,42 +72,95 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              8
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Turn 8, the student submits a full draft forum post and the tutor responds by evaluating it as 'good and logically organized' and identifying its 'main weakness' as specificity. While the tutor does not rewrite the text, this response functions as editorial feedback on a near-submission-ready draft rather than guiding the student through a tutoring process. However, the tutor does redirect the student to add specifics themselves rather than providing them, which partially mitigates the concern. The deduction is borderline; the tutor stops short of rewriting but does treat the draft as a near-final product to be polished.",
+                "points": 0
+              }
             ],
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "In Turn 8, the tutor says 'Using my own judgment, not your instructor's rubric: this is good and logically organized.' While the tutor identifies a weakness (specificity), the feedback on what is strong is vague ('good and logically organized') without explaining what process or reasoning made it effective. The method-level feedback on the weakness is somewhat better but still fairly surface-level.",
-            "points": 2
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than providing answers directly. There is no moment in the conversation where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development. The tutoring constraints are enforced but never justified to the student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 8, the tutor says 'Using my own judgment, not your instructor's rubric: this is good and logically organized.' While the tutor attempts to disclaim grading authority, the phrasing 'this is good and logically organized' followed by identifying the 'main weakness' reads as evaluative/grading-style feedback. The disclaimer is present but the overall framing still sounds like a grade rather than coaching-oriented guidance. This is a mild instance; the tutor does attempt to clarify formative framing but the execution is ambiguous.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performed well overall, consistently using Socratic questioning to guide the student through identifying actors, distinguishing roles, and recognizing gaps. The student did the key reasoning work throughout. The main weakness is a minor lapse in meta-learning feedback quality in Turn 8, where positive feedback was vague and method-level rationale was not fully articulated. No major violations of direct answer-giving, off-topic drift, or assignment misalignment were observed.",
-    "judge_reasoning": "Criterion 1.1: No deductions. The tutor never gave submission-ready content, never rewrote student text, and consistently asked the student to derive conclusions before confirming them. The student generated all key ideas. Criterion 1.2: No deductions. The tutor built on each student response progressively and diagnosed confusion (e.g., the university classification question) before redirecting. Criterion 1.3: A 2-point deduction under 1.3.B.b is warranted for Turn 8, where the tutor's positive feedback ('good and logically organized') lacked process-level explanation of what made the reasoning strong, and the rationale for tutoring constraints was not explicitly stated at any point in the conversation (1.3.A.a could also apply, but to avoid double-penalizing the same gap, only 1.3.B.b is applied). Dialogue quality and communication quality were strong throughout: responses were concise, interactive, well-anchored to the assignment, and maintained a supportive tone without implying formal grading.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 42,
+    "overview": "The tutor demonstrates strong Socratic method throughout, consistently asking targeted questions rather than providing answers, building on student progress turn by turn, and keeping key idea generation student-led. The conversation progresses logically from identifying actors to classifying them to identifying gaps to drafting a forum post. The main weaknesses are: (1) the tutor never explains the rationale for its guided-discovery approach to the student, missing an opportunity for meta-learning; and (2) in Turn 8, the tutor's evaluative framing ('this is good and logically organized... the main weakness is specificity') edges toward grading language despite a partial disclaimer. No major deductions for direct answer-giving, rewriting, or off-topic drift were warranted.",
+    "judge_reasoning": "Criterion 1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently asks the student to derive conclusions before confirming them. Criterion 1.2 receives full marks: the tutor builds on each student response, acknowledges correct steps, and uses diagnostic questions before redirecting. Criterion 1.3 loses 2 points under 1.3.A.a because the tutor never explains why it uses guided questioning rather than direct answers—no rationale for the tutoring approach is offered at any point. Criterion 3.2 loses 2 points under 3.2.B.b because Turn 8's feedback ('this is good and logically organized... the main weakness is') reads as evaluative grading despite a partial disclaimer; the formative framing is insufficiently clear. All other criteria are at full marks: dialogue is progressive without redundancy, assignment anchoring is maintained throughout, responses are appropriately concise, and tone is consistently supportive.",
+    "total_score": 38,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

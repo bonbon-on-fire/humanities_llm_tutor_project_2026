@@ -72,67 +72,79 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.1.A.a",
-            "reason": "In Turn 10, the tutor asks the student to 'Write your full forum-ready rough take in 4–5 sentences, and I'll critique the argument.' This solicits a near-submission-ready piece of writing from the student with the tutor offering to critique it—which is a standard tutoring move—but the framing 'forum-ready rough take' edges toward producing submission-ready output. However, the tutor has not yet written or provided that content; the student has not submitted it either. The conversation ends before any submission-ready text is produced by the tutor. This is borderline but does not clearly trigger 1.1.A.a since the tutor never actually provides final submission-ready content.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              9
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 9, the student explicitly asks the tutor to help phrase their claim. The tutor declines and redirects the student to do the writing themselves. No rewriting of student text occurs. No deduction warranted.",
-            "points": 0
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully refined their private sector claim from 'missing' to 'not prominent in my sources' (a clear improvement from earlier vagueness), the tutor moved directly to the next task without prompting any reflection on what changed in the student's thinking or why the more precise framing was stronger methodologically.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 1, the tutor immediately provides a structured three-part framework (leading/engaged/missing) without first diagnosing what the student already understands. The student said they were 'stuck' and 'idk how to tell,' but the tutor jumps to a full method explanation rather than asking a diagnostic question first. This is a mild instance of providing a method dump before checking understanding.",
-            "points": 3
-          },
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "By Turn 10, the student has clearly improved from early confusion (Turn 3) to a well-reasoned, evidence-calibrated position (Turn 10). The tutor does not prompt any reflection on what changed in the student's thinking or what made the reasoning stronger. The tutor moves directly to the next task (forum-ready summary) without reinforcing the method improvement.",
-            "points": 2
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 19,
+          "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 39,
+    "total_base_score": 42,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic practice throughout: consistently refusing to write for the student (Turn 9), pushing for evidence-based reasoning, and building progressively on student responses. The main deductions are: (1) a mild scaffolding issue in Turn 1 where the tutor provides a full framework before diagnosing what the student already knows; (2) a missed opportunity in Turn 10 to prompt reflection on the student's improvement arc. No submission-ready content was produced by the tutor, and dialogue quality and communication quality were both strong.",
-    "judge_reasoning": "1.2.B.a is triggered in Turn 1 because the tutor immediately delivers a three-part definitional framework without first asking what the student already understands about the categories—a method dump before diagnosis. 1.3.C.a is triggered at Turn 10 because the student visibly improved from vague confusion to precise, evidence-calibrated claims, yet the tutor does not pause to ask what changed or reinforce the reasoning method before moving to the next task. No other deductions are warranted: the tutor consistently avoids doing the student's reasoning, declines to rephrase student writing when asked, maintains good assignment anchoring, avoids redundancy, and communicates in appropriately concise, supportive turns.",
-    "total_score": 39,
+    "overview": "The tutor performed very well overall, consistently using Socratic questioning to guide the student through the actor categorization task without doing the reasoning for them. The student was led to generate their own distinctions (organized vs. unorganized residents, leading vs. engaged NGOs, evidence-based vs. speculative private sector claims) through targeted prompts. The only clear deduction is for missing a reflection prompt after the student's successful self-correction on the private sector framing in Turn 10. All other criteria were met cleanly.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently asked the student to derive conclusions before confirming them. The student did all key reasoning steps. 1.2: The tutor built on each student response, acknowledged correct progress (e.g., 'Yes—that reasoning is stronger'), and diagnosed confusion before redirecting. 1.3: The tutor explained its rationale in Turn 9 ('I won't phrase it for you—you need to do the writing') and gave process-level feedback throughout, but missed the opportunity in Turn 10 to prompt reflection after the student successfully improved their claim—triggering a 1.3.C.a deduction. Dialogue and communication quality were strong: responses were concise, progressive, on-topic, and supportive throughout.",
+    "total_score": 42,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

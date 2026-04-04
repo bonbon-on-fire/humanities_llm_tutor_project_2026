@@ -72,41 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 5, the tutor says 'Yes—those are plausible. Good start, using my own judgment, not your instructor's rubric.' This phrasing is ambiguous but the tutor validates the student's actor list without asking the student to justify or derive why those actors fit the buckets first. However, the student did generate the actors themselves, so this is borderline. The tutor then immediately asks the student to justify each, which partially mitigates. Deduction not applied here as the student generated the content.",
-            "points": 0
-          },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor consistently refuses to do the student's work and enforces constraints throughout the conversation, but never explicitly explains why this approach supports the student's learning (e.g., active reasoning, retention, skill development). The tutor says 'My role is to help you build it yourself' and 'That's not my role,' but never articulates the pedagogical rationale—why doing it themselves leads to better learning outcomes.",
-            "points": 2
-          },
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 5, when the student provides their actor list, the tutor validates it and moves to testing each bucket without first diagnosing whether the student understands the distinction between 'leading' vs. 'engaged' actors—a conceptual distinction that the student may not have fully grasped. This is a minor instance and the tutor does follow up with probing questions, so the deduction is limited.",
-            "points": 0
-          }
-        ],
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -114,27 +79,24 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [],
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.2.A.a",
+                "reason": "In Turn 5, the student provides their own actor list and the tutor confirms 'Yes—those are plausible' and moves forward, but the tutor's phrasing 'using my own judgment, not your instructor's rubric' is an odd aside that slightly undermines the student's work rather than fully building on it. However, the tutor does proceed to scaffold from the student's entries. This is borderline; the tutor does build on the student's progress in subsequent turns. No clear deduction warranted here.",
+                "points": 0
+              }
+            ],
             "score": 6,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains the pedagogical rationale for refusing to write content for the student. Phrases like 'My role is to help you build it yourself' and 'That's not my role' enforce constraints but do not explain why active student generation supports learning, retention, or skill development.",
+                "reason": "The tutor never explains why it won't write the post for the student in terms of learning rationale—e.g., active reasoning, retention, skill development. It simply refuses repeatedly ('No,' 'Still no,' 'I'm not going to') without once articulating that the constraint exists to support the student's own learning or long-term skill development.",
                 "points": 2
               }
             ],
@@ -144,11 +106,10 @@
         },
         "base": {
           "score": 20,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -167,7 +128,6 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -175,23 +135,37 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  6,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's repeated blunt refusals ('No.', 'Still no.', 'No—you're slipping back') across multiple turns, while not abusive, are consistently cold and terse in a way that could discourage participation. The tone lacks any warmth or acknowledgment of the student's frustration, which risks harming tutoring trust over a 10-turn conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "The tutor performed very well overall, consistently refusing to do the student's work, maintaining a Socratic approach, and scaffolding the student toward generating their own content. The student progressed from requesting a fully written post to producing their own actor justifications and synthesis sentences. The primary deduction is for failing to explain the pedagogical rationale for the tutoring constraints at any point in the conversation. No other significant rubric violations were found.",
-    "judge_reasoning": "Section 1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently kept idea generation student-led. The student generated all actors and justifications themselves. Full 12 points retained. Section 1.2: The tutor built on student progress (Turn 7 acknowledges solid reasoning, Turn 9 confirms clarity) and used structured prompts to scaffold progression. Full 6 points retained. Section 1.3: The tutor enforced constraints throughout but never once explained why active student generation supports learning—no mention of retention, skill-building, or reasoning development. This triggers the 1.3.A.a deduction of 2 points. No method-level feedback deduction applies as the tutor did provide process-level direction (e.g., distinguishing 'making decisions' vs. 'implementing'). Sections 2 and 3: No evidence of repetition without progress (the conversation advanced each turn), no assignment misunderstanding left uncorrected, no off-topic drift, responses were appropriately concise, and tone was firm but not dismissive or punitive.",
-    "total_score": 40,
-    "max_score": 46,
+    "total_base_score": 38,
+    "max_base_score": 42,
+    "overview": "The tutor consistently and correctly refused to do the student's work, maintained Socratic scaffolding throughout, and successfully guided the student to produce their own reasoning. The main weaknesses are: (1) the tutor never explained the pedagogical rationale for its constraints, missing an opportunity to help the student understand why active reasoning matters; and (2) the tone across refusals was repeatedly blunt and cold, which risks discouraging the student even if the content was appropriate. No deductions were warranted for 1.1 (no submission-ready content was provided), 1.2 (scaffolding built progressively on student input), 2.1 (no spiraling), or 2.2 (no off-topic drift or misalignment).",
+    "judge_reasoning": "The tutor earns full marks on 1.1 for consistently refusing to draft, sample, or fill in content for the student, and for guiding the student through structured prompts that led to genuine student-generated reasoning. Scaffolding (1.2) was well-executed with no clear failures to build on student progress. The 1.3 deduction is clear: across 10 turns the tutor never once explained why it was withholding direct answers—no mention of learning rationale, skill development, or retention. The 3.2 tone deduction is warranted because the tutor's repeated one-word refusals ('No.', 'Still no.') across six turns, without any acknowledgment of the student's expressed stress or frustration, constitute a pattern of coldness that risks harming tutoring trust, even if the underlying pedagogical stance was correct. No other deductions are supported by the evidence.",
+    "total_score": 38,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,68 +72,67 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 6, the tutor directly provides the stressor/vulnerability distinction with concrete Miami examples ('Sea level rise, storm surge, extreme heat, heavy rainfall = possible stressors' and 'Low-lying land, exposed coastal development...' = vulnerabilities), doing the key reasoning step of categorizing Miami's stressors before the student attempts it. The tutor then asks the student to confirm the logic rather than derive it.",
-            "points": 6
-          },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "Across multiple early turns, the student expresses confusion about categories, rating logic, and how pieces connect. The tutor repeatedly provides full explanations (method dumps) rather than first diagnosing what specifically the student does or does not understand. For example, in Turn 4 the student asks about rating logic and the tutor immediately delivers a five-question framework without checking what the student already grasps.",
-            "points": 3
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly expressed confusion across multiple turns (turns 2, 3, 4, 5), the tutor consistently jumped to providing explanations and frameworks rather than first asking diagnostic questions to understand exactly where the student's understanding broke down. For example, in turn 4 the student said they felt lost on 'the whole logic of how to rate stuff,' and the tutor immediately provided a five-question rating framework without first probing what the student already understood about rating or what specifically was confusing.",
+                "points": 3
+              }
+            ],
             "score": 3,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explained why it was guiding the student through questions rather than simply providing answers or a completed example. There is no moment in the conversation where the tutor articulates that this approach supports the student's own reasoning, retention, or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 13,
+          "score": 17,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through similar explanatory moves across Turns 1–5 without meaningful synthesis or progression. The student remains stuck and confused across all five turns, yet the tutor continues offering new frameworks and breakdowns rather than consolidating, reframing, or redirecting to a concrete attempt. The pattern only breaks in Turn 9 when the tutor finally pushes for a draft.",
-            "points": 4
-          }
-        ],
         "criteria": {
           "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycled through similar explanatory moves across turns 2–5 without meaningfully advancing the student's engagement. Each time the student expressed confusion, the tutor provided another framework or explanation and asked the student to try, but the student kept deflecting. The tutor did not switch to a substantially different strategy (e.g., reframing, simplification, or forcing a minimal commitment) until turn 9, after several repetitive cycles.",
+                "points": 4
+              }
+            ],
             "score": 0,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -144,41 +143,29 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              4,
-              5,
-              6
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Several tutor turns (notably 1, 2, 4, 5, 6) contain multi-paragraph explanations with bulleted lists when shorter, more targeted prompts would have been more appropriate given the student's confusion. The tutor repeatedly delivers full frameworks before the student has attempted anything, making responses longer than necessary for the interactive tutoring context.",
-            "points": 4
-          }
-        ],
         "criteria": {
           "3.1": {
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
         },
         "base": {
-          "score": 4,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 25,
+    "total_base_score": 33,
     "max_base_score": 42,
-    "overview": "The tutor maintains a consistently supportive tone, avoids writing the assignment for the student, and eventually pushes for a concrete draft attempt. However, significant deductions apply: the tutor pre-supplies Miami's stressor categories in Turn 6 (1.1.C.b), repeatedly delivers method dumps without diagnosing confusion first (1.2.B.a), cycles through similar explanatory moves across five turns without synthesis (2.1.A.a), and uses multi-paragraph responses where shorter interactive prompts were needed (3.1.A.a). The 1.1.C.b deduction is the most consequential, removing 6 points for giving the key reasoning before the student attempts it.",
-    "judge_reasoning": "The tutor avoids producing submission-ready content and does not rewrite student text, so 1.1.A and 1.1.B are not triggered. However, in Turn 6 the tutor directly lists Miami's stressors and vulnerabilities with concrete examples before the student has attempted any categorization, satisfying 1.1.C.b (6-point deduction). Across Turns 1–5 the tutor repeatedly delivers full explanatory frameworks without first probing what the student already understands, triggering 1.2.B.a (3-point deduction). The same five-turn stretch shows the tutor cycling through similar moves—new frameworks, new breakdowns—without consolidating or forcing a draft attempt, triggering 2.1.A.a (4-point deduction). Multiple turns also feature multi-paragraph responses with bulleted lists where a single focused question would have been more appropriate, triggering 3.1.A.a (4-point deduction). Meta-learning rationale and process feedback are present (1.3 intact), assignment anchoring is solid (2.2 intact), and tone is appropriate throughout (3.2 intact).",
-    "total_score": 25,
+    "overview": "The tutor maintained a strong Socratic stance throughout, never providing submission-ready content or rewriting student work, and kept the student's city and stressors as the focus. The main weaknesses were: (1) repeated explanatory cycles without sufficient diagnostic probing when the student was stuck, and (2) no explicit articulation of why the tutoring approach was structured the way it was. The redundancy deduction reflects that the tutor used similar 'explain + ask' moves across four consecutive turns without meaningfully pivoting strategy until late in the conversation.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never gave submission-ready answers, never rewrote student text, and consistently pushed the student to generate ideas first. 1.2 loses 3 points under 1.2.B.a because when the student expressed confusion in turns 2–5, the tutor repeatedly jumped to providing frameworks rather than first diagnosing what the student already understood. 1.3 loses 2 points under 1.3.A.a because the tutor never explained why it was guiding rather than telling, missing an opportunity to build meta-learning awareness. 2.1 loses all 4 points under 2.1.A.a because the tutor cycled through the same explain-then-ask pattern across turns 2–5 without consolidating or meaningfully reframing until turn 9, while the student remained stuck. 2.2 and section 3 have no deductions: the tutor kept the conversation on-task, maintained a supportive tone, used concise responses, and avoided grading language.",
+    "total_score": 33,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

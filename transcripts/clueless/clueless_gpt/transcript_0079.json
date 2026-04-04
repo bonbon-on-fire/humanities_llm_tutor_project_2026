@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,38 +79,45 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 6"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they were still lost and needed the whole process explained from scratch, the tutor reset into a full step-by-step method dump rather than first diagnosing the specific confusion point.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor used a guided, step-by-step approach but never explicitly explained why these constraints or prompts were being used to support the student's learning or skill development.",
+                "reason": "The tutor enforced a guided, student-response-centered approach throughout but never explicitly explained why this tutoring style supports learning or retention.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  8,
-                  9,
-                  10
+                  "Turns 7-9"
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved by correctly stating a usable rule for handling mixed-year data, the tutor affirmed it and moved on without prompting reflection on what changed in the student's thinking or why the new approach worked.",
+                "reason": "After the student improved from confusion about handling different data years to stating a workable rule for the table, the tutor affirmed the answer and moved on without prompting reflection on what changed in the student's thinking.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -126,13 +129,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -144,14 +147,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 46,
-    "overview": "The tutor stayed well within a tutoring role: they explained the assignment structure, kept the student doing the next step, and avoided producing submission-ready content. The conversation was consistently anchored to the actual data-table task, with concise and supportive prompts. Deductions are limited to meta-learning: the tutor did not explicitly explain the learning rationale behind the guided approach, and after the student improved, the tutor did not ask for reflection on what changed.",
-    "judge_reasoning": "The strongest evidence supports full credit in Socratic method and assignment anchoring: the tutor never filled in NYC data, never rewrote student work, and repeatedly redirected the student to identify categories, sources, and table columns themselves. Scaffolding was also effective, since the tutor acknowledged correct partial answers, simplified the task into manageable steps, and responded directly to the student's confusion about categories, sources, and year mismatches. The main rubric-based weaknesses are in 1.3: there was no explicit explanation of why the tutor was withholding direct completion help, and when the student successfully articulated a sound rule for handling mixed-year data, the tutor did not prompt a brief reflection on what made that reasoning work. Communication remained concise, clear, supportive, and non-grading throughout.",
-    "total_score": 40,
+    "overview": "The tutor stayed well anchored to the assignment, used short interactive prompts, and avoided giving submission-ready content. The main weakness was that, when the student expressed broad confusion, the tutor sometimes responded with explanation rather than first diagnosing the exact sticking point. There was also no explicit meta-rationale for the tutoring approach, and a missed chance to prompt reflection after the student articulated a stronger rule.",
+    "judge_reasoning": "The tutor performed strongly on guided discovery: they broke the task into manageable parts, asked frequent check-for-understanding questions, and never produced a completed table or polished submission text for the student. Dialogue and communication quality were consistently solid, with concise, supportive, assignment-focused responses. I deducted under 1.2 because at Turn 6 the tutor answered generalized confusion with a full reset/process explanation instead of first narrowing the confusion diagnostically. I also deducted under 1.3 because the tutor never explained the learning rationale behind the guided approach and did not prompt reflection after the student's improvement on the 'year' issue.",
+    "total_score": 37,
     "max_score": 46,
     "model": {
       "provider": "openai",

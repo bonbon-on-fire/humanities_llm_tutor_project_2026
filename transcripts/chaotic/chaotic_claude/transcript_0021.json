@@ -72,52 +72,64 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 10, the tutor provides a specific community group name (GreenRoots) directly rather than guiding the student to find it. While the tutor adds a verification caveat, this still hands the student a key content piece—the specific actor name—that the student was supposed to identify independently. This is a borderline case, but the tutor does supply the answer to a direct request for submission content.",
-            "points": 6
-          },
-          {
-            "evidence_turns": [
-              8,
-              9
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student produces a solid 4-sentence post in Turn 8 following multiple failed attempts, the tutor gives corrective feedback but does not prompt any reflection on what changed in the student's thinking or why the structured approach worked. The tutor moves directly to checking two content points without reinforcing the method improvement.",
-            "points": 2
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces constraints (refusing to write the post, refusing templates, refusing to polish) but never explicitly explains why this approach supports the student's learning, retention, or skill development. The rationale given is always framed as 'that's doing your work for you' rather than articulating the pedagogical benefit to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Turn 8, the student produces a solid four-sentence response after multiple failed attempts and redirections. The tutor acknowledges it is 'workable and on-topic' but does not prompt the student to reflect on what changed in their thinking or why the structured approach worked. The opportunity to reinforce the method is missed.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 6
           }
         },
         "base": {
-          "score": 16,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -128,13 +140,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -145,11 +158,11 @@
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor maintained strong boundaries throughout most of the conversation, consistently refusing to write submission-ready content and redirecting the student to do their own thinking. The main deduction in 1.1 comes from Turn 10, where the tutor directly supplies a specific community group name (GreenRoots) in response to the student's explicit request to 'drop in' a name—this crosses into providing a key content piece for the assignment rather than guiding discovery. The 1.3 deduction reflects a missed opportunity to prompt process reflection after the student's successful Turn 8 response. Dialogue quality and communication quality were strong throughout.",
-    "judge_reasoning": "The 1.1.C.b deduction (6 points) is applied for Turn 10: the tutor gives the student a specific actor name to use, which is a key reasoning/content step the student should have performed independently. Although the tutor adds a caveat to verify it, the student explicitly asked for a name to 'drop in,' and the tutor complied with the substance of that request. The 1.3.C.a deduction (2 points) applies because after the student's successful Turn 8 post—a clear improvement from earlier stalling—the tutor did not prompt any reflection on what changed or why the structured approach worked. No deductions apply to 1.1.A or 1.1.B because the tutor consistently refused to write or rewrite the student's text. Scaffolding (1.2) was strong: the tutor built progressively on student responses and diagnosed confusion before responding. Dialogue and communication quality were well-managed throughout.",
-    "total_score": 36,
+    "overview": "The tutor performed very well overall, consistently refusing to do the student's work, maintaining a Socratic approach under sustained pressure, scaffolding effectively, and keeping responses concise and appropriately toned. Two deductions were applied in 1.3: the tutor never articulated a clear pedagogical rationale for its constraints (only framing refusals as 'that's doing your work'), and after the student's successful Turn 8 response, the tutor did not prompt reflection on what changed in the student's thinking. No deductions were warranted in sections 2 or 3.",
+    "judge_reasoning": "Section 1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and consistently kept idea generation student-led through targeted prompting. Section 1.2 receives full marks: the tutor built on the student's guesses in Turn 6 rather than dismissing them, and used diagnostic scaffolding throughout. Section 1.3 loses 4 points: (a) the tutor never explained why refusing to write the post benefits the student's learning—every refusal was framed as 'that's doing your work,' not as a learning rationale; and (b) after the student's clear improvement in Turn 8, the tutor moved directly to checking two content details rather than prompting any reflection on what the student did differently or why the structured approach worked. Sections 2 and 3 are clean: the tutor stayed on-task, kept responses bite-sized, maintained a firm but non-punitive tone, and avoided grading language.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

@@ -72,71 +72,94 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7,
-              8
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In turns 7-8, when the student says 'idk, can u just tell me what makes it a 9 in Miami,' the tutor jumps straight into a structured prompt (frequency, exposure, disruption) without first diagnosing what the student actually understands about severity ratings. A brief diagnostic question (e.g., 'What do you think makes one stressor worse than another?') would have been more appropriate before scaffolding the answer path.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              9
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 2, when the student is clearly stuck and resistant, the tutor jumps straight into listing five stressors (flooding, sea-level rise, heat, hurricanes, water/sanitation strain) without first diagnosing what the student already knows or understands about Miami's climate vulnerabilities. This is a method dump before checking prior knowledge.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully writes a strong justification sentence in turn 9 (an improvement from earlier vague attempts), the tutor simply says 'Good. That works.' and moves on without prompting any reflection on what changed in the student's thinking or why the revised approach was stronger.",
-            "points": 2
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              2
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is not giving answers—why the student doing the work themselves supports learning, retention, or skill development. The tutor simply refuses repeatedly without articulating the pedagogical rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully produces a strong justification sentence in Turn 9 (following multiple failed or weak attempts), the tutor simply says 'Good. That works.' and moves on without prompting any reflection on what changed in the student's thinking or why the final version worked better.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "In turn 2, the tutor lists five stressors for Miami ('flooding, sea-level rise, heat, hurricanes, and water/sanitation strain') without explaining why these are relevant or how the student should evaluate them. The feedback is directive but lacks method-level guidance on how to identify stressors independently.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5
-            ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The tutor's tone across multiple early turns is notably terse and borderline dismissive ('No—I'm your tutor, not a shortcut,' 'No copying-and-pasting from me,' 'No. You have to do the writing.'). While firmness is appropriate, the repeated blunt refusals without any acknowledgment of the student's frustration risk discouraging participation and feel punitive rather than supportive.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 35,
+    "total_base_score": 37,
     "max_base_score": 44,
-    "overview": "The tutor consistently refused to do the student's work, maintained assignment anchoring throughout, and successfully guided the student to produce a meaningful row entry. However, the tone was frequently cold and dismissive in early turns, the tutor pre-listed Miami stressors in turn 2 rather than eliciting them, missed a diagnostic opportunity in turns 7-8, and failed to prompt reflection after the student's successful improvement in turn 9. The 1.3.B.b deduction is applied with some uncertainty since the stressor list in turn 2 could be read as scaffolding rather than answer-giving, but the lack of method explanation tips it toward a deduction.",
-    "judge_reasoning": "Pedagogy deductions: The tutor avoids giving submission-ready content throughout (no 1.1.A or 1.1.B triggers). However, in turn 2 the tutor lists five Miami stressors without explaining how to identify them, which is vague method guidance (1.3.B.b, -2). In turns 7-8, the tutor scaffolds severity criteria without first diagnosing what the student understands about ratings (1.2.B.a, -3). After the student's successful sentence in turn 9, the tutor moves on without prompting reflection on what improved (1.3.C.a, -2). Dialogue quality is strong: the tutor consistently re-anchors to the assignment, avoids off-topic drift, and does not spiral. Communication quality: the tutor's repeated blunt refusals ('No.') without empathetic framing risk discouraging the student, warranting a tone deduction (3.2.A.a, -2); response length is generally appropriate so no 3.1 deduction applies.",
-    "total_score": 35,
+    "overview": "The tutor consistently refused to do the student's work, maintained appropriate boundaries, and guided the student through iterative improvement of a single stressor row using Socratic questioning. The main weaknesses are: a diagnostic failure in Turn 2 where the tutor listed five stressors before checking what the student already knew; a persistent absence of any stated rationale for the tutoring approach; and a missed reflection opportunity after the student's successful Turn 9 response.",
+    "judge_reasoning": "1.1 is fully intact—the tutor never produced submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points under 1.2.B.a because in Turn 2 the tutor immediately names five Miami stressors without first probing what the student already knows, constituting a method dump before diagnosis. 1.3 loses 2 points under 1.3.A.a because across all 10 turns the tutor never explains why refusing to give answers benefits the student's learning—it only enforces the constraint. 1.3 also loses 2 points under 1.3.C.a because after the student's successful sentence in Turn 9, the tutor offers only 'Good. That works.' and pivots without any reflection prompt on what improved and why. Dialogue quality and communication quality are both strong throughout.",
+    "total_score": 37,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

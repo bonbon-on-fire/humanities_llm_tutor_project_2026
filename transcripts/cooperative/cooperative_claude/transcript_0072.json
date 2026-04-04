@@ -72,38 +72,101 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The tutor never prompts the student to reflect on what changed in their thinking after they improved. For example, after the student successfully moved from vague actor lists to a clearer gap analysis (Turns 4-5), the tutor simply moved forward without asking the student to articulate what made their reasoning stronger.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than providing direct answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student makes clear improvements (e.g., sharpening the gap analysis in Turn 5, choosing the project anchor in Turn 9), the tutor moves forward without prompting the student to reflect on what changed in their thinking or why the new approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed very well overall. The Socratic method was consistently applied: the tutor never gave direct answers, always prompted the student to reason first, and kept key idea generation student-led throughout all 10 turns. Scaffolding was strong—each turn built on the student's prior response and advanced the task. Assignment anchoring was maintained throughout. The only clear deduction is the absence of any meta-reflective prompt after the student made meaningful progress (e.g., after successfully developing the gap analysis in Turns 4-5). The tutor also explained its tutoring rationale at least once (Turn 6: 'Look for evidence of role, not just mention'), and gave specific process-level feedback throughout. Responses were appropriately concise and interactive.",
-    "judge_reasoning": "The tutor consistently avoided giving submission-ready content, kept reasoning student-led, and scaffolded effectively across all turns. No deductions apply to 1.1 or 1.2 as the tutor never gave conclusions before student reasoning, never rewrote student text, and always built on student progress. The sole deduction is under 1.3.C.a: after the student improved from vague to precise actor classification (Turns 3-5), the tutor moved forward without prompting reflection on what changed in the student's thinking or why the new approach worked better. The tutoring rationale was implicitly present but could have been more explicitly stated; however, Turn 6's guidance on 'evidence of role' qualifies as method-level feedback, so no deduction applies to 1.3.B. Dialogue quality and communication quality were both strong—no redundancy, no off-topic drift, and responses were consistently bite-sized and supportive.",
-    "total_score": 42,
+    "overview": "The tutor performs strongly across most dimensions. It consistently uses Socratic questioning, avoids giving direct answers, scaffolds well from broad to specific, and keeps the student doing the reasoning work throughout. No submission-ready content is provided. Dialogue is focused, progressive, and well-anchored to the assignment. The two deductions are for missing meta-learning elements: the tutor never explains its pedagogical rationale to the student, and it misses opportunities to prompt reflection after the student makes clear improvements.",
+    "judge_reasoning": "1.1 is full marks: the tutor never provides near-submission-ready content, never rewrites student text, and consistently asks the student to generate ideas before confirming them. 1.2 is full marks: the tutor builds on each student response and diagnoses confusion (e.g., Turn 7 correctly identifies the student is searching too broadly before redirecting). 1.3 loses 4 points: across 10 turns the tutor never once explains why it is guiding rather than telling (1.3.A.a), and after clear student improvements in Turns 5 and 9 the tutor simply advances without asking the student to reflect on what changed in their thinking (1.3.C.a). Dialogue quality is full marks: no repetition without progress, no off-topic drift, and the assignment framing is maintained throughout. Communication quality is full marks: responses are consistently concise, structured, and supportive without implying formal grading.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

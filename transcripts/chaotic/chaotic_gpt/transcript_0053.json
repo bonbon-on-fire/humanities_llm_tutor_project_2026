@@ -72,24 +72,27 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "score": 12,
-            "max": 12,
-            "deductions": []
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied the central bridge from intuition to principle by proposing the core distinction nearly in final form: permissible when death is a foreseen side effect, impermissible when a person is used as a means. That does a key reasoning step that largely determines the student's eventual argument.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
-            "max": 6,
-            "deductions": []
+            "max": 6
           },
           "1.3": {
-            "score": 2,
-            "max": 6,
             "deductions": [
               {
                 "evidence_turns": [
@@ -97,7 +100,7 @@
                   9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a no-writing/polishing boundary, but did not clearly explain the learning rationale behind that constraint, such as supporting active reasoning or skill development.",
+                "reason": "The tutor enforced a no-writing/no-polishing boundary ('I'm your tutor, not your writer') but did not explain why that constraint supports the student's learning or reasoning process.",
                 "points": 2
               },
               {
@@ -105,55 +108,61 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from a weaker rights-based explanation to a stronger dignity/constraint-based explanation, the tutor affirmed the improvement but did not prompt reflection on what changed in the student's reasoning and why it worked better.",
+                "reason": "After the student improved from a vague claim about respect to a clearer constraint-based explanation, the tutor praised the improvement and moved on without prompting reflection on what changed in the student's reasoning or why the revision worked better.",
                 "points": 2
               }
-            ]
+            ],
+            "score": 2,
+            "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
-        },
-        "criteria": {
-          "2.1": {
-            "score": 4,
-            "max": 4,
-            "deductions": []
-          },
-          "2.2": {
-            "score": 8,
-            "max": 8,
-            "deductions": []
-          }
         }
       },
       "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
-        },
-        "criteria": {
-          "3.1": {
-            "score": 4,
-            "max": 4,
-            "deductions": []
-          },
-          "3.2": {
-            "score": 4,
-            "max": 4,
-            "deductions": []
-          }
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly student-led, kept the discussion tightly anchored to the assignment, and avoided providing submission-ready prose. The main scoring losses come from meta-learning: the tutor set writing boundaries without explicitly stating the learning rationale, and missed a chance to prompt reflection after the student's reasoning improved. Any possible concern about firmness in tone was too minor and ambiguous to justify a deduction.",
-    "judge_reasoning": "The tutor earned full credit on Socratic guidance and scaffolding because the conversation consistently used short prompts, built on the student's own ideas, and refused to supply a finished paragraph or polished wording. The tutor also maintained strong assignment focus, moving the student through principle, application to cases, critique, and alternative account without drifting. However, under 1.3 the tutor did not explicitly explain why refusing to write for the student supports learning, which triggers a deduction. A second deduction applies because after the student's explanation became stronger near the end, the tutor praised it but did not ask the student to reflect on what changed in their method or reasoning.",
-    "total_score": 40,
+    "overview": "The tutor kept the exchange well-structured, on-task, and interactive, and consistently pushed the student to generate wording in their own voice. The main weakness is that the tutor still supplied the decisive philosophical distinction in near-ready conceptual form, which reduced student-led idea generation. There is also a smaller meta-learning gap: the tutor enforced writing constraints without explaining their learning rationale and missed a reflection opportunity after improvement.",
+    "judge_reasoning": "The strongest deduction is under 1.1 because the tutor gave the key argumentative bridge by formulating the side-effect versus means principle that became the student's final position. I did not apply the harsher near-submission-ready penalty because the tutor refused to draft or polish the final paragraph and kept asking the student to write the answer. Scaffolding, assignment anchoring, and clarity were strong throughout: the tutor split the task, built from student responses, and stayed tightly focused on the prompt. Meta-learning was weaker because the tutor never explained why the no-writing constraint helps learning and did not ask the student to reflect after a clear improvement.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,41 +72,99 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is withholding direct answers or writing help—it simply refuses and redirects. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully produces a real thesis in Turn 7 (an improvement from earlier confusion), the tutor moves directly to the next task without prompting any reflection on what changed in the student's thinking or why the approach worked.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully formulated a thesis and a general rule (Turn 7 and Turn 9-10), the tutor moved on to testing the rule without prompting reflection on what changed in the student's thinking or why the means/side-effect distinction worked better than pure consequentialism. No meta-reflection was invited after the student's improvement.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed strongly overall, consistently refusing to do the student's work, using Socratic questioning throughout, maintaining appropriate tone, and keeping responses concise. The main deduction is for a missed opportunity to prompt meta-reflection after the student successfully developed their thesis and general rule. No direct answer-giving, thesis-writing, or off-topic drift was observed.",
-    "judge_reasoning": "Under 1.1, the tutor never gave submission-ready output, never rewrote student text, and consistently kept key idea generation student-led—full marks. Under 1.2, the tutor built on student progress (e.g., affirming 'that's a real thesis direction' in Turn 7) and used diagnostic questioning before redirecting—full marks. Under 1.3, the tutor explained its tutoring rationale at least once (Turn 3: 'I'm your tutor, not your writer'), gave process-level feedback (e.g., Turn 6 frame, Turn 9 sharpening prompt), but did not prompt reflection after the student's successful improvement from confusion to a clear rule—2 points deducted under 1.3.C.a. Dialogue quality was strong: no repetition without progress, no assignment misunderstanding left uncorrected, no off-topic drift. Communication was concise and appropriately supportive throughout.",
-    "total_score": 42,
+    "overview": "The tutor performed strongly overall, consistently refusing to do the student's work, maintaining Socratic questioning throughout, scaffolding from basic act-consequentialism to the means/side-effect distinction, and keeping the student on task. The main weaknesses are the absence of any explicit rationale for the tutoring approach (why withholding answers helps learning) and a missed opportunity to prompt reflection after the student's notable improvement in Turn 7.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready output, never rewrote student text, and consistently let the student generate key ideas before confirming direction—full marks. 1.2: The tutor built on each student contribution (e.g., affirming 'outcomes' in Turn 2, building on the 'flattens them' insight in Turn 6) and asked diagnostic questions before elaborating—full marks. 1.3: Two deductions apply: the tutor never once explained why it was refusing to write answers (1.3.A.a, -2), and after the student's clear improvement in Turn 7 the tutor moved straight to the next challenge without any process reflection (1.3.C.a, -2). Dialogue quality and communication quality were both clean—responses were concise, tone was firm but not dismissive, and the conversation stayed on-task throughout.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

@@ -72,82 +72,115 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student says they are blanking on the case names, the tutor immediately pivots to a reframing ('Don't get hung up on the labels') without first diagnosing whether the confusion is about the case names, the moral structure, or both. A brief diagnostic question would have been more appropriate before redirecting.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly signals confusion about the case names and structure (Turns 4, 5, 8), the tutor does not ask diagnostic questions to locate exactly what the student does or does not understand before responding. Instead, the tutor jumps to reframing or redirecting without first checking what the student already knows about the cases.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development. The refusal in Turn 10 ('I'm your tutor, not your ghostwriter') is a constraint enforcement but not a rationale for the tutoring method.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is not phrasing things for the student or why the Socratic approach supports learning. The only near-rationale is the brief 'I'm your tutor, not your ghostwriter' in Turn 10, which is a constraint statement but not a genuine explanation of how this approach benefits the student's learning or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 19,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              6,
-              7,
-              8
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles on the same means/side-effect distinction across multiple turns (4 through 8) without meaningfully advancing or consolidating. The student remains stuck and confused, and the tutor keeps re-asking variants of the same question rather than reframing, simplifying, or moving to a different approach.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles on the same means/side-effect distinction across multiple turns (Turns 3–8) without meaningfully advancing or synthesizing. The student repeatedly signals confusion and requests a direct explanation, but the tutor keeps returning to the same framing with only slight variation. The tutor does eventually attempt a synthesis in Turn 8, but this comes after several redundant cycles.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase 'I'm your tutor, not your ghostwriter' in Turn 10 is dismissive and somewhat cold in tone. While the underlying boundary is appropriate, the phrasing could discourage the student and comes across as punitive rather than supportive.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "In Turn 10, the tutor's response 'I can't phrase it for you—you have to do the writing. I'm your tutor, not your ghostwriter' is somewhat dismissive and cold in tone. While the boundary is appropriate, the phrasing could discourage the student and comes across as punitive rather than supportive.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 33,
-    "max_base_score": 44,
-    "overview": "The tutor maintains a consistently Socratic approach throughout the conversation, never giving away the answer or doing the student's reasoning for them. The key deductions are: (1) a failure to explain the rationale for the tutoring method at any point; (2) a mild failure to diagnose the student's confusion before redirecting in Turn 5; (3) notable repetition of the same means/side-effect framing across several turns without sufficient synthesis or escalation; and (4) a slightly cold tone in Turn 10. The max_base_score is corrected to 44 per the rubric (12+6+4+4+8+4+4+8 = 44, not 46 as stated in instructions—using 44 as the actual rubric sum).",
-    "judge_reasoning": "The tutor does well on 1.1 (Socratic method): it never provides submission-ready content, never rewrites student text, and consistently asks the student to generate ideas before confirming them. The 1.2 deduction is for Turn 5, where the tutor pivots without a diagnostic question when the student is clearly confused about case structure. The 1.3 deduction is for the complete absence of any meta-learning rationale across all 10 turns—the Turn 10 refusal is a constraint, not an explanation of why the method supports learning. The 2.1 deduction is for the extended cycling on the same means/side-effect distinction from Turns 3–8 without meaningful synthesis until Turn 8, which itself is somewhat late. The 3.2 deduction is for the dismissive phrasing in Turn 10, which risks discouraging the student.",
-    "total_score": 33,
-    "max_score": 44,
+    "total_base_score": 31,
+    "max_base_score": 42,
+    "overview": "The tutor largely avoids doing the student's work and maintains a Socratic stance throughout, never giving submission-ready answers or rewriting student text. However, the conversation suffers from notable repetition: the tutor cycles on the means/side-effect distinction across five turns without consolidating or reframing when the student remains stuck. Diagnostic questioning before responding to confusion is also absent. The tutoring rationale is never clearly explained to the student, and the one constraint statement in Turn 10 is phrased dismissively. Communication is generally concise and well-targeted, though the dismissive remark slightly undermines tone.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps idea generation student-led. 1.2 loses 3 points under 1.2.B.a because when the student signals confusion about the cases (Turns 4, 5, 8), the tutor skips diagnostic questioning and jumps directly to reframing, never checking what the student actually knows. 1.3 loses 2 points under 1.3.A.a because the tutor never explains why the Socratic approach benefits the student's learning; the Turn 10 remark is a constraint enforcement, not a rationale. 2.1 loses all 4 points under 2.1.A.a because the tutor repeats the same means/side-effect framing across Turns 4–8 without synthesis, consolidation, or a meaningful shift in approach despite the student remaining stuck. 3.2 loses 2 points under 3.2.A.a for the dismissive 'I'm your tutor, not your ghostwriter' phrasing in Turn 10, which risks discouraging the student.",
+    "total_score": 31,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

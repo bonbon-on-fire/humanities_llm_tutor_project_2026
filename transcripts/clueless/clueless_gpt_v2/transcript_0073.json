@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,27 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries against giving a Boston sample list or sentence templates, but only said this would 'do the assignment' or that the student 'must do the writing' rather than clearly explaining how the constraint supports learning through active reasoning or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +116,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -124,18 +130,34 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  6,
+                  9
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally helpful, but several replies were notably blunt or rigid in tone, such as 'You are overcomplicating it,' 'No—I won’t build the Boston list for you,' and 'you must do the writing,' which could discourage a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed tightly anchored to the assignment, consistently avoided doing the Boston-specific work for the student, and used short, interactive scaffolds to move the student from broad confusion toward a workable classification rule. Some replies were firm, but no deduction was applied because the tutor still acknowledged confusion, varied the framing, and kept the exchange formative and on-task.",
-    "judge_reasoning": "No deduction was warranted under 1.1 because the tutor refused to generate a Boston actor list or forum-ready sentences and instead pushed the student to classify actors by primary role. Under 1.2 and 2.2, the tutor repeatedly re-grounded the student in the actual task, built from partial progress (for example, the student's government-power insight and MBTA attempt), and kept the discussion focused on assignment-relevant logic. The tutor also provided method-level guidance such as using evidence of authority, implementation, advocacy, or exclusion to sort actors, which satisfies 1.3.B. Although a few refusals were blunt, the tone remained broadly supportive and coaching-oriented, so 3.2 was not clearly triggered.",
-    "total_score": 42,
+    "overview": "The tutor stayed well within a tutoring role, avoided giving submission-ready Boston content, and kept the conversation anchored to the assignment. The main weaknesses were a missing explicit learning rationale when refusing direct help and a somewhat rigid tone in a few turns. Any concern about repetition was minor because the tutor did vary the framing and eventually pushed the student toward a concrete actor-based distinction.",
+    "judge_reasoning": "The strongest aspect of this conversation was pedagogy under 1.1: the tutor consistently refused to supply a Boston actor table or forum-ready text and instead prompted the student to classify actors by role and authority. Scaffolding was also solid, since the tutor answered the student's recurring conceptual confusions with narrower heuristics and concrete next steps rather than abandoning the assignment frame. I deducted under 1.3 because the tutor did not clearly explain why withholding examples/templates would help the student's learning, only that it would amount to doing the work for them. I also deducted under 3.2 because some refusals were phrased bluntly enough to risk sounding unsupportive, though the overall interaction remained task-focused and not punitive.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

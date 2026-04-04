@@ -72,42 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              8
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 8, the tutor summarizes the student's ratings into a near-complete table ('So right now you have: Coastal flooding: 9, Air pollution: 8, Extreme heat: 7'). While this is a summary rather than full rewriting, it consolidates and presents the student's work in a structured, submission-adjacent format. However, this is borderline—the tutor is recapping to orient the student, not producing polished final text. Deduction not applied due to ambiguity.",
-            "points": 0
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor demonstrates strong Socratic method throughout, consistently asking the student to reason before confirming, pushing for specificity (e.g., separating 8 from 10 in Turn 5), and guiding discovery of land subsidence in Turn 9. One borderline moment occurs in Turn 8 where the tutor summarizes the student's ratings in a structured list, which approaches submission-ready formatting but is more accurately a recap to orient the student. No clear deductions were warranted. The tutor loses 2 points under 1.3 for not explicitly explaining the rationale for the tutoring approach (why they are asking questions rather than giving answers) at any point in the conversation, and loses no points elsewhere.",
-    "judge_reasoning": "1.1: No direct answers or near-submission-ready output were provided; the tutor consistently prompted the student to reason first. The Turn 8 summary is a borderline case but functions as orientation rather than submission-ready output, so no deduction is applied. 1.2: The tutor builds on student progress throughout (e.g., validating sector classifications in Turn 3, building on the flooding justification in Turn 4), and scaffolding is well-sequenced. 1.3: The tutor never explicitly explains why they are guiding rather than answering directly—no rationale for the tutoring constraints is offered at any point, triggering a 2-point deduction under 1.3.A.a. Method-level feedback is present (e.g., 'Guessing is weak—use comparison' in Turn 7), so no deduction under 1.3.B. 2.1 and 2.2: No repetition without progress, no off-topic drift, and no assignment misunderstanding goes uncorrected. 3.1 and 3.2: Responses are concise and well-targeted; tone is supportive and formative throughout.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall, consistently using Socratic questioning, building on student responses, maintaining appropriate scaffolding, and keeping the student doing the intellectual work throughout. The only clear deduction is for failing to explain the tutoring rationale at any point in the conversation (1.3.A.a). No method-level feedback deduction was applied because the tutor did provide process-level guidance (e.g., telling the student 'guessing is weak—use comparison' and specifying criteria for rating). No other rubric violations were clearly evidenced.",
+    "judge_reasoning": "1.1: The tutor never gave direct answers or near-submission-ready content; all key reasoning steps were student-led through targeted questions. No deductions apply. 1.2: The tutor consistently built on student progress (e.g., affirming the 9-rating reasoning before moving to the next stressor) and diagnosed confusion before responding. No deductions apply. 1.3: The tutor provided solid process feedback (e.g., 'guessing is weak—use comparison,' specifying criteria like frequency/scale/severity) so 1.3.B is not triggered. However, the tutor never once explained why it was using a question-based approach rather than just providing answers, triggering 1.3.A.a for a 2-point deduction. Dialogue quality and communication quality were both strong—responses were concise, progressive, on-topic, and supportive throughout.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

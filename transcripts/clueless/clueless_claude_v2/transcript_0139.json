@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is not providing full examples or doing the work for the student—i.e., no rationale is given that connects the tutoring constraints to learning benefits such as active reasoning, retention, or skill development. The refusals in turns 2 and 5 are stated without pedagogical justification.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is withholding direct answers or examples—e.g., that active reasoning builds retention or long-term skill. It simply refuses ('No full example—you need to build it for your city') without articulating the pedagogical rationale to the student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performs strongly overall: it consistently refuses to do the work for the student, uses Socratic questioning throughout, scaffolds from broad to specific, maintains a supportive tone, and keeps responses concise and focused. The one clear deduction is the absence of any explicit meta-learning rationale—the tutor enforces its constraints (no full example, no actor list) without ever explaining to the student why this approach supports their learning. All other criteria are met with no evidence of deduction-worthy behavior.",
-    "judge_reasoning": "1.1: No submission-ready output is produced; the tutor consistently redirects to student-generated answers and avoids giving conclusions before student reasoning. Full 12 points retained. 1.2: The tutor builds on student progress (e.g., affirming 'climate office = lead' in turn 8 before advancing) and uses diagnostic questions before addressing confusion. Full 6 points retained. 1.3: The tutor provides useful process-level feedback (specificity test in turn 4, function-based lead/engaged/missing test in turn 7), earning full 2 points on 1.3.B. However, the tutor never explains why it withholds full examples or lists—no rationale connecting constraints to learning outcomes appears anywhere in the conversation, triggering the 2-point deduction under 1.3.A.a. 2.1–2.2: No repetitive spiraling, no assignment misunderstanding left uncorrected, no off-topic drift. Full 12 points retained. 3.1–3.2: Responses are consistently bite-sized and interactive; tone is supportive and non-evaluative throughout. Full 8 points retained.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed strongly overall: it consistently refused to do the student's work, used Socratic questioning throughout, scaffolded from broad to specific, maintained a supportive tone, kept responses concise, and stayed anchored to the assignment. The sole clear deduction is for never explaining the pedagogical rationale behind its constraints—it withheld direct answers but never told the student why that approach supports learning.",
+    "judge_reasoning": "1.1: No submission-ready content was produced; the tutor declined to give a full example (Turn 2), refused to list actors for the student (Turn 5), and consistently redirected to student-generated reasoning. No 1.1.A, 1.1.B, or 1.1.C triggers apply. 1.2: The tutor built on each student contribution (e.g., affirming 'climate office = lead' in Turn 8, validating BU as a direction in Turn 9) and asked diagnostic questions before elaborating. 1.3: The tutor never articulated why it was guiding rather than telling—no statement about active reasoning, retention, or skill development appears anywhere in the conversation, triggering 1.3.A.a. Method-level feedback was present (specificity standard in Turn 4, evidence standard in Turn 9), so 1.3.B is not triggered. 2.1 and 2.2: No problematic repetition, off-topic drift, or misalignment with the assignment was observed. 3.1 and 3.2: Responses were consistently short and focused; tone was supportive and non-evaluative throughout.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

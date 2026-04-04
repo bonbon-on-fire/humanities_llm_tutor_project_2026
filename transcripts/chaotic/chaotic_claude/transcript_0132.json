@@ -72,119 +72,142 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 5, the tutor directly provides the exact sources for race/ethnicity, income per capita, and GDP without asking the student to reason about where such data might come from. While source guidance is legitimate tutoring, the tutor fully resolves the 'where to find data' question that the student should have been prompted to think through first, doing the key reasoning step of identifying authoritative sources rather than guiding the student to derive them.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              9
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student is stuck and repeatedly asking for shortcuts, the tutor jumps straight to directing the student to sources without first diagnosing what the student actually understands or where the confusion lies. For example, in Turn 2 the tutor immediately tells the student to pick a source and find 3 fields without checking what the student already knows about data sources or the assignment structure.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.1.A.a",
-            "reason": "In Turn 9, the tutor provides the exact Köppen cutoff value (−3°C) as a direct factual answer. While the tutor frames this as a 'method question,' this specific threshold is itself a piece of domain knowledge that, combined with the student looking up NYC's coldest month, directly yields the table entry. However, this is borderline — the cutoff is a general climatological fact rather than the answer itself, and the student still must apply it. This does not rise to the level of giving a near-submission-ready answer.",
-            "points": 0
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it won't provide direct answers—it simply refuses without articulating the pedagogical rationale (e.g., active reasoning, skill development, retention). Saying 'No—I'm your tutor, not a shortcut generator' is a constraint enforcement without explaining how this supports the student's learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.B.b",
+                "reason": "The tutor's feedback is largely directive ('use this source', 'pick one format') without providing method-level guidance on how to approach data gathering or table construction more broadly. Feedback like 'You're overthinking a minor detail' is too vague to improve the student's process.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "Throughout the entire conversation, the tutor enforces constraints (refusing to give answers, refusing to fill the table) but never once explains why this approach supports the student's learning — e.g., that active retrieval builds retention, that doing the work themselves develops research skills, or that the assignment is designed to build familiarity with data sources. The tutor simply says 'No' repeatedly without articulating the pedagogical rationale.",
-            "points": 2
-          },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "There are no moments in the conversation where the student successfully completes a step and the tutor prompts reflection on what changed or why the approach worked. The student never fully succeeds at a step within the transcript, so this criterion is not clearly triggered. No deduction applied.",
-            "points": 0
-          },
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student repeatedly asks for shortcuts, the tutor jumps straight to redirecting without diagnosing why the student is struggling — is it time pressure, confusion about the assignment, or lack of research skills? The tutor never asks a diagnostic question to understand the root of the student's resistance before responding with method guidance.",
-            "points": 3
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 19,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same pattern across nearly every turn: student asks for a shortcut, tutor refuses and redirects. While the topic advances slightly, the tutor never synthesizes progress, consolidates what has been accomplished, or reframes the approach when the student remains stuck in the same pattern. The conversation spirals on the same dynamic without meaningful progression in method.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor repeats the same pattern across nearly every turn: student asks for an answer, tutor says 'No,' tutor redirects to a sub-question. By Turn 7-10, the student is still asking for direct answers and the tutor is still cycling through the same refusal-redirect pattern without synthesizing progress, reframing the approach, or acknowledging that the student may need a different kind of support. The conversation does not advance meaningfully — the student never actually completes a single table entry within the transcript.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Phrases like 'No—I'm your tutor, not a shortcut generator' and 'No. Rough values are still doing the assignment for you' come across as dismissive and slightly punitive in tone, which could discourage student participation rather than building trust.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "In Turn 2, the tutor says 'No—I'm your tutor, not a shortcut generator.' In Turn 3, 'No. Rough values are still doing the assignment for you.' These phrasings are somewhat cold and slightly dismissive in tone, though they do not rise to clearly punitive or condescending language. The tone is borderline but the repeated blunt 'No' openings without any acknowledgment of the student's stated time pressure could discourage participation. Applying a partial deduction is warranted.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 33,
+    "total_base_score": 31,
     "max_base_score": 44,
-    "overview": "The tutor consistently refuses to do the assignment for the student, which is appropriate, but the conversation stagnates in a repetitive refusal-redirect loop without meaningful progress. The tutor never explains the pedagogical rationale for its constraints, misses diagnostic opportunities to understand the student's actual confusion or barriers, and the tone is occasionally cold. The Turn 9 Köppen cutoff disclosure is borderline but does not clearly constitute giving a submission-ready answer. Some ambiguity exists around 1.2.B.a — the student's resistance may be motivational rather than conceptual, but the tutor never checks.",
-    "judge_reasoning": "Section 1 loses 2 points for never explaining tutoring rationale (1.3.A.a) and 3 points for failing to diagnose student confusion before redirecting (1.2.B.a) — the tutor repeatedly jumps to method redirection without asking why the student is struggling. Section 2 loses 4 points for pattern-level repetition (2.1.A.a): the same refusal-redirect cycle repeats across 8+ turns with no synthesis, reframing, or acknowledgment of the student's stated constraints, and no table entry is ever completed. Section 3 loses 2 points for tone (3.2.A.a): phrases like 'not a shortcut generator' are mildly dismissive and the consistent blunt 'No' openings without empathy acknowledgment risk discouraging the student. No deductions are applied for 1.1.A.a or 1.1.C.b as the tutor does not provide submission-ready content.",
-    "total_score": 33,
+    "overview": "The tutor consistently refused to do the assignment for the student, which is commendable and avoids the most serious rubric violations. However, the conversation suffered from a repetitive pattern of refusal-and-redirect without synthesis or meta-learning rationale. The 1.2.B.a deduction is somewhat ambiguous—the student's repeated shortcut requests may not represent genuine confusion requiring diagnosis—but the tutor never checked what the student understood before directing them to sources. The 2.1 deduction is the most clearly supported: the same dynamic repeated across all 10 turns without consolidation or reframing.",
+    "judge_reasoning": "The tutor avoided giving submission-ready content throughout, earning full marks on 1.1. However, it never explained why it was withholding answers in terms of learning benefits (1.3.A.a), and its feedback was directive rather than method-level (1.3.B.b). The conversation repeated the same refusal-redirect cycle across all 10 turns without consolidating progress or switching strategies when the student remained stuck (2.1.A.a), warranting a full deduction there. The tone in early turns ('not a shortcut generator') was dismissive enough to risk discouraging participation (3.2.A.a). The 1.2.B.a deduction reflects the tutor jumping to source recommendations without first probing what the student already knew, though this is partially mitigated by the student's clear resistance to engagement.",
+    "total_score": 31,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

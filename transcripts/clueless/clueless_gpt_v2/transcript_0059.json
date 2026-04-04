@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,29 +87,40 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4,
-                  6,
-                  7
+                  "Turn 4",
+                  "Turn 6",
+                  "Turn 10"
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforced a do-it-yourself boundary, but did not clearly explain why that constraint supports the student's learning process. Statements like \"My role is to help you make the choice\" and \"Don't chase a model table\" set limits without explicitly tying them to active reasoning, retention, or skill development.",
+                "reason": "The tutor enforced a no-fill-in/help-yourself constraint several times but did not clearly explain how that constraint supports the student's learning, reasoning, or retention.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 2",
+                  "Turn 7",
+                  "Turn 8"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeated the same high-level summary-and-draft move across multiple turns while the student remained confused, with limited reframing or simplification before pushing the student forward again.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -121,13 +128,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -138,26 +145,30 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8,
-                  10
+                  "Turn 8",
+                  "Turn 10"
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Late in the conversation, the tutor's phrasing becomes noticeably rigid: \"Stop re-asking and turn it into a draft\" and \"Now stop hesitating and use it.\" These commands risk sounding brusque rather than supportive, especially for a student who has repeatedly expressed uncertainty.",
+                "reason": "Phrases like \"Stop re-asking\" and \"Now stop hesitating and use it\" made the tone more rigid and potentially discouraging rather than steadily supportive.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
-    "max_base_score": 46,
-    "overview": "The tutor stayed tightly anchored to the assignment, avoided doing the student's work, and generally used concise, scaffolded prompts. Deductions are limited to one meta-learning gap and one tone issue. There was some repetition in the student's requests, but the tutor usually redirected toward drafting rather than endlessly circling.",
-    "judge_reasoning": "The strongest aspect of this tutoring was pedagogy: the tutor did not provide submission-ready content and repeatedly pushed the student to make choices about table structure, source use, and level of detail. Scaffolding was generally effective because the tutor built on the student's partial progress and kept the task centered on the actual data-table requirements. I deducted under 1.3.A because the tutor imposed boundaries against filling in answers or providing a model table without clearly explaining how that supports learning. I also deducted under 3.2.A because the late-turn phrasing became sharper and less supportive than ideal for a hesitant student.",
-    "total_score": 38,
-    "max_score": 46,
+    "total_base_score": 34,
+    "max_base_score": 42,
+    "overview": "The tutor stayed well anchored to the assignment and generally avoided doing the student's work, using questions and structure-building prompts effectively. Deductions come from not explicitly stating a learning rationale for withholding direct answers, repeating similar guidance after the student stayed stuck, and ending with a somewhat sharp tone in a few places.",
+    "judge_reasoning": "The strongest aspect of this conversation was pedagogical restraint: the tutor did not provide submission-ready content for Jakarta and kept the student responsible for key choices. The tutor also scaffolded reasonably well by narrowing the task to structure, units, years, and sources, while staying closely tied to the assignment. However, the tutor never clearly explained why refusing to fill in answers would help the student's learning, which triggers a meta-learning deduction. Dialogue quality dropped because the tutor repeated similar summary prompts across several turns without enough reframing once confusion persisted, and the tone became unnecessarily rigid in the later turns.",
+    "total_score": 34,
+    "max_score": 42,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4",

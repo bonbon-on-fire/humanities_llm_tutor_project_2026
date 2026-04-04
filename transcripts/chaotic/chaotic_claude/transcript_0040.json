@@ -72,53 +72,119 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it refuses to write the student's work—it simply says 'No' or 'That would still be me doing the assignment for you' without articulating the learning rationale (e.g., active reasoning, retention, skill development). A brief explanation of why the student benefits from doing the work themselves is absent throughout the conversation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student meaningfully improves in Turn 8 (producing defensible, specific justifications after earlier vague attempts), the tutor acknowledges the improvement ('the logic is much stronger now') but does not prompt the student to reflect on what changed in their thinking or why the revised approach worked better. The opportunity to reinforce the method is missed.",
-            "points": 2
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly stalled and asked for answers rather than engaging, the tutor continued issuing similar prompts without first diagnosing why the student was stuck (time pressure, confusion about the task, lack of Jakarta knowledge). A brief diagnostic question about what specifically was blocking the student would have been more appropriate before cycling through more structured prompts.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explained why it was refusing to provide answers or write justifications—i.e., never articulated that the refusals were to support active reasoning, skill development, or retention. The tutor simply said 'No' or 'That would still be me doing the assignment for you' without connecting this to a learning rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved significantly in turns 8 and 10 (producing defensible, structured justifications after earlier vague attempts), the tutor moved on without prompting reflection on what changed in the student's thinking or reinforcing the method that led to improvement.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across turns 3–5, the student repeatedly asked for answers and the tutor repeatedly declined and re-issued structurally similar prompts without meaningfully reframing the approach or diagnosing the block. The tutor did note 'We're circling' in turn 5 but did not switch strategy sufficiently—the same prompt-and-refuse pattern continued without synthesis or a different tactic.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              5
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "In Turn 3, the tutor provides a fairly long list of candidate stressors before asking the student to pick, and in Turn 5 the tutor cycles through a similar pattern. While most responses are reasonably concise, there are moments where the tutor front-loads information in multi-part blocks when a single focused prompt would suffice. However, this is borderline and the overall response length is mostly appropriate, so a partial deduction is warranted but the full 4 is not clearly supported. Applying the deduction as the rubric is all-or-nothing at 4 points—evidence is ambiguous, so no deduction applied per instructions to choose smaller deduction.",
-            "points": 0
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor consistently and firmly refused to do the student's work, maintained Socratic scaffolding throughout, and successfully guided the student from vague requests to defensible, specific justifications. The main weaknesses are the absence of any explicit rationale for the tutoring approach (why the student benefits from doing the work themselves) and a missed opportunity to prompt reflection after the student's notable improvement in Turn 8. Dialogue quality and assignment anchoring were strong throughout. Communication was generally concise and well-targeted.",
-    "judge_reasoning": "Deductions were applied under 1.3.A.a because the tutor never explained the pedagogical rationale for its constraints—it refused repeatedly but never told the student why doing the work themselves supports learning. A deduction under 1.3.C.a was applied because after the student's clear improvement in Turn 8, the tutor acknowledged it briefly but did not prompt reflection on what changed or why the new approach worked. No deductions were applied to 1.1 (the tutor never gave submission-ready content, never rewrote student text, and kept key reasoning student-led), 1.2 (the tutor consistently built on student progress and used diagnostic questioning), 2.1 (the tutor reframed and advanced the conversation rather than cycling), 2.2 (the student stayed on task and the tutor kept the assignment anchored), or 3.1/3.2 (responses were appropriately concise and tone was supportive without being evaluative).",
-    "total_score": 40,
+    "overview": "The tutor maintained strong boundaries against doing the assignment for the student and consistently pushed for student-generated reasoning, earning full marks on 1.1. However, the tutor never explained the pedagogical rationale for its refusals (1.3.A), missed opportunities to prompt reflection after student improvement (1.3.C), and did not diagnose what was blocking the student before re-issuing similar prompts (1.2.B). The most significant issue was the repetitive pattern in turns 3–5 where the tutor cycled through similar refusals and prompts without meaningfully shifting strategy, triggering the full 2.1 deduction. Communication quality and assignment anchoring were strong throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points because when the student stalled repeatedly, the tutor did not pause to diagnose the specific block before re-prompting. 1.3 loses 4 points: the tutor never articulated a learning rationale for its constraints (2 pts), and after the student's clear improvement in turns 8 and 10, the tutor moved on without prompting reflection on what changed (2 pts). 2.1 loses all 4 points because turns 3–5 show a clear spiral where the tutor acknowledged 'we're circling' but did not meaningfully switch strategy—the same refuse-and-re-prompt pattern repeated without reframing or simplification. Sections 2.2 and 3 are clean with no deductions warranted.",
+    "total_score": 33,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

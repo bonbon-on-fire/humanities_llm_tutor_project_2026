@@ -72,38 +72,88 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "Across the conversation, the tutor used a constrained, student-led approach but never explicitly explained why that approach supports learning, retention, or independent reasoning.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently used guided questioning and constraints, but never explicitly explained why this tutoring approach supports the student's learning or why they were not simply filling in the table for the student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed closely anchored to the assignment, used guided questioning instead of doing the table for the student, and adjusted structure when the student asked for a bigger-picture approach. The only clear deduction is that the tutor never explicitly stated the learning rationale behind the tutoring constraints. Otherwise, the conversation shows solid scaffolding, prompt re-grounding, and supportive coaching without drifting into submission-ready output.",
-    "judge_reasoning": "The tutor performed strongly on guided discovery: they repeatedly asked the student to distinguish hazards, vulnerabilities, sectors, and rating criteria rather than supplying final Jakarta entries or polished submission text. Dialogue quality was also strong because the tutor re-anchored the assignment when the student misunderstood what belongs in the table and shifted formats when the student asked for a broader framework, avoiding unproductive spiraling. I applied one deduction under 1.3.A.a because, although the tutoring method was effective, the tutor never explicitly explained why they were using a student-led process instead of directly answering. I did not deduct elsewhere because the tutor’s frameworks, examples, and prompts remained formative and assignment-focused rather than doing the core reasoning for the student.",
-    "total_score": 44,
+    "overview": "The tutor stayed assignment-focused, used guided discovery, and avoided producing submission-ready table content. They adapted formats across the conversation by moving from sorting concepts to sector definitions, whole-table framing, row structure, and rating criteria. The main missing element was an explicit explanation of why the tutor was using this constrained, student-led approach. Possible repetition was present but not strong enough for deduction because the tutor did reframe and advance the task when the student signaled confusion.",
+    "judge_reasoning": "The tutor earned full credit on core pedagogy because they did not write the student's table, did not supply final claims, and kept the student doing the classification and rating work. They also scaffolded effectively by clarifying the assignment's climate-related filter, distinguishing hazard/vulnerability/outcome, and later providing a whole-table process and row structure. The only clear rubric violation was under 1.3.A.a: despite repeated guided prompts, the tutor never stated a learning rationale for not simply giving answers. Dialogue quality and communication remained strong, with concise, supportive, assignment-anchored responses throughout.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,44 +72,82 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [],
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 24,
-          "max": 24
+          "score": 22,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              7,
-              8,
-              10
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  7,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor remained task-focused, but repeated phrases like \"That's a stall pattern,\" \"another delay tactic,\" and \"Stop seeking certainty before acting\" made the tone noticeably rigid and could discourage participation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "Several replies use rigid or mildly chastising phrasing such as 'That’s a stall pattern,' 'another delay tactic,' and 'Stop seeking certainty before acting,' which could undermine a supportive tutoring atmosphere even though the tutor stays task-focused.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "Strong guided tutoring overall: the tutor stayed assignment-focused, scaffolded the work into manageable steps, and avoided giving a submission-ready table. The only clear weakness is some somewhat harsh phrasing when redirecting the student; this supports a small tone deduction rather than a larger pedagogy penalty.",
-    "judge_reasoning": "The tutor consistently used guided questions, incremental scaffolds, and process-focused prompts rather than supplying final assignment content. They built on the student's partial progress by moving from category sorting to source types to a usable 7-row plan, and they kept the conversation anchored to the actual data-table task. The main deduction is under tone, because repeated labels like 'stall pattern' and 'delay tactic' risk sounding scolding instead of supportive. No deduction for direct work is warranted because the tutor explicitly refused to provide a full example table or complete walkthrough and kept the student doing the core reasoning.",
-    "total_score": 44,
+    "overview": "The tutor used strong guided discovery, kept the student doing the classification and planning work, and consistently re-anchored the conversation to the assignment. The main weakness was tone: several responses were sharper than necessary, though other possible deductions were ambiguous and therefore not applied.",
+    "judge_reasoning": "The tutor avoided giving submission-ready content and instead used short prompts that required the student to sort categories, identify source types, and build a draft plan independently. Scaffolding was generally effective because the tutor built on correct student progress and gave process-level guidance such as bucketizing categories and using a repeatable research sequence. Dialogue control was strong: the tutor redirected repeated requests for a full walkthrough back to the actual task without going substantially off-topic. The only clear deduction is for tone, because multiple turns framed the student's uncertainty as a \"stall pattern\" or \"delay tactic,\" which risks sounding dismissive rather than supportive.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

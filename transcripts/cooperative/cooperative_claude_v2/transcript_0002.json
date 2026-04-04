@@ -72,58 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 4, the tutor lists the candidate distinctions ('intention, using a person as a means, doing vs allowing, or something else') before the student has had a chance to generate them independently. This gives the student the key conceptual options rather than letting the student derive or propose them, doing a meaningful portion of the reasoning work.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than providing answers directly. No rationale for the Socratic approach or tutoring constraints is offered at any point in the conversation.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor conducts a well-structured Socratic dialogue that consistently builds on student responses, avoids giving final answers, and keeps the conversation anchored to the assignment. The main deduction is for Turn 4, where the tutor lists the key philosophical distinctions (intention, means, doing/allowing) before the student has had a chance to generate them, which partially undermines student-led idea generation. A secondary deduction applies because the tutor never explains the rationale for its guided questioning approach. All other criteria are met: responses are bite-sized, tone is supportive, the conversation progresses without redundancy, and the student's work remains genuinely their own.",
-    "judge_reasoning": "The 6-point deduction under 1.1.C.b is warranted because in Turn 4 the tutor explicitly enumerates the candidate moral distinctions ('intention, using a person as a means, doing vs allowing, or something else'), which are the central conceptual tools the student needs to discover. This pre-empts the student's own reasoning and constitutes giving the key idea before the student derives it. The 2-point deduction under 1.3.A.a applies because across all ten turns the tutor never once explains why it is asking questions rather than providing answers, missing the requirement to articulate tutoring rationale at least once. No deductions apply to dialogue quality: the tutor consistently re-anchors to the assignment, avoids off-topic drift, and advances the conversation without repetitive cycling. Communication quality is strong throughout, with concise, focused prompts and a consistently supportive tone.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout: it never gives away conclusions, consistently asks the student to reason through each step, builds progressively on student responses, and maintains a supportive and appropriately concise tone. The only clear deduction is the absence of any explicit rationale for the tutoring approach (1.3.A.a). No other rubric triggers are clearly met.",
+    "judge_reasoning": "1.1: The tutor never provides submission-ready content, never rewrites student text, and never states the key idea before the student derives it. All reasoning steps are student-led, with the tutor only prompting and affirming direction. Full marks. 1.2: The tutor consistently acknowledges and builds on correct student progress (e.g., 'Good—now move from examples to a rule') and diagnoses confusion before responding. Full marks. 1.3: The tutor provides good process-level feedback (e.g., pointing out that 'fits my intuitions better is not yet much of an argument') but never explains why it is using a Socratic approach rather than giving answers, triggering 1.3.A.a for 2 points. 2.1 and 2.2: No repetition without progress, no off-topic drift, and no misunderstood assignment framing goes uncorrected. Full marks. 3.1 and 3.2: Responses are concise and well-targeted; tone is consistently supportive and formative without implying grades. Full marks.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,49 +72,109 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student asked for the whole table explained, the tutor gave a full structural walkthrough (all 5 steps) without first diagnosing what specifically the student was confused about. A brief diagnostic question would have been more appropriate before delivering the full method dump.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              9
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 2, the tutor gives the student a three-part diagnostic framework to apply to flooding without first checking what specifically confused the student. In Turn 3, when the student explicitly says they don't understand how the table parts fit together, the tutor jumps straight into explaining the table structure rather than asking a diagnostic question to locate the precise gap in understanding.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student showed clear improvement in reasoning (correctly identifying flooding and heat as cross-sector, high-impact stressors), the tutor moved directly to the next task without prompting any reflection on what changed in the student's thinking or why their approach worked.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is refusing to give model answers or fill in rows—i.e., never articulates that this approach supports the student's active reasoning, retention, or skill development. The refusals in Turns 5 and 6 are stated as constraints without rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When the student makes genuine progress (e.g., correctly identifying flooding and heat as priority stressors in Turn 10, or correctly reasoning about what makes a stressor 8+ in Turn 7), the tutor moves forward without prompting any reflection on what changed in the student's thinking or why their reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 19,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 39,
+    "total_base_score": 37,
     "max_base_score": 44,
-    "overview": "The tutor performed well overall, consistently refusing to do the student's work, redirecting off-task requests, and guiding the student through Socratic questioning. The main weaknesses were a brief diagnostic failure in Turn 3 (full method dump without checking what the student already understood) and a missed reflection opportunity in Turn 9-10 after the student demonstrated genuine progress. No major violations of direct answer-giving or submission-ready output were found.",
-    "judge_reasoning": "Pedagogy deductions: In Turn 3, the tutor provided a full 5-step structural breakdown of the table without first asking a diagnostic question to identify the specific gap in the student's understanding, triggering 1.2.B.a (-3). In Turns 9-10, after the student successfully synthesized flooding and heat as the top priorities with cross-sector reasoning, the tutor moved directly to drafting instructions without prompting reflection on what changed in the student's thinking, triggering 1.3.C.a (-2). No deductions were warranted for 1.1 (the tutor consistently refused to provide model answers or fill rows), 1.2.A (student progress was acknowledged and built upon), 1.3.A (the tutor explained its tutoring rationale in Turn 5), or 1.3.B (method-level feedback was present throughout). Dialogue and communication quality were strong: the tutor stayed on task, redirected off-topic requests, kept responses concise, and maintained a supportive but firm tone throughout.",
-    "total_score": 39,
+    "overview": "The tutor maintained strong Socratic discipline throughout, consistently refusing to provide model answers or fill in rows, and kept the student working through their own reasoning. Assignment anchoring and dialogue quality were excellent. The main weaknesses were in scaffolding (jumping to explanations before diagnosing confusion) and meta-learning (never explaining the rationale for tutoring constraints, and missing reflection prompts after student progress).",
+    "judge_reasoning": "1.1 receives full marks: the tutor never gave submission-ready content, never rewrote student text, and consistently kept idea generation student-led by asking the student to supply reasoning before confirming it. 1.2 loses 3 points under 1.2.B.a: in Turns 2 and 3, the tutor responds to student confusion with structured frameworks rather than first asking diagnostic questions to locate the specific gap. 1.3 loses 2 points under 1.3.A.a because the tutor's refusals to provide model answers (Turns 5, 6) are never accompanied by an explanation of why this approach benefits the student's learning. 1.3 also loses 2 points under 1.3.C.a because after the student makes clear progress (Turns 7, 10), the tutor moves forward without prompting reflection on what changed in their thinking. Dialogue quality and communication quality are both strong with no deductions warranted.",
+    "total_score": 37,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

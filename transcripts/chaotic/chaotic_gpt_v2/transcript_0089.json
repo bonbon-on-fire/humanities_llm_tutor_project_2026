@@ -72,60 +72,93 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 1",
+                  "Turn 2",
+                  "Turn 3",
+                  "Turn 5"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforces refusal to provide completed work or exact wording, but explains this mainly as a role/integrity boundary rather than clearly stating how student-led reasoning and drafting support learning, retention, or skill development.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly enforced limits on providing direct assignment content, but never clearly explained that this constraint was meant to strengthen the student's own reasoning or learning process. The rationale stayed mostly at role boundaries and refusal to do the work.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              5
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 1",
+                  "Turn 5",
+                  "Turn 7"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Although generally focused and helpful, some refusals are phrased in a rigid or scolding way such as 'I’m your tutor, not a shortcut' and 'Stop asking me to write it for you,' which risks discouraging the student.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "Some phrasing was unnecessarily sharp, especially 'I’m your tutor, not a shortcut' and 'Stop asking me to write it for you,' which risks sounding rigid rather than supportive even though the tutor stayed task-focused.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor consistently avoided giving submission-ready work and kept the student anchored to the assignment. I applied only small deductions: one because the tutor never explicitly connected the refusal policy to learning benefits, and one because the tone was occasionally too blunt. I did not deduct for repetition because each refusal was paired with a concrete next step that advanced the task.",
-    "judge_reasoning": "Across Turns 1-10, the tutor repeatedly refused to provide a full table, polished wording, a submission-ready row, or exact ratings, so no deduction was warranted under the direct-work criteria. The tutor also scaffolded the task by moving from stressor selection to rating, justification, and priority while building on the student's partial answers, so I kept scaffolding and assignment anchoring at full credit. I deducted under 1.3.A.a because the tutor did not explicitly explain that making the student generate the content would improve understanding or retention; the explanation remained mostly 'I won't do it for you.' I also deducted under 3.2.A.a because a few responses were harsher than necessary, though the tutor remained formative and did not take on a grading role.",
-    "total_score": 42,
+    "overview": "The tutor strongly avoided doing the assignment, kept the work student-led, and stayed tightly anchored to the stressors-table task. The main weaknesses were a lack of explicit learning-oriented rationale for the refusal policy and a somewhat harsh tone in several boundary-setting moments. There was some repetition in refusals, but because the tutor usually paired each refusal with a concrete next step, the evidence was not strong enough for a dialogue-redundancy deduction.",
+    "judge_reasoning": "The tutor earned full credit on core pedagogy because they did not provide submission-ready content, did not rewrite the student's work, and consistently pushed the student to generate ratings, justifications, and priorities themselves. Scaffolding was effective: the tutor built on partial student answers and gave targeted prompts such as adding affected groups, disrupted systems, city-specific conditions, and consequences. I deducted under 1.3 because the tutor did not clearly explain at least once that these constraints were meant to strengthen the student's learning process, beyond saying it was not their role to do the work. I also deducted under tone because several refusals were unnecessarily sharp, even though the tutor remained assignment-focused and formative rather than grading-oriented.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,38 +72,96 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully articulates the mayor/council/staff distinction in Turn 5 (following earlier confusion), the tutor moves forward without prompting the student to reflect on what changed in their thinking or why the power-test framework worked. Similarly, in Turn 10 when the student produces a solid 3-part claim after struggling in Turn 9, the tutor affirms and moves on without asking the student to reflect on what made the revised framing stronger.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully produces a well-structured 2–3 sentence claim in Turn 10 following earlier uncertainty, the tutor moves directly to stress-testing and a new question without prompting the student to reflect on what changed in their thinking or why the 3-part structure worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic practice throughout: consistently using diagnostic questions, building on student progress turn by turn, and never providing submission-ready content. The main gap is in meta-learning: the tutor misses two clear opportunities to prompt reflection after the student successfully improves their reasoning. All other criteria are well met—responses are concise, tone is supportive, the assignment stays on track, and no off-topic drift occurs.",
-    "judge_reasoning": "Under 1.1, the tutor never gives direct answers or near-submission-ready content; all key reasoning steps are student-generated through guided questioning, so no deductions apply there. Under 1.2, the tutor consistently builds on correct student progress (e.g., affirming the mayor/council/staff mapping before extending it) and diagnoses confusion before responding. Under 1.3, the tutor provides at least one rationale implicitly through the 'power test' framing and gives specific process feedback (e.g., 'I'll critique the reasoning, not write it for you'), but fails to prompt reflection after two clear improvement moments (Turns 5 and 10), warranting a 2-point deduction under 1.3.C.a. Dialogue quality is strong with no repetition, no assignment drift, and no off-topic engagement. Communication is concise and consistently supportive throughout.",
-    "total_score": 42,
+    "overview": "The tutor demonstrates strong Socratic practice throughout: it never gives the student the answer, consistently uses diagnostic questions, builds on student progress turn by turn, and keeps key idea generation student-led. The main weaknesses are in meta-learning: the tutor never explains why it is using a question-based approach rather than direct answers, and it misses the opportunity to prompt reflection after the student's successful Turn 10 synthesis. All other criteria are met cleanly.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never produces submission-ready content, never rewrites student text, and never states conclusions before the student reasons toward them—every turn ends with a question or a prompt for the student to apply a framework. 1.2 is fully intact: the tutor consistently acknowledges correct student steps (e.g., 'Good start,' 'You're on the right track,' 'Yes—that sounds reasonable') and builds directly on them rather than restarting, and it diagnoses confusion before responding throughout. 1.3 loses 2 points under 1.3.A.a because the tutor never once explains the pedagogical rationale for its Socratic approach—it enforces the constraint implicitly but never tells the student why it is asking questions rather than giving answers. 1.3 loses another 2 points under 1.3.C.a because after the student's clear improvement in Turn 10 (producing a well-structured, cautious claim after struggling in Turn 9), the tutor immediately pivots to stress-testing without pausing to ask what changed or why the 3-part structure helped. Dialogue quality and communication quality are both strong: responses are concise, well-anchored to the assignment, non-repetitive, and appropriately toned throughout.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

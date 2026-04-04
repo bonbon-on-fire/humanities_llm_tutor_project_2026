@@ -72,43 +72,101 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7,
-              8,
-              9
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly expressed confusion or resistance about how to proceed, the tutor jumped straight to re-presenting the same shortlist of stressors and asking the student to pick, rather than first diagnosing why the student was stuck (time pressure, conceptual confusion, or strategic avoidance). A brief diagnostic question about what specifically was blocking the student would have been more appropriate before re-presenting options.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved from vague drafts to a defensible justification in Turn 9, the tutor acknowledged the improvement but did not prompt the student to reflect on what changed in their thinking or why the new approach worked better. The tutor simply moved on to the next stressor without reinforcing the method shift.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully produced a defensible justification in Turn 9 following multiple failed or refused attempts, the tutor moved on to the next task without prompting any reflection on what changed in the student's thinking or why the 3-part structure worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 19,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across Turns 2–4, the tutor repeated essentially the same move: present a shortlist of Miami stressors and ask the student to pick. The student remained resistant and the tutor did not meaningfully reframe, simplify, or switch strategy. The same pattern cycled three times without synthesis or escalation to a different approach.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 35,
     "max_base_score": 44,
-    "overview": "The tutor performed very well overall, consistently refusing to do the assignment for the student and guiding them through Socratic questioning. The only notable gap was a missed opportunity to prompt meta-reflection after the student successfully improved their justification in Turn 9.",
-    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and never revealed conclusions before student reasoning. Full points. 1.2: The tutor built on student progress (e.g., acknowledging 'low elevation + porous limestone' in Turn 6, affirming the improved draft in Turn 9) and used targeted prompts rather than method dumps. Full points. 1.3: The tutor explained its tutoring rationale at least once (Turn 1: 'that would be doing the assignment'), gave specific process feedback throughout (e.g., 'housing I guess is weak,' the 3-part structure prompt), but missed a clear reflection prompt after the student's successful improvement in Turn 9, warranting a 2-point deduction under 1.3.C.a. 2.1 and 2.2: No problematic repetition, no assignment misunderstanding, no off-topic drift. 3.1 and 3.2: Responses were concise and interactive; tone was firm but supportive without being punitive or implying formal grades.",
-    "total_score": 42,
+    "overview": "The tutor maintained strong academic integrity throughout, consistently refusing to do the assignment for the student and guiding toward student-generated content. The 1.1 criterion is fully intact. The main weaknesses are: (1) a repetitive loop in Turns 2–4 where the same shortlist-and-pick strategy was used three times without reframing, triggering the 2.1 deduction; (2) a missed diagnostic opportunity when the student was persistently stuck; and (3) a missed reflection prompt after the student's successful Turn 9 justification. Communication was concise and appropriately toned throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points under 1.2.B.a because in Turns 3–4 the tutor re-presented the same shortlist without first diagnosing what was blocking the student (time pressure vs. conceptual gap vs. avoidance). 1.3 loses 2 points under 1.3.C.a because after the student's successful Turn 9 justification, the tutor gave brief positive feedback and immediately moved on without prompting reflection on what changed. 2.1 loses all 4 points because Turns 2, 3, and 4 repeat the same 'pick from this shortlist' move without any meaningful reframing, synthesis, or strategy shift despite continued student resistance. 2.2 and section 3 are fully intact.",
+    "total_score": 35,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

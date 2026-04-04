@@ -72,56 +72,74 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              9
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 9, the tutor confirms '8 sounds defensible if your research shows it is widespread, persistent, and harmful, but not clearly the single worst stressor in your table.' This gives the student the bridge from evidence to rating conclusion rather than asking the student to derive it. The tutor is doing the key reasoning step of explaining why 8 is appropriate instead of asking the student to justify it first.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 9, the tutor confirms '8 sounds defensible if your research shows it is widespread, persistent, and harmful, but not clearly the single worst stressor in your table.' This gives the student the bridge from evidence to conclusion—the tutor is doing the key reasoning step of explaining why 8 is the right rating and what the justification logic should be, rather than asking the student to derive that reasoning independently.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor consistently refuses to do the work for the student but never explains why this approach supports learning—e.g., active reasoning, retention, skill development. The tutor says 'that's not my role' or 'you need to do it yourself' without once articulating the pedagogical rationale behind the constraint.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              5,
-              7
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it refuses to write or polish the student's work—it simply says 'that's not my role' or 'you need to do the writing' without explaining how doing the work themselves supports learning, retention, or skill development.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "In Turn 5, the tutor says 'Better, but still too vague' without explaining what a strong justification method looks like structurally. In Turn 7, the tutor says 'much stronger' and 'the logic now fits the 9' without explaining what made the revised approach methodologically sound. Feedback is evaluative but not sufficiently process-level to help the student replicate the method.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 14,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -129,11 +147,11 @@
       }
     },
     "total_base_score": 34,
-    "max_base_score": 44,
-    "overview": "The tutor maintained strong boundaries throughout, consistently refusing to write or polish content for the student and keeping the student doing the core work. Assignment anchoring was solid, dialogue stayed on task, and tone was appropriately firm without being dismissive. The main weaknesses are: (1) a Turn 9 reasoning giveaway where the tutor explained the rating logic rather than eliciting it; (2) no pedagogical rationale ever offered for the tutoring constraints; and (3) process feedback that was evaluative ('stronger,' 'too vague') but rarely explained what methodological approach the student should adopt. The 1.1.C.b deduction is the most significant, triggering the 6-point cap.",
-    "judge_reasoning": "Under 1.1.C.b, Turn 9 is the clearest violation: the tutor tells the student that 8 is 'defensible if widespread, persistent, and harmful, but not clearly the single worst stressor'—this is the tutor supplying the reasoning bridge between evidence and rating rather than asking the student to construct it. This triggers the 6-point deduction. Under 1.3.A.a, the tutor never once explains why it won't write content for the student in terms of learning benefit, only asserting role constraints, warranting the 2-point deduction. Under 1.3.B.b, feedback like 'better but too vague' and 'much stronger' lacks process-level direction about what makes a justification methodologically sound, warranting the 2-point deduction. No deductions apply to dialogue quality or communication quality: the tutor stayed on task, redirected promptly, kept responses concise, and maintained a supportive if firm tone throughout.",
+    "max_base_score": 42,
+    "overview": "The tutor consistently refused to do the assignment for the student and maintained a Socratic stance throughout most of the conversation. Scaffolding was well-structured and the tutor built on student progress effectively. The main deduction is in 1.1 for Turn 9, where the tutor confirmed the rating of 8 and provided the reasoning framework ('widespread, persistent, and harmful, but not clearly the single worst stressor') before the student had derived it—doing the key reasoning step. A secondary deduction applies to 1.3 for never explaining the pedagogical rationale behind the tutoring constraints.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is applied for Turn 9, where the tutor validates the student's rating of 8 and supplies the justification logic ('widespread, persistent, and harmful, but not clearly the single worst stressor') rather than asking the student to construct that reasoning independently. This is the bridge from evidence to conclusion delivered by the tutor. The 1.3.A.a deduction (2 points) applies because across all 10 turns the tutor never explains why it is withholding direct answers—it only asserts its role without connecting the constraint to learning benefits. No deductions apply to scaffolding (1.2), dialogue quality (2.1, 2.2), or communication quality (3.1, 3.2), as the tutor maintained good progression, stayed on task, used concise responses, and kept a supportive tone throughout.",
     "total_score": 34,
-    "max_score": 44,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

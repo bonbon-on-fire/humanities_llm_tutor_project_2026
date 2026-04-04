@@ -72,92 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 17,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
-            "score": 12
+            "score": 12,
+            "max": 12
           },
           "1.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  3,
                   4,
-                  5
+                  8
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "The student explicitly signaled conceptual confusion about boundary types and asked for a general explanation, but the tutor continued pressing the student to choose a unit before fully diagnosing and resolving that confusion.",
+                "reason": "When the student explicitly signaled confusion and asked for a broader explanation, the tutor answered the content issue directly instead of first diagnosing the specific misunderstanding with a brief check-in question.",
                 "points": 3
               }
             ],
-            "score": 3
+            "score": 3,
+            "max": 6
           },
           "1.3": {
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor used constrained, student-led prompting throughout but never clearly explained the learning rationale for that approach in terms of active reasoning, retention, or skill-building.",
+                "reason": "Across the conversation, the tutor kept the student in a guided-response format but never explicitly explained that this constraint was meant to support the student's own reasoning or learning process.",
                 "points": 2
               }
             ],
-            "score": 2
+            "score": 2,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4,
-                  5
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeated the same boundary-selection move across several turns without enough synthesis or reframing, while the student remained confused and explicitly asked for a bigger-picture explanation.",
-                "points": 4
-              }
-            ],
-            "score": 0
+            "deductions": [],
+            "score": 4,
+            "max": 4
           },
           "2.2": {
             "deductions": [],
-            "score": 8
+            "score": 8,
+            "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           },
           "3.2": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 10
         }
       }
     },
-    "total_base_score": 33,
+    "total_base_score": 37,
     "max_base_score": 46,
-    "overview": "The tutor stayed assignment-focused, supportive, and mostly process-oriented, avoiding direct completion of the table for the student. Main deductions come from delayed diagnosis of the student's conceptual confusion, repeated questioning on the same boundary-choice issue without enough synthesis, and the absence of an explicit explanation of why the tutor was using a constrained, student-led approach.",
-    "judge_reasoning": "The strongest aspect of this tutoring was restraint: the tutor did not supply submission-ready table entries or write answers for the student, so 1.1 remains full. However, when the student asked for a conceptual rundown of city proper versus metro versus urban area, the tutor continued to push choice-making before fully addressing the confusion, supporting a deduction under 1.2.B.a. That same pattern repeated across several turns, creating a spiral around boundary selection until a later synthesis, which fits 2.1.A.a. The tutor also never explicitly stated why they were using small-step questioning as a learning strategy, so 1.3.A.a is deducted, while communication quality stays strong because responses were concise, clear, and supportive.",
-    "total_score": 33,
+    "overview": "The tutor stayed student-centered, avoided producing submission-ready content, and remained tightly anchored to the assignment. The main weakness was that, when the student repeatedly expressed confusion, the tutor sometimes moved straight into explanation rather than first diagnosing the exact sticking point. I did not deduct for redundancy because the tutor varied strategies and eventually synthesized the table's broader purpose, though the student still seemed somewhat uncertain.",
+    "judge_reasoning": "The strongest part of this conversation was pedagogy under 1.1: the tutor consistently used prompts, distinctions, and planning questions rather than giving a finished table or polished assignment language. I deducted under 1.2.B because in turns 4 and 8 the student asked for broader clarification, and the tutor responded with explanations without first checking what the student specifically misunderstood. I also deducted under 1.3.A because the tutor never explicitly explained why they were withholding direct answers or using guided questioning as a learning strategy. Dialogue quality, clarity, tone, and assignment anchoring were otherwise solid and supportive throughout.",
+    "total_score": 37,
     "max_score": 46,
     "model": {
       "provider": "openai",

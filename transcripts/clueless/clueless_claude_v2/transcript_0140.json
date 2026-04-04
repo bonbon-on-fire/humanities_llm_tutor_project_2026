@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is not providing direct answers or examples — i.e., it never articulates that the Socratic approach supports active reasoning, retention, or skill development. It enforces constraints (e.g., 'No. I'm not going to write a bullet for you to copy.') without once explaining the pedagogical rationale to the student.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it refuses to give examples or write bullets for the student—it simply says 'No' or 'My job is to help you build your own' without articulating the learning rationale (e.g., active reasoning, retention, skill development). A single clear statement of pedagogical purpose is absent across the full conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 42,
-    "overview": "The tutor performed very well overall. It consistently refused to do the student's work, used Socratic questioning throughout, scaffolded from broad to specific, anchored to the assignment, and maintained a supportive tone. The one clear deduction is for never explaining the rationale behind its tutoring constraints — it enforced them firmly but without once telling the student why this approach benefits their learning.",
-    "judge_reasoning": "Under 1.1, the tutor never gave near-submission-ready output, never rewrote student text, and consistently kept key idea generation student-led — no deductions apply. Under 1.2, the tutor built on student progress at each turn (e.g., affirming 'Mayor's office is a start' and 'That's much better' before pushing further) and used diagnostic questions before responding to confusion. Under 1.3.A, the tutor repeatedly declined to give examples or write bullets but never explained why — no rationale about active reasoning, retention, or skill-building was offered, triggering the 2-point deduction. Under 1.3.B, the tutor gave specific process-level feedback (e.g., the 4-part content formula, the evidence-testing checklist for 'missing' actors), so no deduction applies there. Dialogue quality was strong: no repetition without progress, no assignment misunderstanding left uncorrected, and no off-topic drift. Communication was concise, clear, and consistently supportive without implying formal grading.",
-    "total_score": 42,
-    "max_score": 46,
+    "overview": "The tutor performed very well overall. It consistently refused to do the student's work, used Socratic questioning, scaffolded progression effectively, and maintained a supportive tone throughout. The one clear deduction is for failing to articulate the pedagogical rationale for its constraints at any point in the conversation—it enforced the 'no example' rule multiple times but never explained why this approach supports learning.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently kept idea generation student-led by asking targeted questions and refusing to model bullets or full examples. No deductions apply. 1.2: The tutor built on each student response (e.g., affirming 'Boston works,' validating the resident advisory board idea, confirming the final bullet structure) and diagnosed confusion before responding. No deductions apply. 1.3: The tutor provided good process-level feedback throughout (e.g., the 4-part content formula, the evidence test for 'missing' actors), earning full points on 1.3.B. However, it never once explained why it was withholding examples or direct answers—it simply refused without grounding the refusal in learning rationale, triggering a 2-point deduction under 1.3.A.a. Dialogue quality and communication quality were both strong: responses were concise, interactive, on-task, and consistently supportive without implying grades.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

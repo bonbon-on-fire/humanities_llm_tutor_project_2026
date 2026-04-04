@@ -72,49 +72,90 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 7, when the student asks for help understanding the city-versus-county-versus-community setup, the tutor provides a direct three-bullet breakdown ('City: local policy and implementation close to neighborhoods. County/regional bodies: cross-city coordination, larger systems, broader planning. Community actors: pressure, participation, local knowledge, and lived impact.') rather than guiding the student to derive this structure. The tutor resolves the conceptual framework for the student instead of asking questions that would lead the student to articulate it themselves.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 7, the student explicitly asks for help with the city-versus-county-versus-community structure. Rather than asking a diagnostic question to find out what specifically the student is confused about, the tutor immediately provides a full three-part framework dump. This skips diagnostic questioning and goes straight to delivering the answer to the confusion.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "By Turn 10, the student has made meaningful progress from being completely lost to identifying key actors and gaps. The tutor moves directly to prompting a 3-4 sentence attempt without pausing to reflect on what changed in the student's thinking or reinforcing the method choices that led to this improvement.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment in the conversation where the tutor articulates that this approach supports active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "By Turn 8 and 9, the student begins making genuine progress (correctly identifying government as active and unorganized residents as underrepresented, and analytically recognizing source bias). The tutor affirms and moves forward but never prompts the student to reflect on what changed in their thinking or why the analytical move worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 16,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 37,
     "max_base_score": 44,
-    "overview": "The tutor generally does well maintaining a Socratic approach, keeping responses bite-sized, and progressively scaffolding the student's understanding of the actor-mapping task. The main deduction is in 1.1.C.b for Turn 7, where the tutor directly provides the city/county/community conceptual framework rather than guiding the student to construct it. A smaller deduction applies for missing a reflection prompt after the student's clear progress by Turn 10. No issues with assignment anchoring, redundancy, tone, or communication quality were observed.",
-    "judge_reasoning": "The 6-point deduction under 1.1.C.b is warranted because in Turn 7 the tutor explicitly hands the student a ready-made three-part framework ('Use this structure: City... County... Community...') after the student asks for explanation, rather than asking questions that would lead the student to derive the distinctions themselves. This is the key reasoning step the student needed to work through. The 2-point deduction under 1.3.C.a applies because by Turn 10 the student has clearly progressed from total confusion to identifying actors and gaps, yet the tutor does not pause to ask what changed or reinforce the method that worked. No deductions apply to dialogue quality or communication quality: the tutor stays on-task, avoids redundancy, uses concise responses, and maintains a supportive tone throughout.",
-    "total_score": 36,
+    "overview": "The tutor demonstrates strong Socratic discipline throughout, consistently refusing to do the student's reasoning and instead prompting incremental student-led steps. No submission-ready content is provided. The main weaknesses are in meta-learning (no rationale for the tutoring approach is ever stated, and no reflection is prompted after student breakthroughs) and in one instance of scaffolding (Turn 7 delivers a framework without first diagnosing what specifically the student was confused about). Dialogue quality and communication quality are both strong.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides final answers, never rewrites student text, and consistently keeps key idea generation student-led across all 10 turns. 1.2 loses 3 points under 1.2.B.a because in Turn 7 the tutor responds to the student's expressed confusion by immediately delivering a three-part framework rather than first asking a diagnostic question to locate the specific gap. 1.3 loses 2 points under 1.3.A.a because the tutor never explains why it is using a guided-questioning approach rather than direct instruction, and 2 points under 1.3.C.a because when the student makes genuine analytical progress in Turns 8–9 (correctly identifying source bias and actor gaps), the tutor affirms and moves on without prompting any reflection on what changed in the student's thinking. Dialogue and communication quality are both clean: responses are concise, well-structured, on-topic, and supportive throughout.",
+    "total_score": 37,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

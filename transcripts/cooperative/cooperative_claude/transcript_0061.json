@@ -72,32 +72,87 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The constraint is enforced but never justified to the student.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In Turn 9, the student successfully corrects their own confusion about flooding vs. sea level rise double-counting after the tutor's prompt. The tutor in Turn 9 simply affirms and moves on without prompting the student to reflect on what changed in their thinking or why the new framing is stronger methodologically.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says anything like 'I'm asking you to reason through this yourself because active reasoning builds retention.' Constraints are enforced throughout but the rationale for the tutoring approach is never articulated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When the student successfully refines their reasoning (e.g., moving from vague flooding description to the hazard+exposure+intensifier chain), the tutor moves forward without prompting the student to reflect on what changed in their thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +161,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performs strongly overall, maintaining a consistent Socratic approach throughout all 10 turns without giving away answers or doing the student's reasoning work. Scaffolding is well-paced, building from hazard identification to sector categorization to rating logic. The main weaknesses are the absence of any explicit rationale for the tutoring method and a missed opportunity to prompt reflection after the student's successful self-correction on the flooding/sea level rise distinction.",
-    "judge_reasoning": "No deductions apply under 1.1 or 1.2: the tutor never provides near-submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led through targeted questions. Scaffolding builds logically on each student response. Under 1.3, two deductions are warranted: the tutor never explains why it is guiding rather than telling (1.3.A.a, -2), and after the student's successful self-correction in Turn 9, the tutor moves directly to the next task without prompting reflection on what changed methodologically (1.3.C.a, -2). Dialogue quality is strong with no repetition, no off-topic drift, and consistent assignment anchoring. Communication is concise, clear, and appropriately supportive throughout.",
+    "overview": "The tutor performed strongly overall, maintaining a Socratic approach throughout all 10 turns without giving direct answers or doing the student's reasoning work. Scaffolding was well-executed, building progressively from hazard identification to sector categorization to rating justification. The main weaknesses were in meta-learning: the tutor never explained why it was guiding rather than answering (1.3.A.a), and missed opportunities to prompt reflection after the student made clear improvements (1.3.C.a). All other criteria were met cleanly.",
+    "judge_reasoning": "1.1: The tutor consistently used Socratic questioning, never gave submission-ready content, never rewrote student text, and always let the student generate key ideas before confirming them—full marks. 1.2: The tutor built on each student response, acknowledged correct reasoning, and diagnosed confusion before redirecting—full marks. 1.3: Two deductions apply: the tutoring rationale was never explained to the student (1.3.A.a, -2), and after clear student improvements (e.g., the hazard chain in Turn 5, the sea level rise distinction in Turn 9), the tutor moved forward without prompting reflection on what changed (1.3.C.a, -2). Dialogue quality was excellent with no repetition, no off-topic drift, and consistent assignment anchoring. Communication was concise, clear, and appropriately supportive throughout.",
     "total_score": 40,
     "max_score": 44,
     "model": {

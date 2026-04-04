@@ -72,50 +72,87 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 5, the tutor states the 'overall pattern' of act consequentialism directly—'if killing one prevents five deaths, it will usually favor that act because 1 death is better than 5'—and then identifies the key pressure point ('act consequentialism tends to flatten those differences') before the student has reasoned through it. This gives the student the bridge from evidence to conclusion rather than letting them derive it.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              8
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed confusion and asked to be walked through the cases (Turn 3) and again in Turn 8, the tutor jumped directly to providing a structured framework or 'big-picture map' rather than first asking diagnostic questions to understand what specifically the student found confusing. In Turn 8, the tutor explicitly provides a 3-bucket map without probing what the student already understood about Blood and Fuel.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 8, when the student says they can't keep Blood and Fuel straight, the tutor immediately provides a 'big-picture map' of three buckets without first diagnosing what specifically the student is confused about (the cases themselves, the distinction between means and side effects, or something else). A brief diagnostic question would have been more appropriate before delivering the framework.",
-            "points": 3
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this Socratic approach supports learning, retention, or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 15,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 35,
-    "max_base_score": 46,
-    "overview": "The tutor generally uses a Socratic approach, breaking the problem into steps and consistently asking the student to reason before moving forward. However, in Turn 5 the tutor pre-empts student reasoning by stating the act consequentialist conclusion and its key weakness directly, which triggers a 1.1.C.b deduction (6 points). A smaller deduction (3 points) is applied for Turn 8 where the tutor jumps to providing a framework without first diagnosing the student's specific confusion. No issues were found with assignment anchoring, tone, redundancy, or communication clarity.",
-    "judge_reasoning": "The primary deduction is under 1.1.C.b: in Turn 5, the tutor explicitly states the act consequentialist rule and its critical flaw ('flattens differences') before the student has worked through it, doing the key reasoning step for the student. This is the most significant pedagogical failure in the conversation. A secondary deduction under 1.2.B.a is applied for Turn 8, where the tutor responds to the student's confusion about Blood and Fuel by immediately providing a three-bucket map rather than asking a diagnostic question to locate the specific confusion. No 1.1.A.a or 1.1.B.a violations were found—the tutor never produces submission-ready text or rewrites student work. Dialogue quality and communication quality are both strong throughout, with no meaningful deductions warranted.",
-    "total_score": 35,
-    "max_score": 46,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor maintained a strong Socratic approach throughout, consistently refusing to give direct answers and instead prompting the student to reason through each case. The tutor never produced submission-ready content, kept key idea generation student-led, and maintained a supportive, appropriately concise tone. Deductions were applied for two areas: (1) the tutor occasionally provided structured frameworks (the 3-bucket map, the 4-move essay outline) without first diagnosing what specifically the student was confused about, and (2) the tutor never explained the rationale for its guided-discovery approach to the student.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never gave final answers, never rewrote student text, and consistently asked the student to generate key ideas before confirming them. 1.2 loses 3 points under 1.2.B.a: in Turns 3 and 8, when the student expressed confusion, the tutor moved directly to providing a structured map or framework rather than first asking diagnostic questions to locate the specific gap in understanding. 1.3 loses 2 points under 1.3.A.a because the tutor never once explained why it was using a question-based approach rather than simply explaining the material, missing an opportunity to support meta-learning. Dialogue quality and communication quality are both strong, with no evidence of repetition without progress, assignment drift, overly long responses, or inappropriate tone.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,30 +86,32 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  "Turns 1-10"
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced an evidence-first approach effectively, but never explicitly explained why this tutoring approach or constraint supports the student's learning process, retention, or independent reasoning.",
+                "reason": "The tutor consistently used guided questioning and constraints, but never clearly explained why this tutoring approach supports the student's learning or long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  9,
-                  10
+                  "Turn 10"
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from a fuzzier draft to a clearer evidence-tested classification, the tutor affirmed the improvement and moved on to next-step forum questions without prompting reflection on what changed in the student's thinking and why the revision worked better.",
+                "reason": "After the student improved from a tentative, fuzzy categorization to a clearer evidence-based framework, the tutor praised the result and moved on to the forum comparison task without prompting reflection on what changed in the student's reasoning and why it worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -125,13 +123,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 10,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -140,17 +138,21 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "Strong tutoring overall: the tutor stayed assignment-focused, used guided questioning well, and avoided doing the student's forum post for them. Deductions are limited to meta-learning gaps: the tutor did not explicitly explain the learning rationale for its tutoring constraints, and after a clear student improvement, it missed a brief reflection prompt about what changed.",
-    "judge_reasoning": "The tutor performed well on pedagogy, especially in 1.1 and 1.2, by keeping the work student-led, building from the student's Boston-specific ideas, and using short evidence-based prompts rather than supplying submission-ready content. Dialogue quality was also strong because the tutor kept the conversation anchored to the assignment and advanced the student's understanding without repetition or drift. The main weaknesses were in 1.3: there was no explicit explanation of why the tutor was using an evidence-first, student-generated method, and after the student successfully revised the actor categories in Turn 10, the tutor did not ask the student to reflect on what changed in their reasoning. Communication remained clear, supportive, and formative throughout.",
-    "total_score": 42,
+    "overview": "The tutor was strong on guided discovery, assignment focus, and concise scaffolding. The conversation stayed anchored to the Boston actor-mapping task, and the tutor consistently pushed the student to use evidence tests rather than supplying submission-ready content. The main weaknesses were meta-pedagogical: the tutor never explicitly explained why this constrained, question-driven method was being used, and after the student's clear improvement, the tutor did not prompt reflection on what changed in the student's approach.",
+    "judge_reasoning": "The tutor avoided giving a ready-to-submit forum response and instead used questions, tests, and conditional categories to keep idea generation student-led. They also scaffolded well by building from the student's Boston examples and refining the evidence threshold for each actor category. I deducted under 1.3.A.a because no turn explicitly explained the learning rationale behind the tutor's constraints or Socratic style. I also deducted under 1.3.C.a because once the student successfully revised the framework in Turn 10, the tutor did not ask the student to reflect on the reasoning shift before moving to the next task.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

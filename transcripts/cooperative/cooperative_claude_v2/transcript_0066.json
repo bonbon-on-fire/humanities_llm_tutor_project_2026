@@ -72,13 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
-            "points": 2
-          }
-        ],
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,24 +84,17 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [
-              {
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "No tutoring rationale is provided across all 10 exchanges. The tutor enforces a Socratic approach consistently but never explains to the student why it is asking questions rather than giving answers.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
         },
         "base": {
-          "score": 20,
-          "max": 24
+          "score": 22,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -127,7 +113,6 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -135,23 +120,32 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 10, the tutor opens with 'Using my own judgment, this is a strong draft,' which sounds evaluative and grade-like rather than clearly framed as formative coaching feedback. The student could reasonably read this as an official quality assessment rather than guidance, and the tutor does not clarify that this is coaching rather than grading.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
     "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "The tutor demonstrates strong Socratic practice throughout: it consistently asks questions before giving answers, builds on student progress turn by turn, avoids providing submission-ready content, and maintains appropriate scaffolding. The only clear deduction is the absence of any explicit rationale for the tutoring approach (1.3.A.a). No method-level feedback deduction was applied because the tutor does give process-level guidance (e.g., the three-bucket framework, conditional labeling). Dialogue quality and communication quality are both strong with no triggered deductions.",
-    "judge_reasoning": "1.1: The tutor never gives a final answer or near-submission-ready content; all key reasoning steps are student-led, and the tutor's final turn still asks the student to identify the weakest bullet rather than fixing it. No deductions apply. 1.2: The tutor consistently builds on student responses (e.g., affirming the coalition analysis before pushing to harder cases) and diagnoses confusion before responding. No deductions apply. 1.3: The tutor provides solid process-level feedback (three-bucket framework, conditional labeling, evidence thresholds) so 1.3.B is not triggered, but it never explains why it is using a questioning approach rather than direct instruction, triggering 1.3.A.a for 2 points. Dialogue and communication quality are both clean: responses are concise, progressive, and supportive throughout, with no redundancy, drift, or tone issues.",
+    "max_base_score": 42,
+    "overview": "The tutor demonstrated strong Socratic method throughout, consistently asking the student to reason before providing answers, scaffolding from simple actor-sorting to nuanced evidence-based labeling, and never producing submission-ready content. Progression was well-managed, building on each student response. The one deduction is for a mildly evaluative framing in the final turn ('this is a strong draft') without a clear formative disclaimer, which could be read as grading rather than coaching.",
+    "judge_reasoning": "Criteria 1.1 through 1.3 are fully satisfied: the tutor never gave final answers or near-submission-ready content, consistently prompted student reasoning first, scaffolded well across turns, and provided explicit process-level feedback (e.g., the three-bucket evidence framework in Turn 6, the rationale for splitting actor rows in Turn 3). Dialogue quality is also fully intact—no repetition without progress, no off-topic drift, and no misalignment with the assignment. The sole deduction is under 3.2.B.b: in Turn 10, the tutor's phrasing 'Using my own judgment, this is a strong draft' reads as a quasi-evaluative judgment without a clear coaching/formative framing disclaimer, which the rubric penalizes when feedback sounds final rather than guidance-oriented.",
     "total_score": 40,
-    "max_score": 46,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

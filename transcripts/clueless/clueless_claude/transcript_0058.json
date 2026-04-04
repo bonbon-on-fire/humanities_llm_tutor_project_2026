@@ -72,60 +72,66 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student repeatedly improved their understanding across turns (e.g., correctly sorting categories by turn 7-8, committing to a label by turn 9, producing solid placeholder rows by turn 10), but the tutor never paused to prompt reflection on what changed in the student's thinking or why the approach worked. The tutor moved forward without reinforcing the method choices the student made.",
-            "points": 2
-          },
-          {
-            "evidence_turns": [
-              4,
-              5,
-              6
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student expressed persistent confusion and asked for a full example (turns 4-5), the tutor correctly declined to give one but did not first diagnose what specifically was causing the confusion before pivoting to a new sub-task. The tutor jumped to a new structural prompt without checking whether the student's confusion was about format, categories, or sources.",
-            "points": 3
-          }
-        ],
         "criteria": {
           "1.1": {
+            "deductions": [],
             "score": 12,
             "max": 12
           },
           "1.2": {
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through discovery rather than providing direct answers or examples. When the student repeatedly asks for a complete sample or full walkthrough, the tutor declines but does not articulate the pedagogical rationale (e.g., active reasoning, retention, skill-building). Turn 4 says 'My role is to help you build it yourself' but this is a constraint statement, not an explanation of why this approach supports learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "By Turn 7-8, the student has successfully sorted all categories correctly after earlier confusion. The tutor moves on without prompting any reflection on what changed in the student's thinking or why the sorting approach worked. No reflection prompt appears after the student's improvement.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 6
           }
         },
         "base": {
-          "score": 19,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -136,13 +142,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -153,11 +160,11 @@
         }
       }
     },
-    "total_base_score": 39,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed well overall: consistently refused to give direct answers or complete examples, used Socratic questioning effectively, kept responses concise, maintained a supportive tone, and redirected off-topic requests (switching cities, wanting full explanations) appropriately. Two deductions were applied: one for not diagnosing the specific source of student confusion before pivoting to new prompts (1.2.B.a), and one for not prompting reflection after the student's clear improvement in turns 9-10 (1.3.C.a). The 1.2.B.a deduction is applied with some uncertainty since the tutor did ask targeted follow-up questions, but these were not explicitly diagnostic before redirecting.",
-    "judge_reasoning": "The tutor consistently upheld Socratic principles—declining to provide a sample table, breaking tasks into small steps, and keeping idea generation student-led throughout all 10 turns. No deductions apply to 1.1 or 2.x criteria. A 3-point deduction under 1.2.B.a is warranted because when the student expressed persistent confusion in turns 4-5, the tutor pivoted to new structural prompts without first asking diagnostic questions to identify the specific confusion point. A 2-point deduction under 1.3.C.a applies because after the student successfully sorted all categories and produced solid placeholder rows (turns 8-10), the tutor moved forward without prompting any reflection on what changed in the student's thinking or why the method worked. Communication was consistently bite-sized and appropriately toned throughout.",
-    "total_score": 39,
+    "overview": "The tutor performed well overall, consistently using Socratic questioning, avoiding direct answers, scaffolding progression effectively, and maintaining appropriate tone and concise responses. Two deductions were applied under 1.3: the tutor never explained the pedagogical rationale for its guided-discovery approach (1.3.A.a), and missed an opportunity to prompt reflection after the student successfully sorted all categories following earlier confusion (1.3.C.a). No deductions were warranted in dialogue quality or communication quality.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided submission-ready content, never rewrote student text, and consistently kept key idea generation student-led by asking the student to sort, draft, and decide before confirming. 1.2 receives full marks: the tutor built on each correct student step (e.g., affirming the geographic/demographic split before introducing economic) and used diagnostic questions before redirecting. 1.3 loses 4 points: the tutor's Turn 4 refusal ('My role is to help you build it yourself') is a constraint statement rather than a learning rationale, triggering 1.3.A.a; and after the student's successful sorting in Turns 7-8, the tutor moved directly to the next task without prompting reflection on what changed, triggering 1.3.C.a. Dialogue and communication quality are both full marks: responses were concise, interactive, well-anchored to the assignment, and maintained a supportive, non-evaluative tone throughout.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

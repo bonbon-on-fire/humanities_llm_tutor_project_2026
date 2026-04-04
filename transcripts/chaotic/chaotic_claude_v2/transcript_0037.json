@@ -72,67 +72,98 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4,
-              5
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 4, the tutor provides a list of 7 specific factual points the student should use for a 10-rating justification, and in Turn 5 narrows it to the 3 strongest points to use. This does the key reasoning step of selecting and ranking evidence for the student, rather than guiding the student to derive which evidence is most compelling.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 4, the tutor provides a full list of 7 specific factual points that would justify a rating of 10 for Miami's sea level rise stressor, doing the key reasoning work of identifying and explaining the decisive evidence. In Turn 5, the tutor then selects the 'strongest 3' points from that list, directly resolving the evidence-ranking task that the student should have performed. This constitutes the tutor building the evidence ranking that determines the student's final stance.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              8
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 8, the tutor provides 3 pre-packaged reasons for extreme heat as a stressor ('extreme heat is frequent and increasing,' 'health risks are serious,' 'urban conditions can intensify exposure'), doing the reasoning work of identifying the key supporting points rather than guiding the student to derive them.",
-            "points": 0
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces constraints (refusing to write submission-ready content) but never explains why this approach supports the student's learning, retention, or skill development. No rationale for the tutoring method is offered at any point in the conversation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor consistently refuses to do the work for the student but never explicitly explains why this approach supports learning—e.g., that active reasoning builds retention, develops analytical skills, or prepares the student for later assignments. The tutor enforces constraints without articulating the pedagogical rationale.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
+          "score": 14,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 34,
     "max_base_score": 42,
-    "overview": "The tutor maintained a consistently firm, Socratic stance throughout the conversation, repeatedly refusing to produce submission-ready content and redirecting the student to do their own reasoning. The primary weakness is in Turns 4–5, where the tutor provided a full enumerated list of justification points and then selected the top 3 for the student, effectively doing the evidence-ranking work that is central to the assignment. The tutor also never explained the pedagogical rationale for its constraints. Dialogue quality and communication were strong throughout.",
-    "judge_reasoning": "Deduction under 1.1.C.b is applied for Turns 4–5: the tutor listed 7 specific factual points justifying a rating of 10, then in Turn 5 selected the strongest 3, resolving the key reasoning task (evidence identification and ranking) that the student should have performed. This is the tutor picking decisive evidence and explaining why it proves the point. The Turn 8 pre-packaged reasons are a lesser instance of the same pattern but are already captured under the same sub-criterion (capped at 6 points total for 1.1). A 2-point deduction under 1.3.A.a is applied because the tutor never once explained why it was refusing to write content for the student in terms of learning benefit—it only stated 'that would be doing the assignment' without connecting the constraint to skill development or retention. No deductions apply to dialogue quality or communication quality: the tutor stayed on-task, redirected promptly, kept responses concise, and maintained a supportive but firm tone throughout.",
-    "total_score": 36,
+    "overview": "The tutor consistently refused to produce submission-ready content and maintained a Socratic stance throughout most of the conversation. Scaffolding was generally well-handled, with the tutor building on student progress and redirecting effectively. The main deductions stem from two issues: (1) in Turns 4–5, the tutor crossed into doing the key reasoning step by selecting and ranking the specific evidence points for the student rather than guiding the student to identify them; and (2) the tutor never explained the rationale for the tutoring approach, missing an opportunity to support meta-learning.",
+    "judge_reasoning": "Criterion 1.1 receives a 6-point deduction under 1.1.C.b because in Turns 4 and 5 the tutor explicitly provided a curated list of 7 evidence points and then selected the top 3 for the student to use—this is the core reasoning work of evidence selection and ranking that the student should have done. The tutor did not give a finished sentence or full submission-ready output, so 1.1.A and 1.1.B are not triggered. Criterion 1.3 receives a 2-point deduction under 1.3.A.a because across all 10 turns the tutor never articulated why refusing to write content for the student supports learning outcomes. Dialogue quality and communication quality are strong: the tutor avoided repetition, stayed on-task, used concise responses, and maintained a supportive but firm tone throughout.",
+    "total_score": 34,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

@@ -72,52 +72,81 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              4
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor enforced a do-not-complete-the-assignment boundary ('you need to do the thinking,' 'I’m not going to fill one in for you') but did not explicitly explain why this supports the student’s learning, reasoning, or retention.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 22,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5,
-              8
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  5,
+                  8
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor is generally helpful, but several lines come across as rigid or admonishing rather than consistently supportive, such as \"you need to do the thinking,\" \"We’ve circled this idea a few times now. Stop re-reading it,\" and \"That’s finally something usable.\" This risks discouraging participation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "A few phrases were somewhat rigid or discouraging in tone, especially 'We’ve circled this idea a few times now. Stop re-reading it' and 'That’s finally something usable,' which risk harming tutoring trust even though the overall exchange remained functional.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "This was a mostly strong, assignment-anchored tutoring exchange: the tutor used guided prompts, avoided giving submission-ready content, and moved the student from confusion to a workable draft row. Deductions are limited to missing meta-explanation for the tutoring constraint and a slightly rigid tone in a couple of turns. Because the scoring maxima in the provided materials are internally inconsistent, deductions were kept conservative and evidence-based.",
-    "judge_reasoning": "I kept full credit for the main guided-discovery behaviors because the tutor consistently pushed the student to name the city, choose sectors, estimate severity, and draft justification instead of supplying a completed answer. I also kept full credit for scaffolding and assignment anchoring because the tutor clarified sector categories, simplified the table structure, and built directly from the student’s Miami flooding example. I deducted under 1.3.A.a because the tutor stated boundaries against doing the assignment but never explained the learning rationale behind those constraints. I deducted under 3.2.A.a because a few comments sounded sharper than necessary and could discourage participation, even though the tutor remained mostly supportive overall.",
-    "total_score": 42,
+    "overview": "The tutor stayed tightly anchored to the assignment, avoided doing the student's work, and used guided questioning to move from confusion to a usable Miami flooding row. Deductions were kept conservative where evidence was ambiguous, especially around whether some firm boundary-setting counted as adequate learning rationale rather than tone problems.",
+    "judge_reasoning": "The strongest feature of this conversation is pedagogy: the tutor consistently refused to provide submission-ready content and instead prompted the student to supply the city, stressor, sectors, rating, and justification. The tutor also scaffolded effectively from abstract confusion toward a concrete example row and gave specific method feedback on how to justify a rating and improve specificity. Dialogue quality was strong because the tutor repeatedly re-anchored to the actual task and prevented drift. The main deduction is for tone, since a few responses were noticeably curt or admonishing in ways that could reduce student comfort even though the academic guidance remained solid.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

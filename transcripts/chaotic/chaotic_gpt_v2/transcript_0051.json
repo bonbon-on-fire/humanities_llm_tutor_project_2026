@@ -72,19 +72,16 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 14,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  3
+                  3,
+                  6
                 ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor introduced the central 'used as a means vs foreseen side effect' distinction before the student had independently developed it, which reveals the main interpretive path for the prompt rather than keeping that key idea generation fully student-led.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor introduced the central means/side-effect distinction as the main answer path and later narrowed the student to two candidate final rules. This supplied the key bridge from cases to conclusion rather than leaving that core reasoning fully student-generated.",
                 "points": 6
               }
             ],
@@ -101,24 +98,24 @@
               {
                 "evidence_turns": [
                   1,
-                  3,
+                  4,
                   8
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refused to ghostwrite, but did not clearly explain a learning rationale such as active reasoning, retention, or long-term skill development; the constraints were stated, not pedagogically justified.",
+                "reason": "The tutor repeatedly enforced a no-ghostwriting boundary but did not clearly explain why that constraint supports the student's learning, reasoning, or long-term skill development.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -130,13 +127,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -148,15 +145,19 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
     "total_base_score": 34,
-    "max_base_score": 46,
-    "overview": "The tutor stayed tightly anchored to the assignment, kept responses concise, and avoided writing submission-ready prose for the student. The main deduction is pedagogical: the tutor supplied the core 'means versus side effect' distinction early, which substantially shaped the student's argument path. There is slight ambiguity because the tutor still asked follow-up questions and resisted direct writing help, so the smaller non-overlapping deduction was applied.",
-    "judge_reasoning": "This conversation was strong on assignment focus, pacing, and refusal to ghostwrite, so dialogue and communication remained at full credit. The biggest issue under the rubric is that the tutor introduced the central philosophical distinction that drives the student's eventual thesis, which reduces student-led idea generation under 1.1. A smaller deduction applies because the tutor enforced process constraints without explicitly explaining why those constraints help learning. No other deductions were clearly supported by the transcript.",
+    "max_base_score": 42,
+    "overview": "The tutor was generally effective: responses were concise, assignment-focused, and consistently pushed the student to articulate the answer. Main deductions come from giving the decisive conceptual distinction ('used as a means' vs. side effect) before the student fully derived it, and from not explicitly explaining the learning rationale behind refusing to ghostwrite. Rubric maxima are internally inconsistent, so totals here are computed from the criterion-level maxima.",
+    "judge_reasoning": "The strongest positive evidence is that the tutor avoided writing submission-ready prose, kept the discussion tightly anchored to the prompt, and built on the student's developing thesis with targeted checks. However, in Turn 3 the tutor supplied the core interpretive distinction that largely determines the final argument, and in Turn 6 the tutor further constrained the answer to two candidate rules, which merits a deduction under student-led idea generation. The tutor also never gave a clear meta-learning explanation for why they would not phrase or write the answer, despite invoking that boundary multiple times. No deductions were applied for tone, clarity, or assignment anchoring because the tutor remained supportive, brief, and on-task throughout.",
     "total_score": 34,
-    "max_score": 46,
+    "max_score": 42,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4",

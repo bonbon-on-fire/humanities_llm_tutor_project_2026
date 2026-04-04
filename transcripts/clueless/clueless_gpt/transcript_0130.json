@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "When the student asked for the big picture, the tutor supplied a broad interpretation of Jakarta's climate situation ('dense coastal megacity' with flooding, heat, sea-level pressure, and exposure) before eliciting the student's own reasoning, which shifts key idea generation away from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -91,32 +96,32 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  6,
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced boundaries against giving the table content, but did not clearly explain a learning rationale such as why student-generated work supports understanding or retention.",
+                "reason": "The tutor enforced a constraint ('I won't build the table for you') but did not clearly explain a learning rationale such as strengthening the student's own reasoning, retention, or transfer.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  4,
                   5
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to a correct category grouping, the tutor confirmed it and moved on without prompting reflection on what changed in the student's thinking or why the grouping worked.",
+                "reason": "After the student improved by correctly sorting the categories into physical, social, and economic buckets, the tutor confirmed correctness and moved on without prompting reflection on what changed in the student's thinking or why the method worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -128,13 +133,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -142,18 +147,35 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  5,
+                  7,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was often efficient but also repeatedly used rigid phrasing such as 'You're overcomplicating,' 'So stop second-guessing,' 'No,' 'Stop guessing,' and 'Don't detour,' which risks sounding brusque rather than fully supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 32,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment, kept the student doing the substantive work, and used short, actionable prompts to move the table forward. I did not deduct under direct-answer or assignment-anchoring criteria because the tutor refused to fill the table and repeatedly redirected the student back to choosing categories, sources, and geographic units. The main losses are meta-learning related: the tutor set constraints without explicitly explaining the learning benefit, and missed a chance to prompt reflection after the student's successful regrouping. Some turns were firm, but the evidence for harmful tone or for misdiagnosing confusion was not strong enough to support additional deductions.",
-    "judge_reasoning": "The strongest aspect of this conversation is pedagogy around student ownership: the tutor consistently avoided producing submission-ready table content and instead asked the student to sort categories, choose sources, and define a geographic unit. Dialogue quality was also strong because the tutor repeatedly re-anchored the student to the actual task when the student wanted a general city profile or an actual filled example. I deducted under 1.3.A.a because the tutor said they would not build the table for the student, but never clearly explained why that constraint helps learning. I also deducted under 1.3.C.a because after the student moved from confusion to a correct grouping, the tutor did not ask the student to reflect on what changed or why that method worked.",
-    "total_score": 40,
+    "overview": "The tutor generally kept the exchange assignment-focused, interactive, and practically scaffolded, especially around table structure, source types, and geographic-unit consistency. Main deductions come from one moment of giving a high-level interpretation of Jakarta before the student reasoned it out, limited meta-learning explanation for tutoring constraints, no reflection prompt after student improvement, and a somewhat brusque tone. Some evidence is slightly ambiguous, so deductions were kept to the smaller supported set.",
+    "judge_reasoning": "The strongest performance was in scaffolding and assignment anchoring: the tutor repeatedly redirected the student toward concrete next steps, built on correct categorization, and avoided doing the table itself. However, in Turn 3 the tutor gave a substantive overview of Jakarta's climate situation before eliciting the student's own interpretation, which fits a student-led-ideas deduction under 1.1. The tutor also imposed boundaries without clearly explaining the learning rationale and missed a chance to prompt reflection after the student's successful category sorting. Communication stayed clear and bite-sized, but the recurring imperative phrasing made the tone somewhat rigid.",
+    "total_score": 32,
     "max_score": 46,
     "model": {
       "provider": "openai",

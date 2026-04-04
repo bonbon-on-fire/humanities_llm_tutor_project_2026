@@ -72,60 +72,99 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4,
-              5
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In turns 4-5, the tutor names specific sources and then tells the student exactly which rows INEGI will cover, doing the research-planning reasoning for the student rather than asking the student to think through which sources might cover which data types.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they hadn't opened any source yet (Turn 3), the tutor gave a direct method prescription ('Fastest route: find one credible city profile...') rather than asking a diagnostic question to understand why the student hadn't started or what was blocking them. In Turn 4, when the student asked for source names, the tutor immediately listed three specific sources without first probing what the student already knew about finding credible data.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't do the work for the student in terms of learning rationale (e.g., active reasoning, skill development, retention). It simply refuses without articulating the pedagogical purpose behind the constraint.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced constraints (refusing to fill in values, refusing to format the final table, refusing to phrase the note) but never explained why this approach supports learning, retention, or skill development. No rationale for the tutoring method was offered at any point in the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor maintains a firm, appropriate boundary against doing the assignment for the student throughout the conversation, and handles off-topic drift and grading questions well. The main weaknesses are: (1) in turns 4-5, the tutor names specific sources and pre-maps which rows each source covers, doing key reasoning work the student should do; and (2) the tutor never explains the pedagogical rationale for its constraints, missing an opportunity to help the student understand why the tutoring approach supports learning. Communication is concise and tone is appropriate throughout.",
-    "judge_reasoning": "Deduction under 1.1.C.b (6 points): In turns 4-5, the tutor names 3 specific sources and then lists exactly which data rows INEGI will likely cover. This crosses from scaffolding into doing the research-planning reasoning for the student—the student should be guided to think through which sources cover which data types, not told directly. Deduction under 1.3.A.a (2 points): Across all 10 turns, the tutor never explains why it won't complete the assignment for the student in terms of learning benefits (e.g., active engagement, skill-building, retention). It simply refuses, which misses a key meta-learning opportunity. No deductions are warranted for 1.1.A.a or 1.1.B.a since the tutor consistently avoids producing submission-ready content. Dialogue quality and communication quality are strong: responses are concise, tone is supportive without being permissive, and the tutor correctly declines to grade or phrase the student's note.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor performed well overall: consistently refused to do the assignment for the student, maintained a supportive but firm tone, kept responses concise, stayed on task, and made good use of Socratic redirection. The main deductions are for (1) skipping diagnostic questioning when the student was stuck or hadn't started, jumping instead to prescriptive guidance, and (2) never explaining the rationale behind the tutoring constraints, which is a missed opportunity for meta-learning. The 1.2.B.a deduction is applied with some ambiguity since the student's resistance was partly motivational rather than conceptual, but the pattern of prescribing before probing is clear enough to warrant the deduction.",
+    "judge_reasoning": "1.1 is full marks: the tutor never gave submission-ready content, never rewrote student text, and consistently kept idea generation student-led by asking the student to identify rows, choose sources, and draft their own note. 1.2 loses 3 points under 1.2.B.a because in Turns 3–4 the tutor jumped to prescriptive method advice and source lists without first diagnosing what was blocking the student. 1.3 loses 2 points under 1.3.A.a because the tutor enforced constraints throughout but never once explained why—no mention of active reasoning, skill-building, or learning rationale. Dialogue quality and communication quality are both full marks: the tutor avoided repetition, stayed anchored to the assignment, kept responses short and clear, and maintained a non-grading, supportive tone throughout.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

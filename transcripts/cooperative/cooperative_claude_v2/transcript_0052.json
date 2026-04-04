@@ -72,43 +72,46 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 7, the student explicitly asks the tutor to 'help pin down that difference' between harm being part of the mechanism vs. harm resulting from the action. The tutor responds by directly providing the test ('Ask: if the one person were not harmed, would the five still be saved by that act? If no, their harm is part of the mechanism; if yes, the harm may be a side effect'). This gives the student the key analytical tool rather than guiding them to derive it, doing the central reasoning step for the student. However, this is a borderline case since the student explicitly requested help and the tutor still asks the student to apply the test. The deduction is warranted but modest in context.",
-            "points": 6
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor provides a useful diagnostic tool (the 'if the one person were not harmed, would the five still be saved?' test) but across the full conversation never explicitly explains why it is guiding the student through discovery rather than simply providing answers—no rationale is given for the Socratic approach in terms of learning benefits, retention, or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -119,13 +122,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -136,12 +140,12 @@
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor conducted a largely Socratic conversation, consistently asking the student to apply principles to cases rather than stating conclusions outright. The main deduction is in 1.1.C.b: in Turn 7, when the student asked for direct help distinguishing 'harm as mechanism' from 'harm as result of action,' the tutor provided the key analytical test directly rather than guiding the student to construct it. This is the most significant lapse. All other criteria were well-handled: scaffolding built progressively on student responses, dialogue stayed on-task, responses were concise and well-paced, and tone was consistently supportive and formative.",
-    "judge_reasoning": "The primary deduction (6 points, 1.1.C.b) is applied because in Turn 7 the tutor directly supplied the counterfactual test ('if the one person were not harmed, would the five still be saved?') which is the central analytical tool for distinguishing means from side effects—the core reasoning step the student needed to derive. While the student did ask for help, the rubric penalizes the tutor for doing the key reasoning step regardless of student request. No deductions apply to 1.1.A (no submission-ready output was given), 1.1.B (no rewriting of student text), 1.2 (scaffolding was consistently responsive and progressive), 1.3 (the tutor gave method-level feedback and implicitly modeled the rationale for testing principles against cases), 2.1 (no spiraling), 2.2 (no off-topic drift or misalignment), 3.1 (responses were concise and interactive), or 3.2 (tone was supportive and formative throughout).",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently prompting the student to generate ideas, test principles, and identify tensions rather than supplying answers. Scaffolding is well-executed: each turn builds on the student's prior response, and the tutor appropriately introduces a clarifying heuristic (Turn 7) when the student is genuinely stuck without doing the reasoning for them. The only clear deduction is the absence of any explicit meta-learning rationale explaining why the tutor is guiding rather than telling—this is never articulated across the full ten exchanges.",
+    "judge_reasoning": "1.1: The tutor never gives submission-ready content, never rewrites student text, and never states the key conclusion before the student derives it. All major reasoning steps (the means/side-effect distinction, the mechanism test, the rough rule) are generated by the student. No deductions apply. 1.2: The tutor consistently acknowledges correct student progress (e.g., 'That's the key tension,' 'Yes—that's a strong distinction') and uses diagnostic questions before redirecting; no scaffolding failures are evident. 1.3: The tutor provides no explicit rationale for the Socratic approach at any point in the conversation, triggering the 1.3.A.a deduction of 2 points; method-level feedback is present (e.g., 'don't just trust it—test it,' the three-column grid), so 1.3.B is not penalized. 2.1/2.2: The dialogue advances steadily without repetitive cycling, and the student never drifts off-topic nor misunderstands the assignment in a way the tutor fails to correct. 3.1/3.2: Responses are consistently concise and well-targeted; tone is supportive and formative throughout with no grading language.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

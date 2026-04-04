@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 22
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -94,24 +90,39 @@
                   4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor refused to provide a full example ('I won’t do a full example for your table') but did not explain why this constraint supports the student's learning, retention, or independent reasoning.",
+                "reason": "The tutor declined to provide a full example ('I won’t do a full example for your table') but did not explain why that boundary would help the student learn, retain the process, or practice the assignment skill independently.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly used the same prompt pattern (choose one stressor, choose sectors, choose a factor, choose a city condition) while the student remained confused. Although the tutor eventually summarized in turn 8, the conversation still spiraled for several turns without enough earlier reframing or synthesis to break the loop.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -119,13 +130,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -137,14 +148,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor stayed firmly in coaching mode, kept the discussion anchored to the assignment, and used short, structured prompts to help the student build a row of the stressors table. The main clear deduction is meta-learning: the tutor imposed a boundary against giving a full example but never explained why that limitation was pedagogically useful. There was some repetition because the student remained unsure, but the tutor varied the framing and did generate partial student progress, so I applied no spiraling deduction.",
-    "judge_reasoning": "Under 1.1, the tutor did not provide submission-ready content or take over the student's core reasoning; instead, they consistently asked the student to choose stressors, sectors, and ratings. Under 1.2, the tutor generally built on student responses ('Better,' 'Good,' 'That’s a workable draft') and responded to the student's stated confusion with targeted scaffolds rather than ignoring progress. The clear deduction is 1.3.A.a at turn 4: the tutor said they would not do a full example, but never gave a learning-oriented rationale for that constraint. Dialogue quality and communication remained strong because the tutor stayed on-task, used concise language, and maintained a supportive, non-grading tone throughout.",
-    "total_score": 40,
+    "overview": "The tutor stayed assignment-anchored, concise, and avoided doing the student's table for them. Main deductions are for not explicitly stating the learning rationale behind withholding a full example and for a repeated questioning loop that did not resolve the student's confusion efficiently. I did not deduct under scaffolding despite some borderline moments, because the tutor usually built from the student's last answer and kept the work student-led.",
+    "judge_reasoning": "The tutor performed well on the core anti-cheating and guided-discovery requirements: they did not supply submission-ready table entries, did not rewrite student prose, and consistently asked the student to make the choices. The strongest weakness was dialogue management, since multiple turns reused a similar elicitation pattern even after the student repeatedly said they were stuck, which fits the rubric's spiraling/repetition deduction. A smaller pedagogy deduction applies because the tutor enforced a boundary against giving a full example without ever explaining why that constraint supports learning. Communication quality remained strong throughout: the responses were clear, short, supportive, and non-grading in tone.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

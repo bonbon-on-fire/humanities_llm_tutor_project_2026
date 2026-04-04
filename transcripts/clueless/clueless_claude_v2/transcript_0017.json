@@ -72,71 +72,115 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 4, the tutor lists typical row types ('flooding, extreme heat, sea-level/coastal impacts, water scarcity or contamination, air-quality stress, disease-related climate stress, infrastructure disruption') and then asks the student to pick from that list. This does the key reasoning step of identifying what stressor categories belong in the table, rather than letting the student generate them. The student is essentially choosing from a pre-supplied menu rather than deriving the categories themselves.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly signals the same confusion (how detailed to be, what a row looks like, how to distinguish stressor/evidence/priority) across multiple turns, yet the tutor consistently responds with re-explanations rather than first diagnosing *why* the student is stuck. For example, in Turn 4 the student says 'I feel lost again' and the tutor immediately provides a list of typical row types without probing what specifically is causing the confusion. In Turn 9 the student asks for the same three-part distinction a second time and the tutor simply re-explains it without asking what the student already understands or what is blocking them.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that the Socratic approach, asking the student to draft rough notes, or resisting giving a completed row is intended to build the student's own reasoning skills or long-term learning capacity.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers or a completed example. There is no moment where the tutor articulates that this approach builds independent reasoning, retention, or long-term skill. The tutoring constraints are enforced (e.g., 'I'll walk you through the thinking, not write the row for you' in Turn 8) but the rationale for that constraint is never shared with the student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 14,
+          "score": 17,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The conversation cycles repeatedly on the same structural confusion—what a row looks like, how detailed to be, how to distinguish stressor from evidence—without meaningful synthesis or advancement. The tutor re-explains the same five-part row structure in Turns 4, 6, 8, and 9 using slightly different framings but never consolidates, reframes at a deeper level, or shifts strategy to break the loop. By Turn 10 the student is still in the same place as Turn 4, and the tutor's response is essentially the same simplified list it has given before.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "From Turn 6 onward, the student repeatedly asks for more simplification or a complete example, and the tutor cycles through the same structural skeleton (name, sectors, rating, justification, priority) multiple times without meaningfully advancing the student's understanding or switching to a different pedagogical approach. By Turn 10 the student is still stuck at the same point, and the tutor has not synthesized, reframed substantially, or suggested a different strategy to break the loop.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 30,
+    "total_base_score": 33,
     "max_base_score": 42,
-    "overview": "The tutor maintains a consistently supportive tone, avoids writing submission-ready content for the student, and keeps responses reasonably concise. However, three notable issues reduce the score: (1) In Turn 4 the tutor supplies a ready-made list of typical stressor row types, doing the key idea-generation step the student should have performed; (2) the tutor never explains the rationale for its guided-discovery approach across the entire conversation; and (3) from Turn 6 onward the tutor repeats the same five-part skeleton without meaningfully advancing the student or switching strategies, leaving the student stuck in the same loop at Turn 10.",
-    "judge_reasoning": "Deduction under 1.1.C.b is applied for Turn 4, where the tutor enumerates a near-complete list of stressor categories and invites the student to select from it, effectively doing the generative reasoning the student should perform. This triggers the 6-point deduction. The 2-point deduction under 1.3.A.a is applied because the tutor never once explains why it is asking questions rather than providing answers, missing the required meta-learning rationale. The 4-point deduction under 2.1.A.a is applied because Turns 6–10 show the tutor cycling through the same structural skeleton without synthesis, reframing, or a new approach, while the student remains stuck at the same conceptual point. No deductions are applied to communication quality: tone is warm and supportive throughout, responses are appropriately concise, and no grading language is used.",
-    "total_score": 30,
+    "overview": "The tutor maintains a consistently Socratic stance throughout, never writing rows for the student or providing submission-ready content, and keeps tone supportive and responses reasonably concise. The main weaknesses are: (1) a persistent spiral in which the same structural confusion recurs across seven turns without the tutor diagnosing its root cause or meaningfully shifting strategy; (2) the absence of any stated rationale for the guided-discovery approach, leaving the student without metacognitive context for why the tutor is not simply showing a completed example; and (3) repeated re-explanation in response to confusion rather than diagnostic questioning to locate the specific block.",
+    "judge_reasoning": "1.1 receives full marks: the tutor consistently refuses to draft rows, redirects student attempts to get finished content, and keeps reasoning work with the student. 1.2 loses 3 points under 1.2.B.a because the tutor repeatedly responds to expressed confusion with fresh explanations rather than first probing what the student already understands or where exactly the block lies—this pattern is visible in Turns 4, 8, and 9. 1.3 loses 2 points under 1.3.A.a because the tutor never articulates why it is guiding rather than telling, even when the student explicitly pushes back (Turn 8). 2.1 loses all 4 points under 2.1.A.a because the conversation spirals on the same confusion from Turn 4 through Turn 10 without consolidation, reframing, or a genuine strategy shift. 2.2 and section 3 have no deductions: the assignment framing is maintained throughout, there is no off-topic drift, responses are bite-sized, and tone is consistently supportive and non-evaluative.",
+    "total_score": 33,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

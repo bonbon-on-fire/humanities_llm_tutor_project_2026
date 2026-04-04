@@ -72,43 +72,55 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 7, the tutor provides the exact framing contrast ('Urgency = which stressor is causing the most immediate harm now? Strategic priority = which stressor is driving or worsening other risks over time?') and then essentially maps it onto Jakarta ('is flooding the top short-term priority while subsidence is the deeper long-term priority?'), doing the key reasoning step of distinguishing the two priorities before the student attempts it. The student then largely echoes this framing in Turn 8. This is a borderline case—the tutor does ask the student to write it themselves—but the conceptual bridge from evidence to conclusion is provided by the tutor rather than derived by the student.",
-            "points": 6
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this approach builds independent reasoning, retention, or long-term skill. The rationale for the Socratic method is never stated.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -119,13 +131,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -136,12 +149,12 @@
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic scaffolding throughout most of the conversation, consistently asking the student to generate their own reasoning before confirming or advancing. The main deduction is in 1.1.C.b for Turn 7, where the tutor provides the urgency/strategic-priority framing and then pre-maps it onto Jakarta's flooding vs. subsidence distinction before the student attempts to derive it. This is a borderline case—the tutor does ask the student to write it themselves—but the conceptual bridge is tutor-supplied rather than student-derived. All other criteria are met well: scaffolding builds progressively, meta-learning rationale is implicit in the method-building approach, dialogue avoids redundancy, assignment anchoring is maintained, and communication is concise and supportive.",
-    "judge_reasoning": "The primary deduction (6 points, 1.1.C.b) is for Turn 7, where the tutor supplies the exact conceptual distinction between urgency and strategic priority and then explicitly suggests the answer ('is flooding the top short-term priority while subsidence is the deeper long-term priority?'), leaving the student only to restate it in their own words in Turn 8. This constitutes giving the bridge from evidence to conclusion before the student derives it. No other rubric violations are clearly supported: the tutor does not rewrite student text, does not give submission-ready output, scaffolds well across turns, provides method-level feedback (e.g., Turns 4, 6), maintains assignment focus, avoids redundancy, and keeps responses concise and appropriately toned throughout.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor demonstrates strong Socratic practice throughout: it never gives direct answers, consistently redirects the student to generate their own reasoning, builds progressively on student responses, and maintains clear assignment anchoring. The only clear deduction is the absence of any explicit meta-learning rationale—the tutor never explains to the student why it is using guided questioning rather than simply providing answers, which is required at least once per conversation.",
+    "judge_reasoning": "Criterion 1.1: No deductions. The tutor never provides submission-ready content, never rewrites student text, and never states conclusions before the student reasons toward them. Every turn ends with a question or prompt that keeps the student doing the intellectual work. Criterion 1.2: No deductions. The tutor consistently acknowledges correct student progress (e.g., 'That's a much stronger distinction,' 'That logic is strong') and builds each turn on what the student just produced rather than restarting. Criterion 1.3: One deduction of 2 points under 1.3.A.a. While the tutor's process feedback is specific and useful (e.g., directing the student to find evidence, pressure-test ratings, check redundancy), it never once explains why it is guiding rather than telling—no statement about active reasoning, retention, or skill development appears anywhere in the conversation. Sections 2 and 3 are clean: the dialogue advances without repetition, stays on-task, uses concise bullet-style prompts, and maintains a supportive but non-grading tone throughout.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

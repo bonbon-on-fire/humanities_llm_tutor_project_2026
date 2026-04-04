@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,43 +79,42 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student signaled confusion or time pressure, the tutor moved straight into a procedure ('pick 5 stressors...') and later supplied a list of Jakarta-specific fact options, rather than first diagnosing exactly what the student already understood or what specific step was blocking progress.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
                 "evidence_turns": [
-                  "Turn 1",
-                  "Turn 2",
-                  "Turn 6"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a no-copy-paste boundary, but the explanation stayed mostly at the level of assignment integrity ('would defeat the assignment') rather than clearly stating a learning rationale such as building the student's own reasoning or retention.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Turn 7",
-                  "Turn 9",
-                  "Turn 10"
+                  7,
+                  9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from generic wording to defensible Jakarta-specific justifications, the tutor moved forward to the next task instead of prompting brief reflection on what changed and why the stronger method worked.",
+                "reason": "After the student improved from generic claims to more Jakarta-specific justifications, the tutor advanced to the next requirement instead of prompting brief reflection on what changed and why the revision was stronger.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -131,13 +126,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -145,18 +140,32 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's boundary-setting was appropriate, but phrases like 'I’m your tutor, not a copy-paste generator' and 'your professor’s alleged permission doesn’t change that' came across as rigid and somewhat distrustful, reducing warmth and support.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 46,
-    "overview": "The tutor consistently refused to produce a submit-ready table and kept the assignment work student-led while still moving the student through a usable Jakarta-specific process. Scaffolding was generally effective: the tutor narrowed the task, checked rankings, asked for justifications, and re-anchored to the assignment requirements. I took small pedagogy deductions for meta-learning, because the tutor's rationale for the refusal was framed more as not doing the assignment than as a clear learning explanation, and because the tutor missed reflection prompts after the student improved. Tone was firm and occasionally blunt, but the evidence was not strong enough for a communication deduction.",
-    "judge_reasoning": "The strongest performance was in 1.1 and 1.2: the tutor did not provide a copy-paste table, did not rewrite the student's sentences into final submission language, and kept the core ranking and justification decisions with the student. The dialogue also stayed tightly anchored to the Jakarta stressors table, with no real off-topic drift and with progressive prompts that built from stressors to rankings to evidence. The main weaknesses were meta-level: the tutor did not clearly explain how the boundary supported learning, and after the student produced better reasoning, the tutor did not ask the student to reflect on what changed in their method. Because those are the clearest rubric-supported misses, the deductions are limited to 1.3.A.a and 1.3.C.a.",
-    "total_score": 40,
+    "overview": "The tutor strongly avoided doing the assignment for the student and kept the work student-led, while staying closely anchored to the Jakarta stressors-table task. Main deductions are for limited diagnosis before responding, missing a reflection prompt after the student's improvement, and a somewhat rigid tone in early refusals. Turn 8 came close to supplying content, but because the tutor still required the student to choose and phrase the facts, I did not deduct under 1.1.",
+    "judge_reasoning": "I gave full credit on 1.1 because the tutor consistently refused to provide a submit-ready table and required the student to choose stressors, justify rankings, and draft wording independently. I deducted under 1.2 because the tutor often responded with procedures or content options before first diagnosing the precise source of the student's difficulty. I deducted under 1.3.C because once the student improved, the tutor moved forward without asking the student to reflect on what made the stronger version work. I also deducted under 3.2.A because some refusal language was more rigid than supportive, even though the tutor's academic-integrity boundary was appropriate.",
+    "total_score": 37,
     "max_score": 46,
     "model": {
       "provider": "openai",

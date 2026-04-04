@@ -72,58 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't do the work for the student in terms of learning rationale—it only says 'that would be doing the assignment for you' or 'no.' There is no moment where the tutor explains how active reasoning, retention, or skill-building benefits the student. The constraint is enforced but never justified pedagogically.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "When the tutor gives feedback (e.g., 'good direction, but still too generic' or 'more acceptable, yes'), it tends to be brief and evaluative without explaining the method-level reasoning behind what makes a strong stressor entry. The tutor does ask probing questions but rarely explains the analytical process the student should be using to evaluate severity or sector classification.",
-            "points": 2
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 6, when the student expresses uncertainty about whether air pollution 'counts as climate enough,' the tutor jumps directly into evaluating the entries and offering a corrective framework rather than first diagnosing what the student understands about the climate-stressor connection. A brief diagnostic question (e.g., 'What do you think makes a stressor climate-related?') would have been more appropriate before redirecting.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is not filling in the table for the student in terms of learning rationale—e.g., that active reasoning builds retention, analytical skill, or prepares the student for later assignments. The tutor simply says 'no' or 'that would be doing the assignment for you' without connecting the constraint to any pedagogical benefit.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 20,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              5,
-              7,
-              10
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same refusal pattern across nearly every turn without meaningfully advancing the dialogue. The student repeatedly asks for direct help, and the tutor repeatedly says 'no' and re-prompts with a list of options. By turn 10, the pattern has not evolved—the tutor has not reframed, synthesized progress, or shifted strategy despite the student's persistent confusion and resistance. The conversation does not consolidate or advance meaningfully.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor consistently and correctly refuses to do the assignment for the student, maintaining appropriate boundaries throughout. Socratic questioning is used well in several turns, and the tutor successfully guides the student to produce increasingly defensible stressor entries. However, the tutor never explains the pedagogical rationale for its constraints, and method-level feedback is thin. The most significant issue is a repetitive refusal-and-re-prompt pattern that does not evolve across 10 turns, constituting pattern-level repetition without synthesis or strategic adaptation.",
-    "judge_reasoning": "1.1 is fully intact: the tutor never gives submission-ready content, never rewrites student text, and keeps idea generation student-led throughout. 1.2 is also intact: the tutor builds on student entries (e.g., turns 4, 6, 8, 9) and does not restart from scratch. 1.3 loses 4 points: the tutor never explains why active reasoning benefits the student (1.3.A.a), and feedback like 'good direction but too generic' or 'more acceptable' lacks process-level guidance on how to improve analytical method (1.3.B.b). For dialogue quality, 2.2 is intact as the tutor stays on-task throughout. However, 2.1 loses all 4 points because the tutor repeats the same refusal-and-option-list pattern across turns 1–3, 5, 7, and 10 without reframing, synthesizing progress, or shifting strategy—the student remains in the same resistant posture and the tutor does not adapt. Communication quality is strong: responses are concise, tone is firm but not punitive, and no grading language is used.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor performed strongly overall, consistently refusing to do the assignment for the student and guiding them through Socratic questioning across all ten turns. The main weaknesses are a missed opportunity to explain the pedagogical rationale for its constraints (1.3.A.a) and one instance where the tutor responded to a student's conceptual uncertainty without first diagnosing the root of that confusion (1.2.B.a). No submission-ready content was provided, and the tutor maintained appropriate tone and assignment anchoring throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided paste-ready answers, consistently redirected the student to generate their own entries, and challenged student reasoning without resolving it for them. 1.2 loses 3 points under 1.2.B.a because in Turn 6 the tutor immediately evaluated and redirected the student's air pollution entry without first probing what the student understood about the climate-stressor distinction—a diagnostic question was warranted before correction. 1.3 loses 2 points under 1.3.A.a because across all ten turns the tutor never articulated why it was withholding direct answers in terms of learning benefit (e.g., skill-building, retention, preparation for later assignments); it only stated that doing the work for the student was not its role. Dialogue quality and communication quality are both strong: the tutor avoided repetition, stayed on-task, used concise responses, and maintained a supportive but firm tone throughout.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

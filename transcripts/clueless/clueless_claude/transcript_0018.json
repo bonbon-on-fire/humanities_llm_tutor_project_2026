@@ -72,76 +72,97 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "Throughout the conversation, the student repeatedly signals confusion and freezes, but the tutor consistently jumps to providing structured frameworks, rules, and explanations rather than first diagnosing what specifically the student does not understand. For example, in Turn 8 the student says they 'freeze' on wording and need the whole logic re-explained, and the tutor simply re-explains the full framework again without probing what specific part is causing the block. In Turn 10, the student says they don't know how to rate stressors, and the tutor immediately provides a general rating framework rather than asking what the student does know or what specific aspect is unclear.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              8
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 8, the student explicitly says they are freezing on wording and need the whole logic re-explained. Rather than diagnosing what specific part of the process is causing the freeze (e.g., asking 'which step feels most unclear right now?'), the tutor simply re-explains the full five-step framework again—essentially repeating the same overview from Turn 1. No diagnostic questioning precedes this response.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In Turn 9, the student makes genuine progress by producing a first draft row (stressor, sectors, rating). The tutor acknowledges it briefly but does not prompt the student to reflect on what changed in their thinking or what helped them get unstuck. The tutor moves directly to the next scaffolding question without reinforcing the method improvement.",
-            "points": 2
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than just providing answers. There is no moment where the tutor says something like 'I'm asking you to work through this yourself because active reasoning helps you retain and apply it.' The tutoring constraints are enforced but never justified.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Turn 9, the student produces a workable first draft row (stressor, sectors, rating) after several turns of confusion. The tutor moves directly to the next coaching question without prompting any reflection on what helped the student get unstuck or what changed in their thinking.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why they are guiding the student through questions rather than simply providing a completed example. When the student asks in Turn 4 to 'walk me through one full example from start to finish,' the tutor declines but does not explain that this is to support the student's own reasoning and learning. The rationale for the tutoring approach is never articulated.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The conversation cycles repeatedly on the same conceptual territory—what a stressor is, how to pick sectors, how to rate—without meaningful synthesis or advancement. By Turn 8, the student is still asking for the whole logic re-explained, and the tutor obliges with essentially the same framework from Turn 1. The tutor does not reframe, consolidate, or shift strategy despite the student spiraling across multiple turns.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "From Turn 7 onward, the student repeatedly signals they are stuck and confused, and the tutor cycles through similar scaffolding questions without meaningfully advancing the conversation. In Turns 8 and 10, the student explicitly says they don't know and asks for re-explanation, and the tutor responds with another version of the same framework. The tutor does not reframe, simplify substantially, or suggest moving to a different stressor or approach. The conversation spirals on the same point without synthesis or progression.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -150,8 +171,8 @@
     },
     "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor maintains a consistently supportive tone, avoids giving submission-ready answers, and uses a Socratic approach throughout. However, several meaningful deductions apply: the tutor repeatedly fails to diagnose the specific source of student confusion before responding with frameworks, never explains the rationale for the guided-discovery approach, misses a key opportunity to prompt reflection after the student's first successful draft in Turn 9, and allows the conversation to spiral in the final turns without reframing or advancing. Communication quality is strong throughout.",
-    "judge_reasoning": "Section 1 loses 7 points: 3 for repeated failure to diagnose confusion before responding (1.2.B.a), 2 for never articulating the tutoring rationale to the student (1.3.A.a), and 2 for missing the reflection opportunity after the student's Turn 9 breakthrough (1.3.C.a). Section 2 loses 4 points for pattern-level repetition in Turns 7-10, where the tutor cycles through similar scaffolding questions without synthesis or reframing as the student remains stuck (2.1.A.a). Section 3 has no deductions: responses are appropriately concise, tone is warm and non-evaluative, and no grading language is used.",
+    "overview": "The tutor successfully avoids doing the assignment for the student and maintains a Socratic, question-driven approach throughout. Responses are concise, well-structured, and appropriately supportive. However, the conversation suffers from significant repetition without synthesis: the student asks for re-explanation multiple times and the tutor largely complies by re-covering the same ground rather than diagnosing the root confusion or shifting strategy. The tutor also never explains the rationale for its guided approach, and misses a clear opportunity to prompt reflection when the student finally produces a draft row in Turn 9.",
+    "judge_reasoning": "1.1 is fully intact—the tutor never provides submission-ready content, never rewrites student text, and consistently keeps idea generation student-led. 1.2 loses 3 points because in Turn 8 the tutor re-explains the full framework without first diagnosing which specific step is causing the student's freeze, violating 1.2.B.a. 1.3 loses 4 points: 2 for never explaining the tutoring rationale (1.3.A.a) and 2 for not prompting reflection after the student's first successful draft in Turn 9 (1.3.C.a). 2.1 loses all 4 points because the tutor cycles through the same conceptual territory across all 10 turns without reframing, consolidating, or switching strategy despite persistent student confusion—a clear pattern-level repetition without progress. 2.2 and section 3 are fully intact.",
     "total_score": 33,
     "max_score": 44,
     "model": {

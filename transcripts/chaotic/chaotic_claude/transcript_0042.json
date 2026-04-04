@@ -72,16 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved their justifications from generic to Miami-specific (a clear improvement from Turn 6 to Turn 7), the tutor did not prompt reflection on what changed in the student's thinking or why the revision worked better. The tutor moved directly to the next task without reinforcing the method improvement.",
-            "points": 2
-          }
-        ],
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -97,10 +87,14 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  7
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from generic to Miami-specific justifications, the tutor did not prompt reflection on what changed or why the revision worked, missing a key meta-learning opportunity.",
+                "reason": "After the student improved their justifications (notably from Turn 5 to Turn 7, and again in Turn 9), the tutor moved on without prompting reflection on what changed in the student's thinking or why the revised approach worked better. No turn explicitly asked the student to reflect on the improvement process.",
                 "points": 2
               }
             ],
@@ -114,7 +108,6 @@
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -133,7 +126,6 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -141,22 +133,31 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 7, the tutor said 'Using my own judgment—not your instructor's—these are strong and close,' which, while attempting to disclaim grading authority, still presents evaluative feedback in a near-final framing ('close') that could reasonably be read as a near-official endorsement of submission readiness rather than purely formative coaching.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed very well overall, consistently refusing to do the assignment for the student, maintaining a Socratic approach throughout, and keeping responses concise and focused. The student repeatedly tried to get the tutor to produce submission-ready content, and the tutor deflected each time appropriately. The only clear deduction is for failing to prompt reflection after the student's notable improvement from Turn 6 to Turn 7, where the tutor moved on without reinforcing what made the revision better. No other rubric criteria were clearly violated.",
-    "judge_reasoning": "1.1 (Socratic/direct work): The tutor consistently refused to produce draft tables, polished sentences, or final wording, instead prompting the student to generate and revise their own content. No near-submission-ready output was provided. Full marks. 1.2 (Scaffolding): The tutor built on student progress at each turn, acknowledged correct reasoning, and did not restart from scratch. Full marks. 1.3 (Meta-learning): The tutor explained its rationale for not writing the assignment (Turn 2, Turn 4) and gave process-level feedback throughout. However, after the student's clear improvement in Turn 7, the tutor did not prompt reflection on what changed or why the revision worked, triggering a 2-point deduction under 1.3.C.a. Dialogue quality and communication quality were both strong, with no redundancy, no off-topic drift, and appropriately concise responses throughout.",
-    "total_score": 42,
+    "overview": "The tutor performed very well overall, consistently refusing to do the assignment for the student and guiding them through Socratic questioning across all 10 turns. The student was pushed to generate their own stressors, ratings, justifications, and priority reasoning. Minor deductions apply: the tutor missed opportunities to prompt reflection after clear student improvement (1.3.C), and in Turn 7 the evaluative framing ('strong and close') edged toward a near-grading stance rather than purely formative feedback (3.2.B.b). No major pedagogy failures were found.",
+    "judge_reasoning": "1.1 is full marks: the tutor never provided submission-ready content, consistently refused to draft or polish sentences, and kept reasoning student-led throughout. 1.2 is full marks: the tutor built on student progress each turn and diagnosed confusion before responding. 1.3 loses 2 points under 1.3.C.a because after the student's clear improvements in Turns 7 and 9, the tutor moved forward without asking the student to reflect on what changed in their thinking or why the revised approach was stronger. 3.2 loses 2 points under 3.2.B.b because Turn 7's phrasing ('strong and close') could reasonably be read as a near-final evaluative judgment rather than formative coaching, even with the disclaimer. All other criteria are at full marks.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

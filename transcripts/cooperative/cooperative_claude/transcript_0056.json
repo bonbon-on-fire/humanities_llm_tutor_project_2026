@@ -72,38 +72,100 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The tutor never prompts the student to reflect on what changed in their thinking after successful moments. For example, after the student correctly resolved the GRDP/GDP issue (Turn 7-8) or the race/ethnicity framing (Turn 9-10), the tutor moved forward without asking the student to articulate what shifted in their reasoning or why the approach worked.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers. There is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development. The rationale for the tutoring method is entirely implicit throughout the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  3,
+                  5,
+                  7,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Several times the student arrives at a correct or improved answer after initial uncertainty (e.g., Turn 5 on unit of analysis, Turn 7 on GRDP/PDRB, Turn 9 on source accuracy). The tutor validates and moves on but never prompts the student to reflect on what changed in their thinking or why the improved reasoning worked. No reflection prompts appear after these successes.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed very well overall, consistently using Socratic questioning, maintaining assignment focus, and scaffolding the student's reasoning without doing the work for them. The only clear deduction is for failing to prompt meta-reflection after the student successfully resolved key conceptual challenges (GRDP vs GDP, race/ethnicity framing). All other criteria were met: no direct answers were given, student-led reasoning was preserved, sources were discussed at the institutional level rather than handed over, and tone was consistently supportive and formative.",
-    "judge_reasoning": "1.1 (Socratic/direct work): The tutor never provided submission-ready content, always redirected to student reasoning, and kept key idea generation student-led throughout. No deductions apply. 1.2 (Scaffolding): The tutor consistently built on student progress (e.g., affirming the DKI Jakarta unit choice, the GRDP note idea) and asked diagnostic questions before responding. No deductions apply. 1.3 (Meta-learning): The tutor explained its rationale implicitly through framing (e.g., 'without doing the table for you') and gave process-level feedback, but never explicitly prompted the student to reflect on what changed after successful resolution of a difficult concept—triggering the 1.3.C.a deduction. Dialogue quality and communication quality were both strong: no repetition without progress, no off-topic drift, responses were concise and well-targeted, and tone was consistently supportive without implying formal grading.",
-    "total_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently asking guiding questions rather than providing answers, building on student progress, and keeping the conversation anchored to the assignment. The primary weaknesses are in meta-learning: the tutor never explains why it is using a question-led approach (missing rationale for tutoring constraints), and it repeatedly misses opportunities to prompt reflection after the student successfully works through a difficult point.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never gives submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming them. 1.2 receives full marks: the tutor builds on each correct student step (e.g., affirming the DKI Jakarta unit choice, the GRDP labeling logic) and diagnoses confusion before responding. 1.3 loses 4 points: criterion 1.3.A is triggered because no turn contains an explicit rationale for the Socratic/guided approach, and 1.3.C is triggered because after multiple student breakthroughs (Turns 5, 7, 9) the tutor validates and advances without ever asking the student to articulate what changed in their thinking. Dialogue quality and communication quality are both strong: responses are concise, well-structured, on-topic, and supportive throughout, with no redundancy, drift, or tone issues.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

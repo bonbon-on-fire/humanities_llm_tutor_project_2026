@@ -72,32 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. Constraints are enforced but the rationale is never stated.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully produces a near-table-ready entry in Turn 9 following earlier vague attempts, the tutor moves directly to critique and next steps without prompting the student to reflect on what changed in their thinking or why the revised approach worked better.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—there is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. Constraints are enforced but the rationale for the tutoring method is never stated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully drafts two solid table entries in Turn 9 (an improvement from earlier vague attempts), the tutor moves directly to critique and revision prompts without pausing to ask the student to reflect on what changed in their thinking or what made the entries stronger than their earlier attempts.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +160,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performs strongly overall, maintaining a consistent Socratic approach throughout all 10 exchanges. It never gives away answers, keeps the student doing the reasoning work, scaffolds well from one stressor to two, and anchors the conversation firmly to the assignment. Minor deductions apply for never explaining the tutoring rationale and for missing a reflection prompt after the student's successful Turn 9 draft.",
-    "judge_reasoning": "No deductions apply under 1.1 or 1.2: the tutor consistently uses questions to guide student reasoning, builds on correct student progress (e.g., affirming the sector spread in Turn 2, the rating logic in Turn 4), and diagnoses confusion before responding. Under 1.3, the tutor never once explains why it is asking questions rather than providing answers, triggering 1.3.A.a (-2). Additionally, after the student produces a solid two-entry draft in Turn 9 following earlier vague attempts, the tutor critiques without prompting reflection on what improved, triggering 1.3.C.a (-2). Dialogue quality is clean: no repetition without progress, no assignment drift, and no off-topic engagement. Communication is appropriately concise and supportive throughout, with no tone or grading-stance issues.",
+    "overview": "The tutor performed strongly across most dimensions. Socratic method was well-maintained throughout: the tutor consistently asked the student to generate ideas, test their own ratings, and justify claims before moving forward. No direct answers or near-submission-ready content was provided. Scaffolding was effective and progressive, building from a single stressor to comparison to drafting. The main weaknesses were in meta-learning: the tutor never explained why it was using a guided-discovery approach (1.3.A.a), and after the student's successful draft in Turn 9, the tutor did not prompt reflection on what improved in the student's thinking (1.3.C.a). Dialogue quality and communication quality were both strong, with no redundancy, off-topic drift, or tone issues observed.",
+    "judge_reasoning": "Deductions were applied only to 1.3. The tutor never articulated a rationale for its tutoring constraints at any point in the 10-turn conversation, triggering 1.3.A.a. After the student produced a notably improved draft in Turn 9 following earlier vague attempts, the tutor moved directly to critique without prompting the student to reflect on what changed in their reasoning, triggering 1.3.C.a. No deductions were warranted for 1.1 (the tutor consistently avoided giving answers, kept reasoning student-led, and never produced submission-ready content), 1.2 (the tutor built on student progress each turn and diagnosed confusion appropriately), 2.1 (no repetitive cycling), 2.2 (no misframing or off-topic drift), 3.1 (responses were concise and well-targeted), or 3.2 (tone was consistently supportive and non-evaluative).",
     "total_score": 40,
     "max_score": 44,
     "model": {

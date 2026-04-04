@@ -72,60 +72,100 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 5, the tutor provides a near-complete sentence frame ('GDP for ___ was reported for the ___ area, not the city proper, based on ___ data from ___') that the student only needs to fill in blanks to produce final submission text. This crosses into rewriting/providing final wording rather than tutoring the process.",
-            "points": 6
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed confusion about city vs. metro data (Turn 4), the tutor had already pre-emptively raised this distinction in Turn 3 without diagnosing whether the student understood it. More broadly, the tutor repeatedly gave structured guidance (source lists, path instructions) without first checking what the student already knew about finding data, which is a method dump before checking prior understanding.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refused to give direct answers and pushed the student to find information themselves, but never explicitly explained why this approach supports learning—e.g., never said anything like 'I'm asking you to find this yourself so you develop research skills' or 'doing this yourself helps you retain the methodology.' The rationale for the tutoring constraints was never articulated.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly cycles through the same pattern across nearly every turn: student asks for a direct answer, tutor refuses and redirects to a source. While this is pedagogically defensible, the tutor never synthesizes progress, never consolidates what the student has already accomplished, and never advances the conversation to a higher level. The student remains in the same loop throughout the conversation without the tutor reframing or summarizing what has been established.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -136,12 +176,12 @@
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor consistently refused to hand over direct answers and maintained a Socratic, guided approach throughout the conversation. The main deduction is for Turn 5, where the tutor provided a fill-in-the-blank sentence frame that was close enough to final submission wording to constitute editing/rewriting help rather than process tutoring. All other criteria were well-handled: scaffolding built on student progress, dialogue stayed on-task, responses were concise, and tone was appropriately supportive without being grading-oriented.",
-    "judge_reasoning": "The primary deduction (6 points, 1.1.B.a) is for Turn 5, where the tutor gave a near-complete sentence template that the student could directly fill in and submit. While the tutor framed it as a 'structure to fill yourself,' the template was specific enough that it constituted rewriting help rather than process guidance. No deductions apply to 1.1.A because the tutor never gave direct final answers or completed the table. Scaffolding (1.2) was strong throughout—the tutor consistently built on student questions and directed them to specific sources. Meta-learning (1.3) was present, with the tutor explaining why accuracy matters over speed and why the student should verify sources. Dialogue quality was excellent: no spiraling, no off-topic drift, and the tutor re-anchored the student to the assignment task repeatedly. Communication was bite-sized and appropriately toned throughout.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 33,
+    "max_base_score": 42,
+    "overview": "The tutor maintained strong boundaries against doing the assignment for the student and consistently redirected to credible sources, earning full marks on 1.1. However, the tutor never explained the rationale for its tutoring approach (1.3.A.a), and the conversation fell into a repetitive loop without synthesis or progression (2.1.A.a). The 1.2 deduction for method dump is a borderline call—the tutor did provide structured source guidance before checking student knowledge, but the evidence is not overwhelming; the smaller deduction was applied. Communication was appropriately concise and supportive throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never gave submission-ready answers, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points because in Turns 2-3 the tutor provided a full source list and raised the city-vs-metro distinction without first diagnosing what the student already understood, constituting a method dump. 1.3 loses 2 points because across all 10 turns the tutor never once explained why it was withholding direct answers—no rationale connecting the approach to learning outcomes was offered. 2.1 loses all 4 points because the conversation is structurally repetitive: every turn follows the same refuse-and-redirect pattern without consolidation, synthesis, or advancement, and the tutor never reframes or summarizes accumulated progress. Sections 2.2 and 3 are clean with no deductions.",
+    "total_score": 33,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

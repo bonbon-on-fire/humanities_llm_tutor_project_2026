@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is not giving direct answers or building the list for the student—i.e., no rationale is offered about how guided discovery supports learning, retention, or skill development. The refusal in Turn 8 ('No—I'm your tutor, not your writer') is a constraint enforcement without any pedagogical explanation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through discovery rather than providing answers directly. While the tutor does refuse to give answers (e.g., Turn 8: 'No—I'm your tutor, not your writer'), it never articulates the pedagogical rationale—such as promoting active reasoning, retention, or skill development—behind this constraint.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 44,
-    "overview": "The tutor performed very well overall. It consistently refused to do the student's work, used Socratic questioning to guide actor identification and categorization, built on student progress across turns, and maintained a supportive tone. The only clear deduction is for failing to explain the pedagogical rationale for its tutoring constraints at any point in the conversation. The Turn 8 refusal was blunt but not explained in terms of learning benefit. All other criteria were met with no clear evidence of deduction-worthy behavior.",
-    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently prompted the student to generate key ideas before confirming them. Full points. 1.2: The tutor built on student progress each turn (e.g., affirming 'public works department' in Turn 3, building on the actor list in Turns 5–6) and asked diagnostic questions before responding. Full points. 1.3: The tutor gave useful process-level feedback (e.g., 'specific enough that a reader can tell who the actor is without guessing') but never explained why it was withholding direct answers in terms of learning rationale—triggering a 2-point deduction under 1.3.A.a. 2.1–2.2: No repetition without progress; the conversation advanced steadily and stayed on-task. Full points. 3.1–3.2: Responses were concise and interactive; tone was supportive and non-evaluative throughout. Full points.",
-    "total_score": 42,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently used Socratic questioning, refused to do the student's work, scaffolded effectively from vague to specific actors, and maintained a supportive tone throughout. The only clear deduction is for failing to explain the pedagogical rationale behind its tutoring approach at any point in the conversation. All other criteria were met with no evidence of significant violations.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently prompted the student to generate key ideas before confirming them. Full marks. 1.2: The tutor built on each student response (e.g., affirming 'governor' and 'public works' before pushing for more specificity) and asked diagnostic questions before addressing confusion. Full marks. 1.3: The tutor gave useful process feedback (e.g., 'specific enough that a reader can tell who the actor is') but never once explained why it was guiding rather than telling—no rationale for the Socratic constraint was offered, triggering the 1.3.A.a deduction. 2.1 and 2.2: No repetitive spiraling or off-topic drift occurred; the tutor advanced the conversation each turn. 3.1 and 3.2: Responses were concise, well-structured, and consistently supportive without being evaluative or grade-like.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

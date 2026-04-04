@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 13,
-          "max": 22
-        },
         "criteria": {
           "1.1": {
             "deductions": [
@@ -85,7 +81,7 @@
                   4
                 ],
                 "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor supplied likely Jakarta-specific stressors and their framing ('coastal flooding, river flooding, extreme heat, air-quality-related exposure, water contamination') before the student had generated or tested them, which reduced student-led idea generation on the core assignment task.",
+                "reason": "The tutor supplied Jakarta-specific candidate stressors and the cause/condition/stressor interpretation before the student had fully worked them out, which reduced student-led idea generation even though it did not become submission-ready output.",
                 "points": 6
               }
             ],
@@ -93,19 +89,8 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  4
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student repeatedly said they were confused, the tutor mostly answered with explanatory frameworks and examples right away rather than first diagnosing exactly which distinction the student already understood versus misunderstood.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6
           },
           "1.3": {
@@ -113,13 +98,13 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 16,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -131,17 +116,26 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "3.1.A.b",
+                "reason": "One tutor reply was delivered as raw JSON including internal pedagogical reasoning, which was avoidably dense and less clear than a normal student-facing response.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "3.2": {
@@ -149,14 +143,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 4,
+          "max": 8
         }
       }
     },
-    "total_base_score": 33,
+    "total_base_score": 32,
     "max_base_score": 46,
-    "overview": "The tutor stayed focused on the Jakarta stressors table, used generally clear short prompts, and gave useful method guidance on rating and justification. Main deductions come from revealing likely Jakarta stressors too early and from responding to confusion with explanations before first diagnosing the student's exact sticking point. Other possible concerns, such as firmness in redirecting the student, were not strong enough to justify additional deductions from the transcript alone.",
-    "judge_reasoning": "The largest deduction is under 1.1 because the tutor named several likely Jakarta stressors before the student derived them, which reduced student-led generation of the core assignment content. A second deduction is warranted under 1.2 because the tutor repeatedly answered confusion with frameworks and examples rather than first diagnosing the student's precise misunderstanding. No deduction was taken for meta-learning because the tutor explicitly explained why withholding more examples would support the student's thinking, and the tutor gave concrete process advice for building ratings and justifications. Dialogue remained well anchored to the assignment and mostly progressed rather than spiraling.",
-    "total_score": 33,
+    "overview": "The tutor was generally structured, assignment-focused, and effective at keeping the student doing the work, but there were two notable issues. First, some Jakarta-specific idea generation was provided before the student fully derived it, though this was framed as instructional examples rather than final answers. Second, one response used raw JSON and exposed internal reasoning, which clearly reduced communication clarity.",
+    "judge_reasoning": "Most of the conversation showed solid scaffolding: the tutor defined concepts, redirected the student back to the table, and used targeted questions to help the student justify ratings without writing the assignment for them. No deductions were taken for scaffolding, meta-learning, or assignment anchoring because the tutor built on student progress, explained at least once why withholding more examples supported learning, and stayed tightly tied to the Jakarta stressors table. The main pedagogy deduction comes from turns 3-4, where the tutor pre-specified Jakarta-relevant stressors and distinctions before the student had fully reasoned them out. The communication deduction is clear because turn 7 presented a JSON object with internal pedagogical reasoning instead of a clean student-facing reply.",
+    "total_score": 32,
     "max_score": 46,
     "model": {
       "provider": "openai",

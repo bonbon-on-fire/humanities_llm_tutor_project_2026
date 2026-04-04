@@ -72,51 +72,55 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 7, the tutor provides a structured outline with guiding sub-questions that effectively pre-fill the reasoning path for each section (e.g., 'What matters besides total consequences?', 'Does act consequentialism treat them differently or the same?', 'Do you think that is a strength or a problem?'). While framed as structure rather than content, the outline does the key reasoning scaffolding work—bridging evidence to conclusion—in a way that reduces the student's need to derive the analytical path independently.",
-            "points": 6
-          },
-          {
-            "evidence_turns": [
-              3
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor declines to write the paragraph in Turn 3 but never explains why—no rationale is given about why doing the student's writing would undermine learning, retention, or skill development. Across the full conversation, the tutor enforces constraints without once articulating the pedagogical reason for those constraints.",
-            "points": 2
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is withholding direct answers or writing help—e.g., never says something like 'I'm guiding you this way because active reasoning builds retention and long-term skill.' It enforces constraints consistently but never articulates the pedagogical rationale behind them.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 14,
+          "score": 20,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -127,28 +131,39 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In turns 6 and 10, the tutor says 'this is good and logically clear' and 'that's good enough to move forward'—evaluative judgments delivered without clarifying that this is formative coaching rather than official grading. A student could reasonably read these as authoritative quality assessments.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 38,
     "max_base_score": 42,
-    "overview": "The tutor consistently refused to write submission-ready text for the student and kept redirecting to student-generated content, which is commendable. However, the Turn 7 outline crossed into doing key reasoning work by pre-structuring the analytical path with leading sub-questions that effectively resolved the central intellectual task. The tutor also never explained the pedagogical rationale for its constraints. Dialogue quality and communication quality were strong throughout.",
-    "judge_reasoning": "Deduction under 1.1.C.b is applied for Turn 7, where the tutor's four-part outline with embedded sub-questions (e.g., 'What matters besides total consequences?', 'Does act consequentialism treat them differently or the same?') pre-built the reasoning bridge from evidence to conclusion, reducing the student's need to derive the analytical structure independently. This is the key reasoning step in a philosophy assignment. The 1.1.A.a and 1.1.B.a triggers were not applied because the tutor consistently declined to write polished prose and the outline was framed as structure rather than finished content—though it bordered on 1.1.C.b. A 2-point deduction under 1.3.A.a is applied because the tutor never once explained why it was withholding direct answers or writing help, missing the opportunity to model meta-learning rationale. No deductions were warranted for dialogue quality or communication quality: the tutor stayed on-task, kept responses focused, maintained a supportive tone, and avoided grading language.",
-    "total_score": 34,
+    "overview": "The tutor performed strongly overall, consistently refusing to write content for the student, redirecting repeated requests for polished text, and scaffolding the student through the full prompt structure. The main deductions are: (1) the tutor never explained the pedagogical rationale for its constraints (1.3.A.a), and (2) in two turns the tutor gave evaluative verdicts ('good and logically clear,' 'good enough') without framing them as formative coaching rather than official assessment (3.2.B.b). No evidence of direct answer-giving, submission-ready output, or significant dialogue drift was found.",
+    "judge_reasoning": "1.1 is full points: the tutor consistently refused to draft sentences or paragraphs, used fill-in frames rather than completed text, and kept reasoning work with the student throughout. 1.2 is full points: the tutor built on each student attempt and did not restart from scratch. 1.3 loses 2 points under 1.3.A.a because, across all ten turns, the tutor never once explained why it was withholding direct help—no mention of active learning, retention, or skill development. 3.2 loses 2 points under 3.2.B.b because turns 6 and 10 contain evaluative verdicts ('good and logically clear,' 'good enough to move forward') that sound like grading rather than coaching, with no clarifying language that these are formative impressions. All other criteria remain at full points.",
+    "total_score": 38,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

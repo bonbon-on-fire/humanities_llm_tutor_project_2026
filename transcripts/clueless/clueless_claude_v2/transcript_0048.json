@@ -72,59 +72,71 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 10, the tutor provides a complete hypothetical example that fills in all three categories (Leading, Engaged, Missing) with full reasoning and explanation. This does the key reasoning work for the student by demonstrating exactly how to categorize actors and why, rather than guiding the student to derive this themselves. The student had been circling the concepts for several turns and the tutor resolved the central framework by modeling it fully.",
-            "points": 6
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is withholding direct answers or drafting help—e.g., why guided discovery supports learning, retention, or skill development. In Turn 4 the tutor says 'I'm not going to draft the post for you—you need to do the writing,' but gives no rationale for why this approach benefits the student. No turn provides a clear meta-learning explanation for the tutoring constraints used.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly returns to the same confusion about how to categorize actors and how to judge 'influence' vs. 'decision power' across many turns without meaningful synthesis or consolidation. The tutor continues asking similar guiding questions (e.g., 'pick one actor,' 'rank the sectors,' 'give me one example') without reframing the approach or acknowledging the pattern of spiraling. By Turn 10, the student is still blanking on examples, indicating the tutor's repeated similar moves did not break the cycle effectively.",
-            "points": 4
-          }
-        ],
         "criteria": {
           "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly expresses the same confusion—not knowing how to categorize actors, not feeling confident in rankings, not being able to produce concrete examples—across nearly every turn. The tutor cycles through similar clarifying frameworks (leading/engaged/missing, 3 questions, ranking criteria) without consolidating progress or substantially advancing the student past the same sticking point. By Turn 10 the student is still 'blanking on actual examples,' indicating the tutor's repeated similar moves did not break the spiral.",
+                "points": 4
+              }
+            ],
             "score": 0,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -135,13 +147,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -152,12 +165,12 @@
         }
       }
     },
-    "total_base_score": 32,
-    "max_base_score": 44,
-    "overview": "The tutor demonstrated strong scaffolding and clear communication throughout most of the conversation, using focused questions and building progressively on student responses. However, two notable issues emerged: in Turn 10, the tutor provided a fully worked hypothetical example that did the key reasoning work for the student (triggering 1.1.C.b), and across the full conversation the tutor failed to break the student's spiraling pattern through synthesis or reframing (triggering 2.1.A.a). The 1.1.C.b deduction is applied rather than 1.1.A.a because the tutor's example was hypothetical and framed as a pattern to follow, not direct submission-ready content for Jakarta specifically.",
-    "judge_reasoning": "The 6-point deduction under 1.1.C.b is warranted because in Turn 10 the tutor fully modeled the three-category framework with complete reasoning for a hypothetical city, effectively doing the key interpretive work the student needed to do themselves. While framed as hypothetical, this gave the student the full answer structure and reasoning pattern, removing the need for independent derivation. The 4-point deduction under 2.1.A.a is warranted because the student spiraled on the same conceptual confusion across at least 7 turns, and the tutor continued applying similar question-based prompts without switching to consolidation, summary, or a fundamentally different approach—resulting in the student still being stuck at Turn 10. No deductions were applied to 1.2 or 1.3 as the tutor consistently built on student responses and provided process-level feedback. Communication quality was strong throughout with appropriately sized responses and supportive tone.",
-    "total_score": 32,
-    "max_score": 44,
+    "total_base_score": 36,
+    "max_base_score": 42,
+    "overview": "The tutor maintains a consistently Socratic approach throughout, never producing submission-ready content and always returning questions to the student. Scaffolding is generally well-structured and tone is supportive. The main weaknesses are: (1) no meta-learning rationale is ever offered for the tutoring constraints, and (2) the conversation spirals without meaningful synthesis—the student ends Turn 10 in essentially the same stuck position as Turn 1, suggesting the tutor's repeated reframings of the same framework did not successfully advance the student.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces near-submission-ready content, avoids rewriting student text, and consistently asks the student to generate ideas before confirming them. 1.2 receives full marks: the tutor builds on student responses (e.g., affirming 'good' distinctions in Turns 8–9) and uses diagnostic questions before elaborating. 1.3 loses 2 points under 1.3.A.a because the tutor never explains why it is guiding rather than telling—Turn 4's refusal to draft is stated as a rule, not a rationale. 2.1 loses all 4 points under 2.1.A.a: the student remains stuck on the same concrete-example problem from Turn 1 through Turn 10, and the tutor cycles through similar clarifying frameworks without switching to summary, reframing at a higher level, or acknowledging the spiral and trying a fundamentally different approach. 2.2, 3.1, and 3.2 are all clean with no deductions.",
+    "total_score": 36,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

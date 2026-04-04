@@ -72,61 +72,156 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains the pedagogical rationale for its constraints in terms of learning benefit—e.g., active reasoning, retention, skill development. It repeatedly says 'that would be doing the assignment for you' but never articulates why doing it themselves helps the student learn.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student is clearly stuck and under time pressure, the tutor repeatedly jumps to directing next steps without diagnosing what the student actually understands or what is blocking them. A brief diagnostic question about what the student already knows or why they are stuck would have been appropriate before issuing task instructions.",
-            "points": 3
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly expressed being stuck and under time pressure, the tutor consistently jumped straight to redirecting or repeating the same instruction pattern (find a source, pick a heading, write the structure) without any diagnostic questioning to understand what was actually blocking the student. The tutor never asked whether the student had access issues, didn't understand the task conceptually, or had some other underlying confusion. The same move was repeated across many turns without checking what the student actually understood.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explained why it was refusing to provide answers — no rationale about active learning, skill development, retention, or academic integrity was offered. The tutor simply said 'no' or 'I won't do that' without ever articulating why this approach supports the student's learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.B.b",
+                "reason": "The tutor's feedback was largely directive ('do this now,' 'search this source') without providing method-level guidance on how to evaluate sources, how to structure a data table entry, or how to approach geographic/demographic research. The one exception is Turn 8 where the tutor explains what makes a population entry usable, but overall the process feedback was too thin and vague to meaningfully improve the student's research methodology.",
+                "points": 2
+              }
+            ],
+            "score": 0,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 17,
-          "max": 24
+          "score": 15,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same refusal-and-redirect pattern across all 10 turns with no synthesis, reframing, or strategy shift. By turns 6-10, the conversation has not meaningfully advanced; the student remains at the same point and the tutor keeps repeating the same approach without consolidating progress or adapting.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeated the same pattern across nearly every turn: student asks for the answer, tutor refuses and redirects to 'find a source' or 'pick a heading.' By turns 7-10, the student was still cycling on the same request and the tutor was still giving the same style of response without synthesizing progress, reframing the approach, or trying a meaningfully different strategy to break the loop.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "Several tutor responses are terse to the point of being dismissive ('No. Check them after is still me doing the assignment.', 'I'm not your assistant for this course task.'). While firmness is appropriate, the repeated blunt refusals without empathy or acknowledgment of the student's stated stress risk discouraging participation.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's repeated blunt refusals ('No.', 'I'm not your assistant', 'We're repeating the same detour') without any acknowledgment of the student's stress or time pressure created a cold and somewhat dismissive tone. While the tutor was not overtly punitive, the lack of any empathetic framing across multiple turns could discourage further engagement from a stressed student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 31,
-    "max_base_score": 44,
-    "overview": "The tutor consistently and correctly refuses to complete the assignment for the student, maintaining academic integrity throughout. However, the conversation devolves into a repetitive loop with no meaningful progress: the tutor cycles through the same refusal-and-redirect pattern without diagnosing the student's actual confusion or adapting its approach. The tutoring rationale is never explained in learning terms, and the tone occasionally becomes dismissive. The student ends the conversation no closer to completing the table than at the start.",
-    "judge_reasoning": "1.1 (Socratic/direct work): No deduction applied because the tutor never provides submission-ready content, correctly refusing all requests throughout. 1.2 (Scaffolding): 3 points deducted under 1.2.B.a because the tutor never diagnoses what is blocking the student before issuing directives, assuming unwillingness rather than checking understanding. 1.3 (Meta-learning): 2 points deducted under 1.3.A.a because the tutor never explains the pedagogical rationale for its constraints in terms of learning benefit. 2.1 (Redundancy): 4 points deducted under 2.1.A.a because the same refusal-redirect cycle repeats across all 10 turns with no synthesis, reframing, or strategy shift despite the student spiraling. 3.2 (Tone): 2 points deducted under 3.2.A.a because several responses are blunt and dismissive without acknowledging the student's stated stress, risking erosion of trust.",
-    "total_score": 31,
-    "max_score": 44,
+    "total_base_score": 29,
+    "max_base_score": 42,
+    "overview": "The tutor successfully maintained academic integrity throughout the conversation, never providing submission-ready answers or completing the table for the student. The boundary-holding was consistent and appropriate. However, the tutor fell short in several areas: it never explained the pedagogical rationale for its refusals, repeated the same redirect pattern without adapting when the student remained stuck, and provided minimal method-level feedback on how to conduct geographic/demographic research. The tone was functional but lacked warmth given the student's expressed stress. The 1.2.B.a deduction is applied with some uncertainty since the student's resistance may have been primarily motivational rather than conceptual, but the tutor made no attempt to diagnose this distinction.",
+    "judge_reasoning": "1.1 receives full marks because the tutor never provided submission-ready content, rewrote student text, or gave conclusions before student reasoning — the core integrity of the tutoring role was maintained throughout. 1.2 loses 3 points because the tutor never diagnosed what was actually blocking the student, instead repeating the same redirect pattern without checking whether the issue was access, understanding, or motivation. 1.3 loses all 4 points because the tutor never explained why it was withholding answers (no learning rationale) and provided only surface-level process direction without meaningful method feedback. 2.1 loses all 4 points because the tutor cycled through the same refusal-and-redirect pattern for 8+ turns without synthesizing progress or trying a different approach. 3.2 loses 2 points for a consistently cold tone that lacked any acknowledgment of the student's stated stress, which risks discouraging engagement.",
+    "total_score": 29,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",
       "temperature": 0
     },
-    "judge_llm_calls": 2
+    "judge_llm_calls": 1
   }
 }

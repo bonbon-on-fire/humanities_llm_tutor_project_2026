@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -92,13 +88,13 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +106,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,23 +124,28 @@
               {
                 "evidence_turns": [
                   7,
-                  8
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's phrasing becomes noticeably rigid and blunt in places (for example, 'No—I’m your tutor, not a template generator' and 'You’re circling. Stop...'), which risks discouraging participation even though the underlying guidance is pedagogically sound.",
+                "reason": "Several replies use unnecessarily rigid phrasing, including 'I’m your tutor, not a template generator,' 'You’re circling. Stop asking for the whole map,' and 'You’re dwelling on definitions again,' which risks discouraging participation even though the tutor remains assignment-focused.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
     "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stays strongly student-led, keeps the work anchored to the assignment, and gives specific process guidance about consistency of units, source framing, and how to narrow the task. I did not deduct for direct-answering because the tutor consistently refused to generate submission-ready content and redirected the student toward making their own draft. The only clear deduction is for tone: a few responses are more rigid than supportive, though the overall interaction remains mostly constructive.",
-    "judge_reasoning": "The pedagogy is strong overall: the tutor avoids giving a finished row or template, asks targeted questions, and repeatedly keeps idea generation with the student. Scaffolding is evidence-based and assignment-aligned, especially around choosing a consistent geographic unit and handling imperfect demographic categories through source-aware framing. I did not deduct for repetition because the tutor does reframe and narrow the task rather than merely looping on the same prompt. The main weakness is communication tone in later turns, where blunt wording could undermine trust, so 2 points are removed under 3.2.A.a.",
+    "overview": "The tutor stayed tightly anchored to the assignment, kept the core work student-led, and used guided questions to move the student toward a consistent case-study unit and source-based table entries. I did not deduct for pedagogy or dialogue quality because the tutor repeatedly redirected the student into manageable next steps and avoided producing submission-ready content. The only clear deduction is for tone, where some phrasing became sharper than necessary.",
+    "judge_reasoning": "The tutor consistently avoided giving a finished row or rewriting student work, instead asking the student to choose a unit, inspect source labels, and draft rough entries. Scaffolding was effective and built on student progress, especially around the need for consistency across GDP, population, and area. The conversation also included explicit rationale for the tutoring approach and method-level guidance, such as narrowing the task and checking unit, year, and source framing. The main supported deduction is under tone, because turns 7-9 contain rigid wording that could feel discouraging despite the tutor's otherwise strong assignment focus.",
     "total_score": 40,
     "max_score": 46,
     "model": {
@@ -153,6 +154,6 @@
       "temperature": 0,
       "reasoning_effort": "medium"
     },
-    "judge_llm_calls": 1
+    "judge_llm_calls": 2
   }
 }

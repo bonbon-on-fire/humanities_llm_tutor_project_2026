@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 17,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,18 +79,8 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student said they were stuck and the parts felt disconnected, the tutor mainly responded with another broad step-by-step explanation of the assignment rather than first diagnosing exactly which part of the process the student did or did not understand.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6
           },
           "1.3": {
@@ -104,32 +90,35 @@
                   3
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a tutoring constraint by refusing to fill in a complete example entry, but did not explain why that constraint would support the student's learning or reasoning process.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion and correctly identified plausible sectors for extreme heat, the tutor moved on to rating criteria without prompting reflection on what changed in the student's thinking or why the answer worked.",
+                "reason": "The tutor states \"I won’t fill one in for you\" but does not explain why withholding a complete example supports the student's learning or skill development.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeats the same high-level move—re-explaining the assignment as a sequence of simple steps—across multiple turns while the student remains confused, without enough synthesis or a substantially different diagnostic strategy until later.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -137,13 +126,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -157,21 +146,25 @@
                   6
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The phrase \"You're overcomplicating it\" risks sounding dismissive when the student had just said they felt behind and confused.",
+                "reason": "The phrase \"You’re overcomplicating it\" is mildly dismissive and risks making the student's confusion feel like a personal failing rather than a normal part of the task.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 35,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment, kept the student doing the core work, and generally used concise, interactive prompts rather than giving submission-ready content. Main deductions come from limited diagnosis of the student's confusion before re-explaining, missing an explicit rationale for tutoring constraints, and not prompting reflection after a partial success. I did not deduct for repetition because there was some reframing and eventual progression toward city choice, though that area was somewhat borderline.",
-    "judge_reasoning": "This conversation earns strong marks for avoiding direct completion of the assignment: the tutor repeatedly asked the student to choose a city, identify stressors, and reason through sectors and ratings rather than supplying a finished table. However, when the student remained stuck, the tutor often answered with another broad explanation instead of first pinpointing the exact misunderstanding, which supports the 1.2.B deduction. The tutor also never explained why refusing to fill in an example would help learning, and missed a chance to ask the student to reflect after a better response in turn 4. Communication was mostly clear and bite-sized, but the wording in turn 6 was slightly less supportive than the rest of the exchange.",
-    "total_score": 35,
+    "overview": "The tutor stayed anchored to the assignment, used clear language, and generally avoided doing the student's actual table for them. The main weaknesses were repetitive restatements of the assignment structure after the student was still confused, a missing explanation of why the tutor would not provide a full example entry, and one slightly dismissive phrasing choice. Evidence for stronger pedagogy deductions was mixed, so no additional penalty was applied there.",
+    "judge_reasoning": "The tutor did not provide submission-ready work and usually kept the conversation interactive, so 1.1 and 1.2 remain at full credit. A deduction was applied under 1.3 because the tutor enforced a constraint against giving a full example but never explained the learning rationale for that boundary. The largest deduction is under 2.1: several turns repeated essentially the same summary of the assignment while the student's confusion persisted, rather than shifting earlier to a more diagnostic or concretely reframed approach. Communication was mostly clear, but the turn saying the student was \"overcomplicating it\" warranted a tone deduction.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

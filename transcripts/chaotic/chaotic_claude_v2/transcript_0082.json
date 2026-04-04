@@ -72,39 +72,107 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't do the work for the student in terms of learning rationale—it only says 'that's not my role' or 'I won't do the table for you.' There is no moment where the tutor explains that active reasoning, retention, or skill development is the reason for the constraint.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Turn 5, the tutor provides a list of exact search phrases ('BPS DKI Jakarta population 2023', 'BPS DKI Jakarta area km2', 'BPS DKI Jakarta GRDP per capita', 'Jakarta ethnicity census', 'Jakarta Koppen climate classification') that together constitute near-submission-ready research scaffolding. However, these are source-finding prompts, not actual data entries or finished table content. The tutor does not supply actual numbers, values, or completed table entries. This is borderline but does not clearly cross into providing final answer pieces that together become submission-ready. No deduction applied.",
+                "points": 0
+              }
+            ],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 6, when the student asks about conflicting stats, the tutor immediately provides a full decision rule ('official city/provincial statistics first, then national statistics, then international databases') without first diagnosing what the student already understands about source hierarchy or what specific conflict they are facing. The tutor jumps to a method dump before checking student understanding.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is refusing to do the work for the student in terms of learning rationale. It simply says 'that's not my role' or 'no' without once articulating that the reason is to support active learning, retention, or skill development. The tutoring constraints are enforced but never explained in terms of pedagogical benefit.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor consistently refused to complete the assignment for the student and maintained a Socratic, guided approach throughout. It correctly redirected off-task requests, helped the student identify sources and reasoning strategies, and kept key idea generation student-led. The one clear deduction is for never explaining the pedagogical rationale behind its constraints—it only cited role boundaries, not learning benefits. No other rubric criteria were clearly triggered.",
-    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and never stated conclusions before the student reasoned through them. Full points. 1.2: The tutor built on student progress (e.g., affirming the parenthetical year idea in Turn 8, validating the ethnicity wording in Turn 10) and asked diagnostic questions before responding. Full points. 1.3: The tutor gave process-level feedback (e.g., explaining source hierarchy, year consistency, transparency in labeling) satisfying 1.3.B, but never once explained why it was withholding direct answers in terms of learning value—only asserting role limits—triggering the 1.3.A.a deduction of 2 points. 2.1 and 2.2: No repetitive spiraling, no assignment misunderstanding left uncorrected, and off-topic requests were promptly redirected. Full points. 3.1 and 3.2: Responses were concise and appropriately toned; no grading language or cold dismissiveness beyond firm refusals that remained professional.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor consistently refused to complete the assignment for the student and maintained appropriate boundaries throughout. The Socratic approach was generally well-applied, with the tutor redirecting the student toward self-directed research and decision-making. The main weaknesses were: (1) a failure to ever explain the pedagogical rationale for the tutoring constraints (1.3.A.a), and (2) one instance in Turn 6 where the tutor provided a full source-hierarchy rule without first diagnosing what the student already understood (1.2.B.a). The 1.2 deduction is the most significant, as the tutor jumped to a method dump. No submission-ready content was provided, and the tutor maintained a supportive, non-grading tone throughout.",
+    "judge_reasoning": "The tutor earns full marks on 1.1 because, despite providing search phrase suggestions in Turn 5, no actual data values or completed table entries were given—the student still had to do the research. The 1.2 deduction (3 points) is applied for Turn 6, where the tutor immediately delivered a full decision framework for conflicting sources without first asking what the student already knew or what specific conflict they encountered, constituting a method dump. The 1.3 deduction (2 points) is applied because across all 10 turns the tutor never once explained why it was refusing to do the work in terms of learning benefit—it only said 'that's not my role,' which enforces constraints without explaining their pedagogical purpose. Dialogue quality and communication quality are both strong, with no redundancy, good assignment anchoring, and appropriately concise responses.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

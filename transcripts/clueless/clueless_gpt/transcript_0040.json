@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Early in the exchange, the tutor supplied the core interpretation that a vulnerability is a weakness/condition and that 'extreme heat' is usually the stressor for Phoenix before first having the student generate that distinction independently. This revealed the key answer path rather than keeping the idea generation fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -94,30 +100,29 @@
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a constraint by refusing to fill in a sample row, but did not explicitly explain why that constraint supports learning through independent reasoning or skill development.",
+                "reason": "The tutor explained the constraint only as 'that would be doing the assignment' but did not give a learning-oriented rationale such as why generating the row themselves would build understanding or transfer.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to producing a workable row structure and justification ideas, the tutor moved the task forward without prompting reflection on what changed in the student's thinking or why the new approach worked.",
+                "reason": "After the student improved from confusion to producing a plausible row structure and justification ideas, the tutor moved directly to the next drafting step instead of prompting reflection on what changed in the student's thinking and why the improved approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -129,13 +134,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,14 +152,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor was consistently scaffolded, assignment-focused, and appropriately non-directive. The main rubric-supported weaknesses were the lack of an explicit learning rationale for tutoring constraints and the lack of a reflection prompt after the student began succeeding. There is a source inconsistency between section maxima in the rubric text and the required top-level maximum; section scoring was kept rubric-faithful while using the required overall max of 46.",
-    "judge_reasoning": "The tutor performed strongly on guided discovery, scaffolding, assignment anchoring, and communication quality: they broke the task into manageable steps, redirected the student to the actual table structure, and avoided giving submission-ready content. I deducted under 1.3.A.a because the tutor said they would not complete a row for the student, but did not explain that this was to support the student's own reasoning or longer-term learning. I also deducted under 1.3.C.a because once the student generated a plausible stressor, sectors, rating, and supporting ideas, the tutor advanced the drafting task instead of asking the student to reflect on what had changed in their method. I did not apply stronger pedagogy deductions because the tutor's clarifications stayed conceptual and did not become completed assignment output.",
-    "total_score": 40,
+    "overview": "The tutor stayed anchored to the assignment, kept responses concise, and consistently pushed the student to do the actual table-building work rather than producing a completed row. The main weakness was that the tutor gave the core vulnerability-versus-stressor distinction and labeled 'extreme heat' for the student quite early, which reduced student-led discovery. There is some ambiguity because those definitions also helped clarify the task, so I applied the smaller relevant deduction rather than harsher penalties. Meta-learning support was also limited because the tutor did not explain why the constraints supported learning and did not prompt reflection after the student's improvement.",
+    "judge_reasoning": "This was a solid tutoring interaction overall: the tutor scaffolded the task into manageable parts, redirected the student from overthinking, and avoided providing submission-ready content. The largest deduction is under 1.1 because the tutor identified the central conceptual distinction and the likely classification of 'extreme heat' before the student reasoned it out. Additional deductions apply under 1.3 because the tutor never gave a clear learning rationale for refusing to fill in a row and missed a reflection opportunity once the student began succeeding. No deductions were warranted for dialogue flow, assignment anchoring, clarity, or tone because the exchange remained focused, interactive, and supportive.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

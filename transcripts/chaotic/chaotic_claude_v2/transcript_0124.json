@@ -72,59 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 6, the tutor provides a fill-in-the-blank thesis template ('Act consequentialism judges acts by ____, so in cases like Fuel, Blood, and trolley ____. I think this is/is not convincing because ____.') that is close to rewriting the student's thesis for them. However, the blanks are left for the student to fill, so this is borderline. On balance, the template is scaffolding rather than final wording, so no deduction is applied here.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces constraints (refusing to write answers, refusing to polish sentences) but never explicitly explains why this approach supports learning—e.g., that active reasoning builds retention or long-term philosophical skill. The rationale is implicit at best.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor consistently refuses to give direct answers and pushes the student to reason independently, but never explicitly explains why this approach supports learning (e.g., active reasoning, retention, skill development). The tutor says 'I'm your tutor, not your writer' and 'No. You need to choose the rule and defend it,' but never articulates the pedagogical rationale behind these constraints.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 44,
-    "overview": "The tutor consistently maintained a Socratic, non-directive approach throughout the conversation, refusing to write thesis sentences or give direct answers, and successfully guided the student from vague uncertainty to a defensible means/side-effect thesis. The main weakness is the absence of any explicit explanation of why the tutoring constraints exist (the pedagogical rationale), which is required at least once per conversation. No other significant deductions were warranted: the tutor built on student progress, avoided redundancy, stayed on-task, and maintained a supportive tone without grading. The fill-in-the-blank template in Turn 6 was borderline but ultimately left the key reasoning to the student.",
-    "judge_reasoning": "Deduction of 2 points under 1.3.A.a: across all 10 turns, the tutor never explained why it was refusing to give direct answers in terms of learning benefits—phrases like 'I'm your tutor, not your writer' assert the constraint but do not explain the rationale (e.g., that active reasoning builds retention or philosophical skill). All other criteria were met: the tutor did not produce submission-ready content, did not rewrite student text into final wording, kept key idea generation student-led, built on student progress (e.g., affirming the 'flattens them' direction in Turn 6, the thesis in Turn 7, and the means/side-effect choice in Turn 9), avoided repetition by advancing the dialogue each turn, stayed anchored to the assignment, and maintained a supportive and appropriately concise tone throughout.",
-    "total_score": 42,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall, consistently refusing to do the student's work, using Socratic questioning throughout, scaffolding from act consequentialism basics to the means/side-effect distinction, and maintaining a supportive but firm tone. The only clear deduction is for never explicitly articulating why the tutoring constraints serve the student's learning.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready output, never rewrote student text, and consistently let the student generate key ideas before confirming direction—no deductions warranted. 1.2: The tutor built on each student contribution (e.g., affirming 'flattens them,' building on the means/side-effect idea) and used targeted prompts rather than method dumps—no deductions. 1.3: The tutor enforced constraints throughout but never once explained the pedagogical rationale (e.g., 'I want you to reason through this yourself because active engagement builds philosophical skill')—2 points deducted under 1.3.A.a. Process feedback was present and specific (e.g., 'tighten the thought,' 'make it sharper by asking')—no deduction for 1.3.B. 2.1 and 2.2: No repetitive spiraling without progress; the conversation advanced steadily and stayed on-task. 3.1 and 3.2: Responses were concise and interactive; tone was firm but not cold or dismissive, and no grading language was used.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

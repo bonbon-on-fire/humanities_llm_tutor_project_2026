@@ -72,13 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it won't do the work for the student in terms of learning rationale (e.g., active reasoning, retention, skill development). It simply refuses and redirects, but never articulates the pedagogical reason behind the constraint.",
-            "points": 2
-          }
-        ],
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -86,15 +79,37 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly expressed confusion or resistance about how to proceed, the tutor jumped straight to providing a shortlist of candidate stressors and a decision framework rather than first diagnosing what the student actually understood or where the specific block was. The tutor did not ask diagnostic questions to understand the student's knowledge state before offering structured guidance.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Tutor never explains why it won't do the work in terms of learning benefit. Refusals are consistent but rationale is never stated.",
+                "reason": "The tutor consistently enforced constraints (refusing to give answers, refusing to polish sentences, refusing to provide model justifications) but never explicitly explained why this approach supports learning—e.g., that active reasoning builds retention, develops analytical skills, or prepares the student for later assignments. The rationale was never articulated.",
                 "points": 2
               }
             ],
@@ -103,16 +118,26 @@
           }
         },
         "base": {
-          "score": 20,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across turns 2–4, the tutor repeated essentially the same move: present a shortlist of candidate stressors and ask the student to pick. The student remained resistant and the tutor did not meaningfully reframe, simplify, or shift strategy—it cycled on the same approach without synthesis or escalation to a different method.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -122,12 +147,11 @@
           }
         },
         "base": {
-          "score": 12,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -146,12 +170,12 @@
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 46,
-    "overview": "The tutor performed strongly overall, consistently refusing to do the assignment for the student, scaffolding well, and maintaining a supportive but firm tone. The one clear deduction is for never explaining the pedagogical rationale behind its refusals. No other rubric criteria were clearly triggered.",
-    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and never gave conclusions before student reasoning. It consistently used Socratic prompting and scaffolded frames. Full 12 points. 1.2: The tutor built on student progress (e.g., Turn 9 affirming the logic before pushing forward) and used diagnostic questioning before responding. Full 6 points. 1.3: The tutor gave process-level feedback (e.g., 'your ideas are workable but housing I guess is weak') but never once explained why it was withholding direct answers in terms of learning benefit—no mention of retention, skill-building, or active reasoning. 2 points deducted under 1.3.A.a. Dialogue quality and communication quality were both strong: no redundancy spiraling, no off-topic drift, responses were concise and appropriately toned throughout.",
-    "total_score": 40,
-    "max_score": 46,
+    "total_base_score": 33,
+    "max_base_score": 42,
+    "overview": "The tutor did an excellent job refusing to do the assignment for the student and consistently redirecting toward student-generated reasoning. The Socratic approach was well-maintained throughout, and the tutor never provided submission-ready content. Deductions were applied for: (1) failing to diagnose the student's specific confusion before offering structured shortlists in turns 3–4; (2) never explaining the pedagogical rationale for the tutoring constraints; and (3) cycling on the same 'pick from this list' move across turns 2–4 without meaningfully reframing when the student remained stuck. The 1.2.B.a deduction is moderate confidence—the tutor did ask questions, but they were directive rather than diagnostic.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points under 1.2.B.a because when the student was stuck/resistant in turns 3–4, the tutor jumped to offering structured shortlists rather than first probing what the student actually knew or where the block was. 1.3 loses 2 points under 1.3.A.a because the tutor enforced constraints throughout but never once explained why—no mention of skill-building, retention, or learning rationale. 2.1 loses all 4 points under 2.1.A.a because turns 2–4 show the tutor repeating the same 'here is a shortlist, pick from it' move three times without switching strategy, reframing, or escalating to a different approach when the student remained unresponsive. 2.2 and section 3 receive full marks as the tutor maintained assignment focus and communicated clearly and supportively throughout.",
+    "total_score": 33,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

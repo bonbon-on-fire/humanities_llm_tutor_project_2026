@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 22
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,27 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor set constraints such as keeping the writing rough and verifying Jakarta-specific actors, but did not clearly explain that these constraints were meant to strengthen the student's own reasoning or long-term skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +116,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,14 +134,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor consistently used guided questioning, kept idea generation student-led, and stayed tightly anchored to the assignment. No clear rubric-triggering violations were supported by the transcript. Note: the provided rubric's sub-criterion maxima sum to 42, while the required top-level max field is 46.",
-    "judge_reasoning": "The tutor avoided giving submission-ready output: they asked the student to classify actors, justify categories, and later stress-test a student-written synthesis rather than rewriting it. Scaffolding was strong throughout, with each response building directly on the student's prior step and narrowing the next task from broad categories to specific Jakarta agencies and evidence tests. The tutor also provided concrete process feedback, such as distinguishing coordination and budget authority from implementation when deciding who is \"leading\" versus \"engaged.\" Dialogue remained focused on the forum task, responses were bite-sized, and the tone was supportive and formative rather than grading-oriented.",
-    "total_score": 42,
+    "overview": "Strong tutoring conversation overall: the tutor kept the student doing the core classification and argument work, scaffolded from broad categories to sharper actor roles, and stayed tightly anchored to the Jakarta assignment. The only clear deduction is for missing an explicit meta-learning explanation of why the tutor was withholding direct writing/help; the tutor implied constraints but did not clearly connect them to learning benefits. No other deductions were strongly supported by the transcript.",
+    "judge_reasoning": "The tutor consistently used guided questions and prompts rather than supplying a submission-ready answer, so no deduction was warranted under 1.1. Scaffolding was effective and cumulative: the tutor moved from broad actor buckets to role distinctions, then to synthesis and evidence checks, while building on the student's progress. The main weakness was meta-learning rationale: although the tutor said to keep the writing rough and verify Jakarta-specific agencies, they did not explicitly explain that this was to develop the student's own analytical skill or retention. Communication was concise, supportive, and clearly formative throughout.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

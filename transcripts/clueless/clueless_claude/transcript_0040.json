@@ -72,43 +72,105 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding rather than giving answers—no rationale is offered for the Socratic approach (e.g., 'I'm asking you to work through this so you build the skill yourself'). The constraint is enforced but never justified.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In Turn 8 the student makes clear progress (correctly identifies stressor, sectors, and a rating), but the tutor moves straight to the next prompt without pausing to note what the student did well or asking the student to reflect on what clicked. No reflection is prompted after improvement.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this approach builds independent reasoning, retention, or long-term skill. The tutoring constraints are enforced (e.g., Turn 7: 'I won't fill a row for you—that would be doing the assignment') but the rationale for why this supports learning is never stated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "By Turn 10 the student has made clear progress—moving from total confusion to producing a defensible justification. The tutor affirms the direction but does not prompt the student to reflect on what changed in their thinking or why the approach worked, missing the opportunity to reinforce the method.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.a",
+                "reason": "In Turn 10 the tutor says 'Using my own judgment, yes—that sounds like a good direction for this assignment.' This phrasing positions the tutor as an evaluative authority rendering a judgment on the student's work, which could reasonably be read as a quasi-grading statement rather than formative coaching guidance.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 44,
-    "overview": "The tutor performs well overall: it consistently refuses to do the assignment for the student, uses targeted Socratic questioning, keeps responses concise, maintains a supportive tone, and re-anchors the student whenever they drift into checklist or perfectionist thinking. Two deductions are applied: the tutor never explains why it is guiding rather than giving direct answers (1.3.A.a), and it misses the opportunity to prompt reflection after the student's clear improvement in Turn 8 (1.3.C.a). No other rubric criteria are clearly triggered.",
-    "judge_reasoning": "Criterion 1.1 is fully intact: the tutor never provides submission-ready content, never rewrites student text, and consistently asks the student to generate key ideas before confirming them. Criterion 1.2 is fully intact: the tutor builds on each student response and diagnoses confusion before redirecting. For 1.3, the tutor gives useful process-level feedback throughout (e.g., 'stop chasing perfect labels,' 'don't ask is 9 dramatic, ask whether you can defend it'), satisfying 1.3.B; however, it never articulates why it is withholding direct answers, triggering 1.3.A.a (-2), and after the student's notable progress in Turn 8 the tutor moves on without prompting reflection, triggering 1.3.C.a (-2). Dialogue quality is strong: no repetition without progress, no assignment misframing left uncorrected, and no off-topic drift. Communication quality is strong: responses are concise, well-structured, and consistently supportive without implying formal grading.",
-    "total_score": 40,
+    "overview": "The tutor performs strongly on Socratic method and assignment anchoring throughout the conversation, consistently refusing to do the work for the student and redirecting spiraling confusion with targeted questions. The main weaknesses are in meta-learning: the tutor never explains why it withholds direct answers (no rationale for the tutoring approach), and it misses a reflection prompt at the end when the student has clearly progressed. A minor tone issue arises in Turn 10 where the tutor's phrasing sounds evaluative rather than formative.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces submission-ready content, never rewrites student text, and consistently keeps idea generation student-led through targeted Socratic prompts. 1.2 receives full marks: the tutor builds on each student contribution (e.g., affirming 'extreme heat' as a valid stressor before moving to sectors) and diagnoses confusion before responding. 1.3 loses 4 points: the tutoring rationale is never articulated (1.3.A.a), and after the student's clear improvement in Turns 8–10 the tutor does not prompt reflection on what changed (1.3.C.a). Dialogue quality is clean with no repetition spirals or assignment drift. Communication quality loses 2 points because Turn 10's 'Using my own judgment, yes' reads as a quasi-evaluative judgment rather than formative coaching, triggering 3.2.B.a.",
+    "total_score": 38,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

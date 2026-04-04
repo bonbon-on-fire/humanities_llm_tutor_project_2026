@@ -72,82 +72,94 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student repeatedly signals confusion and being stuck (turns 3, 5, 8, 9), the tutor tends to respond with reframing or new frameworks rather than first diagnosing what specifically the student does or does not understand. For example, in turn 3 the student says they feel they need the 'big picture first' and the tutor provides a taxonomy without checking what the student already knows about Jakarta's governance. In turn 8, the student says they freeze when refining—the tutor does not probe why before giving a new directive.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              3,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 3, the student explicitly signals confusion about the big picture and asks for a framework before sorting actors. The tutor provides a role-type list but does not first probe what the student already understands or where exactly the confusion lies. In Turn 4, when the student again expresses confusion about scale, the tutor redirects without diagnosing the specific source of the student's uncertainty. While the tutor does ask guiding questions, these come after delivering content rather than before, suggesting a pattern of responding before diagnosing.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In turn 10, the student produces a workable first row after struggling throughout the conversation. The tutor affirms it briefly ('That first row is workable') but immediately moves on to the next concept ('missing' actors) without prompting the student to reflect on what changed in their thinking or why that row worked. No reflection on process improvement is prompted at any point after student progress.",
-            "points": 2
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers. In Turn 9, the tutor declines to write sample rows but only says it 'would cross into doing the assignment for you,' which is a constraint statement rather than a rationale about learning benefits such as active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Turn 10, the student produces a workable first row after struggling throughout the conversation. The tutor acknowledges it is 'workable' and moves on to the next challenge without prompting the student to reflect on what changed in their thinking or why this attempt succeeded where earlier ones stalled.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding rather than giving answers—e.g., why the student should derive the actor categories themselves rather than being told them. In turn 9, the tutor declines to give sample rows but only says 'that would cross into doing the assignment for you,' which is a constraint statement, not a rationale about learning benefits (active reasoning, retention, skill development).",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly expresses the same underlying anxiety—fear of getting the level of detail wrong, fear of asymmetry, fear of being too generic—across Turns 3 through 8. The tutor cycles through slightly different framings (role-types, function vs. status, symmetry) without consolidating progress or reframing the core block. The student never advances past the same stuck point, and the tutor does not synthesize what has been established or suggest a different approach to break the loop.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student cycles through the same confusion pattern across many turns—feeling overwhelmed by scope, wanting a concrete example, freezing on specificity—and the tutor repeatedly reframes or adds a new filter without consolidating prior progress or switching strategy meaningfully. By turn 8 the student is still stuck on the same meta-concern about symmetry/detail level that appeared in turns 3–5. The tutor does not synthesize what has been established or suggest moving on from the sticking point.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -156,8 +168,8 @@
     },
     "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor maintains a consistently Socratic stance throughout, avoids giving submission-ready content, and keeps responses concise and well-structured. Key deductions arise from: (1) a pattern of responding to student confusion with new frameworks rather than first diagnosing the specific gap; (2) missing a clear opportunity to prompt process reflection after the student's first successful row in turn 10; (3) never articulating a learning rationale for the tutoring constraints beyond a brief constraint statement in turn 9; and (4) a multi-turn spiral where the student's core confusion about scope and specificity is never consolidated or resolved, with the tutor cycling through similar reframing moves without synthesis.",
-    "judge_reasoning": "Pedagogy deductions: 1.2.B.a (3 pts) — the tutor repeatedly responds to expressed confusion with new frameworks rather than diagnostic questions to locate the specific gap, most clearly in turns 3, 5, and 8. 1.3.C.a (2 pts) — after the student's first workable output in turn 10, the tutor moves immediately to the next concept without prompting reflection on what changed. 1.3.A.a (2 pts) — the tutor never provides a genuine learning rationale for its Socratic approach; the turn 9 refusal is a constraint statement, not an explanation of why active reasoning supports learning. Dialogue deduction: 2.1.A.a (4 pts) — the student's confusion about scope, symmetry, and specificity recurs across turns 3–9 without the tutor consolidating prior progress, switching strategy, or explicitly naming what has been established so far. Communication quality is strong throughout: responses are concise, tone is supportive, and no grading language appears.",
+    "overview": "The tutor maintained a consistently Socratic approach throughout, never providing submission-ready content or rewriting student work, and kept tone supportive and responses appropriately concise. The main weaknesses are: a recurring spiral where the student's core anxiety about detail level was never resolved or consolidated (2.1); occasional failure to diagnose confusion before delivering content (1.2); no explicit rationale for the tutoring approach (1.3.A); and a missed reflection prompt after the student's first successful attempt in Turn 10 (1.3.C). The 1.2 deduction is applied with some uncertainty since the tutor does ask questions, but the pattern of content-before-diagnosis is evident.",
+    "judge_reasoning": "1.1 receives full marks: the tutor consistently used questions and prompts, never gave submission-ready answers, and explicitly refused to write sample rows in Turn 9. 1.2 loses 3 points because in Turns 3 and 4 the tutor delivers frameworks before probing what the student already understands, fitting the pattern of responding before diagnosing. 1.3 loses 4 points: the tutor never articulates why guided discovery benefits learning (1.3.A.a), and in Turn 10 moves on without prompting reflection after the student's first successful row (1.3.C.a). 2.1 loses all 4 points because the student's anxiety about detail and symmetry recurs across six turns without the tutor consolidating progress, reframing the block, or suggesting a pivot strategy. 2.2 and section 3 are fully intact as the tutor kept the conversation on-task and maintained appropriate tone and response length throughout.",
     "total_score": 33,
     "max_score": 44,
     "model": {

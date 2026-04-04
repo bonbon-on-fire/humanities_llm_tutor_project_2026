@@ -72,38 +72,105 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student made clear progress across multiple turns (e.g., from 'random city profile site' to a credible BPS source, from 'leave it blank' to a defensible limitation note). The tutor never paused to prompt reflection on what changed in the student's thinking or why the improved approach worked better. The tutor consistently moved forward without reinforcing the method choices after improvement.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says anything like 'I'm asking you to work through this yourself because active reasoning builds retention.' The tutoring rationale is implicit at best throughout the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student makes clear improvements across turns (e.g., from 'leave it blank' to a well-reasoned limitation note; from vague source instincts to a structured source hierarchy). The tutor affirms progress but never prompts the student to reflect on what changed in their thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed very well overall. Socratic method was consistently applied—questions drove student reasoning at every turn, no answers were given prematurely, and the student did the key intellectual work. Scaffolding was strong, building from source reliability to unit consistency to metadata discipline. The only clear deduction is for 1.3.C: the tutor never prompted the student to reflect on what changed in their thinking after notable improvements (e.g., the race/ethnicity blank-to-note shift, or the source-plan development). All other criteria were met with no evidence of deductible behavior.",
-    "judge_reasoning": "1.1: No near-submission-ready output was provided; the tutor consistently asked questions and let the student generate key ideas (e.g., source hierarchy, unit choice, metadata fields). No rewriting of student text occurred. 1.2: The tutor built on each student response and did not restart from scratch; no diagnostic failures were evident. 1.3: The tutor explained its rationale implicitly through framing (e.g., 'stop theorizing and test it') and gave specific process feedback (e.g., metadata fields to record), satisfying 1.3.A and 1.3.B. However, 1.3.C is not satisfied: after the student improved from 'leave it blank' to a defensible limitation note, and again after developing a strong source plan, the tutor moved forward without prompting reflection on what changed or why the new approach was better. 2.1–2.2: No repetition without progress, no off-topic drift, no misunderstood assignment framing. 3.1–3.2: Responses were concise, well-targeted, and supportive throughout.",
-    "total_score": 42,
+    "overview": "The tutor performs very well overall. It consistently uses Socratic questioning, never gives away answers, builds on student progress, maintains appropriate tone, and keeps responses concise and focused. The two deductions are in 1.3: the tutor never articulates why it is guiding rather than telling (missing explicit tutoring rationale), and it misses opportunities to prompt the student to reflect on what changed when they improved (e.g., the race/ethnicity blank-vs-note moment, or the source hierarchy turn). No other rubric criteria show clear evidence of violation.",
+    "judge_reasoning": "1.1 is full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming them. 1.2 is full marks: the tutor builds on each correct student step and uses diagnostic questions before addressing confusion (e.g., Turn 9 hint is given only after the student explicitly reports being stuck and explains what they tried). 1.3 loses 4 points: (a) the tutoring rationale is never stated—the tutor enforces a Socratic approach throughout but never explains to the student why this supports learning; (b) after clear student improvements (race/ethnicity framing, source hierarchy), the tutor moves forward without asking the student to articulate what shifted in their thinking. Dialogue quality and communication quality are both full marks: responses are bite-sized, well-sequenced, on-topic, and supportive without implying formal grading.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

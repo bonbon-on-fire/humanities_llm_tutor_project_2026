@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 17,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "When the student asked for a thesis sentence, the tutor provided a polished fill-in-the-blank structure containing the core argumentative wording, which converted the student's rough idea into near-ready submission language rather than keeping the work fully process-focused.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -90,7 +95,7 @@
                   7
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student said the Fuel and Blood examples were blurring together and asked for a short side-by-side, the tutor responded with a chart-making task instead of first diagnosing the underlying confusion. The next turn showed the actual problem was that the student did not remember the cases accurately enough to proceed.",
+                "reason": "After the student said Fuel and Blood were blurring together and asked for a very short side-by-side, the tutor responded with a chart exercise instead of first diagnosing or clarifying the source of confusion; the next turn showed the student mainly lacked recall of the cases.",
                 "points": 3
               }
             ],
@@ -101,11 +106,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
-                  9
+                  2
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced constraints against giving the finished rule or thesis wording, but never explicitly explained that this was to support the student's learning, reasoning practice, or retention.",
+                "reason": "The tutor enforced a no-direct-answer constraint ('Don't dodge the reasoning... Build it.') but did not clearly explain why this constraint supports learning, retention, or independent argument-building.",
                 "points": 2
               },
               {
@@ -115,20 +119,20 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from uncertainty to a workable thesis draft, the tutor praised it and moved to stress-testing the claim, but did not ask the student to reflect on what changed in their reasoning or why the new formulation worked better.",
+                "reason": "After the student improved from confusion to a workable thesis, the tutor moved to taking a stand and stress-testing without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 11,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -140,13 +144,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -154,28 +158,22 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  6
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "Most replies were constructive, but phrases like “Don’t dodge the reasoning” and “You’re circling” introduced a somewhat rigid, chastising tone that could undermine supportiveness.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 35,
+    "total_base_score": 31,
     "max_base_score": 46,
-    "overview": "The tutor was generally strong on keeping the student doing the core reasoning and avoided giving submission-ready philosophy content. Main weaknesses were limited diagnosis of the student's confusion about specific cases, missing explicit meta-rationale for the tutoring constraints, and a slightly rigid tone in a few turns. I did not deduct for direct-answer violations because the tutor consistently stopped short of writing the student's final argument.",
-    "judge_reasoning": "This conversation scores well on guided discovery because the tutor repeatedly had the student generate the thesis, compare cases, and articulate the principle, without supplying a ready-to-submit answer. The biggest pedagogical deduction is for turn 6, where the tutor pushed a charting method before clarifying that the student's actual obstacle was remembering the Fuel and Blood cases, which only became explicit in turn 7. I also deducted under meta-learning because the tutor never explained why refusing to provide the finished rule or thesis supports learning, and after the student's improvement to a solid thesis draft, the tutor did not prompt reflection on what changed. Communication was otherwise clear and concise, though the tone briefly became more rigid than supportive.",
-    "total_score": 35,
+    "overview": "The tutor was generally concise, assignment-focused, and strongly student-directed. Main deductions come from giving near-ready thesis wording late in the exchange, missing the student's specific confusion about recalling Fuel versus Blood before assigning more structure, and not making the learning rationale or later reflection explicit. Where evidence was somewhat borderline, deductions were kept to the narrower rubric category rather than stacking overlapping penalties.",
+    "judge_reasoning": "The tutor mostly used guided questioning and kept the discussion anchored to the assignment, with clear and bite-sized prompts. However, in Turn 9 the tutor crossed from coaching into near-final wording help by supplying a polished thesis template that closely shaped the student's eventual sentence. The tutor also missed a diagnostic opportunity when the student said Fuel and Blood were blurring together, responding with a chart task before clarifying the cases themselves. Finally, the tutor did not explicitly explain the pedagogical reason for withholding direct answers and did not prompt reflection after the student's thesis improved.",
+    "total_score": 31,
     "max_score": 46,
     "model": {
       "provider": "openai",

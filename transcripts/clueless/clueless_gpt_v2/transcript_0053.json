@@ -72,78 +72,81 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 19,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": []
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  4,
-                  5,
-                  6
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "The student repeatedly signaled confusion about how Fuel and Blood worked and asked for a fuller walkthrough, but the tutor mostly continued with classification prompts and structure advice rather than first diagnosing what the student actually remembered or misunderstood about those cases.",
-                "points": 3
-              }
-            ]
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
           "1.3": {
             "deductions": [
               {
                 "evidence_turns": [
                   5,
+                  7,
                   9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced constraints against giving a full answer, but did not clearly explain the learning rationale in terms of active reasoning, retention, or skill-building; statements like 'I’m your tutor, not your writer' and 'don’t outsource the judgment' were role assertions more than pedagogical rationale.",
+                "reason": "The tutor repeatedly enforced a no-writing/full-answer boundary ('I can’t give you a full answer to submit,' 'I won’t write the paragraph for you,' 'don’t outsource the judgment') but did not clearly explain the learning rationale behind that constraint, such as promoting the student's own reasoning or long-term skill development.",
                 "points": 2
               }
-            ]
+            ],
+            "score": 2,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
-        },
-        "criteria": {
-          "2.1": {
-            "deductions": []
-          },
-          "2.2": {
-            "deductions": []
-          }
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 10,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
-            "deductions": []
+            "deductions": [],
+            "score": 4,
+            "max": 4
           },
           "3.2": {
-            "deductions": []
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 41,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed largely process-focused, avoided writing the student's submission, and kept the conversation anchored to the assignment. The main weakness was adaptation: the student repeatedly asked for clearer help on the specific lecture cases, especially Fuel and Blood, and the tutor did not sufficiently diagnose that confusion before continuing the same style of prompting. There is some ambiguity about whether the tutor's note-form framing narrowed the student's answer path too much, but the evidence was not strong enough to apply an additional deduction.",
-    "judge_reasoning": "The strongest positive is that the tutor consistently refused to provide a submission-ready answer and instead asked the student to generate claims and apply distinctions. However, under 1.2.B.a, the tutor missed chances to diagnose the student's specific uncertainty about Fuel and Blood before pushing more comparisons and mini-structures. Under 1.3.A.a, the tutor stated boundaries on giving direct answers but did not clearly explain why those constraints support the student's learning process. Dialogue quality and communication remained strong overall: the exchange stayed on-task, responses were concise, and the tone was generally supportive rather than evaluative.",
-    "total_score": 41,
+    "overview": "The tutor stayed strongly process-oriented, kept the student doing the core reasoning, and remained well anchored to the assignment's philosophical distinctions and cases. The only clear deduction is for not explicitly giving a learning-oriented rationale for refusing to provide submission-ready writing. Note: the rubric's stated maxima are internally inconsistent, so criterion-level scoring follows the detailed rubric while the top-level maximum follows the requested schema value.",
+    "judge_reasoning": "The tutor consistently used guided questions, note-form scaffolds, and comparative prompts rather than producing a finished answer, so no deduction was warranted under 1.1. Scaffolding was also solid: the tutor built on the student's emerging 'means vs side effect' idea and progressively narrowed the task to manageable steps, which supports full credit for 1.2. A deduction applies under 1.3.A because the tutor set boundaries against giving a full answer, but framed that mainly as a role restriction rather than explaining why that supports the student's learning. Dialogue and communication remained concise, supportive, and assignment-centered throughout, with no strong evidence of repetition, drift, or grading-like feedback.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

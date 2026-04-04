@@ -72,56 +72,125 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't write the post for the student in terms of learning rationale—it only says 'that would defeat the assignment' and 'my role is to tutor you.' There is no explicit explanation of how active reasoning, retention, or skill development benefits the student. The constraint is enforced but the pedagogical rationale is never articulated clearly.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student is stuck or vague (e.g., Turn 4 with generic actor names), the tutor jumps straight to pointing out what's wrong rather than first diagnosing what the student does or doesn't understand about the actor categories. The tutor does ask follow-up questions but tends to immediately redirect rather than probe the student's understanding first.",
-            "points": 2
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 6, when the student is clearly stuck and frustrated, the tutor jumps straight to a directive ('Use this test instead') without first diagnosing what is blocking the student—whether it is lack of knowledge, lack of time, or lack of motivation. A brief diagnostic question would have been more appropriate before prescribing a method.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is refusing to write the post or supply names—i.e., it never articulates that the student's own reasoning and research builds skills, retention, or long-term competence. The refusals are stated but the pedagogical rationale is never made explicit across the entire conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 20,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same pattern across multiple turns (student asks for answer, tutor refuses and re-prompts with a list of questions) without meaningfully synthesizing or advancing the conversation. By Turn 8, the student is still being asked to classify actors using a slightly reworded version of the same framework from Turn 3. The tutor does not reframe or simplify in a meaningfully different way until Turn 9.",
-            "points": 2
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same pattern across nearly every turn: refuse the request, restate a slightly reformatted version of the same prompt for the student to supply names or categories. By turns 8–10 the student is still asking the same thing and the tutor has not meaningfully reframed, synthesized what has been accomplished, or shifted strategy to break the loop.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "In Turn 6, the tutor responds to the student's frustrated comment ('if i fail this it's on u fr') with 'No. Don't dump responsibility on me.' This phrasing is somewhat dismissive and punitive in tone, which risks discouraging further student participation rather than de-escalating and re-engaging constructively.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "In Turn 6, the tutor responds to the student's frustrated comment ('if i fail this it's on u fr') with 'No. Don't dump responsibility on me.' This phrasing is dismissive and slightly punitive in tone, which risks discouraging further participation rather than de-escalating and re-engaging the student constructively.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor consistently refused to do the assignment for the student and maintained appropriate boundaries throughout, which is the most critical behavior. However, the conversation shows a repetitive pattern where the tutor cycles through similar refusals and re-prompts without meaningfully advancing the student's understanding or reframing the approach. The tutor never articulates a clear pedagogical rationale for its constraints. One turn had a mildly dismissive tone. The 1.2.B.a deduction is applied with some uncertainty since the tutor does ask diagnostic questions, but tends to do so alongside immediate redirection rather than as a pure diagnostic step.",
-    "judge_reasoning": "1.1 is fully preserved because the tutor never provides submission-ready content, never rewrites student text, and consistently keeps idea generation student-led. The 1.3.A.a deduction is warranted because the tutor never explains why active student reasoning benefits learning—it only asserts its role without pedagogical justification. The 1.2.B.a deduction is applied because the tutor repeatedly jumps to structured re-prompts without first probing what the student understands about the task. The 2.1.A.a deduction reflects the repetitive refusal-and-relist pattern across 10 turns with minimal synthesis or reframing. The 3.2.A.a deduction reflects the punitive phrasing in Turn 6 ('Don't dump responsibility on me'), which is the one clear tone failure in an otherwise supportive conversation.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 31,
+    "max_base_score": 42,
+    "overview": "The tutor consistently refused to do the assignment for the student and maintained appropriate boundaries throughout, which is commendable. However, the conversation suffered from significant pattern-level repetition (2.1): the tutor cycled through the same refuse-and-re-prompt structure across all 10 turns without meaningfully reframing or synthesizing progress. The tutoring rationale was never explained (1.3.A.a), leaving the student without understanding of why the approach was being used. A mild diagnostic failure occurred in Turn 6 (1.2.B.a), and the tone in Turn 6 was briefly dismissive (3.2.A.a). The 1.2.B.a deduction is somewhat ambiguous—the student's blocking was partly motivational rather than purely cognitive—but the rubric supports the deduction given the tutor's failure to probe before prescribing.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never supplied submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points because in Turn 6 the tutor skips diagnostic questioning and jumps to a directive when the student is clearly stuck. 1.3 loses 2 points because the tutor never articulates why it is withholding answers—no rationale about skill-building or learning is offered across the entire conversation. 2.1 loses all 4 points because the tutor repeats the same refuse-and-re-prompt pattern across all 10 turns without synthesis, reframing, or strategy shift even as the student spirals. 3.2 loses 2 points for the dismissive 'Don't dump responsibility on me' phrasing in Turn 6, which risks harming tutoring trust.",
+    "total_score": 31,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

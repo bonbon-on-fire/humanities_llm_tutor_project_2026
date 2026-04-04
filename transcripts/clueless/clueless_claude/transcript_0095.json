@@ -72,88 +72,124 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              5,
-              7,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "The student repeatedly signals confusion across many turns, but the tutor consistently jumps to re-explaining concepts rather than first diagnosing what specifically the student doesn't understand. For example, when the student says 'it all kinda blurs together' (Turn 3) or 'i still feel lost' (Turn 5), the tutor provides another explanation rather than asking a targeted diagnostic question to isolate the confusion point.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly signals confusion across multiple turns (Turns 2, 3, 5, 7), the tutor consistently jumps straight to re-explaining the concept rather than first diagnosing what specifically the student does not understand. For example, in Turn 3 the student says 'it all kinda blurs together' and the tutor immediately re-explains the table structure without asking what specifically is blurring. In Turn 7 the student says 'i don't really know for my city,' and the tutor gives a general explanation without first asking what the student has already tried or what part is unclear.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding rather than simply giving answers. There is no moment where the tutor articulates that the Socratic approach supports learning, retention, or skill development. The tutor does say 'I'm not writing it for you' in Turn 9, but this is a constraint statement, not a rationale for why this approach benefits the student.",
-            "points": 2
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The tutor does say 'I'm not writing it for you' in Turn 9, but this is a constraint statement, not a rationale explaining why this supports learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.B.b",
+                "reason": "The tutor's feedback is largely structural and definitional rather than method-level. When the student repeatedly struggles, the tutor re-explains concepts but does not give process-level feedback such as how to approach reading a sustainability page, how to evaluate sources, or how to distinguish actor types systematically. Feedback like 'City government is a sector, not yet a strong actor' (Turn 4) is useful but isolated; the tutor does not consistently coach the student on how to think through the process.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student never successfully completes a reasoning step in this conversation, so there is no success-after-failure moment to reflect on. However, in Turn 6 the student makes a reasonable attempt ('probably mayor's office') and the tutor moves forward without reinforcing what made that reasoning sound or prompting reflection on the thinking process used.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same pattern across nearly every turn: re-explain a concept, then ask the student to apply it to their city. The student never picks a city or makes substantive progress, yet the tutor does not meaningfully reframe the approach, suggest a different entry point, or consolidate what has been established. By Turn 8-10, the tutor is still asking the same type of question ('give me your city') without adapting strategy to the student's evident block.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same pattern across nearly all 10 turns: re-explain a concept, then ask the student to apply it to their city. The student never names a city or makes substantive progress, yet the tutor does not meaningfully reframe the approach, suggest a different entry point, or address the root issue (the student hasn't chosen a city). The conversation spirals without synthesis or escalation in strategy.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -162,8 +198,8 @@
     },
     "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor maintains a consistently Socratic stance throughout, never giving submission-ready content or doing the student's reasoning work. Tone is supportive and responses are appropriately concise. However, the conversation suffers from significant pattern-level repetition: the tutor applies the same explain-then-prompt move across all 10 turns without adapting strategy when the student fails to progress. The tutor also misses opportunities to diagnose the specific source of confusion before re-explaining, never articulates a rationale for its tutoring approach, and does not prompt reflection after the one moment of student progress (Turn 6).",
-    "judge_reasoning": "1.1 is fully intact: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps idea generation student-led. 1.2 loses 3 points for 1.2.B.a: across multiple turns where the student expresses confusion, the tutor re-explains rather than asking targeted diagnostic questions to isolate what specifically is unclear. 1.3 loses 4 points: 2 for never explaining the rationale behind the guided approach (1.3.A.a), and 2 for not prompting reflection after the student's partial success in Turn 6 (1.3.C.a). Section 2 loses all 4 points for 2.1.A.a because the tutor repeats the same explain-and-prompt pattern across all 10 turns without synthesis, reframing, or strategic pivot despite the student making no substantive progress. Section 3 has no deductions: responses are concise, clear, and supportive throughout.",
+    "overview": "The tutor maintains a consistently Socratic stance throughout, never giving away answers or writing assignment content for the student, and keeps responses concise and appropriately toned. However, the conversation stalls badly: the student makes no substantive progress across 10 turns, and the tutor repeats the same conceptual explanations and city-identification prompts without adapting strategy. The tutor also misses opportunities to diagnose what specifically is confusing the student before re-explaining, and never articulates why the guided-discovery approach benefits the student's learning.",
+    "judge_reasoning": "1.1 receives full marks because the tutor never provides near-submission-ready content, avoids rewriting student text, and consistently asks the student to generate ideas before confirming them. 1.2 loses 3 points under 1.2.B.a because the tutor repeatedly re-explains concepts when the student signals confusion without first asking diagnostic questions to locate the specific gap. 1.3 loses 4 points: 2 for never explaining the rationale behind the tutoring approach (1.3.A.a), and 2 for feedback that remains definitional rather than process-coaching in nature (1.3.B.b). 2.1 loses all 4 points because the tutor cycles through the same explain-then-ask pattern across all 10 turns without synthesis, reframing, or strategic adaptation despite the student making zero progress. 2.2, 3.1, and 3.2 are unaffected as the tutor stays on-task, keeps responses bite-sized, and maintains a supportive, non-evaluative tone throughout.",
     "total_score": 33,
     "max_score": 44,
     "model": {

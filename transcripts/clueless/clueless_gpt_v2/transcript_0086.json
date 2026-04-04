@@ -72,41 +72,79 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a no-shortcut boundary ('I’m your tutor, not a shortcut') but did not clearly explain why this tutoring constraint supports the student's learning, retention, or independent reasoning.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor set a boundary against providing a completed Jakarta example row ('I won't fill in a Jakarta row for you') but did not explicitly explain how this constraint supports the student's learning or skill development. The conversation includes process guidance, but not a clear pedagogical rationale for the constraint itself.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor remained strongly student-led, refused to supply submission-ready content, and kept the conversation anchored to the stressors-table task. The main clear issue was that the tutor enforced a tutoring boundary without explicitly explaining why that boundary helps learning. Early turns were somewhat repetitive, but because the tutor later synthesized the task and moved the student into drafting, that possible deduction was not applied.",
-    "judge_reasoning": "The tutor did well on guided discovery: they explained the assignment, clarified stressor/sector/impact distinctions, and repeatedly pushed the student to generate the Jakarta row themselves rather than supplying it. The strongest deduction is under 1.3.A because the tutor said they would not provide a complete example row, but did not clearly state the learning rationale behind that constraint. No deduction was taken for assignment anchoring or communication because the tutor stayed focused on the prompt, used clear bite-sized steps, and explicitly framed later feedback as non-grading. Process-level feedback was present, especially in the final turn where the tutor specified how to strengthen the justification.",
-    "total_score": 44,
+    "overview": "The tutor stayed strongly process-oriented, avoided doing the assignment for the student, and kept the discussion anchored to the stressors-table task. The only clear deduction is that, while the tutor refused to provide a full example row, they did not explicitly explain the learning rationale for that constraint. Any concern about mild repetition was not strong enough to deduct because the tutor did reframe and progress the task.",
+    "judge_reasoning": "The tutor preserved student ownership throughout: they did not provide a submission-ready Jakarta row, rewrite the student's work, or resolve the core judgments for the student. They scaffolded effectively by breaking the task into parts, building from the student's partial answers, and giving specific process feedback on how to strengthen justification at the end. Dialogue quality was strong because the tutor repeatedly re-anchored to the assignment and moved the student toward drafting a row rather than drifting off-task. The main weakness is under 1.3.A: the tutor set a boundary against giving a full example but did not clearly state why that boundary helps the student's learning.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

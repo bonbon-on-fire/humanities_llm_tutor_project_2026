@@ -72,59 +72,98 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Turn 6, the tutor provides a fully formatted, row-by-row template with placeholder wording, source names, and column structure that the student can 'paste directly.' While placeholders are used instead of actual values, the tutor has done the structural and organizational reasoning work for the student—identifying which source goes with which row, what notes to include, and how to frame each entry. Combined with Turn 4 (providing exact search phrases for each data category) and Turn 5 (providing the full table structure with all row labels), the tutor has progressively assembled near-submission-ready scaffolding. The student's only remaining task is to copy values from sources the tutor identified into a template the tutor built. This constitutes giving answer pieces across turns that together become submission-ready.",
+                "points": 12
+              }
             ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 6, the tutor provides a fully formatted, paste-ready template with placeholder wording for every required row (rows 2–8), including column structure, source names, and note guidance. While placeholders are used instead of actual values, this constitutes rewriting the student's assignment structure into near-submission-ready form, doing the formatting and organizational work the student should have done independently.",
-            "points": 6
+            "score": 0,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is declining to give direct answers—it simply refuses and redirects. There is no moment where the tutor explains that the goal is to build the student's research skills, support long-term retention, or develop independent data-gathering methodology. The rationale for the tutoring constraints is never articulated.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is declining to provide direct answers—there is no rationale given about active learning, skill development, or retention. The tutor simply says 'no' or 'that's your work' without ever articulating why this approach supports the student's learning.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 8,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor generally maintained appropriate boundaries and redirected the student effectively throughout the conversation. The main deduction is for Turn 6, where the tutor provided a fully formatted paste-ready row template that crossed into doing the student's structural work. A secondary deduction applies for never explaining the pedagogical rationale behind declining to provide direct answers. No issues were found with dialogue quality or communication quality.",
-    "judge_reasoning": "The 1.1.B.a deduction (6 points) is warranted because Turn 6 provides a complete, paste-ready row-by-row template with source names and note guidance—this is formatting and organizational work the student should have done, and it crosses into near-submission-ready territory even with placeholders. The 1.3.A.a deduction (2 points) applies because across all 10 turns the tutor never once explained why it was withholding direct answers in terms of learning benefits; it simply refused without pedagogical framing. No deductions apply to 1.1.A.a (the tutor never gave actual data values), 1.1.C (key reasoning remained student-led), scaffolding (the tutor built progressively on student responses), dialogue quality (no spiraling or off-topic drift), or communication quality (responses were appropriately concise and supportive).",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 28,
+    "max_base_score": 42,
+    "overview": "The tutor maintained a firm stance in early turns (1–3) and showed genuine Socratic instincts in Turns 7–10, pushing back on the student's attempt to hide the GDP mismatch and asking the student to draft and evaluate their own note. However, the conversation deteriorates significantly in Turns 4–6, where the tutor progressively provides exact search phrases, a full table structure with all row labels, and then a fully formatted row-by-row template with source names and placeholder wording. Taken together, these turns constitute near-submission-ready output assembled across multiple exchanges, triggering the 1.1.A.a deduction. The tutor also never explains the rationale for its tutoring constraints at any point in the conversation, triggering the 1.3.A.a deduction. Dialogue quality and communication quality were strong throughout.",
+    "judge_reasoning": "The 1.1.A.a deduction (12 points) is warranted because by Turns 4–6, the tutor had provided: exact search phrases for each data category, a complete table structure with all required row labels and column headers, and a row-by-row template with source names and placeholder wording the student could paste directly. The rubric explicitly penalizes giving 'answer pieces across turns that together become submission-ready,' which this pattern clearly matches. The 1.3.A.a deduction (2 points) applies because the tutor never once explains why it is withholding direct answers—it simply refuses without articulating any learning rationale such as skill development, retention, or research methodology. No deductions were applied to 1.2, 2.1, 2.2, 3.1, or 3.2: the tutor built on student progress appropriately, stayed on-task, avoided repetition, and maintained a supportive and appropriately concise tone throughout.",
+    "total_score": 28,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

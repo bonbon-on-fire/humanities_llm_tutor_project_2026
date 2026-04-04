@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 19,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -87,10 +83,11 @@
               {
                 "evidence_turns": [
                   2,
-                  4
+                  4,
+                  5
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student said they were still lost and asked for the 'full picture' or for help narrowing without randomness, the tutor mostly responded with additional frameworks and filters rather than first diagnosing the exact sticking point through targeted questions.",
+                "reason": "When the student repeatedly said they were still lost, the tutor mostly responded with additional frameworks and filters rather than first diagnosing what the student already understood or where the confusion specifically lay.",
                 "points": 3
               }
             ],
@@ -98,17 +95,28 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced limits on giving direct answers, but did not clearly explain why that constraint supports the student's learning process; statements like 'My role is to help you think it through' did not explicitly connect the approach to learning benefits such as reasoning practice or retention.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -120,13 +128,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -134,26 +142,21 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The phrase 'Now stop circling the concept and apply it' reads as rigid and mildly discouraging. A smaller deduction is warranted because the rest of the conversation remains generally supportive.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
     "total_base_score": 37,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, avoided doing the student's forum post or city-specific actor table for them, and generally used guided prompts rather than submission-ready output. The main weakness was limited diagnosis of the student's repeated confusion before offering more categorization frameworks. Tone was mostly supportive, though one line was somewhat sharp; because that evidence is limited, the smaller deduction was applied.",
-    "judge_reasoning": "The strongest performance was in 1.1 and 2.2: the tutor consistently refused to supply a copyable final answer, kept the work student-led, and repeatedly redirected the student back to identifying actors for Jakarta and the forum task. I deducted under 1.2.B because the student explicitly said they were still lost multiple times, yet the tutor often responded with another explanatory framework instead of first isolating the precise misconception. I also deducted under 3.2.A for one notably rigid phrase that could dampen participation, although the overall stance remained coaching-oriented. No deduction was taken for meta-learning because the tutor did explain the tutoring constraint at least once ('My role is to help you think it through') and provided usable process structure at the end.",
+    "overview": "The tutor stayed assignment-aligned, avoided doing the forum post or actor table for the student, and generally used guided questioning effectively. The main weaknesses were limited diagnostic probing when the student repeatedly reported confusion and the lack of an explicit learning rationale for withholding direct answers. Any concern about mild rigidity in wording was not strong enough to justify an additional tone deduction.",
+    "judge_reasoning": "The strongest aspect of this tutoring was pedagogy under 1.1: the tutor consistently refused to provide a submission-ready actor list or forum wording and kept the student generating the actual case-specific content. I deducted under 1.2 because, across several turns, the tutor answered confusion with more conceptual structure before clearly diagnosing the exact sticking point. I also deducted under 1.3 because the tutor enforced boundaries on direct help without clearly explaining why that approach benefits the student's learning. Dialogue quality and communication remained strong overall: the tutor re-anchored the assignment correctly, stayed on task, and used concise, supportive language.",
     "total_score": 37,
     "max_score": 46,
     "model": {

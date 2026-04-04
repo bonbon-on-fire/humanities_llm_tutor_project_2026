@@ -72,57 +72,83 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              3,
-              5,
-              8
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor consistently enforced a guided, no-answer approach, but never explicitly explained why this constraint supports the student's learning, retention, or skill development.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across the final stretch, the tutor repeats essentially the same move—'go find the sources and come back with shaky parts'—without synthesizing, changing strategy, or advancing the interaction. The student keeps signaling they will return later, and the tutor continues the same pattern rather than consolidating next steps in one final summary.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "After the student had already adopted the plan, the tutor repeated essentially the same reminder to return with sources and checks across multiple turns without adding new synthesis or advancing the task.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
-    "overview": "The tutor was strongly student-led, assignment-anchored, and avoided doing the table for the student. Deductions are limited to one missing meta-learning element and one dialogue-quality issue: the tutor did not explicitly explain the learning rationale behind its constraints, and the last several turns became repetitive after the student had already formed a workable plan.",
-    "judge_reasoning": "The tutor preserved guided discovery well by asking the student to identify source types, search terms, comparability checks, and limitations rather than supplying Jakarta-specific answers. It also scaffolded effectively by building on the student's responses and keeping the work aligned to the city data table. However, under 1.3.A.a, the tutor never clearly stated why it was withholding direct answers for learning purposes. Under 2.1.A.a, turns 6-10 repeated the same 'bring back your sources/check the four criteria' move after the student had already accepted and understood that plan, so the conversation stalled instead of progressing.",
-    "total_score": 40,
+    "overview": "The tutor stayed strongly process-oriented, avoided giving submission-ready content, and kept the student doing the key reasoning about source quality, proxies, and table defensibility. The only clear deduction is for repetition near the end: once the student repeatedly said they would go search and return later, the tutor kept issuing similar prompts instead of summarizing and closing efficiently. No other deduction was clearly supported by the transcript.",
+    "judge_reasoning": "Under pedagogy, the tutor consistently used guided discovery: they asked the student to identify source types, search terms, comparability checks, and limitation notes rather than supplying Jakarta-specific answers. The tutor also gave useful method-level coaching, such as keeping year/unit consistent and distinguishing city versus province proxies, which supports full credit in 1.2 and 1.3. The main weakness appears in turns 6-10, where the tutor repeats the same 'go verify and come back' structure several times without changing approach or synthesizing, which fits 2.1.A.a. Communication remained clear, supportive, and non-grading throughout.",
+    "total_score": 42,
     "max_score": 46,
     "model": {
       "provider": "openai",

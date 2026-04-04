@@ -72,67 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 4, the tutor states directly: 'Act consequentialism usually judges the act by its consequences, not by whether the killing was intended, foreseen, direct, or indirect.' This is the key reasoning step—the bridge from the definition to its implication for the cases—delivered by the tutor rather than drawn out from the student. The student had only said 'maybe no?' and the tutor confirmed and fully articulated the implication instead of asking the student to reason it through.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              5
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student says they are lost on the lecture cases and asks for a quick rundown, the tutor gives a brief framing hint but does not ask diagnostic questions to find out what the student already knows or where exactly the confusion lies. The tutor jumps straight to re-framing the cases rather than probing what the student does or does not recall.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 5, the student says they are 'kinda lost on the lecture cases' and asks for a quick rundown. The tutor responds by giving a framing hint rather than first diagnosing what specifically the student doesn't understand about the cases (e.g., whether they haven't read them, can't recall them, or can't apply them). A brief diagnostic question would have been appropriate before providing any scaffolding.",
-            "points": 3
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor refuses to provide a model answer in Turn 10 but frames it as a rule ('I'm your tutor, not a writer') without ever explaining why this constraint supports the student's learning—e.g., active reasoning, retention, or skill development. No rationale for the tutoring approach is given at any point in the conversation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why they are using the Socratic/guided approach rather than just explaining things directly. When the student asks for explanations (Turn 1, Turn 5, Turn 10), the tutor redirects but never articulates why this method supports the student's learning, retention, or skill development.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 13,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 33,
-    "max_base_score": 44,
-    "overview": "The tutor does a generally strong job of keeping the student engaged and moving toward their own conclusions through Socratic questioning. The conversation progresses logically and the tutor avoids writing the assignment for the student. However, there are notable deductions: the tutor gives away the key implication of act consequentialism in Turn 4 rather than drawing it from the student; the tutor fails to diagnose the student's confusion about the lecture cases before scaffolding; and the tutor never explains the rationale for the guided approach. Dialogue quality and communication quality are strong throughout.",
-    "judge_reasoning": "Deduction of 6 points under 1.1.C.b is warranted because in Turn 4 the tutor explicitly states the core implication of act consequentialism (that it ignores means/intention distinctions) rather than guiding the student to derive it—this is the central reasoning step of the assignment. A 3-point deduction under 1.2.B.a applies because when the student expressed confusion about the lecture cases in Turn 5, the tutor immediately provided a framing hint without first asking what specifically the student didn't understand. A 2-point deduction under 1.3.A.a applies because the tutor never explains why the Socratic method is being used, even when the student explicitly requests direct answers in Turns 1, 5, and 10. No deductions apply to dialogue quality or communication quality: the tutor stays on-task, avoids redundancy, maintains a supportive tone, and keeps responses appropriately concise.",
-    "total_score": 33,
-    "max_score": 44,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor does a strong job maintaining Socratic discipline throughout: no near-submission-ready content is provided, key ideas are consistently student-generated, and the tutor refuses to write the assignment even when directly asked. The main weaknesses are a missed diagnostic opportunity in Turn 5 (jumping to re-framing rather than probing what the student already knows about the cases) and a complete absence of any explicit rationale explaining why the tutoring constraints benefit the student's learning.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready text, never rewrites student prose, and consistently lets the student generate the core reasoning steps. 1.2 loses 3 points under 1.2.B.a: in Turn 5 the student explicitly signals confusion about the lecture cases, but the tutor immediately offers a framing hint rather than asking diagnostic questions to locate the gap. 1.3 loses 2 points under 1.3.A.a: across all 10 turns the tutor never explains why it withholds direct answers or model text—there is no statement connecting the tutoring approach to learning benefits such as active reasoning or retention. Sections 2 and 3 are clean: the conversation progresses without repetitive cycling, stays on-task, uses appropriately concise responses, and maintains a supportive, non-grading tone throughout.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "When the student asked how to decide the case-study unit, the tutor supplied the key conclusion path first by stating that the municipality is usually the default unless materials clearly frame a metro region. That resolved the central choice before the student independently reasoned it out.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -91,14 +96,14 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   2,
                   4,
                   8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor kept the work student-led and constrained direct help, but did not clearly explain at least once that this tutoring approach was meant to support the student's own reasoning, retention, or long-term skill development.",
+                "reason": "The tutor enforced a student-led process throughout the conversation but never clearly explained why these constraints support learning, retention, or skill development.",
                 "points": 2
               },
               {
@@ -107,20 +112,20 @@
                   6
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from earlier confusion by identifying workable location elements, the tutor affirmed the idea and continued without prompting reflection on what changed in the student's thinking or why the new approach worked.",
+                "reason": "After the student improved by proposing workable location elements, the tutor affirmed the progress but did not prompt reflection on what changed in the student's thinking or why that approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -132,13 +137,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -150,14 +155,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed tightly anchored to the assignment, avoided doing the student's Miami table for them, and generally used short, guided prompts. I found only modest, evidence-based deductions in meta-learning: the tutor did not explicitly explain why they were keeping the work student-led, and they missed a chance to prompt reflection after the student made partial progress. I treated phrases like 'The goal is consistency, not perfection' as assignment guidance rather than a clear rationale for tutoring constraints, so I applied a limited deduction rather than a broader penalty.",
-    "judge_reasoning": "The strongest aspect of this conversation is pedagogy under 1.1: the tutor did not provide submission-ready city data or polished wording, and kept the student focused on decision rules and category distinctions instead of completing the table. Dialogue quality was also strong because the tutor repeatedly re-anchored the student to the actual task and never drifted off-topic. The main deductions are under 1.3: despite good coaching, the tutor never explicitly stated why they were withholding direct answers in learning terms, and after the student improved on the location question, the tutor did not ask for reflection on what had changed. I did not deduct for clarity or tone because the responses were concise and mostly supportive, and I did not double-penalize moments of firmness that still advanced the task.",
-    "total_score": 40,
+    "overview": "The tutor stayed tightly anchored to the assignment, kept responses concise, and generally scaffolded the student's work without giving Miami-specific table entries. The main deduction is that the tutor resolved the key city-proper versus metro-unit choice too directly. There is also some uncertainty around meta-learning: the tutor gave strong process guidance, but did not explicitly explain the learning rationale for the student-led approach or prompt reflection after a clear improvement moment.",
+    "judge_reasoning": "The tutor was effective at keeping the conversation assignment-focused and interactive, especially by steering the student toward consistent boundaries, source buckets, and a workable order of operations. However, under 1.1 the tutor crossed into giving the key answer path when they told the student that the municipality is usually the default case-study unit, which solved a central reasoning choice too early. Under 1.3, the tutor provided method advice but never explicitly said why they were withholding direct answers for learning purposes. After the student made a better location proposal, the tutor confirmed it and moved on rather than asking the student to reflect on what made that approach successful.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

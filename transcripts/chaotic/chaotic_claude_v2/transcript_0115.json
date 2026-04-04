@@ -72,72 +72,79 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Turn 4, the tutor provides a near-complete paragraph template with fill-in-the-blank slots that constitute polished, submission-ready prose structure. The framing, transitions, and sentence-level language are all provided by the tutor, leaving the student only to insert content words. This crosses into rewriting/final writing help rather than tutoring process, as the student could submit this with minimal effort.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 4, the tutor provides a near-complete paragraph template with fill-in-the-blank slots that constitute polished final language. The template is so fully formed—with transitions, sentence structure, and logical flow already written—that the student only needs to insert names. This crosses from scaffolding into rewriting the student's submission text, as the resulting filled-in post would be essentially submission-ready prose authored by the tutor.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              9
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "Throughout the conversation, the tutor enforces constraints (refusing to write bullets, refusing to fill blanks) but never explicitly explains why this approach supports the student's learning, retention, or skill development. The tutor says 'I'm your tutor, not a ghostwriter' but does not articulate the pedagogical rationale for guided discovery.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 16,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              9
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same pattern across nearly every turn: student asks for the answer, tutor refuses and re-prompts with a slightly different framing. While the student does eventually produce content, the tutor does not meaningfully synthesize or advance the dialogue structure—it repeats the same refusal-and-scaffold move without reframing, summarizing progress, or adjusting strategy when the student remains stuck. This pattern persists for 8 turns without consolidation.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 32,
+    "total_base_score": 36,
     "max_base_score": 44,
-    "overview": "The tutor consistently refused to do the assignment for the student and maintained a firm but generally supportive stance. However, the fill-in-the-blank template in Turn 4 crossed into near-submission-ready writing assistance, warranting a 1.1.B deduction. The tutor never explained the pedagogical rationale for its constraints (1.3.A deduction). The dialogue also suffered from significant pattern-level repetition across 8 turns without meaningful synthesis or strategy adjustment (2.1.A deduction). Communication quality was generally appropriate—responses were concise and tone was firm but not punitive.",
-    "judge_reasoning": "The 1.1.B.a deduction (6 points) is applied because Turn 4's fill-in-the-blank template provides polished, submission-ready prose structure that the student only needs to populate with names—this constitutes rewriting the student's text into final wording. The 1.3.A.a deduction (2 points) applies because the tutor never articulates why guided discovery supports learning, only that it is the rule. The 2.1.A.a deduction (4 points) applies because the tutor repeats the same refusal-and-scaffold pattern across 8 turns without consolidating progress, reframing the approach, or switching strategies when the student remains stuck. No deductions are applied to 1.1.A (the tutor never gives a complete answer), 1.1.C (key ideas remain student-generated), 1.2 (the tutor does build on student answers in Turns 6 and 8), 1.3.B (the tutor gives process-level feedback), 2.2 (no assignment misunderstanding or off-topic drift), or 3.2 (tone is appropriate and no grading stance is implied).",
-    "total_score": 32,
+    "overview": "The tutor maintained a consistently firm, Socratic stance throughout the conversation, repeatedly refusing to do the assignment for the student and redirecting toward student-generated reasoning. The tutor built well on student progress (Turn 8 acknowledgment, Turn 10 confirmation), scaffolded effectively, and explained tutoring rationale implicitly through consistent refusals with explanations. The one notable issue is Turn 4, where the tutor provided a fully structured, near-submission-ready paragraph template with polished transitional language and sentence frames—this constitutes writing help rather than tutoring process, triggering the 1.1.B deduction. The deduction is applied under 1.1.B rather than 1.1.A because the template required substantive content insertion and was not itself a complete answer, but the prose scaffolding was close enough to final writing to warrant the penalty.",
+    "judge_reasoning": "The primary deduction is under 1.1.B.a (Turn 4): the tutor provided a multi-sentence paragraph template with polished connective language, transitions, and sentence-level framing that constitutes near-final writing structure. While blanks remained, the prose skeleton was submission-ready and required only content words, crossing into editing/final writing help. This triggers the 6-point deduction. No 1.1.A deduction is applied because the template did not itself contain the substantive content (actor names, sector analysis, gap identification) that the assignment requires—the student still had to supply the analytical substance. All other criteria are met: the tutor consistently used Socratic questioning, built on student progress, scaffolded appropriately, maintained supportive tone, stayed on-task, and kept responses reasonably concise and interactive.",
+    "total_score": 36,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

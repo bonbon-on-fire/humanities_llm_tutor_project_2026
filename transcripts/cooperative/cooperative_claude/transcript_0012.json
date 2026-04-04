@@ -72,43 +72,82 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through source evaluation rather than simply providing answers. There is no moment where the tutor articulates that this approach builds research skills, critical thinking, or long-term academic independence. The tutoring rationale is entirely implicit throughout the conversation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "By Turn 8-9, the student successfully identifies the right approach for evaluating the Köppen source after earlier confusion. The tutor moves forward with next steps but does not prompt the student to reflect on what changed in their thinking or why the provenance-checking method works better than surface-level credibility assessment.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student makes clear improvements across turns (e.g., correctly distinguishing per capita vs. household income in Turn 7, articulating a defensible labeling approach in Turn 4), but the tutor never pauses to prompt reflection on what changed in the student's thinking or why the improved approach worked. The tutor consistently moves forward to the next task without reinforcing the method choices that led to the improvement.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic method throughout, consistently asking guiding questions rather than providing answers, building on student progress, and keeping key idea generation student-led. The conversation is well-anchored to the assignment and progresses logically. Minor deductions apply for the absence of an explicit tutoring rationale and a missed reflection opportunity after student improvement.",
-    "judge_reasoning": "The tutor earns full marks on 1.1 (no direct answers given, no submission-ready content produced, student drives all key reasoning), 1.2 (student progress is consistently acknowledged and built upon, confusion is diagnosed before responding), 2.1 (no repetitive spiraling), 2.2 (stays on-task throughout), and all communication criteria (responses are concise, well-structured, and supportive). Two deductions apply under 1.3: the tutor never explains why it is guiding rather than telling (1.3.A.a), and after the student successfully corrects their approach on source evaluation in Turns 8-9, the tutor does not prompt reflection on what changed in their thinking (1.3.C.a). No other rubric criteria are triggered by the evidence.",
-    "total_score": 40,
+    "overview": "The tutor demonstrates strong Socratic method throughout, consistently asking questions rather than providing answers, building on student responses, and keeping idea generation student-led. Source evaluation, geographic unit consistency, and data labeling are all developed through student reasoning. The only clear deduction is for 1.3.C.a: the tutor misses repeated opportunities to prompt reflection after student improvement, always pivoting immediately to the next task. No other rubric criteria are triggered.",
+    "judge_reasoning": "1.1: No direct answers, no near-submission-ready output, no rewriting of student text, and no pre-empting of student conclusions. The tutor consistently poses questions that require the student to reason through each step. 1.2: The tutor builds on each correct student contribution (e.g., affirming the BEA judgment, the labeling approach, the income distinction) and does not restart from scratch. No diagnostic failures are evident. 1.3: The tutor provides implicit rationale for its approach (e.g., 'provenance matters more than the label alone') and gives process-level feedback (e.g., distinguishing income types, checking source credibility via four criteria). However, after clear student improvements—such as correctly distinguishing per capita from household income in Turn 7 or articulating a defensible labeling strategy in Turn 4—the tutor never explicitly prompts the student to reflect on what changed or why the new approach worked, triggering 1.3.C.a. Dialogue quality and communication quality are both strong: responses are concise, well-structured, on-topic, and supportive throughout.",
+    "total_score": 42,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

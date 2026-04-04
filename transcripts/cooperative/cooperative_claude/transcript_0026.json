@@ -72,38 +72,96 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved from earlier confusion (e.g., Turn 6 and Turn 8 showing clear progress from Turn 3-4), the tutor moved forward without prompting the student to reflect on what changed in their thinking or why the new framing worked better. The tutor acknowledged progress but did not ask the student to articulate what shifted methodologically.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this Socratic approach supports learning, retention, or skill development. The rationale for the tutoring method is entirely absent.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully articulates a defensible concluding claim in Turn 10 following earlier fuzzy attempts, the tutor moves on to next steps without prompting the student to reflect on what changed in their thinking or why the improved formulation worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed very well overall, consistently using Socratic questioning to guide the student through act consequentialism, the trolley cases, and the development of a rights-based alternative account. The student did the key reasoning work throughout. The only notable gap was a missed opportunity to prompt explicit meta-reflection after the student's clear improvement in later turns.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas). Under 1.2, the tutor built on each student response and did not misdiagnose confusion. Under 1.3, the tutor explained its approach implicitly through framing (e.g., 'don't stay abstract,' 'test it instead of just naming it') but never explicitly stated a rationale for the Socratic constraints, which is borderline; however, the more clearly supported deduction is 1.3.C.a: after the student made genuine progress (Turns 6, 8, 10), the tutor moved forward without asking the student to reflect on what changed in their reasoning process. Dialogue quality was strong—no spiraling, no off-topic drift, and the tutor re-anchored appropriately throughout. Communication was concise, well-paced, and supportive without implying formal grading.",
-    "total_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently prompting the student to generate ideas, test principles, and refine their reasoning without giving away answers. Scaffolding is well-executed, building progressively from a basic consequentialist principle to a nuanced rights-based constraint. The main weaknesses are the complete absence of any explicit rationale for the tutoring approach (1.3.A.a) and a missed opportunity to prompt reflection after the student's successful articulation in Turn 10 (1.3.C.a). No other rubric criteria were triggered.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming or redirecting. 1.2 receives full marks: the tutor builds on each student contribution and uses targeted questions rather than method dumps. 1.3 loses 4 points: the tutor never explains why it is using a question-led approach (1.3.A.a), and after the student's improved formulation in Turn 10, the tutor moves directly to next steps without asking the student to reflect on what changed in their thinking (1.3.C.a). Dialogue quality and communication quality are both strong: responses are concise, well-anchored to the assignment, and maintain a supportive, non-evaluative tone throughout.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

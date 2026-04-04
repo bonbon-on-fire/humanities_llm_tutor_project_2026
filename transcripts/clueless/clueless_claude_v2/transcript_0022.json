@@ -72,56 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              8
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces a Socratic, non-answer-giving approach throughout the conversation but never explicitly explains to the student why this method supports their learning—e.g., that working through the reasoning themselves builds retention, analytical skill, or long-term capability. The tutor simply refuses to give answers or redirects without articulating the pedagogical rationale.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In several turns (2, 3, 4, 8), when the student expressed confusion, the tutor jumped directly into providing frameworks, definitions, or lists rather than first asking diagnostic questions to understand exactly where the student's understanding broke down. For example, in Turn 8 the student says they don't know any government offices, and the tutor immediately provides a full list of office types rather than probing what the student does know or why they feel stuck.",
-            "points": 3
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 21,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              4,
-              8
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Several tutor responses (Turns 2, 4, 8) contain multi-part lists and multi-paragraph explanations where shorter, more focused prompts would have been more appropriate. Turn 2 in particular provides a full methodological breakdown with five actor groups and three sorting questions simultaneously, which likely contributed to the student's continued overwhelm rather than reducing it.",
-            "points": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 4,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 37,
-    "max_base_score": 46,
-    "overview": "The tutor generally maintained a Socratic approach, consistently refused to do the assignment for the student, and kept the student moving forward through targeted questions. The tutor avoided giving submission-ready content and kept idea generation student-led throughout. The main weaknesses were a tendency to front-load frameworks and lists without first diagnosing where the student's confusion actually lay, and a pattern of multi-part responses that may have contributed to the student's persistent overwhelm. No meta-learning rationale was explicitly provided to the student explaining why the tutor was guiding rather than answering directly, which is a notable gap. Process-level feedback was present but sometimes vague.",
-    "judge_reasoning": "Pedagogy: The tutor never gave submission-ready content and consistently pushed the student to generate ideas (1.1 intact). However, the tutor repeatedly responded to student confusion with immediate framework dumps rather than diagnostic questioning first (1.2.B.a, -3 pts). No explicit rationale for the tutoring approach was offered to the student at any point in the conversation (1.3.A.a, -2 pts). Process feedback was present but occasionally surface-level, e.g., 'that's a workable start' without deeper method guidance (1.3.B.b, -2 pts). Dialogue quality was strong: the tutor maintained assignment anchoring throughout, redirected appropriately, and avoided repetitive cycling. Communication quality suffered because multiple turns featured dense multi-part lists when a single focused prompt would have been more effective and better matched the student's stated overwhelm (3.1.A.a, -4 pts); tone was consistently supportive and non-grading (3.2 intact).",
-    "total_score": 37,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed strongly overall, consistently applying Socratic method, refusing to do the assignment for the student, scaffolding incrementally, and maintaining a supportive tone. The one clear deduction is for never explaining the pedagogical rationale behind the tutoring constraints—the tutor enforced the approach throughout but never told the student why working through it themselves matters for learning.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently prompted the student to generate ideas before confirming or refining them. No deductions apply. 1.2: The tutor built on each student response (e.g., affirming 'city government' as a starting point, sharpening 'residents' into 'low-income residents in flood-prone neighborhoods'), and used diagnostic questions before providing frameworks. No deductions apply. 1.3: The tutor never explained why the Socratic constraints were in place—e.g., in Turn 5 when refusing to lay out the Boston answer, the tutor simply said 'that would do the assignment for you' without connecting this to learning benefits like skill-building or retention. This triggers 1.3.A.a for -2 points. No method-level feedback issues were found (1.3.B), as the tutor gave specific process guidance throughout. 2.1 and 2.2: No repetition without progress, no assignment misunderstanding left uncorrected, and no off-topic drift. 3.1 and 3.2: Responses were concise and well-structured; tone was consistently supportive and formative.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

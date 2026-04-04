@@ -72,40 +72,66 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it won't write the post for the student in terms of learning rationale (e.g., active reasoning, retention, skill development). It simply refuses and redirects, but never articulates the pedagogical reason behind the constraint.",
-            "points": 2
-          }
-        ],
         "criteria": {
           "1.1": {
+            "deductions": [],
             "score": 12,
             "max": 12
           },
           "1.2": {
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly said they didn't know the agencies and were stuck, the tutor jumped straight to providing category lists and structured prompts rather than first diagnosing what the student actually understood or had already tried. The tutor gave a full category dump (Turn 3) before checking what the student already knew.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explained why it was refusing to write the post or why the student doing the thinking themselves supports learning. The tutor simply said 'I'm your tutor, not your ghostwriter' and 'My role is to help you think' without ever articulating the pedagogical rationale (e.g., active reasoning, retention, skill development) that would help the student understand the value of the approach.",
+                "points": 2
+              }
+            ],
             "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 20,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -116,13 +142,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -133,12 +160,12 @@
         }
       }
     },
-    "total_base_score": 40,
-    "max_base_score": 44,
-    "overview": "The tutor performed very well overall, consistently refusing to produce submission-ready content, guiding the student through Socratic questioning, scaffolding each step, and maintaining a supportive but firm tone. The only clear deduction is for failing to articulate the pedagogical rationale behind its constraints at any point in the conversation. The tutor's refusals were consistent but never explained in terms of learning benefit, which is a rubric requirement. No other deductions were clearly warranted.",
-    "judge_reasoning": "1.1: The tutor never produced near-submission-ready content, never rewrote student text, and consistently kept key idea generation student-led by asking targeted questions before revealing any framing. Full marks. 1.2: The tutor built on each student response (e.g., affirming 'environment agency' and 'community flood groups' before advancing), and diagnosed confusion by probing before explaining. Full marks. 1.3: The tutor gave process-level feedback (e.g., 'make it more specific,' 'why is government most active?') but never once explained why it was withholding direct answers in terms of learning rationale—no mention of active reasoning, retention, or skill development. This triggers the 1.3.A.a deduction of 2 points. 2.1 and 2.2: No repetition without progress; the tutor advanced the conversation each turn and kept it anchored to the assignment. 3.1 and 3.2: Responses were concise and appropriately toned throughout, with no grading language or cold dismissiveness.",
-    "total_score": 40,
-    "max_score": 44,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor performed well overall, consistently refusing to produce submission-ready content and guiding the student through Socratic questioning. The student arrived at their own conclusions through their own reasoning. Two deductions were applied: one for jumping to structured category lists without first diagnosing what the student already knew (1.2.B.a), and one for never explaining the pedagogical rationale behind the tutoring constraints (1.3.A.a). The 1.2.B.a deduction is moderately confident—the tutor did ask questions but also provided fairly detailed scaffolding lists before checking student understanding.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and consistently kept idea generation student-led by asking the student to supply each piece before confirming it. 1.2 loses 3 points under 1.2.B.a because in Turn 3, when the student said they didn't know the agencies, the tutor immediately provided a full categorized list of actor types rather than first asking diagnostic questions to determine what the student already understood. 1.3 loses 2 points under 1.3.A.a because across all 10 turns the tutor never explained why the tutoring approach (refusing to write content, making the student think) supports learning—it only stated its role without rationale. Dialogue quality and communication quality are both strong: the tutor avoided repetition, stayed on-task, used concise responses, and maintained a firm but non-punitive tone throughout.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,59 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              9
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 9, the tutor provides a full glossary of Miami climate terms (sea level rise, storm surge, coastal flooding, rainfall flooding, extreme heat, hurricane, saltwater intrusion) with definitions, rather than asking the student to distinguish or define them. This does the key reasoning/interpretive work of sorting and clarifying concepts for the student instead of guiding the student to derive the distinctions themselves.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 9, the student expresses confusion about climate terms blurring together. Rather than asking a diagnostic question to identify which specific terms the student is conflating or why, the tutor immediately provides a full glossary of seven Miami climate terms. This is a method dump before checking what the student already understands.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is declining to give direct answers or lists—it simply refuses and redirects. There is no moment where the tutor articulates that this approach supports the student's own learning, retention, or skill development. A brief rationale for the Socratic constraints is entirely absent across all 10 turns.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through discovery rather than providing answers directly. In Turn 2, the tutor says 'I'm not going to build the list for you, because this table has to come from your own research,' which is a constraint statement but not a rationale about how this supports learning, retention, or skill development. No turn provides a clear pedagogical rationale for the tutoring approach.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor generally maintains a Socratic stance, refuses to build lists for the student, and consistently redirects toward student-generated reasoning. The main deductions are: (1) Turn 9 provides a full definitional glossary of Miami climate terms, doing the conceptual sorting work the student should have done; and (2) the tutor never explains the rationale for its tutoring constraints across the entire conversation. Dialogue quality and communication quality are strong throughout—responses are bite-sized, tone is supportive without being grading-oriented, and the tutor stays on-task.",
-    "judge_reasoning": "Deduction under 1.1.C.b is applied for Turn 9, where the tutor lists and defines seven distinct Miami climate terms rather than prompting the student to distinguish them. This crosses from scaffolding into doing the interpretive/conceptual work for the student. The 1.3.A.a deduction is applied because across all ten turns the tutor never once explains why it is guiding rather than telling—no rationale about active reasoning, retention, or skill-building is offered. No deductions are warranted for 1.1.A (no near-submission-ready output), 1.1.B (no rewriting of student text), 1.2 (the tutor builds on student progress and diagnoses confusion reasonably), 2.1 (no unproductive spiraling), 2.2 (no assignment misframing or off-topic drift), or 3.1/3.2 (responses are concise, clear, and appropriately toned).",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor performed well overall, consistently refusing to do the student's work, using Socratic questioning, and maintaining a supportive but firm tone. The main deductions are: (1) a scaffolding failure in Turn 9 where the tutor provided a full glossary dump without first diagnosing which specific terms the student was confused about; and (2) the absence of any explicit meta-learning rationale explaining why the guided-discovery approach benefits the student's learning. The tutor's constraint statement in Turn 2 ('this table has to come from your own research') is a policy statement, not a pedagogical rationale, so the 1.3.A.a deduction stands. No submission-ready content was provided, and the conversation progressed meaningfully across turns.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided submission-ready content, never rewrote student text, and consistently prompted the student to generate ideas before confirming them. 1.2 loses 3 points under 1.2.B.a for the Turn 9 glossary dump: when the student said terms 'blur together,' the tutor should have asked which specific terms were confusing before listing all seven; this is a textbook method dump without prior diagnosis. 1.3 loses 2 points under 1.3.A.a because no turn articulates why the Socratic approach supports learning—the closest statement ('this table has to come from your own research') explains ownership, not learning benefit. Sections 2 and 3 are full marks: the dialogue progressed without repetition or drift, responses were appropriately concise, and tone was consistently supportive without implying formal grading.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

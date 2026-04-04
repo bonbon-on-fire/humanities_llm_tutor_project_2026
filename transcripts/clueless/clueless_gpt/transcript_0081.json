@@ -72,23 +72,10 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 14,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  7
-                ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor answers the central city-boundary choice by stating that people usually use the official city unit first, which gives the key conclusion before the student fully reasons it out.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
@@ -99,8 +86,15 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  3,
+                  6,
+                  8,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor keeps pushing the student to choose units and find sources independently, but never explicitly explains that this constraint is meant to build the student's reasoning or research skill.",
+                "reason": "The tutor repeatedly constrained the student to one row, one source, or one decision at a time, but never explicitly explained that this tutoring constraint was meant to support learning, retention, or reduce overwhelm.",
                 "points": 2
               },
               {
@@ -109,35 +103,24 @@
                   8
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improves from uncertainty to selecting the city unit, the tutor confirms the choice and moves on without prompting reflection on what clarified the decision.",
+                "reason": "After the student improved from uncertainty to choosing the city unit, the tutor moved on to next steps without prompting reflection on what changed in the student's reasoning or why that choice was now more defensible.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Across several turns, the tutor keeps returning to the same 'choose the unit' prompt while the student remains confused, with limited synthesis or strategy shift until later.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4
           },
           "2.2": {
@@ -145,13 +128,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -165,21 +148,25 @@
                   10
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The phrase 'Fine. Dumbed down:' is more brusque than supportive and risks making the student feel dismissed while already overwhelmed.",
+                "reason": "When the student said they were overwhelmed, the response \"Fine. Dumbed down:\" came across as curt and mildly dismissive rather than fully supportive.",
                 "points": 2
               }
             ],
-            "score": 4,
-            "max": 6
+            "score": 2,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 30,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed focused on the assignment, avoided doing the table for the student, and provided concrete process guidance about source quality, geographic units, and table structure. Main deductions come from giving the likely city-unit conclusion too directly, repeating the same unit-choice line of questioning across multiple turns before changing approach, missing explicit meta-learning/reflection moments, and one slightly dismissive tone marker.",
-    "judge_reasoning": "The strongest aspect of the tutoring is that it remained anchored to the assignment and consistently pushed the student toward independent research steps rather than producing submission-ready content. However, turn 7 crosses into giving the key boundary choice too directly, which reduces student-led idea generation under 1.1. The largest dialogue deduction is the repeated cycle around choosing city vs. metro in turns 5-7 without enough reframing until later. I also deducted for missing an explicit explanation of why the tutor was withholding answers for learning purposes, for not prompting reflection after the student's improvement, and for the brusque wording in turn 10.",
-    "total_score": 30,
+    "overview": "The tutor kept the conversation well anchored to the assignment and offered clear process scaffolds for sourcing and organizing the city data table. The main weaknesses were limited meta-explanation for the tutoring approach, no reflection prompt after the student made progress, and one slightly curt phrasing at the end. It was somewhat ambiguous whether the tutor's guidance on choosing city versus metro boundary counted as doing the key reasoning step, so I did not apply the larger 1.1 deduction because the tutor stayed focused on process rather than producing submission-ready content.",
+    "judge_reasoning": "The tutor did not provide assignment-ready prose or a finished table, so no deduction was warranted under 1.1. Scaffolding was generally effective and responsive: the tutor clarified the task, explained source types, and repeatedly re-grounded the student in boundary consistency and source quality, so 1.2 and 2.2 remain full. I deducted under 1.3 because the tutor never explicitly explained why the one-step-at-a-time tutoring constraint supported learning, and after the student finally selected the city unit, the tutor did not prompt reflection on what changed. I also deducted under 3.2 because the final \"Fine. Dumbed down:\" phrasing was less supportive than ideal when the student reported feeling overwhelmed.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

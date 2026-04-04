@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 19,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -86,12 +82,12 @@
             "deductions": [
               {
                 "evidence_turns": [
+                  2,
                   5,
-                  8,
-                  10
+                  8
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student remained broadly stuck, the tutor often responded with more full-process explanation instead of first diagnosing the precise confusion point. This was most visible when the student said they were overwhelmed or not ready, and the tutor gave another general method dump before checking what the student already understood.",
+                "reason": "When the student repeatedly said they were overwhelmed or still confused, the tutor often responded with another full process explanation instead of first diagnosing the precise sticking point through narrower questions.",
                 "points": 3
               }
             ],
@@ -102,25 +98,23 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  5,
-                  8
+                  5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor set boundaries and redirected toward student work, but did not clearly explain at least once why those constraints support learning, retention, or skill development.",
+                "reason": "The tutor enforced a boundary ('I’m not going to build the assignment for you') but did not explain why that tutoring constraint supports the student's learning or skill development.",
                 "points": 2
               }
             ],
             "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [
@@ -129,10 +123,11 @@
                   2,
                   5,
                   7,
-                  8
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeated essentially the same general explanation of the assignment and forum-post logic across multiple turns without enough synthesis or a new strategy to break the impasse. Although the tutor occasionally tried to redirect to a concrete city example, the conversation still cycled on the same explanation pattern.",
+                "reason": "The tutor repeatedly cycled through the same assignment summary and same prompting pattern ('what city are you using?') while the student remained stuck, with limited reframing or synthesis to break the loop.",
                 "points": 4
               }
             ],
@@ -144,13 +139,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -158,18 +153,31 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The line 'We’ve gone over the general idea a few times. Now stop circling' comes across as rigid and mildly dismissive when the student was still expressing confusion.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 35,
+    "total_base_score": 33,
     "max_base_score": 46,
-    "overview": "The tutor stayed aligned to the assignment, avoided doing the student's work, and gave clear general heuristics for distinguishing leading, engaged, and missing actors. Main deductions come from repeated general explanations without enough change in strategy, and from not diagnosing the student's exact sticking point before offering more process explanation. Tone was mostly supportive and the evidence for harsher communication was ambiguous, so no communication-tone deduction was applied.",
-    "judge_reasoning": "The strongest positives were in 1.1 and 2.2: the tutor did not provide submission-ready content and consistently kept the discussion anchored to the actual assignment. However, in turns 5, 8, and 10, the tutor tended to answer confusion with more complete procedural explanation rather than first narrowing down what the student specifically did or did not understand, supporting a 1.2.B.a deduction. The conversation also showed repetition across turns 2, 5, 7, and 8, where similar assignment summaries were restated without enough strategic shift, justifying the full 2.1 deduction. I did not deduct under 1.1 because the tutor's guidance stayed general and heuristic rather than supplying the student's actual case-specific reasoning or final forum content.",
-    "total_score": 35,
+    "overview": "The tutor stayed on-task, avoided doing the student's assignment, and gave generally clear process guidance. However, the conversation became repetitive, with multiple restatements of the same instructions rather than sharper diagnosis or a new strategy once the student remained stuck. The 1.2 deduction is somewhat borderline because the student repeatedly asked for general explanation, but there was still enough evidence of repeated explanation-first responses to support a small penalty.",
+    "judge_reasoning": "The strongest positive is that the tutor did not provide submission-ready content or make the key city-specific judgments for the student. The main deductions come from process: across several turns, the tutor repeated the same explanation and prompt structure instead of changing approach, which fits the redundancy criterion. I also deducted for not explicitly explaining the learning rationale behind withholding direct assignment construction. Finally, one tone deduction is warranted because the 'stop circling' phrasing risks sounding dismissive while the student was still struggling.",
+    "total_score": 33,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,57 +72,99 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor uses a guided, constrained approach throughout, but never explicitly explains at least once that this constraint is meant to support the student's learning, reasoning, or retention.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              9,
-              10
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently uses guided questioning and withholds direct answers, but never explicitly explains why this constraint supports the student's learning, retention, or independence.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from uncertainty to a plausible governance-based justification for using city proper, the tutor moves straight to drafting a rule instead of prompting reflection on what changed in the student's reasoning and why it worked.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student showed improved reasoning about city proper versus metro scope, the tutor moved straight into applying that choice rather than prompting reflection on what changed in the student's thinking or why the newer approach worked.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              5
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  5
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Comments such as 'You are overcomplicating a simple field' and 'Stop spiraling' are more abrupt than necessary and could feel dismissive to a confused student, even though the overall interaction remains mostly supportive.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The overall tone is mostly helpful, but phrases like 'You are overcomplicating a simple field' and 'Stop spiraling' are sharper than necessary and could feel dismissive to a confused student.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly anchored to the assignment and generally used guided questioning instead of doing the student's work. Deductions are limited to missed meta-learning moves and a couple of tone slips. Where evidence was somewhat interpretive, I applied the smaller reasonable deduction rather than stacking overlapping penalties.",
-    "judge_reasoning": "The tutor consistently chunked the task, diagnosed key sticking points, and kept idea generation with the student, so there was no evidence of submission-ready output or major drift from the assignment. I deducted under 1.3.A.a because the tutor never explicitly stated why the question-led constraint supports learning, and under 1.3.C.a because the tutor did not prompt reflection after the student's reasoning improved. I also deducted under 3.2.A.a for unnecessarily sharp phrasing in a few turns, even though the broader interaction remained supportive. No further deductions were justified because the tutor provided concrete process guidance, scaffolded decisions effectively, and kept responses focused and clear.",
-    "total_score": 42,
+    "overview": "The tutor stayed strongly process-oriented, avoided doing the assignment for the student, and kept the conversation anchored to the actual data-table task. The main weaknesses were missing meta-explanation for the tutoring approach, a missed reflection prompt after student improvement, and a couple of sharper phrases that slightly undercut support. There was some ambiguity around whether the tutor partially resolved the city-proper-versus-metro tradeoff, but because the tutor still left the final rule for the student to formulate, no 1.1 deduction was applied.",
+    "judge_reasoning": "The tutor performed well on core pedagogy: they broke the task into buckets, asked targeted questions, and did not provide submission-ready text or full reasoning for the student. Dialogue quality was also strong because the tutor kept the discussion tied to the assignment and redirected confusion into manageable decisions rather than going off-topic. Deductions were warranted in meta-learning because the tutor never explained why their constrained, question-based approach was beneficial, and they missed a chance to ask the student to reflect after a better attempt. Communication also lost points because a few lines sounded unnecessarily sharp for a student who was already overwhelmed.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

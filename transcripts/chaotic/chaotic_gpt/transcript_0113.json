@@ -72,60 +72,98 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              7
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor consistently enforced a no-ghostwriting boundary, but did not clearly explain the learning rationale behind that constraint in terms of active reasoning, retention, or skill-building; statements like 'My role is to help you build it yourself' and 'I’m your tutor, not your ghostwriter' describe role limits more than tutoring purpose.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              7,
-              9
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced not doing the work for the student ('My role is to help you build it yourself' / 'I’m your tutor, not your ghostwriter') but did not clearly explain a learning rationale such as active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from resisting to producing a defensible flooding sentence, the tutor gave correction but did not prompt reflection on what changed in the student's approach or why the new attempt worked better.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After repeated avoidance, the student successfully produced a substantive draft sentence in Turn 9, but the tutor moved straight into revision guidance rather than prompting reflection on what changed in the student's approach or why the attempt worked better.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrasing 'Stop outsourcing the writing. I’m your tutor, not your ghostwriter' is rigid and potentially discouraging, making the tone less supportive than ideal for tutoring trust.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The line 'Stop outsourcing the writing. I’m your tutor, not your ghostwriter.' is more punitive and rigid than supportive, which risks harming tutoring trust even though the underlying boundary was appropriate.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor strongly maintained student ownership, avoided giving submission-ready content, and kept the interaction anchored to the actual stressors-table task. Deductions are limited to missing explicit learning-rationale framing, missing reflection after the student's improved attempt, and one notably harsh tone moment. No larger pedagogy deductions were taken because the tutor consistently redirected toward student-generated rankings, ratings, and justifications.",
-    "judge_reasoning": "The strongest part of this conversation is pedagogy: the tutor repeatedly refused to provide a finished Jakarta table or polished wording and instead used questions, ranking tests, and sentence structures to keep idea generation student-led. Scaffolding was also solid, because the tutor built directly on the student's proposed ranking and narrowed confusion points without restarting or dumping full solutions. The main pedagogy weakness is meta-learning: the tutor set boundaries but did not clearly explain why those boundaries support learning, and after the student finally produced a workable sentence, the tutor did not ask for reflection on what improved. Communication was generally clear and bite-sized, but Turn 7 crossed into overly sharp wording, justifying a tone deduction.",
-    "total_score": 40,
+    "overview": "The tutor strongly protected student ownership and kept the conversation anchored to the assignment, using stepwise prompts rather than giving submission-ready content. Deductions are limited to missing meta-learning explanation, lack of reflection after improvement, and one notably harsh turn in tone. There was some repeated refusal language, but because the tutor continued advancing the task with new scaffolds, that evidence was not strong enough for a redundancy deduction.",
+    "judge_reasoning": "The tutor earned full credit on guided discovery because they consistently refused to provide a finished table, rankings, or polished submission text, and instead pushed the student to choose, rank, and justify stressors. Scaffolding was effective: the tutor built from the student's choices, narrowed decisions, and provided usable structure without taking over the reasoning. I deducted under 1.3 because the tutor never explained why these constraints help learning, and after the student's improved flooding sentence, the tutor did not prompt reflection on the improved method. I also deducted under tone because one response was unnecessarily sharp, even though the rest of the interaction remained focused and largely constructive.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

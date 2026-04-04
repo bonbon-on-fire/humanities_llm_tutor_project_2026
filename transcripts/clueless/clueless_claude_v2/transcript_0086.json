@@ -72,75 +72,105 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is not giving direct answers or why the Socratic approach supports learning. It enforces constraints (e.g., 'I'm your tutor, not a shortcut') but never articulates the pedagogical rationale for doing so.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              6
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed confusion about what qualifies as a 'stressor' (Turn 2), the tutor provided a structured explanation with examples rather than first asking diagnostic questions to understand what specifically was confusing the student. Similarly in Turn 3, the tutor re-explained from scratch without probing what the student already understood.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student expresses confusion about 'first vs. also affected,' the tutor jumps directly to providing a rule ('First = most immediate/directly disrupted') without first asking a diagnostic question to understand what specifically is confusing the student about the distinction.",
-            "points": 3
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it won't give a complete example row or do the work for the student—it simply refuses ('No—I'm your tutor, not a shortcut') without articulating the pedagogical rationale (e.g., active reasoning, retention, skill development). No turn in the conversation provides a clear rationale for the tutoring constraints.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 19,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same conceptual territory (stressor vs. sector vs. impact, how to categorize flooding) across six or more turns without meaningfully consolidating or advancing. The student repeatedly expresses the same confusion and requests the same type of help, and the tutor continues with similar question-and-explain moves rather than reframing, summarizing, or shifting strategy. The tutor does eventually push for a draft in Turn 8, but the repetition is extensive before that pivot.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles on the same conceptual territory (stressor vs. sector vs. impact, and the flooding row structure) across nearly all turns without meaningfully consolidating or advancing. The student repeatedly expresses the same confusion and requests the same type of clarification, and the tutor responds with slight reframings rather than switching to a different strategy, summary, or targeted simplification to break the loop.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The tutor's response 'No—I'm your tutor, not a shortcut' is somewhat dismissive and could discourage the student. While the refusal to provide a completed row is pedagogically appropriate, the phrasing is unnecessarily curt and could undermine trust.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
     "total_base_score": 33,
-    "max_base_score": 44,
-    "overview": "The tutor maintains appropriate boundaries throughout, refusing to complete the assignment for the student and consistently redirecting toward student-generated reasoning. However, the conversation spirals on the same conceptual territory for too long without a meaningful strategy shift, and the tutor misses opportunities to diagnose confusion before responding. The tutoring rationale is never explicitly stated, and one response uses a dismissive tone.",
-    "judge_reasoning": "The tutor avoids giving submission-ready content and keeps key idea generation student-led, preserving full points for 1.1. A deduction is applied under 1.2.B for jumping to a rule in Turn 6 without first diagnosing what specifically confused the student. A deduction under 1.3.A is warranted because the tutor never explains why it withholds direct answers or how the Socratic approach benefits learning. The most significant deduction is under 2.1.A: the conversation loops on the same flooding-row structure and stressor/sector/impact distinction across eight turns without the tutor switching to a consolidating or reframing strategy, which is a clear pattern-level repetition without progress. A minor tone deduction is applied for Turn 5's 'not a shortcut' phrasing, which risks discouraging the student.",
+    "max_base_score": 42,
+    "overview": "The tutor maintained a strong Socratic stance throughout, consistently refusing to produce submission-ready content and redirecting the student to do their own reasoning. The final turn's feedback was specific and actionable. However, the conversation suffered from significant repetition without strategic reframing—the student circled the same confusion for many turns and the tutor's response pattern did not adapt sufficiently. The tutor also missed opportunities to diagnose the root of student confusion before re-explaining, and never articulated a clear rationale for its pedagogical constraints.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced near-submission-ready content, consistently pushed the student to generate ideas, and gave targeted process feedback in Turn 10. 1.2 loses 3 points under 1.2.B.a because in Turns 2 and 3 the tutor jumped to structured explanations without first probing what specifically confused the student. 1.3 loses 2 points under 1.3.A.a because the tutor's refusal in Turn 5 ('No—I'm your tutor, not a shortcut') is never accompanied by an explanation of why this approach supports learning. 2.1 loses all 4 points under 2.1.A.a because the tutor repeated essentially the same conceptual framing and question style across six turns without consolidating or meaningfully shifting strategy, even as the student remained stuck. 2.2 and section 3 have no clear deduction triggers.",
     "total_score": 33,
-    "max_score": 44,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

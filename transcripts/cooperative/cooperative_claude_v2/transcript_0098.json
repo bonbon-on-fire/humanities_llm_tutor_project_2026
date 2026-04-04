@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic practice throughout: it consistently asks the student to generate ideas before confirming them, avoids giving submission-ready content, scaffolds well from basic principle to application to critique, and maintains a supportive, appropriately concise tone. The only clear deduction is the absence of any meta-learning rationale explaining why the guided-discovery approach is being used.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never gives final answers or near-submission-ready content; key ideas are always student-generated first), 1.2 (the tutor consistently builds on student progress and diagnoses confusion before redirecting, e.g., Turn 7 reframing the Fuel loop), 1.3.B (the tutor gives specific process feedback such as 'don't get lost in labels—look at the mechanism'), 2.1 (the tutor breaks the Turn 7 loop promptly), 2.2 (no off-topic drift or misread assignment framing), or 3.1–3.2 (responses are concise, interactive, and supportive throughout). The sole deduction is 1.3.A.a: across all ten exchanges the tutor never once explains to the student why it is asking questions rather than providing answers, missing the meta-learning rationale requirement.",
-    "total_score": 42,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall, consistently using Socratic questioning to guide the student through the act consequentialism framework and the trolley/Fuel/Blood cases without doing the reasoning for the student. Key ideas (means vs. side effect, the causal mechanism in Fuel, the footbridge objection) were all elicited from the student rather than stated by the tutor. Scaffolding was well-paced, building on each student response. The only clear deduction is the absence of any explicit rationale explaining why the tutor is using a guided-discovery approach rather than providing direct answers.",
+    "judge_reasoning": "1.1: No deductions warranted. The tutor never gave submission-ready content, never rewrote student text, and consistently asked questions before revealing conclusions. The student generated all key ideas. 1.2: Scaffolding was strong throughout; the tutor acknowledged correct student progress at each turn and diagnosed the Fuel confusion specifically in Turn 7 before reframing. 1.3: The tutor provided useful process-level feedback (e.g., 'don't get lost in labels—look at the mechanism,' 'commit to one reading') satisfying 1.3.B, but never once explained why it was guiding rather than telling, triggering the 1.3.A.a deduction. 2.1 and 2.2: No repetition without progress and no off-topic drift; the tutor reframed the Fuel loop productively in Turn 7. 3.1 and 3.2: Responses were concise and well-targeted; tone was consistently supportive and formative without implying grading authority.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

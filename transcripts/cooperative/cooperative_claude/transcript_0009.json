@@ -72,32 +72,91 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student improves noticeably across turns (e.g., from uncertainty about GDP consistency to a well-reasoned defensible approach by Turn 4), but the tutor never pauses to prompt reflection on what changed in the student's thinking or why the improved reasoning worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. Constraints are enforced implicitly throughout but the rationale is never stated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student makes clear improvements across turns (e.g., correctly reasoning about geographic consistency in Turn 4, correctly rejecting manufactured indicators in Turn 6, producing a solid source plan in Turn 10), but the tutor never pauses to prompt reflection on what changed in the student's thinking or why the improved approach worked. The tutor simply validates and moves forward.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +165,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performs strongly overall: it consistently uses Socratic questioning, avoids giving submission-ready answers, scaffolds well from broad structure to specific source decisions, and maintains a clear, concise, supportive tone throughout. Two modest deductions apply: the tutor never explains its pedagogical rationale to the student, and it misses the opportunity to prompt process reflection after the student's clear improvement in reasoning around the GDP consistency issue.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never provides near-submission-ready output, never rewrites student text, and consistently lets the student generate key ideas before confirming them) or 1.2 (the tutor builds on each correct student step and diagnoses confusion before responding). Under 1.3, two deductions are warranted: the tutor enforces a guided-discovery approach throughout but never once explains to the student why it is doing so (1.3.A.a, -2), and after the student's reasoning visibly improves from Turn 3 to Turn 4, the tutor moves straight to the next task without prompting reflection on what changed (1.3.C.a, -2). Dialogue quality is clean—no off-topic drift, no misalignment with the assignment, and no repetitive spiraling. Communication quality is strong—responses are consistently short, targeted, and supportive without implying formal grading.",
+    "overview": "The tutor performed very well overall. Socratic method was consistently applied—no direct answers were given, key ideas were student-generated, and scaffolding built naturally on student progress. Dialogue quality was strong with no off-topic drift or assignment misalignment. Communication was concise and appropriately supportive. Two deductions apply in 1.3: the tutor never explained its pedagogical rationale to the student, and missed multiple opportunities to prompt reflection after the student improved from earlier confusion.",
+    "judge_reasoning": "Criterion 1.1 is fully intact: the tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate conclusions before confirming them. Criterion 1.2 is fully intact: the tutor built on each correct student step and used diagnostic questions before addressing confusion. For 1.3, a 2-point deduction applies under 1.3.A.a because the tutor's Socratic constraints were never explained to the student—no rationale about active reasoning or skill-building was offered at any point in the 10-turn conversation. A second 2-point deduction applies under 1.3.C.a because the student visibly improved (e.g., Turns 4, 6, 10) but the tutor never prompted reflection on what changed or why the better approach worked, missing a clear meta-learning opportunity. Sections 2 and 3 are fully intact: responses were bite-sized, tone was supportive and non-evaluative, and the conversation stayed on-task throughout.",
     "total_score": 40,
     "max_score": 44,
     "model": {

@@ -72,47 +72,88 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor enforced process constraints, especially by refusing to provide a finished row, but never explicitly explained why that constraint supports the student's learning, reasoning, or retention.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              6,
-              7
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a tutoring constraint ('I’m not going to give you a finished row') but did not explain why that constraint supports the student's learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved by producing three plausible row titles, the tutor acknowledged the improvement ('Better') but did not prompt reflection on what changed in the student's thinking or why the new attempt was stronger.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved from confusion to proposing three plausible Jakarta stressor rows, the tutor moved straight into evaluating the options instead of prompting brief reflection on what changed in the student's thinking and why the new attempt worked better.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor kept the conversation strongly student-led, avoided giving submission-ready content, and repeatedly re-anchored the student to the assignment structure. The main weaknesses were in meta-learning: the tutor did not explain the rationale for withholding direct examples and missed a chance to prompt reflection after the student's improvement.",
-    "judge_reasoning": "The tutor performed well on core pedagogy: they used guided questions, clarified the stressor-sector-evidence structure, and did not write the assignment for the student. Dialogue quality was also strong because the tutor stayed anchored to the stressors-table task and redirected the student's spiraling back into manageable next steps. I deducted under 1.3.A.a because the tutor never explicitly explained why they would not provide a finished row beyond simply refusing to do so. I also deducted under 1.3.C.a because once the student improved by generating plausible row titles, the tutor did not ask the student to reflect on what had changed in their reasoning.",
-    "total_score": 42,
+    "overview": "The tutor stayed well within a guided-discovery mode, kept the conversation anchored to the assignment, and used concise, interactive prompts rather than supplying submission-ready content. The main missed opportunities were in meta-learning: the tutor did not explicitly explain the learning rationale behind withholding a finished example, and after a clear improvement in the student's attempt, did not ask the student to reflect on what changed. No other deductions were clearly supported by the transcript.",
+    "judge_reasoning": "The strongest evidence supports high scores in pedagogy and dialogue control: the tutor repeatedly redirected the student back to the table structure, clarified the difference between stressor, sector, and justification, and avoided writing any row for the student. The tutor also stayed tightly aligned to the assignment and did not drift off-topic or become repetitive enough to meet the redundancy deduction threshold. Deductions are limited to criterion 1.3 because the tutor imposed process constraints without once stating why that supports learning, and because the tutor missed a reflection prompt after the student's improved attempt in turn 7. Communication remained concise and supportive overall, so no communication-quality deductions were applied.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

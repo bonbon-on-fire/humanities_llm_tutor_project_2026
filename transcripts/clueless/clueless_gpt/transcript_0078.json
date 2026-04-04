@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  6
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor introduced the central side-effect-versus-means distinction as the main interpretive path before the student independently generated it, then summarized the 'full picture' around that framework. This kept the conversation guided, but not fully student-led on the key idea.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -95,29 +101,29 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a no-answer, student-generated approach ('we’ll build it step by step' and 'I’m your tutor, not your writer') but never clearly explained why this constraint supports learning, retention, or independent reasoning.",
+                "reason": "The tutor enforced constraints on not giving the full answer ('we’ll build it step by step' and 'I’m your tutor, not your writer') but did not explain why this tutoring approach helps the student's learning.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  8,
+                  5,
                   9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student moved from confusion to a workable switch/footbridge distinction, the tutor praised the improvement and advanced the task, but did not prompt reflection on what changed in the student's thinking or why the revised reasoning worked.",
+                "reason": "After the student improved from confusion to articulating the switch-versus-footbridge distinction, the tutor praised the answer and moved on without prompting reflection on what changed in the student's thinking or why the new reasoning worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -129,13 +135,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,14 +153,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed interactive, assignment-focused, and largely student-led throughout the exchange. The main weaknesses were meta-pedagogical: the tutor did not explain why it was withholding direct answers, and it missed a good chance to prompt reflection after the student improved. I did not deduct under 1.1 because the tutor's brief summaries remained conceptual and did not become submission-ready output.",
-    "judge_reasoning": "The conversation shows strong guided discovery: the tutor repeatedly elicited the student's own definitions, distinctions, and tentative rule rather than drafting the essay for them. Scaffolding was effective and incremental, especially through the side-effect-versus-means sorting structure and the move from single-case analysis to synthesis. However, the rubric requires at least one explicit rationale for the tutoring constraints, and the tutor never said why self-generation was pedagogically useful. It also missed a reflection prompt after the student's reasoning improved, so the pedagogy score is reduced there while dialogue and communication remain strong.",
-    "total_score": 40,
+    "overview": "The tutor was generally scaffolded, focused on the assignment, and avoided giving submission-ready prose. The main weakness was that the tutor supplied the core means-versus-side-effect framework rather than leaving that key conceptual distinction to emerge more fully from the student's own reasoning. There is some ambiguity on that deduction because the tutor still used questions and did not complete the essay for the student, so the smaller relevant deduction was applied.",
+    "judge_reasoning": "The strongest part of the conversation was its structure: the tutor kept the discussion anchored to act consequentialism and the trolley-style cases, used short prompts, and repeatedly broke the task into manageable steps. No deduction was taken for direct-answer violations because the tutor did not produce a finished claim, paragraph, or conclusion ready for submission. However, under 1.1, the tutor did introduce the main philosophical distinction—side effect versus using a person as a means—before the student arrived at it independently, which reduced student-led idea generation. Additional deductions came from missing meta-learning moves: the tutor never explained why withholding the full answer supports learning, and after the student improved, the tutor did not prompt reflection on what changed in the reasoning process.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

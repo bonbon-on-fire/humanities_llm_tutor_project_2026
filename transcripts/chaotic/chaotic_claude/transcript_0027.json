@@ -72,55 +72,103 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it refuses to write the answer for the student in terms of learning rationale (e.g., active reasoning, retention, skill development). It simply says 'I'm your tutor, not your ghostwriter' or 'No' without articulating how this approach benefits the student's learning.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student produces a strong draft in Turn 9 following earlier failed attempts, the tutor moves on to the next improvement without prompting reflection on what changed in the student's thinking or why the draft now works well.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully produced a strong draft in Turn 7 and then refined it further in Turns 8-9, the tutor moved on to the next improvement without prompting the student to reflect on what changed in their thinking or why the iterative process worked. No reflection on the student's own progress was elicited.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5,
-              6,
-              7,
-              8
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly cycles through the same refusal-and-skeleton pattern across multiple turns without meaningfully advancing the dialogue. Turns 2 through 6 all follow the same structure: student asks for direct output, tutor refuses and provides a fill-in-the-blank scaffold. While the refusals are pedagogically appropriate, the tutor does not reframe, synthesize, or shift strategy when the student keeps spiraling on the same request, resulting in pattern-level repetition without progression.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same pattern across multiple turns: student asks for the answer, tutor refuses and gives a skeleton/outline. While the student does make incremental progress, the tutor's response pattern is nearly identical across turns 5-8 without meaningful reframing or synthesis of what has been accomplished. The tutor does eventually consolidate in Turn 8 by listing the five elements, but the repetitive refusal-plus-skeleton pattern persists longer than necessary.",
-            "points": 2
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 9, the tutor says 'By my own judgment, not your instructor's rubric, it has a clear thesis...' which, while attempting to disclaim grading authority, still frames the feedback in evaluative terms that could be read as a near-final assessment rather than coaching-oriented guidance. The formative framing is partially present but the phrasing 'this is a good draft' without further coaching language risks sounding like a final verdict.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 36,
     "max_base_score": 44,
-    "overview": "The tutor consistently and appropriately refused to write the student's assignment, maintained a Socratic approach throughout, and successfully guided the student to produce a solid draft through scaffolded prompts. Main deductions are for: (1) never explaining the pedagogical rationale for the tutoring constraints, (2) missing a reflection prompt after the student's successful Turn 9 draft, and (3) some repetitive cycling in the middle turns without sufficient reframing. The 2.1.A.a deduction is applied conservatively since the student did make genuine progress across turns.",
-    "judge_reasoning": "Pedagogy (1.1): The tutor never gave submission-ready content, never rewrote student text, and consistently kept idea generation student-led via skeleton prompts—no deductions for 1.1. Scaffolding (1.2): The tutor built on student progress at each turn and diagnosed confusion appropriately—no deductions. Meta-learning (1.3): The tutor never articulated why refusing to write the answer supports learning (1.3.A.a, -2 pts), and after the student's strong Turn 9 draft, the tutor moved directly to the next improvement without prompting reflection on what changed (1.3.C.a, -2 pts). Dialogue quality (2.1): The refusal-plus-skeleton pattern repeated across turns 5-8 without meaningful reframing, warranting a partial deduction; however, since the student did progress and the tutor did eventually consolidate, only 2 of 4 points are deducted. Assignment anchoring (2.2): No issues—the tutor kept the student on task throughout. Communication quality (3.1, 3.2): Responses were appropriately concise, tone was firm but supportive, and no grading language was used.",
-    "total_score": 38,
+    "overview": "The tutor consistently refused to write submission-ready content and maintained a Socratic approach throughout, successfully guiding the student from vague ideas to a coherent draft. The main weaknesses are: (1) a repetitive refusal-and-scaffold loop across turns 2–6 that did not adapt strategy when the student kept spiraling; (2) a missed opportunity to prompt meta-reflection after the student's successful drafting; and (3) a borderline evaluative framing in Turn 9. The 2.1 deduction is the largest and reflects a genuine structural problem in the dialogue, though the underlying pedagogy remained sound.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and consistently kept key idea generation student-led through scaffolded prompts. 1.2 receives full marks: the tutor built on each student contribution and used diagnostic questions before advancing. 1.3 loses 2 points under 1.3.C.a because after the student's successful drafts in turns 7–9, the tutor moved directly to the next improvement task without prompting any reflection on what changed in the student's thinking. 2.1 loses all 4 points because turns 2–6 repeat the same refusal-plus-skeleton move without reframing, synthesizing, or switching strategy despite the student cycling on the same request. 2.2 is unaffected as the tutor kept the conversation on-task throughout. 3.1 is unaffected; responses were concise and clear. 3.2 loses 2 points under 3.2.B.b because the Turn 9 phrasing 'this is a good draft' with a quasi-evaluative summary, even with the disclaimer, risks reading as a near-final judgment rather than purely formative coaching.",
+    "total_score": 36,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

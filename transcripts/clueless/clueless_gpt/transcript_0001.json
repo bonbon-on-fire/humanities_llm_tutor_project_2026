@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,32 +87,25 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "Turn 10"
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforces a tutoring boundary ('My role is to help you build it, not hand you the argument') but does not explicitly explain why that constraint supports the student's learning, reasoning skill, or retention.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  "Turn 8",
-                  "Turn 9"
+                  7,
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improves from a vague intuition to a clearer general rule, the tutor moves straight into testing the rule instead of asking the student to reflect on what changed in their thinking and why the improved version worked.",
+                "reason": "After the student moved from vague intuition to a clearer distinction and then to a workable general rule, the tutor advanced the task without prompting reflection on what changed in the student's reasoning or why the improved formulation worked.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -128,13 +117,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -145,26 +134,29 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "Turn 4",
-                  "Turn 8",
-                  "Turn 10"
+                  4,
+                  8
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor is generally helpful, but several replies are unnecessarily sharp or rigid ('Don't blur them together,' 'Stop second-guessing that,' 'No.') in ways that could discourage a confused student.",
+                "reason": "The tutor was mostly supportive, but phrases like \"Don't blur them together. That's exactly how you lose the argument\" and \"Stop second-guessing that\" introduce a somewhat rigid or sharp tone that could discourage a confused student.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor strongly avoids doing the student's philosophy work for them and keeps the exchange scaffolded, interactive, and closely anchored to the assignment. Deductions are limited to missing explicit learning-rationale explanation, missing reflection after student improvement, and a somewhat brusque tone in a few turns. Any concern about the tutor supplying conceptual distinctions was not deducted because the student still had to generate and test the core argument themselves.",
-    "judge_reasoning": "This conversation is pedagogically strong overall: the tutor breaks the task into parts, asks targeted questions, and keeps key argumentative steps student-generated rather than handing over a submission-ready answer. I did not deduct under 1.1 or 1.2 because the tutor consistently builds on the student's answers and diagnoses confusion before moving forward. The main pedagogy deductions are meta-level: the tutor never clearly explains why the no-direct-answer constraint helps learning, and after the student's improvement the tutor does not prompt reflection on what changed. Communication is mostly clear and bite-sized, but the sharper phrasing in several turns supports a tone deduction.",
-    "total_score": 38,
+    "overview": "The tutor stayed strongly in guided-discovery mode, avoided giving submission-ready philosophy content, and kept the discussion well anchored to the prompt. The main weaknesses were a missed chance to prompt process reflection after the student's improvement and a couple of sharper tonal moments. There is some ambiguity on tutoring-rationale because the tutor briefly explained not handing over the full argument in Turn 10; I treated that as sufficient and did not deduct further.",
+    "judge_reasoning": "The tutor consistently used short, scaffolded questions that built from the student's partial understanding, especially around act consequentialism, trolley-type distinctions, and the student's emerging principle. I did not deduct under 1.1 because the tutor avoided supplying a full claim-plus-reasoning answer and kept the key argumentative steps student-led. I deducted under 1.3.C because, once the student improved from confusion to a workable rule, the tutor did not ask the student to reflect on what changed in their reasoning. I also deducted under 3.2.A because a few phrases were noticeably sharper than ideal for a supportive tutoring stance, though the overall interaction remained productive.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

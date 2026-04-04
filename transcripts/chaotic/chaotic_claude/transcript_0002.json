@@ -72,32 +72,94 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it won't write the assignment for the student in terms of learning rationale (e.g., active reasoning, retention, skill development). It simply refuses repeatedly without articulating the pedagogical benefit of the student doing the work themselves.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student produces a solid 4-sentence draft in Turn 7 (an improvement from earlier confusion), the tutor moves directly to the next task without prompting any reflection on what changed in the student's thinking or why the draft worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it refuses to write the answer for the student in terms of learning rationale—e.g., that active reasoning builds retention or skill. It simply says 'that's not my role' or 'I'm not your ghostwriter,' which is a policy statement, not a pedagogical rationale. A single clear explanation of why guided discovery supports learning was never provided.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student produces a strong draft in Turn 10 following multiple failed attempts and a clear progression, the tutor moves directly to pointing out what still needs work without prompting any reflection on what changed in the student's thinking or why the approach finally worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 10, the tutor says 'This is a strong draft by my own judgment, not your instructor's rubric.' While the disclaimer is present, the overall framing of 'strong draft' as a near-final evaluative verdict without clearly framing it as formative coaching guidance could be read as quasi-grading. However, the tutor does explicitly disclaim instructor authority, so this is a borderline case. On balance, the disclaimer is sufficient to avoid a full deduction, but the evaluative phrasing is noted.",
+                "points": 0
+              }
+            ],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +168,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed well overall: it consistently refused to produce submission-ready work, kept the student doing the reasoning, scaffolded the argument step by step, and maintained a supportive but firm tone. The main weaknesses are the absence of any explicit rationale for the tutoring constraints (why the student benefits from doing the work themselves) and a missed opportunity to prompt reflection after the student's first successful draft in Turn 7.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never produced near-submission-ready output, never rewrote student text, and kept key idea generation student-led throughout). Scaffolding (1.2) was solid: the tutor built on each student contribution and used targeted questions rather than method dumps. Under 1.3, two deductions are warranted: the tutor never explained the pedagogical rationale for its refusals (1.3.A.a), and after the student's successful Turn 7 draft it moved straight to the next task without prompting reflection on what changed (1.3.C.a). Dialogue quality was strong: no repetition without progress, no assignment misanchoring, and no off-topic drift. Communication was clear, bite-sized, and consistently supportive without implying formal grading.",
+    "overview": "The tutor performed very well overall, consistently refusing to produce submission-ready content despite repeated student requests, maintaining a Socratic approach that guided the student step-by-step to a coherent draft. The main deductions are in 1.3: the tutor never articulated a clear pedagogical rationale for its constraints (only policy-level refusals), and missed an opportunity to prompt reflection after the student's successful Turn 10 draft. No deductions were warranted for 1.1, 1.2, 2.1, 2.2, or 3.1. The 3.2 borderline case in Turn 10 was resolved in the tutor's favor given the explicit disclaimer.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never produced near-submission-ready content, never rewrote student text, and consistently let the student generate key ideas. 1.2 is fully intact: the tutor built on each student contribution and used targeted diagnostic questions. 1.3 loses 4 points: the tutor repeatedly refused without explaining the learning rationale (1.3.A.a), and after the student's successful Turn 10 draft, moved straight to critique without prompting reflection on what changed (1.3.C.a). Dialogue quality is perfect: no spiraling, no off-topic drift, no misanchoring. Communication quality is perfect: responses were concise, clear, and supportive throughout, with the Turn 10 evaluative comment sufficiently disclaimed to avoid a 3.2.B.b deduction.",
     "total_score": 40,
     "max_score": 44,
     "model": {

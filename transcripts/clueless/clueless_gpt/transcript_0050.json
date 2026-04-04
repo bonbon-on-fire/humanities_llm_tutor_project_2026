@@ -72,19 +72,35 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In the later turns, the tutor supplies the central argumentative bridge for the student: act consequentialism cares only about outcomes, so it treats Switch and Push alike, while the student's alternative is that means vs. side effect is morally relevant. This goes beyond prompting and does a key reasoning step that substantially determines the student's final position.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student says Fuel and Blood are not clicking and later admits they do not remember those cases clearly, the tutor still asks for classifications instead of first diagnosing or reconstructing the missing case details. This addresses application before checking the actual source of confusion.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
@@ -94,30 +110,30 @@
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor refused to provide a model answer, but did not explain the learning rationale for that constraint (for example, that generating the argument independently supports understanding or retention).",
+                "reason": "The tutor refuses to provide a model answer but does not explain why that constraint supports the student's learning, reasoning practice, or retention.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  5,
                   6,
-                  7,
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved by correctly distinguishing means vs side effect and later classifying Switch and Push, the tutor moved directly into next-step writing guidance rather than prompting reflection on what changed in the student's reasoning and why it worked.",
+                "reason": "After the student improves from confusion to correctly distinguishing Switch as side effect and Push as means, the tutor moves directly into drafting instructions rather than prompting reflection on what changed in the student's thinking and why the distinction now works.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 11,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -129,13 +145,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,14 +163,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 31,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly student-led, avoided giving submission-ready philosophy content, and kept the discussion anchored to the assignment and cases. The main weaknesses were meta-pedagogical: the tutor never explicitly explained why it was withholding a model answer, and it missed chances to ask the student to reflect after successful corrections. I did not deduct for direct-answering because the tutor's summaries remained conceptual and scaffolded rather than becoming a polished final response.",
-    "judge_reasoning": "The strongest aspect of this conversation is pedagogy under 1.1: the tutor consistently used questions, prompts, and structural guidance rather than writing the answer for the student, even when the student requested a model answer. I kept full credit for scaffolding and dialogue quality because the tutor generally built on the student's progress, shifted between bottom-up and top-down explanations, and stayed on-task. The main deductions come from 1.3: the tutor enforced constraints without stating a learning rationale, and after the student successfully distinguished side effect from means, it did not ask the student to reflect on what had clarified the issue. Communication remained concise, clear, supportive, and non-grading throughout.",
-    "total_score": 40,
+    "overview": "The tutor stayed supportive, concise, and tightly anchored to the assignment, with several useful scaffolds for distinguishing act consequentialism from means/side-effect views. The main weakness is that the conversation became too directive in the final turns, where the tutor supplied the core argumentative progression rather than keeping that synthesis student-led. I did not apply the harsher near-submission-ready deduction because the tutor still stopped short of producing a polished, fully written answer.",
+    "judge_reasoning": "The strongest deduction is under 1.1 because the tutor eventually gives the student the key argumentative structure: act consequentialism focuses on outcomes, so it treats Switch and Push alike, and the student's opposing principle is means versus side effect. That is a central reasoning bridge, even though it is not a complete essay. I also deducted under 1.2 because the tutor did not first diagnose the student's lack of recall about Fuel and Blood before asking for classifications. Finally, the tutor never explained the rationale for withholding a model answer and missed a good chance to prompt reflection after the student finally made the Switch/Push distinction correctly.",
+    "total_score": 31,
     "max_score": 46,
     "model": {
       "provider": "openai",

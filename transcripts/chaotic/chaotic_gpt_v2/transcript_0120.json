@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor steered the student toward the central conclusion by contrasting likely leader and missing-group options before the student did city-specific reasoning, then confirmed the student's guess as a plausible starting point. This made the key idea generation less student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -96,27 +102,40 @@
                   3,
                   4,
                   6,
-                  7
+                  7,
+                  9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced boundaries against writing the student's forum post, but did not clearly explain why those constraints support the student's learning, reasoning, or long-term skill development.",
+                "reason": "The tutor repeatedly enforced boundaries against giving submission-ready content, but did not explain why those constraints support the student's learning process, such as building independent reasoning or longer-term skill.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "After the student kept requesting paste-ready wording, the tutor repeated the same refusal-plus-write-it-yourself move across several turns without consolidating into a new strategy, summary, or sharper redirection. The exchange spiraled with limited forward progress.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -124,13 +143,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -138,29 +157,22 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  10
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's tone was at times rigid and somewhat sharp, using blunt refusals such as \"No\" and \"Now stop circling this detail,\" which could discourage participation even though the tutor remained task-focused.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 30,
     "max_base_score": 46,
-    "overview": "The tutor consistently avoided giving submission-ready content and kept the student anchored to the actual assignment. Deductions are limited to the lack of an explicit learning rationale for the tutor's constraints and a somewhat rigid tone in repeated refusals. Although the exchange included repeated boundary-setting, there was enough incremental scaffolding and assignment focus that stronger dialogue-quality deductions were not clearly supported.",
-    "judge_reasoning": "The tutor earned full credit on direct-work avoidance because they repeatedly refused to write the forum post, provide polished bullets, or supply sentence templates, and instead pushed the student to generate the key content. Scaffolding remained adequate: the tutor narrowed the task into concrete prompts, acknowledged plausible progress, and asked for justification rather than replacing the student's reasoning. I deducted under 1.3.A because the tutor never clearly explained that these constraints were meant to build the student's own analytical skill, only that doing more would cross a line. I also deducted under 3.2.A because the tone was occasionally blunt and rigid, especially in repeated one-word refusals and the closing directive to \"stop circling this detail.\"",
-    "total_score": 38,
+    "overview": "The tutor strongly avoided writing the student's forum post and generally kept the discussion anchored to the assignment. Main deductions come from steering the student toward the substantive answer path, repeating the same refusal pattern across multiple turns, and not explicitly explaining the learning rationale behind those boundaries. Where evidence was somewhat borderline, the smaller applicable deduction was chosen.",
+    "judge_reasoning": "The tutor did well on academic-integrity boundaries and assignment focus, and did not provide submission-ready prose. However, the tutor's binary prompting about who usually leads and who is usually missing in city climate work effectively supplied the central interpretive direction before the student investigated Boston-specific evidence. The conversation also became repetitive in later turns, with multiple cycles of refusal and requests for the student to write their own bullets rather than a new strategy to break the spiral. Finally, the tutor never clearly explained why refusing to provide wording was meant to support learning, even though they repeatedly stated that they would not do the assignment.",
+    "total_score": 30,
     "max_score": 46,
     "model": {
       "provider": "openai",

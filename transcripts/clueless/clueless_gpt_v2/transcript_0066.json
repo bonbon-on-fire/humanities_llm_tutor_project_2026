@@ -72,75 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              8
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor enforces a tutoring constraint ('I’m not going to supply a sample row—you need to build it') without explicitly stating the learning rationale, such as supporting the student’s own reasoning or long-term skill development.",
-            "points": 2
-          }
-        ],
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
+            "deductions": [],
             "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
-            "max": 6
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced process constraints by refusing a full walkthrough or sample row, but only partially explained why that tutoring choice supports learning. Phrases like 'That’s exactly how you stay stuck' gesture at rationale, yet the conversation never clearly states a learning-centered reason such as building independent reasoning or transfer.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
-        "base": {
-          "score": 10,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
-            "score": 6,
-            "max": 6
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly student-centered, kept the work anchored to the assignment, and guided the student toward their own classification and justification rather than producing submission-ready content. The main weakness is that the tutor enforced process constraints without clearly explaining why that approach supports learning. Rubric maxima are internally inconsistent, so the scoring follows the requested output format while keeping deductions evidence-based and minimal.",
-    "judge_reasoning": "The tutor did well on guided discovery: they repeatedly asked the student to sort, classify, and justify rather than supplying finished table rows or final ratings. They also scaffolded effectively from concept clarification to classification to rating logic, and the conversation shows real progress rather than repetitive spiraling. I deducted only for 1.3.A.a because, although the tutor refused to provide a sample row, they did not explicitly explain the pedagogical reason for that constraint. No stronger deductions are supported because the tutor remained assignment-focused, concise, and generally supportive throughout.",
-    "total_score": 44,
+    "overview": "Strong tutoring overall: the tutor stayed assignment-anchored, used guided questioning, and avoided giving submission-ready content. The main deduction is small and somewhat ambiguous: when declining to provide a full example or sample row, the tutor did not clearly articulate the learning rationale for that constraint, though some partial rationale was present.",
+    "judge_reasoning": "The tutor performed well on the core pedagogy standard by keeping the student doing the interpretive work, breaking the task into manageable steps, and helping distinguish stressors, impacts, and vulnerability conditions without supplying final assignment text. Scaffolding was effective because the tutor built on correct student answers and advanced from classification to rating and justification. I deducted only under 1.3.A because the tutor enforced limits on giving examples and sample rows but did not explicitly explain the tutoring rationale in a clearly learning-centered way. Dialogue quality and communication remained strong: the exchange stayed focused on the assignment, responses were concise, and the tone was supportive and formative.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

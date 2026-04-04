@@ -72,52 +72,56 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor directly supplied key conceptual interpretations before the student worked them out, including full explanations of GDP/Köppen/ethnicity, what each category 'does' in the assignment, and the comparative logic of Jakarta unit choices.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student was stuck, the tutor moved into full explanations and a start-to-finish procedure instead of first diagnosing exactly what the student already understood or what was causing the freeze.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  9
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor set constraints and refused to choose the Jakarta unit for the student, but did not clearly explain that this was to support the student's learning process, reasoning, or long-term skill development.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9,
-                  10
-                ],
-                "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student moved from freezing to offering a plausible unit choice, the tutor continued the content discussion instead of prompting brief reflection on what changed in the student's thinking and why the new approach worked better.",
+                "reason": "The tutor enforced boundaries on not choosing for the student, but did not explicitly explain why that constraint supports the student's learning or long-term skill development.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 13,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -129,13 +133,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,14 +151,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 33,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment, avoided doing the table for the student, and repeatedly reframed the task in manageable ways. Deductions are limited because the tutor generally maintained guided discovery and useful process structure. The main weaknesses were meta-level: the tutor did not explicitly explain why its constraint-based approach supported learning, and it missed a chance to prompt reflection when the student finally advanced to a plausible Jakarta unit choice. Tone concerns were minor but not strong enough for a formal deduction under the rubric.",
-    "judge_reasoning": "The tutor did not provide submission-ready work or make the decisive assignment choice for the student, so no deduction was taken in 1.1. Scaffolding was solid overall: the tutor broke the task into categories, buckets, and a sequence for building the table, while staying on-task and re-anchored to the assignment. I deducted under 1.3.A because the tutor enforced a learning constraint ('I'm not going to choose it for you') without explicitly explaining the pedagogical reason, and under 1.3.C because once the student improved from freezing to offering 'special capital region/province,' the tutor did not ask the student to reflect on what changed. Other potential issues, like mild rigidity in wording, were too ambiguous to justify additional deductions.",
-    "total_score": 40,
+    "overview": "The tutor stayed anchored to the assignment, avoided producing a submission-ready table, and communicated clearly. The main weakness was pedagogy: the tutor frequently shifted from eliciting student reasoning to directly explaining concepts and decision logic. I treated redundancy as non-deductible because, although the student remained confused, the tutor did try multiple reframings rather than simply repeating the same prompt.",
+    "judge_reasoning": "The largest deduction is under 1.1 because the tutor directly gave important conceptual interpretations and comparison logic in turns 3, 4, and 10 rather than keeping those key ideas student-led. I also deducted under 1.2 because, at multiple stuck points, the tutor responded with full explanations or a method dump before diagnosing the specific confusion. Under 1.3, I deducted because the tutor stated a boundary about not choosing for the student but did not explain why that supports learning. I did not deduct for assignment anchoring, tone, or final-answer giving, since the tutor remained on-task, supportive, and never produced a completed assignment output.",
+    "total_score": 33,
     "max_score": 46,
     "model": {
       "provider": "openai",

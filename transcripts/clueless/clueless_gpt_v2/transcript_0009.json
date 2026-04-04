@@ -72,56 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [],
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turns 1-10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor explained the assignment's purpose and gave process steps, but did not clearly explain at least once why the tutoring constraint of having the student do the work themselves supports learning or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 24,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor repeatedly returned to the same framing and simplification moves around the assignment structure and the meaning of scope/definition while the student remained confused, with limited synthesis or a stronger reset strategy to break the spiral.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7,
-              8
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 7",
+                  "Turn 8"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor became somewhat rigid with phrases like \"stop rereading the assignment,\" \"You're overthinking the format,\" and \"Now stop second-guessing,\" which could feel dismissive to an already overwhelmed student.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "Although mostly supportive, the tutor used somewhat rigid phrasing such as 'stop rereading the assignment,' 'You’re overthinking the format,' and 'stop second-guessing,' which could feel brusque and slightly discouraging to an already overwhelmed student.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed assignment-focused and did not provide submission-ready content, polished writing, or direct completion of the student's table. The main issues were conversational repetition around the same confusion point and a few sharper phrases that weakened supportiveness. Because the student repeatedly re-raised the same concern, the dialogue-quality deduction is clear, while other possible deductions were kept minimal.",
-    "judge_reasoning": "The tutor preserved student ownership of the work by explaining the task, asking narrowing questions, and avoiding giving a filled-out table or final answers, so no pedagogy deductions were applied. However, the exchange repeatedly circled the same issue about assignment framing and scope/definition across several turns without a more effective synthesis or strategy shift, which supports the full deduction under 2.1.A.a. The tone was generally helpful, but turns 7 and 8 included more rigid directives that could undermine trust for a confused student, supporting a 2-point deduction under 3.2.A.a. Assignment anchoring remained strong overall, and the responses were generally clear and appropriately sized.",
-    "total_score": 40,
+    "overview": "The tutor stayed well anchored to the assignment, avoided doing the student's work, and consistently used guided prompts and practical structure. Deductions are limited to the lack of an explicit learning-rationale for the tutoring constraints and a few moments of slightly rigid tone. Any possible concern about repetition was resolved by the tutor eventually shifting to concrete structure and one-row-at-a-time guidance, so no deduction was taken there.",
+    "judge_reasoning": "The strongest evidence supports full credit for Socratic guidance and assignment anchoring: the tutor never supplied Jakarta-specific answers and repeatedly redirected the student toward scope, source, and structure. Scaffolding was generally effective because the tutor broke the task into categories, workflow steps, and later a row-by-row approach. I deducted under 1.3 because the tutor never explicitly stated why they were withholding direct completion help for learning purposes. I also deducted under tone because some later phrasing sounded impatient with the student's confusion, even though the tutor remained mostly supportive overall.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

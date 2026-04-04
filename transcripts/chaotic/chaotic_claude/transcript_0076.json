@@ -72,58 +72,100 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't write the answer for the student—it simply refuses repeatedly without articulating the pedagogical rationale (e.g., active reasoning builds retention, skill development, etc.). A single clear explanation of why this approach supports learning was never provided.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "When the student successfully produces the Blood verdict in Turn 9 after struggling, the tutor moves immediately to the next task without prompting any reflection on what changed in the student's thinking or reinforcing the method used.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces the constraint of not writing the student's work but never explicitly explains why this approach supports learning—e.g., that active reasoning builds retention, develops philosophical skill, or prepares the student for future work. The rationale is implicit at best.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When the student successfully produces the act consequentialist rule (Turn 3), the Blood verdict (Turn 9), and the means/side-effect principle (Turn 10), the tutor moves directly to the next step without prompting any reflection on what changed in the student's thinking or why the reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same refusal pattern across nearly every turn without meaningfully advancing the dialogue structure. While the student does make incremental progress, the tutor's repeated 'No. Write it yourself' responses without synthesis, reframing, or consolidation of what has been established creates a repetitive loop rather than progressive scaffolding.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor consistently and correctly refuses to write submission-ready content for the student, maintaining appropriate boundaries throughout all 10 turns. The Socratic approach is generally sound—the tutor elicits the act consequentialist rule, applies it to cases, and guides the student toward the means/side-effect distinction. However, the tutor never explains the pedagogical rationale for its constraints (1.3.A.a), misses a reflection opportunity after the student's successful Blood verdict (1.3.C.a), and the dialogue becomes somewhat repetitive with the same refusal pattern cycling without sufficient synthesis or reframing (2.1.A.a). Communication quality is strong: responses are concise, tone is firm but not dismissive, and no grading language is used.",
-    "judge_reasoning": "1.1 is fully intact—the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led by asking the student to derive each step. 1.2 is fully intact—the tutor builds on each correct student contribution and uses targeted prompts rather than method dumps. 1.3 loses 4 points: the tutor never once explains why it won't write the answer (1.3.A.a), and after the student successfully produces the Blood verdict in Turn 9, the tutor immediately pivots to the next task without prompting reflection on what changed (1.3.C.a). Section 2 loses 4 points for 2.1.A.a: across turns 2–8, the tutor repeats nearly identical 'No. Write it yourself' moves without consolidating established points, reframing the task, or switching strategy when the student remains stuck in the same pattern—this constitutes pattern-level repetition without sufficient synthesis. Section 3 is unpenalized: responses are appropriately brief, tone is supportive-but-firm, and no grading language appears.",
-    "total_score": 36,
+    "overview": "The tutor performed very well overall, consistently refusing to write or polish the student's work, guiding discovery through targeted Socratic questions, and keeping the student on task throughout a challenging conversation. The main weaknesses are the absence of any explicit rationale for the tutoring approach (why active reasoning matters for learning) and a missed opportunity to prompt reflection after the student successfully produced key ideas.",
+    "judge_reasoning": "1.1: The tutor never produced submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming them—full marks. 1.2: The tutor built on each student contribution (e.g., confirming the AC rule in Turn 3, building on means/side-effect in Turn 5), and used diagnostic scaffolding rather than method dumps—full marks. 1.3: Two deductions apply: the tutor never articulated why refusing to write the answer supports learning (1.3.A.a, -2), and after student successes in Turns 3, 9, and 10, the tutor moved on without prompting reflection on what changed in the student's thinking (1.3.C.a, -2). Dialogue quality is strong—no repetition without progress, no assignment drift, and off-topic requests were redirected immediately. Communication quality is also strong—responses are concise, tone is firm but not punitive, and no grading language is used.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

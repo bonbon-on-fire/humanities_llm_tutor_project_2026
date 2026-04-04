@@ -72,101 +72,93 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 2, the tutor provides a comprehensive sector-by-sector breakdown of all climate stressor types with multiple examples for each sector (e.g., 'Environmental: flooding, sea-level rise, drought, erosion, saltwater intrusion, poor air quality, heat, ecosystem loss'). This does the key reasoning step of categorizing and exemplifying stressors across all sectors before the student attempts any classification, effectively pre-loading the conceptual framework rather than guiding the student to derive it.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 2, the tutor provides a comprehensive, sector-by-sector breakdown of all climate stressor types with multiple Jakarta-relevant examples (flooding, heat, air quality, etc.) before the student has attempted any reasoning. This does the key categorization work for the student rather than letting them derive the framework themselves.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              3,
-              4
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student expresses confusion in Turns 3 and 4, the tutor responds with additional structured explanations (cause/condition/stressor framework) rather than first diagnosing what specifically the student misunderstands. The tutor jumps to providing a new framework dump without checking what the student already grasps.",
-            "points": 3
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully classifies sea-level rise, land subsidence, and coastal flooding correctly in Turn 5, and again after producing a strong justification in Turn 7, the tutor moves forward without prompting the student to reflect on what changed in their thinking or why their approach worked. The tutor acknowledges correctness but does not reinforce the method or ask the student to articulate what made their reasoning successful.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
-            "points": 2
-          },
-          {
-            "evidence_turns": [
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully produces a solid justification in Turn 7 (an improvement from earlier vague attempts), the tutor moves directly to the next question without prompting the student to reflect on what changed in their thinking or why the improved approach worked.",
-            "points": 2
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 11,
+          "score": 16,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly requests broader explanations before attempting the task (Turns 2, 3, 4), and the tutor cycles through providing new frameworks each time rather than consolidating, reframing more sharply, or firmly redirecting. The pattern of student avoidance + tutor re-explanation repeats across three consecutive turns without meaningful synthesis or a decisive shift in approach.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Turns 2, 3, and 4 each contain multi-part structured lists and explanatory frameworks that are longer than necessary given the interactive tutoring context. Turn 2 in particular is a dense enumeration across five sectors that would have been better delivered as a shorter prompt inviting student engagement first.",
-            "points": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 4,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 23,
+    "total_base_score": 36,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates genuine Socratic intent in the later turns (5–10), successfully pushing the student to draft justifications, set rating standards, and make comparative judgments. However, the early turns (2–4) significantly undermine the pedagogy: the tutor provides a comprehensive sector-by-sector stressor taxonomy and a cause/condition/stressor framework before the student has attempted any independent reasoning, doing key categorization work for the student. The tutor also cycles through new explanatory frameworks across three turns when the student avoids engaging, rather than consolidating or firmly redirecting. No rationale for the tutoring approach is ever offered, and the tutor misses a clear opportunity to prompt reflection after the student's notable improvement in Turn 7.",
-    "judge_reasoning": "Section 1.1 loses 6 points under 1.1.C.b because Turn 2's exhaustive sector-by-sector taxonomy with examples preempts the student's own categorization reasoning—the tutor does the key intellectual sorting work before the student tries. Section 1.2 loses 3 points under 1.2.B.a because in Turns 3–4 the tutor responds to expressed confusion with new framework dumps rather than diagnostic questioning to locate the specific gap. Section 1.3 loses 2 points under 1.3.A.a (no tutoring rationale ever given) and 2 points under 1.3.C.a (no reflection prompt after the student's Turn 7 improvement). Section 2.1 loses 4 points under 2.1.A.a because the tutor repeats the pattern of providing new explanatory content across Turns 2, 3, and 4 without consolidating or decisively redirecting the student's avoidance behavior. Section 3.1 loses 4 points under 3.1.A.a because Turns 2–4 contain multi-paragraph framework dumps where shorter, more targeted prompts were clearly more appropriate.",
-    "total_score": 23,
+    "overview": "The tutor demonstrates strong Socratic discipline throughout most of the conversation, consistently redirecting the student's requests for pre-made examples, refusing to fill in table rows, and using targeted questions to advance student reasoning. The main deduction is in 1.1 for Turn 2, where the tutor provides a comprehensive pre-built taxonomy of all stressor types across all sectors before the student attempts any classification—this does the key conceptual sorting work for the student. A smaller deduction applies for missing reflection prompts after student successes. Dialogue quality and communication quality are strong throughout.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is warranted because Turn 2 delivers a full sector-by-sector stressor taxonomy with multiple examples per sector, which constitutes doing the key reasoning step of categorizing climate stressors before the student attempts it. While the tutor then asks the student to apply it, the framework itself was student work to derive. The 1.3.C.a deduction (2 points) applies because after clear student successes in Turns 5 and 7, the tutor moves forward without prompting reflection on what changed in the student's thinking. No deductions apply to 1.2 because the tutor consistently builds on student progress and diagnoses confusion before responding. Dialogue and communication quality are strong: the tutor avoids repetition, maintains assignment anchoring, keeps responses concise, and maintains a supportive but firm tone throughout.",
+    "total_score": 36,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

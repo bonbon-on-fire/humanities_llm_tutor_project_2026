@@ -72,91 +72,123 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 7, the tutor confirms and endorses the student's proposed field labels ('Those labels are reasonable') and adds a suggested additional field ('Geographic unit used'), which edges toward providing near-ready formatting output rather than guiding the student to derive the structure themselves. However, this is borderline—the tutor does not rewrite student text but does supply a concrete structural addition. On balance, this is mild enough that the primary 1.1.B deduction is not fully triggered, but it is noted.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly loops on the same request (give me the numbers, confirm my guesses) and the tutor consistently redirects without first diagnosing why the student keeps asking. The tutor never asks a diagnostic question like 'What's making it hard to open INEGI?' or 'What specifically is confusing about the unit distinction?' before repeating the same instruction to verify the source. A brief diagnostic probe would have been more appropriate than repeated redirection.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor consistently refuses to give answers and redirects the student to find sources, but never explicitly explains why this approach supports learning—e.g., why building one's own table develops research skills, critical evaluation of sources, or long-term academic competence. The rationale is implicit at best ('That's your job,' 'bad practice') but never articulated as a learning benefit to the student.",
-            "points": 2
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              8
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is refusing to give answers or fill in the table — i.e., it never articulates that the student will learn better, retain more, or develop research skills by doing the work themselves. The refusals are stated as policy ('I won't fill the table out for you') but the pedagogical rationale is never made explicit across the entire conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student never reaches a clear success moment from a prior failure in this conversation, so this criterion is not strongly triggered. However, the tutor also never reinforces method choices or reflects on process even when the student finally commits to checking INEGI (turns 6, 9). No deduction applied as the conversation ends before a clear improvement cycle completes.",
+                "points": 0
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student never fully succeeds in a meaningful step during this conversation (they keep looping), so there is no clear moment of improvement from failure to success that would trigger a reflection prompt. No deduction applied.",
-            "points": 0
-          },
-          {
-            "evidence_turns": [
-              5,
-              8
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student expresses that they haven't pulled sources yet and are confused about which numbers are safe (Turn 5), the tutor responds with a triage list rather than first diagnosing what specifically is blocking the student (e.g., do they not know how to navigate INEGI? Are they unsure what 'city proper' means?). The tutor jumps to directing action without checking the root of the confusion.",
-            "points": 3
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 19,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same pattern across six turns: student asks for numbers, tutor refuses and redirects to 'pick a source and verify.' The student remains stuck and the tutor does not meaningfully reframe, simplify, or synthesize. By turn 8 the student is still asking the same question as turn 2. The tutor does not switch strategy (e.g., walking through one concrete example, offering a worked analogy, or breaking the impasse differently).",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor repeatedly cycles through the same pattern across many turns: student asks for a number or shortcut, tutor refuses and asks which source/field to check first. This loop repeats without meaningful synthesis, reframing, or escalation to a different strategy. By Turn 8, the tutor explicitly notes 'You're looping on the same point,' but the tutor's own approach has also been looping without switching tactics (e.g., explaining why verification matters, offering a worked example of how to read a source, or restructuring the interaction). The conversation makes minimal progress.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "In turn 3, the tutor says 'Don't use estimates. That's sloppy and will weaken the table.' The word 'sloppy' is mildly dismissive and could discourage the student. While not severely punitive, it edges toward a tone that is unnecessarily harsh rather than coaching-oriented.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "In Turn 3, the tutor says 'That's sloppy and will weaken the table' in response to the student asking for a best estimate. While directness is appropriate, calling the student's approach 'sloppy' is mildly dismissive and could discourage participation. This is a borderline case but the language is unnecessarily harsh for a tutoring context.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 6,
           "max": 8
@@ -165,8 +197,8 @@
     },
     "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor maintains a firm, consistent refusal to do the student's work, which is appropriate. However, the conversation suffers from significant repetition without strategic adaptation—the same redirect loop repeats across 8 turns with no meaningful escalation or reframing. The tutor never explains the pedagogical rationale for the approach, missing an opportunity to build student buy-in. Diagnostic questioning is underdeveloped; the tutor directs action without first understanding what is actually blocking the student. One instance of mildly dismissive language ('sloppy') is noted. The 1.1.A and 1.1.B full deductions are not triggered as the tutor successfully avoids providing submission-ready content.",
-    "judge_reasoning": "Section 1 loses 5 points: 3 for failing to diagnose student confusion before redirecting (1.2.B.a—the tutor repeatedly tells the student what to do without checking what specifically is blocking them, e.g., unfamiliarity with INEGI navigation or the concept of city proper vs. metro), and 2 for never articulating a learning rationale for the tutoring constraints (1.3.A.a). Section 2 loses 4 points for pattern-level repetition (2.1.A.a)—the tutor cycles the same refuse-and-redirect move across 7+ turns without reframing, simplifying, or switching strategy, making minimal conversational progress. Section 3 loses 2 points for the 'sloppy' comment in Turn 3 (3.2.A.a), which is mildly dismissive. No deductions are applied for 1.1.A or 1.1.B as the tutor successfully avoids providing submission-ready content throughout.",
+    "overview": "The tutor consistently refused to do the student's work, maintained assignment anchoring, and kept responses concise. However, the conversation stalled in a repetitive loop for six turns without the tutor changing strategy or diagnosing the root of the student's resistance. The tutor also never explained the pedagogical rationale for its constraints, and used one mildly dismissive phrase ('sloppy'). The 1.3.C deduction was not applied as no clear success-after-failure cycle completed.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never gave submission-ready answers, never rewrote student text, and never revealed conclusions before student reasoning. 1.2 loses 3 points because the tutor repeatedly redirected without diagnosing why the student kept looping — a diagnostic question about the student's actual barrier was never asked. 1.3 loses 2 points because the tutor never articulated why refusing to give answers supports learning; refusals were stated as policy without pedagogical explanation. 2.1 loses all 4 points because the tutor repeated the same redirect pattern across turns 3–8 without reframing, simplifying, or switching strategy, leaving the student stuck in the same loop. 3.2 loses 2 points for the 'sloppy' remark in turn 3, which is mildly dismissive rather than coaching-oriented.",
     "total_score": 33,
     "max_score": 44,
     "model": {

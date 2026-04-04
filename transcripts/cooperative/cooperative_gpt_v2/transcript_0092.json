@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,33 +86,21 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
-                  10
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently used a process-first, question-driven approach, but never explicitly explained why this tutoring constraint supports the student's learning or independent reasoning.",
+                "reason": "The tutor maintained a guided, student-led approach but never explicitly explained why this constraint-based tutoring style supports learning, retention, or independent reasoning.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -128,13 +112,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -142,18 +126,31 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The phrase \"don't let it become lazy thinking\" introduces a somewhat harsh, potentially discouraging tone even though the rest of the conversation is generally supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor used strong guided discovery throughout: they gave a usable classification framework, repeatedly asked the student to justify choices with evidence, and kept the student doing the core reasoning. The conversation stayed tightly anchored to the Boston climate-actors task and progressed cleanly from confusion to a workable draft structure without drifting into submission-ready prose. The only clear rubric issue is that the tutor never explicitly stated why the process-focused constraints were pedagogically useful. Some phrasing was brisk, but the overall interaction remained supportive enough that a tone deduction would be uncertain.",
-    "judge_reasoning": "No 1.1 deduction is warranted because the tutor did not provide final forum-ready content or perform the central classification work for the student; instead, they prompted the student to classify and justify actors using Boston-specific evidence. No 1.2 deduction is supported because the tutor built on the student's partial answers at each step and responded directly to the student's actual sticking points. The main deduction is under 1.3.A.a: although the tutor modeled strong process guidance, they never explicitly explained that this question-driven method was intended to build independent reasoning or longer-term skill. Dialogue quality and communication were otherwise strong: concise prompts, clear progression, and consistent assignment focus.",
-    "total_score": 40,
+    "overview": "The tutor was strongly assignment-anchored, interactive, and student-led throughout, with no evidence of doing the substantive classification work for the student. The main deductions are for missing an explicit rationale for the tutoring approach and for one somewhat brusque phrase. Note: the rubric's published maxima are internally inconsistent, so section scores follow the listed criterion maxima while the required top-level maximum is reported as 46.",
+    "judge_reasoning": "The tutor consistently used classification tests, follow-up questions, and pressure-testing prompts that kept the student's reasoning central, so no deductions were warranted under guided discovery or scaffolding. The conversation also progressed cleanly from confusion to a workable framework without off-topic drift or repetitive looping. A pedagogy deduction applies because the tutor never explicitly stated why they were asking the student to justify classifications rather than simply providing answers. A communication deduction applies because the \"lazy thinking\" wording risks sounding dismissive despite an otherwise useful and mostly supportive tone.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

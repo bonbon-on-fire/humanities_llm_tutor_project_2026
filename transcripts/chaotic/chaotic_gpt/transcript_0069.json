@@ -72,52 +72,92 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              6,
-              10
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly enforced a no-writing boundary ('I won’t write the forum response for you,' 'I’m your tutor, not your writer') but did not clearly explain at least once why this constraint supports the student's learning process, such as strengthening their own reasoning or retention.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              8,
-              9
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  6,
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries against writing the student's post, but did not clearly explain why that constraint supports the student's learning process beyond stating role boundaries.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved sentence 3 following feedback, the tutor affirmed that it was stronger and added another check, but did not prompt the student to reflect on what changed in the revision and why it worked better.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved the weak third sentence, the tutor affirmed that it was stronger and noted why, but did not prompt the student to reflect on what changed in their approach and why the revision worked.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed firmly in a tutoring role, avoided giving a forum-ready post, and kept the student doing the core reasoning and drafting. The conversation remained well anchored to the assignment, progressed through manageable prompts, and included specific method feedback on hedging, repetition, and analytical function. The main weaknesses were meta-learning related: the tutor did not explicitly explain why the no-writing constraint supports learning, and missed a clear opportunity to ask for reflection after the student successfully revised a weak sentence. Tone was somewhat blunt in places, but not clearly enough to justify a separate deduction.",
-    "judge_reasoning": "I deducted in pedagogy for two rubric-specific omissions. First, although the tutor consistently refused to write the student's post, those refusals were framed as role boundaries rather than as an explicit learning rationale, which triggers 1.3.A.a. Second, when the student revised sentence 3 successfully after feedback, the tutor reinforced the improvement but did not ask the student to reflect on what changed, triggering 1.3.C.a. I did not deduct under Socratic method because the tutor avoided submission-ready output and kept the student responsible for the claims, and I did not deduct in dialogue or communication because the exchange stayed on-task, concise, and generally supportive.",
-    "total_score": 42,
+    "overview": "The tutor stayed strongly within a guided-discovery model, refused to provide submission-ready text, and kept the conversation tightly anchored to the Boston climate-actors assignment. The main weaknesses were in meta-learning: the tutor set boundaries without explicitly explaining the learning rationale, and missed a clear opportunity to prompt reflection after the student's revision improved. No other deductions were clearly supported by the transcript.",
+    "judge_reasoning": "The tutor earned full credit for Socratic guidance and scaffolding because they consistently redirected the student toward identifying actors, testing buckets, and revising their own draft rather than supplying a finished forum post. Dialogue quality was strong: the exchange remained on-task, progressed across turns, and did not spiral into repetitive dead ends despite repeated student requests for direct writing help. I deducted under 1.3.A.a because the tutor stated role limits ('I won’t write the forum response for you') without clearly explaining the learning benefit of that constraint. I also deducted under 1.3.C.a because, after the student successfully revised a weak sentence, the tutor praised the result but did not ask the student to reflect on what changed in their method.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

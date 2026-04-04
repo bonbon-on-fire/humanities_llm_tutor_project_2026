@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,32 +87,36 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "1-10"
+                  1,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Throughout the conversation, the tutor uses student-led constraints and asks the student to generate distinctions in their own words, but never explicitly explains why this approach supports learning, retention, or philosophical reasoning.",
+                "reason": "The tutor consistently uses guided questioning and withholds direct answers, but never explicitly explains why this constraint supports the student's learning or long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
+                  5,
+                  6,
                   8,
-                  9
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improves from earlier uncertainty to a clearer means-versus-side-effect distinction and rough three-part answer, the tutor advances to stress-testing the rule without prompting reflection on what changed in the student's thinking or why the improved formulation worked.",
+                "reason": "After the student improves from initial uncertainty to a clearer distinction between means and side effects, the tutor continues refining the argument but does not prompt reflection on what changed in the student's reasoning or why the improved approach worked.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -128,13 +128,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -146,14 +146,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 46,
-    "overview": "The tutor was consistently Socratic, assignment-focused, and supportive, with no evidence of giving submission-ready philosophy content. The main deductions come from missing explicit meta-rationale for the tutoring approach and missing a reflection prompt after the student made clear progress. No other deductions were strongly supported by the transcript.",
-    "judge_reasoning": "The tutor kept idea generation student-led by repeatedly asking the student to articulate act consequentialism, test distinctions, and refine a general rule, so no deduction was warranted under 1.1. Scaffolding was strong: the tutor built from the student's answers, narrowed the task, and moved from case application to principle formation without obvious misdiagnosis or repetition. However, the tutor never explained why they were withholding direct answers or using guided questioning, which triggers 1.3.A.a, and after the student improved substantially, the tutor did not ask for reflection on what changed, triggering 1.3.C.a. Communication and tone remained clear, concise, and formative throughout.",
-    "total_score": 40,
+    "overview": "The tutor stayed strongly Socratic, kept the student doing the core philosophical reasoning, and remained well anchored to the assignment cases. Responses were concise, supportive, and progressively scaffolded. The main missing elements were an explicit explanation of why the tutor was withholding direct answers and a brief reflection prompt after the student's reasoning improved.",
+    "judge_reasoning": "The strongest evidence supports full credit for guided discovery: the tutor never supplied a submission-ready thesis, never rewrote student prose, and repeatedly pushed the student to articulate distinctions in their own words. Scaffolding was also effective, because the tutor built directly on the student's evolving view and responded to confusion with targeted questions rather than a full explanatory dump. I deducted under 1.3.A because the tutor never made the learning rationale for the questioning approach explicit, and under 1.3.C because the tutor missed a good opportunity to ask the student to reflect on what had changed once the argument became clearer. No other deductions were clearly supported by the transcript.",
+    "total_score": 42,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,58 +72,94 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              5,
-              8,
-              9
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 1",
+                  "Turn 2",
+                  "Turn 5",
+                  "Turn 8"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced boundaries against writing the post, but did not clearly explain why those constraints support learning, active reasoning, or skill development. Statements like 'I won’t write it for you' and 'You need to do the writing' set limits without giving a tutoring rationale.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly enforced the boundary against writing the student's post, but did not clearly explain a learning-focused rationale such as building the student's own reasoning, retention, or long-term writing skill.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              5,
-              8,
-              9
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 1",
+                  "Turn 2",
+                  "Turn 6",
+                  "Turn 9"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone is repeatedly blunt and rigid ('No,' 'Don’t outsource the judgment,' 'No sentence starters') with limited empathy or softening, which risks discouraging participation even though later turns are more supportive.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The tutor stayed on-task and not insulting, but the repeated blunt refusals ('No,' 'I won't,' 'You need to') made the tone somewhat rigid rather than warmly supportive. This is a smaller deduction because the tutor still provided useful guidance after the refusals.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor strongly protected student ownership, stayed anchored to the assignment, and used guided prompts rather than providing submission-ready writing. Main deductions are for not explicitly stating a learning rationale for those constraints and for a somewhat rigid tone; the tone issue is somewhat ambiguous, so only a smaller deduction was applied.",
-    "judge_reasoning": "The tutor did well on Socratic guidance: across the conversation they refused to supply a forum-ready paragraph and instead asked the student to identify leaders, engaged sectors, and missing groups in Mexico City. They also scaffolded effectively by narrowing the task, building from the student's partial answers, and giving process-level feedback at the end about making the example more concrete. I deducted under 1.3.A.a because the tutor enforced boundaries without clearly explaining why that supports the student's learning process. I also deducted under 3.2.A.a because the repeated blunt refusals created a somewhat rigid tone, even though the tutor remained helpful and nonjudgmental overall.",
-    "total_score": 42,
+    "overview": "The tutor strongly avoided doing the assignment for the student and kept the conversation anchored to the actual forum-post task. The main deductions are for not explicitly explaining the learning rationale behind those constraints and for a somewhat rigid tone; the tone issue is mildly ambiguous because the tutor also gave useful encouragement and constructive feedback later.",
+    "judge_reasoning": "The tutor earned full credit on guided discovery and scaffolding because they consistently refused to provide submission-ready content, asked targeted questions, and built toward a student-generated draft. They also stayed well anchored to the assignment and avoided off-topic drift. I deducted under 1.3 because the tutor never clearly explained why refusing to write or polish the response was pedagogically beneficial, only that the student had to do it. I also deducted under 3.2 because the repeated blunt refusals created a rigid tone, although this was partially offset by supportive comments in the final turn.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

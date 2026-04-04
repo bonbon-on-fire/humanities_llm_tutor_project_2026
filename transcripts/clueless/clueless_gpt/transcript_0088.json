@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 17,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,18 +79,8 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  5
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student said they were lost, the tutor mainly repeated the overall procedure and prompt structure rather than first probing what the student already understood or exactly where the confusion was.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6
           },
           "1.3": {
@@ -105,7 +91,7 @@
                   4
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced constraints against giving the answer, but did not clearly explain the learning rationale beyond brief directives such as needing the student to do the thinking.",
+                "reason": "The tutor enforced a student-led approach ('you need to do the thinking' and refusal to give an example row) but did not clearly explain the learning rationale in terms of skill-building, retention, or why this constraint helps the student learn.",
                 "points": 2
               },
               {
@@ -113,20 +99,20 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from being stuck to producing a workable justification, the tutor moved straight to tightening the answer instead of prompting reflection on what changed in the student's reasoning and why it worked.",
+                "reason": "After the student improved from confusion to producing a usable justification, the tutor moved straight to tightening specificity instead of prompting reflection on what changed in the student's thinking and why the new approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [
@@ -137,7 +123,7 @@
                   5
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "Across several turns, the tutor repeated the same basic explanation of the table and the same request for the city without substantially reframing, summarizing, or changing strategy while the student remained confused.",
+                "reason": "The tutor repeated the same high-level explanation of the table and the prompt to name the city across multiple turns without enough synthesis or reframing, even as the student remained stuck. Progress only came after several similar cycles.",
                 "points": 4
               }
             ],
@@ -149,13 +135,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -171,21 +157,25 @@
                   5
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's tone was at times rigid and potentially discouraging, especially with phrasing like 'you need to do the thinking' and 'Stop re-reading it,' which could reduce trust even though the tutor remained task-focused.",
+                "reason": "The tutor's tone was at times rigid and discouraging, especially in phrases like 'you need to do the thinking,' 'I'm not going to fill one in for you,' and 'Stop re-reading it,' which could make the student feel scolded rather than supported.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 31,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment and avoided doing the student's substantive work, which preserved strong guided-discovery pedagogy. Main weaknesses were repetitive handling of the student's confusion, limited explicit explanation of why the constraints support learning, and a somewhat rigid tone. I treated the tutor's comments about the student needing to think as only an implied rationale, so I applied the smaller defensible deduction there.",
-    "judge_reasoning": "The tutor consistently withheld direct answers and kept the student responsible for generating the row content, so 1.1 remained at full credit. Major deductions came from repeating the same procedural explanation and request for the city across Turns 1, 3, and 5 without much strategic reframing, and from responding to confusion with method summaries before diagnosing the precise sticking point. I also deducted because the tutor never clearly articulated the pedagogical reason for withholding answers, and after the student's successful improvement in Turn 10, the tutor did not ask the student to reflect on what changed. Communication was generally clear and bite-sized, but the phrasing in several turns was somewhat rigid and could feel discouraging.",
-    "total_score": 31,
+    "overview": "The tutor generally preserved student ownership of the work and stayed anchored to the assignment, especially once the student identified Miami and flooding. Main weaknesses were repetitive early turns, limited explicit explanation of why the tutor would not provide direct answers, and a somewhat rigid tone. Where evidence was borderline, deductions were kept to the smaller set and not double-counted across overlapping pedagogy criteria.",
+    "judge_reasoning": "The tutor did well on core pedagogy by avoiding submission-ready output and using guided questioning once the student supplied a city and stressor. However, the conversation lost points because the tutor repeated similar table explanations across early turns without enough reframing, which fits the redundancy criterion. The tutor also enforced constraints without clearly stating a learning-centered rationale, and missed a chance to prompt reflection after the student's successful improvement. Communication was mostly clear, but several phrases came across as stern rather than fully supportive.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

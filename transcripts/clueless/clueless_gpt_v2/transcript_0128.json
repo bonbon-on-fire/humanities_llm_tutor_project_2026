@@ -72,51 +72,79 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor refused to provide a full example table, but only framed this as avoiding doing the assignment for the student rather than explicitly explaining how that constraint supports the student's learning process or skill development.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor explains that it will not build the full table for the student, but does not clearly connect that constraint to learning benefits such as active reasoning, retention, or long-term skill development.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3,
-              9
-            ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "Some phrasing is more rigid than supportive, especially 'No—I'm not going to build the table for you' and 'Now stop second-guessing,' which could feel discouraging even though the tutor is generally trying to keep the student moving.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 8,
-          "max": 10
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed assignment-focused, avoided doing the table for the student, and generally used guided prompts rather than giving submission-ready content. I applied only limited deductions where the evidence was clearest: the tutor did not explicitly state a learning-centered rationale for its constraint, and a couple of turns used somewhat rigid phrasing.",
-    "judge_reasoning": "The strongest aspect of the conversation is pedagogical restraint: the tutor refused to produce a full example table and instead kept asking the student to choose a city, boundary, source type, and first row. I did not deduct under direct-work criteria because the tutor never supplied a submission-ready table or final written output. I deducted under 1.3.A.a because the tutor's refusal in turn 3 explains what it will not do, but not why that supports the student's learning process. I also deducted under 3.2.A.a because turns 3 and 9 contain sharper phrasing that may undermine rapport, though the rest of the exchange remains reasonably supportive and task-focused.",
-    "total_score": 42,
+    "overview": "The tutor stayed anchored to the assignment, avoided giving submission-ready content, and generally used guided questions, simple definitions, and practical workflow scaffolds. I considered possible deductions for repetition because the student remained stuck across multiple turns, but the tutor did vary strategies with boundary clarification, a workflow summary, a city-choice tradeoff, and a source map, so I kept those criteria at full credit.",
+    "judge_reasoning": "The strongest aspect of this tutoring was restraint: the tutor did not build the student's table, did not rewrite work into final prose, and kept the student engaged through bounded choices and next-step prompts. The tutor also remained closely tied to the actual assignment requirements and provided actionable process support, especially with the table structure, boundary consistency advice, and source-type guidance. The main deduction is under 1.3.A because the tutor never clearly explained the learning rationale behind refusing to provide a full example; they stated the boundary, but not why that approach helps the student learn. Communication stayed concise, supportive, and non-grading throughout.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

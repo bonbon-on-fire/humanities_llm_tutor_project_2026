@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied the central side-effect-versus-means framework for the lecture cases and later explicitly steered the student to defend that route, taking over part of the key conceptual selection that should remain student-led. Because the student had already gestured toward the importance of means, this is a moderate rather than maximal deduction.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -91,24 +97,23 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8,
-                  9
+                  10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After earlier confusion, the student produced a substantially improved three-part answer in Turn 9. The tutor immediately shifted to refining the claim rather than prompting brief reflection on what changed in the student's reasoning or why the new structure worked.",
+                "reason": "After the student improved from confusion to a workable three-part answer in turn 9, the tutor moved straight into refinement instead of prompting brief reflection on what changed in the student's reasoning and why the new approach worked.",
                 "points": 2
               }
             ],
             "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -120,13 +125,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -138,14 +143,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "Strong guided-discovery tutoring with good scaffolding, assignment focus, and concise supportive tone. The only clear deduction is for missing a reflection prompt after the student improved. I treated the tutor's comments about not outsourcing judgment as sufficient, though somewhat implicit, rationale for the tutoring constraint, so I did not deduct further.",
-    "judge_reasoning": "The tutor consistently avoided doing the assignment for the student and instead used short, targeted questions that kept the key claims student-led. Scaffolding was strong: the tutor built from the student's partial understanding, rephrased the Fuel/Blood distinction when memory failed, and later offered a useful three-step structure for forming the paper's answer. The main deduction is under 1.3.C.a, because once the student finally articulated a workable answer in Turn 9, the tutor moved straight to refinement rather than asking the student to reflect on what changed in their reasoning. Dialogue stayed anchored to the assignment, with no off-topic drift, and the tone remained supportive and clearly formative rather than grading-like.",
-    "total_score": 42,
+    "overview": "The tutor was generally strong on guided questioning, scaffolding, assignment focus, and supportive tone. The main issue was that, when the student forgot the cases, the tutor supplied the decisive side-effect/means framework and later nudged the student toward that same route, reducing student-led idea generation. This was somewhat ambiguous because some factual resetting was needed, so I applied a smaller deduction rather than treating it as submission-ready answer-giving.",
+    "judge_reasoning": "Most of the conversation stayed interactive and appropriately scaffolded: the tutor repeatedly asked for short attempts, built on the student's partial insights, and gave useful structural prompts such as the three-move outline. I did not deduct for direct-answering because the tutor never produced a full thesis or polished submission-ready argument. However, under 1.1 the tutor did take over a central interpretive move by naming and privileging the side-effect-versus-means distinction for Fuel/Blood and the final claim direction. I also deducted under 1.3.C because, after the student's improvement in turn 9, the tutor refined the answer instead of prompting reflection on what changed in the student's thinking.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

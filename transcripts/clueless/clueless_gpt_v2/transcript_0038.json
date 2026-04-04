@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,21 +86,24 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  9
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor maintained process constraints and refused to provide a finished row, but never explicitly explained why this student-led approach supports learning, retention, or skill development.",
+                "reason": "The tutor enforced a tutoring constraint ('I’m not going to give you a finished row—you need to build it') but did not explain why this supports the student's learning, retention, or skill development. No clear rationale for the constraint appears elsewhere in the conversation.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -116,13 +115,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -130,28 +129,22 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  9
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was mostly supportive, but some phrasing was unnecessarily rigid or brusque (for example, 'Now stop theorizing' and 'I’m not going to give you a finished row—you need to build it'), which could make the student feel scolded while already anxious.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment and consistently used guided prompts rather than doing the table for the student. Deductions are limited because the tutor generally scaffolded the task effectively and kept responses concise. The main weaknesses were the lack of an explicit learning rationale for withholding direct answers and a few moments of slightly rigid tone; the tone deduction is somewhat judgment-based, so the smaller reasonable deduction was applied.",
-    "judge_reasoning": "Under 1.1, no deduction was warranted because the tutor never supplied a submission-ready stressor row, rating, or finished justification; instead, the tutor repeatedly asked the student to generate labels, sectors, and criteria. Under 1.3.A.a, the tutor enforced a student-led process but did not explicitly explain why that constraint helps learning, so 2 points were removed. Dialogue quality remained strong because the tutor repeatedly re-anchored the student to the table structure, clarified the stressor-versus-sector distinction, and redirected spiraling without going off-topic. A 3.2.A.a deduction was applied because a few responses used somewhat sharp phrasing that risked sounding dismissive, even though the overall interaction remained mostly supportive.",
-    "total_score": 38,
+    "overview": "The tutor stayed strongly assignment-anchored, used guided questions instead of supplying submission-ready content, and kept responses concise and usable. Evidence for deductions was limited; the only clear miss was the lack of an explicit explanation for why the tutor withheld a finished example row. Where evidence was somewhat ambiguous, no additional deduction was applied.",
+    "judge_reasoning": "The tutor consistently used guided discovery: they asked the student to identify the city, name stressors, distinguish stressor/sector/justification, and choose defensible sectors rather than completing the table for them. The tutor also re-anchored the student to the actual assignment requirements, especially around overlapping sectors and what counts as climate-related, without drifting off-task. Communication was concise and supportive overall, with no grading language and no near-submission-ready writing. The main deduction is under 1.3.A because the tutor never explicitly explained the learning rationale for refusing to provide a finished row or more direct output.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

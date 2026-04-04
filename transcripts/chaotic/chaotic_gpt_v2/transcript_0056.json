@@ -72,57 +72,83 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              5,
-              6,
-              7,
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  6,
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced limits on giving direct answers ('I’m not going to fill it in for you,' 'That would defeat the assignment') but did not clearly explain the learning rationale behind those constraints, such as helping the student practice source verification or retain the research process.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly enforced refusal boundaries, but did not clearly explain a learning-centered rationale such as how student-generated work supports reasoning, retention, or long-term skill development. Saying it would 'defeat the assignment' is a constraint statement, not a clear tutoring rationale.",
-            "points": 2
+            "score": 6,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              6,
-              8
-            ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The tutor's tone was often blunt and rigid ('No—I won’t...', 'You have to do the writing yourself', 'Don’t waste time over-polishing'). While still functional and task-focused, this phrasing risks sounding cold rather than supportively coaching.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 10,
           "max": 10
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 44,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly anchored to the assignment, avoided doing the student's table for them, and kept the exchange efficient and generally well-scaffolded. The main deductions are for not explicitly giving a learning-oriented rationale for the refusal constraints and for a somewhat rigid tone in several turns. Where tone evidence was somewhat ambiguous, the smaller available deduction was used.",
-    "judge_reasoning": "The strongest aspect of this tutoring was boundary-setting without crossing into submission-ready output: the tutor refused to provide the finished table, redirected to source verification, and kept the student responsible for the core work. Dialogue quality was also strong because the tutor stayed on-task, re-grounded the student in source choice and geography issues, and avoided repetitive spiraling. I deducted under 1.3.A.a because the tutor never clearly explained why these constraints help the student learn; 'that would defeat the assignment' does not fully satisfy the rubric's meta-learning rationale requirement. I also deducted under 3.2.A.a because several refusals were phrased in a blunt, rigid way that could weaken tutoring rapport, even though the tutor remained generally helpful.",
-    "total_score": 42,
+    "overview": "The tutor consistently avoided doing the assignment for the student and instead scaffolded the work through source selection, row matching, a fill-in template, and targeted checks about geography and citation details. The conversation stayed tightly anchored to the assignment and progressed without major repetition or off-topic drift. Scoring is conservative because the clearest weakness was that the tutor's refusals were framed more as assignment compliance than as an explicit learning rationale.",
+    "judge_reasoning": "The tutor did well on guided discovery: they refused to provide finished table entries or polished final prose, and instead kept the student responsible for locating values, choosing geography, and drafting the note. Scaffolding was strong because the tutor broke the task into manageable steps, identified appropriate databases, and built on the student's progress when the student decided to use metro-level GDP and drafted a note. Dialogue quality was also strong, with steady assignment anchoring and no meaningful off-topic engagement. The main deduction is under 1.3.A because the tutor never clearly explained why these constraints support learning beyond saying direct completion would 'defeat the assignment.'",
+    "total_score": 44,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,29 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced limits on giving direct answers, but did not clearly explain a learning-oriented rationale such as building the student's reasoning skills or retention. Statements like 'do the thinking' and 'that's not my role' set boundaries without explicitly tying them to tutoring purpose.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +118,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,26 +136,28 @@
               {
                 "evidence_turns": [
                   1,
-                  6,
-                  8,
-                  9
+                  6
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor stayed on-task and helpful, but repeated rigid refusals such as 'I’m your tutor, not a ghostwriter,' 'Stop asking me to write it,' and 'I’m not choosing your content for you' created a somewhat cold, admonishing tone that could discourage the student.",
+                "reason": "The tutor's tone becomes somewhat rigid and admonishing at points, especially with 'I’m your tutor, not a ghostwriter' and 'Stop asking me to write it.' While not abusive, this risks discouraging participation and weakens supportive rapport.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor strongly protected student authorship, kept the work student-led, and used effective scaffolding tied to the actual assignment. No direct forum-post writing or near-submission-ready language was provided. The main deduction is for tone: some refusals were sharper than necessary, though the overall interaction still progressed productively.",
-    "judge_reasoning": "Under 1.1, the tutor consistently refused to provide paste-ready content and instead prompted the student to generate categories, reasons, and revisions, so no deduction is supported. Under 1.2 and 1.3, the tutor built on partial student answers ('usable start,' 'better') and gave specific method feedback about overlap, vagueness, and missing sectors, while also explaining that student thinking was necessary to finish effectively. Dialogue quality remains strong because the tutor kept redirecting to the assignment and varied the scaffolds rather than merely repeating the same prompt. The only clear rubric violation is tone under 3.2.A.a, where several responses were unnecessarily rigid or admonishing.",
-    "total_score": 42,
+    "overview": "The tutor strongly avoided doing the student's assignment and kept the work student-led through prompts, narrowing choices, and draft critique. The main weaknesses were a lack of explicit explanation for why those constraints support learning and a somewhat sharp tone in a few refusals. Any possible concern about repetition was limited because the tutor generally advanced the task each turn rather than stalling.",
+    "judge_reasoning": "The strongest aspect of this conversation is pedagogy under 1.1: the tutor consistently refused to provide paste-ready or polished forum text and instead elicited the student's own categories, revisions, and reasoning. Scaffolding was effective because the tutor moved from broad categories to specificity, then to draft bullets, and then to targeted revision prompts tied to the assignment. I deducted under 1.3.A because the tutor enforced boundaries but never clearly articulated a learning rationale beyond role-based refusal. I also deducted under 3.2.A because some phrasing was noticeably rigid and could undermine a supportive tutoring atmosphere, though the tutor remained on-task and formative overall.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

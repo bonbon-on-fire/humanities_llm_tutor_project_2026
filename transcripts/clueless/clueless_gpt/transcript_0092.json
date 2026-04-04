@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 17,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,17 +79,8 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student asked for the whole process end to end, the tutor immediately provided a full workflow instead of first checking which parts the student already understood.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6
           },
           "1.3": {
@@ -103,29 +90,28 @@
                   7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a boundary by refusing to draft the forum post, but did not explain why that constraint supports the student's learning or reasoning process.",
+                "reason": "The tutor refused to draft the forum post, but only framed this as a role boundary ('I’m your tutor, not your writer') rather than explicitly explaining how this supports the student's learning, reasoning practice, or retention.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from broad confusion to a correctly structured draft, the tutor moved directly to refinement without asking the student to reflect on what changed in their thinking.",
+                "reason": "After the student improved from broad confusion to a workable three-part classification, the tutor moved directly to asking for evidence instead of prompting reflection on what changed in the student's thinking and why the new structure worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -137,13 +123,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -155,14 +141,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 37,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment, kept the student doing the core interpretive work, and avoided drafting a submission-ready response. Deductions are limited to a method dump before diagnosing understanding, lack of an explicit learning rationale for tutoring constraints, and a missed reflection prompt after the student's improvement.",
-    "judge_reasoning": "The strongest evidence supports full credit on guided discovery because the tutor consistently asked the student to classify actors, justify claims with evidence, and never wrote the forum post. I deducted under 1.2.B because in turn 3 the tutor gave an end-to-end workflow without first probing what the student already knew. I also deducted under 1.3.A because the tutor's refusal to write the post lacked an explicit explanation of how that supports learning, and under 1.3.C because once the student finally produced an appropriate draft structure, the tutor did not prompt reflection on what changed. Dialogue quality and communication remained strong: the tutor was concise, supportive, and tightly anchored to the assignment throughout.",
-    "total_score": 37,
+    "overview": "The tutor kept the conversation strongly assignment-centered and generally student-led, using short prompts, classification criteria, and evidence-focused questions rather than producing a submission-ready response. The main weaknesses were meta-level: the tutor set a boundary against writing the forum post without clearly explaining the learning rationale, and missed a good chance to prompt reflection after the student's improved attempt. Evidence for larger pedagogy deductions is limited because the tutor's examples stayed generic and repeatedly redirected the student to generate city-specific evidence.",
+    "judge_reasoning": "The tutor did well on guided discovery: they explained the task, clarified what counts as an actor, asked the student to test ideas, and refused to draft the forum post, so no deduction is supported under 1.1. Scaffolding was also solid, since the tutor responded to the student's actual confusion, built from partial answers, and progressively narrowed the task into manageable pieces. The clearest deductions are under 1.3: the tutor did not explicitly explain why their no-writing constraint helps learning, and after the student finally produced an appropriate leading/engaged/missing structure, the tutor did not ask the student to reflect on what had improved. Dialogue quality and communication remained strong throughout: the tutor stayed on task, avoided off-topic drift, used concise language, and maintained a supportive coaching tone.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied the conversation's central argumentative distinctions for the student to choose from ('using someone as a tool,' 'means vs side effects,' 'rights or constraints'). Those ideas do substantial key reasoning work for the assignment instead of being derived first through student-led exploration.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -97,20 +102,28 @@
                   9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced the no-ghostwriting boundary, but did not explicitly explain a learning rationale such as developing the student's own reasoning or improving retention; the comments state the rule without saying why it supports learning.",
+                "reason": "The tutor repeatedly enforced a no-ghostwriting boundary, but did not clearly explain the learning rationale behind that constraint (such as building the student's own reasoning or retention).",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved and articulated a stronger principle, the tutor moved straight to applying it to more cases instead of prompting brief reflection on what changed in the student's reasoning and why the new approach worked.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,13 +135,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -140,14 +153,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor strongly maintained student-led reasoning, avoided giving submission-ready prose, and kept the discussion tightly anchored to the philosophy prompt and lecture cases. The main supported deduction is that the tutor enforced the boundary against ghostwriting without clearly stating a learning-focused rationale for that constraint. Some responses were firm, but the conversation still progressed and stayed supportive enough that additional deductions would be less certain.",
-    "judge_reasoning": "The tutor consistently avoided direct answer-giving and instead used guided prompts that required the student to supply the core claims, distinctions, and applications to cases. The tutor also built on student progress, moved from principle to cases to objection, and repeatedly redirected the student back to the assignment rather than engaging off-task requests for a final paragraph. I deducted only under 1.3.A.a because the tutor's repeated refusals to ghostwrite were not accompanied by an explicit explanation that this approach was meant to improve the student's own learning or reasoning process. I did not deduct elsewhere because the tutor's questions were concise, progressive, and evidence-based, and the student made visible conceptual progress across the exchange.",
-    "total_score": 42,
+    "overview": "The tutor strongly resisted ghostwriting and kept the conversation anchored to the assignment, with short, interactive prompts that moved the student toward a defensible thesis. The main concern is that the tutor at one point supplied the assignment's core conceptual distinctions rather than eliciting them first from the student. I did not deduct for tone because, although firm, it remained broadly supportive and coaching-oriented.",
+    "judge_reasoning": "The tutor did well on assignment anchoring, bite-sized communication, and scaffolding: each refusal to provide a final answer was paired with a focused next step, and the tutor built on the student's improving responses. The largest deduction is under 1.1 because turn 5 gives the student the crucial argumentative options that drive the final position, which reduces student-led idea generation. I also deducted under 1.3 because the tutor never explained why the no-ghostwriting constraint supports learning, and after the student's successful formulation in turn 10, the tutor did not ask for reflection on what changed in the student's thinking. No deductions were applied for redundancy, off-topic drift, or grading-like tone because the dialogue remained efficient, on task, and formative.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,41 +72,79 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a tutoring constraint ('I’m not going to supply rows for your table') without explicitly explaining why withholding examples supports the student's learning process, active reasoning, or long-term skill development.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor enforced a tutoring constraint by refusing to provide example rows ('I'm not going to supply rows for your table') but did not explicitly explain a learning rationale such as helping the student practice independent categorization or retain the method.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor remained highly student-led and avoided giving submission-ready table content, instead guiding the student to define scope, distinguish stressors from impacts, and generate their own row labels. The only clear deduction is for missing an explicit learning rationale when refusing to provide rows. Some phrasing was firm, but not clearly harmful enough to warrant tone or clarity deductions.",
-    "judge_reasoning": "This was a strong guided-discovery exchange: the tutor repeatedly asked targeted questions, built on the student's answers, and kept the work anchored to the actual assignment structure for the stressors table. The tutor also provided concrete method-level feedback on scope, overlap, and the difference between hazards, stressors, and impacts, without writing the assignment for the student. I deducted only under 1.3.A.a because the tutor enforced a constraint against supplying rows but never clearly stated why that limitation supported the student's learning process. No other rubric violations were clearly supported by the transcript.",
-    "total_score": 44,
+    "overview": "The tutor consistently kept the work student-led, re-anchored the student to the assignment structure, and provided concrete process scaffolds for narrowing stressors, distinguishing hazards from stressors, and separating stressors from impacts. The only clear rubric deduction is that the tutor never explicitly explained why refusing to provide example rows was pedagogically useful. There was some blunt phrasing, but it was not clearly severe enough to justify a tone deduction, so the smaller deduction was chosen where ambiguity existed.",
+    "judge_reasoning": "The tutor avoided giving submission-ready content and instead used guided questioning, scope tests, and stepwise structure to help the student generate their own table entries. Scaffolding was strong: the tutor built on the student's progress, diagnosed confusion about breadth, overlap, and stressor-vs-impact distinctions, and repeatedly re-grounded the discussion in the actual assignment task. Method-level feedback was also specific, such as advising the student to choose a consistent table logic and to separate rows that would require different evidence or policy responses. The main weakness was meta-learning rationale: when the tutor declined to supply example rows, they did not explain why that constraint supports learning, so a deduction was applied under 1.3.A.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

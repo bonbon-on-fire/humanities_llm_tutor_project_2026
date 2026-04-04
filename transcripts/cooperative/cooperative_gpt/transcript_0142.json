@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 7"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplies the key classification path by suggesting the split between organized residents as engaged and unorganized or low-influence residents as missing. That resolves the central reasoning tradeoff for the student rather than keeping the idea generation fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -91,37 +96,31 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  6,
-                  8,
-                  9,
-                  10
+                  "Turns 1-10"
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor gives useful process guidance throughout, but never explicitly explains the tutoring rationale for the constraint-based approach (for example, why having the student generate and test distinctions themselves supports learning or retention).",
+                "reason": "The tutor uses constraints and guided questioning throughout but never explicitly explains why this approach supports the student's learning or long-term skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  8,
-                  9,
-                  10
+                  "Turns 8-9"
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improves from uncertainty to a solid three-part draft, the tutor moves to strengthening evidence rather than prompting reflection on what changed in the student's reasoning and why the revised approach worked.",
+                "reason": "After the student improves from confusion to a clear three-part draft, the tutor moves to evidence strengthening without prompting reflection on what changed in the student's reasoning and why the new approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -133,13 +132,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -151,14 +150,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "Strong tutoring overall: the tutor keeps the work student-led, stays tightly anchored to the assignment, and uses concise prompts that progressively sharpen the student's actor categories. A borderline moment occurs when the tutor suggests splitting organized versus unorganized residents, but because it is framed tentatively and followed by an evidence check, I did not apply a 1.1 deduction. Main deductions are limited to missing explicit rationale for the tutoring approach and missing reflection after the student's successful revision.",
-    "judge_reasoning": "The tutor consistently uses guided questioning, asks for evidence, and avoids giving submission-ready forum text, so pedagogy is strong under 1.1 and 1.2. The conversation is well scaffolded: the tutor builds from the student's partial ideas, refines the leading/engaged/missing distinction, and keeps the discussion centered on the Mumbai case and the actual forum task. I deducted under 1.3 because the tutor never explicitly states why they are withholding direct answers in service of learning, and after the student's successful draft, they do not ask the student to reflect on what changed in their reasoning. Communication remains concise, clear, and supportive throughout.",
-    "total_score": 40,
+    "overview": "The tutor was generally strong on guided questioning, scaffolding, assignment anchoring, and concise communication. The main weakness was one notable moment where the tutor supplied the decisive engaged-versus-missing split for residents, which reduced student-led idea generation. There was also no explicit explanation of the tutoring rationale and no reflection prompt after the student's improvement. Because the rest of the exchange stayed interactive and non-submission-ready, deductions were limited to those specific rubric triggers.",
+    "judge_reasoning": "Most of the conversation models effective tutoring: the tutor asks focused questions, builds on student progress, and keeps the discussion tightly anchored to the assignment. The largest deduction is under 1.1 because Turn 7 gives the student the key categorization move that becomes part of the final draft, rather than having the student derive that distinction independently. I also deducted under 1.3 because the tutor never explains why the questioning approach is being used and does not prompt the student to reflect after moving from confusion to a strong draft. No deductions were warranted for dialogue flow or communication quality because the tutor remained clear, supportive, and on task.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

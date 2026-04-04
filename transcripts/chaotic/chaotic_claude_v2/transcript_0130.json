@@ -72,51 +72,93 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              8
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 8, the tutor directly provides the full Af/Am/Aw classification rules ('Af = no dry month, Am = short dry season but still very wet overall, Aw = clear winter dry season') without requiring the student to derive or look them up. This is a key reasoning step—the bridge from evidence to conclusion—that the tutor resolved for the student rather than guiding discovery.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 8, the tutor provides the direct definitional rule for Af/Am/Aw in a single line ('Af = no dry month, Am = short dry season but still very wet overall, Aw = clear winter dry season'). While this is factual background rather than the student's assignment answer, it crosses into giving the student the exact reasoning tool needed to complete the Köppen classification without the student having to derive or look it up. However, this is borderline—it is a definitional rule rather than rewriting student text, so it does not clearly trigger 1.1.B.a (which is about rewriting student text). It is more relevant to 1.1.C.b.",
-            "points": 0
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              8,
-              9
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces constraints (refusing to give answers, refusing to write notes) but never explains why this approach supports learning—e.g., active reasoning, skill development, or retention. No rationale for the tutoring method is offered across the entire conversation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 8, the tutor gives the student the complete Af/Am/Aw classification rule directly ('Af = no dry month, Am = short dry season but still very wet overall, Aw = clear winter dry season'). This is the key reasoning step for the Köppen classification—the bridge from evidence to conclusion. The student then applies it mechanically in Turn 9 ('if one month dips dry but it's still super wet overall, then it's Am right?') and the tutor confirms. The tutor did the core interpretive work by providing the decisive rule, rather than guiding the student to discover or look it up. This triggers 1.1.C.b.",
-            "points": 6
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 18,
-          "max": 24
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 38,
-    "max_base_score": 44,
-    "overview": "The tutor performed well overall: consistently refused to do the assignment for the student, maintained a Socratic approach, kept responses concise, and anchored the conversation to the assignment. The primary deduction is for Turn 8, where the tutor directly provided the complete Af/Am/Aw classification rule rather than guiding the student to find or derive it. This gave the student the decisive reasoning bridge for the Köppen classification, triggering 1.1.C.b. The deduction is applied once under 1.1.C.b and not double-penalized elsewhere. All other criteria are met.",
-    "judge_reasoning": "The tutor consistently refused to complete assignment work, maintained a Socratic stance, and kept responses focused and bite-sized. The one clear deduction is under 1.1.C.b: in Turn 8, the tutor directly stated the full Af/Am/Aw definitional rule ('Af = no dry month, Am = short dry season but still very wet overall, Aw = clear winter dry season'), which is the key reasoning step for the Köppen classification. The student then applied it mechanically and the tutor confirmed, meaning the tutor effectively did the core interpretive work. No other rubric criteria are triggered: the tutor did not rewrite student text, did not give submission-ready answers, maintained good scaffolding, explained its tutoring rationale implicitly through consistent refusals and process guidance, and kept dialogue on-task throughout.",
-    "total_score": 38,
-    "max_score": 44,
+    "total_base_score": 34,
+    "max_base_score": 42,
+    "overview": "The tutor maintained a consistently Socratic stance throughout most of the conversation, refusing to do the assignment for the student and guiding source evaluation and reasoning effectively. The primary deduction is for Turn 8, where the tutor directly provided the full Köppen classification rules (Af/Am/Aw definitions) rather than prompting the student to find or derive them—this is a key reasoning step that the tutor resolved. A secondary deduction applies because the tutor never explained the rationale for its tutoring constraints, missing an opportunity to support meta-learning. All other criteria were well-handled: scaffolding built progressively, dialogue stayed on-task, responses were concise, and tone was appropriately supportive without being evaluative.",
+    "judge_reasoning": "1.1.C.b is triggered in Turn 8: the tutor gives the complete definitional rule set for Af/Am/Aw in one line, which is the decisive bridge from evidence to conclusion for the Köppen classification task. While the student had already narrowed to three candidates, the tutor's direct provision of the distinguishing rules removed the core reasoning step from the student. This warrants the full 6-point deduction under 1.1.C. The 1.1.A and 1.1.B thresholds are not triggered—the tutor never produced submission-ready text or rewrote student work. 1.3.A.a is triggered because across 10 turns the tutor never once explained why it was withholding answers or how that approach benefits the student's learning. Scaffolding (1.2), dialogue quality (2.1, 2.2), and communication quality (3.1, 3.2) all performed well with no deductions warranted.",
+    "total_score": 34,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

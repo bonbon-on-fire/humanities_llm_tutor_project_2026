@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,27 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced a guided process and refused to supply ready-made ratings, but never explicitly explained why this tutoring approach supports the student's learning or long-term skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +116,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -124,29 +130,22 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  9
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was generally helpful, but several phrasings were noticeably rigid or punitive rather than warmly supportive, such as 'That's still too vague,' 'you haven't earned it yet,' and repeated blunt criticism without softening.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor showed strong guided discovery, kept the work student-led, and stayed tightly anchored to the assignment. The only deduction is for mildly rigid tone in a few turns; while the exchange remained productive, some wording could reasonably feel harsh.",
-    "judge_reasoning": "No pedagogy deductions were applied because the tutor avoided giving submission-ready content, consistently used probing questions, and built a clear evidence-based method for rating stressors. The tutor also provided specific process feedback by helping the student distinguish frequency, inequality, and severity and identify what evidence was still missing. No dialogue-quality deductions were warranted because the exchange progressed step by step and stayed focused on the stressors table task. I deducted 2 points under 3.2.A.a because a few comments were phrased in a somewhat cold or punitive way, which weakens supportive tone even though the overall interaction remained formative.",
-    "total_score": 42,
+    "overview": "The tutor stayed tightly anchored to the assignment and used strong guided questioning to help the student justify a stressor rating with evidence rather than guesswork. The main weakness was meta-explanation: while the tutor used a good process, they did not explicitly tell the student why this constraint-based, evidence-first approach helps learning. Tone was somewhat firm in places, but the conversation still remained supportive and productive overall, so no communication deduction was applied.",
+    "judge_reasoning": "The tutor avoided giving submission-ready content and instead used iterative questions to keep the key reasoning student-led, so no deduction was warranted under 1.1. Scaffolding was strong: the tutor built directly on the student's progress, identified missing elements like severity evidence, and advanced the task step by step. A deduction was applied under 1.3.A because the tutor never explicitly explained the learning rationale behind their tutoring constraints, even though the process itself was effective. Dialogue quality and clarity remained strong throughout, with concise turns, steady progress, and consistent assignment focus.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,23 +72,10 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 14,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  8
-                ],
-                "sub_criterion_id": "1.1.C.b",
-                "reason": "The tutor took over a key reasoning step by supplying a concrete list of plausible Jakarta stressors, resolving much of the student's uncertainty about what counts as climate-related instead of keeping that idea generation fully student-led.",
-                "points": 6
-              }
-            ],
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
@@ -100,7 +87,7 @@
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor gave useful process help, but did not clearly explain a tutoring rationale for the constraints or questioning approach at least once during the conversation.",
+                "reason": "The tutor set boundaries and steered the student away from overthinking, but never explicitly explained a tutoring rationale for those constraints in terms of learning benefits such as active reasoning, retention, or skill development.",
                 "points": 2
               },
               {
@@ -109,20 +96,20 @@
                   8
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student showed improved judgment by identifying that the air-pollution row felt weak, the tutor did not prompt reflection on what changed in the student's thinking or why that revision was stronger.",
+                "reason": "After the student made progress by correctly questioning whether air pollution fit the assignment, the tutor affirmed the move and advanced the task but did not prompt reflection on what changed in the student's reasoning or why that improved approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -134,13 +121,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -148,18 +135,33 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was often efficient and helpful, but phrases like \"You're overcomplicating it,\" \"Stop that,\" and \"Basic is not the problem\" made the tone intermittently sharp and rigid rather than consistently supportive.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor was generally strong on scaffolding, assignment anchoring, and concise stepwise guidance. The main deduction is for turn 8, where the tutor supplied much of the substantive Jakarta stressor list; I treated this as a student-led idea-generation issue rather than a full-answer violation. I also applied smaller pedagogy deductions for missing explicit tutoring-rationale explanation and for not prompting reflection after the student's improved judgment.",
-    "judge_reasoning": "This conversation stayed focused on the assignment, responded directly to the student's confusion, and used short, manageable prompts. The tutor repeatedly helped the student distinguish stressors from consequences, compare severity relatively, and simplify the workflow, so no deductions were warranted for scaffolding, dialogue drift, or clarity. However, turn 8 crossed from guidance into doing a central content-selection step by naming the strongest Jakarta stressors, which reduced student-led discovery under 1.1. The tutor also never explicitly explained why the questioning/process constraints support learning, and missed a reflection opportunity after the student correctly reconsidered air pollution.",
-    "total_score": 34,
+    "overview": "The tutor generally used effective guided questioning, kept the conversation well anchored to the assignment, and provided clear stepwise scaffolding without producing submission-ready work. Deductions are limited to missing explicit meta-rationale, missing reflection after student improvement, and a somewhat brusque tone in a few turns. Any concern about the tutor giving Jakarta stressor examples was treated conservatively because the list was framed as plausible options rather than a completed table.",
+    "judge_reasoning": "The tutor stayed mostly within a Socratic, process-oriented mode: they asked the student to distinguish stressors from consequences, narrow categories, and rank stressors comparatively rather than supplying a finished table. Scaffolding was strong and progressively adapted to the student's confusion, so no deductions were warranted for progression or assignment anchoring. However, the tutor never explicitly explained why these constraints or question-based moves support learning, and they missed a chance to prompt reflection after the student improved their reasoning about what counts as climate-related. Communication was concise and clear, but several turns used wording that felt unnecessarily sharp, justifying a tone deduction.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

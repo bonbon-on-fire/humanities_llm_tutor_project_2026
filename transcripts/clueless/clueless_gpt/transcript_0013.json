@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,37 +87,44 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  8,
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "When declining to provide a finished row, the tutor says 'My role is to help you build it yourself' but does not explain why this constraint supports learning, such as helping the student practice the reasoning needed for later assignments.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After repeated confusion, the student correctly identified \"extreme heat\" as a stressor, but the tutor confirmed correctness and moved straight into the next task rather than prompting brief reflection on what changed in the student's thinking or why the distinction now worked.",
+                "reason": "After the student improves from earlier confusion and correctly identifies 'extreme heat' as a stressor, the tutor confirms it and moves straight back into the task without prompting reflection on what changed or why the distinction now works.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
+                  5,
                   8,
                   9,
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly returned to the same stressor/sector/impact distinction and similar prompts to name one row or one example while the student continued to report being lost. The conversation showed limited advancement until very late, and the tutor did not switch earlier to a more synthesizing or differently targeted intervention.",
+                "reason": "Across several turns, the tutor repeats the same stressor/sector/impact distinction and restates the assignment's big-picture logic, but the student remains confused and the tutor does not substantially switch to a new strategy such as summarizing, diagnosing the root blockage, or simplifying with a different frame.",
                 "points": 4
               }
             ],
@@ -133,13 +136,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -151,14 +154,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, avoided doing the student's table for them, and generally used concise, supportive prompts. The main weakness was repeated cycling on the same distinction without enough change in strategy as the student remained confused. I applied a small additional deduction for missing a reflection prompt after the student finally made a correct distinction.",
-    "judge_reasoning": "Under 1.1, the tutor did not provide submission-ready content or rewrite the student's work; instead, they consistently asked the student to generate a row or identify a city-specific stressor. Under 2.1, the strongest deduction comes from repeated returns to the same stressor/sector/impact explanation across multiple turns while the student explicitly said they were still lost, showing pattern-level repetition without sufficient progress. Under 1.3, the tutor did provide process guidance and one rationale for not filling in a row, but after the student's correct answer in Turn 9, the tutor missed the chance to ask the student what clarified the concept. Communication remained clear, concise, and supportive throughout, so no deductions were warranted there.",
-    "total_score": 38,
+    "overview": "The tutor stayed aligned to the assignment, used concise language, and did not provide submission-ready content. Main deductions come from meta-learning and dialogue management: the tutor never clearly explained why withholding a finished example would help the student learn, missed a reflection opportunity after a small student success, and repeated similar clarifications across multiple turns without enough strategic change. I kept scaffolding and assignment anchoring at full credit because the tutor did provide usable structure and remained on task throughout.",
+    "judge_reasoning": "The strongest part of the tutoring was restraint: the tutor did not write the assignment for the student and consistently tried to keep the student producing the next step. However, the conversation stagnated because the tutor repeatedly restated the same distinctions and overall assignment logic even after the student signaled persistent confusion. The tutor also missed rubric-required meta-learning moves by not explaining the learning rationale for refusing a finished example and by not prompting reflection after the student finally classified an example correctly. Overall, this was safe and assignment-focused tutoring, but not especially adaptive once the initial approach failed.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

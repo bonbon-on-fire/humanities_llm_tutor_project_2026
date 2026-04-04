@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,21 +84,47 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries against giving finished table entries, but did not clearly explain the tutoring rationale in learning terms such as active reasoning, retention, or skill-building. Statements like “That’s your job” and “That would be bad practice” are constraints, not a clear explanation of why the approach supports learning.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  4,
+                  5,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly used the same refusal-plus-source-check prompt pattern without enough synthesis or reframing, even as the student continued to seek reassurance and remained stuck. The exchange advanced only slowly until late in the conversation, when the tutor finally narrowed the task to pasting the exact INEGI line.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -110,13 +132,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -132,21 +154,25 @@
                   8
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor maintained boundaries appropriately, but several phrasings were unnecessarily rigid or harsh, such as 'I’m your tutor, not a shortcut,' 'That’s sloppy,' and 'Stop guessing and verify it,' which risk discouraging participation.",
+                "reason": "Several responses were rigid or discouraging in tone, including “No. I’m your tutor, not a shortcut,” “That’s sloppy,” and “Stop guessing and verify it.” While not abusive, this phrasing risks undermining trust and student participation.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor strongly protected against doing the assignment for the student and kept the interaction anchored on source selection, geographic-unit consistency, and verification. The guidance was generally scaffolded and method-focused, with clear emphasis on checking official sources and avoiding unit mismatch. The only clear deduction is tone: some responses were more punitive than supportive. Any concern about repetition was not deducted because the tutor still narrowed the task and advanced toward a concrete next step.",
-    "judge_reasoning": "Under 1.1, the tutor never supplied submission-ready table entries, refused paste-ready text, and consistently required the student to verify sources and units themselves. Under 1.2 and 1.3, the tutor built a workable process: choose a geographic unit, verify one field at a time, and track year, unit, and source; the tutor also explained why consistency and sourcing matter. Dialogue quality remained assignment-focused throughout, and the tutor redirected shortcut-seeking back to the actual task rather than drifting off-topic. The main deduction is 3.2.A.a because multiple turns used blunt phrasing that could feel discouraging even though the instructional boundaries were appropriate.",
-    "total_score": 42,
+    "overview": "The tutor strongly avoided doing the assignment for the student and kept the conversation anchored to the actual table task, especially around source quality and geographic-unit consistency. The main weaknesses were repetitive refusal/question cycles and a somewhat harsh tone. I applied a smaller pedagogy deduction for missing explicit learning-rationale language, since the tutor set constraints but only indirectly explained why.",
+    "judge_reasoning": "The tutor earned full credit on core anti-cheating and guided-discovery behavior because they did not provide submission-ready entries, corrected the student’s tendency to mix units, and consistently redirected toward source verification. I deducted under 1.3.A because the tutor enforced limits without clearly stating a learning-based rationale for those limits. I also deducted the full 2.1 amount because the conversation repeated the same refusal-and-ask-for-source move across multiple turns with limited progression before a more concrete next step appeared. Finally, I deducted for tone because several phrases were unnecessarily sharp even though the tutor remained task-focused and formative overall.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

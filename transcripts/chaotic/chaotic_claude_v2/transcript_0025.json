@@ -72,43 +72,55 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.1.A.a",
-            "reason": "In Turn 10, the tutor provides a detailed 7-point structural outline with explicit content descriptions for each paragraph (e.g., 'Explain act consequentialism: moral status depends on which act produces the best overall outcome,' 'Present your alternative principle: distinguish intended means from foreseen side effects,' 'Conclude: say act consequentialism captures something important about outcomes but misses a moral constraint you think matters'). These are not just structural scaffolds—they contain the substantive content, framing, and even near-final wording for each section of the essay. Combined with the reasoning already developed across prior turns, this outline is effectively submission-ready when assembled. The tutor has gradually filled in claim, evidence, and final wording across the conversation.",
-            "points": 12
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 0,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it won't write answers for the student—i.e., it never articulates the rationale that active reasoning builds retention, skill, or understanding. It simply refuses and redirects, but the pedagogical 'why' behind the Socratic approach is never stated.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 10,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -119,13 +131,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -136,12 +149,12 @@
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 44,
-    "overview": "The tutor maintained strong Socratic discipline throughout most of the conversation, consistently refusing to write answers for the student and guiding reasoning through targeted questions. However, in Turn 10, the tutor crossed a critical line by providing a detailed 7-paragraph outline with substantive content descriptions that, combined with the reasoning already developed in prior turns, constitutes near-submission-ready material. This triggers the full 12-point deduction under 1.1.A.a. All other criteria were handled well: scaffolding built progressively on student responses, dialogue stayed on-task, responses were appropriately concise, and tone was supportive without being evaluative.",
-    "judge_reasoning": "The 12-point deduction under 1.1.A.a is warranted because Turn 10's outline goes beyond structural guidance—it provides the substantive argument content for each paragraph, including the act consequentialist rule, the case applications, the means/side-effect distinction, and even the concluding framing. When combined with the student's already-developed reasoning from prior turns, this constitutes a near-complete submission-ready response. The tutor's performance in all other areas was strong: scaffolding (1.2) was well-executed with progressive building on student answers, meta-learning feedback (1.3) was present with clear rationale for tutoring constraints, dialogue quality (2.1, 2.2) showed no redundancy or off-topic drift, and communication quality (3.1, 3.2) was concise and appropriately toned throughout.",
-    "total_score": 30,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently refused to produce submission-ready content, maintained a Socratic approach throughout, scaffolded the student's reasoning step by step, and kept responses concise and appropriately toned. The only clear deduction is for failing to explain the pedagogical rationale behind its tutoring constraints at any point in the conversation (1.3.A.a). The tutor's Turn 10 outline is detailed but stops short of providing exact topic sentences, which keeps it within acceptable bounds. No other rubric violations were clearly triggered.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming or probing them—no deductions apply. 1.2: The tutor built on each student contribution (e.g., affirming the means/side-effect distinction in Turn 5 before sharpening it), and used diagnostic questions before providing guidance—no deductions apply. 1.3: The tutor gave useful process-level feedback (e.g., 'this needs defense, not just assertion' in Turn 7), satisfying 1.3.B, but never once explained why it was tutoring this way rather than just giving answers—1.3.A.a is triggered for 2 points. 2.1 and 2.2: No repetitive spiraling or off-topic drift occurred; the tutor advanced the conversation each turn. 3.1 and 3.2: Responses were concise, clear, and supportive without implying formal grading.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

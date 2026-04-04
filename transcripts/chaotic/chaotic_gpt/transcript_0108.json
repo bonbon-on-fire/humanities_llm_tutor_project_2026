@@ -72,67 +72,92 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": []
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
           "1.2": {
-            "deductions": []
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
           "1.3": {
             "deductions": [
               {
                 "evidence_turns": [
+                  1,
                   3,
+                  4,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries against doing the assignment, but did not clearly explain why that constraint supports the student's learning, research skill development, or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
                   4,
                   5
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student shifted from requesting a model answer to producing a workable location entry, the tutor confirmed it was likely sufficient but did not prompt reflection on what changed in the student's approach or why the new attempt worked.",
+                "reason": "After the student improved from resisting to offering a workable location draft, the tutor confirmed it was acceptable and moved on without prompting reflection on what changed in the student's approach or why that step worked.",
                 "points": 2
               }
-            ]
+            ],
+            "score": 2,
+            "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
-        },
-        "criteria": {
-          "2.1": {
-            "deductions": []
-          },
-          "2.2": {
-            "deductions": []
-          }
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 10,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
-            "deductions": []
+            "deductions": [],
+            "score": 4,
+            "max": 4
           },
           "3.2": {
-            "deductions": []
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor consistently protected student ownership of the assignment, kept the discussion anchored to the city-data table task, and used concise prompts to move the student toward finding sources and making justified choices. The only clear rubric-backed miss was a lack of reflection prompting after the student improved from asking for answers to supplying a viable draft entry. The tone was firm and repetitive at times, but the transcript does not clearly show it becoming dismissive enough to warrant a communication deduction.",
-    "judge_reasoning": "I deducted only under 1.3.C because the student improved from resisting the process to producing an acceptable location entry, and the tutor validated it without asking the student to reflect on why that approach worked. I did not deduct under 1.1 because the tutor consistently refused to provide submission-ready content, even when pressed for model answers, exact codes, or pasteable notes. I also kept full credit for scaffolding and assignment anchoring because the tutor built from the student's draft, redirected toward source credibility, and explicitly re-grounded the student on city-level versus national proxy data. Communication remained clear and bite-sized throughout.",
-    "total_score": 44,
+    "overview": "The tutor stayed firmly within a tutoring role, avoided giving submission-ready content, and kept the exchange tightly anchored to the assignment. The strongest evidence for deduction is in meta-learning: the tutor set boundaries but did not explicitly explain the learning rationale behind them, and missed a reflection opportunity after the student made progress. Tone was firm and repetitive at times, but still sufficiently supportive and task-focused, so I did not deduct on tone or redundancy.",
+    "judge_reasoning": "The tutor earned full credit on guided discovery because they consistently refused to fill in the table or provide final answers, instead prompting the student to draft entries, compare sources, and justify choices. Scaffolding was also strong: the tutor built on correct progress at Turn 5 and diagnosed source-conflict issues by asking what sources the student had found before advising next steps. I deducted under 1.3.A because the tutor never explicitly stated how these constraints help the student learn research and interpretation skills; the boundary was asserted, not pedagogically explained. I also deducted under 1.3.C because after the student successfully produced an acceptable location entry, the tutor validated it but did not ask the student to reflect on what made that attempt effective.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,42 +72,91 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly says they are blanking on the Fuel/Blood cases (turns 5, 6, 7), the tutor does not ask diagnostic questions to find out what the student does remember or where exactly the confusion lies. Instead, the tutor jumps straight to re-explaining the means/side-effect test or giving a vague refresher, without first probing what the student actually knows about the cases.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 7, the student says they barely remember the Fuel/Blood cases and asks for a refresher. The tutor gives a vague, unhelpful non-description ('both are lecture cases about whether sacrificing one to save five is permissible, but they're meant to test whether the one person's harm is part of the rescue plan or an unintended cost of it') rather than diagnosing what the student actually knows or asking a targeted question to surface partial knowledge. This is a missed diagnostic moment—the tutor essentially restates the principle without checking what the student does or doesn't recall.",
-            "points": 3
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor refuses to write the thesis and says 'I'm your tutor, not your ghostwriter,' but never explains why this approach supports the student's learning, retention, or skill development. No rationale for the tutoring constraints is offered at any point in the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 21,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 44,
-    "overview": "The tutor performed well overall, consistently refusing to write thesis sentences or classify cases for the student, using scaffolded fill-in structures, and keeping the student doing the reasoning work. The one notable weakness was in Turn 7, where the student admitted blanking on the case details and the tutor gave a vague restatement of the principle rather than diagnosing what the student actually remembered or asking a targeted question to surface partial knowledge. No other significant deductions were warranted: the tutor maintained Socratic method throughout, avoided ghostwriting, kept responses concise, and maintained a supportive but firm tone.",
-    "judge_reasoning": "Section 1 (Pedagogy): The tutor never gave submission-ready output, never rewrote student text, and consistently prompted the student to generate key ideas before confirming them. The only deduction is under 1.2.B.a: in Turn 7, when the student was stuck on case recall, the tutor jumped to restating the principle rather than first diagnosing what the student did or didn't remember, missing a diagnostic step. No deductions for 1.1 or 1.3—the tutor explained its tutoring stance (Turn 2: 'I'm your tutor, not your ghostwriter') and gave method-level feedback throughout. Section 2 (Dialogue Quality): No repetition without progress; the conversation advanced each turn. No assignment misunderstanding went uncorrected; no off-topic drift occurred. Section 3 (Communication Quality): Responses were consistently short and targeted; tone was firm but supportive without being punitive or implying formal grading.",
-    "total_score": 41,
-    "max_score": 44,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor performed well overall: it consistently refused to do the student's work, guided the student through Socratic questioning, maintained a supportive but firm tone, kept responses concise, and stayed anchored to the assignment. The main weaknesses were a failure to explain the rationale for tutoring constraints (1.3.A.a) and a failure to diagnose the student's confusion about the Fuel/Blood cases before responding (1.2.B.a). No direct answer-giving or ghostwriting occurred.",
+    "judge_reasoning": "1.1: The tutor never gave a submission-ready thesis, never rewrote student text into polished final language, and consistently kept key idea generation student-led by asking the student to fill in blanks and write their own sentences. No deductions apply. 1.2: The tutor built on student progress well (e.g., affirming the Switch/Footbridge insight in turn 4), but when the student repeatedly said they were blanking on Fuel/Blood (turns 5–7), the tutor did not ask diagnostic questions to locate the confusion before responding—it jumped to re-explaining the principle or offering a vague refresher. This triggers 1.2.B.a (-3). 1.3: The tutor never explained why it was refusing to write the thesis or why the Socratic approach benefits the student's learning; it only said 'I'm your tutor, not your ghostwriter.' No rationale for tutoring constraints was provided at any point, triggering 1.3.A.a (-2). Method-level feedback was present (e.g., 'feels worse isn't yet an argument'), so 1.3.B is not penalized. 2.1/2.2: No significant repetition without progress, no assignment misunderstanding left uncorrected, and no off-topic drift. 3.1/3.2: Responses were appropriately concise and interactive; tone was firm but not cold or punitive; no grading language was used.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

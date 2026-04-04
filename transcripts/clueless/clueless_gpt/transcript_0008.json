@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 19,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -86,12 +82,11 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "Turn 3",
-                  "Turn 8",
-                  "Turn 9"
+                  3,
+                  8
                 ],
                 "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student said they were confused about basically all of it, the tutor mostly responded with explanations and procedures rather than first diagnosing the precise confusion point through targeted questioning.",
+                "reason": "When the student said they were confused about basically all categories and later said they needed the whole process explained more, the tutor moved into broad explanations and a fixed process rather than first diagnosing the precise sticking point.",
                 "points": 3
               }
             ],
@@ -102,23 +97,32 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "Turn 7"
+                  7
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a boundary against filling in a Jakarta row, but did not clearly explain why this constraint would help the student's learning, retention, or independent reasoning.",
+                "reason": "The tutor stated a constraint ('I’m not going to fill in a Jakarta row for you') but did not explain why that constraint supports the student's learning or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from total uncertainty to tentatively choosing the official city boundary, the tutor did not prompt reflection on what changed in the student's thinking and why that choice was working better.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -130,13 +134,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,25 +151,29 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "Turn 8",
-                  "Turn 9"
+                  8,
+                  9
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Phrases such as \"You're overcomplicating it,\" \"Fine,\" and \"Don't spiral on this\" sound somewhat impatient and rigid, which could weaken trust for a confused student.",
+                "reason": "Phrases such as 'You’re overcomplicating it,' 'Fine—here’s the distinction,' and 'Don’t spiral on this' introduced a somewhat brusque tone that could make the student feel dismissed while already overwhelmed.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 37,
+    "total_base_score": 35,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment, broke the task into manageable parts, and did not provide submission-ready Jakarta content. Main deductions are for insufficient diagnosis of the student's exact confusion before explaining, lack of an explicit learning rationale when refusing to supply a model row, and a few mildly impatient tone choices. I did not deduct for direct-answering because the tutor's help remained structural rather than completing the student's table.",
-    "judge_reasoning": "Under 1.1, the tutor avoided doing the assignment for the student: no completed Jakarta row or polished submission text was provided, and the guidance stayed at the level of format, sourcing, and decision rules. The main pedagogy issue was 1.2.B.a, because several times the student expressed broad confusion and the tutor answered with explanations instead of first narrowing down the precise misunderstanding. I also deducted under 1.3.A.a because the tutor's refusal to fill in a row cited boundary-crossing but did not explain how that supports learning. Finally, I deducted under 3.2.A.a for somewhat curt language in later turns, though overall communication remained reasonably clear and assignment-focused.",
-    "total_score": 37,
+    "overview": "The tutor stayed anchored to the assignment, avoided doing the student's table for them, and generally used concise, interactive prompts. Deductions are mainly for weak diagnosis of confusion, missing explanation of why tutoring constraints support learning, lack of reflection after improvement, and a mildly dismissive tone in later turns. Where evidence was somewhat mixed, smaller deductions were favored.",
+    "judge_reasoning": "The strongest aspect of the conversation was assignment-focused guidance: the tutor clarified the table's purpose, suggested a workable column structure, and refused to provide submission-ready Jakarta content. However, when the student repeatedly said they were broadly confused, the tutor often responded with explanations or a procedure before first pinpointing the exact confusion, which fits 1.2.B.a. The tutor also enforced boundaries without explaining the learning rationale, and missed a chance to ask the student to reflect after they finally proposed a defensible unit of analysis. Communication was mostly clear, but the wording in turns 8-9 was somewhat sharp and less supportive than ideal.",
+    "total_score": 35,
     "max_score": 46,
     "model": {
       "provider": "openai",

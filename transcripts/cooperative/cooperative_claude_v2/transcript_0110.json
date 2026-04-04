@@ -72,50 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 4, the tutor tells the student 'Make sure your entry includes: the stressor, the sector(s), the rating, and 2–3 pieces of evidence showing frequency, scale, and worsening trend. Then add the comparison you just made: why it's very high, but not automatically the single highest.' This is close to prescribing the final written content of the table entry rather than guiding the student to figure out what to include. However, it stops short of actually writing the entry for the student, so this is borderline. On balance, this does not clearly trigger 1.1.A.a or 1.1.B.a at the level of submission-ready output.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              9
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this approach builds reasoning skills, supports retention, or develops long-term analytical capacity. Constraints are enforced implicitly throughout but the rationale is never stated.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 9, the student explicitly asks for help distinguishing stressor evidence from impact evidence. The tutor immediately provides a full explanation with an example frame rather than first asking a diagnostic question to understand where the student's confusion lies. This is a minor instance of jumping to explanation before diagnosing, but the student's question was fairly specific, so the deduction is warranted but modest.",
-            "points": 3
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 21,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 44,
-    "overview": "The tutor performs well overall, consistently using Socratic questioning, building on student responses, and keeping the student doing the reasoning work. The one notable deduction is in 1.2.B.a: when the student asked for help distinguishing stressor vs. impact evidence, the tutor immediately provided a full explanation and example rather than first probing to understand where the confusion originated. No submission-ready output was produced, no off-topic drift occurred, tone was consistently supportive, and the conversation progressed logically through the assignment tasks.",
-    "judge_reasoning": "The tutor avoids giving submission-ready answers throughout, consistently returning questions to the student and requiring them to justify ratings and sector choices. The 1.2.B.a deduction is applied because in Turn 9, when the student expressed confusion about distinguishing stressor from impact evidence, the tutor skipped diagnostic questioning and went straight to a structured explanation with examples—a method dump rather than a guided discovery moment. No other rubric criteria are clearly triggered: the tutor does not rewrite student text, does not state conclusions before student reasoning, maintains good scaffolding, avoids redundancy, stays on-task, and uses appropriately concise and supportive language throughout.",
-    "total_score": 41,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performs very well overall. It consistently uses Socratic questioning, never gives away answers, builds on student progress, keeps responses concise, and maintains a supportive tone throughout. The only clear deduction is the absence of any explicit rationale for the tutoring approach—the tutor never tells the student why it is asking questions rather than providing direct answers, which is required at least once per conversation under 1.3.A.a. All other criteria are met with no evidence supporting deductions.",
+    "judge_reasoning": "Criterion 1.1: The tutor never produces near-submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming or redirecting. Full marks. Criterion 1.2: The tutor builds on each student response (e.g., affirming the 9-rating logic before pressure-testing it, using the student's flooding analysis as a scaffold for heat), and asks diagnostic questions before addressing confusion (e.g., Turn 9 on stressor vs. impact). Full marks. Criterion 1.3: The tutoring rationale is never explicitly stated—the tutor enforces a guided-discovery approach throughout but never explains to the student that this method supports their own reasoning development or skill-building, triggering the 1.3.A.a deduction of 2 points. No method-level feedback deduction applies because the tutor does give process-level direction (e.g., 'clearer evidence usually means a more confident rating,' the stressor vs. impact distinction). Criteria 2.1, 2.2, 3.1, 3.2: No evidence of repetition without progress, off-topic drift, assignment misalignment, overly long responses, or tone issues.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

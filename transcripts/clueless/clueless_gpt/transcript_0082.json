@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,8 +79,21 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  10
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed broad confusion, the tutor repeatedly responded with explanatory walkthroughs and method summaries before first diagnosing what the student already understood. Although the tutor often added a check-in question at the end, the dominant pattern was explanation-first rather than diagnostic questioning-first.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
@@ -92,11 +101,10 @@
               {
                 "evidence_turns": [
                   1,
-                  4,
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor gave useful task explanations and structure, but did not explicitly explain the rationale for the tutoring constraints or why checking the student's thinking step by step would support learning rather than simply supplying answers.",
+                "reason": "The tutor enforced a guided, non-answer-giving approach, but did not clearly explain why that tutoring approach supports the student's learning or skill development.",
                 "points": 2
               },
               {
@@ -107,20 +115,20 @@
                   9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from confusion to correct distinctions (for example, density in turn 6-7 and location versus area in turn 8-9), the tutor affirmed correctness and moved on without prompting reflection on what changed in the student's thinking or why the new approach worked.",
+                "reason": "After the student improved from confusion to giving correct distinctions such as density and location versus area, the tutor moved forward without prompting reflection on what changed in the student's thinking or why the new approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -132,13 +140,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -150,14 +158,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, kept responses clear and manageable, and did not provide submission-ready table content for NYC. The main weakness was meta-learning: the tutor scaffolded effectively but never explicitly stated why they were using that tutoring approach, and they missed opportunities to have the student reflect after successful corrections. Because the student never drifted far off task and the tutor consistently built from the student's answers, no dialogue or communication deductions were necessary.",
-    "judge_reasoning": "The strongest aspect of this conversation was pedagogy under 1.1: the tutor explained the assignment and concepts without filling in the student's actual city data table or writing polished assignment text. The tutor also scaffolded in a generally effective sequence, repeatedly checking understanding and building on correct steps such as the student's answers about density and about location versus area. I deducted under 1.3.A because the tutor never made the learning rationale for the interactive approach explicit, and under 1.3.C because after the student recovered from confusion, the tutor did not prompt reflection on what changed. No deductions were taken for dialogue quality or communication quality because the exchange remained on-task, non-redundant, supportive, and bite-sized.",
-    "total_score": 40,
+    "overview": "The tutor stayed well anchored to the assignment, avoided doing the table for the student, and kept responses clear and supportive. Main deductions come from an explanation-first pattern when the student was confused, plus missing meta-learning moves: the tutor never explained the learning rationale for the tutoring approach and did not ask the student to reflect after improvement. There was some ambiguity on the diagnosis issue because the student explicitly asked for explanation several times, so the scoring keeps deductions limited to clearly supported areas.",
+    "judge_reasoning": "The strongest aspect of this conversation is that the tutor did not provide submission-ready content or fill in NYC-specific rows; instead, the tutor kept asking the student to distinguish concepts and choose next steps. I deducted under 1.2.B because across several turns the tutor mainly answered confusion with explanations and checklists before first probing the student's current understanding. I also deducted under 1.3.A because the tutor never explicitly said why this guided approach helps learning, and under 1.3.C because after the student began answering correctly, the tutor advanced without asking the student to reflect on what clicked. Dialogue quality and communication remained strong: the tutor stayed on-task, nonjudgmental, and concise.",
+    "total_score": 37,
     "max_score": 46,
     "model": {
       "provider": "openai",

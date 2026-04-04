@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplies the central argumentative bridge for the student by proposing the core thesis, \"act consequentialism focuses on outcomes, but the cases suggest outcomes aren’t the only morally relevant factor,\" rather than having the student formulate that key conclusion independently.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -91,36 +96,40 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "Turn 1",
-                  "Turn 2",
-                  "Turn 6",
-                  "Turn 9"
+                  1,
+                  2,
+                  3,
+                  5,
+                  6,
+                  8,
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor uses a step-by-step guided approach but never clearly explains that this constraint is meant to support the student's learning, retention, or independent reasoning.",
+                "reason": "Although the tutor breaks the task into steps and withholds full answers, the conversation never clearly explains why this constraint-based tutoring approach supports the student's learning or reasoning development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  "Turn 7",
-                  "Turn 8",
-                  "Turn 9"
+                  5,
+                  7,
+                  9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improves from broad confusion to identifying that the cases pressure-test act consequentialism and that 'means' may be a useful distinction, the tutor moves on instead of prompting brief reflection on what changed and why that reasoning worked better.",
+                "reason": "After the student makes partial progress (for example identifying outcomes as act consequentialism's focus and later selecting 'means' as a promising distinction), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved step worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -132,13 +141,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -150,14 +159,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor stayed student-centered, kept the discussion anchored to the assignment, and used clear, bite-sized prompts rather than giving a submission-ready answer. Minor deductions were applied only for missing explicit rationale about the tutoring approach and for not prompting reflection after the student's reasoning improved. Any possible concern about the tutor offering a tentative thesis at Turn 9 was treated cautiously and not penalized because it built on ideas the student had already generated.",
-    "judge_reasoning": "The tutor consistently avoided doing the assignment for the student and instead used guided questions, structural framing, and case comparison to keep the work student-led. The conversation also stayed well anchored to the prompt and relevant lecture distinctions, with no meaningful off-topic drift or harmful repetition. I deducted under 1.3.A because the tutor never explicitly told the student why the stepwise, question-driven approach was being used for learning purposes. I also deducted under 1.3.C because, after the student progressed from confusion to a workable distinction and critique, the tutor did not ask the student to reflect on what changed in their reasoning.",
-    "total_score": 40,
+    "overview": "The tutor was consistently supportive, assignment-focused, and generally scaffolded the discussion well without giving a full submission-ready answer. The main weakness was that key idea generation was not fully student-led, since the tutor eventually supplied the central thesis about act consequentialism missing morally relevant factors. There is also some ambiguity because the tutor's structural guidance was pedagogically useful, but it did not explicitly explain why the constrained, stepwise approach supports learning, and it missed reflection opportunities after student improvement.",
+    "judge_reasoning": "The strongest deduction is under 1.1 because the tutor provided the core argumentative bridge at turn 9 instead of eliciting it from the student. I did not deduct for direct answer-giving under 1.1.A because the tutor never produced a full, submission-ready response covering all parts of the assignment. The tutor otherwise scaffolded effectively, stayed anchored to the prompt, and used clear, supportive language. Additional deductions were warranted in 1.3 because the tutor never explicitly justified the tutoring constraints as a learning method and did not prompt reflection after the student's partial successes.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

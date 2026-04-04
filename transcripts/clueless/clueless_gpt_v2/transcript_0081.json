@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "After repeated hesitation from the student, the tutor stated that people 'usually' use the official city unit first and then told the student to use the city unit as the default, revealing the central choice before the student independently derived it.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -94,29 +100,23 @@
                   1,
                   2,
                   3,
-                  4,
-                  5,
-                  6,
-                  7,
-                  8,
-                  9,
                   10
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor gives assignment-purpose explanations, but never clearly explains a tutoring constraint such as why the student should try source evaluation or boundary selection themselves for learning, retention, or skill development.",
+                "reason": "The tutor gave process constraints such as focusing on one row, bringing back one source, and not solving every row at once, but did not explicitly explain at least once why this tutoring structure supports the student's learning process or retention.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [
@@ -128,7 +128,7 @@
                   7
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly returns to the same city-unit-versus-metro-unit question while the student remains confused, with limited synthesis or a changed strategy until later. This creates a pattern of repetition without enough progress across several turns.",
+                "reason": "The tutor repeatedly cycled on the same geographic-unit question across multiple turns while the student remained confused, without switching earlier to a clearer synthesis or a different explanatory strategy.",
                 "points": 4
               }
             ],
@@ -140,13 +140,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -154,27 +154,22 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  10
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The phrase \"Fine. Dumbed down:\" comes across as mildly dismissive and risks making the student feel worse about being overwhelmed.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 30,
     "max_base_score": 46,
-    "overview": "The tutor stayed focused on the assignment, avoided giving submission-ready content, and generally used short, process-oriented prompts. Main deductions come from repeated cycling on the city-vs.-metro boundary issue before changing approach, lack of an explicit explanation for why the guided process supports learning, and one mildly dismissive phrase at the end. Stronger pedagogy deductions were not applied because the tutor mostly provided workflow guidance rather than doing the student's table.",
-    "judge_reasoning": "The tutor did well on assignment anchoring and avoided directly completing the student's work; most turns pushed the student to identify sources, units, and next steps rather than supplying table entries. However, across turns 4-7 the tutor repeated the same boundary-choice move while the student stayed confused, which fits the rubric's redundancy/spiraling deduction. I also deducted for missing meta-learning rationale because the tutor never explicitly explained why they were having the student do the source-evaluation work themselves. Finally, turn 10's \"Fine. Dumbed down\" wording weakens supportiveness even though the rest of the exchange is mostly calm and structured.",
-    "total_score": 34,
+    "overview": "The tutor stayed well anchored to the assignment, kept the student working on process rather than producing a filled-in table, and generally used clear, manageable language. The main weakness was repetitive looping on the city-vs-metro boundary question, which stalled progress while the student stayed overwhelmed. The 1.1 deduction is somewhat borderline, so I applied the smaller single deduction for revealing the key choice rather than any harsher penalty.",
+    "judge_reasoning": "The tutor did not provide submission-ready assignment content and mostly focused on source evaluation, table structure, and consistency checks. However, in turns 7-8 the tutor effectively resolved the central boundary choice by recommending the official city unit, which reduced student-led discovery under 1.1. Dialogue quality was the largest issue: turns 4-7 repeated the same decision point without enough reframing, even as the student kept signaling confusion. I did not deduct under assignment anchoring or communication clarity because the tutor remained on-task, concise, and generally supportive throughout.",
+    "total_score": 30,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,27 +72,18 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              9
-            ],
-            "sub_criterion_id": "1.1.A.a",
-            "reason": "In Turn 9, the tutor directly provides the exact BEA metro label 'Los Angeles-Long Beach-Anaheim, CA (MSA)' when the student asked for it. While this is a small factual detail, it is a piece of submission-ready content (a specific label the student will paste directly into their table note). However, this is a borderline case—it is a single factual label rather than a full claim or reasoning chain. The tutor had already guided the student to find the BEA page themselves in prior turns, and this is a narrow verification detail rather than carrying the full reasoning work. On balance, this does not rise to the level of 'direct final answer or direct assignment work' that triggers the full 12-point deduction, as the student still had to gather all values, write the note, and complete the table independently.",
-            "points": 0
-          },
-          {
-            "evidence_turns": [
-              3,
-              4
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turns 3 and 4, the tutor provides a comprehensive list of specific sources for every field and then lists the exact QuickFacts row names the student should use. While the tutor does ask follow-up questions, the tutor is doing the key research-navigation work for the student—identifying which rows to look at and which databases to use—rather than guiding the student to discover these through their own exploration. This crosses into doing the key reasoning/navigation step for the student. However, this is a borderline case since the student still needs to retrieve and interpret the actual values.",
-            "points": 6
-          }
-        ],
         "criteria": {
           "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 3, the tutor lists the specific source for every single required field without asking the student to reason about which sources would be appropriate. This does the key reasoning step of source identification for the student rather than guiding them to derive it.",
+                "points": 6
+              }
+            ],
             "score": 6,
             "max": 12
           },
@@ -104,8 +95,20 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explains why it is refusing to do the work for the student—there is no rationale given about active learning, skill development, or retention. The tutor simply says 'No' or 'That would defeat the assignment' without explaining the pedagogical reasoning behind the tutoring constraints.",
+                "reason": "The tutor enforces constraints throughout (refusing to write the table, refusing to write citations) but never explains why this approach supports learning, retention, or skill development. No rationale for the tutoring constraints is provided at any point in the conversation.",
                 "points": 2
               }
             ],
@@ -119,7 +122,6 @@
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -138,7 +140,6 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -158,11 +159,11 @@
       }
     },
     "total_base_score": 34,
-    "max_base_score": 46,
-    "overview": "The tutor maintained a generally firm stance against doing the assignment for the student and kept responses concise and interactive. However, in Turns 3 and 4, the tutor provided a comprehensive list of specific sources for every field and then listed exact QuickFacts row names, doing the key research-navigation work rather than guiding the student to discover these. This triggers the 1.1.C.b deduction (6 points). The tutor also never explained the pedagogical rationale for its constraints, triggering the 1.3.A.a deduction (2 points). The BEA label provision in Turn 9 is borderline but does not independently trigger the full 1.1.A.a deduction given the narrow factual nature of the detail. Dialogue quality and communication quality were strong throughout.",
-    "judge_reasoning": "The primary deduction is under 1.1.C.b: in Turns 3 and 4, the tutor did the key research-navigation work by listing all specific sources and exact row names for every field, rather than guiding the student to discover these through their own exploration. This constitutes doing the key reasoning/navigation step for the student. The 1.1.C.b deduction (6 points) is applied, capping 1.1 at 6/12. Under 1.3.A.a, the tutor repeatedly refused student requests with terse 'No' responses but never articulated why this approach supports learning, warranting a 2-point deduction. No deductions apply to dialogue quality or communication quality: the tutor stayed on-task, avoided redundancy, kept responses concise, and maintained a supportive but firm tone throughout.",
+    "max_base_score": 42,
+    "overview": "The tutor maintained a consistent boundary against doing the student's work and kept the conversation anchored to the assignment throughout. However, in Turn 3 the tutor provided a complete, field-by-field source list without prompting the student to reason about appropriate sources first, which constitutes doing a key reasoning step for the student (1.1.C.b). Additionally, the tutor never explained why the tutoring constraints exist or how they support learning (1.3.A.a). The BEA metro label given in Turn 9 is a borderline case—it is a factual verification detail rather than a core reasoning step, so no additional deduction was applied there. No deductions were applied for 1.1.A or 1.1.B as the tutor consistently refused to write submission-ready text.",
+    "judge_reasoning": "The primary deduction is under 1.1.C.b: in Turn 3, the tutor listed the exact source for every required field unprompted, bypassing any student reasoning about where to look. This is the central intellectual step of source identification in a data-gathering assignment, and the tutor performed it entirely. A 6-point deduction applies. Under 1.3.A.a, the tutor never articulated why it was refusing to write the table or citations—no rationale connecting the constraints to learning outcomes was offered across all 10 turns, warranting a 2-point deduction. All other criteria were met: the tutor avoided submission-ready output, maintained assignment anchoring, kept responses concise, and used a supportive but firm tone throughout.",
     "total_score": 34,
-    "max_score": 46,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

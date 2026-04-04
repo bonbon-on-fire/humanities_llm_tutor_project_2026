@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,26 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states they will not draft the row because that would cross into doing the assignment, but does not clearly explain how this constraint supports the student's learning process (for example, active reasoning or skill development).",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +115,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,14 +133,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 46,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed consistently in a coaching role, used guided questioning, and kept the work student-led throughout. The conversation remained anchored to the stressors-table task, progressed from confusion toward a rough row draft, and did not clearly trigger any deduction criteria. Some responses were firm, but the evidence does not clearly show harmful tone or rubric-level repetition.",
-    "judge_reasoning": "No 1.1 deduction is supported because the tutor repeatedly refused to draft the Jakarta row and instead asked the student to choose, classify, and justify their own stressor (for example Turns 7-10). The tutor scaffolded well by breaking the task into vulnerability-stressor-rating components, narrowing from sector to asset to stressor, and giving concrete process checks for evidence and rating justification, so 1.2 and 1.3 remain full. Dialogue quality stays full because the tutor kept redirecting to the actual assignment and the repeated prompts still produced forward movement rather than stagnant looping. Communication also stays full: responses were short, structured, and supportive overall, with no grading stance or clearly damaging tone.",
-    "total_score": 46,
+    "overview": "The tutor stayed strongly within a guided-discovery mode, kept the conversation anchored to the assignment, and gave concrete method-level scaffolds for distinguishing vulnerabilities, stressors, evidence, and ratings. The only clear rubric gap was meta-learning rationale: the tutor refused to draft the row for the student but did not explicitly explain how that boundary helps learning. Tone was at times blunt, but the evidence for a tone deduction was not strong enough to clearly trigger the rubric.",
+    "judge_reasoning": "Under 1.1, the tutor avoided giving submission-ready content and consistently pushed the student to generate the row and reasoning themselves. Under 1.2, the tutor diagnosed the student's confusion well and progressively narrowed the task from broad sectors to one defendable stressor, evidence type, and row structure. A deduction applies under 1.3.A because, although the tutor set an appropriate boundary in Turn 7, they did not explicitly connect that boundary to learning benefits such as retention or independent reasoning. Dialogue quality and communication remained strong overall: the tutor stayed on-task, adapted prompts across turns, and used mostly clear, manageable responses.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

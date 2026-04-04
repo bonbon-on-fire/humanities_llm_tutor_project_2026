@@ -72,42 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development. The tutoring rationale is implicit at best.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 1, when the student says they don't know how to rate vulnerabilities without it feeling random, the tutor immediately provides a three-part rating framework (frequency, severity, exposure) rather than first asking diagnostic questions to understand what the student already knows or where exactly their confusion lies. This is a minor instance but qualifies as jumping to a method dump before checking prior understanding.",
-            "points": 3
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 21,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 44,
-    "overview": "The tutor performed very well overall, consistently using Socratic questioning, refusing to write the student's justification, and guiding the student to derive their own conclusions about Jakarta's stressors. The only notable concern is a minor diagnostic gap in Turn 1, where the tutor immediately provided a structured rating framework without first probing what the student already understood. This is a borderline case—the framework is general enough that it functions more as scaffolding than a method dump—but it does fit the rubric criterion for jumping to a solution before checking prior knowledge. No other deductions were warranted: the tutor never gave submission-ready text, maintained good assignment anchoring, avoided redundancy, and kept a supportive tone throughout.",
-    "judge_reasoning": "Deduction of 3 points under 1.2.B.a: In Turn 1, the tutor immediately offered a three-part rating heuristic (scope, severity, frequency) without first asking what the student had already tried or where specifically their confusion originated. While the framework is pedagogically sound, it bypasses diagnostic questioning that would have revealed the student's existing understanding. No deductions were applied under 1.1 because the tutor consistently refused to write justifications for the student (Turn 6), guided reasoning through questions rather than stating conclusions, and never produced submission-ready content. No deductions under 1.3 because the tutor explicitly explained the rationale for not wording the justification in Turn 6 ('you need to do the writing'), satisfying the meta-learning criterion. Dialogue quality and communication quality were strong throughout—responses were concise, on-task, and well-scaffolded.",
-    "total_score": 41,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently used Socratic questioning, avoided giving direct answers or submission-ready content, scaffolded the student's reasoning progressively, and maintained a supportive and appropriately formative tone. The only clear deduction is for failing to articulate the tutoring rationale at any point in the conversation—the Socratic approach was practiced but never explained to the student. All other criteria were met cleanly.",
+    "judge_reasoning": "1.1: The tutor never gave direct answers, never rewrote student text, and never stated conclusions before the student reasoned toward them. All key ideas (rating logic, priority stressor selection) were student-generated with tutor prompting. No deductions apply. 1.2: The tutor consistently built on student progress (e.g., affirming the frequency/intensity distinction in Turn 3, validating the 'less visible' concern in Turn 4) and asked diagnostic questions before redirecting. No deductions apply. 1.3: The tutor provided good process-level feedback throughout (e.g., Turn 6 giving a four-part structure for justification, Turn 3 naming the frequency/exposure vs. intensity distinction), so 1.3.B is not triggered. However, the tutor never once explained why it was guiding rather than telling—no statement about active reasoning, retention, or skill-building appears anywhere in the conversation, triggering 1.3.A.a for 2 points. Dialogue quality and communication quality were both strong: no repetition without progress, no off-topic drift, no assignment misalignment, responses were appropriately concise, and tone was consistently supportive and formative.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

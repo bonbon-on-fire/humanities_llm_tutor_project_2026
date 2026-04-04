@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,25 +86,21 @@
           "1.3": {
             "deductions": [
               {
-                "evidence_turns": [
-                  1,
-                  10
-                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently used good tutoring constraints and process prompts, but did not explicitly explain at least once why this student-led, evidence-first approach supports learning or long-term skill development.",
+                "reason": "The tutor used guided constraints and stepwise questioning throughout, but never explicitly explained why this approach supports the student's learning, retention, or independent reasoning.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -116,17 +108,28 @@
             "max": 4
           },
           "2.2": {
-            "deductions": [],
-            "score": 8,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "2.2.A.a",
+                "reason": "When the student was unsure whether air pollution counted, the tutor sustained that uncertainty instead of re-anchoring to the assignment task, which explicitly gives air quality as an example stressor. The tutor framed inclusion as something the instructor might or might not accept rather than correcting the student's prompt interpretation.",
+                "points": 4
+              }
+            ],
+            "score": 4,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -138,14 +141,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly student-led, assignment-focused, and process-oriented throughout the conversation. They guided the student from broad uncertainty toward a defensible draft table without giving submission-ready content. The only clear rubric miss is the lack of an explicit rationale for why the tutor was withholding direct answers and using guided questioning.",
-    "judge_reasoning": "The tutor earned full credit on Socratic guidance because they repeatedly asked the student to classify, rank, justify, and pressure-test ideas rather than supplying final claims or polished table entries. Scaffolding was effective: each turn built on the student's prior step and moved from city/stressor selection to sectors, ratings, priorities, and evidence needs. I deducted under 1.3.A.a because, although the tutoring method was sound, the tutor never explicitly explained why this evidence-first, student-generated process was being used. Dialogue quality and communication quality remained strong: the tutor was concise, supportive, and consistently anchored to the assignment.",
-    "total_score": 40,
+    "overview": "The tutor was generally strong on guided discovery, concise questioning, and supportive coaching. The main issues were a missing explicit explanation of the tutoring approach and a notable assignment-anchoring miss around whether air pollution counted, where the tutor preserved uncertainty instead of grounding the student in the prompt. No other deductions were clearly supported by the transcript.",
+    "judge_reasoning": "The tutor consistently kept the student doing the reasoning, asked focused follow-up questions, and avoided writing the assignment for the student. I deducted under 1.3.A.a because the tutor never clearly explained why they were using a constrained, student-led process rather than giving direct answers. I also deducted under 2.2.A.a because the student's uncertainty about air pollution counted as a prompt misunderstanding, and the tutor did not re-anchor to the assignment's own example of air quality as a stressor. Otherwise, the conversation showed solid scaffolding, clear language, and an encouraging formative tone.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

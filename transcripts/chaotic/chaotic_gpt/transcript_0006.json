@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 5"
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "The tutor assembled the student's thesis, applications, objection, and alternative rule into a complete four-part argument outline ('You already have the full argument...'), which supplies the core answer structure and reasoning in a near-submission-ready form.",
+                "points": 12
+              }
+            ],
+            "score": 0,
             "max": 12
           },
           "1.2": {
@@ -91,35 +96,35 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2,
-                  5,
-                  7
+                  "Turn 1",
+                  "Turn 2",
+                  "Turn 3",
+                  "Turn 5",
+                  "Turn 7"
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a no-writing boundary repeatedly but did not clearly explain why that constraint supports the student's learning, reasoning practice, or retention.",
+                "reason": "The tutor repeatedly enforced boundaries against writing the submission, but did not clearly explain why those constraints support the student's learning, reasoning practice, or retention.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  6,
-                  8
+                  "Turn 8"
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student's draft and follow-up sentences improved, the tutor affirmed the result and moved forward without prompting reflection on what changed in the student's reasoning or why the revised approach worked.",
+                "reason": "After the student improved from earlier incomplete attempts to a strong draft, the tutor affirmed it and moved on to case coverage without prompting reflection on what changed in the student's reasoning or why the revised method worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -131,32 +136,36 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
-            "score": 4,
-            "max": 4
+            "score": 5,
+            "max": 5
           },
           "3.2": {
             "deductions": [],
-            "score": 4,
-            "max": 4
+            "score": 5,
+            "max": 5
           }
+        },
+        "base": {
+          "score": 10,
+          "max": 10
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 30,
     "max_base_score": 46,
-    "overview": "The tutor was strong on Socratic guidance, assignment anchoring, and resisting direct submission-writing. Responses stayed concise and mostly advanced the student's own argument rather than replacing it. The main weaknesses were meta-level: the tutor did not explicitly explain the learning rationale for refusing to write the answer, and missed a chance to prompt reflection after the student improved. Turn 5 came close to summarizing a full argument, but I chose not to deduct there because the student had already generated the core ideas.",
-    "judge_reasoning": "I kept full credit for guided discovery because the tutor consistently refused submission-ready writing and used stepwise prompts tied to the actual prompt and cases. I also kept full credit for scaffolding and dialogue quality because the tutor built directly from the student's prior answers, stayed on-task, and avoided repetitive dead-end looping. I deducted under 1.3.A.a because the tutor never clearly stated a learning-based rationale for the no-writing constraint, only the rule itself. I deducted under 1.3.C.a because once the student produced stronger reasoning, the tutor praised it and moved on without asking the student to reflect on what changed in their method.",
-    "total_score": 40,
+    "overview": "The tutor stayed tightly anchored to the assignment, used clear stepwise prompts, and generally built on the student's progress. The biggest issue is pedagogical: in Turn 5 the tutor consolidated the full thesis and reasoning into a ready-made outline, which crosses into supplying core assignment content. Some evaluative phrasing came close to final-judgment language, but because it was paired with continued coaching and explicit distancing from instructor grading, I did not deduct on communication tone/formative framing.",
+    "judge_reasoning": "I deducted all of 1.1 because Turn 5 gives the student the complete answer path: act consequentialism's principle, its application to the cases, the objection, and the alternative rule. Scaffolding was otherwise strong, since the tutor broke the task into manageable pieces and consistently built on the student's own prior sentences rather than restarting. I deducted under 1.3 because the tutor never explained why refusing to write the answer would help the student's learning, and after the student improved substantially, the tutor did not ask for reflection on what changed in the reasoning. Dialogue quality and communication remained strong overall: the tutor stayed on-task, concise, and supportive while resisting direct submission-writing.",
+    "total_score": 30,
     "max_score": 46,
     "model": {
       "provider": "openai",

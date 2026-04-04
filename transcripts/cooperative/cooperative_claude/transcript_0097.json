@@ -72,38 +72,97 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved from initial confusion (Turn 2-3) to a clear articulation of the means/side-effect distinction (Turn 6), and again after producing a strong 4-sentence draft (Turn 9), the tutor moved forward without prompting reflection on what changed in the student's thinking or reinforcing the method choices that led to improvement.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—there is no moment where the tutor articulates that this Socratic approach supports learning, retention, or skill development. The rationale for the tutoring method is entirely absent.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student produces a strong 4-sentence draft in Turn 9 following earlier confusion and partial answers, the tutor moves directly to refinement prompts without pausing to ask the student to reflect on what changed in their thinking or why the structured approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor conducted a highly effective Socratic dialogue, consistently guiding the student through the philosophical cases without giving away answers. The student was led to independently derive the means/side-effect distinction, classify the cases, and articulate a coherent critique of act consequentialism. The only notable gap was the absence of explicit meta-reflection prompts after the student's key breakthroughs, particularly after the strong Turn 9 draft.",
-    "judge_reasoning": "Under 1.1, the tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming them—no deductions apply. Under 1.2, the tutor built on each student response and diagnosed confusion appropriately (e.g., focusing on Blood when the student flagged uncertainty). Under 1.3, the tutor provided process-level feedback throughout and explained the tutoring rationale implicitly through its Socratic structure, but never explicitly named why it was guiding rather than telling; however, the clearest deductible gap is 1.3.C.a: after the student's notable improvement in Turns 6 and 9, the tutor moved forward without asking the student to reflect on what changed in their thinking or why the new approach worked. Dialogue quality was excellent—no repetition, no drift, strong assignment anchoring throughout. Communication was concise, clear, and supportive with no tone issues.",
-    "total_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout: it never gives away answers, consistently prompts the student to reason through each case, builds progressively on student responses, and maintains a supportive tone. The main weaknesses are in meta-learning: the tutor never explains why it is using a guided-discovery approach (1.3.A.a), and after the student's breakthrough in Turn 9, the tutor does not prompt reflection on what changed in the student's thinking (1.3.C.a). All other criteria are met well.",
+    "judge_reasoning": "1.1: The tutor never provides submission-ready content, never rewrites student text, and never states conclusions before the student reasons toward them—full marks. 1.2: The tutor consistently builds on student progress (e.g., 'Good—focus on Blood, then') and diagnoses confusion before responding—full marks. 1.3: Two deductions apply: the tutor never articulates why it is guiding rather than telling (1.3.A.a, -2), and after the student's strong Turn 9 draft following earlier uncertainty, the tutor skips any reflection prompt on what changed in the student's process (1.3.C.a, -2). Dialogue quality is excellent—no repetition, no drift, no misanchoring. Communication is concise, clear, and appropriately toned throughout.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

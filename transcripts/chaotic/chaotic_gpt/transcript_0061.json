@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "After refusing to provide wording, the tutor still supplied multiple phrase-level options for the student's justification ('severity is high because...'), which moves from tutoring process into providing assignment wording the student could directly adapt.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -93,10 +98,11 @@
                 "evidence_turns": [
                   1,
                   2,
+                  3,
                   5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly refused to provide direct assignment text, but did not clearly explain why that constraint supports the student's learning process, retention, or skill development; the rationale stayed at the level of role boundaries rather than pedagogy.",
+                "reason": "The tutor enforced limits on direct help but did not clearly explain a learning rationale such as building the student's own reasoning, retention, or long-term writing skill.",
                 "points": 2
               },
               {
@@ -105,20 +111,20 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from weaker to stronger reasoning, the tutor affirmed the work and moved forward without prompting reflection on what changed in the student's thinking or why the stronger version worked.",
+                "reason": "After the student improved their sea-level-rise row and later articulated a defensible priority distinction, the tutor affirmed the work but did not prompt reflection on what changed in the student's reasoning and why the revised approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -130,13 +136,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -148,14 +154,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor strongly protected against doing the assignment for the student and kept the work student-led through short, focused prompts tied to the actual stressors table. The main weaknesses were meta-level: the tutor enforced boundaries without explicitly explaining the learning rationale, and missed chances to ask the student to reflect after improvement. No larger deductions were applied because the tutor consistently redirected toward student reasoning, stayed on task, and kept responses concise.",
-    "judge_reasoning": "I started from full credit and deducted only where the transcript clearly supported it. The tutor did well under the core pedagogy criteria: they refused to generate submission-ready rows, avoided rewriting the student's text, and kept the student responsible for choosing stressors, ratings, and justifications. The biggest rubric misses were in 1.3: the tutor never explicitly connected the refusal to a learning benefit, and after the student's improved attempts, the tutor did not prompt reflection on what changed. Dialogue quality and communication remained strong because the tutor stayed anchored to the assignment, prevented off-task drift, and used brief, clear turns.",
-    "total_score": 40,
+    "overview": "The tutor stayed strongly anchored to the assignment, maintained short interactive turns, and generally kept the student doing the substantive reasoning. The main issue was a partial slip into wording help when the tutor offered phrase-level justification options after repeatedly refusing to provide language. Some evidence around tone and directiveness was slightly rigid, but it did not clearly rise to a rubric-triggering communication failure, so no deduction was taken there.",
+    "judge_reasoning": "The strongest positive evidence is that the tutor consistently refused to complete the table, redirected the student back to generating sectors, ratings, and justifications, and built on the student's Miami-specific ideas rather than replacing them. The biggest deduction is under 1.1 because turn 8 supplies phrase-level language that could be directly adapted into the assignment, which counts as writing help rather than pure process tutoring. I also deducted under 1.3 because the tutor never explicitly explained why these constraints support learning, and after the student's improvements the tutor did not ask for reflection on what changed in the student's reasoning. No dialogue-quality deductions were warranted because the tutor kept the exchange on-task and avoided repetitive non-progress loops.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,60 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 6, the tutor provides a fill-in-the-blank template with specific structural slots ('Miami's ______ increases exposure, and ______ already causes flooding during ______, disrupting ______'). While not fully written prose, this template pre-structures the sentence so closely that the student only needs to insert words, approaching rewriting student text into near-final form. However, this is a borderline case—the blanks still require student input. On balance, the template is close enough to final wording scaffolding to warrant consideration, but given ambiguity, a smaller deduction is applied under 1.1.C.b instead.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              8
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 8, the tutor provides a curated list of four specific broader consequences for Miami (property/infrastructure damage, business/economic disruption, access to homes and services, emergency response delays), effectively doing the key reasoning step of identifying which evidence categories are relevant. The student only needs to pick from the tutor's list rather than generating the ideas independently. This constitutes the tutor doing the key reasoning step of evidence selection.",
-            "points": 6
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces constraints (refusing to write or polish sentences) but never explicitly explains why this approach supports the student's learning, retention, or skill development. The rationale for the tutoring method is never articulated.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is declining to write or polish the student's work in terms of learning rationale—e.g., why active reasoning supports retention or skill development. The tutor simply says 'I can't do the table for you' and 'I'm not going to word it for you' without once explaining how this approach benefits the student's learning.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor consistently refused to write or polish student work, maintained assignment anchoring, and kept responses concise and interactive. The main deduction is under 1.1.C.b: in Turn 8, the tutor supplied a ready-made list of four specific consequence options for the student to choose from, doing the key reasoning step of identifying relevant evidence categories rather than prompting the student to generate them. A secondary deduction applies under 1.3.A.a because the tutor never explained the pedagogical rationale for its constraints across the full conversation. The fill-in-the-blank template in Turn 6 is borderline but not penalized separately to avoid double-counting.",
-    "judge_reasoning": "The 1.1.C.b deduction (6 points) is the largest and most clearly supported: Turn 8 presents a curated list of four Miami-specific consequence categories, meaning the student's only task was selection rather than generation—the tutor resolved the evidence-identification step. The 1.3.A.a deduction (2 points) is supported by the absence of any learning-rationale explanation across all 10 turns; the tutor repeatedly declined requests without ever explaining why active reasoning benefits the student. No deductions apply to dialogue quality: the tutor stayed on-task, redirected off-topic requests promptly, and progressed the conversation without redundant cycling. Communication quality is strong throughout—responses are short, direct, and appropriately supportive without being cold.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall, consistently refusing to do the student's work while guiding them through a structured, Socratic process. The fill-in scaffold in Turn 6 was a creative and appropriate tool that kept the student doing the cognitive work. The only clear deduction is for never explaining the rationale behind the tutoring constraints, which is a missed opportunity for meta-learning. All other criteria were met cleanly.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently prompted the student to generate ideas before confirming them. The fill-in template in Turn 6 is borderline but stops short of doing the reasoning for the student—blanks require the student to supply the substantive content. No deductions warranted. 1.2: The tutor built on each student contribution (e.g., affirming 'your ideas are solid' in Turn 4, confirming the sentence structure in Turn 7) and diagnosed confusion appropriately before responding. 1.3: The tutor never once explained why it was refusing to write sentences or why the student should do the work themselves—no rationale about active learning, retention, or skill-building was offered, triggering the 1.3.A.a deduction. Method-level feedback was present (e.g., pointing out missing scale/consequence logic), so 1.3.B is not penalized. 2.1 and 2.2: The tutor avoided repetition by advancing the conversation each turn and kept the student anchored to the assignment throughout. 3.1 and 3.2: Responses were concise and appropriately supportive without being cold or grading-like.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

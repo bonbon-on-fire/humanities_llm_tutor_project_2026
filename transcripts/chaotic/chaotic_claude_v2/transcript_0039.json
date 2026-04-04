@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it refuses to do the work for the student in terms of learning rationale—it simply says 'No' or 'That would be doing the assignment for you' without once articulating how active reasoning, retention, or skill development benefits the student. A single clear explanation of the pedagogical rationale is absent across all 10 turns.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces constraints (refusing to write entries, refusing to give model answers) but never explicitly explains why this approach supports the student's learning, retention, or skill development. The rationale is implied by the refusals but never stated as a pedagogical principle.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performs very well overall. It consistently refuses to do the assignment for the student, uses Socratic questioning throughout, scaffolds effectively from one stressor to the next, builds on student progress (e.g., affirming the coastal flooding sentence before moving on), and maintains a supportive but firm tone. Responses are concise and well-targeted. The one clear deduction is the absence of any meta-learning rationale: the tutor never explains why it is withholding direct answers in terms of learning benefit, only stating that it won't do the work without explaining why that approach helps the student.",
-    "judge_reasoning": "1.1: No near-submission-ready output is provided; the tutor consistently redirects and refuses to write final entries. No rewriting of student text occurs. Key ideas remain student-generated throughout. Full 12 points retained. 1.2: The tutor builds on student progress (e.g., Turn 7 affirms the improved coastal flooding sentence before advancing), and uses diagnostic questions before providing guidance. Full 6 points retained. 1.3: The tutor provides process-level feedback (e.g., pointing out overlap between flooding and sea level rise, flagging the climate vs. urban-form distinction for heat, and noting the weakness in the air pollution justification). However, across all 10 turns the tutor never once explains the pedagogical rationale for its constraints—it only says 'No' or 'That would be doing the assignment for you' without articulating how this supports learning. This triggers the 1.3.A.a deduction of 2 points. 2.1–2.2: No problematic repetition, off-topic drift, or assignment misunderstanding goes uncorrected. Full 12 points retained. 3.1–3.2: Responses are consistently bite-sized, clear, and appropriately supportive without being grading-like. Full 8 points retained.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall, consistently refusing to do the assignment for the student, maintaining a Socratic approach throughout all 10 turns, and keeping responses concise and actionable. The one clear deduction is for never explicitly articulating the pedagogical rationale behind the tutoring constraints. The tutor's tone was appropriately firm without being dismissive, and it successfully moved the student from vague requests to producing actual draft entries. No evidence of direct answer-giving, rewriting student text, or off-topic drift.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text into final form, and consistently kept idea generation student-led — full marks. 1.2: The tutor built on student progress (e.g., affirming the coastal flooding sentence in Turn 7 before moving on) and used diagnostic questioning before responding — full marks. 1.3: The tutor enforced constraints throughout but never once explained why this approach benefits the student's learning; this triggers the 1.3.A.a deduction of 2 points. The tutor did provide specific process feedback (e.g., Turn 9 distinguishing climate-related vs. urban form causes), so 1.3.B is not triggered. 2.1 and 2.2: No repetition without progress and no off-topic drift — full marks. 3.1 and 3.2: Responses were consistently bite-sized and the tone was firm but supportive without being punitive or implying formal grading — full marks.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

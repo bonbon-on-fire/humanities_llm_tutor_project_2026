@@ -72,52 +72,90 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than simply providing answers—no rationale is given for the Socratic approach in terms of learning benefits, retention, or skill development.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 1, when the student expressed confusion about sources and data inconsistency, the tutor immediately provided a ranked source hierarchy and a practical rule for handling conflicts rather than first diagnosing what the student already understood. This is a method dump before checking existing knowledge.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student makes clear progress across the conversation (e.g., arriving at a defensible boundary choice, a method for handling messy variables, a plan for the draft). The tutor moves forward without ever prompting the student to reflect on what changed in their thinking or why the approach they landed on works better than where they started.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than just providing answers—no rationale for the Socratic approach or how it supports learning is offered at any point in the conversation.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully articulated a defensible approach to boundary choice (Turn 3) and to race/ethnicity categories (Turn 5), the tutor moved forward without prompting the student to reflect on what reasoning process led to those improvements.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 44,
-    "overview": "The tutor performs well overall: it consistently uses Socratic questioning, avoids doing the student's work, scaffolds progression logically, keeps responses concise, and maintains a supportive tone throughout. The two deductions are for (1) never explaining the rationale for the guided-discovery approach to the student, and (2) missing opportunities to prompt reflection after the student's clear improvement. No submission-ready content was provided, no off-topic drift occurred, and assignment anchoring was maintained throughout.",
-    "judge_reasoning": "1.1 is fully intact: the tutor never gives a direct answer or near-submission-ready output; all key reasoning steps are left to the student. 1.2 is fully intact: the tutor consistently builds on student progress (e.g., affirming the federal-entity choice in Turn 3, building on the GDP/race analysis in Turn 4) and diagnoses confusion before responding. 1.3 loses 2 points under 1.3.A.a because the tutor never once explains why it is asking questions rather than providing answers—no meta-learning rationale is offered. 1.3 also loses 2 points under 1.3.C.a because after the student consolidates a clear method by Turns 7–9, the tutor simply moves forward without asking the student to articulate what changed or why the approach works. Dialogue quality is clean: no repetition without progress, no assignment misalignment, no off-topic engagement. Communication quality is clean: responses are consistently short and targeted, tone is supportive and formative throughout.",
-    "total_score": 40,
+    "overview": "The tutor maintained a strong Socratic approach throughout, never providing submission-ready answers and consistently returning the reasoning work to the student. Dialogue quality was excellent with no off-topic drift or assignment misalignment. Communication was concise and appropriately toned. The main weaknesses were: an early method dump in Turn 1 before diagnosing the student's existing knowledge (1.2.B.a), absence of any explicit rationale for the tutoring approach (1.3.A.a), and missed opportunities to prompt reflection after the student made clear improvements (1.3.C.a). The 1.2.B.a deduction is the most borderline—the student's question was fairly open-ended, so some upfront framing could be justified, but the tutor provided a full ranked hierarchy without first probing what the student already knew.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never gave final answers, never rewrote student text, and consistently kept key idea generation with the student through targeted questions. 1.2 loses 3 points because Turn 1 opens with a ranked source list and practical rules before any diagnostic questioning about what the student already understood—a classic method dump. 1.3 loses 4 points: the tutor never explains why it is using guided questioning (1.3.A.a), and after the student successfully reasoned through boundary choice and race/ethnicity framing, the tutor simply moved forward without asking the student to reflect on what changed in their thinking (1.3.C.a). Dialogue and communication quality are both strong with no meaningful deductions warranted.",
+    "total_score": 37,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

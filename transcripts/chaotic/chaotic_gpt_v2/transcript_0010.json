@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,32 +84,34 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced boundaries against doing the assignment, but did not clearly explain the learning rationale behind those constraints in terms of skill-building, active reasoning, or retention.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  7,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly used the same refusal-plus-reprompt pattern on the row-label issue without shifting to a new strategy, synthesis, or simplification, even as the student remained stuck and anxious.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -121,13 +119,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -139,25 +137,28 @@
               {
                 "evidence_turns": [
                   2,
-                  5,
                   10
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor's tone was sometimes unnecessarily rigid or dismissive, especially in lines like 'Your deadline doesn’t change my role,' 'you’re overcomplicating it,' and 'stop stalling on wording,' which could undermine trust for a panicked student.",
+                "reason": "The tutor's tone becomes rigid and somewhat dismissive in places, especially with phrases like 'Your deadline doesn’t change my role' and 'stop stalling on wording,' which could discourage participation.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor consistently avoided doing the student's assignment and kept the work student-led, with strong assignment anchoring and concise responses. The main weaknesses were a lack of explicit explanation for why the tutor was maintaining those constraints and a tone that occasionally became harsh under deadline pressure. There was some repetition around the label-formatting issue, but the tutor eventually redirected toward source selection and scope, so I did not deduct for spiraling.",
-    "judge_reasoning": "I kept full credit for Socratic guidance and scaffolding because the tutor never supplied submission-ready content, repeatedly redirected the student to choose scope, source types, and labels, and built on partial progress in turns 6 and 9. I deducted under 1.3.A because the tutor enforced boundaries without clearly stating a learning-centered rationale such as improving reasoning or source evaluation skills. I also deducted under 3.2.A because several responses were rigid enough to risk discouraging a stressed student. No deduction was applied for assignment anchoring or off-topic drift because the tutor consistently kept the conversation tied to the actual task.",
-    "total_score": 38,
+    "overview": "The tutor strongly protected against doing the assignment for the student and generally kept the work student-led and assignment-anchored. The main weakness was conversational: once the student fixated on formatting, the tutor repeated the same move across several turns instead of changing tactics. Tone was mostly controlled but at times more rigid than supportive. Where evidence was borderline, smaller deductions were favored.",
+    "judge_reasoning": "The tutor did not provide submission-ready content and consistently redirected the student toward choosing scope, sources, and labels, so no pedagogy deductions were warranted under 1.1-1.3. The largest issue was redundancy: across turns 4, 5, 7, 8, and 10, the tutor kept repeating refusal and reprompting on labels without meaningfully advancing the interaction. Assignment anchoring remained strong because the tutor repeatedly redirected the student back to the actual data-table task. Communication was clear and brief, but the phrasing in turns 2 and 10 crossed into a rigid tone that merited a support/tone deduction.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,43 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't write the post for the student in terms of learning rationale—it says 'My role is to help you think, not supply paste-ready content' but never articulates why this supports the student's learning, retention, or skill development. A brief explanation of the pedagogical benefit (e.g., active reasoning builds long-term skill) is absent throughout.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully produces strong sentences in Turn 9 following multiple failed/resistant attempts, the tutor simply validates and tells the student to submit. There is no prompt for reflection on what changed in the student's thinking or what made the final version stronger than earlier attempts.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from initial refusal to engage to producing logically sound sentences (Turn 9), the tutor simply validated and told the student to submit. No reflection was prompted on what changed in the student's thinking or why the final approach worked better than the initial attempt to get paste-ready content.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 44,
-    "overview": "The tutor performed well overall, consistently refusing to do the assignment for the student, using Socratic prompting, scaffolding the student through each component, and maintaining a firm but supportive tone. Two deductions were applied: one for never explaining the pedagogical rationale behind the tutoring constraints (1.3.A.a), and one for missing the opportunity to prompt reflection after the student's successful improvement in Turn 9 (1.3.C.a). No other rubric criteria were clearly triggered.",
-    "judge_reasoning": "The tutor consistently applied guided discovery, refusing to supply submission-ready content across all turns and instead prompting the student to generate each piece themselves. Scaffolding was well-executed: the tutor broke the task into steps, built on student responses, and validated correct reasoning without doing the work. However, the tutor never articulated why it was withholding direct answers in terms of learning benefit—'My role is to help you think' is a constraint statement, not a rationale about retention or skill development, triggering 1.3.A.a. Additionally, after the student produced strong sentences in Turn 9 following earlier resistance, the tutor moved straight to 'submit' without prompting any reflection on what made the final version work, triggering 1.3.C.a. Dialogue quality was strong with no off-topic drift, no assignment misframing, and no repetitive spiraling. Communication was appropriately concise and direct throughout.",
-    "total_score": 40,
+    "overview": "The tutor performed very well overall, consistently refusing to produce submission-ready content, guiding the student through Socratic questioning, and maintaining a firm but supportive tone throughout. The student was progressively led to generate their own leader, engaged, and missing actors, as well as their own conclusions about sector activity and participation gaps. The only clear deduction is the missed opportunity to prompt reflection after the student's successful improvement in Turn 9, where the tutor moved straight to 'submit' without asking the student to consider what changed in their approach.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never provided paste-ready content, never rewrote student text, and consistently kept idea generation student-led by asking the student to choose and reason before confirming. 1.2 is fully intact: the tutor built on each student contribution and used targeted prompts rather than method dumps. 1.3 loses 2 points under 1.3.C.a because after the student's clear improvement from evasion to producing solid reasoning (Turn 9), the tutor simply validated and directed submission without prompting any reflection on what changed or why the student's final approach was stronger. The tutor did explain rationale (Turn 1-2) and gave process-level feedback throughout, so 1.3.A and 1.3.B are intact. Dialogue quality is strong with no spiraling, no off-topic drift, and consistent assignment anchoring. Communication quality is strong with bite-sized responses and a consistently supportive, non-grading tone.",
+    "total_score": 42,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

@@ -72,45 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              6,
-              8,
-              10
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 1",
+                  "Turn 2"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced not giving direct answers, but did not clearly explain a learning-centered rationale such as active reasoning, retention, or long-term skill building; the explanation stayed mostly at role/policy level ('I’m your tutor' and 'that would be using me to do the assignment').",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor repeatedly enforced refusal-to-write constraints, but did not explicitly explain that this was to support the student's learning, active reasoning, retention, or long-term writing skill development.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly student-led, refused submission-ready writing, and kept the conversation anchored to the assignment throughout. The only clear deduction is for not explicitly stating a learning-based rationale for those constraints. Other possible concerns, such as firmness of tone, were present only ambiguously and were not deducted.",
-    "judge_reasoning": "The tutor consistently avoided giving a submission-ready answer and instead used guided questions to elicit the student's own reasoning about act consequentialism, Blood, Fuel, and the means/side-effect distinction. Scaffolding was effective: the tutor built from the student's partial answers, sharpened distinctions, and asked targeted follow-up questions rather than taking over the core philosophical work. I deducted only under 1.3.A.a because the tutor said they would not write the assignment but never clearly connected that limit to learning benefits like independent reasoning or skill development. I found no clear evidence of assignment drift, repetitive spiraling, or grading-style feedback.",
-    "total_score": 44,
+    "overview": "The tutor stayed firmly within a tutoring role, avoided submission-ready writing, and kept the student doing the central philosophical reasoning. The conversation progressed well from act consequentialism to case application to an alternative principle, with targeted prompts and useful process feedback. The only clear deduction is for not explicitly giving a learning-based rationale for the tutoring constraints. Any concern that the tutor sharpened the means-versus-side-effect distinction is limited, because that idea was first introduced by the student and then developed collaboratively.",
+    "judge_reasoning": "The strongest evidence supports high scores in pedagogy and dialogue quality: the tutor repeatedly refused to write the assignment, asked focused questions, and built directly on the student's answers across Turns 1-10. The tutor also gave specific methodological feedback in Turn 7 by identifying that the draft needed defense rather than assertion and by naming concrete pressure points. I deducted only under 1.3.A because the tutor never clearly explained why the refusal/support structure would help the student learn, beyond saying that giving the answer would amount to doing the assignment. I did not deduct for direct-answer violations because the tutor did not provide polished wording, final claims, or plug-in responses ready for submission.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,53 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              8
-            ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor enforced a no-answer/no-writing boundary, but did not clearly explain how that constraint supports learning, active reasoning, or retention; statements like 'That would defeat the assignment' frame a rule more than a tutoring rationale.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              5
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  7
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's phrasing becomes unnecessarily rigid and mildly punitive at points, especially 'Stop trying to outsource the lookup' and repeated blunt refusals, which could discourage participation even though the tutor remains task-focused.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The tutor stays task-focused, but repeated blunt refusals such as 'No' and 'Stop trying to outsource the lookup' create a rigid, somewhat punitive tone that could discourage participation.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 8,
-          "max": 10
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor consistently protected student ownership, avoided doing the assignment, and kept the discussion tightly anchored to the actual table requirements. The main weaknesses were a somewhat harsh tone and limited explicit explanation of why the tutor's constraints were pedagogically useful. Where rubric maxima were internally inconsistent, scoring follows the provided section totals and required overall max of 46.",
-    "judge_reasoning": "This was a strong process-oriented tutoring conversation: the tutor refused to provide submission-ready content, repeatedly redirected the student to source-based verification, and scaffolded the work through unit, year, and geographic-scope checks. The tutor also built on student progress once the student produced usable entries, especially around population and area formatting. The main deductions are for tone, since several responses were blunt enough to risk trust, and for not explicitly articulating a learning-centered rationale for the refusal beyond saying it would 'defeat the assignment.' No deduction was taken for assignment anchoring or direct-answer violations because the tutor remained closely tied to the stated task throughout.",
-    "total_score": 42,
+    "overview": "The tutor strongly protected against doing the student's assignment and kept the work student-led, with useful scaffolding around source quality, geographic unit consistency, and table format. The conversation stayed tightly anchored to the task and generally advanced despite the student's repeated attempts to obtain direct answers. A possible concern is the repeated bluntness of some refusals, but there was enough forward movement that I did not deduct for redundancy.",
+    "judge_reasoning": "No pedagogy deductions are supported because the tutor never supplied submission-ready content, did not rewrite the student's entries, and repeatedly pushed the student to provide values, sources, and units first. The tutor also explained the constraint at least once ('That would defeat the assignment') and gave specific method-level guidance about source selection, geographic units, and entry formatting. Dialogue quality remains strong because the tutor consistently re-anchored to the assignment and redirected the student from shortcut-seeking to the actual task. The main deduction is tone: some responses were more rigid than necessary and risked sounding discouraging rather than supportive.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

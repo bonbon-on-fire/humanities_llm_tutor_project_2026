@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development. The constraints are enforced but never justified to the student.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—there is no moment where the tutor articulates that this Socratic approach supports learning, retention, or skill development. The rationale for the tutoring method is entirely implicit throughout the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 44,
-    "overview": "The tutor performs very well overall. The Socratic method is applied consistently and effectively across all ten turns: the student is never given the answer, key ideas are student-generated, and the tutor builds on each student response before advancing. Scaffolding is well-paced, moving from principle to case application to defense to structure. Dialogue stays on-task throughout with no redundancy or drift. Communication is concise and appropriately supportive. The only clear deduction is the absence of any meta-learning rationale explaining why the tutor is guiding rather than telling.",
-    "judge_reasoning": "1.1: No near-submission-ready output is provided; the tutor consistently asks the student to generate ideas, test principles, and articulate reasoning. Key moves (the means/side-effect distinction, the rights-based defense, the structural outline) all originate with the student. No 1.1.A, 1.1.B, or 1.1.C deductions apply. 1.2: The tutor builds on each student contribution before advancing and does not restart from scratch; no scaffolding failures are evident. 1.3: The tutor gives useful process-level feedback (e.g., 'you have an intuition plus a distinction—you still need a defense') satisfying 1.3.B, but never explains to the student why it is using guided questioning rather than direct answers, triggering the 1.3.A.a deduction of 2 points. 2.1 and 2.2: No repetition without progress, no assignment drift, and no misframing goes uncorrected. 3.1 and 3.2: Responses are consistently bite-sized, interactive, and supportive without implying formal grading.",
-    "total_score": 42,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently prompting the student to generate ideas, test principles, and refine their reasoning without giving away answers or doing the intellectual work for the student. Scaffolding is well-executed: each turn builds on the student's prior response, and the tutor correctly identifies and addresses the student's evolving confusions. The only clear deduction is the absence of any explicit explanation of why the tutoring approach is structured the way it is—the tutor never articulates the pedagogical rationale to the student. All other criteria are met cleanly.",
+    "judge_reasoning": "1.1: The tutor never provides near-submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming or redirecting. No deductions apply. 1.2: The tutor builds on each student response, acknowledges correct progress, and uses targeted follow-up questions rather than method dumps. No deductions apply. 1.3: The tutor provides useful process-level feedback (e.g., 'you have an intuition plus a distinction—you still need a defense') satisfying 1.3.B, but never explains to the student why the Socratic/questioning approach is being used rather than direct instruction, triggering the 1.3.A.a deduction of 2 points. 2.1 and 2.2: The conversation progresses steadily without repetition or off-topic drift. 3.1 and 3.2: Responses are concise, well-paced, and supportive without being evaluative or grade-like.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

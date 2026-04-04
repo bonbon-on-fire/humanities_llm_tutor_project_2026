@@ -72,103 +72,124 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 6, the tutor provides a fully worked-out generic example that maps all three categories (Leading, Engaged, Missing) with specific actor types filled in for each column. This does the key reasoning step for the student—building the categorical framework and populating it with examples—rather than guiding the student to derive it. The student had not attempted any categorization yet, and the tutor resolved the conceptual structure before the student tried.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly expressed confusion about what an 'actor' is and what to look for, the tutor jumped straight into providing definitions and step-by-step instructions rather than first asking diagnostic questions to understand what specifically the student already knew or where exactly the confusion originated. For example, in Turn 3 the tutor immediately gave a full 3-step method dump without first probing what the student had already tried or understood.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student never meaningfully succeeds after a failed attempt in a way that would trigger a reflection prompt, so this criterion is not clearly triggered. However, the tutor also never prompts reflection on the student's thinking process at any point. No deduction applied here as the student never reached a success moment from failure.",
-            "points": 0
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explained why it was guiding the student through questions rather than simply providing answers. There is no moment in the conversation where the tutor articulates that this approach supports active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student never reached a clear success moment from a prior failure in this conversation, so this criterion is not strongly triggered. However, the tutor also never prompted any reflection on the student's own thinking process at any point, missing opportunities to reinforce method choices even when the student made small steps forward (e.g., agreeing to look for a gov page in Turn 9-10).",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding rather than just answering—no rationale is given for the Socratic approach or why the student doing the thinking matters for learning. The tutor enforces constraints (e.g., 'you need to do the thinking') but never explains the pedagogical reason behind this.",
-            "points": 2
-          },
-          {
-            "evidence_turns": [
-              3,
-              6,
-              8
-            ],
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "The tutor's feedback is largely directional ('go find a source,' 'stop circling the definition') but does not give method-level feedback on the student's thinking process or approach. When the student repeatedly avoids engaging, the tutor does not comment on what the student's avoidance pattern reveals about their approach or how to improve it. Feedback stays at the task level rather than the process level.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 14,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly cycles through the same pattern across many turns: re-explain the actor categories, re-explain the workflow, re-explain the leading/engaged/missing distinction, and ask the student to name an actor or take a step. The student remains stuck and the tutor does not meaningfully reframe, synthesize, or shift strategy. By Turn 8, the tutor is essentially repeating the same 6-step workflow it had already given in prior turns without any new scaffolding approach.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same pattern across nearly all 10 turns: explain a concept, ask the student to name an actor or take a step, student deflects or asks for more explanation, tutor re-explains. By turns 7 and 8, the student is asking for the whole workflow again and the tutor obliges with another full re-explanation rather than synthesizing, reframing, or diagnosing why the student keeps stalling. The conversation does not meaningfully advance the student's actual work.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 30,
+    "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor maintains a generally supportive tone and keeps responses concise, but struggles with three significant issues. First, in Turn 6, the tutor provides a fully populated generic example of all three actor categories, doing the key conceptual work for the student rather than guiding discovery. Second, the tutor never explains the pedagogical rationale for its Socratic approach, and process-level feedback is absent throughout. Third, the conversation spirals repeatedly—the student deflects in nearly every turn and the tutor re-explains rather than diagnosing the root confusion or switching strategies. Assignment anchoring and communication quality are handled well.",
-    "judge_reasoning": "The 6-point deduction under 1.1.C.b is warranted because Turn 6 provides a fully structured, populated example of all three actor categories before the student has attempted any categorization, resolving the core conceptual task for them. The 2-point deduction under 1.3.A.a applies because the tutor never explains why it is guiding rather than answering directly, despite enforcing that constraint from Turn 1. The 2-point deduction under 1.3.B.b applies because feedback stays at the task level ('go find a source') rather than addressing the student's avoidance pattern or reasoning approach. The 4-point deduction under 2.1.A.a is supported by the consistent pattern across all 10 turns where the student deflects and the tutor re-explains the same framework without reframing, synthesizing, or diagnosing the underlying confusion. No deductions apply to communication quality or assignment anchoring, as the tutor keeps responses focused and appropriately brief.",
-    "total_score": 30,
+    "overview": "The tutor maintained appropriate boundaries and never gave submission-ready content, which is a significant strength. However, the conversation suffered from notable repetition without progression (2.1), insufficient diagnostic questioning before providing method explanations (1.2.B), and a lack of meta-learning rationale or process reflection throughout (1.3.A, 1.3.C). The 1.3.C deduction is applied with some uncertainty since the student never clearly succeeded from a prior failure, but the tutor also never prompted any reflection on thinking process at any point.",
+    "judge_reasoning": "The tutor correctly avoided giving direct answers or submission-ready content throughout all 10 turns, preserving the student's need to do the intellectual work (1.1 full marks). However, the tutor repeatedly re-explained the same actor categories and workflow without meaningfully reframing or switching strategy when the student remained stuck, triggering the 2.1.A.a repetition deduction. The tutor also consistently jumped to providing definitions and step-by-step instructions without first diagnosing what the student already understood, triggering 1.2.B.a. On meta-learning, the tutor never explained why it was guiding rather than telling (1.3.A.a), and never prompted the student to reflect on their own thinking process or what was working (1.3.C.a). Communication quality was generally good—responses were concise, clear, and supportive throughout.",
+    "total_score": 33,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

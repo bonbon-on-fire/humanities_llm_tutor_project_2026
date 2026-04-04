@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -94,34 +90,46 @@
                   6
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor set a tutoring constraint ('I’m not going to build the assignment for you') but did not explain why that constraint supports the student's learning, retention, or independent reasoning.",
+                "reason": "The tutor states a boundary ('I'm not going to build the assignment for you') but does not explain why this constraint supports the student's learning, retention, or skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
                   7,
-                  8,
                   9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from being unable to choose a city to selecting Boston, the tutor moved straight into the next task instead of prompting brief reflection on what changed or why the choice was workable.",
+                "reason": "After the student improves from being unable to choose a city to committing to Boston, the tutor moves directly into the next task instead of prompting reflection on what changed or why that step worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly returns to asking the student to pick a city before the student is ready, despite persistent confusion. This creates a repetitive pattern with limited synthesis or strategic shift until late in the exchange.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -129,13 +137,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,14 +155,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, kept responses concise, and generally used guided prompting rather than doing the student's work. The main missed opportunities were in meta-learning: the tutor did not explain the learning rationale behind withholding fuller examples, and did not prompt reflection after the student made progress by choosing a city. Tone was somewhat blunt at moments, but not clearly enough to justify a deduction under the rubric.",
-    "judge_reasoning": "The tutor avoided submission-ready output and mostly used short, directed questions and simple heuristics to help the student distinguish leading, engaged, and missing actors. Scaffolding was solid: the tutor repeatedly re-anchored the task and gave concrete process tools such as authority tests, source types to search, and a manageable next step. However, under 1.3 the tutor never explicitly explained why they would not build the assignment for the student, and after the student's improvement in selecting Boston, the tutor did not ask for reflection on what changed in the student's thinking. No deductions were taken for dialogue quality or communication clarity because the conversation remained on-task, responsive, and easy to follow.",
-    "total_score": 40,
+    "overview": "The tutor stayed aligned to the assignment, avoided doing the student's actual city analysis, and generally used clear, bite-sized prompts. Main weaknesses were repeated looping on city selection before fully resolving the student's confusion and limited meta-learning support. Tone was somewhat firm at moments, but the evidence for a communication-quality deduction was not strong enough to subtract points.",
+    "judge_reasoning": "The tutor did well on core pedagogy by not producing submission-ready work and by keeping the student responsible for choosing a city and testing possible actors. I did not deduct in 1.2 because the tutor usually responded to the student's stated confusion and provided manageable next steps, even if the strategy was imperfect. The largest dialogue issue was repetition: multiple turns returned to 'pick a city' while the student was still asking for broader clarification, which fits the rubric's spiraling pattern. I also deducted in meta-learning because the tutor never explained why their constraint-based approach helps learning, and missed a reflection prompt when the student finally made progress by selecting Boston.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

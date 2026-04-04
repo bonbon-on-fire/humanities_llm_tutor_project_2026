@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,21 +86,25 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforced student-led reasoning, but never explicitly explained why this constraint supports learning (for example, active reasoning, retention, or long-term skill building).",
+                "reason": "The tutor consistently enforced a student-led approach and declined to choose answers for the student, but never explicitly explained that this constraint supports learning, active reasoning, or long-term skill development.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -116,13 +116,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 10,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -131,17 +131,21 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed highly student-led, kept the discussion tightly anchored to the assignment, and used concise prompts that progressively built a usable method for filling the city data table. The only clear rubric gap was meta-level explanation: the tutor never explicitly stated why they were withholding direct choices and pushing the student to justify decisions independently.",
-    "judge_reasoning": "Under 1.1, no deduction is warranted because the tutor did not provide submission-ready content, rewrite student prose, or do the core reasoning for the student; instead, they repeatedly asked the student to choose and justify categories, source types, and conventions. Under 1.2, the tutor built directly on each student answer and advanced step-by-step from required fields to source reliability, boundary consistency, and notation, so scaffolding remained strong. The main deduction is under 1.3.A.a: although the tutor enforced a Socratic approach throughout, they never explicitly explained the learning rationale for that constraint. Dialogue quality and communication remained strong because the exchange stayed on-task, avoided repetition, and used short, clear, supportive turns.",
-    "total_score": 42,
+    "overview": "The tutor stayed strongly within a guided-discovery model, kept the student focused on the assignment requirements, and used concise, interactive prompts throughout. The only clear deduction is for not explicitly stating why the tutor was withholding direct answers and requiring the student to justify choices. No other deduction was clearly supported by the transcript.",
+    "judge_reasoning": "The tutor avoided giving submission-ready content and instead prompted the student to identify categories, source types, consistency rules, and reporting conventions. The conversation showed good scaffolding: the tutor built on the student's answers, narrowed the task step by step, and kept the work anchored to the data-table assignment. The tutor also provided concrete method feedback about source reliability, boundary consistency, and not mixing GDP/income standards. However, although the tutor repeatedly enforced a student-led process, the tutor never explicitly explained the learning rationale for that constraint, which triggers the deduction under 1.3.A.a.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

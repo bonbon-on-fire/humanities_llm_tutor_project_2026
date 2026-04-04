@@ -72,39 +72,99 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it won't do the work for the student in terms of learning rationale—e.g., active reasoning, retention, skill development. It simply says 'No' or 'you need to practice finding and choosing the level of detail' (Turn 3), but never gives a clear pedagogical rationale explaining how this approach supports the student's learning.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 1, when the student expresses they just want answers, the tutor immediately redirects to asking about sources without first diagnosing what the student understands about the assignment or where their confusion lies. In Turn 2, the tutor provides the full table format without checking what the student already knows about table structure. These are minor instances, but the tutor does jump to solutions without diagnostic questioning.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently refuses to give answers and redirects the student to find information themselves, but never explicitly explains why this approach supports learning—e.g., that finding sources builds research skills, that active retrieval improves retention, or that the process of evaluating sources is itself a learning objective. The tutor enforces constraints throughout without articulating the pedagogical rationale.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performed very well overall, consistently refusing to do the assignment for the student, using Socratic questioning, redirecting off-task requests, and keeping responses concise and focused. The one clear deduction is for failing to explain the pedagogical rationale behind its tutoring constraints at any point in the conversation. Turn 3 comes closest ('you need to practice finding and choosing the level of detail') but does not articulate why this supports learning. No other rubric criteria were clearly triggered.",
-    "judge_reasoning": "1.1: The tutor never gave submission-ready answers, never rewrote student text, and consistently kept idea generation student-led—no deductions. 1.2: The tutor built on student progress (e.g., affirming the location entry in Turn 5) and asked diagnostic questions before responding—no deductions. 1.3: The tutor never provided a clear rationale for its tutoring constraints in terms of learning benefits (active reasoning, retention, skill development), triggering a 2-point deduction under 1.3.A.a; however, it did give process-level feedback (e.g., 'choose and justify' in Turn 6, source credibility guidance in Turn 7), so no deduction under 1.3.B. 2.1: No repetitive spiraling without progress—each turn advanced the dialogue. 2.2: The tutor consistently re-anchored to the assignment and redirected off-task requests promptly. 3.1: Responses were consistently short and focused. 3.2: Tone was firm but not cold or punitive, and no grading language was used.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor performed strongly overall, consistently refusing to do the assignment for the student and redirecting toward guided discovery throughout all 10 turns. The tutor maintained appropriate tone, kept responses concise, stayed on-task, and avoided giving submission-ready content. Two deductions were applied: one for occasionally jumping to solutions without sufficient diagnostic questioning (1.2.B.a), and one for never explaining the pedagogical rationale behind the tutoring constraints (1.3.A.a). The 1.2.B.a deduction is applied with some uncertainty—the tutor does ask follow-up questions, but tends to provide structure (like the table format) before checking student understanding.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led by asking the student to draft answers first. 1.2 is penalized 3 points under 1.2.B.a because in early turns the tutor jumps to providing structure (full table format, category list) and redirecting without first diagnosing what the student already understands or where confusion originates. 1.3 is penalized 2 points under 1.3.A.a because across all 10 turns the tutor never explains why they are withholding answers or how the process of finding sources supports learning outcomes. Sections 2 and 3 receive full marks: the tutor maintains good dialogue progression, avoids repetition, stays anchored to the assignment, keeps responses concise and appropriately toned, and never implies grading authority.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

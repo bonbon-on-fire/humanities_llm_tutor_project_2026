@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,8 +86,13 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  2,
+                  7
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor never explicitly states a learning rationale for using questioning/guided discovery instead of giving answers, such as explaining that this helps the student build independent reasoning or retain the method.",
+                "reason": "The tutor gave useful process instructions, but did not explicitly explain at least once why these constraints or student-led reasoning support learning, retention, or independent skill development.",
                 "points": 2
               },
               {
@@ -101,20 +102,20 @@
                   10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from uncertainty to a coherent, evidence-based set of ratings and priorities, the tutor moved forward to the next task without prompting reflection on what changed in the student's reasoning process or why the approach worked.",
+                "reason": "After the student improved from uncertainty to a coherent ranked draft and clear priorities, the tutor moved on to the next task without prompting reflection on what changed in the student's reasoning or why the method worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -126,13 +127,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 10,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -141,17 +142,21 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor maintained strong guided discovery, kept the student doing the core reasoning, and stayed tightly anchored to the assignment. Deductions are limited to meta-learning gaps: no explicit explanation of why this tutoring approach supports learning, and no reflection prompt after the student's reasoning improved.",
-    "judge_reasoning": "The tutor consistently used short, targeted questions to help the student compare stressors, justify rankings with evidence, and draft their own table entries, so there is no evidence of submission-ready writing or tutor-led completion of the assignment. The conversation also progressed cleanly from confusion to rankings to draft entries to priority stressors, with clear assignment anchoring and no off-topic drift. The main weaknesses are in 1.3: the tutor never explicitly explained the rationale behind withholding direct answers and using this questioning method, and after the student improved from uncertainty to a defensible framework, the tutor did not ask for brief reflection on what changed in the student's method. Communication remained concise, supportive, and clearly formative rather than grading-oriented.",
-    "total_score": 42,
+    "overview": "The tutor maintained strong guided discovery throughout: the student generated the rankings, ratings, and justifications, while the tutor kept the discussion tightly anchored to the stressors-table task. Responses were clear, supportive, and progressive, with no meaningful drift or repetition. The main weakness was meta-learning: the tutor did not explicitly state why the student-led approach was pedagogically useful, and missed a reflection opportunity after the student's reasoning improved.",
+    "judge_reasoning": "The strongest aspect of this conversation was pedagogy under 1.1 and 1.2: the tutor avoided giving submission-ready content, used comparison questions to elicit the student's reasoning, and built each step from the student's prior answer. Dialogue quality and communication were also strong because the tutor stayed on assignment, redirected the student toward evidence-based ranking, and kept replies bite-sized and supportive. Deductions were limited to 1.3 because the tutor never clearly explained the rationale for the tutoring constraints, and after the student improved from being stuck to producing a coherent draft, the tutor did not prompt reflection on what changed in the student's method. No larger deduction was warranted because the student remained the primary generator of ideas and wording throughout.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

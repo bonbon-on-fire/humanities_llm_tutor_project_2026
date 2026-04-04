@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -94,20 +90,20 @@
                   5
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced the boundary against writing a model post, but did not clearly explain why that constraint supports the student's learning process (for example, active reasoning or skill development); saying 'My role is to help you build it yourself' is only a partial rationale.",
+                "reason": "The tutor enforced a boundary against modeling the post ('I can’t write or model the post for you') but did not clearly explain how that constraint supports the student's learning process, such as promoting active reasoning or stronger retention.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -119,26 +115,17 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 4,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5
-                ],
-                "sub_criterion_id": "3.1.A.b",
-                "reason": "The tutor response included raw JSON and internal pedagogical metadata instead of clean student-facing language, creating avoidably dense and imprecise communication.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4
           },
           "3.2": {
@@ -146,14 +133,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, avoided doing the student's forum post, and used effective step-by-step scaffolding. The main weaknesses were a missing explicit learning-focused rationale for the tutoring boundary and one major communication issue where internal JSON/meta text appeared in the student-facing reply. Where evidence was borderline, deductions were kept limited to those clearly supported by the transcript.",
-    "judge_reasoning": "Pedagogically, the tutor performed strongly on guided discovery: they clarified the task, asked targeted questions, narrowed scope, and pushed the student toward specificity and source-based verification without supplying submission-ready content. No deduction was warranted for direct-answering or for scaffolding because the tutor consistently built on the student's progress and addressed the student's confusion appropriately. A 1.3.A deduction applies because the tutor refused to model the post but did not explicitly connect that boundary to learning benefits beyond a brief role statement. Communication took the largest hit because Turn 5 exposed raw JSON and internal reasoning, which is clearly avoidable dense language under 3.1.A.b.",
-    "total_score": 36,
+    "overview": "The tutor was generally strong: they kept the work student-led, progressively narrowed scope, and repeatedly re-anchored the student to the actual deliverable. The main deduction is for not explicitly tying the refusal to provide a model post to a learning rationale. Turn 5 contains JSON/meta formatting that could be read as a clarity issue, but because it is ambiguous whether that was student-visible, I did not deduct for communication.",
+    "judge_reasoning": "The tutor consistently avoided giving submission-ready content and instead used questions, category distinctions, source-finding guidance, and a simple post structure to move the student forward. They also built on the student's rough attempts effectively, helping the student refine from vague categories ('Jakarta gov,' 'NGOs') toward more specific actors and evidence sources. The only clear rubric issue is under 1.3.A: although the tutor set a firm boundary against writing the post, they did not explicitly explain why that supports the student's learning beyond role-based wording. Dialogue quality and tone remained strong throughout, with prompt redirection to the assignment and supportive coaching language.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

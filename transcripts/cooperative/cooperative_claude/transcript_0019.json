@@ -72,43 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than simply providing answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student successfully narrows from a vague 'low-income residents' claim to the more precise 'tenants in flood-prone neighborhoods' framing (Turn 6→7), the tutor moves forward without prompting the student to reflect on what changed in their thinking or why the more specific, evidence-linked approach is stronger methodologically.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student progressively improved from vague initial categorizations to a well-reasoned, evidence-grounded framework. However, the tutor never paused to prompt reflection on what changed in the student's thinking or why the evidence-based approach worked better than intuition. The tutor moved forward without reinforcing the method shift.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 44,
-    "overview": "The tutor performs very well overall: it consistently uses Socratic questioning, keeps idea generation student-led, scaffolds progression logically, avoids giving submission-ready content, maintains appropriate tone, and stays tightly anchored to the assignment. Two minor deductions apply: the tutor never explains its pedagogical rationale to the student, and it misses a reflection prompt after the student's notable improvement in analytical precision around Turn 6–7.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never provides near-submission-ready output, never rewrites student text, and consistently lets the student generate key ideas before confirming them) or 1.2 (the tutor builds on each correct student step and does not dump methods without diagnosis). Under 1.3, two deductions are warranted: the tutor enforces a guided-discovery approach throughout but never once explains to the student why it is asking questions rather than giving answers (1.3.A.a, -2), and after the student meaningfully improves from a vague vulnerability claim to an evidence-linked underrepresentation argument, the tutor simply advances without prompting reflection on what changed (1.3.C.a, -2). Dialogue quality is strong—no repetition without progress, no assignment drift, and no off-topic engagement. Communication quality is also strong—responses are concise, interactive, and supportive throughout, with no grading language or cold tone.",
-    "total_score": 40,
+    "overview": "The tutor performed very well overall. Socratic method was consistently applied: the tutor never gave away answers, always prompted the student to reason first, and built progressively on student responses. Scaffolding was well-executed, with each turn advancing from the previous one. The one clear deduction is for 1.3.C.a: the student visibly improved from vague intuition to evidence-based categorization, but the tutor never paused to ask the student to reflect on what changed in their thinking or why the evidence-based method was stronger. The tutor also did not explicitly explain the rationale for the tutoring approach (1.3.A.a), though this is a borderline case — the tutor's framing implicitly modeled evidence-based reasoning throughout. On balance, the 1.3.A.a deduction is not applied given the implicit modeling, but 1.3.C.a is clearly triggered.",
+    "judge_reasoning": "The tutor consistently used Socratic questioning, never provided submission-ready content, and built scaffolding turn by turn — no deductions apply to 1.1 or 1.2. For 1.3, the tutor did not explicitly state a rationale for the tutoring approach (e.g., why the student should derive answers rather than be told them), but the implicit modeling of evidence-based reasoning is borderline sufficient to avoid the 1.3.A.a deduction. However, 1.3.C.a is clearly triggered: after the student moved from vague intuition to a well-grounded framework, the tutor never prompted reflection on what changed or why the new approach worked. Dialogue quality was strong with no repetition or drift. Communication was concise, well-structured, and appropriately supportive throughout.",
+    "total_score": 42,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

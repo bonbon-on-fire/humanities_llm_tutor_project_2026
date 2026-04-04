@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,30 +87,30 @@
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across the conversation, the tutor enforced a student-led process and asked for the student's own wording, but never explicitly explained why those constraints support learning, retention, or skill-building.",
+                "reason": "Throughout the conversation, the tutor maintains a guided approach but never explicitly explains the learning rationale for these constraints (for example, why the student should generate the reasoning or why evidence-based self-testing supports long-term skill building).",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  5,
                   7,
+                  8,
                   9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from tentative rankings to a clearer, defensible draft, the tutor kept refining the table but did not prompt brief reflection on what changed in the student's reasoning or why the stronger approach worked.",
+                "reason": "After the student's reasoning improves into a coherent draft table, the tutor gives forward-looking revision advice but does not prompt reflection on what changed in the student's approach or why the improved method worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,27 +118,17 @@
             "max": 4
           },
           "2.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  8
-                ],
-                "sub_criterion_id": "2.2.A.a",
-                "reason": "When the student was unsure whether air pollution counted, the tutor did not re-anchor to the assignment's climate-related vulnerability framing and instead prolonged the ambiguity by treating inclusion as conditional on whether the course allowed climate-linked vulnerabilities.",
-                "points": 4
-              }
-            ],
-            "score": 4,
+            "deductions": [],
+            "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -154,14 +140,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 36,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "Strong guided tutoring overall: the tutor kept idea generation student-led, scaffolded the table well, and stayed concise and supportive. Main deductions are for missing an explicit explanation of the learning rationale behind the tutoring constraints, not prompting reflection after the student's improved draft, and not fully re-grounding the student's misunderstanding about whether air pollution fit the assignment. To avoid overlap, I did not also deduct on diagnostic questioning for the same air-pollution exchange.",
-    "judge_reasoning": "The tutor consistently used guided prompts and avoided giving submission-ready content, so pedagogy around direct work and scaffolding remained strong. I deducted under 1.3.A.a because the tutor never explicitly stated why they were keeping the student in the reasoning role, and under 1.3.C.a because the conversation did not include a reflection prompt after the student's work clearly improved. I also deducted under 2.2.A.a because the student misunderstood whether air pollution counted for the assignment, and the tutor did not re-anchor to the assignment framing before proceeding. Communication quality stayed high: responses were bite-sized, clear, supportive, and formative rather than grade-like.",
-    "total_score": 36,
+    "overview": "The tutor stayed strongly within a guided, non-substitutive tutoring role and kept the student doing the core classification, ranking, and justification work. The main rubric weakness is meta-learning: the tutor gave useful process coaching, but did not explicitly explain the rationale for the tutoring constraints and missed a chance to prompt reflection after the student's draft improved. No other clear deductions were supported by the transcript.",
+    "judge_reasoning": "The tutor consistently used short, scaffolded prompts tied to the assignment and avoided giving submission-ready content, so 1.1, 1.2, 2.1, 2.2, 3.1, and 3.2 remain at full credit. The strongest deductable issue is under 1.3: although the tutor frequently coached the student toward evidence-based reasoning, they never explicitly stated why they were withholding direct answers in service of learning. After the student improved from tentative ideas to a workable table draft, the tutor moved directly to sourcing next steps rather than asking the student to reflect on what changed in their reasoning process.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

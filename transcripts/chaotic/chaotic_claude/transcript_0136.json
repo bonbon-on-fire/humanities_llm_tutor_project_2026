@@ -72,43 +72,101 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't do the work for the student—no rationale about active reasoning, retention, or skill development is offered. It simply refuses repeatedly without articulating the pedagogical purpose of the constraint.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved their sea level rise row (Turn 7), the tutor acknowledged it briefly but did not prompt reflection on what changed in the student's thinking or why the revised approach worked better. The same applies after the heat row in Turn 9.",
-            "points": 2
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  5,
+                  9
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student is stuck or gives thin answers, the tutor tends to jump directly into guiding questions without first diagnosing what the student already understands or where exactly the confusion lies. For example, in Turn 5, after the student gives a thin justification, the tutor immediately lists what to add rather than asking what the student already knows about Miami's geography or infrastructure. This pattern recurs across turns without diagnostic probing.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly refuses to do the work for the student but never explains why this approach supports the student's learning—e.g., active reasoning, retention, or skill development. Phrases like 'that would defeat the assignment' gesture at rationale but do not explain the pedagogical benefit to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Turn 7, after the student improves their justification from a weak 'flooding risk' to a more specific and reasoned sentence, the tutor acknowledges it as 'better' and 'much closer to a justified rating' but does not prompt the student to reflect on what changed in their thinking or why the revised approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 44,
-    "overview": "The tutor performed well overall, consistently refusing to do the student's work, maintaining Socratic questioning, keeping responses concise, and staying anchored to the assignment. The main weaknesses are the absence of any explicit rationale for the tutoring constraints (never explaining why the student must do the work themselves) and a missed opportunity to prompt reflection after the student successfully improved their rows.",
-    "judge_reasoning": "No deductions apply under 1.1 (the tutor never produced submission-ready content, never rewrote student text, and kept idea generation student-led throughout). Scaffolding (1.2) was solid—the tutor built on the student's correct sea level rise row and used targeted prompts rather than method dumps. Under 1.3, two deductions are warranted: the tutor never once explained why it was refusing to draft entries (1.3.A.a), and after the student's improved rows in Turns 7 and 9, the tutor moved forward without prompting any reflection on what changed in the student's reasoning (1.3.C.a). Dialogue quality was strong—no spiraling, no off-topic drift, and the assignment framing was maintained throughout. Communication was appropriately concise and supportive without being cold or grading-like.",
-    "total_score": 40,
+    "overview": "The tutor performed strongly on the core Socratic and anti-ghostwriting dimensions, consistently refusing to supply entries, ratings, or polished wording across all ten turns. Assignment anchoring and dialogue progression were also well-managed. The main weaknesses are in meta-learning (no explicit pedagogical rationale given to the student, and no reflection prompt after the student's successful improvement in Turn 7) and in scaffolding (the tutor skips diagnostic questioning and moves directly to guiding prompts when the student is stuck). The 1.2.B.a deduction is applied with some uncertainty since the conversation is short and the student's confusion is partly strategic avoidance rather than genuine misunderstanding, but the pattern of skipping diagnosis is still present.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never supplies stressor entries, ratings, sector labels, or polished wording, and consistently redirects the student to do the reasoning work. 1.2 loses 3 points under 1.2.B.a because when the student gives thin or weak responses, the tutor immediately provides a list of guiding questions rather than first probing what the student already knows—this is a repeated pattern across Turns 3, 5, and 9. 1.3 loses 2 points under 1.3.A.a because the tutor never articulates why the refusal-to-draft approach benefits the student's learning (only that it 'defeats the assignment'), and 2 more points under 1.3.C.a because after the student's clear improvement in Turn 7, the tutor moves on without prompting reflection on what changed. Sections 2 and 3 are clean: the tutor stays on task, keeps responses concise, maintains a firm but non-punitive tone, and avoids redundancy.",
+    "total_score": 37,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

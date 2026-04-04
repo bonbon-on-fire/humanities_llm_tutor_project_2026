@@ -72,14 +72,19 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Turn 10"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "When asking for the final synthesis, the tutor supplied the overarching interpretation first ('mainly government-led with selective NGO/community engagement and gaps in broader participation') and then asked the student to write from that frame. This undercuts student-led generation of the key concluding idea, though it does not rise to a full submission-ready answer.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -91,32 +96,31 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  9
+                  "Turn 9"
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a tutoring constraint ('I won’t phrase it for you—you need to do the writing') but did not explicitly explain why that constraint supports the student's learning process, retention, or skill development.",
+                "reason": "The tutor enforced a constraint ('I won’t phrase it for you—you need to do the writing') but did not explain why that constraint supports the student's learning or skill development.",
                 "points": 2
               },
               {
                 "evidence_turns": [
-                  4,
-                  10
+                  "Turns 4-10"
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from earlier uncertainty to clearer categorization, the tutor affirmed the improvement and moved on without prompting reflection on what changed in the student's reasoning or why the revised method worked.",
+                "reason": "After the student improved from uncertainty to clearer actor distinctions and a more evidence-matched claim, the tutor affirmed the improvement and moved forward without prompting reflection on what changed in the student's reasoning or why the revised approach worked.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -128,13 +132,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -146,14 +150,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor was consistently Socratic, concise, and well anchored to the assignment, helping the student build a defensible actor map without supplying submission-ready prose. The main weakness was meta-learning: the tutor did not explicitly explain the learning rationale behind withholding phrasing help, and they missed chances to ask the student to reflect on what changed after successful revisions.",
-    "judge_reasoning": "I kept full credit for guided discovery because the tutor asked targeted questions, required the student to generate distinctions, and avoided giving a forum-ready answer. I also kept full credit for scaffolding and dialogue quality because the tutor built directly on the student's Jakarta-specific evidence and stayed tightly focused on the assignment. The deductions are confined to 1.3: at Turn 9 the tutor refused to phrase the claim but did not explain why that constraint helps learning, and after clear student improvements in Turns 4 and 10 the tutor did not prompt reflection on what changed in the student's method. Communication remained supportive, bite-sized, and clearly formative throughout.",
-    "total_score": 40,
+    "overview": "The tutor was generally strong on scaffolding, assignment alignment, concision, and supportive tone. The main weakness was pedagogical ownership near the end: the tutor mostly guided well, but in Turn 10 it offered the conversation's overarching governance synthesis before the student produced it independently. That deduction is somewhat borderline because the student had already developed most component ideas, so no harsher penalty for submission-ready output was applied.",
+    "judge_reasoning": "The tutor consistently used short, evidence-based questions that helped the student distinguish authority, participation, and absence, and it stayed tightly anchored to the assignment throughout. I deducted under 1.1 because Turn 10 supplied the high-level conclusion frame before the student attempted that final synthesis, which weakens student-led idea generation. I also deducted under 1.3 because the tutor never explained the learning rationale for refusing phrasing help and missed opportunities to prompt reflection after the student's reasoning improved. No deductions were warranted for redundancy, off-topic drift, clarity, or tone.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

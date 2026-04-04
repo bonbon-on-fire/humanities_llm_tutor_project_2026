@@ -72,43 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't write the post for the student—it simply refuses repeatedly without articulating the learning rationale (e.g., active reasoning, retention, skill development). A brief explanation of why the student doing the work matters for learning is absent throughout the conversation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 8, the tutor directly provides the name 'WE ACT for Environmental Justice' when the student asked for an example. While the tutor follows up with a question, supplying the specific actor name does the key evidence-identification step for the student rather than guiding them to find it themselves.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "By Turn 10 the student has clearly improved from early resistance and vague answers to producing a solid, well-reasoned sentence. The tutor confirms it works and moves to wrap-up, but never prompts the student to reflect on what changed in their thinking or why the process worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved significantly from vague initial answers to a strong Turn 7 response and again in Turn 10, the tutor moved on without prompting reflection on what changed in the student's thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 16,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 44,
-    "overview": "The tutor performed strongly overall: it consistently refused to do the work for the student, used Socratic questioning to guide idea generation, scaffolded progression from thin answers to a complete forum post, and maintained a firm but respectful tone throughout. Two deductions apply: the tutor never explained the pedagogical rationale for its constraints (1.3.A.a), and it missed the opportunity to prompt process reflection after the student's clear improvement by Turn 10 (1.3.C.a). All other criteria are met without notable issues.",
-    "judge_reasoning": "1.1 is fully intact: the tutor never produced submission-ready text, never rewrote student sentences, and consistently let the student generate key ideas before confirming them. 1.2 is fully intact: the tutor built on each student contribution and asked diagnostic questions before redirecting. 1.3 loses 4 points—the tutor enforced its no-ghostwriting stance across 10 turns without once explaining why this approach supports learning (1.3.A.a), and after the student's strong Turn 10 sentence the tutor simply said 'Yes. That works.' and moved on without prompting reflection on what changed (1.3.C.a). Dialogue quality is clean: no spiraling, no off-topic drift, and the assignment framing was maintained throughout. Communication quality is strong: responses were concise, interactive, and consistently supportive without being evaluative.",
-    "total_score": 40,
+    "overview": "The tutor maintained a strong Socratic stance throughout, consistently refusing to write content for the student and guiding them through structured thinking steps. The main deduction is for Turn 8, where the tutor directly supplied the name 'WE ACT for Environmental Justice' rather than guiding the student to identify an example themselves—this is the key evidence-identification step that the rubric treats as student-led work. A secondary deduction applies for missing reflection prompts after student improvement. All other criteria were well-handled: scaffolding was progressive, responses were concise, tone was supportive without being evaluative, and the conversation stayed on-task throughout.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is applied because in Turn 8 the tutor directly names a specific actor ('WE ACT for Environmental Justice') in response to a student request, doing the key evidence-selection work rather than prompting the student to find it. While the tutor adds a follow-up question, the rubric penalizes the tutor for picking the decisive evidence and naming it first. The 1.3.C.a deduction (2 points) applies because after clear student improvement in Turns 7 and 10, the tutor did not pause to ask the student to reflect on what changed in their thinking or why the improved approach worked. No deductions apply to scaffolding (1.2), dialogue quality (2.1, 2.2), or communication quality (3.1, 3.2), as the tutor consistently built on student progress, stayed on-task, kept responses concise, and maintained an appropriate formative tone.",
+    "total_score": 36,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

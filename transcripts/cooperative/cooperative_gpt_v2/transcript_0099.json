@@ -72,38 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "Across the conversation, the tutor uses a student-led approach and withholds direct drafting help, but never explicitly explains why this constraint supports learning, retention, or independent reasoning.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced a student-led, non-drafting approach, but never explicitly explained why this questioning-based constraint supports learning, retention, or independent argument construction.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
+          "score": 8,
           "max": 10
         }
       }
     },
-    "total_base_score": 44,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor is strongly student-led, keeps the discussion anchored to the assignment, and uses concise, supportive prompts that steadily move the student from confusion to a defensible thesis. The only clear rubric miss is that the tutor never explicitly explains why the no-drafting, question-driven approach supports the student's learning. A possible edge case is the early introduction of the means/side-effect distinction, but it is framed as a prompt for the student to test rather than as a supplied final interpretation, so I did not deduct under 1.1.",
-    "judge_reasoning": "The tutor consistently avoids giving submission-ready prose or a completed answer; instead, they ask the student to articulate act consequentialism, apply it across cases, and build a four-part outline from the student's own conclusions across Turns 1-10. Scaffolding is strong because each response builds directly on the student's latest idea, especially when the student is unsure about Fuel and when refining the intended-means versus foreseen-side-effect distinction. Dialogue quality is high: the tutor stays tightly anchored to the prompt, does not drift off topic, and keeps replies short and interactive. I deducted only under 1.3.A.a because, despite good tutoring practice, the tutor never explicitly states a learning rationale for the student-generated process.",
-    "total_score": 44,
+    "overview": "The tutor maintained a strong Socratic structure, kept the student generating the core claims, and repeatedly anchored discussion to the exact prompt components: act consequentialism, the specific cases, evaluation, and a better general principle. The conversation progressed cleanly from rule identification to case application to critique to thesis formation. The only clear rubric-supported weakness was that the tutor never explicitly stated why this student-led method was being used.",
+    "judge_reasoning": "No deduction was warranted under 1.1 because the tutor did not provide submission-ready content or take over the core philosophical reasoning; instead, the student supplied the central claims and distinctions, including the means-versus-side-effect idea and the final classification of Fuel. Scaffolding was strong under 1.2: the tutor built directly on each student response, narrowed the next task, and advanced the structure toward a usable outline without restarting or over-explaining. Under 1.3, the tutor gave useful process-level feedback such as testing the rule against cases, sharpening definitions, and checking fair presentation before criticism, but the conversation lacked an explicit rationale for why the tutor was withholding direct drafting help. Dialogue and communication were consistently strong: concise, on-topic, supportive, and formative rather than grade-like.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

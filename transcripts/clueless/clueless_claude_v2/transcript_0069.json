@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is withholding full explanations or model answers in terms of learning benefits (active reasoning, retention, skill development). In Turn 5 the tutor says 'a full sample post would do the assignment for you,' which is a constraint statement but not a rationale about how guided discovery supports learning. No turn provides a clear pedagogical rationale for the tutoring approach.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is withholding full explanations or model answers in terms of learning benefits (e.g., active reasoning, retention, skill development). In Turn 5 it says 'a full sample post would do the assignment for you,' which is a constraint statement but not a rationale about how guided discovery supports learning. No turn provides a clear pedagogical rationale for the tutoring approach.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performed well overall, consistently refusing to do the assignment for the student, redirecting repeated requests for model answers, and scaffolding the student from vague confusion to a workable actor analysis. The main deduction is for failing to articulate a clear meta-learning rationale at any point—the tutor enforced constraints but never explained how the Socratic approach benefits the student's learning. All other criteria were met: no submission-ready content was produced, student reasoning was kept student-led, scaffolding built progressively on student contributions, responses were appropriately concise, tone was supportive, and the conversation stayed on-task.",
-    "judge_reasoning": "1.1: No near-submission-ready output was produced; the tutor explicitly refused a sample post in Turn 5 and Turn 9, and the student generated all substantive claims. Key ideas (actor categories, evidence standards, gap identification) were elicited through questioning rather than stated first. No 1.1 deductions apply. 1.2: The tutor consistently acknowledged and built on student progress (e.g., 'That's a solid start' in Turn 6, validating the nuance about limited inclusion in Turn 9). No scaffolding failures. 1.3: The tutor never provided a rationale for why the tutoring constraints support learning—Turn 5's 'a full sample post would do the assignment for you' is a constraint statement, not a pedagogical explanation about retention or skill-building, triggering the 1.3.A.a deduction of 2 points. Method-level feedback was present (e.g., 'classify by role in a specific climate effort,' 'enough evidence means you can justify each category with 1 concrete reason'), so no 1.3.B deduction. 2.1–2.2: No problematic repetition, off-topic drift, or assignment misunderstanding went uncorrected. 3.1–3.2: Responses were appropriately concise and interactive; tone was supportive without being evaluative or grade-like.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed strongly overall, consistently refusing to do the assignment for the student, using Socratic questioning to guide the student from vague confusion to a defensible actor map, and maintaining a supportive but firm tone throughout. The one clear deduction is for failing to articulate a learning rationale: while the tutor enforced constraints (e.g., 'a full sample post would do the assignment for you'), it never explained why guided discovery or active reasoning benefits the student's learning. Method-level feedback was present and specific enough to avoid a 1.3.B deduction. No other rubric triggers were clearly met.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently kept key idea generation student-led by asking the student to name actors and test them before offering any framing. Full marks. 1.2: The tutor built on each student response (e.g., affirming 'good—messy overlap is the point' in Turn 4, validating the bullets in Turn 8) and used targeted questions rather than method dumps. Full marks. 1.3: The tutor gave specific process feedback (e.g., 'classify by role in a specific climate effort,' 'enough evidence means you can justify each category with 1 concrete reason') satisfying 1.3.B, but never explained the pedagogical rationale for its tutoring constraints in terms of learning benefits, triggering a 2-point deduction under 1.3.A.a. 2.1 and 2.2: The tutor consistently advanced the dialogue, synthesized student progress, and kept the conversation anchored to the assignment without engaging off-topic drift. Full marks. 3.1 and 3.2: Responses were concise and interactive, tone was supportive and non-grading throughout. Full marks.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

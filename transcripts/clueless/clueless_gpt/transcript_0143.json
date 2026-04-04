@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,31 +87,24 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  4
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor refused to provide a model answer but did not clearly explain the learning rationale behind that constraint; saying it would 'defeat the assignment' does not explicitly connect the restriction to active reasoning, retention, or skill development.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  9
+                  9,
+                  10
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improved from earlier confusion by producing a coherent paragraph draft, the tutor gave next-step feedback but did not prompt reflection on what changed in the student's thinking or why the new approach worked.",
+                "reason": "After the student improved from earlier confusion by producing a usable rough paragraph, the tutor moved directly into further revision prompts instead of asking the student to reflect on what changed in their thinking or why the new approach worked.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -127,13 +116,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -147,21 +136,25 @@
                   10
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The phrasing 'Fine, but stay focused' and 'not more filler' is more rigid and dismissive than supportive coaching, especially given the student's repeated expressions of uncertainty.",
+                "reason": "The phrasing \"Fine, but stay focused\" and \"not more filler\" is more blunt than supportive and risks sounding dismissive, even though the rest of the conversation is generally helpful.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly anchored to the assignment, avoided giving submission-ready content, and used short guided prompts that kept the student doing the core reasoning. Deductions come from limited meta-learning support and one notable tone lapse. I treated the refusal to give a model answer as only a partial rationale for tutoring constraints, so that deduction reflects some ambiguity rather than a stronger penalty.",
-    "judge_reasoning": "The tutor earned full credit for Socratic guidance because they consistently redirected the student to classify actors, distinguish leading versus engaged, and draft their own paragraph rather than supplying a model answer. Scaffolding and assignment anchoring were strong: the tutor built from the student's partial ideas, clarified the forum-post scope, and kept the conversation on task. The main pedagogy losses were in meta-learning, because the tutor did not clearly explain the learning rationale for withholding a model answer and did not ask the student to reflect after a clear improvement in Turn 9. Communication lost points for Turn 10's brusque phrasing, which was less supportive than the rest of the exchange.",
-    "total_score": 38,
+    "overview": "The tutor kept the task student-led, refused to provide a copyable model answer, and consistently anchored the discussion to the assignment's actual forum-post deliverable. The main weaknesses were a missed opportunity to prompt reflection after the student's improved paragraph and a briefly sharp tone in the final turn. The tone deduction is somewhat borderline, but turn 10 provides enough evidence for a small penalty.",
+    "judge_reasoning": "The strongest aspect of this conversation is pedagogy: the tutor used guided questions, frameworks, and assignment-specific structure without giving submission-ready content or rewriting the student's paragraph. Scaffolding was effective, moving from definitions to categories to post structure while building on the student's emerging understanding and re-grounding the deliverable when needed. I deducted under 1.3.C because, once the student produced a stronger paragraph in turn 9, the tutor did not ask for reflection on what had changed in the student's reasoning. I also deducted under 3.2.A because the final response became noticeably blunt, which slightly weakened the otherwise supportive tone.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

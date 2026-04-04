@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 16,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [
@@ -84,8 +80,8 @@
                   3,
                   4
                 ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor narrowed the student to a preselected set of likely Miami stressors and answer path before the student independently generated options, which reduced student-led idea generation on the core content.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied the likely core Miami stressors ('coastal flooding/sea level rise, extreme heat, or storm/hurricane impacts') and then framed the ranking choice among those options before the student independently generated them, narrowing the key substantive reasoning path.",
                 "points": 6
               }
             ],
@@ -102,31 +98,17 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 16,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  1,
-                  2,
-                  3,
-                  4,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "Across multiple turns, the tutor repeated a similar refusal-plus-prompt pattern without enough reframing or synthesis, even as the student kept signaling urgency and resistance.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4
           },
           "2.2": {
@@ -134,13 +116,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -155,21 +137,25 @@
                   5
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tone was at times rigid and discouraging rather than warmly supportive, especially in phrases like 'not a substitute author' and 'stop hovering over the numbers and do the actual thinking.'",
+                "reason": "The tutor's tone was at times rigid and potentially discouraging, especially in phrases like 'I’m your tutor, not a substitute author' and 'Now stop hovering over the numbers and do the actual thinking.'",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 30,
+    "total_base_score": 34,
     "max_base_score": 46,
-    "overview": "The tutor appropriately refused to produce submission-ready work and stayed anchored to the assignment. Main deductions are for partially preselecting the key Miami stressors instead of keeping idea generation fully student-led, for repetitive refusal cycles without enough reframing, and for a somewhat rigid tone; the 1.1 deduction is somewhat borderline because the tutor still avoided paste-ready output.",
-    "judge_reasoning": "No 1.1.A or 1.1.B deduction applies because the tutor never wrote a completed table, final justifications, or polished submission text for the student. However, at turns 3-4 the tutor effectively supplied the core Miami stressor options and answer path before the student generated them independently, so 1.1.C.a is deducted. A full 2.1 deduction is warranted because the conversation repeatedly returns to the same refusal-and-prompt pattern with limited strategic reframing despite the student's ongoing resistance. Communication was otherwise clear and concise, but the tone was occasionally rigid enough to justify a 3.2.A.a deduction. Scaffolding, assignment anchoring, and method-level feedback were generally strong once the student began participating.",
-    "total_score": 30,
+    "overview": "The tutor appropriately refused to provide paste-ready assignment content and generally kept the student doing the work. The main pedagogy issue is that the tutor still supplied the likely Miami stressors and structured the core ranking path before the student generated those ideas. I did not deduct for redundancy or assignment anchoring because the conversation stayed on-task and progressed step by step, though that judgment is somewhat close given the repeated refusals.",
+    "judge_reasoning": "Under 1.1, the largest deduction comes from the tutor naming the central Miami stressors and effectively preselecting the answer space, which reduced student-led idea generation even though the tutor avoided fully writing the submission. I gave full credit for scaffolding and meta-learning because the tutor built from the student's progress, explained why they would not provide submission-ready work, and offered usable reasoning frameworks. Dialogue quality stayed strong overall: the exchange remained anchored to the assignment and advanced from stressor identification to ranking to justification. The communication deduction reflects the tutor's occasionally harsh wording, which risked sounding punitive rather than fully supportive.",
+    "total_score": 34,
     "max_score": 46,
     "model": {
       "provider": "openai",

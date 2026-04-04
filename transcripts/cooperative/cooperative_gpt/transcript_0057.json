@@ -72,69 +72,85 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
-            "score": 12
+            "score": 12,
+            "max": 12
           },
           "1.2": {
             "deductions": [],
-            "score": 6
+            "score": 6,
+            "max": 6
           },
           "1.3": {
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforced a student-led, question-based process but never explicitly explained why this constraint supports learning or skill transfer.",
+                "reason": "The tutor maintained a guided approach, but never explicitly explained why these constraints or questions were being used to support the student's learning process, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from confusion about income per capita versus GDP per capita to a clearer distinction, the tutor praised the improvement and continued, but did not prompt reflection on what changed in the student's reasoning or why the revised approach worked.",
                 "points": 2
               }
             ],
-            "score": 4
+            "score": 2,
+            "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           },
           "2.2": {
             "deductions": [],
-            "score": 8
+            "score": 8,
+            "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           },
           "3.2": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "Strong assignment-anchored tutoring with clear guided discovery, good methodological scaffolding, and concise responses. The main supported deduction is that the tutor never explicitly stated why the student-led constraint was being used. I did not deduct for reflection-after-improvement because the conversation showed improvement, but the failure-to-success sequence was mild rather than a clear failed attempt.",
-    "judge_reasoning": "The tutor stayed firmly in a Socratic, non-submission-writing mode throughout the exchange: they asked the student to identify categories, define the geographic unit, test source reliability, and formulate decision rules rather than providing a completed table. Scaffolding was strong and progressive, especially in the repeated emphasis on boundary consistency, indicator definitions, and notes on data limitations. Dialogue quality was also strong because the tutor consistently re-anchored to the assignment requirements and redirected the student toward a practical table plan without drifting off topic. The only clear rubric miss was under 1.3.A: despite using good constraints, the tutor never explicitly explained the learning rationale for that tutoring approach.",
-    "total_score": 42,
+    "overview": "This was a strong tutoring conversation with consistent assignment anchoring, guided discovery, and concise questioning. Deductions are limited to meta-learning omissions rather than core pedagogy failures. The reflection deduction is somewhat borderline because the student's earlier work was uncertain rather than fully wrong, but the turn 4 to 5 improvement provides enough evidence for a small deduction.",
+    "judge_reasoning": "The tutor consistently kept the work student-led, avoided giving submission-ready content, and scaffolded the student through source selection, boundary consistency, and indicator definition using targeted questions. Dialogue quality was strong because the tutor stayed closely tied to the assignment, redirected productively, and did not spiral or go off-topic. Communication was also clear and supportive, with short prompts appropriate to the task. The main deductions are under meta-learning: the tutor never explicitly stated why this questioning-based constraint supports learning, and after a clear student improvement on the income/GDP distinction, the tutor missed a chance to prompt reflection on what changed.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

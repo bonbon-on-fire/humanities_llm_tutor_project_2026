@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,30 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  4,
+                  6,
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-writing/no-polishing boundary, but did not clearly explain why that constraint supports the student's learning beyond stating that their role was to help the student build it themselves. That is a limited rationale rather than an explicit learning-focused explanation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +119,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -128,14 +137,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor consistently avoided doing the assignment for the student and kept the work student-led through guided prompts, revision checks, and evidence-based questioning. The conversation stayed tightly anchored to the stressors-table task, and the tutor's responses were concise and formative. The closest call was whether the tutor gave an explicit enough rationale for the constraint against drafting for the student, but the explanation that ratings and claims must come from Miami-specific evidence was sufficient to avoid a deduction.",
-    "judge_reasoning": "The tutor met 1.1 well: across turns 1, 2, 4, 6, 8, and 10, the tutor refused to provide submit-ready rows, polished wording, sector labels, or the final priority choice, and instead required the student to generate each key part. The tutor also met 1.2 and 1.3 by scaffolding the task in small steps and giving process-level feedback, such as the three-part test for rating severity (turn 3), the note-form structure for justification (turn 4), and the request for Miami-specific details and present-vs-long-term framing (turns 5-8). Dialogue quality was strong because the tutor stayed on the assignment and did not drift off-topic, while adapting prompts as the student progressed rather than repeating the same move without advancement. Communication was firm but still supportive, with concise replies and clear formative framing, including the explicit statement that feedback reflected the tutor's judgment rather than the instructor's (turn 7).",
-    "total_score": 42,
+    "overview": "The tutor strongly maintained a tutoring-not-writing boundary and kept the student doing the substantive reasoning, with clear assignment anchoring and concise scaffolding throughout. The only deduction is a small one for meta-learning rationale: the tutor said they would help the student build the work themselves, but did not explicitly explain the learning value of that constraint. This was somewhat borderline, so the smaller deduction was applied.",
+    "judge_reasoning": "The tutor avoided submission-ready output, refused polishing requests, and consistently pushed the student to generate ratings, justifications, and prioritization independently, so no deductions were warranted under 1.1. Scaffolding was strong: the tutor built directly on student drafts, gave targeted next-step prompts, and provided specific method feedback such as using severity/urgency tests and a three-part justification structure. The main weakness was that the tutor enforced boundaries several times without clearly stating why this approach helps learning, which supports the 1.3.A.a deduction. Dialogue remained on-task and progressive, and communication was concise and generally supportive enough to keep full credit in sections 2 and 3.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

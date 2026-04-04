@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 21,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,20 +79,8 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  3,
-                  4,
-                  6,
-                  7
-                ],
-                "sub_criterion_id": "1.2.B.a",
-                "reason": "When the student repeatedly signaled broad confusion, the tutor often moved directly into another explanation or workflow rather than first isolating the precise misunderstanding with diagnostic questioning.",
-                "points": 3
-              }
-            ],
-            "score": 3,
+            "deductions": [],
+            "score": 6,
             "max": 6
           },
           "1.3": {
@@ -104,17 +88,30 @@
             "score": 6,
             "max": 6
           }
+        },
+        "base": {
+          "score": 24,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "After the student remained confused about the same core issue, the tutor repeatedly rephrased similar organizational advice and scope/definition prompts without a stronger strategic shift or synthesis. The conversation kept circling the same concept, and the student was still asking for the same explanation by the end.",
+                "points": 4
+              }
+            ],
+            "score": 0,
             "max": 4
           },
           "2.2": {
@@ -122,13 +119,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -143,21 +140,25 @@
                   8
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Phrases like 'stop rereading the assignment,' 'You're overthinking,' and 'stop second-guessing' make the tone more rigid than supportive in a moment when the student was already overwhelmed.",
+                "reason": "Phrases like \"You're circling the same idea now\" and \"You're overthinking the format... Now stop second-guessing\" come across as rigid and somewhat dismissive toward an overwhelmed student, which risks harming tutoring trust.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 39,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed well anchored to the assignment, avoided doing the student's work, and repeatedly redirected toward a workable table-building process. I applied smaller deductions where evidence was borderline: the tutor sometimes answered repeated confusion with more explanation before diagnosing the exact sticking point, and a few later turns sounded somewhat rigid.",
-    "judge_reasoning": "The tutor did not provide submission-ready assignment output or rewrite student text; instead, they kept the work focused on structure, scope, and sourcing. The main pedagogy deduction is under 1.2.B because, across several turns, the student expressed generalized confusion and the tutor often responded with another framework or workflow before pinpointing the exact misunderstanding. I also deducted under 3.2.A because the wording in Turns 7-8 could reasonably feel dismissive to an overwhelmed student. I did not deduct for assignment anchoring or redundancy because the tutor remained on task and did vary the framing rather than simply repeating the same move.",
-    "total_score": 39,
+    "overview": "The tutor stayed anchored to the assignment, avoided doing the student's work, and provided process-oriented structure. The main weakness was repeated cycling on the same explanation about scope and table setup without enough change in strategy once confusion persisted. Tone was mostly functional, but a couple of turns sounded more corrective than supportive; this deduction is limited because the rest of the conversation remained broadly coaching-oriented.",
+    "judge_reasoning": "The pedagogy score remains full because the tutor did not provide submission-ready content, kept the task student-led, and offered procedural scaffolds such as choosing a unit of analysis, tracking source definitions, and organizing rows and columns. I did not deduct for assignment anchoring because the tutor consistently re-grounded the student in the actual task and did not follow off-topic drift. The largest deduction is under redundancy because multiple late turns repeat the same scope/definition guidance while the student remains stuck, with insufficient strategic shift. I also deducted for tone because some wording sounded abrupt and potentially discouraging for a student who repeatedly stated feeling overwhelmed.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

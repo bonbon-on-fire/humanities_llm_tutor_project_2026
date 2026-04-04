@@ -72,58 +72,104 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is not giving direct answers or examples — i.e., why the Socratic approach supports learning, retention, or skill development. In Turn 4 the tutor says 'I'm your tutor, not a shortcut for filling the table' but this is a refusal statement, not a rationale explaining how guided discovery benefits the student. No turn provides a clear pedagogical rationale for the tutoring constraints.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 2, the student explicitly says they are confused about the overall logic and asks for a broad explanation before doing an example. The tutor responds with a structured framework dump (5-step logic + distinction) without first asking a diagnostic question to understand what specifically the student already grasps. Similarly in Turn 6, the student expresses uncertainty about what counts as evidence and the tutor immediately provides a full list of evidence types without probing what the student already knows.",
-            "points": 3
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In turns 2 and 3, when the student expressed broad confusion about the overall table logic, the tutor responded with structured frameworks and lists rather than first asking diagnostic questions to identify exactly where the student's understanding broke down. The tutor jumped to explaining the full stressor/vulnerability distinction without probing what the student already understood.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor refuses to give 4-5 examples in turn 4 but only states 'I'm your tutor, not a shortcut for filling the table' without explaining the pedagogical rationale—e.g., that doing the work for the student would undermine active reasoning, skill development, or retention. No clear rationale for the tutoring constraint is provided across the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 19,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6,
-              7
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly circles back to requesting a model or example across turns 2 through 7, and the tutor continues to respond with similar framework-listing moves (layers, patterns, evidence types) without meaningfully synthesizing or reframing the approach. The tutor does not consolidate progress or shift strategy sufficiently when the student remains stuck in the same loop.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly circles back to asking for models, examples, or broader explanations across six consecutive turns (Turns 2–7). The tutor keeps redirecting with the same move — 'now try one yourself' — without meaningfully reframing, synthesizing what has been established, or switching strategy. The student's confidence does not improve and the tutor does not consolidate progress or try a substantively different approach until Turn 8 when the student finally produces a row.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 35,
-    "max_base_score": 44,
-    "overview": "The tutor maintains a consistently Socratic stance throughout, refuses to do the assignment for the student, and successfully guides the student to produce a structurally sound table row by Turn 8. Tone is supportive and responses are appropriately concise. The main weaknesses are: (1) the tutor never explains why it is withholding direct answers in terms of learning benefit, (2) the tutor skips diagnostic questioning when the student is confused, jumping straight to framework delivery, and (3) the tutor repeats the same 'now try one yourself' redirect across many turns without adapting strategy when the student remains stuck, which constitutes pattern-level repetition without synthesis.",
-    "judge_reasoning": "Deduction under 1.3.A.a: across all 10 turns the tutor never articulates a learning rationale for its constraints — Turn 4's refusal is a boundary statement, not a pedagogical explanation. Deduction under 1.2.B.a: in Turns 2 and 6 the tutor responds to expressed confusion with immediate content delivery rather than diagnostic questioning, missing the opportunity to identify what the student already understands. Deduction under 2.1.A.a (full 4 points): Turns 2–7 show the student cycling on the same uncertainty (wanting a model/example) while the tutor repeats the same redirect pattern without reframing, consolidating, or switching approach; this is clear pattern-level repetition without synthesis. No deductions apply to 1.1 (the tutor never gives submission-ready content), 2.2 (no assignment misunderstanding or off-topic drift), or 3.1/3.2 (responses are concise and tone is appropriate throughout).",
-    "total_score": 35,
-    "max_score": 44,
+    "total_base_score": 33,
+    "max_base_score": 42,
+    "overview": "The tutor maintained strong Socratic discipline throughout, consistently refusing to do the assignment for the student and pushing the student to generate their own examples and reasoning. No near-submission-ready content was provided. The main weaknesses are: (1) a recurring spiral in turns 2–7 where the student kept requesting a model and the tutor kept responding with similar framework lists without meaningfully reframing or consolidating, triggering the redundancy deduction; (2) insufficient diagnostic questioning before launching into explanations when the student expressed broad confusion; and (3) the tutoring rationale was never clearly articulated beyond a brief dismissal in turn 4. Communication was generally concise and tone was appropriate throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points under 1.2.B.a because in turns 2–3 the tutor responded to broad student confusion with structured content dumps rather than first diagnosing what the student already understood. 1.3 loses 2 points under 1.3.A.a because the tutor never articulated a clear pedagogical rationale for its constraints—turn 4's refusal is framed as a policy statement, not a learning rationale. 2.1 loses all 4 points under 2.1.A.a because the student circled the same request for a model across six turns and the tutor's responses were structurally similar each time (new framework list, new prompt), without synthesis, reframing, or a meaningful strategy shift to break the loop. 2.2, 3.1, and 3.2 have no deductions: the tutor stayed on-task, kept responses reasonably concise, and maintained a supportive but firm tone throughout.",
+    "total_score": 33,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

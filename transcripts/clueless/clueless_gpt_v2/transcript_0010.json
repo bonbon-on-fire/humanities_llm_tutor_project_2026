@@ -72,81 +72,110 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor directly explained how each required category connects to climate vulnerability/capacity instead of first eliciting the student's own interpretation, taking over a key reasoning step.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The tutor diagnosed the student's confusion too narrowly as only a unit-of-analysis problem ('You're not confused about all of it') and responded on that basis, but the student immediately indicated broader confusion about multiple categories and data availability.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
           },
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor gave useful task explanations and process advice, but never explicitly stated a tutoring-rationale for its constraints or questioning approach in terms of learning, retention, or skill-building.",
+                "reason": "The tutor used guided constraints and repeatedly redirected the student, but never explicitly explained that this approach was meant to support the student's own reasoning or long-term learning.",
                 "points": 2
               }
             ],
-            "score": 2
+            "score": 2,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 11,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           },
           "2.2": {
             "deductions": [],
-            "score": 8
+            "score": 8,
+            "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           },
           "3.2": {
             "deductions": [
               {
                 "evidence_turns": [
-                  4,
-                  6,
+                  5,
                   9,
                   10
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Several replies used rigid or sharp phrasing such as 'That is obvious,' 'Fine,' 'You’re not confused about all of it,' and 'You’re looping,' which risks making the interaction feel cold rather than supportive.",
+                "reason": "Several responses were phrased in a rigid or mildly dismissive way ('needless spiral,' 'You're not confused about all of it,' 'You're looping'), which could discourage participation even though the tutor remained broadly task-focused.",
                 "points": 2
               }
             ],
-            "score": 2
+            "score": 2,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 29,
     "max_base_score": 46,
-    "overview": "The tutor stayed anchored to the assignment, did not provide submission-ready output, and generally scaffolded the student toward a workable process for completing the data table. The main weaknesses were tone and the lack of an explicit explanation of why the tutor was using its guided approach. Some explanation-heavy turns were borderline directive, but the evidence was not strong enough to deduct under the direct-work criteria.",
-    "judge_reasoning": "I deducted under 1.3.A.a because the tutor never clearly explained the learning rationale for its constraints or questioning, even though it did give task and method guidance. I deducted under 3.2.A.a because multiple turns used blunt language that could undermine trust and make the student feel scolded rather than supported. I did not deduct for direct-answer behavior because the tutor did not produce finished table content or polished assignment text, and its help stayed at the level of framing, workflow, and source-selection process. I also kept full credit for dialogue quality because the tutor repeatedly re-anchored the student to the actual task and redirected confusion back to assignment-relevant issues like scope, sourcing, and unit consistency.",
-    "total_score": 38,
+    "overview": "The tutor stayed anchored to the assignment, avoided giving submission-ready city data, and generally moved the student toward a workable process. Main deductions come from taking over some interpretive reasoning about the categories, misdiagnosing the student's confusion late in the conversation, and using language that occasionally sounded brusque. I did not deduct for redundancy or assignment drift because the tutor did keep reframing the task and redirecting back to the prompt, and I left 3.1 undeducted because the longer explanations were usually structured and responsive to the student's requests for a broader walkthrough.",
+    "judge_reasoning": "The strongest issue was pedagogy: in Turn 3 the tutor directly supplied the conceptual meaning of each category instead of first drawing that reasoning from the student, which fits 1.1.C.b. Under scaffolding, Turn 9 shows an overly narrow diagnosis of the student's difficulty, and Turn 10 confirms the student had additional confusion beyond unit-of-analysis, supporting 1.2.B.a. The tutor also never explained why their questioning/constraints were being used, so 1.3.A.a applies. Communication was mostly clear, but repeated phrases like 'needless spiral' and 'You're looping' justify a tone deduction under 3.2.A.a.",
+    "total_score": 29,
     "max_score": 46,
     "model": {
       "provider": "openai",

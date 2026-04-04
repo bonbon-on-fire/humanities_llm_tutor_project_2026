@@ -72,42 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—there is no moment where the tutor articulates that this Socratic approach supports learning, retention, or skill development. The rationale for the tutoring constraints is never stated.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 6, the student says they are 'fuzzy on Blood' and not confident about classifying Fuel. Rather than asking a diagnostic question to find out what specifically the student doesn't understand about Blood or Fuel, the tutor immediately provides a ready-made test ('does the plan succeed because that person is killed, or would the plan still succeed if, somehow, they were not killed?'). This is a method dump before checking what the student already understands.",
-            "points": 3
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 21,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 41,
-    "max_base_score": 44,
-    "overview": "The tutor conducted a well-structured Socratic dialogue throughout the conversation, consistently prompting the student to generate their own ideas, test principles, and build toward a thesis. The student did the key reasoning work at each step. One minor deduction was applied in 1.2.B for providing a ready-made means/side-effect test in Turn 6 without first diagnosing what specifically confused the student about Blood or Fuel. No other significant rubric violations were found. The tutor maintained appropriate tone, kept responses concise, stayed anchored to the assignment, and avoided giving submission-ready content.",
-    "judge_reasoning": "The tutor consistently used Socratic questioning and avoided giving direct answers or submission-ready content, earning full marks on 1.1. The student generated the key distinctions (means vs. side effect, rights-based principle) independently. A 3-point deduction under 1.2.B is warranted because in Turn 6, when the student expressed confusion about Blood and uncertainty about Fuel, the tutor immediately supplied a diagnostic test rather than first asking what the student already understood about those cases. No deductions apply to 1.3 because the tutor explicitly declined to write the thesis (Turn 8) and provided process-level feedback throughout. Dialogue quality and communication quality were strong: responses were concise, on-topic, and supportive throughout.",
-    "total_score": 41,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently used Socratic questioning, kept key idea generation student-led, built on student progress across turns, maintained appropriate tone, and kept responses concise and focused. The only clear deduction is for failing to explain the rationale for its tutoring approach at any point in the conversation (1.3.A.a). There is a borderline question about 1.3.B (method-level feedback), but the tutor did provide some process guidance (e.g., the means/side-effect test in Turn 6, the thesis structure prompt in Turn 8, and the body-point check in Turn 10), so no deduction is applied there.",
+    "judge_reasoning": "The tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate conclusions before confirming them—so no deductions apply under 1.1. Scaffolding was strong: the tutor built on each student response and moved the conversation forward without restarting. The sole clear deduction is under 1.3.A.a: across all ten turns, the tutor never explained why it was guiding rather than answering directly, missing an opportunity to articulate the pedagogical rationale. Method-level feedback was present (the means/side-effect test, thesis structure guidance, body-point review), so 1.3.B is not penalized. Dialogue quality and communication quality were both strong, with no redundancy, no off-topic drift, and consistently bite-sized, well-toned responses.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

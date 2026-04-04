@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,20 +87,31 @@
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently used guided questioning and constraints, but did not explicitly explain at any point why this tutoring approach was being used to support the student's learning, retention, or independent reasoning.",
+                "reason": "The tutor consistently used a guided approach, but never explicitly explained why they were withholding direct answers or why the question-driven method would support the student's learning or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from initial uncertainty about what belongs in the 'location' category to a precise, source-checkable entry, the tutor affirmed the result and moved on without prompting reflection on what changed in the student's thinking or why the revision worked.",
                 "points": 2
               }
             ],
-            "score": 4,
+            "score": 2,
             "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -116,13 +123,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -134,14 +141,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly within a Socratic, assignment-anchored coaching mode: they avoided giving submission-ready content, kept the student's idea generation central, and used short, targeted prompts tied to the table categories and source quality. The only clear rubric deduction is that the tutor never explicitly stated why this constrained, question-driven approach was pedagogically useful.",
-    "judge_reasoning": "Under 1.1, no deduction is supported because the tutor did not provide a finished table entry or do the student's core work; instead, they repeatedly asked the student to propose and refine content (Turns 1-10). Under 1.2, the tutor built on correct student progress and diagnosed uncertainty before advising, especially around location framing, source hierarchy, and geographic-unit consistency. The main deduction is 1.3.A.a: although the tutor used good scaffolding, they never explicitly explained the rationale for these tutoring constraints in terms of learning or skill-building. Dialogue and communication remained concise, supportive, and well anchored to the assignment throughout.",
-    "total_score": 42,
+    "overview": "The tutor stayed highly assignment-focused, used strong guided questioning, and avoided doing the student's work. Deductions are limited to missing explicit meta-rationale for the tutoring constraints and missing a reflection prompt after the student's improvement.",
+    "judge_reasoning": "The tutor performed well on core pedagogy: they kept idea generation student-led, scaffolded the task category by category, and repeatedly redirected the student toward sourcing, geographic-unit consistency, and table structure without providing submission-ready text. Dialogue quality was strong because the exchange stayed tightly anchored to the assignment and progressed without repetitive spiraling. Communication was also concise, clear, and supportive throughout. The main weaknesses were in meta-learning: the tutor never explicitly explained why the guided, non-answer-giving approach was being used, and after the student successfully refined the 'location' entry, the tutor did not ask the student to reflect on what changed in their method.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

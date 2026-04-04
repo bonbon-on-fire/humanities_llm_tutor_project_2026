@@ -72,43 +72,107 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't do the work for the student in terms of learning rationale—it simply refuses repeatedly without articulating how active engagement supports retention or skill development. A brief statement like 'doing this yourself builds the research skills the course is designed to develop' is absent throughout.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In Turn 10, the student produces a defensible ethnicity row entry after struggling throughout the conversation. The tutor moves directly to a follow-up probing question without pausing to acknowledge what changed in the student's approach or prompting reflection on why that formulation works.",
-            "points": 2
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 5, when the student shifted to asking for source links and search terms, the tutor immediately provided a detailed list of exact search phrases without first diagnosing what the student already knew or had tried. The tutor jumped to a method dump rather than asking diagnostic questions about the student's prior search attempts.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is refusing to do the work for the student in terms of learning rationale. It simply says 'that's not my role' or 'no' without ever articulating that the reason is to support active learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "By Turn 10, the student has made genuine progress—formulating a defensible ethnicity row note on their own. The tutor does not pause to prompt reflection on what changed in the student's approach or reinforce the method choices that led to this improvement.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 44,
-    "overview": "The tutor consistently refused to complete the assignment for the student and maintained a Socratic, student-led approach throughout. Responses were concise, well-anchored to the assignment, and appropriately supportive given the student's resistant tone. Two deductions apply: the tutor never articulated a learning rationale for its constraints (1.3.A.a), and missed a reflection opportunity after the student's successful Turn 10 formulation (1.3.C.a). No evidence of direct answer-giving, off-topic drift, or tone problems.",
-    "judge_reasoning": "1.1 is fully intact: the tutor never provided table entries, always redirected to sources and student reasoning, and kept key idea generation student-led. 1.2 is fully intact: the tutor built on student progress (e.g., acknowledging the year-in-parentheses idea in Turn 8) and asked diagnostic questions before elaborating. 1.3 loses 4 points: the tutor's refusals are never framed in terms of learning benefit (1.3.A.a), and after the student's successful ethnicity formulation in Turn 10 the tutor probes further without reflecting on what the student did well or why the approach worked (1.3.C.a). Dialogue quality is strong—no repetition without progress, no assignment drift, and the scope clarification in Turn 3 re-anchored the task appropriately. Communication quality is strong—responses are short, interactive, and consistently supportive despite the student's dismissive tone.",
-    "total_score": 40,
+    "overview": "The tutor consistently refused to complete the assignment for the student and maintained a Socratic stance throughout, which is commendable. The main weaknesses are: (1) a missed diagnostic step in Turn 5 where the tutor provided a detailed list of search terms without first checking what the student had already tried; (2) the tutor never articulated a learning rationale for its constraints across the entire conversation, only citing role boundaries; and (3) the tutor missed an opportunity to prompt reflection after the student's genuine improvement in Turn 10. Dialogue quality and communication quality were strong throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, never rewrote student text, and consistently kept idea generation student-led by asking questions rather than providing conclusions. 1.2 loses 3 points under 1.2.B.a because in Turn 5 the tutor provided a full list of exact search phrases without any diagnostic questioning about what the student had already attempted. 1.3 loses 2 points under 1.3.A.a because the tutor never explained the pedagogical rationale for its refusals—only citing role constraints—and 2 points under 1.3.C.a because after the student's genuine improvement in Turn 10, the tutor did not prompt reflection on what changed in their thinking. Dialogue and communication quality are both strong, with no evidence of repetition without progress, off-topic drift, monologue-style responses, or inappropriate tone.",
+    "total_score": 37,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

@@ -72,43 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The tutoring constraints are enforced but never justified to the student.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "In Turn 9-10, the student successfully identifies the 'missing' category after earlier uncertainty. The tutor confirms the answer and moves on to integration without prompting any reflection on what changed in the student's thinking or why the evidence-based approach worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully articulated a defensible 'missing' category in Turn 9 and produced a strong draft in Turn 10, the tutor moved forward without prompting any reflection on what changed in the student's thinking or what made the reasoning work. The tutor acknowledged the draft was strong but immediately pivoted to the next task rather than reinforcing the method choices that led to improvement.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 22,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 42,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates strong Socratic method throughout, consistently refusing to give answers and instead prompting the student to reason through each step. Scaffolding is well-executed, building from broad to specific across all ten turns. The main weaknesses are the absence of any explicit rationale for the tutoring approach and a missed opportunity to prompt reflection after the student successfully resolved the 'missing' category. No direct answer-giving, rewriting, or off-topic drift was observed.",
-    "judge_reasoning": "The tutor earns full marks on 1.1 (no direct answers, no rewriting, student leads key idea generation), 1.2 (builds on student progress each turn, diagnoses confusion before responding), 2.1 (no repetitive spiraling), 2.2 (stays on task throughout), and all communication quality criteria. Two deductions apply under 1.3: the tutor never explains why it uses guided questioning rather than direct answers (1.3.A.a, -2 points), and after the student successfully identifies public housing residents as 'missing' following earlier uncertainty, the tutor moves straight to integration without prompting reflection on what changed in the student's reasoning process (1.3.C.a, -2 points). No other rubric criteria are triggered by the evidence in the transcript.",
-    "total_score": 40,
+    "overview": "The tutor performed very well overall, consistently using Socratic questioning, scaffolding student reasoning turn by turn, and keeping idea generation student-led throughout. The student was never given ready-made answers; instead, the tutor prompted comparisons, evidence checks, and self-justification at each step. The only clear deduction is for 1.3.C.a: after the student improved from vague guesses to a well-reasoned draft, the tutor did not pause to prompt reflection on what changed in the student's thinking or why the approach worked. All other criteria were met cleanly.",
+    "judge_reasoning": "Criterion 1.1 is fully intact: the tutor never provided submission-ready content, never rewrote student text, and never revealed conclusions before the student reasoned toward them. Criterion 1.2 is fully intact: the tutor consistently built on student progress (e.g., affirming 'defensible choice' in Turn 5 before advancing) and used diagnostic questions before addressing confusion. Criterion 1.3 loses 2 points under 1.3.C.a because after the student's successful draft in Turn 10, the tutor praised it and immediately moved to the next task without asking the student to reflect on what made their reasoning stronger compared to earlier turns. Dialogue quality and communication quality are both clean: the tutor maintained tight, focused exchanges, stayed on-assignment throughout, used concise language, and kept a consistently supportive and formative tone.",
+    "total_score": 42,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

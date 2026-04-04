@@ -72,55 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't write the answer for the student—it simply refuses repeatedly without articulating the pedagogical rationale (e.g., active reasoning builds retention, skill development, long-term learning). A single clear explanation of why the student doing the work matters for learning was never provided.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it refuses to write the answer for the student—i.e., it never articulates that the refusal is to support active reasoning, retention, or long-term skill development. It simply says 'No' or 'I can't write it for you' without once providing a rationale grounded in learning theory or pedagogical purpose.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              9
-            ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor cycles through the same refusal pattern across nearly every turn without meaningfully synthesizing or advancing the dialogue structure. Each time the student asks for a written answer, the tutor says 'No' and re-prompts with a slightly different question, but never reframes the interaction, consolidates what has been built, or shifts strategy when the student remains stuck in the same loop. This repetitive pattern persists for most of the conversation without synthesis.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 38,
-    "max_base_score": 44,
-    "overview": "The tutor consistently refused to do the assignment for the student and successfully guided the student to produce a substantive draft through Socratic questioning. Key strengths include maintaining appropriate boundaries, building on student responses, and keeping the student's reasoning student-led throughout. The main weaknesses are: (1) the tutor never explained the pedagogical rationale for its constraints, and (2) the refusal-and-re-prompt pattern became repetitive without meaningful reframing or synthesis across turns, triggering the redundancy deduction. The 2.1 deduction is the most significant: while the student did eventually produce work, the tutor's strategy did not visibly evolve across the many turns where the student kept asking for written answers.",
-    "judge_reasoning": "Under 1.1, no deductions apply: the tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming them. Under 1.2, the tutor built on each student contribution (e.g., affirming the side-effect/means distinction and asking the student to test it), so no scaffolding deduction applies. Under 1.3, the tutor never articulated why the student must do the writing themselves in terms of learning benefit, triggering the 1.3.A.a deduction of 2 points; method-level feedback was present (e.g., Turn 8 identifying what was missing and why), so 1.3.B is not penalized. Under 2.1, the tutor repeated the same 'No + re-prompt' structure across at least eight turns without switching to summary, reframing, or a different strategy, warranting the full 4-point deduction. Under 2.2, the student's off-topic requests (write it for me) were promptly redirected each time, so no deduction applies. Under 3.1 and 3.2, responses were concise, tone was firm but not dismissive, and no grading language was used.",
-    "total_score": 38,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall: it consistently refused to do the student's work, used Socratic questioning to guide the student step-by-step, built on each student contribution, maintained a supportive but firm tone, and kept responses concise and focused. The only clear deduction is for failing to explain the pedagogical rationale behind its refusals at any point in the conversation (1.3.A.a). The tutor also provided some process-level feedback in Turn 8 (identifying what was missing and why), which avoids a 1.3.B deduction. No other rubric criteria were triggered.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming them—full marks. 1.2: The tutor built on each student response (e.g., 'Good—that's the key tension,' Turn 2; 'This is a good draft,' Turn 8) and asked diagnostic questions before elaborating—full marks. 1.3: The tutor's process feedback in Turn 8 was specific and actionable (identifying missing application to Fuel/Blood and the need to defend the means/side-effect distinction), so 1.3.B is not triggered. However, across all 10 turns the tutor never once explained why it was refusing to write the answer—no mention of learning, retention, or skill development—triggering 1.3.A.a for 2 points. 2.1 and 2.2: No repetitive spiraling, no assignment misunderstanding left uncorrected, no off-topic drift—full marks. 3.1 and 3.2: Responses were consistently bite-sized and interactive; tone was firm but supportive and never evaluative in a grading sense—full marks.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

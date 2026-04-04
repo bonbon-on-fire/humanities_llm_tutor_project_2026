@@ -72,32 +72,87 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The tutoring constraints are enforced but never justified to the student.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improves from vague actor listing (Turn 3) to a sharper distinction (Turn 5), and again after the rough summary in Turn 8 is validated as strong, the tutor moves forward without prompting the student to reflect on what changed in their thinking or why the improved framing worked better.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—there is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The tutoring rationale is implicit at best.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully sharpens the developer distinction (Turn 9–10) following earlier vagueness, the tutor does not prompt reflection on what changed in the student's thinking or why the revised framing worked better. It moves directly to the next task.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +161,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performs well overall, maintaining a Socratic approach throughout, keeping responses concise, anchoring to the assignment, and guiding the student to progressively sharper distinctions. The main gaps are the absence of any explicit rationale for the tutoring method and a missed opportunity to prompt process reflection after the student's notable improvements.",
-    "judge_reasoning": "No deductions apply to 1.1 (the tutor never gives submission-ready content, never rewrites student text, and consistently asks the student to generate key ideas before confirming them) or 1.2 (the tutor builds on each student contribution and does not diagnose incorrectly). Deductions are taken under 1.3.A.a because the tutor never explains why it is guiding rather than answering, and under 1.3.C.a because after clear student improvement (e.g., Turn 5 sharpening the developer distinction, Turn 8 producing a strong three-part summary) the tutor advances without asking the student to reflect on what changed in their reasoning. Dialogue quality is fully intact: no spiraling, no assignment drift, no off-topic engagement. Communication quality is fully intact: responses are consistently bite-sized, precise, and supportive without implying formal grading.",
+    "overview": "The tutor performed very well overall. It consistently used Socratic questioning, kept key idea generation student-led, scaffolded progression logically, maintained appropriate tone, and stayed tightly anchored to the assignment. The two deductions are for (1) never explicitly articulating the rationale for its guided-discovery approach, and (2) missing a reflection prompt after the student successfully improved the developer framing. No evidence supports deductions in pedagogy 1.1 or 1.2, dialogue quality, or communication quality.",
+    "judge_reasoning": "1.1: The tutor never gave near-submission-ready output, never rewrote student text, and consistently let the student generate key ideas before confirming or redirecting—no deductions warranted. 1.2: The tutor built on each student contribution and used diagnostic questions before elaborating—no deductions warranted. 1.3: The tutoring rationale (why guided discovery rather than direct answers) was never stated explicitly across all ten turns, triggering 1.3.A.a; and after the student's successful refinement of the developer distinction in turns 9–10, the tutor moved straight to the next task without prompting reflection on what changed, triggering 1.3.C.a. 1.3.B was not triggered because the tutor gave specific process-level feedback (e.g., 'your main weakness is vagueness, not direction'). Dialogue and communication quality were strong throughout—responses were concise, progressive, on-topic, and supportive.",
     "total_score": 40,
     "max_score": 44,
     "model": {

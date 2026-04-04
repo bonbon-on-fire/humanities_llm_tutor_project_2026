@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -90,36 +86,30 @@
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  3,
+                  8
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor consistently enforced boundaries against doing the assignment, but did not clearly explain at least once that these constraints support the student's learning process, retention, or independent skill-building. Statements such as needing source-based entries addressed assignment quality/integrity rather than the tutoring rationale for learning.",
+                "reason": "The tutor enforced boundaries against doing the assignment, but did not clearly explain at least once that this constraint supports the student's learning process, skill development, or retention; the rationale stayed focused on role limits and assignment quality.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  6,
-                  7,
-                  8
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "After the student remained resistant, the tutor repeated a very similar refusal-plus-search instruction pattern across multiple turns without substantially changing strategy, synthesizing, or reframing the interaction to break the loop.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4
           },
           "2.2": {
@@ -127,13 +117,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -144,26 +134,30 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
                   3,
-                  8
+                  7,
+                  9
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Several responses were rigid or admonishing rather than warmly supportive, including phrases like 'Stop trying to outsource the assignment,' 'your table will be sloppy,' and 'You're stuck in a shortcut loop,' which risk discouraging participation.",
+                "reason": "The tutor's phrasing becomes rigid and somewhat dismissive in places, such as 'Stop trying to outsource the assignment' and repeated blunt refusals, which risks harming rapport even though the tutor remains task-focused.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor maintained strong assignment boundaries and kept the interaction anchored to the actual task, avoiding direct completion of the student's table. Main deductions come from repetitive refusal patterns, a lack of explicit learning-oriented rationale for the tutoring constraints, and a somewhat harsh tone. Where evidence was borderline, I favored the smaller deduction and did not penalize scaffolding or direct-work criteria beyond what was clearly supported.",
-    "judge_reasoning": "The tutor did well on the core pedagogy requirement of not producing submission-ready work and repeatedly redirected the student toward source-based research steps. I deducted under 1.3.A because the tutor never clearly said that the refusal to provide answers was meant to strengthen the student's own reasoning or research skills. I deducted fully under 2.1 because turns 6-8 repeat nearly the same refusal-and-search move without a meaningful strategy shift. I also deducted under 3.2.A because multiple phrases were noticeably sharp or scolding, even though the tutor remained on-task and concise.",
-    "total_score": 34,
+    "overview": "The tutor consistently avoided providing submission-ready work and kept the conversation anchored to the actual assignment, offering a fast research path, source suggestions, and stepwise prompts. The main weaknesses were tone and the lack of an explicit learning-oriented rationale for the refusal policy. I considered a redundancy deduction because the tutor repeatedly refused direct-answer requests, but the tutor also varied tactics enough with narrowing questions, search targets, and templates that the evidence for spiraling was not strong enough for a deduction.",
+    "judge_reasoning": "The strongest performance was in 1.1 and 2.2: the tutor never supplied the filled table or final entries, and repeatedly redirected the student back to choosing a city unit, finding official sources, and extracting one field at a time. Scaffolding was adequate because the tutor progressively narrowed the task and provided concrete search targets, page suggestions, and a citation template. I deducted under 1.3.A because the tutor did not clearly explain that the boundary against direct completion was for the student's learning, beyond role-based refusal and assignment-validity concerns. I also deducted under 3.2.A because several turns used sharp wording that could feel punitive or dismissive, even though the tutor remained academically appropriate and non-grading.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

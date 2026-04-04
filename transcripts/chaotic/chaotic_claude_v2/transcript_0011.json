@@ -72,55 +72,92 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't do the work for the student in terms of learning rationale—it only asserts its role ('I'm your tutor, not your assistant'). There is no moment where the tutor explains that active reasoning, retention, or skill development is the reason for the constraints.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 5, when the student asks which source type to use, the tutor jumps straight into a ranked list of source types without first diagnosing what the student already knows about source evaluation. Similarly in Turn 6, the tutor gives a direct methodological answer without checking what the student already understands about geographic units.",
-            "points": 3
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed panic and confusion about sources, the tutor jumped directly to prescribing exact search queries and a workflow rather than first diagnosing what the student already understood or had tried. The tutor did not ask diagnostic questions before providing the structured method.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced its tutoring constraints (refusing to fill in values, refusing to write entries) but never explicitly explained why this approach supports the student's learning, retention, or skill development. The rationale given was always role-based ('I'm your tutor, not your assistant') rather than learning-outcome-based.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 17,
           "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "Turns 1–4 show the tutor cycling through the same refusal pattern ('I won't do this for you') without meaningfully advancing the student's understanding or shifting strategy. The student remains stuck and panicked, and the tutor repeats the same structural move (refuse + give a fast-path tip) without consolidating or reframing to break the impasse.",
-            "points": 4
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
-          "score": 8,
+          "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "sub_criterion_id": "3.2.B.b",
-            "reason": "In Turn 8, the tutor says 'Accurate enough if your sources really use that unit consistently'—this sounds like a near-evaluative judgment without clarifying it is formative coaching rather than official assessment. The phrasing could be read as a grade-like stamp of approval.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 31,
+    "total_base_score": 37,
     "max_base_score": 42,
-    "overview": "The tutor consistently refused to do the assignment for the student and maintained appropriate boundaries throughout, avoiding near-submission-ready output. However, the tutor never explained the pedagogical rationale for its constraints, missing an opportunity to build meta-learning. The early turns (1–4) showed repetitive refusal-plus-tip cycling without meaningful strategy shift when the student remained stuck, triggering a redundancy deduction. Some diagnostic questioning was skipped in favor of direct method guidance. Tone was generally supportive but one evaluative phrasing in Turn 8 risked sounding like formal assessment.",
-    "judge_reasoning": "1.1 is fully intact: the tutor never gave submission-ready content, never rewrote student text, and consistently kept idea generation student-led. 1.2 loses 3 points because in Turns 5–6 the tutor provided direct source-type guidance and geographic-unit framing without first probing what the student already understood, skipping diagnostic questioning. 1.3 loses 2 points because the tutor never articulated why it was withholding direct answers in terms of learning benefit—only asserting role boundaries. 2.1 loses 4 points because Turns 1–4 repeat the same refuse-and-redirect pattern without synthesis, reframing, or strategy shift despite the student remaining stuck. 3.2 loses 2 points for one instance of evaluative-sounding phrasing ('Accurate enough') without formative framing clarification.",
-    "total_score": 31,
+    "overview": "The tutor performed strongly overall, consistently refusing to do the assignment for the student, maintaining appropriate boundaries, and guiding the student through a productive process of source selection, jurisdiction consistency, and data integrity. No submission-ready content was provided. The main deductions are for (1) skipping diagnostic questioning when the student was confused and panicking, jumping instead to prescriptive search instructions, and (2) never articulating a learning-rationale for the tutoring constraints beyond role identity. Dialogue quality and communication quality were both strong throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided submission-ready values, never rewrote student text, and consistently kept key idea generation student-led by asking the student to draft labels, choose jurisdictions, and find sources. 1.2 loses 3 points under 1.2.B.a: in turns 3-4, when the student was clearly panicking and stuck, the tutor immediately prescribed exact search queries and a workflow without first asking diagnostic questions to understand what the student had already tried or where the confusion originated. 1.3 loses 2 points under 1.3.A.a: across all 10 turns the tutor justified its constraints only by appealing to its role ('I'm your tutor, not your assistant'), never once explaining that the approach builds skills, improves retention, or serves the student's long-term learning. Sections 2 and 3 are fully intact: the tutor advanced the conversation progressively without repetition, kept the student anchored to the assignment, used concise responses, and maintained a firm but non-punitive tone throughout.",
+    "total_score": 37,
     "max_score": 42,
     "model": {
       "provider": "anthropic",

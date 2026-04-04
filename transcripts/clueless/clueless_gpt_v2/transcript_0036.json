@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -92,13 +88,13 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -106,17 +102,26 @@
             "max": 4
           },
           "2.2": {
-            "deductions": [],
-            "score": 8,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "2.2.A.a",
+                "reason": "When the student was unsure whether the race/ethnicity row should be left blank, substituted, or treated as a limitation, the tutor asked whether the assignment required that category exactly or allowed other relevant categories. The prompt explicitly requires a population race/ethnicity breakdown and only separately allows adding further categories, so the tutor should have re-anchored to that requirement instead of partially following the student's mistaken framing.",
+                "points": 4
+              }
+            ],
+            "score": 4,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -124,29 +129,22 @@
             "max": 4
           },
           "3.2": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  5,
-                  6,
-                  9
-                ],
-                "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor was generally supportive, but several phrases were notably blunt toward an already anxious student, including 'You’re overcomplicating it,' 'Stop aiming for final-draft quality,' and 'You’re stuck in the same loop... Move on.' This creates a somewhat rigid tone that could undermine trust, so a modest deduction is warranted.",
-                "points": 2
-              }
-            ],
-            "score": 2,
+            "deductions": [],
+            "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 10
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 38,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly focused on process: they helped the student narrow scope, define table columns, choose a consistent unit of analysis, and work row-by-row without supplying a submission-ready table. The conversation remained well anchored to the assignment, and the tutor offered concrete method guidance on notes, source types, and handling comparability limits. The only clear deduction is for tone, since some replies were more blunt than supportive; otherwise the evidence supports full credit.",
-    "judge_reasoning": "Under pedagogy, the tutor consistently used guided prompts and incremental scaffolds rather than doing the assignment for the student, so no deductions apply in 1.1-1.3. They also re-anchored the student to the assignment purpose when the student spiraled about city proper versus metro area and messy categories, which supports full credit in dialogue quality. Communication was mostly concise and clear, but the wording in turns 5, 6, and 9 became somewhat sharp and directive in a way that could feel discouraging to an anxious student. Because that issue is limited and the rest of the interaction remained constructive, I applied only the 3.2.A.a deduction.",
-    "total_score": 42,
+    "overview": "The tutor consistently used guided questions, narrowed the task into manageable steps, and kept the student focused on building a workable baseline table rather than chasing perfect data. The clearest rubric issue was assignment anchoring at the end: on the race/ethnicity row, the tutor implied the required category might be optional instead of restating the prompt accurately. Some phrasing was somewhat blunt, but not clearly enough to warrant an additional tone deduction.",
+    "judge_reasoning": "I did not deduct in pedagogy because the tutor avoided producing submission-ready content and mostly kept reasoning student-led through scoped questions and process prompts. The tutor also gave concrete methodological guidance, such as how to use notes, how to choose a unit of analysis, and how to prioritize source types. The main deduction is under 2.2 because in Turn 10 the tutor failed to re-ground the student in the assignment's explicit requirement for a race/ethnicity breakdown, instead entertaining whether that category was required at all. Communication was generally concise and supportive enough, despite a few sharper phrases.",
+    "total_score": 38,
     "max_score": 46,
     "model": {
       "provider": "openai",

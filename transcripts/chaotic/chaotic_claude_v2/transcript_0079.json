@@ -72,42 +72,100 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed urgency and confusion about where to start, the tutor repeatedly jumped to giving search paths and structural guidance without first diagnosing what the student actually understood or had already attempted. The tutor did not ask diagnostic questions to assess the student's baseline before providing method guidance.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 5, the tutor provides exact search strings including site-specific queries (e.g., 'site:bps.go.id') that effectively pre-select the sources and narrow the research path for the student. While not giving numbers directly, this does the key reasoning step of identifying which sources to use and how to query them, rather than asking the student to reason about where to look.",
-            "points": 0
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explained why it was refusing to give answers or why the student doing the work themselves supports learning. The tutor simply said 'no' or 'my role is to help you produce it yourself' without ever articulating the pedagogical rationale (e.g., skill development, retention, academic integrity as a learning tool).",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor consistently refused to do the assignment for the student, maintained a Socratic stance throughout, and kept responses concise and focused. The one borderline moment is Turn 5, where the tutor provided very specific search strings including site-specific operators, which partially does the source-identification reasoning for the student. However, this is a close call given the time-pressure context and the fact that the tutor still required the student to retrieve and report the actual numbers. No deduction was applied because the search terms alone do not constitute doing the key reasoning step—they are scaffolding tools, not answers. All other criteria are met well.",
-    "judge_reasoning": "The tutor firmly declined to produce submission-ready content across all 10 turns, consistently redirecting the student to do their own work. Scaffolding was appropriate and progressive, building from source identification to format checking to value verification. The tutor explained its tutoring rationale early (Turn 1-2) and gave process-level feedback (e.g., Turn 7 noting 'bps' is too vague and the value too rounded). Responses were concise and interactive throughout. The only marginal concern is Turn 5's specific search strings, but these fall short of the threshold for a 1.1.C.b deduction since they guide method rather than supply answers or conclusions. No deductions are warranted under any criterion.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 37,
+    "max_base_score": 42,
+    "overview": "The tutor performed well overall, consistently refusing to do the assignment for the student and maintaining a firm but constructive stance throughout. The tutor kept responses concise, maintained appropriate tone, stayed on-task, and made meaningful progress with the student across turns. Two deductions were applied: one for failing to diagnose student confusion before jumping to guidance (1.2.B.a), and one for never explaining the pedagogical rationale behind the tutoring constraints (1.3.A.a). The 1.2.B.a deduction is somewhat borderline given the student's stated time pressure, but the tutor did not attempt any diagnostic questioning before providing search paths and structural templates.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never gave submission-ready content, never rewrote student text, and consistently kept key idea generation student-led by asking the student to find and verify their own data. 1.2 loses 3 points under 1.2.B.a because when the student was stuck and had opened nothing, the tutor immediately provided search terms and structural templates without first asking diagnostic questions to understand what the student already knew or had tried. 1.3 loses 2 points under 1.3.A.a because across all 10 turns the tutor never once explained why doing the work themselves benefits the student's learning—it only stated its role without rationale. Dialogue quality and communication quality are both strong: the tutor avoided repetition, stayed anchored to the assignment, kept responses short and actionable, and maintained a supportive but firm tone throughout.",
+    "total_score": 37,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

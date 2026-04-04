@@ -72,76 +72,121 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "Throughout the conversation, the student repeatedly signals confusion and the tutor responds by re-explaining concepts rather than diagnosing the root cause of the student's confusion. The tutor never asks diagnostic questions like 'what specifically is unclear?' or 'what have you tried so far?' before launching into explanations. By turn 7-10, the student is still stuck and the tutor continues the same pattern of re-explaining without probing what the student actually understands.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              10
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "Across multiple turns, the student repeatedly signals confusion and the tutor responds by re-explaining concepts rather than asking diagnostic questions to identify the specific source of the student's confusion. For example, when the student says they are 'still pretty lost on the full picture' (Turn 9) or 'missing the big-picture logic' (Turn 10), the tutor re-explains the framework rather than probing what specifically the student does or does not understand. The tutor never asks targeted diagnostic questions like 'What part of the stressor definition is unclear?' or 'Can you tell me what you think a stressor is in your own words?' to locate the precise confusion before responding.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student never successfully produces work in this conversation, so there is no success-after-failure moment to reflect on. However, the tutor also misses opportunities to prompt the student to reflect on what they do understand versus what remains unclear, particularly in turns 8-9 when the student correctly identifies 'extreme heat' as a stressor. The tutor acknowledges correctness but does not prompt reflection on why that reasoning worked.",
-            "points": 2
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through discovery rather than simply providing answers. There is no moment where the tutor says something like 'I'm asking you to try this yourself because working through it builds the reasoning skills you'll need for the rest of the course.' The tutor does refuse to fill in a row (Turn 7) but does not explain the pedagogical rationale for that refusal.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "The student never successfully produces a row or makes a clear improvement, so there is no success-after-failure moment to reflect on. However, in Turn 9 the student correctly identifies 'extreme heat' as a stressor, which is a small success. The tutor acknowledges it briefly but immediately moves on without prompting any reflection on what the student did right or why that reasoning worked.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "The tutor's feedback is largely structural/definitional rather than method-level. When the student says their notes are messy or they feel lost, the tutor re-explains the table structure rather than giving specific process feedback on how to approach research-to-table conversion or how to organize thinking. Feedback like 'you're dwelling on the format now' (turn 7) is directional but does not give actionable method guidance.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same stressor/sector/impact distinction across nearly every turn without meaningful synthesis or escalation. The student remains confused throughout, and the tutor repeatedly re-explains the same framework in slightly different words (Turns 2, 3, 8, 9, 10) without switching to a fundamentally different approach such as a worked analogy, a different entry point, or a direct acknowledgment that the current strategy is not working and a pivot to something new. The conversation spirals without progress.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "From turn 5 onward, the tutor cycles through the same conceptual explanations (stressor vs. sector vs. impact, table structure, row format) without meaningful synthesis or progression. The student remains stuck and the tutor repeats similar explanatory moves without reframing, simplifying further, or switching strategy. By turn 10, the tutor is essentially repeating the same 5-point table logic from turn 5 without advancement.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -150,8 +195,8 @@
     },
     "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor maintains a consistently supportive tone, avoids giving submission-ready answers, and correctly refuses to fill in table rows for the student. However, the conversation suffers from significant repetition without progression: the tutor re-explains the same stressor/sector/impact distinction and table structure across multiple turns without diagnosing why the student remains stuck. The tutor never asks targeted diagnostic questions to identify the root of the student's confusion, and method-level feedback is largely absent. The student never produces any work, and the tutor's strategy does not meaningfully evolve across 10 turns.",
-    "judge_reasoning": "1.1 loses 7 points: no direct answer or submission-ready content is given (no 1.1.A or 1.1.B deduction), but 1.2.B.a is triggered because the tutor consistently jumps to re-explanation without diagnostic questioning when the student is stuck, and 1.3.C.a and 1.3.B.b are triggered for missing reflection prompts and providing vague rather than method-specific feedback. 2.1.A.a is fully triggered because the tutor repeats the same conceptual loop (stressor/sector/impact, table structure) across turns 5-10 without synthesis, reframing, or strategy change, leaving the student in the same confused state at turn 10 as at turn 5. Communication quality is strong throughout: responses are concise, tone is warm and non-punitive, and no grading language is used.",
+    "overview": "The tutor avoids doing the assignment for the student and maintains appropriate tone and concise responses throughout. The primary weaknesses are: (1) a persistent spiral where the same stressor/sector/impact distinction is re-explained across nearly every turn without a meaningful pivot in strategy, (2) insufficient diagnostic questioning to locate the student's specific confusion before responding, (3) no explanation of the pedagogical rationale for guided discovery, and (4) a missed opportunity to prompt reflection when the student correctly identified 'extreme heat' as a stressor. The tutor's refusal to provide a completed row (Turn 7) is appropriate, but the overall pattern of re-explanation without escalation or reframing is the dominant weakness.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently asks the student to generate ideas before confirming them. 1.2 loses 3 points under 1.2.B.a because the tutor repeatedly responds to student confusion with re-explanation rather than diagnostic questioning to locate the specific gap. 1.3 loses 2 points under 1.3.A.a (no pedagogical rationale ever given) and 2 points under 1.3.C.a (the small success in Turn 9 is not used to prompt reflection). 2.1 loses all 4 points under 2.1.A.a because the tutor cycles through the same conceptual explanation across 9 turns without synthesizing, reframing, or switching strategy despite the student remaining stuck. 2.2, 3.1, and 3.2 are all at full marks: the tutor stays on-task, keeps responses concise, and maintains a supportive, non-grading tone throughout.",
     "total_score": 33,
     "max_score": 44,
     "model": {

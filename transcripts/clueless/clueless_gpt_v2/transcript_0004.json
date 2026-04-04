@@ -72,20 +72,17 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 14,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [
               {
                 "evidence_turns": [
+                  4,
                   5,
                   9
                 ],
-                "sub_criterion_id": "1.1.C.a",
-                "reason": "The tutor introduced the central candidate distinction and answer path—death as a means versus a foreseen side effect—before the student independently derived it, then explained why that distinction matters. This gives away a key idea the student was supposed to work toward.",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor supplied the central means-versus-side-effect distinction and explained its moral significance before the student had independently derived that argumentative bridge, so a key reasoning step was done for the student.",
                 "points": 6
               }
             ],
@@ -93,28 +90,43 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they were stuck and later admitted they might not even remember the Blood case, the tutor moved into explaining distinctions instead of first diagnosing whether the confusion was about case facts, theory, or terminology.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  10
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor maintained a student-led approach and resisted giving the full explanation, but never explicitly stated why this constraint was pedagogically useful for the student's learning or reasoning development.",
+                "reason": "The tutor consistently used guided discovery and withheld fuller answers, but never explicitly explained why that tutoring constraint would help the student's learning or long-term reasoning.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 11,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -126,13 +138,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -144,14 +156,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 31,
     "max_base_score": 46,
-    "overview": "The tutor stayed interactive, on-task, and supportive, with concise prompts and reasonable scaffolding. The main pedagogical weakness was supplying the core means-versus-side-effect distinction before the student generated it, which narrowed student-led idea formation on the assignment's central philosophical issue. I did not deduct for dialogue flow or clarity because the tutor re-focused the student productively and kept the exchange anchored to the assignment.",
-    "judge_reasoning": "I deducted 6 under 1.1 because the tutor gave away the central candidate principle for the paper—treating one person's death as a means versus a side effect—before the student independently reasoned to it. I deducted 2 under 1.3.A because, although the tutor withheld full-answer help, they never explained why this student-led approach supports learning. I did not deduct elsewhere because the tutor generally built on the student's responses, avoided off-topic drift, and maintained a clear, formative, non-grading tone throughout. The conversation shows solid tutoring habits overall, but the biggest loss is from revealing the key interpretive path too early.",
-    "total_score": 34,
+    "overview": "The tutor remained well anchored to the assignment, kept responses concise, and generally scaffolded the discussion in manageable steps. The main weakness was that the tutor introduced the core moral distinction and its significance rather than eliciting more of that reasoning from the student. There was also some uncertainty about whether the student's confusion was conceptual or simply about remembering the cases; where ambiguous, deductions were kept modest.",
+    "judge_reasoning": "The tutor did a solid job keeping the conversation on task and avoiding direct submission-ready writing, so dialogue quality and communication quality remain strong. The largest deduction is under 1.1 because the tutor introduced the means-versus-side-effect framework and explained why it matters, especially in Turns 4, 5, and 9, which performs a central reasoning step for the student. A further deduction applies under 1.2 because the tutor often answered with explanation before fully diagnosing whether the student's difficulty was with theory or with recalling the cases, which becomes clear by Turn 6. Finally, the tutor never explicitly stated why the guided, non-answer-giving approach supports learning, so 1.3.A is deducted.",
+    "total_score": 31,
     "max_score": 46,
     "model": {
       "provider": "openai",

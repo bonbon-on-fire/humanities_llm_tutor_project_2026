@@ -72,43 +72,55 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              3
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 3, the tutor provides a broad overview of Jakarta's climate situation unprompted—'Jakarta is a dense coastal megacity with major climate stress: flooding risk, heat, heavy rainfall, sea-level pressure...'—before the student has attempted to derive this themselves. The tutor then maps this directly onto the table categories, doing the interpretive bridging work for the student rather than asking the student to make those connections first.",
-            "points": 6
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 6,
+            "deductions": [],
+            "score": 12,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is withholding direct answers or why the Socratic approach supports the student's learning. It enforces constraints (e.g., 'I won't build the table for you') but never articulates the pedagogical rationale—such as active reasoning, retention, or skill development—at any point in the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -119,13 +131,14 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
+            "deductions": [],
             "score": 4,
             "max": 4
           }
@@ -136,12 +149,12 @@
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor performed well overall: responses were concise, consistently redirected off-task requests, maintained a supportive tone, and used Socratic questioning effectively across most turns. The primary deduction is for Turn 3, where the tutor proactively supplied Jakarta's climate overview and mapped it onto table categories before the student had attempted to reason through it—a clear instance of 1.1.C.b. No other rubric violations were clearly triggered; the tutor's source-type guidance in Turn 8 is borderline but stops short of giving actual data.",
-    "judge_reasoning": "The single deduction of 6 points under 1.1.C.b is warranted because in Turn 3 the tutor stated the key interpretive framing ('dense coastal megacity with major climate stress: flooding, heat...') and then directly connected it to the table categories, doing the conceptual bridging work the student should have done. This is the tutor revealing the end answer path before the student tries to derive it. No 1.1.A or 1.1.B violations were found: the tutor consistently refused to fill in actual data values and declined to build the table. Scaffolding (1.2) was strong—the tutor built on student progress (e.g., affirming the bucket-sorting in Turn 5) and used diagnostic questions before redirecting. Meta-learning (1.3) was adequate: the tutor explained its tutoring rationale in Turn 7 ('My role is to help you build it yourself') and gave process-level feedback throughout. Dialogue and communication quality were both clean.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed well overall, consistently refusing to do the student's work, using Socratic questioning, scaffolding effectively, and maintaining a supportive tone. The one clear deduction is for never explaining the pedagogical rationale behind its tutoring constraints. No other rubric criteria were clearly triggered.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently kept key idea generation student-led by asking guiding questions rather than stating conclusions first. Full marks. 1.2: The tutor built on student progress (e.g., affirming the correct bucket-sorting in Turn 5) and used diagnostic questioning before responding to confusion. Full marks. 1.3: The tutor enforced constraints (e.g., 'I won't build the table for you') but never once explained why this approach benefits the student's learning—no mention of active reasoning, retention, or skill development—triggering a 2-point deduction under 1.3.A.a. Method-level feedback was present (e.g., advising consistency in geographic unit choice), so 1.3.B is not triggered. 2.1 and 2.2: No significant repetition without progress, no assignment misunderstanding left uncorrected, and off-topic drift was promptly redirected. 3.1 and 3.2: Responses were concise and interactive; tone was supportive and non-evaluative throughout.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,39 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is withholding direct answers or why the Socratic approach supports learning. In Turn 3 the tutor says 'No—I'm your tutor, not your substitute' but gives no rationale about retention, skill development, or active reasoning. This is a constraint enforcement without pedagogical explanation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—there is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development. The tutor enforces constraints (e.g., Turn 3: 'No—I'm your tutor, not your substitute') but does not explain the pedagogical rationale behind doing so.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performs very well overall, consistently using Socratic questioning, scaffolding the student's reasoning step by step, and avoiding giving away answers. The student is guided from vague confusion to a defensible general principle entirely through their own reasoning. The only clear deduction is the absence of any explicit rationale for the tutoring approach—the tutor enforces constraints (Turn 3) without explaining why this benefits the student's learning. All other criteria are met: no submission-ready content is produced, no rewriting occurs, key ideas remain student-generated, scaffolding builds on student progress, dialogue stays on-task, responses are appropriately concise, and tone is supportive throughout.",
-    "judge_reasoning": "Criterion 1.1: The tutor never provides near-submission-ready output, never rewrites student text, and never states the key conclusion before the student derives it. The student generates the core claim (Turn 9) and the general rule (Turn 10) independently. Full 12 points retained. Criterion 1.2: The tutor consistently builds on student answers (e.g., Turn 4 affirms the switch/footbridge split before advancing), and when the student is confused the tutor uses targeted diagnostic questions rather than dumping information. Full 6 points retained. Criterion 1.3: No explicit rationale for the tutoring method is ever given; Turn 3's refusal is blunt without explanation, triggering the 1.3.A.a deduction of 2 points. No method-level feedback issues are evident, so 1.3.B is unaffected. Criteria 2.1, 2.2, 3.1, 3.2: No meaningful repetition without progress, no assignment drift, responses are concise and well-structured, and tone is consistently supportive and formative.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall, consistently using Socratic questioning, refusing to give direct answers, scaffolding the student's reasoning step by step, and keeping the conversation anchored to the assignment. The only clear deduction is for failing to explain the pedagogical rationale for the tutoring approach at any point in the conversation. All other criteria were met with no significant violations.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently let the student generate key ideas before confirming or redirecting—no deductions apply. 1.2: The tutor built on student progress at each turn (e.g., 'Good start,' 'Good—that already gives you the core tension') and diagnosed confusion before responding (e.g., Turn 6 calling out the looping pattern)—no deductions apply. 1.3: The tutor enforced its tutoring constraints but never explained why (e.g., in Turn 3 it simply said 'No—I'm your tutor, not your substitute' without articulating the learning rationale), triggering a 2-point deduction under 1.3.A.a; process feedback was present and specific throughout, so 1.3.B is not triggered. Dialogue quality and communication quality were strong throughout with no redundancy, no off-topic drift, appropriately concise responses, and a consistently supportive tone.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

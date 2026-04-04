@@ -72,69 +72,102 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "When the student expressed confusion about which document to pick (Turn 2) and asked for a broader overview, the tutor responded with a full taxonomy of actor types and city climate system blocks without first diagnosing what specifically was causing the student's hesitation. The tutor jumped to providing structured content rather than asking a targeted diagnostic question to understand the root of the student's uncertainty.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In turns 2 and 3, the student signals confusion about where to start and requests a broader overview before picking a document. Rather than asking diagnostic questions to understand what specifically is blocking the student (e.g., 'What have you already looked at?' or 'What feels unclear about picking a document?'), the tutor responds with increasingly detailed content dumps (the 5-block city climate system in turn 3). The tutor does not probe the nature of the student's confusion before providing more information.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "Throughout the conversation, the tutor enforces constraints (e.g., refusing to give a model table in Turn 4, refusing to phrase the forum post in Turn 10) but never explicitly explains why this approach supports the student's learning—e.g., that building the table themselves develops analytical skills, improves retention, or prepares them for future assignments. The rationale for the tutoring method is never articulated.",
-            "points": 2
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor refuses to give a model table in turn 4 ('No—you need to build the table yourself, not copy a model') but never explains why this supports the student's learning—e.g., that building it themselves develops analytical skills or retention. The constraint is enforced without any rationale being offered across the conversation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 19,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              4,
-              5,
-              6
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly requests broader overviews and the tutor repeatedly provides more content (actor categories in turn 2, the 5-block system in turn 3, the prevention/response/planning split in turn 6) without synthesizing or reframing the student's avoidance pattern. The tutor cycles through similar explanatory moves across multiple turns without consolidating or directly addressing the student's apparent anxiety about committing to a choice. Only in turn 4 does the tutor firmly redirect, but the pattern of providing more detail when the student stalls recurs.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly requests broader explanations and the tutor repeatedly provides structured overviews (actor types, city system blocks, planning/prevention/response split) without consolidating or advancing. The student's avoidance pattern persists across five turns without the tutor reframing the approach, synthesizing what has been covered, or explicitly naming the pattern to break the cycle.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 35,
-    "max_base_score": 44,
-    "overview": "The tutor generally avoids doing the student's work, refuses to provide a model table, and keeps the student generating their own ideas. Responses are appropriately concise and the tone is supportive without being permissive. However, the tutor fails to explain the rationale for its pedagogical constraints at any point, misses an opportunity to diagnose the student's specific confusion before providing broad overviews in early turns, and allows a repetitive avoidance pattern to persist across five turns without reframing or naming the dynamic. The redundancy deduction is the most significant, as the tutor cycles through structured content dumps in response to the same student deflection without switching strategy.",
-    "judge_reasoning": "1.1 is largely intact: the tutor never gives submission-ready content, refuses to model the table, and keeps key reasoning with the student. A 3-point deduction under 1.2.B.a is warranted because in Turns 2-3 the tutor responds to the student's stated confusion with content rather than diagnostic questions. A 2-point deduction under 1.3.A.a applies because the tutor never explains why it withholds direct answers or models, missing the meta-learning requirement. The largest deduction (4 points, 2.1.A.a) reflects that the student's avoidance pattern—asking for broader overviews to delay committing—recurs across Turns 2 through 6, and the tutor keeps accommodating it with new structured content rather than naming the pattern, synthesizing, or reframing the approach. Communication quality is strong throughout: responses are bite-sized, tone is firm but not cold, and no grading language appears.",
-    "total_score": 35,
-    "max_score": 44,
+    "total_base_score": 33,
+    "max_base_score": 42,
+    "overview": "The tutor does well at avoiding direct answer-giving and maintaining a Socratic posture throughout, never producing submission-ready content. Responses are generally concise and well-structured. However, the tutor repeatedly provides more explanatory content when the student stalls rather than diagnosing what is actually blocking the student, and the same pattern of 'student avoids commitment → tutor gives more overview' recurs across turns 2–6 without synthesis or reframing. The tutoring rationale for refusing to model the table is never explained to the student. These are the primary deductions.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never produces near-submission-ready output, never rewrites student text, and consistently asks the student to generate ideas before confirming them. 1.2 loses 3 points under 1.2.B.a because in turns 2–3 the tutor responds to the student's stated confusion with content dumps rather than diagnostic questions to locate the specific block. 1.3 loses 2 points under 1.3.A.a because the tutor enforces the 'no model table' constraint in turn 4 without ever explaining why building it themselves supports learning. 2.1 loses all 4 points under 2.1.A.a because the tutor cycles through the same explanatory move (provide more overview) across turns 2, 3, 5, and 6 without consolidating, reframing, or directly naming the student's avoidance pattern. 2.2 and section 3 have no clear deductions.",
+    "total_score": 33,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

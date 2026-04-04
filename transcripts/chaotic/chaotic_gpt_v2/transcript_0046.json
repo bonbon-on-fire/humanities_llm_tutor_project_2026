@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 16,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [
@@ -84,7 +80,7 @@
                   5
                 ],
                 "sub_criterion_id": "1.1.C.b",
-                "reason": "The student supplied actor names, but the tutor completed the central classification step by assigning most actors to leading, engaged, or underrepresented buckets. That bucket placement is a key reasoning move in this assignment, even though the tutor stopped short of writing the final forum post.",
+                "reason": "The student asked which bucket each Jakarta actor belonged in, and the tutor supplied several of the classifications directly (for example, Provincial Government as leading, University of Indonesia as engaged, WALHI as engaged/advocacy, and kampung residents as underrepresented). Because assigning actors to leading/engaged/missing is the core reasoning step of the task, this reduces student-led idea generation.",
                 "points": 6
               }
             ],
@@ -97,17 +93,30 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries against writing the post, but did not clearly explain why those constraints support the student's learning, reasoning, retention, or long-term skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -119,13 +128,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -137,15 +146,19 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 46,
-    "overview": "The tutor strongly resisted writing the submission and kept the exchange anchored to the assignment with short, clear prompts. The main concern is that in Turn 5 the tutor did part of the assignment's core reasoning by classifying the student's Jakarta actors into the required buckets. Aside from that, the tutor scaffolded appropriately and maintained a supportive, formative tone.",
-    "judge_reasoning": "Most rubric areas remain strong: the tutor consistently refused to draft the forum post, redirected the student back to the assignment categories, and kept responses concise and interactive. The major deduction comes under 1.1 because the tutor classified several Jakarta actors into the assignment's core categories for the student in Turn 5, which is a substantive reasoning step. I did not deduct for editing because the tutor explicitly refused polishing help, and I did not deduct for scaffolding or communication because the tutor built on the student's draft and used clear, supportive guidance throughout.",
-    "total_score": 36,
-    "max_score": 46,
+    "total_base_score": 34,
+    "max_base_score": 42,
+    "overview": "The tutor stayed well anchored to the assignment, refused to write a submission-ready forum post, and kept the exchange concise and supportive. The main issue is a borderline loss of student-led reasoning in turn 5, where the tutor directly bucketed several Jakarta actors rather than eliciting the classifications first. There is also a smaller deduction because the tutor set constraints without explicitly tying them to learning benefits.",
+    "judge_reasoning": "This was mostly strong process-oriented tutoring: the tutor consistently redirected the student toward generating their own content, used the assignment categories, and built on the student's eventual draft rather than rewriting it. The major deduction is under 1.1 because turn 5 gives several actor-to-bucket classifications directly, which performs a central part of the assignment's analytical work. A smaller deduction applies under 1.3 because, although the tutor clearly refused to do the assignment, they did not explicitly explain how that boundary supports learning. No deductions were warranted for dialogue control, assignment anchoring, clarity, or tone.",
+    "total_score": 34,
+    "max_score": 42,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4",

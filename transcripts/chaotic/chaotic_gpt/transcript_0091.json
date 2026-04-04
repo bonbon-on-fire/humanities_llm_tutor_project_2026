@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -91,52 +87,27 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  1,
-                  2
-                ],
-                "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor explains that they will not write the post and that doing so would 'defeat the assignment,' but never clearly states a learning rationale such as practicing the student's own reasoning, improving retention, or building transferable method.",
-                "points": 2
-              },
-              {
-                "evidence_turns": [
-                  7,
-                  9,
-                  10
+                  9
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student improves from vague categories to a workable classification, the tutor moves directly to the next task instead of prompting reflection on what changed in the student's approach and why the newer classification works better.",
+                "reason": "After the student finally produced a workable classification (lead/support/community/missing), the tutor moved straight to the next task instead of prompting brief reflection on what reasoning changed and why that classification now worked.",
                 "points": 2
               }
             ],
-            "score": 2,
+            "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
-            "deductions": [
-              {
-                "evidence_turns": [
-                  2,
-                  3,
-                  5,
-                  6,
-                  8,
-                  10
-                ],
-                "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly uses the same refusal-plus-prompt pattern across many turns while the student stays stuck, with limited synthesis or a sharper pivot to break the loop earlier.",
-                "points": 4
-              }
-            ],
-            "score": 0,
+            "deductions": [],
+            "score": 4,
             "max": 4
           },
           "2.2": {
@@ -144,13 +115,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -164,21 +135,25 @@
                   6
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The line 'Don’t dump responsibility on me' is more accusatory than supportive and risks undermining tutoring trust, even though the overall stance remains appropriate.",
+                "reason": "The line \"Don't dump responsibility on me\" is noticeably sharper and more admonishing than necessary, creating a brief cold or punitive tone even though the rest of the exchange is mostly supportive.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor strongly protected against doing the assignment for the student and kept the conversation anchored to the actual task. I gave benefit of the doubt on diagnostic questioning because the student's main issue was resistance/time pressure more than clear conceptual confusion. Main deductions came from repetitive looping, limited meta-learning explanation, missing reflection after student improvement, and one notably sharp tone moment.",
-    "judge_reasoning": "The tutor did well on the core pedagogical boundary: across all ten turns, they refused to provide a submission-ready forum post or table and instead pushed the student to classify actors and find sources. I deducted under 1.3 because the tutor enforced constraints without explicitly connecting them to learning benefits, and because they did not ask the student to reflect after the student's classification improved. I deducted fully under 2.1 because the exchange became a repeated refusal-and-reprompt loop across many turns without a stronger synthesizing move to break the pattern. I also deducted under 3.2 for the accusatory phrasing in turn 6, though the rest of the communication was generally clear, concise, and assignment-focused.",
-    "total_score": 34,
+    "overview": "The tutor strongly protected student ownership of the assignment, avoided giving submission-ready content, and kept the discussion tightly anchored to the Jakarta actor-mapping task. Scaffolding was generally effective: the tutor narrowed the work into buckets, verification checks, and classification prompts that helped the student make progress. Deductions are limited to one missed reflection opportunity after the student's improvement and one notably harsh tone moment. Evidence for broader problems such as repetition without progress or assignment drift is limited because the tutor varied prompts and eventually moved the student forward.",
+    "judge_reasoning": "The tutor earns full credit on direct-work avoidance because they consistently refused to write the forum post, draft table entries, or provide paste-ready sentences, while still requiring the student to generate the core content. They also earn full scaffolding and dialogue-anchoring marks because they built from the student's partial answers, pressed for specificity, and stayed focused on the assignment's required categories. I deducted under 1.3.C because once the student succeeded in classifying actors, the tutor did not ask the student to reflect on what changed in their reasoning. I also deducted under 3.2.A because one response used a sharper reprimand than a supportive tutoring stance typically calls for.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

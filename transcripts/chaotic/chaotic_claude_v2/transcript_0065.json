@@ -72,42 +72,102 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it refuses to write entries for the student—i.e., it never articulates that the goal is to build the student's own reasoning skills, retention, or long-term analytical capacity. It simply says 'I won't fill it out for you' or 'I'm your tutor, not a shortcut' without connecting this to a learning rationale.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "In Turn 4, the tutor says the heat sentence is 'a solid start under my own judgment, not your instructor's rubric. It's clear and relevant, but it would be stronger if you made the severity logic more explicit.' The feedback is somewhat vague—'severity logic more explicit' is not clearly actionable without further guidance on what that means methodologically.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 22,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  6,
+                  7,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "The tutor repeatedly qualifies its positive feedback with 'under my own judgment, not your instructor's rubric' or similar phrases. While this is an attempt at formative framing, the repeated use of this phrase across multiple turns without further clarification of what formative feedback means could still leave the student uncertain about the nature of the evaluation. However, the tutor does consistently signal it is not the official grader, so this is a borderline case. On balance, the framing is adequate and no deduction is warranted.",
+                "points": 0
+              }
+            ],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor consistently refused to write table-ready entries or polish student wording, maintaining a strong Socratic stance throughout. The student was guided to generate their own stressors, ratings, and justifications with targeted prompts. The tutor appropriately anchored to the assignment, avoided off-topic drift, and kept responses concise. A minor deduction was applied for one instance of somewhat vague process feedback in Turn 4, though the overall methodology feedback across the conversation was generally adequate. No major rubric violations were found.",
-    "judge_reasoning": "The tutor never produced submission-ready content, rewrote student text, or gave conclusions before student reasoning—1.1 is fully intact. Scaffolding built progressively on student responses across all turns, and the tutor diagnosed student confusion before responding (1.2 intact). A small deduction under 1.3.B.b was applied because in Turn 4 the feedback 'make the severity logic more explicit' lacks concrete process-level direction, though other turns do provide structured guidance. Dialogue quality is strong: no repetition without progress, no assignment misanchoring, and no off-topic drift. Communication is concise and supportive throughout, with no grading language beyond the repeated 'under my own judgment' disclaimer.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall, consistently refusing to do the student's work, scaffolding each stressor in sequence, and keeping responses concise and interactive. The only clear deduction is for failing to explain the rationale behind its tutoring constraints (1.3.A.a): the tutor never articulated why it withholds direct answers in terms of learning benefits. The 3.2 deduction was considered but not applied, as the tutor's repeated 'under my own judgment' qualifier, while slightly awkward, does maintain a non-grading stance throughout.",
+    "judge_reasoning": "1.1: The tutor never writes table entries, never gives polished wording, and consistently redirects the student to draft their own sentences using structured prompts—no deductions apply. 1.2: The tutor builds on each student draft, acknowledges correct reasoning, and advances the conversation stressor by stressor without restarting—no deductions apply. 1.3: The tutor enforces its constraints throughout but never explains why this approach supports learning (e.g., active reasoning, skill development, retention), triggering the 1.3.A.a deduction of 2 points. 1.3.B is not triggered because the tutor does give specific process-level feedback (e.g., 'add one concrete consequence,' 'make severity logic more explicit'). Dialogue quality is strong with no repetition or drift. Communication is concise and supportive throughout.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

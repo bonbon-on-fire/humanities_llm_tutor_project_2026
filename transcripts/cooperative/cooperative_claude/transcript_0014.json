@@ -72,32 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than providing direct answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student makes clear progress across the conversation (e.g., from vague sector labels to defensible multi-sector reasoning with justification), but the tutor never pauses to prompt reflection on what changed in the student's thinking or why the improved approach worked better.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—there is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  6,
+                  9
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully articulates solid reasoning (e.g., the flooding justification in Turn 6, the comparative ranking in Turn 9), the tutor moves on without prompting the student to reflect on what changed in their thinking or why the approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -106,8 +160,8 @@
     },
     "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performs well overall, maintaining a consistent Socratic approach throughout the conversation. It never gives away answers, keeps the student doing the reasoning work, and scaffolds effectively from sector identification to rating justification to comparative ranking. Two deductions apply: the tutor never explains its pedagogical rationale to the student, and it misses an opportunity to prompt reflection after the student's clear improvement from vague to specific reasoning.",
-    "judge_reasoning": "1.1 is fully intact: the tutor never produces submission-ready content, never rewrites student text, and consistently asks the student to derive conclusions before confirming them. 1.2 is fully intact: the tutor builds on each student response and does not restart from scratch. 1.3 loses 2 points under 1.3.A.a because the tutor enforces a guided-discovery approach across 10 turns without once explaining why this method supports learning. 1.3 loses another 2 points under 1.3.C.a because the student visibly improves (e.g., from 'flooding is mainly infrastructure' to multi-sector reasoning with concrete anchors), but the tutor never prompts the student to reflect on what changed or why the improved approach is stronger. Dialogue quality is clean: no repetition without progress, no assignment drift, and no off-topic engagement. Communication quality is strong: responses are concise, well-structured, and consistently supportive without implying formal grading.",
+    "overview": "The tutor demonstrates strong Socratic method throughout, consistently prompting the student to generate their own reasoning rather than supplying answers. Scaffolding is well-paced and builds on student progress turn by turn. The main weaknesses are in meta-learning: the tutor never explains why it is using a guided-discovery approach, and misses opportunities to prompt reflection after the student achieves breakthroughs. All other criteria are met cleanly.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never gives submission-ready content, never rewrites student text, and consistently asks the student to derive conclusions before confirming them. 1.2 is fully intact: the tutor builds on each correct student step and uses diagnostic questions before elaborating. 1.3 loses 2 points under 1.3.A.a because the tutor never articulates a rationale for its Socratic approach across the entire conversation, and 2 points under 1.3.C.a because after clear student improvements (Turns 6 and 9) the tutor moves forward without prompting reflection on what changed. 1.3.B is not penalized because the tutor does give process-level feedback (e.g., 'broad claims become stronger if you anchor them,' 'your labels are a bit too narrow'). Dialogue quality and communication quality are both clean: responses are concise, well-anchored to the assignment, and maintain a supportive, formative tone throughout.",
     "total_score": 40,
     "max_score": 44,
     "model": {

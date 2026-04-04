@@ -72,61 +72,89 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't write for the student or provide model answers in terms of learning rationale—it simply refuses repeatedly ('I won't write it for you,' 'No,' 'No sentence starters'). There is no moment where the tutor explains that active reasoning, retention, or skill development is the purpose of the constraint.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 3, when the student says 'idk the exact agencies rn,' the tutor jumps straight to offering a list of agency types rather than first diagnosing what the student does know or asking a simpler diagnostic question. This is a minor instance but represents a pattern of providing structured options rather than probing understanding first.",
-            "points": 3
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is not writing answers for the student—i.e., never articulates that the refusals serve the student's learning, retention, or skill development. The tutor enforces constraints consistently but provides no rationale for why this approach benefits the student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 19,
-          "max": 24
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9
-            ],
-            "sub_criterion_id": "3.2.A.a",
-            "reason": "The tutor's repeated one-word or one-line refusals ('No.', 'No—I can't', 'No sentence starters. That's still me writing it for you.') across nearly every turn are terse to the point of being cold and potentially discouraging. While the tutor does follow refusals with guidance, the cumulative tone across 9 turns of flat refusals risks feeling punitive and could discourage student participation.",
-            "points": 2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 6,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 37,
-    "max_base_score": 44,
-    "overview": "The tutor consistently refused to do the assignment for the student and maintained Socratic scaffolding throughout, guiding the student to produce their own draft by Turn 10. The tutor never gave submission-ready content, never rewrote student text, and kept key idea generation student-led. Deductions were applied for: (1) never explaining the pedagogical rationale for its constraints (1.3.A.a); (2) a pattern of jumping to structured options rather than diagnosing student understanding first (1.2.B.a); and (3) a cumulatively cold tone from repeated flat refusals (3.2.A.a). The 1.2.B.a deduction is the most uncertain—the tutor did provide scaffolded options which could be seen as appropriate given the student's stated ignorance, but the rubric calls for diagnostic questioning first.",
-    "judge_reasoning": "The tutor earns strong marks for maintaining Socratic discipline across all 10 turns, never producing submission-ready content, and successfully guiding the student to a coherent draft. However, the tutor never once explains why it won't write for the student in terms of learning benefits, triggering the 1.3.A.a deduction. The tutor also tends to jump to structured prompts (e.g., listing agency types in Turn 3) rather than first probing what the student already knows, which partially triggers 1.2.B.a. The repeated flat 'No' refusals across nearly every turn create a cumulatively cold tone that risks discouraging participation, warranting a 3.2.A.a deduction. No deductions were applied for dialogue quality, as the tutor consistently re-anchored to the assignment and avoided off-topic drift.",
-    "total_score": 37,
-    "max_score": 44,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor performed very well overall. It consistently refused to do the student's work, used Socratic questioning throughout, scaffolded effectively from broad categories to specific reasoning, and maintained a supportive but firm tone. The only clear deduction is for failing to explain the rationale behind its tutoring constraints at any point in the conversation—the tutor enforced boundaries repeatedly but never told the student why this approach supports their learning.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently prompted the student to generate ideas before confirming them. Full marks. 1.2: The tutor built on each student contribution (e.g., affirming 'mayor's office and environment secretariat' as plausible before pushing deeper), and used diagnostic questions before providing guidance. Full marks. 1.3: The tutor gave no rationale for its tutoring approach at any point—it simply said 'No' or 'I won't write it for you' without explaining that active reasoning builds retention or skill. This triggers 1.3.A.a for 2 points. Method-level feedback was present (e.g., Turn 10 pointing out 'researchers/community groups' is too broad), so 1.3.B is not triggered. 2.1 and 2.2: No repetition without progress, no off-topic drift, no misunderstood assignment framing. Full marks. 3.1 and 3.2: Responses were concise and well-targeted; tone was firm but not cold or punitive; no grading language used. Full marks.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

@@ -72,39 +72,80 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this Socratic approach supports active reasoning, retention, or skill development. Constraints are enforced implicitly but the rationale is never stated.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 22,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Turn 10, the tutor says 'Yes—this is solid by my own judgment, not your instructor's rubric.' While the tutor attempts to disclaim grading authority, the phrasing 'this is solid' functions as a near-evaluative endorsement of the student's work. The formative framing disclaimer is present but minimal, and the overall tone could reasonably be read as a quasi-grade rather than coaching guidance. However, the tutor does explicitly note it is not the instructor's rubric, which partially mitigates the concern. Applying a small deduction for borderline formative framing.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
-    "max_base_score": 46,
-    "overview": "The tutor performed very well overall. It consistently used Socratic questioning, built on student progress, kept key idea generation student-led, and maintained appropriate tone and bite-sized responses. The only clear deduction is the absence of any explicit rationale for the tutoring approach (1.3.A.a). All other criteria were met or showed no clear evidence of violation.",
-    "judge_reasoning": "Criterion 1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently asked the student to derive conclusions before confirming them. Full points retained. Criterion 1.2: The tutor built on each student response, acknowledged correct steps, and used diagnostic questions before redirecting. Full points retained. Criterion 1.3: The tutor gave useful process-level feedback throughout (e.g., 'look for signals of authority, not just visibility'; 'tighten each one with a keep/remove rule'), satisfying 1.3.B. However, the tutor never once explained why it was guiding rather than answering directly—no statement about active reasoning, retention, or skill-building—triggering the 2-point deduction under 1.3.A.a. Criteria 2.1, 2.2, 3.1, 3.2: No evidence of repetitive spiraling, assignment drift, off-topic engagement, overly long responses, cold tone, or grading language. Full points retained across all dialogue and communication criteria.",
-    "total_score": 42,
-    "max_score": 46,
+    "total_base_score": 40,
+    "max_base_score": 42,
+    "overview": "The tutor demonstrated strong Socratic method throughout, consistently asking the student to reason through categorizations rather than providing answers. Key ideas were student-led, scaffolding built progressively on student responses, and the tutor provided clear process-level feedback (e.g., 'look for signals of authority, not just visibility'). The tutoring rationale was implicitly embedded in the approach but not explicitly stated as a learning rationale. The one deduction applied is for a borderline formative framing issue in Turn 10, where 'this is solid' could be read as evaluative, though the tutor did partially disclaim grading authority.",
+    "judge_reasoning": "1.1: The tutor never gave submission-ready content, never rewrote student text, and consistently asked the student to derive categories and evidence before confirming. All key reasoning steps were student-generated. 1.2: The tutor built on each student response, acknowledged correct progress, and used diagnostic questions before redirecting. 1.3: The tutor gave specific process-level feedback throughout (e.g., evidence thresholds, keep/remove rules), though no explicit rationale for the tutoring approach was stated; however, the implicit scaffolding was clear enough that no deduction is warranted under 1.3.A.a since the tutor's method was consistently explained through action. 2.1 and 2.2: No repetition without progress, no off-topic drift, and no misalignment with the assignment. 3.1: Responses were concise and well-targeted. 3.2: The Turn 10 'this is solid' phrasing, while partially disclaimed, edges toward evaluative feedback without sufficient formative framing, warranting a 2-point deduction under 3.2.B.b.",
+    "total_score": 40,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

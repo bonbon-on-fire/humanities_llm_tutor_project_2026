@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -88,17 +84,26 @@
             "max": 6
           },
           "1.3": {
-            "deductions": [],
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor set a boundary ('I can show the format, not fill Jakarta’s row for you') but did not explicitly explain why that constraint supports the student's learning process, such as helping the student practice active reasoning or build independence.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -110,13 +115,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 10,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -125,17 +130,21 @@
           },
           "3.2": {
             "deductions": [],
-            "score": 6,
-            "max": 6
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 46,
+    "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed fully within a coaching role, never supplying Jakarta-specific assignment content or submission-ready rows, and kept the conversation anchored to the data-table task. The tutor also explained the purpose of the assignment, gave process guidance on units/sources/table structure, and maintained a supportive tone throughout. Although the student remained somewhat unsure, the tutor shifted among overview, categorization, step-by-step procedure, and format examples enough that the rubric does not clearly support a deduction.",
-    "judge_reasoning": "I did not deduct under 1.1 because the tutor consistently avoided giving final assignment content, instead asking the student to choose categories, define units, and distinguish data from source. I did not deduct under 1.2 or 1.3 because the tutor built on the student's partial understanding, identified the main sticking points around city proper vs. metro and source reliability, and gave specific method-level guidance such as using a consistent unit and a three-column table. Dialogue quality remained strong: the tutor kept the discussion on the assignment and used varied scaffolds rather than simply repeating the same move. Communication was clear, plain-language, and supportive, with no grading stance or dismissive tone.",
-    "total_score": 46,
+    "overview": "The tutor stayed well anchored to the assignment, avoided giving Jakarta-specific answers, and scaffolded the task through manageable frames like buckets, columns, unit consistency, and row structure. I made one modest deduction because the tutor enforced a do-it-yourself boundary without explicitly stating why that constraint helps learning. I did not deduct for repetition because the tutor changed approach across turns rather than simply repeating the same prompt.",
+    "judge_reasoning": "The tutor did not provide submission-ready content or rewrite the student's work; instead, they kept the student generating the actual table entries and sources. Scaffolding was generally strong: the tutor re-explained categories, clarified city proper versus metro area, suggested a consistent table structure, and narrowed the next step to a single row. The main gap was meta-learning rationale: although the tutor sometimes withheld direct completion help, they never clearly explained that this was to strengthen the student's own reasoning or long-term skill. Communication remained supportive, concise, and formative throughout.",
+    "total_score": 40,
     "max_score": 46,
     "model": {
       "provider": "openai",

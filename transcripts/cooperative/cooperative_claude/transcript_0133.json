@@ -72,38 +72,97 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student improved their flooding analysis from vague to multi-sectoral and evidence-based (Turn 3-4), the tutor moved forward without prompting reflection on what changed in the student's thinking or why the new approach worked better. Similarly, after the student produced solid air pollution justification in Turn 9, the tutor acknowledged it briefly but did not prompt the student to reflect on what made that reasoning stronger than their earlier guessing.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student successfully articulates a solid air pollution justification (Turn 9) following earlier uncertainty, the tutor moves directly to the next stressor without prompting any reflection on what changed in the student's thinking or why the reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performed very well overall, consistently using Socratic questioning, building on student progress, and keeping idea generation student-led throughout. The main deduction is for a missed opportunity to prompt meta-reflection after the student successfully improved their reasoning. No direct answers were given, no off-topic drift occurred, and communication was consistently clear and bite-sized.",
-    "judge_reasoning": "Pedagogy (1.1): The tutor never gave submission-ready answers, never rewrote student text, and consistently asked the student to derive conclusions before confirming them—full marks. Scaffolding (1.2): The tutor built on each student response, acknowledged correct progress, and used diagnostic questions before addressing confusion—full marks. Meta-learning (1.3): The tutor provided process-level feedback throughout (e.g., 'use 4 checks,' 'define recovery more carefully') and explained the rationale for evidence-based rating in Turn 1. However, after the student's clear improvement from guessing to structured reasoning, the tutor did not pause to ask the student what changed or why the new approach worked, triggering a 1.3.C.a deduction of 2 points. Dialogue quality (2.1, 2.2): No repetition without progress, no assignment misunderstanding left uncorrected, no off-topic drift—full marks. Communication (3.1, 3.2): Responses were consistently concise, interactive, and supportive with no grading language—full marks.",
-    "total_score": 42,
+    "overview": "The tutor demonstrates strong Socratic technique throughout, consistently using targeted questions to guide the student's reasoning without providing direct answers or doing the analytical work for them. Scaffolding is well-executed: the tutor builds on each student response, acknowledges progress, and advances the conversation systematically. The main weaknesses are in meta-learning: the tutor never explains why it is using a question-led approach (missing 1.3.A), and after the student's successful air pollution justification, the tutor does not pause to prompt reflection on what improved (missing 1.3.C). No issues with redundancy, assignment anchoring, communication tone, or response length were observed.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming or redirecting. 1.2 receives full marks: the tutor builds on each student contribution (e.g., affirming the multi-sector flooding analysis before pushing for stricter justification) and diagnoses confusion before responding. 1.3 loses 4 points: no tutoring rationale is ever offered (1.3.A.a), and after the student's clear improvement on air pollution reasoning in Turn 9, the tutor moves straight to heat without prompting reflection on what changed (1.3.C.a). Dialogue quality and communication quality are both clean: responses are concise, well-anchored to the assignment, and maintain a supportive, non-evaluative tone throughout.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

@@ -72,38 +72,97 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student produces a strong draft in Turn 9 following earlier confusion and iteration, the tutor moves directly to asking what evidence would strengthen it rather than prompting any reflection on what changed in the student's thinking or why the process worked. No meta-reflection moment is offered.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers. There is no moment where the tutor articulates that this approach supports active reasoning, retention, or skill development. The Socratic method is practiced but its rationale is never stated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student produces a strong draft in Turn 9 following earlier confusion and iteration, the tutor moves directly to what would strengthen it further without prompting the student to reflect on what changed in their thinking or why the revised approach worked better than their initial attempt.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 22,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 42,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor performs very well overall. Socratic method is consistently applied: the tutor never gives the student the final answer, instead using targeted questions and diagnostic checks to guide the student from vague guesses to a well-reasoned draft. Scaffolding is strong—each turn builds on the student's prior response. Assignment anchoring is maintained throughout. The only clear deduction is the missed opportunity for meta-reflection after the student's successful Turn 9 draft, where the tutor could have asked what changed in the student's thinking rather than immediately pivoting to evidence strengthening.",
-    "judge_reasoning": "1.1: No near-submission-ready output is provided by the tutor; the student generates all key claims and reasoning. No editing of student text occurs. Key ideas (leading/engaged/missing distinctions, MCGM's role, SPARC's role, the resident split) are all derived by the student through guided questioning. Full 12 points retained. 1.2: The tutor consistently builds on student progress (e.g., affirming the MCGM drainage insight in Turn 4, the authority distinction in Turn 5, the resident split in Turn 8) and diagnoses confusion before responding (e.g., Turn 6 redirects guessing with a filter). Full 6 points retained. 1.3: The tutor explains its rationale at least once (Turn 6: 'don't force them into the table' implies evidence-based reasoning; Turn 3 explains what 'leading' should mean). Method-level feedback is present throughout. However, after the student's successful Turn 9 draft following earlier confusion, the tutor does not prompt reflection on what changed or why the process worked—triggering a 2-point deduction under 1.3.C.a. Dialogue quality and communication quality are both strong: no redundancy, no off-topic drift, responses are appropriately concise and supportive.",
-    "total_score": 42,
+    "overview": "The tutor performs very well overall, maintaining a consistent Socratic approach throughout all ten turns without giving away answers or doing the student's reasoning work. Scaffolding is well-executed, building progressively from vague initial ideas to a structured draft. The main deductions are in 1.3: the tutor never explains why it is guiding rather than answering directly (missing rationale for tutoring constraints), and after the student's successful draft in Turn 9, the tutor does not prompt reflection on what changed in the student's thinking process.",
+    "judge_reasoning": "1.1 receives full marks: the tutor consistently uses questions to guide the student, never provides submission-ready content, and keeps all key reasoning student-led. 1.2 receives full marks: the tutor builds on each student contribution and diagnoses confusion before responding throughout. 1.3 loses 4 points: the tutoring rationale is never articulated (1.3.A.a), and after the student's clear improvement in Turn 9, the tutor skips the opportunity to prompt reflection on what changed (1.3.C.a). Dialogue quality is flawless—no repetition without progress, no assignment drift, and no off-topic engagement. Communication quality is strong: responses are concise, well-structured, and consistently supportive without implying formal grading.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

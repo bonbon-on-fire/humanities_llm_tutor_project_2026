@@ -72,103 +72,112 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              4
-            ],
-            "sub_criterion_id": "1.1.B.a",
-            "reason": "In Turn 4, the tutor provides a near-complete row template with all five labeled columns and their content descriptions ('name the problem → classify it → judge severity → defend that judgment → say whether it should be prioritized'), which comes close to drafting the structure for the student rather than guiding them to derive it. However, this is borderline—it is a format explanation rather than actual written content. On balance, this does not clearly cross into rewriting student text, so no deduction is applied here.",
-            "points": 0
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              6
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Turn 1, the student says they are 'kinda lost' and asks for an explanation from the beginning. Rather than asking a diagnostic question to find out what specifically the student already understands or where exactly the confusion lies, the tutor immediately delivers a full 5-step breakdown of the assignment. Similarly in Turn 2, when the student expresses confusion about sectors, the tutor provides a complete sector taxonomy without first probing what the student already knows about the distinction. The tutor jumps to addressing the issue rather than diagnosing the specific confusion point first.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "In Turn 1, the student says they are 'kinda lost' and the tutor immediately provides a full 5-step breakdown of the entire assignment without first diagnosing what specifically the student doesn't understand. Similarly in Turn 6, when the student says they need 'the whole thing tied together from scratch,' the tutor again provides a full 5-step rebuild without probing what specifically is causing confusion. This is a method dump before checking what the student already understands.",
-            "points": 3
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it won't draft a row or why the student must do the work themselves in terms of learning rationale. In Turn 9, the tutor says 'I'm your tutor, not your writer' but does not explain how doing the work themselves supports learning, retention, or skill development. No clear rationale for the tutoring constraints is provided across the conversation.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "By Turn 7, the student successfully generates a workable 5-stressor list after earlier confusion. The tutor moves forward without prompting any reflection on what changed in the student's thinking or why the list-building approach worked. Similarly, when the student in Turn 10 arrives at a reasonable sector classification and rating after struggling, the tutor does not prompt reflection on the process improvement.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why they are using a Socratic/guided approach rather than just giving answers. In Turn 9, the tutor refuses to show a sample row but only says 'I'm your tutor, not your writer' without explaining how this approach benefits the student's learning. No rationale for the tutoring constraints is provided at any point in the conversation.",
-            "points": 2
-          },
-          {
-            "evidence_turns": [
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "By Turn 7, the student successfully generates a solid 5-stressor list after earlier confusion. The tutor moves forward without prompting any reflection on how the student arrived at that list or what changed in their thinking from being 'lost' to producing a workable list.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
           "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The student repeatedly expresses being 'lost' or confused and asks to be walked through things 'from scratch' across multiple turns (Turns 3, 4, 6). The tutor cycles through similar re-explanations of the table structure and stressor concepts without meaningfully synthesizing or advancing. In Turn 6, the student again asks to have 'the whole thing tied together from scratch,' suggesting the tutor's repeated similar moves (re-explaining structure, asking what stressors to list) have not resolved the confusion. The tutor does not switch to a meaningfully different approach or reframe the problem in a new way.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The student repeatedly asks to be walked through 'the whole thing from scratch' or 'the whole table format' across multiple turns (Turns 1, 3, 4, 6), and the tutor responds each time with a new full breakdown rather than synthesizing, reframing, or identifying the specific sticking point. The conversation cycles on the same confusion without meaningful consolidation or a shift in strategy.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              4,
-              6
-            ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Several tutor turns (1, 4, 6) contain multi-part numbered lists that are fairly dense for a student who is already overwhelmed. Turn 1 gives a 5-step overview, Turn 4 gives a 5-column table breakdown, and Turn 6 gives another 5-step rebuild. While not excessively long in word count, the repeated use of full structured lists when the student is confused suggests a pattern of over-explaining rather than using focused, bite-sized prompts.",
-            "points": 4
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 4,
+          "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 29,
+    "total_base_score": 33,
     "max_base_score": 44,
-    "overview": "The tutor maintains a consistent Socratic stance throughout—refusing to write rows for the student, asking guiding questions, and keeping the student doing the intellectual work. However, several rubric criteria are triggered: the tutor repeatedly provides full structured breakdowns without first diagnosing the student's specific confusion (1.2.B.a), never explains the rationale for the tutoring approach (1.3.A.a), misses a reflection opportunity after the student's successful stressor list in Turn 7 (1.3.C.a), cycles on the same confusion pattern without reframing (2.1.A.a), and uses dense multi-part lists when simpler focused prompts were needed (3.1.A.a). The 1.3.B.a criterion was considered but not applied as the tutor does give process-level feedback on how to rate and justify stressors. The 1.1.B.a deduction was considered for Turn 4's template but not applied as it describes format rather than drafting content.",
-    "judge_reasoning": "The tutor avoids the most serious violations—no submission-ready content is produced, no student text is rewritten, and key ideas remain student-generated. The primary weaknesses are: (1) a pattern of responding to vague confusion with full structured dumps rather than diagnostic questions first (1.2.B.a, -3pts); (2) never explaining why the Socratic approach benefits the student (1.3.A.a, -2pts); (3) missing a reflection prompt after the student's successful Turn 7 list (1.3.C.a, -2pts); (4) cycling on the same confusion pattern across six turns without reframing or consolidating (2.1.A.a, -4pts); and (5) repeatedly using dense multi-part lists when the student was already overwhelmed (3.1.A.a, -4pts). These deductions total 15 points from a base of 44.",
-    "total_score": 29,
+    "overview": "The tutor maintained a strong Socratic stance throughout, consistently refusing to do the student's work and redirecting toward student-generated answers. The table format explanation and sector definitions were clear and appropriately concise. However, the tutor failed to diagnose student confusion before responding in early turns, instead delivering full explanations upfront. A pattern of repetition without meaningful synthesis emerged across the middle turns as the student kept asking to start over. The tutor also missed opportunities to explain the rationale for its tutoring constraints and to prompt reflection after the student made progress.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produced submission-ready content, consistently pushed the student to generate ideas, and refused to draft a sample row in Turn 9. 1.2 loses 3 points under 1.2.B.a because in Turns 1 and 2 the tutor immediately delivers comprehensive explanations rather than first probing what the student already understands. 1.3 loses 4 points: 2 for never explaining the learning rationale behind tutoring constraints (1.3.A.a), and 2 for failing to prompt reflection after the student successfully built a stressor list in Turn 7 following earlier confusion (1.3.C.a). 2.1 loses all 4 points because the student repeatedly asked to restart from scratch across Turns 3–6 and the tutor cycled through similar re-explanations without meaningfully reframing or synthesizing, indicating a pattern-level repetition without progress. Communication quality is strong throughout with bite-sized responses and a supportive, non-grading tone.",
+    "total_score": 33,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

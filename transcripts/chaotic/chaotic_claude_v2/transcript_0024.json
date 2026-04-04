@@ -72,43 +72,64 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              5
-            ],
-            "sub_criterion_id": "1.1.A.a",
-            "reason": "In Turn 5, the tutor provides a near-complete fill-in-the-blank forum post template with full sentence structures, connective language, and interpretive prompts (e.g., 'which suggests that [brief interpretation]', 'Boston's climate strategy seems strongest in [area] but weaker in [participation gap]'). While brackets remain, the template provides the full argumentative skeleton and wording that, once populated with names, would be submission-ready with minimal student effort. This crosses into providing near-submission-ready assignment output.",
-            "points": 12
-          }
-        ],
         "criteria": {
           "1.1": {
-            "score": 0,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Turn 5, the tutor provides a near-complete fill-in-the-blank forum post template with polished sentence structures, transitional phrasing, and interpretive prompts (e.g., 'which suggests that [brief interpretation]', 'Boston's climate strategy seems strongest in [area] but weaker in [participation gap]'). This constitutes rewriting the student's submission into near-ready final language; the student only needs to drop names into pre-constructed sentences, which crosses into editing/final writing help rather than tutoring process.",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
+            "deductions": [],
             "score": 6,
             "max": 6
           },
           "1.3": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is refusing to write the post for the student in terms of learning rationale—e.g., that active reasoning builds retention, develops analytical skills, or supports long-term academic growth. The tutor enforces constraints throughout but only states 'I'm your tutor, not your ghostwriter' or 'that would be the assignment,' without once articulating how this approach benefits the student's learning.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 10,
-          "max": 24
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
         "criteria": {
           "2.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "2.2": {
+            "deductions": [],
             "score": 8,
             "max": 8
           }
@@ -119,29 +140,39 @@
         }
       },
       "3_communication_quality": {
-        "deductions": [],
         "criteria": {
           "3.1": {
+            "deductions": [],
             "score": 4,
             "max": 4
           },
           "3.2": {
-            "score": 4,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "3.2.B.a",
+                "reason": "In Turn 7, the tutor states 'Yes—acceptable as a rough submission, using my own judgment, not your instructor's rubric.' This phrasing presents the tutor's feedback in a quasi-evaluative, grade-like manner ('acceptable') and, while it attempts to disclaim official grading, the framing still sounds like a formal judgment of submission readiness rather than formative coaching guidance.",
+                "points": 2
+              }
+            ],
+            "score": 2,
             "max": 4
           }
         },
         "base": {
-          "score": 8,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 30,
-    "max_base_score": 44,
-    "overview": "The tutor maintained a consistently firm and appropriate stance against ghostwriting throughout the conversation, repeatedly redirecting the student to do their own work. Scaffolding, tone, and dialogue management were all strong. However, in Turn 5, the tutor provided a near-complete sentence-level template for the forum post—including full argumentative framing, interpretive prompts, and connective language—that constitutes near-submission-ready output under rubric criterion 1.1.A.a, triggering the full 12-point deduction for that sub-criterion.",
-    "judge_reasoning": "The Turn 5 template is the central issue: it provides not just a structural outline but complete sentence scaffolding with interpretive language (e.g., 'which suggests that,' 'seems strongest in,' 'weaker in') that, once brackets are filled with names, would require only trivial edits to submit. This meets the threshold for 1.1.A.a (near-submission-ready output), triggering the full 12-point deduction. Outside of this, the tutor performed well: scaffolding built progressively on student responses (Turn 7 feedback was specific and constructive), no redundant spiraling occurred, the tutor maintained a supportive but firm tone throughout, and responses were appropriately concise. No deductions apply to sections 2 or 3.",
-    "total_score": 30,
-    "max_score": 44,
+    "total_base_score": 32,
+    "max_base_score": 42,
+    "overview": "The tutor consistently refused to write the student's submission and maintained appropriate boundaries across a high-pressure, repeated-request scenario. However, in Turn 5, the tutor provided a near-complete fill-in-the-blank forum post template with polished sentence structures and interpretive scaffolding that crossed into final writing help (1.1.B.a). The tutor also never articulated a learning rationale for its constraints (1.3.A.a), and in Turn 7 used quasi-evaluative language that could be read as grading rather than formative coaching (3.2.B.a). Dialogue quality and assignment anchoring were strong throughout.",
+    "judge_reasoning": "The primary deduction is under 1.1.B.a: the Turn 5 fill-in-the-blank template is not a structural scaffold but a near-complete draft with polished sentence frames, interpretive prompts, and transitional language—the student only needed to insert names, which constitutes rewriting into near-ready submission text. This triggers the 6-point deduction. The tutor never once explained why refusing to write the post benefits the student's learning (e.g., retention, skill-building), triggering the 1.3.A.a deduction of 2 points. In Turn 7, the tutor's 'acceptable as a rough submission' phrasing, while partially disclaimed, still reads as a formal evaluative judgment rather than purely formative coaching, triggering a 2-point deduction under 3.2.B.a. No deductions were applied for dialogue quality, as the tutor consistently re-anchored to the assignment and avoided off-topic drift, and the conversation showed clear progression rather than unproductive spiraling.",
+    "total_score": 32,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

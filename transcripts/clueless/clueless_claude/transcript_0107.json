@@ -72,75 +72,81 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              10
-            ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 10, the tutor provides a fully enumerated source hierarchy (4 ranked tiers) rather than prompting the student to reason about what makes a source credible. This resolves the key reasoning step—how to evaluate source authority—for the student instead of guiding them to derive it.",
-            "points": 6
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "The student makes several meaningful improvements across the conversation (e.g., correctly identifying the 7 required fields in Turn 5, settling on DKI Jakarta as the unit in Turn 9), but the tutor never pauses to prompt reflection on what changed in the student's thinking or why the improved approach worked. The tutor consistently moves forward without reinforcing method choices after improvement.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding rather than giving answers—no rationale about active reasoning, retention, or skill development is offered at any point in the conversation.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "There are several moments where the student improves (e.g., correctly identifying the 7 required fields in Turn 5, correctly reasoning about proxy data in Turn 6, landing on DKI Jakarta in Turn 9), but the tutor never pauses to prompt reflection on what changed in the student's thinking or why the improved reasoning worked.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding through questions rather than giving direct answers. No rationale is offered for the Socratic approach or why the student should work through these steps independently. The tutoring constraints are enforced but never explained.",
-            "points": 2
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 14,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 34,
+    "total_base_score": 40,
     "max_base_score": 44,
-    "overview": "The tutor demonstrates strong assignment anchoring, consistent Socratic questioning, and good scaffolding throughout most of the conversation. The main weaknesses are: (1) a significant lapse in Turn 10 where the tutor provides a fully worked-out source hierarchy rather than prompting the student to reason about source credibility; (2) no meta-learning rationale is ever offered for the tutoring approach; and (3) the tutor misses multiple opportunities to prompt reflection after student breakthroughs. The 1.1.C.b deduction is the largest single penalty, reflecting that the tutor resolved a key reasoning step for the student at a critical moment.",
-    "judge_reasoning": "The 6-point deduction under 1.1.C.b is warranted because in Turn 10 the tutor gives the student a complete, ranked source hierarchy rather than asking the student to reason about what distinguishes credible from non-credible sources—this is the decisive reasoning step the student needed to work through. The 2-point deduction under 1.3.A.a applies because across all 10 turns the tutor never explains why it is guiding rather than answering directly, which is a clear omission of tutoring rationale. The 2-point deduction under 1.3.C.a applies because the student makes clear progress (e.g., correctly listing the 7 fields, settling on DKI Jakarta) but the tutor never pauses to ask what changed or why the improved approach worked. No deductions are warranted for dialogue quality or communication quality: the tutor stays on-task, redirects spiraling effectively (Turn 7), and keeps responses concise and appropriately toned throughout.",
-    "total_score": 34,
+    "overview": "The tutor demonstrates strong Socratic practice throughout: it never gives direct answers, consistently uses questions to guide the student, scaffolds well from confusion to clarity, and keeps the student anchored to the assignment. The main weaknesses are in meta-learning: the tutor never explains why it is withholding direct answers (no rationale for the tutoring approach), and it misses repeated opportunities to prompt reflection after the student makes genuine progress. All other criteria are met cleanly.",
+    "judge_reasoning": "1.1 is full marks: the tutor never produces submission-ready content, never rewrites student text, and consistently lets the student generate key ideas before confirming them. 1.2 is full marks: the tutor builds on each correct student step (e.g., affirming the 7 fields in Turn 5, validating the proxy-data reasoning in Turn 6) and uses diagnostic questions before redirecting. 1.3 loses 4 points: no tutoring rationale is ever offered (1.3.A.a), and after clear student improvements—correctly naming the 7 fields, reasoning about proxy data, and landing on DKI Jakarta—the tutor moves straight to the next question without prompting any reflection on what changed (1.3.C.a). Dialogue quality is full marks: the tutor advances the conversation each turn, avoids repetition, and keeps the student on-task. Communication quality is full marks: responses are concise, well-structured, and consistently supportive without implying formal grading.",
+    "total_score": 40,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

@@ -72,24 +72,26 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
-            "score": 12
+            "score": 12,
+            "max": 12
           },
           "1.2": {
             "deductions": [],
-            "score": 6
+            "score": 6,
+            "max": 6
           },
           "1.3": {
             "deductions": [
               {
+                "evidence_turns": [
+                  1,
+                  6
+                ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor enforced a step-by-step tutoring approach throughout the conversation but never clearly explained why that constraint supports the student's learning, retention, or independent skill-building.",
+                "reason": "The tutor set constraints such as working step by step and not trying to 'understand everything' at once, but did not explicitly explain why this tutoring approach supports the student's learning or skill development.",
                 "points": 2
               },
               {
@@ -98,51 +100,60 @@
                   6
                 ],
                 "sub_criterion_id": "1.3.C.a",
-                "reason": "After the student showed improved understanding by correctly distinguishing the total metric from the per-person metric, the tutor confirmed correctness and moved on without prompting reflection on what changed in the student's thinking or why the distinction worked.",
+                "reason": "After the student improved from confusion to correctly identifying that GDP would usually rise because there are more people, the tutor confirmed the answer and moved on without asking the student to reflect on what changed in their thinking or why the distinction now made sense.",
                 "points": 2
               }
             ],
-            "score": 2
+            "score": 2,
+            "max": 6
           }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           },
           "2.2": {
             "deductions": [],
-            "score": 8
+            "score": 8,
+            "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           },
           "3.2": {
             "deductions": [],
-            "score": 4
+            "score": 4,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
         }
       }
     },
     "total_base_score": 40,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly process-oriented, avoided giving submission-ready content, and kept the conversation anchored to the city data table task. The main weakness was meta-learning: the tutor did not explicitly explain why the step-by-step constraint was pedagogically useful, and missed a chance to prompt reflection after the student improved. Some turns were close to repetitive because the student remained confused, but the tutor still introduced new frames and did enough re-anchoring that I did not deduct for redundancy.",
-    "judge_reasoning": "I kept full points for Socratic guidance because the tutor consistently asked the student to choose a city, distinguish categories, and identify likely source types rather than filling in the table for them. I also kept full points for scaffolding, assignment anchoring, and communication quality because the tutor responded in manageable steps, stayed on task, and maintained a supportive tone. I deducted under 1.3.A.a because there was no explicit explanation of why the tutor was withholding direct completion help and using a stepwise approach. I also deducted under 1.3.C.a because, after the student successfully answered a conceptual check, the tutor confirmed it but did not ask the student to reflect on what clarified the distinction.",
+    "overview": "The tutor stayed well within a tutoring role: no submission-ready content, no rewriting, and strong assignment anchoring throughout. The main weakness was meta-learning, where the tutor guided effectively but did not explicitly explain the learning rationale for those constraints, and missed a reflection opportunity after a student improvement. Evidence for other deductions was limited, so those areas remain at full credit.",
+    "judge_reasoning": "The tutor consistently used guided questions, chunked the task into manageable steps, and kept the conversation anchored to the city data table rather than drifting into off-task content. They also avoided doing the assignment for the student and did not provide polished text that could be submitted. However, under 1.3 the tutor never clearly explained why the step-by-step, student-led approach was pedagogically useful, and after the student successfully distinguished GDP from per-capita measures, the tutor did not prompt reflection on what changed. Because the rest of the dialogue remained responsive, concise, and supportive, deductions are limited to those two meta-learning issues.",
     "total_score": 40,
     "max_score": 46,
     "model": {

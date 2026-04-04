@@ -72,14 +72,20 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 20,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
-            "deductions": [],
-            "score": 12,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  5
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor kept the student writing, but still supplied part of the key reasoning/content path by offering likely Jakarta actor categories and then giving the explanatory bridge for why informal-settlement residents are missing ('highly affected' but with less formal representation and fewer resources).",
+                "points": 6
+              }
+            ],
+            "score": 6,
             "max": 12
           },
           "1.2": {
@@ -97,20 +103,20 @@
                   9
                 ],
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "The tutor repeatedly enforced the boundary against writing the post for the student, but did not clearly explain that this constraint supports learning through active reasoning or skill development. The explanation stayed at the level of role/permission rather than tutoring rationale.",
+                "reason": "The tutor repeatedly enforced 'I won't write it for you' constraints but did not clearly explain a learning rationale such as practicing independent reasoning, retention, or transfer.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -122,13 +128,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -144,21 +150,25 @@
                   8
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Several responses use scolding or rigid phrasing such as 'Don't guess lazily,' 'stop trying to outsource the judgment,' and 'Now stop circling,' which risks making the interaction feel less supportive even though the tutor remains task-focused.",
+                "reason": "Several responses use needlessly harsh phrasing such as 'Don't guess lazily,' 'stop trying to outsource the judgment,' and 'Now stop circling,' which risks discouraging participation even though the tutor stays on task.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 10
         }
       }
     },
-    "total_base_score": 38,
+    "total_base_score": 32,
     "max_base_score": 46,
-    "overview": "The tutor stayed closely anchored to the assignment and avoided giving submission-ready writing, while guiding the student toward their own paragraph. The main weaknesses were the lack of an explicit learning rationale for the tutoring constraints and a noticeably sharp tone in several turns. There is slight ambiguity about whether the tutor's logic prompt in turn 5 did too much reasoning, but the student had already identified the missing group and still had to produce the actual sentence and final post.",
-    "judge_reasoning": "The tutor performed well on assignment anchoring, scaffolding, and avoiding direct completion of the forum post: the student ultimately generated the claims and wrote the paragraph. I deducted under 1.3.A because the tutor repeatedly said they would not write the assignment but never clearly connected that boundary to the student's learning process. I also deducted under 3.2.A because multiple turns used unnecessarily harsh phrasing that could undermine trust. I did not deduct under 1.1 because, despite offering starting points and logic prompts, the tutor did not provide polished final wording or a submission-ready answer.",
-    "total_score": 38,
+    "overview": "The tutor stayed closely anchored to the assignment and successfully pushed the student to produce their own final paragraph. I did not apply the harsher direct-answer penalty because the tutor consistently refused to write submission-ready prose, but I did take a moderate pedagogy deduction because the tutor supplied some of the key reasoning/content path. The main non-pedagogical weakness was tone: a few turns were more abrasive than supportive.",
+    "judge_reasoning": "The main pedagogy deduction is under 1.1 because the tutor partially performed the central reasoning step by giving likely actor categories and then supplying the logic for why affected informal-settlement residents are often missing. I did not deduct under 1.1.A because the tutor never wrote a ready-to-submit forum post and required the student to draft the final wording. I deducted under 1.3.A because the tutor enforced boundaries without explicitly explaining why those constraints support learning. I also deducted under 3.2.A because some phrasing was dismissive enough to weaken trust, despite otherwise clear, concise, assignment-focused guidance.",
+    "total_score": 32,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,79 +72,97 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "Across the entire conversation, the student never names their city or provides any concrete material, yet the tutor repeatedly re-explains the same framework rather than diagnosing why the student is stuck. The tutor never asks targeted diagnostic questions to understand whether the student lacks a city choice, lacks access to sources, has reading comprehension issues, or is experiencing anxiety. Instead, the tutor cycles through the same explanation multiple times without probing the root cause of the student's paralysis.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              7,
-              8
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly signals the same confusion (how to categorize actors, what the forum post should say) across many turns, yet the tutor consistently re-explains the same framework rather than first diagnosing what specifically is blocking the student. The tutor never asks a targeted diagnostic question such as 'What part of the leading/engaged distinction is unclear to you?' or 'Can you tell me what you already understand so I know where to start?' Instead, each turn produces another version of the same explanation, indicating the tutor is not diagnosing before responding.",
+                "points": 3
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is not simply giving the student a worked example or doing the assignment for them. When the student explicitly asks for a 'full example from start to finish' (Turn 5) and says they are 'not ready' (Turn 8), the tutor declines but never articulates the pedagogical rationale—e.g., that working through it themselves builds the analytical skill the course is developing. The constraint is enforced but never explained.",
-            "points": 2
+            "score": 3,
+            "max": 6
           },
-          {
-            "evidence_turns": [
-              3,
-              4,
-              5,
-              6,
-              7,
-              8
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  7
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is not simply giving the student a completed example or doing the work for them—i.e., it never articulates that the reason for guided discovery is to build the student's own reasoning skills, retention, or long-term analytical ability. The closest the tutor comes is 'I'm not going to build the assignment for you' (Turn 5), but no rationale for why this supports learning is provided at any point in the conversation.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.B.a",
-            "reason": "The tutor gives no method-level feedback on the student's thinking process because the student never produces any work. However, the tutor also never comments on the student's approach to the task (e.g., the pattern of seeking reassurance before acting, or the strategy of asking for generic explanations rather than engaging with specifics). No process feedback is offered on how the student is approaching the assignment intellectually.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
           "score": 17,
-          "max": 24
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same leading/engaged/missing framework explanation across at least six consecutive turns without meaningfully advancing the conversation. The student remains stuck and the tutor repeatedly re-explains the same categorization logic with minor rewordings rather than switching to a different strategy—such as a concrete worked mini-example with a hypothetical city, reframing the task entirely, or explicitly acknowledging the loop and proposing a different approach. This constitutes pattern-level repetition without synthesis or progression.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor repeats essentially the same explanation of the leading/engaged/missing framework across nearly every turn without meaningful synthesis or escalation. The student remains stuck throughout, and the tutor's response is consistently to re-explain the same framework with slight rewording rather than switching to a fundamentally different approach—such as targeted simplification, reframing the task entirely, or addressing the student's apparent avoidance behavior directly. By Turn 7-8, the pattern is clearly not working and the tutor still does not pivot strategy.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
@@ -152,11 +170,11 @@
       }
     },
     "total_base_score": 33,
-    "max_base_score": 44,
-    "overview": "The tutor maintains appropriate boundaries throughout—never doing the assignment for the student, keeping a supportive tone, and consistently redirecting toward concrete action. However, the conversation is characterized by a persistent loop: the student asks for more explanation, the tutor re-explains the same framework, and no progress is made. The tutor never diagnoses the root cause of the student's paralysis, never explains the pedagogical rationale for its constraints, and never provides process-level feedback on the student's approach to the task. The redundancy deduction is the most significant, as the same explanatory pattern repeats across all ten turns without meaningful escalation or strategy change.",
-    "judge_reasoning": "Section 1 loses 7 points: 3 for failure to diagnose student confusion before responding (1.2.B.a)—the tutor never probes why the student is stuck despite ten turns of the same impasse; 2 for never explaining the tutoring rationale (1.3.A.a)—the tutor declines to give a worked example but never says why; and 2 for no method-level feedback (1.3.B.a)—the student's avoidance pattern and approach to the task go entirely unaddressed. Section 2 loses 4 points for pattern-level repetition (2.1.A.a)—the leading/engaged/missing framework is re-explained in nearly identical terms across all ten turns, the student remains stuck throughout, and the tutor never meaningfully pivots strategy. Section 3 retains full points: responses are concise, clearly structured, and maintain a supportive, non-grading tone throughout.",
+    "max_base_score": 42,
+    "overview": "The tutor maintained appropriate boundaries throughout—never completing the assignment for the student, never rewriting student text, and keeping a supportive tone. Responses were concise and well-structured. However, the conversation suffered from two significant weaknesses: (1) the tutor never diagnosed what specifically was blocking the student before re-explaining, defaulting instead to repeated restatements of the same framework across six or more turns; and (2) the tutor never articulated a rationale for its guided-discovery approach, missing an opportunity to help the student understand why active reasoning matters. The repetition-without-synthesis pattern is the most consequential failure, as the student ended Turn 10 still without having named their city or produced any substantive work.",
+    "judge_reasoning": "1.1 receives full marks: the tutor consistently refused to do the assignment for the student, never produced submission-ready content, and kept idea generation student-led throughout. 1.2 loses 3 points under 1.2.B.a because the tutor never asked targeted diagnostic questions to locate the student's specific confusion before responding; instead it re-explained the same framework repeatedly. 1.3 loses 2 points under 1.3.A.a because the tutor never explained why it was withholding direct answers—no rationale connecting the tutoring approach to learning outcomes was offered. 2.1 loses all 4 points under 2.1.A.a because the tutor cycled through the same leading/engaged/missing explanation across at least six turns without switching strategy, reframing, or synthesizing, leaving the student in the same place at Turn 10 as at Turn 3. 2.2 and all of Section 3 are unaffected: the tutor stayed on-task, maintained appropriate tone, avoided grading language, and kept responses bite-sized.",
     "total_score": 33,
-    "max_score": 44,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

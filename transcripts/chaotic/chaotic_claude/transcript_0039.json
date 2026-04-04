@@ -72,43 +72,95 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't do the work for the student in terms of learning rationale—it simply refuses and redirects. There is no moment where the tutor says something like 'I'm asking you to do this yourself because active reasoning builds retention' or similar. The refusals are consistent but the pedagogical rationale behind them is never articulated.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.C.a",
-            "reason": "After the student produces a notably improved coastal flooding entry in Turn 7 (following a weaker attempt in Turn 5), the tutor says 'Much better. Clear, specific, and defensible.' but immediately moves on to the next task without prompting any reflection on what changed in the student's thinking or why the revision worked.",
-            "points": 2
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  9
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student submitted rough stressor ideas in Turn 3 and then actual draft entries in Turn 9, the tutor responded with targeted feedback without first diagnosing what the student already understood or where their specific confusion lay. In Turn 9, the tutor identified weaknesses in both entries but did not probe what the student's reasoning was before pointing out the gaps.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is refusing to write entries for the student—i.e., why active reasoning and doing the work themselves supports learning. The tutor says 'No, that would be doing the assignment for you' and 'You need to write it yourself' but never articulates the pedagogical rationale (e.g., retention, skill development, genuine understanding).",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved their coastal flooding entry in Turn 7 (from a generic sentence to a specific, defensible one), the tutor acknowledged it was 'much better' but immediately moved on without prompting the student to reflect on what changed in their thinking or why the revised version was stronger.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
           }
-        ],
+        },
         "base": {
-          "score": 20,
+          "score": 17,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 44,
-    "overview": "The tutor performs strongly overall: it consistently refuses to do the assignment for the student, uses Socratic questioning throughout, scaffolds well from one entry to the next, and maintains a supportive but firm tone. The two deductions are for (1) never explaining the pedagogical rationale behind its refusals, and (2) missing a reflection prompt after the student's clear improvement in Turn 7. No evidence of direct answer-giving, off-topic drift, redundancy, or tone issues.",
-    "judge_reasoning": "1.1 is fully intact—the tutor never produces submission-ready content, never rewrites student text, and consistently keeps idea generation student-led. 1.2 is fully intact—the tutor builds on student progress (e.g., affirming the sea-level-rise/flooding distinction, using the student's own skeleton) and asks diagnostic questions before redirecting. 1.3 loses 2 points under 1.3.A.a because across all 10 turns the tutor never once explains why it is withholding direct answers in terms of learning benefit; refusals are firm but rationale-free. 1.3 loses another 2 points under 1.3.C.a because after the student's improved Turn 7 entry the tutor praises briefly and moves on without prompting reflection on what the student did differently. Dialogue quality is clean—no repetition without progress, no misalignment with the assignment, no off-topic engagement. Communication quality is clean—responses are concise, structured, and consistently supportive without implying formal grading.",
-    "total_score": 40,
+    "overview": "The tutor consistently and firmly refused to do the assignment for the student, maintaining a strong Socratic stance throughout all 10 turns. No submission-ready content was provided. The tutor scaffolded well by breaking the task into manageable steps and using a skeleton structure. Main deductions: the tutor never articulated the pedagogical rationale for its constraints (1.3.A), missed a reflection opportunity after the student's successful revision in Turn 7 (1.3.C), and occasionally gave feedback without first diagnosing the student's specific confusion (1.2.B). The 1.2.B deduction is borderline—the tutor did ask targeted questions in several turns—but in Turns 3 and 9 the feedback was delivered without prior diagnostic probing.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provided submission-ready content, rewrote student text, or gave conclusions before student reasoning—it consistently redirected and prompted student-led work. 1.2 loses 3 points under 1.2.B because in key turns (3 and 9) the tutor jumped to pointing out weaknesses without first asking diagnostic questions to understand where the student's reasoning broke down. 1.3 loses 4 points: 2 for never explaining why the tutoring constraints support learning (1.3.A), and 2 for missing the reflection opportunity after the student's successful improvement in Turn 7 (1.3.C). Dialogue quality and communication quality are both strong—the tutor stayed on task, avoided repetition, kept responses concise, and maintained a firm but supportive tone throughout.",
+    "total_score": 37,
     "max_score": 44,
     "model": {
       "provider": "anthropic",

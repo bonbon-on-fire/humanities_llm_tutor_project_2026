@@ -72,60 +72,102 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7,
-              8
-            ],
-            "sub_criterion_id": "1.2.B.a",
-            "reason": "After the student explicitly asked for a broader explanation of what counts as acceptable and then said they needed the big-picture logic first, the tutor still pushed a direct source-by-source comparison instead of first diagnosing and addressing that broader confusion.",
-            "points": 3
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor consistently kept the work student-led, but never explicitly stated why this constraint was pedagogically useful for the student's learning, retention, or independent reasoning.",
-            "points": 2
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently kept the work student-led, but never explicitly explained why those constraints support learning, retention, or skill development.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 19,
+          "score": 20,
           "max": 24
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2,
-              3,
-              6,
-              8
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "After the student repeatedly said they were overwhelmed and wanted broader source-judging logic, the tutor kept returning to the same boundary-consistency check and similar prompt pattern before finally synthesizing, creating repetition without enough progress.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "The tutor repeated the same boundary-consistency and source-comparison move across multiple turns while the student remained overwhelmed, and only later switched to a clearer whole-table synthesis. This created a visible spiral before progress resumed.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
-          "score": 10,
-          "max": 10
+          "score": 8,
+          "max": 8
         }
       }
     },
-    "total_base_score": 37,
-    "max_base_score": 46,
-    "overview": "The tutor stayed assignment-focused, avoided doing the table for the student, and generally used clear, manageable prompts. The main weakness was repeated reliance on the same boundary/consistency questioning even after the student explicitly asked for a broader conceptual explanation, which caused some conversational spiraling before the tutor finally reframed the task more helpfully.",
-    "judge_reasoning": "No deduction was taken under 1.1 because the tutor did not provide submission-ready content or complete the student's reasoning for them; the guidance stayed process-oriented. The main pedagogy deduction is for missed diagnosis at turns 7-8, where the student asked for a big-picture explanation but the tutor continued with direct comparison prompts rather than first addressing that confusion. A further deduction applies because the tutor never explained why the student-led constraint was beneficial. Dialogue quality also drops because the tutor repeated the same boundary/source-selection move across several turns before finally synthesizing a more general rule, though assignment anchoring and tone remained solid.",
-    "total_score": 37,
-    "max_score": 46,
+    "total_base_score": 36,
+    "max_base_score": 42,
+    "overview": "The tutor stayed assignment-focused, avoided doing the table for the student, and gave useful process guidance for handling boundary choice, source quality, and category meanings. Main weaknesses were a repetitive loop around the same boundary-consistency logic and the lack of any explicit explanation for why the tutor was keeping the reasoning student-led.",
+    "judge_reasoning": "The tutor earned full credit on direct-work boundaries because they did not provide submission-ready content or rewrite student prose; instead, they used questions and short frameworks to keep the student engaged in the reasoning. Scaffolding was generally solid and anchored to the actual assignment categories, especially in the explanations of the table's four parts and the distinction between GDP and income per capita. The biggest deduction is for redundancy: once the student signaled several times that they needed a broader conceptual frame, the tutor repeated similar comparison and boundary-match moves across multiple turns before meaningfully reframing. A smaller deduction applies because the tutor never explicitly stated a learning rationale for these constraints, even though the conversation clearly used them.",
+    "total_score": 36,
+    "max_score": 42,
     "model": {
       "provider": "openai",
       "model": "gpt-5.4",

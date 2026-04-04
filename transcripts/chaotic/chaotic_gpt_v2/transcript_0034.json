@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 24,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -92,19 +88,18 @@
             "score": 4,
             "max": 4
           }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 8,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [
               {
                 "evidence_turns": [
-                  2,
                   3,
                   4,
                   5,
@@ -112,7 +107,7 @@
                   10
                 ],
                 "sub_criterion_id": "2.1.A.a",
-                "reason": "The tutor repeatedly used the same refusal-plus-source-check prompt pattern across several turns while the student remained stuck, with limited synthesis or reframing until later in the exchange.",
+                "reason": "Across multiple turns, the tutor repeated a similar refusal-plus-'find the source and report back' pattern without enough synthesis or reframing, even as the student kept signaling deadline pressure. The conversation advanced more only once the tutor finally gave a more concrete redirect to INEGI in Turn 8.",
                 "points": 4
               }
             ],
@@ -124,13 +119,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 8,
-          "max": 10
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -148,21 +143,25 @@
                   10
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "Although the tutor stayed professional, the repeated blunt 'No' responses and phrasing like 'Don't shortcut this part' and 'bad habit' created a somewhat rigid tone that could discourage participation.",
+                "reason": "The tutor stayed professional, but repeated blunt refusals such as 'No' and 'Don't shortcut this part' gave the exchange a rigid tone that could discourage participation.",
                 "points": 2
               }
             ],
-            "score": 4,
-            "max": 6
+            "score": 2,
+            "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 36,
     "max_base_score": 46,
-    "overview": "The tutor strongly protected against doing the assignment for the student and kept the work source-based and student-led. The tutor also gave concrete process guidance about using official labels, naming sources, and distinguishing proxy measures. The main weakness was dialogue management: the conversation became repetitive as the tutor reused similar refusal-and-search prompts across many turns. Some firmness was appropriate given the student's requests, so deductions were limited to repetition and tone rather than pedagogy.",
-    "judge_reasoning": "The tutor earns full pedagogy credit because they consistently refused to provide submission-ready table entries or polished wording, while redirecting the student toward finding official demographic and climate sources themselves. They also gave valid methodological feedback, such as requiring source labels, years, and distinction between proxy measures, and explained the rationale in terms of verifiability and learning. A major deduction applies under redundancy because multiple turns repeated essentially the same move without enough reframing while the student remained stuck. A smaller tone deduction applies because the repeated blunt refusals and admonishing phrasing made the interaction somewhat rigid, even though it remained professional and formative overall.",
-    "total_score": 40,
+    "overview": "The tutor strongly protected against doing the assignment for the student and generally kept the work student-led and assignment-anchored. No deduction was taken in pedagogy because the tutor asked for source-based reasoning, built on the student's INEGI discovery, and gave process-level guidance. The main weakness was conversational patterning: the tutor repeated similar refusal-and-redirect moves several times before offering a more concrete path, and the tone was sometimes more rigid than supportive.",
+    "judge_reasoning": "The tutor earned full pedagogy credit because they did not provide submission-ready table entries, did not rewrite the student's text, and consistently pushed the student to verify source labels and codes independently. They also offered method feedback, such as distinguishing what a source measures from why it fits the assignment field, and later helped the student think about internal coherence among proxy measures. The largest deduction falls under dialogue quality because several turns repeated essentially the same refusal and source-check prompt without enough reframing or consolidation. A smaller communication deduction applies because the repeated blunt refusals made the tone feel rigid, though not hostile.",
+    "total_score": 36,
     "max_score": 46,
     "model": {
       "provider": "openai",

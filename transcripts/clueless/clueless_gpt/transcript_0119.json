@@ -72,10 +72,6 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "base": {
-          "score": 22,
-          "max": 24
-        },
         "criteria": {
           "1.1": {
             "deductions": [],
@@ -83,28 +79,38 @@
             "max": 12
           },
           "1.2": {
-            "deductions": [],
-            "score": 6,
+            "deductions": [
+              {
+                "evidence_turns": [
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed confusion about broad vs. specific actors and anxiety about official titles, the tutor moved straight into corrective guidance ('Use 3 buckets only,' 'Stop stalling on titles') instead of first diagnosing the precise source of confusion.",
+                "points": 3
+              }
+            ],
+            "score": 3,
             "max": 6
           },
           "1.3": {
             "deductions": [
               {
                 "sub_criterion_id": "1.3.A.a",
-                "reason": "Across the conversation, the tutor uses constraints and guided questioning effectively but never explicitly explains why this approach supports the student's learning, retention, or independent reasoning.",
+                "reason": "The tutor used a constrained, student-led approach throughout but never explicitly explained why these constraints support learning, retention, or independent reasoning.",
                 "points": 2
               }
             ],
             "score": 4,
             "max": 6
           }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
         }
       },
       "2_dialogue_quality": {
-        "base": {
-          "score": 12,
-          "max": 12
-        },
         "criteria": {
           "2.1": {
             "deductions": [],
@@ -116,13 +122,13 @@
             "score": 8,
             "max": 8
           }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
         }
       },
       "3_communication_quality": {
-        "base": {
-          "score": 6,
-          "max": 8
-        },
         "criteria": {
           "3.1": {
             "deductions": [],
@@ -137,21 +143,25 @@
                   6
                 ],
                 "sub_criterion_id": "3.2.A.a",
-                "reason": "The tutor is mostly supportive, but phrases like \"You're overcomplicating it\" and \"Stop stalling on titles\" sound somewhat rigid and mildly dismissive, creating a less supportive tone than ideal.",
+                "reason": "Phrases like 'You’re overcomplicating it' and 'Stop stalling on titles' come across as blunt and somewhat dismissive, creating a colder tone than ideal for supportive tutoring.",
                 "points": 2
               }
             ],
             "score": 2,
             "max": 4
           }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
         }
       }
     },
-    "total_base_score": 40,
+    "total_base_score": 37,
     "max_base_score": 46,
-    "overview": "The tutor stayed strongly within a guided, non-answer-giving mode and repeatedly re-anchored the student to the assignment task. Deductions are limited to the lack of any explicit rationale for the tutoring constraints and a couple of sharper phrasings that slightly weaken the supportive tone.",
-    "judge_reasoning": "The tutor consistently used Socratic prompts, kept the student doing the interpretive work, and avoided giving submission-ready content. It also scaffolded well by narrowing the task into buckets, refocusing on the deliverable, and emphasizing role/function over perfect titles. I deducted under meta-learning because the tutor never explicitly explained why it was using questioning and withholding direct answers, which the rubric requires at least once. I also deducted for tone because a few responses were unnecessarily blunt, even though the overall interaction remained helpful and on-task.",
-    "total_score": 40,
+    "overview": "The tutor stayed well anchored to the assignment, avoided doing the student's case-specific reasoning, and generally scaffolded the task with usable frameworks. Deductions are mainly for limited diagnosis before redirecting confused moments, lack of explicit meta-rationale for the tutoring approach, and a somewhat blunt tone in a couple of turns. Some evidence is slightly ambiguous because the tutor's directness may have been intended as efficiency rather than dismissal, so deductions were kept modest.",
+    "judge_reasoning": "The strongest aspect of this conversation is that the tutor consistently avoided producing submission-ready content and instead asked the student to classify actors and test patterns using Jakarta-specific reasoning. I deducted under 1.2 because, at key moments of confusion, the tutor jumped into a framework or correction before probing the exact misunderstanding. I also deducted under 1.3.A because the tutor never explicitly explained why the student-led approach was being used. Finally, I deducted under 3.2.A because a few responses were noticeably blunt, even though the overall interaction remained mostly task-focused and helpful.",
+    "total_score": 37,
     "max_score": 46,
     "model": {
       "provider": "openai",

@@ -72,65 +72,120 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it won't provide answers—it simply refuses repeatedly without articulating the pedagogical rationale (e.g., active reasoning builds retention, skill development, long-term learning). A single clear explanation of why guided discovery serves the student better than direct answers is absent throughout the conversation.",
-            "points": 2
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
           },
-          {
-            "sub_criterion_id": "1.3.B.b",
-            "reason": "When the student produces rough reasoning in Turn 8 ('act conseq says do wtv saves more ppl... Push prob feels wrong'), the tutor says 'your reasoning is finally on track' but gives no method-level feedback on why the reasoning structure is sound or weak, what makes the Push objection philosophically significant, or how to sharpen the argument. Feedback remains at the level of 'add one more step' without process-level direction on how to construct a philosophical argument.",
-            "points": 2
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly stalls and asks the tutor to do the work, the tutor tends to re-issue structured lists of sub-questions rather than first diagnosing why the student is stuck (e.g., whether they genuinely don't understand act consequentialism or are simply unwilling to engage). A brief diagnostic question about the source of confusion would have been more appropriate before re-scaffolding.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it refuses to give direct answers—i.e., never articulates that the goal is to build the student's own reasoning skills, retention, or long-term philosophical thinking ability. It simply says 'No' or 'That's your job' without once explaining the pedagogical rationale for the tutoring constraints.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 20,
-          "max": 24
+          "score": 17,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              7,
-              8,
-              9,
-              10
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  7,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor cycles through the same pattern across multiple turns: student asks for direct output, tutor refuses and re-issues a numbered list of sub-questions. By turns 7–9, the student has already demonstrated partial understanding (correctly identifying Push as problematic), but the tutor continues issuing the same 4-part scaffold without synthesizing what the student has already produced or advancing the conversation meaningfully.",
+                "points": 4
+              }
             ],
-            "sub_criterion_id": "2.1.A.a",
-            "reason": "From Turn 7 onward, the tutor cycles through the same 4-part scaffold (theory, cases, objection, principle) across multiple turns without synthesis or meaningful progression. The student is stuck on the final principle step, but the tutor repeats the same question structure ('write 4 sentences,' 'choose the principle') without reframing, simplifying, or consolidating what the student has already established. No attempt is made to summarize progress or shift strategy.",
-            "points": 4
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
           }
-        ],
+        },
         "base": {
           "score": 8,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              2
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The opening line 'I'm your tutor, not your ghostwriter' is dismissive and slightly condescending in tone. While the refusal is appropriate, the phrasing risks discouraging the student rather than inviting engagement.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "3.1.A.a",
-            "reason": "Turn 2 presents a 4-part list of prompts when the student has not yet answered even the first question. This front-loads multiple tasks before the student has demonstrated any engagement, making the response longer and more complex than the interactive moment requires.",
-            "points": 4
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 4,
+          "score": 6,
           "max": 8
         }
       }
     },
-    "total_base_score": 32,
-    "max_base_score": 44,
-    "overview": "The tutor consistently and correctly refuses to produce submission-ready content, maintaining appropriate boundaries throughout. Socratic questioning is used well in early turns to elicit the student's own reasoning. However, the tutor never explains the pedagogical rationale for its constraints, leaving the student without understanding of why the approach serves their learning. Method-level feedback is thin—when the student finally produces reasoning, the tutor affirms it without explaining what makes it philosophically sound or weak. In later turns, the tutor spirals on the same scaffold without adapting strategy when the student remains stuck. Turn 2's multi-part dump is somewhat front-heavy for the moment. Tone is firm but not dismissive; no grading stance issues arise.",
-    "judge_reasoning": "Deductions in 1.3 are applied because the tutor never articulates why guided discovery benefits the student (1.3.A.a) and provides only surface-level affirmation rather than process-level feedback on the student's philosophical reasoning (1.3.B.b). The full 4-point deduction in 2.1 is warranted because Turns 7–10 show clear pattern-level repetition: the tutor re-presents the same 4-part scaffold without synthesis, reframing, or strategy shift despite the student remaining stuck on the same sub-point. The 3.1 deduction is applied for Turn 2's multi-prompt dump before the student has answered even the first question, though this is an isolated instance rather than a pervasive pattern—the deduction is applied because the rubric triggers on repeated or clearly inappropriate use, and this instance is the most salient. No deductions are applied for 1.1 (the tutor never produces submission-ready content), 1.2 (the tutor builds on student answers in Turns 4 and 6), 2.2 (the tutor correctly re-anchors when the student claims instructor permission), or 3.2 (tone is firm but supportive and no grading stance is implied).",
-    "total_score": 32,
-    "max_score": 44,
+    "total_base_score": 31,
+    "max_base_score": 42,
+    "overview": "The tutor consistently and correctly refused to produce submission-ready content, maintained assignment anchoring throughout, and used Socratic questioning to draw out student reasoning. However, the conversation suffered from repetitive scaffolding without synthesis or progression (same 4-part list re-issued multiple times), a failure to diagnose the student's actual confusion versus unwillingness, and a complete absence of any explanation of why the tutoring constraints exist. The opening tone was slightly dismissive. The student did make genuine progress (correctly identifying Push as the problematic case), but the tutor did not sufficiently build on or consolidate that progress.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never produced submission-ready text, never rewrote student sentences, and never gave the conclusion before the student reasoned toward it. 1.2 loses 3 points under 1.2.B.a because the tutor repeatedly re-issued structured question lists without first diagnosing whether the student's resistance was conceptual confusion or motivational; a brief diagnostic probe was warranted. 1.3 loses 2 points under 1.3.A.a because the tutor never once explained the pedagogical rationale for its constraints across all 10 turns. 2.1 loses all 4 points under 2.1.A.a because the tutor cycled the same refusal-plus-numbered-list pattern without synthesizing student progress or reframing when the student was clearly spiraling. 3.2 loses 2 points under 3.2.A.a for the dismissive 'not your ghostwriter' phrasing in Turn 1.",
+    "total_score": 31,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",

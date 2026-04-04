@@ -72,59 +72,86 @@
   "grade": {
     "sections": {
       "1_pedagogy": {
-        "deductions": [
-          {
-            "evidence_turns": [
-              8
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Turn 8, the tutor directly lists plausible climate-related stressors for Jakarta (coastal flooding, river flooding, sea level rise, extreme heat, drought, land subsidence) after the student asked for examples. While the tutor frames this as items 'to evaluate,' this effectively does the key reasoning step of identifying which stressors belong in the table, bypassing the student's own derivation. The student had only to pick from the tutor's list rather than generate and defend their own candidates.",
+                "points": 6
+              }
             ],
-            "sub_criterion_id": "1.1.C.b",
-            "reason": "In Turn 8, the tutor provides a direct list of 'plausible climate-related stressors for Jakarta' (coastal flooding, river flooding, sea level rise, extreme heat, drought, land subsidence) after the student asks for examples. This does the key reasoning step of identifying which stressors are valid climate-related vulnerabilities for Jakarta, rather than guiding the student to derive them. The student had already proposed a list in Turn 7; instead of probing that list further, the tutor essentially supplies the answer set. This crosses into giving the student the decisive content rather than scaffolding discovery.",
-            "points": 6
+            "score": 6,
+            "max": 12
           },
-          {
-            "evidence_turns": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that the Socratic approach, asking the student to test each stressor or build their own rating framework, supports learning, retention, or skill development. Constraints are enforced but the rationale is never stated.",
+                "points": 2
+              }
             ],
-            "sub_criterion_id": "1.3.A.a",
-            "reason": "The tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that the Socratic approach, asking the student to reason through stressors, is intended to build analytical skills, retention, or independent thinking. The tutoring constraints are enforced but never justified.",
-            "points": 2
+            "score": 2,
+            "max": 4
           }
-        ],
+        },
         "base": {
-          "score": 16,
-          "max": 24
+          "score": 14,
+          "max": 22
         }
       },
       "2_dialogue_quality": {
-        "deductions": [],
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
         "base": {
           "score": 12,
           "max": 12
         }
       },
       "3_communication_quality": {
-        "deductions": [],
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
         "base": {
           "score": 8,
           "max": 8
         }
       }
     },
-    "total_base_score": 36,
-    "max_base_score": 44,
-    "overview": "The tutor demonstrates strong dialogue management, consistently redirecting the student back to the assignment, avoiding off-topic drift, and maintaining a supportive but direct tone throughout. Scaffolding is generally well-handled, building on student responses turn by turn. The primary deduction is for Turn 8, where the tutor supplies a ready-made list of Jakarta stressors after the student requests examples, effectively doing the key identification work the student should have done. A secondary deduction applies because the tutor never explains the rationale for its guided-discovery approach at any point in the conversation.",
-    "judge_reasoning": "Criterion 1.1.C.b is triggered in Turn 8: the student explicitly asks for examples of solid climate-related stressors, and the tutor provides a near-complete enumerated list rather than probing the student's own Turn 7 list further. This gives the student the decisive content (which stressors are valid) rather than guiding them to evaluate their own candidates, warranting the full 6-point deduction. Criterion 1.3.A.a is triggered because across all 10 turns the tutor never once explains why it is asking questions rather than giving direct answers, missing the requirement to articulate tutoring rationale at least once. No deductions apply to dialogue quality: the tutor consistently re-anchors to the assignment, avoids off-topic engagement, and does not spiral. Communication quality is strong throughout—responses are concise, interactive, and appropriately toned without implying formal grading.",
-    "total_score": 36,
-    "max_score": 44,
+    "total_base_score": 34,
+    "max_base_score": 42,
+    "overview": "The tutor generally maintained a Socratic, question-driven approach throughout the conversation, breaking the task into manageable steps and consistently redirecting the student back to their own reasoning. The primary deduction is for Turn 8, where the tutor provided a near-complete list of Jakarta-specific climate stressors directly, effectively doing the key identification work for the student. A secondary deduction applies because the tutor never explained the rationale for its guided-discovery approach. All other criteria were met well: scaffolding built progressively on student responses, dialogue stayed on-task, responses were concise, and tone was supportive without being evaluative.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is warranted because Turn 8 crosses from hinting to directly supplying the answer set. The student asked 'can u just give me examples of solid climate-related stressors for Jakarta' and the tutor complied with a labeled list, leaving the student only to select from pre-approved options rather than derive candidates independently. This is the central intellectual task of the assignment. The 1.3.A.a deduction (2 points) applies because across all ten turns the tutor never articulates why it is asking questions rather than giving answers, missing the meta-learning requirement. No deductions were applied to 1.2 because the tutor consistently acknowledged student progress (e.g., 'Good catch,' 'That's the right question') and adapted to confusion points with targeted follow-up questions. Communication was appropriately concise and tone remained coaching-oriented throughout.",
+    "total_score": 34,
+    "max_score": 42,
     "model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",
