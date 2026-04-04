@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   const DEFAULT_MAX_SCORE = 47;
 
   /** Returns the current URL pathname. */
@@ -264,6 +264,10 @@
       container.innerHTML = `<p class="error">${escapeHtml(message)}</p>`;
       return;
     }
+    const overviewLines = Array.isArray(grade.overview)
+      ? grade.overview
+      : (typeof grade.overview === "string" && grade.overview.trim() ? [grade.overview] : []);
+    const sections = grade.sections && typeof grade.sections === "object" ? grade.sections : {};
     const model = grade.model ? grade.model.provider + " / " + grade.model.model : "";
     let html =
       "<h3>\n        " +
@@ -274,16 +278,16 @@
       grade.max_score +
       "</span>\n      </h3>\n      " +
       (model ? '<p style="font-size:0.8rem;color:var(--text-muted);margin:-0.5rem 0 0.5rem">' + escapeHtml(model) + "</p>" : "");
-    if (grade.overview && grade.overview.length) {
+    if (overviewLines.length) {
       html += '<div class="overview"><ul>';
-      grade.overview.forEach((line) => {
+      overviewLines.forEach((line) => {
         html += "<li>" + escapeHtml(line) + "</li>";
       });
       html += "</ul></div>";
     }
-    if (grade.sections) {
+    if (Object.keys(sections).length) {
       html += '<div class="sections">';
-      for (const [secId, sec] of Object.entries(grade.sections)) {
+      for (const [secId, sec] of Object.entries(sections)) {
         if (!sec.criteria) continue;
         html += '<div class="section-block"><h4>' + escapeHtml(secId) + "</h4>";
         for (const c of Object.values(sec.criteria)) {
@@ -293,7 +297,15 @@
           html += "</div>";
           if (c.deductions && c.deductions.length) {
             c.deductions.forEach((d) => {
-              html += '<div class="deduction">−' + d.points + ": " + escapeHtml(d.reason) + "</div>";
+              const subsectionId = d.sub_criterion_id || d.criterion_id || d.id || "unknown";
+              html +=
+                '<div class="deduction">[' +
+                escapeHtml(subsectionId) +
+                "] −" +
+                d.points +
+                ": " +
+                escapeHtml(d.reason) +
+                "</div>";
             });
           }
         }

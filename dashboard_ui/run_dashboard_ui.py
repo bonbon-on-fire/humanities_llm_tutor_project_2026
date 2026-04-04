@@ -1,4 +1,4 @@
-﻿"""
+"""
 Dashboard UI - Flask app to browse transcript and bundle grading results.
 """
 
@@ -154,9 +154,15 @@ def _counterpart_candidates(*, group: str, provider: str, raw_stem: str) -> list
     if not provider_dir.is_dir():
         return []
 
+    def _is_ignored_variant(stem: str) -> bool:
+        # Ignore alternate grading variants (e.g. ..._v2, ..._v3) when matching counterparts.
+        return bool(re.search(r"_v[23]$", stem))
+
     out: list[Path] = []
     for path in provider_dir.glob("*.json"):
         stem = path.stem
+        if _is_ignored_variant(stem):
+            continue
         if stem == raw_stem or stem.startswith(f"{raw_stem}__"):
             out.append(path)
     return sorted(out, key=lambda p: p.name)
