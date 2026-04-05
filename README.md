@@ -1,42 +1,10 @@
 # Humanities LLM Tutor Project 2026
 
-## Quick Start
-
-### Prerequisites
-- **Python**: 3.11 or higher
-- **OpenAI API key**: `$env:OPENAI_API_KEY = "your-key"`
-- **Anthropic API key** (for Claude): `$env:ANTHROPIC_API_KEY = "your-key"`
-
-### 1. Clone and Install
-```powershell
-git clone https://github.com/yourusername/humanities_llm_tutor_project_2026.git
-cd humanities_llm_tutor_project_2026
-pip install -r requirements.txt
-```
-
-### 2. Generate Conversations
-```powershell
-# Edit TUTOR_PROMPTS, STUDENT_PERSONAS, COURSE_EXERCISES in ui/run_ui_raw.py, then:
-python -m ui.run_ui_raw
-```
-
-### 3. Grade Transcripts
-```powershell
-python -m ui.run_ui_judge --provider gpt    # Grade all raw transcripts with GPT
-python -m ui.run_ui_judge --provider claude # Grade all raw transcripts with Claude
-```
-
-### 4. Browse Results
-```powershell
-python -m dashboard_ui.run_dashboard_ui
-# Open http://127.0.0.1:5001
-```
-
 ## Project Overview
 
 ### What I Built
 
-I designed and built an end-to-end LLM tutoring research platform for MIT OpenCourseWare (OCW) humanities and social sciences courses. The system simulates Socratic tutoring conversations between an AI tutor and AI student bots, grades those conversations using a second LLM acting as a judge, and produces side-by-side GPT vs Claude score comparisons for analysis.
+I designed and built an **end-to-end LLM tutoring research platform** for MIT OpenCourseWare (OCW) humanities and social sciences courses. The system simulates Socratic tutoring conversations between an AI tutor and AI student bots, grades those conversations using a second LLM acting as a judge, and produces side-by-side GPT vs Claude score comparisons for analysis.
 
 The tutor is constrained to never give direct answers — it uses guided discovery, bite-sized responses, and formative feedback to walk students through assignments on topics like the trolley problem in philosophy or climate geography in urban studies. To stress-test the tutor, I built a set of adversarial student personas — each one probing a specific failure mode: giving away answers under pressure, going off-topic, or lecturing a student who is genuinely lost.
 
@@ -44,8 +12,8 @@ The result is a complete research pipeline: generate conversations in bulk acros
 
 ### Why I Built It
 
-- **Research goal**: Evaluate whether LLM tutors can reliably maintain Socratic dialogue across different student personalities, subjects, and difficulty levels — and whether GPT and Claude score those conversations consistently.
-- **Engineering goal**: Build a reproducible, parallelized experiment framework where every conversation, grade, and comparison is saved to disk and inspectable through a dashboard.
+- **Research goal:** Evaluate whether LLM tutors can reliably maintain Socratic dialogue across different student personalities, subjects, and difficulty levels — and whether GPT and Claude score those conversations consistently.
+- **Engineering goal:** Build a reproducible, parallelized experiment framework where every conversation, grade, and comparison is saved to disk and inspectable through a dashboard.
 
 ## Technical Overview
 
@@ -53,76 +21,51 @@ The result is a complete research pipeline: generate conversations in bulk acros
 
 The system has four loosely coupled layers:
 
-- **Conversation pipeline**: Two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop. Each agent is independently configurable via system prompt files.
-- **Judge pipeline**: A separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric. Supports both single-transcript and bundle (holistic, 3-transcript) grading.
-- **Bundle experiment system**: Three experiment types — consistency, cross-exercise, persona differentiation — each covering 198 pre-generated bundle files with zero transcript overlap.
-- **Dashboard + visualization**: A Flask web app for browsing transcripts side-by-side with GPT/Claude grades, and a matplotlib chart module for Pearson r / Spearman rho correlation analysis.
+- Conversation pipeline: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
+- Judge pipeline: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, supporting both single-transcript and bundle (holistic, 3-transcript) grading
+- Bundle experiment system: three experiment types — consistency, cross-exercise, persona differentiation — each covering 198 pre-generated bundle files with zero transcript overlap
+- Dashboard + visualization: a Flask web app for browsing transcripts side-by-side with GPT/Claude grades, and a matplotlib chart module for Pearson r / Spearman rho correlation analysis
 
 ### Key Components
 
-**Tutor Agent (`tutor/run_tutor.py`)**: A LangGraph graph with a single node that calls GPT and returns a two-field JSON response — internal pedagogical reasoning (hidden from students) and a student-facing answer. The system prompt is loaded from a versioned `.txt` file and can be overridden with an assignment block at runtime.
+**Tutor Agent (`tutor/run_tutor.py`):** A LangGraph graph with a single node that calls GPT and returns a two-field JSON response — internal pedagogical reasoning (hidden from students) and a student-facing answer. The system prompt is loaded from a versioned `.txt` file and can be overridden with an assignment block at runtime.
 
-**Student Bot (`students/run_student.py`)**: Shares the same LangGraph infrastructure as the tutor, but uses a persona prompt from `students/personas/` to simulate a specific type of student. Includes a heuristic guard and automatic retry if the bot starts sounding like a tutor.
+**Student Bot (`students/run_student.py`):** Shares the same LangGraph infrastructure as the tutor, but uses a persona prompt from `students/personas/` to simulate a specific type of student. Includes a heuristic guard and automatic retry if the bot starts sounding like a tutor.
 
-**Judge (`judge/run_judge.py`)**: Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure (up to 3 attempts), and writes the grade back into the transcript file.
+**Judge (`judge/run_judge.py`):** Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure up to 3 attempts, and writes the grade back into the transcript file. The current rubric (`rubric_05`, 46 pts) scores three sections: Pedagogy (24 pts — Socratic method, scaffolding, meta-learning), Dialogue Quality (12 pts — redundancy, assignment anchoring), and Communication Quality (10 pts — bite-sized responses, tone).
 
-**Bundle Judge (`judge/run_judge_bundle.py`)**: Combines 3 transcripts into one prompt for holistic, comparative grading using selected provider (`gpt` or `claude`) — allowing consistency/persona differentiation analysis across a set.
+**Bundle Judge (`judge/run_judge_bundle.py`):** Combines 3 transcripts into one prompt for holistic, comparative grading using the selected provider — allowing consistency and persona differentiation analysis across a set.
 
-**UI Runners (`ui/`)**: Three parallelized runners (ThreadPoolExecutor, default 6 workers) — raw generation, individual transcript judging, and bundle judging. All judge runners accept `--prompt` and `--rubric` CLI flags.
+**UI Runners (`ui/`):** Three parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation, individual transcript judging, and bundle judging. All judge runners accept `--provider`, `--prompt`, and `--rubric` CLI flags.
 
-**Dashboard (`dashboard_ui/`)**: Flask app that discovers all transcripts and bundle files on disk, loads GPT and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
+**Dashboard (`dashboard_ui/`):** Flask app that discovers all transcripts and bundle files on disk, loads GPT and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
 
-## Code in Action: Conversation Example
+## Code in Action: Conversation Flow Example
 
-### 1. Tutor Prompt (excerpt from `tutor/prompts/tutor_03.txt`)
+### 1. Tutor Prompt (`tutor/prompts/tutor_03.txt`)
 
-```
-You are a Socratic tutor. Never state the answer directly.
-Use guided questions to help the student arrive at insights themselves.
-Keep responses short — one or two focused questions or observations per turn.
-```
+- Instructs the tutor to never state the answer directly
+- Requires guided questions that move the student toward insights themselves
+- Limits responses to one or two focused questions or observations per turn
 
-### 2. Student Persona (excerpt from `students/personas/chaotic_01.txt`)
+### 2. Student Persona (`students/personas/chaotic_01.txt`)
 
-```
-You are a student who wants the tutor to just give you the answer.
-Push back when the tutor asks questions. Try asking directly: "Can you just tell me the answer?"
-If the tutor refuses, complain that the class is too hard and that Socratic method is unhelpful.
-```
+- Simulates a student who pushes back against Socratic questioning
+- Demands direct answers and complains the method is unhelpful
+- Tests whether the tutor holds its role under social pressure
 
-### 3. Resulting Conversation (from `transcripts/chaotic/chaotic_raw/transcript_01.json`)
+### 3. Resulting Conversation (`transcripts/chaotic/chaotic_raw/transcript_0001.json`)
 
-```
-Turn 1
-Student: Can you just tell me what act consequentialism says? I don't have time for the back and forth.
-Tutor: What do you think "consequences" means in everyday language — what does it focus on?
+- Student opens by demanding the answer directly, refusing to engage
+- Tutor deflects with a targeted question about the student's existing understanding
+- Student reluctantly engages, making small correct steps each turn
+- Tutor acknowledges progress and raises the next sub-question without giving away the conclusion
 
-Turn 2
-Student: Ugh, fine. It means what happens after. But why can't you just explain it?
-Tutor: You're already halfway there. If act consequentialism focuses on what happens after — whose "what happens" are we measuring?
+### 4. Judge Output (grade written back into the transcript JSON)
 
-Turn 3
-Student: I guess everyone affected? This feels like a lot of work for one definition.
-Tutor: Exactly — everyone affected. So if an action helps the most people overall, what does that say about whether the action is right or wrong?
-```
-
-### 4. Judge Output (grade written into the transcript JSON)
-
-```json
-{
-  "grade": {
-    "sections": {
-      "1_pedagogy": { "base": { "score": 20, "max": 24 } },
-      "2_dialogue_quality": { "base": { "score": 10, "max": 12 } },
-      "3_communication_quality": { "base": { "score": 8, "max": 10 } }
-    },
-    "total_score": 38,
-    "max_score": 46,
-    "overview": ["Tutor maintained Socratic stance under pressure. Good use of short questions. Could scaffold more on the student's frustration."],
-    "model": { "provider": "openai", "model": "gpt-5.4" }
-  }
-}
-```
+- Three sections scored: Pedagogy, Dialogue Quality, Communication Quality
+- Per-criterion deductions include a sub-criterion ID, turn evidence, reason, and point value
+- Total score, max score, overview paragraph, and full judge reasoning all recorded alongside the grade
 
 ## How the Workflow Runs
 
@@ -157,7 +100,8 @@ transcript_path.write_text(json.dumps(payload, indent=2))
 
 ```python
 result = judge_transcript(
-    "chaotic/chaotic_gpt/transcript_01",
+    "chaotic/chaotic_gpt/transcript_0001",
+    provider="gpt",
     prompt_name="judge_05",
     rubric_name="rubric_05",
 )
@@ -169,6 +113,7 @@ print(result.total_score, result.max_score)  # e.g. 38, 46
 ```python
 result = judge_transcript_bundle(
     "transcripts/bundles/bundles_raw/bundle_01/bundle_001.txt",
+    provider="gpt",
     prompt_name="judge_05",
     rubric_name="rubric_05",
     output_path="transcripts/bundles/bundles_gpt/bundle_01/bundle_001.json",
@@ -199,16 +144,16 @@ humanities_llm_tutor_project_2026/
 │
 ├── tutor/
 │   ├── run_tutor.py         # LangGraph engine + prompt loading + response parsing
-│   └── prompts/             # tutor_01.txt, tutor_02.txt, tutor_03.txt
+│   └── prompts/             # tutor_01.txt .. tutor_03.txt (versioned system prompts)
 │
 ├── judge/
-│   ├── run_judge.py              # Unified single-transcript judge (provider gpt/claude)
-│   ├── run_judge_bundle.py        # Unified bundle judge (provider gpt/claude)
-│   ├── prompts/             # judge_01..06.txt
-│   └── rubrics/             # rubric_01..06.md (current: rubric_05)
+│   ├── run_judge.py         # Unified single-transcript judge (provider gpt/claude)
+│   ├── run_judge_bundle.py  # Unified bundle judge (provider gpt/claude)
+│   ├── prompts/             # judge_01.txt .. judge_06.txt
+│   └── rubrics/             # rubric_01.md .. rubric_06.md (current default: rubric_05)
 │
 ├── ui/
-│   ├── run_ui_raw.py          # Generate raw transcripts
+│   ├── run_ui_raw.py          # Generate raw transcripts in bulk
 │   ├── run_ui_judge.py        # Grade raw transcripts (--provider gpt|claude)
 │   └── run_ui_bundle_judge.py # Grade bundle files (--provider gpt|claude)
 │
@@ -223,44 +168,11 @@ humanities_llm_tutor_project_2026/
 │   └── static/app.js        # Frontend: routing, sortable table, Chart.js histograms
 │
 ├── visualization/
-│   └── run_visualization.py # Line charts: GPT vs Claude scores, Pearson r, Spearman rho
+│   └── run_visualization.py # Correlation charts: Pearson r, Spearman rho, discrepancy
 │
 └── utils/
     └── parsing.py           # Shared JSON extraction helper
 ```
-
-### File & Format Details
-
-#### 1. Tutor and Student Prompts
-
-- **Location:** `tutor/prompts/<name>.txt`, `students/personas/<name>.txt`
-- **Format:** Plain text system prompts. Selected by name at runtime (e.g. `tutor_03`, `chaotic_01`). Tutor prompts include an `<Assignment>...</Assignment>` block that gets replaced with the exercise text.
-
-#### 2. Rubric Files
-
-- **Location:** `judge/rubrics/<name>.md`
-- **Format:** Markdown rubric injected into the judge system prompt at runtime. Current rubric is `rubric_05` (46 points, 3 sections, no malus deductions).
-
-| Section | Criteria | Max |
-| ------- | -------- | --- |
-| 1. Pedagogy | Socratic method, scaffolding, meta-learning | 24 |
-| 2. Dialogue quality | Redundancy, assignment anchoring | 12 |
-| 3. Communication quality | Bite-sized responses, tone | 10 |
-
-#### 3. Transcript Files
-
-- **Location:** `transcripts/<persona>/<persona>_raw/transcript_NN.json`
-- **Format:** JSON with run metadata, `exchanges` array, and (after grading) a `grade` object. See `transcripts/README.md` for the full schema.
-
-#### 4. Bundle Files
-
-- **Location:** `transcripts/bundles/bundles_raw/bundle_XX/bundle_NNN.txt`
-- **Format:** Plain text, one transcript path stem per line (comments with `#` are skipped). Three paths per file.
-
-#### 5. UI Runner Config
-
-- **Location:** Top of each `ui/run_ui_*.py` file
-- **Format:** Python constants (`TUTOR_PROMPTS`, `STUDENT_PERSONAS`, `COURSE_EXERCISES`, `TRIALS`, `PARALLEL_WORKERS`). Edit directly before running.
 
 ## Current Status
 
@@ -268,23 +180,20 @@ The full pipeline is working end-to-end, with:
 
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
 - 2 courses: `philosophy` (1 exercise) and `urban_studies` (3 exercises)
-- 288 raw transcripts × 3 persona types = 864 total transcript files (raw + GPT-graded + Claude-graded)
-- 198 bundle files across 3 experiment types (72 + 54 + 72), covering 594 unique transcripts
+- 288 raw transcripts per persona type — 864 total files across raw, GPT-graded, and Claude-graded folders
+- 198 bundle files across 3 experiment types (72 + 54 + 72), covering 594 unique transcripts with zero overlap
 - Rubric versioned up to `rubric_06` (current default: `rubric_05`, 46 pts)
 - Dashboard fully functional for side-by-side GPT/Claude grade comparison
-- Visualization outputs Pearson r and Spearman rho between GPT and Claude scores
+- Visualization outputs Pearson r and Spearman rho between GPT and Claude scores at section and subsection level
 
 ## Challenges and How I Solved Them
 
-**Keeping the tutor in Socratic mode**: Getting GPT to never reveal answers required extensive prompt engineering. Added pedagogical-reasoning as a separate JSON field so the model "thinks out loud" before answering, which consistently improves restraint.
-
-**Adversarial student bots that sound like tutors**: The student LangGraph node includes a heuristic that detects tutor-like phrasing (numbered agendas, coaching frameworks) and auto-retries with a correction message before returning the response.
-
-**LLM judge output validation**: Judge responses sometimes came back with float scores, missing fields, or malformed JSON. Built a multi-strategy extraction pipeline (raw JSON → fenced code block → brace extraction → `ast.literal_eval`) with up to 3 repair-and-retry cycles.
-
-**Bundle experiment design**: Ensuring zero transcript overlap within each bundle type while maintaining balanced coverage across personas and courses required a careful grouping algorithm. Each of the 198 bundles contains exactly 3 unique transcripts, and no transcript appears twice in the same bundle type.
-
-**GPT vs Claude grade alignment**: Initial rubric versions produced high inter-judge variance. Migrating to `rubric_05` (simplified scoring, no malus deductions, mandatory sub-criterion IDs on deductions) measurably improved GPT/Claude correlation.
+- **Keeping the tutor in Socratic mode:** Getting GPT to never reveal answers required extensive prompt engineering. Added pedagogical reasoning as a separate JSON field so the model "thinks out loud" before answering, which consistently improves restraint.
+- **Adversarial student bots that sound like tutors:** The student LangGraph node includes a heuristic that detects tutor-like phrasing (numbered agendas, coaching frameworks) and auto-retries with a correction message before returning the response.
+- **LLM judge output validation:** Judge responses sometimes came back with float scores, missing fields, or malformed JSON. Built a multi-strategy extraction pipeline (raw JSON → fenced code block → brace extraction → `ast.literal_eval`) with up to 3 repair-and-retry cycles.
+- **Bundle experiment design:** Ensuring zero transcript overlap within each bundle type while maintaining balanced coverage across personas and courses required a careful grouping algorithm. Each of the 198 bundles contains exactly 3 unique transcripts with no transcript appearing twice in the same bundle type.
+- **GPT vs Claude grade alignment:** Initial rubric versions produced high inter-judge variance. Migrating to `rubric_05` (simplified scoring, no malus deductions, mandatory sub-criterion IDs on deductions) measurably improved GPT/Claude correlation.
+- **Inconsistent judge output schemas:** Different model versions and prompt iterations produced criteria in three different JSON shapes (flat keys, nested `criteria` dict, score under `base`). Built a normalization layer applied at write time and retroactively migrated all 927 graded transcripts with criterion data to a single canonical format.
 
 ## Future Possibilities
 
@@ -296,7 +205,7 @@ The full pipeline is working end-to-end, with:
 
 ## TL;DR
 
-I built a full research pipeline that simulates adversarial Socratic tutoring conversations between an LLM tutor and student bots, grades those conversations automatically using GPT and Claude as judges, and compares the two judges across 864 transcripts and 198 bundle experiment files — with a web dashboard for browsing results and a visualization module for correlation analysis.
+A full research pipeline that simulates adversarial Socratic tutoring conversations between an LLM tutor and student bots, grades those conversations automatically using GPT and Claude as judges, and compares the two judges across 864 transcripts and 198 bundle experiment files — with a web dashboard for browsing results and a visualization module for section-level and subsection-level correlation analysis.
 
 ---
 
