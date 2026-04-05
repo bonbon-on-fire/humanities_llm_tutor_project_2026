@@ -4,16 +4,16 @@
 
 ### What I Built
 
-I designed and built an **end-to-end LLM tutoring research platform** for MIT OpenCourseWare (OCW) humanities and social sciences courses. The system simulates Socratic tutoring conversations between an AI tutor and AI student bots, grades those conversations using a second LLM acting as a judge, and produces side-by-side GPT vs Claude score comparisons for analysis.
+I designed and built a **Socratic LLM tutor for MIT OpenCourseWare (OCW)** humanities and social sciences courses, intended as a deployable tool for students working through OCW assignments. The tutor is constrained to never give direct answers — it uses guided discovery, bite-sized responses, and formative feedback to walk students through assignments on topics like the trolley problem in philosophy or climate geography in urban studies.
 
-The tutor is constrained to never give direct answers — it uses guided discovery, bite-sized responses, and formative feedback to walk students through assignments on topics like the trolley problem in philosophy or climate geography in urban studies. To stress-test the tutor, I built a set of adversarial student personas — each one probing a specific failure mode: giving away answers under pressure, going off-topic, or lecturing a student who is genuinely lost.
+To evaluate and improve the tutor before deployment, I built a complete validation framework alongside it: adversarial AI student bots that each probe a specific failure mode (demanding answers under pressure, going off-topic, lecturing a lost student), an LLM judge that grades conversations against a structured rubric, and a visualization module that compares GPT and Claude judge scores across all transcripts. The dashboard lets me browse every conversation and its grades side-by-side.
 
-The result is a complete research pipeline: generate conversations in bulk across all persona × course × exercise combinations, grade them automatically with GPT and Claude using a structured rubric, and visualize where the two judges agree or diverge.
+The primary deliverable is the tutor. The student bots, judge, and charts exist to stress-test it systematically across different student personalities, courses, and difficulty levels before it reaches real learners.
 
 ### Why I Built It
 
-- **Research goal:** Evaluate whether LLM tutors can reliably maintain Socratic dialogue across different student personalities, subjects, and difficulty levels — and whether GPT and Claude score those conversations consistently.
-- **Engineering goal:** Build a reproducible, parallelized experiment framework where every conversation, grade, and comparison is saved to disk and inspectable through a dashboard.
+- **Deployment goal:** Deliver a reliable Socratic tutor for OCW that guides students through humanities assignments without giving answers directly — working across the range of student types and engagement levels OCW sees in practice.
+- **Validation goal:** Build a reproducible evaluation framework so tutor behaviour can be tested, graded, and compared across prompt versions before any version goes live.
 
 ## Technical Overview
 
@@ -205,7 +205,7 @@ The full pipeline is working end-to-end, with:
 
 ## TL;DR
 
-A full research pipeline that simulates adversarial Socratic tutoring conversations between an LLM tutor and student bots, grades those conversations automatically using GPT and Claude as judges, and compares the two judges across 864 transcripts and 198 bundle experiment files — with a web dashboard for browsing results and a visualization module for section-level and subsection-level correlation analysis.
+A Socratic LLM tutor built for MIT OpenCourseWare that guides students through humanities assignments using guided discovery and never gives answers directly — validated against simulated adversarial conversations, graded automatically by GPT & Claude judges across a structured rubric, and analyzed to measure judge consistency before deployment.
 
 ---
 
