@@ -63,6 +63,12 @@ Written to `visualization/outputs/`:
 | 27 | `bundle_01_grades_clueless_gpt_vs_claude_v3.png` | Same as #9, but computed only from `_v3` graded bundles. |
 | 28 | `individual_grades_gpt_regular_vs_v3.png` | Per-transcript line chart comparing regular GPT grades versus `_v3` GPT grades. |
 | 29 | `individual_grades_claude_regular_vs_v3.png` | Per-transcript line chart comparing regular Claude grades versus `_v3` Claude grades. |
+| 30 | `bundle_01_grades_gpt_only.png` | Bundle Type 01 line chart for GPT only. |
+| 31 | `bundle_01_grades_claude_only.png` | Bundle Type 01 line chart for Claude only. |
+| 32 | `bundle_02_grades_gpt_only.png` | Bundle Type 02 line chart for GPT only. |
+| 33 | `bundle_02_grades_claude_only.png` | Bundle Type 02 line chart for Claude only. |
+| 34 | `bundle_03_grades_gpt_only.png` | Bundle Type 03 line chart for GPT only. |
+| 35 | `bundle_03_grades_claude_only.png` | Bundle Type 03 line chart for Claude only. |
 
 All charts include Pearson r, Spearman rho, and mean scores.
 
