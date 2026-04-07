@@ -15,6 +15,8 @@ from __future__ import annotations
 
 import json
 import math
+import re
+import importlib
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -55,6 +57,16 @@ class GradeRow:
             self.exercise_number,
             self.transcript_name,
         ])
+
+
+@dataclass(frozen=True)
+class HandGradeRow:
+    """Manual grade row from hand_grade_judge.xlsx."""
+
+    persona_type: str
+    transcript_number: int
+    grader_name: str
+    total_score: float
 
 
 # ---------------------------------------------------------------------------
@@ -251,6 +263,71 @@ def _read_provider_rows_variant(transcripts_dir: Path, provider_suffix: str, fol
 def _read_provider_rows(transcripts_dir: Path, provider_suffix: str) -> list[GradeRow]:
     """Backward-compatible reader for non-v2 graded transcript folders."""
     return _read_provider_rows_variant(transcripts_dir, provider_suffix, "")
+
+
+def _read_hand_grade_rows(xlsx_path: Path, *, grader_name: str) -> list[HandGradeRow]:
+    """Read manual rows from Excel sheet and return only the requested grader's rows."""
+    try:
+        load_workbook = importlib.import_module("openpyxl").load_workbook
+    except ModuleNotFoundError:
+        print("openpyxl not installed; skipping hand-grade comparison chart.")
+        return []
+
+    try:
+        wb = load_workbook(xlsx_path, data_only=False)
+    except OSError:
+        return []
+
+    target = grader_name.strip().lower()
+    preferred_sheet = f"{target} grading"
+    if preferred_sheet in wb.sheetnames:
+        ws = wb[preferred_sheet]
+    elif "compiled grading" in wb.sheetnames:
+        ws = wb["compiled grading"]
+    else:
+        return []
+    if ws.max_row < 2:
+        return []
+
+    headers = [str(c.value or "").strip().lower() for c in ws[1]]
+    try:
+        idx_persona = headers.index("persona type")
+        idx_transcript = headers.index("transcript number")
+        idx_total = headers.index("total score")
+    except ValueError:
+        return []
+
+    idx_grader = headers.index("grader name") if "grader name" in headers else None
+    deduction_indices = [i for i, h in enumerate(headers) if re.match(r"^\d+\.\d+\.[a-z]$", h)]
+    max_total_score = 44.0
+    rows: list[HandGradeRow] = []
+    for r in ws.iter_rows(min_row=2, values_only=True):
+        persona = str(r[idx_persona] or "").strip().lower()
+        grader = target if idx_grader is None else str(r[idx_grader] or "").strip().lower()
+        transcript_raw = r[idx_transcript]
+        total = _parse_score(r[idx_total])
+        if grader != target or not persona:
+            continue
+        try:
+            transcript_num = int(transcript_raw)
+        except (TypeError, ValueError):
+            continue
+        if not math.isfinite(total):
+            deduction_sum = 0.0
+            for didx in deduction_indices:
+                d = _parse_score(r[didx])
+                if math.isfinite(d):
+                    deduction_sum += d
+            total = max_total_score - deduction_sum
+        rows.append(
+            HandGradeRow(
+                persona_type=persona,
+                transcript_number=transcript_num,
+                grader_name=grader,
+                total_score=total,
+            )
+        )
+    return rows
 
 
 # ---------------------------------------------------------------------------
@@ -568,6 +645,96 @@ def _chart_provider_regular_vs_v3(
             f"Regular mean: {sum(paired_regular)/len(paired_regular):.1f}   "
             f"v3 mean: {sum(paired_v3)/len(paired_v3):.1f}"
         )
+    ax.text(
+        0.01,
+        0.98,
+        "\n".join(lines),
+        transform=ax.transAxes,
+        ha="left",
+        va="top",
+        fontsize=9,
+        bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
+    )
+
+    fig.tight_layout()
+    fig.savefig(out_dir / output_name, dpi=150)
+    plt.close(fig)
+    print(f"  [{chart_idx}] {output_name}")
+
+
+def _chart_faizan_vs_gpt_vs_claude(
+    faizan_rows: list[HandGradeRow],
+    gpt_rows: list[GradeRow],
+    claude_rows: list[GradeRow],
+    out_dir: Path,
+    *,
+    output_name: str,
+    chart_idx: int,
+) -> None:
+    """Generate line chart for Faizan manual grades vs GPT and Claude on exact transcript matches."""
+    plt = _safe_import_matplotlib()
+    from matplotlib.ticker import MaxNLocator
+
+    faizan_by_key: dict[tuple[str, int], HandGradeRow] = {}
+    for r in faizan_rows:
+        faizan_by_key[(r.persona_type.lower(), r.transcript_number)] = r
+
+    gpt_by_key: dict[tuple[str, int], GradeRow] = {}
+    for r in gpt_rows:
+        gpt_by_key[(r.persona_type.lower(), _transcript_num(r))] = r
+
+    claude_by_key: dict[tuple[str, int], GradeRow] = {}
+    for r in claude_rows:
+        claude_by_key[(r.persona_type.lower(), _transcript_num(r))] = r
+
+    matched_keys = sorted(
+        set(faizan_by_key).intersection(set(gpt_by_key)).intersection(set(claude_by_key)),
+        key=lambda k: (k[0], k[1]),
+    )
+    if not matched_keys:
+        print(f"  [{chart_idx}] {output_name} (skipped: no exact Faizan/GPT/Claude transcript overlap)")
+        return
+
+    # Omit transcripts where Faizan gave a perfect score.
+    faizan_scores_all = [faizan_by_key[k].total_score for k in matched_keys if math.isfinite(faizan_by_key[k].total_score)]
+    if not faizan_scores_all:
+        print(f"  [{chart_idx}] {output_name} (skipped: Faizan scores are missing/non-finite)")
+        return
+    perfect_score = max(faizan_scores_all)
+    filtered_keys = [k for k in matched_keys if faizan_by_key[k].total_score < perfect_score]
+    removed_count = len(matched_keys) - len(filtered_keys)
+    if not filtered_keys:
+        print(f"  [{chart_idx}] {output_name} (skipped: all matched transcripts have Faizan perfect score={perfect_score:g})")
+        return
+
+    x = list(range(len(filtered_keys)))
+    y_faizan = [faizan_by_key[k].total_score for k in filtered_keys]
+    y_gpt = [gpt_by_key[k].total_score for k in filtered_keys]
+    y_claude = [claude_by_key[k].total_score for k in filtered_keys]
+
+    fig, ax = plt.subplots(figsize=(16, 7))
+    ax.plot(x, y_faizan, label="Faizan (hand grade)", color="#2ca02c", linewidth=1.6, marker="o", markersize=3)
+    ax.plot(x, y_gpt, label="GPT", color="#a65dea", linewidth=1.4, marker="o", markersize=2.5)
+    ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=2.5)
+    ax.set_title("Exact Transcript Comparison: Faizan vs GPT vs Claude (excluding Faizan perfect scores)")
+    ax.set_xlabel("Matched transcript index (sorted by persona, transcript number)")
+    ax.set_ylabel("Total Score")
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+
+    p_faizan_gpt = _pearson(y_faizan, y_gpt)
+    p_faizan_claude = _pearson(y_faizan, y_claude)
+    s_faizan_gpt = _spearman(y_faizan, y_gpt)
+    s_faizan_claude = _spearman(y_faizan, y_claude)
+    lines = [
+        f"Matched transcripts: {len(filtered_keys)} (removed perfect={removed_count}, score={perfect_score:g})",
+        f"Faizan↔GPT Pearson r = {p_faizan_gpt:.3f}" if p_faizan_gpt is not None else "Faizan↔GPT Pearson r = N/A",
+        f"Faizan↔Claude Pearson r = {p_faizan_claude:.3f}" if p_faizan_claude is not None else "Faizan↔Claude Pearson r = N/A",
+        f"Faizan↔GPT Spearman ρ = {s_faizan_gpt:.3f}" if s_faizan_gpt is not None else "Faizan↔GPT Spearman ρ = N/A",
+        f"Faizan↔Claude Spearman ρ = {s_faizan_claude:.3f}" if s_faizan_claude is not None else "Faizan↔Claude Spearman ρ = N/A",
+        f"Means — Faizan: {sum(y_faizan)/len(y_faizan):.1f}, GPT: {sum(y_gpt)/len(y_gpt):.1f}, Claude: {sum(y_claude)/len(y_claude):.1f}",
+    ]
     ax.text(
         0.01,
         0.98,
@@ -1220,6 +1387,21 @@ def main() -> int:
         chart_idx=chart_idx,
     )
     chart_idx += 1
+
+    hand_grade_path = repo_root / "judge" / "hand_grade_judge.xlsx"
+    faizan_rows = _read_hand_grade_rows(hand_grade_path, grader_name="faizan")
+    if faizan_rows:
+        _chart_faizan_vs_gpt_vs_claude(
+            faizan_rows,
+            gpt_all_rows,
+            claude_all_rows,
+            out_dir,
+            output_name="hand_grades_faizan_vs_gpt_vs_claude.png",
+            chart_idx=chart_idx,
+        )
+        chart_idx += 1
+    else:
+        print("No Faizan hand-grade rows found in judge/hand_grade_judge.xlsx. Skipping hand-grade comparison chart.")
 
     # Subsection-correlation heatmaps: exactly 3
     # 1) all providers combined, 2) GPT all personas, 3) Claude all personas.
