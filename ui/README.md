@@ -63,35 +63,6 @@ The script automatically discovers all raw transcripts in `*_raw` folders, copie
 - Overwrites existing graded files with warning
 - Interactive confirmation before processing
 
-### 3) Judge bundle files (GPT or Claude)
-
-**Interactive mode (default):**
-```powershell
-python -m ui.run_ui_bundle_judge
-```
-
-This will prompt you to select from numbered options:
-- **Judge provider**: gpt or claude (required)
-- **Bundle type**: Available from `transcripts/bundles/bundles_raw/bundle_*/` (required)
-- **Judge prompt**: Available from `judge/prompts/judge_*.txt` (required)
-- **Judge rubric**: Available from `judge/rubrics/rubric_*.md` (required)
-
-**Command-line mode:**
-```powershell
-# Grade bundle files with GPT
-python -m ui.run_ui_bundle_judge --provider gpt --bundle-type 01 --prompt judge_05 --rubric rubric_05
-
-# Grade bundle files with Claude
-python -m ui.run_ui_bundle_judge --provider claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
-```
-
-The script processes bundle files from `transcripts/bundles/bundles_raw/bundle_XX/` and writes results to `transcripts/bundles/bundles_{provider}/bundle_XX/`.
-
-**Features:**
-- Parallel processing (6 workers by default)
-- Automatic API key validation per provider
-- Interactive confirmation before processing
-
 ## Output paths
 
 ### Raw-only runs (`ui.run_ui_raw`)
@@ -119,18 +90,6 @@ Judged transcripts are saved to provider-specific folders:
 - `transcripts/clueless/clueless_claude/`
 
 Each output file uses the same stem as raw input: `transcript_XXXX.json`
-
-### Bundle judged runs (`ui.run_ui_bundle_judge`)
-
-Bundle results are saved to provider-specific folders:
-
-**GPT bundle judged:**
-- `transcripts/bundles/bundles_gpt/bundle_XX/`
-
-**Claude bundle judged:**
-- `transcripts/bundles/bundles_claude/bundle_XX/`
-
-Each output file converts from `bundle_XX.txt` to `bundle_XX.json`
 
 ## Transcript schema (core fields)
 
@@ -176,7 +135,7 @@ All UI scripts support both interactive and command-line modes:
 
 ## Parallelism configuration
 
-- `ui.run_ui_raw`, `ui.run_ui_judge`, and `ui.run_ui_bundle_judge` all run with `6` workers by default.
+- `ui.run_ui_raw` and `ui.run_ui_judge` both run with `6` workers by default.
 - Adjust `PARALLEL_WORKERS` at the top of each runner file to change concurrency.
 
 ## Environment variables

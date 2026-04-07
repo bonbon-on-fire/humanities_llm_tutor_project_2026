@@ -1,7 +1,6 @@
 # Transcripts
 
-Generated tutor-student conversation transcripts and bundle experiment files
-for the Humanities LLM Tutor project.
+Generated tutor-student conversation transcripts for the Humanities LLM Tutor project.
 
 ## Folder Structure
 
@@ -19,13 +18,6 @@ transcripts/
 │   ├── clueless_raw/          # 96 raw transcripts
 │   ├── clueless_gpt/          # 96 GPT-graded transcripts
 │   └── clueless_claude/       # 96 Claude-graded transcripts
-├── bundles/                   # Multi-transcript bundle experiments
-│   ├── bundles_raw/           # 198 bundle definition files (.txt)
-│   ├── bundles_gpt/           # GPT bundle-graded output (.json)
-│   ├── bundles_claude/        # Claude bundle-graded output (.json)
-│   ├── bundle_01.md            # Type 01 experiment docs
-│   ├── bundle_02.md            # Type 02 experiment docs
-│   └── bundle_03.md            # Type 03 experiment docs
 └── README.md
 ```
 
@@ -37,8 +29,6 @@ transcripts/
 | cooperative | 96  | 96         | 96            | 288     |
 | clueless    | 96  | 96         | 96            | 288     |
 | **Total**   | 288 | 288        | 288           | **864** |
-
-Bundle files: 168 (48 + 48 + 72 across 3 experiment types).
 
 ## Subfolder Convention
 
@@ -138,8 +128,6 @@ Raw transcripts are produced by the tutor-student simulation pipeline:
 
 ## How Transcripts Are Graded
 
-### Individual Grading
-
 ```powershell
 # Grade all raw transcripts with GPT
 python -m ui.run_ui_judge --provider gpt
@@ -150,105 +138,6 @@ python -m ui.run_ui_judge --provider claude
 
 Both commands accept `--prompt` and `--rubric` flags. Output goes to the respective
 `_gpt` or `_claude` subfolder.
-
-### Bundle Grading
-
-The bundle system enables holistic grading experiments where multiple transcripts
-are judged together, allowing the LLM to make comparative assessments rather than
-evaluating transcripts in isolation. Each bundle file lists 3 transcript paths;
-they are combined into a single prompt and graded as one unit.
-
-```powershell
-# Grade all Type 01 bundles with GPT
-python -m ui.run_ui_bundle_judge --provider gpt --bundle-type 01
-
-# Grade all Type 02 bundles with Claude
-python -m ui.run_ui_bundle_judge --provider claude --bundle-type 02 --prompt judge_06 --rubric rubric_06
-```
-
-Both commands accept `--provider` (required), `--bundle-type` (required), `--prompt`, and `--rubric` flags.
-Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) at the top of `run_ui_bundle_judge.py`.
-
-#### Bundle Types
-
-| Type | Description | Count |
-| ---- | ----------- | ----- |
-| **01** | Different `clueless` personas, same exercise | 48 |
-| **02** | Different `cooperative` personas, same exercise | 48 |
-| **03** | Mixed `clueless` + `cooperative` personas, same exercise | 72 |
-
-**Total**: 168 bundle files (3 transcripts per bundle).
-
-#### Experimental Design
-
-- **Type 01**: each bundle contains 3 different `clueless_XX` personas from the same course+exercise pair.
-- **Type 02**: each bundle contains 3 different `cooperative_XX` personas from the same course+exercise pair.
-- **Type 03**: each bundle contains both persona families (`clueless_XX` and `cooperative_XX`) from the same course+exercise pair.
-- Current bundle generation targets `clueless` and `cooperative` raw transcripts.
-
-#### Bundle File Format
-
-Each `.txt` bundle file in `bundles_raw/bundle_XX/` lists 3 transcript path stems:
-
-```text
-# Bundle Type X - Bundle Y
-# Generated bundle with 3 transcripts
-
-chaotic\chaotic_raw\transcript_01
-cooperative\cooperative_raw\transcript_05
-clueless\clueless_raw\transcript_12
-```
-
-#### How Bundle Grading Works
-
-1. Read the bundle `.txt` file to get 3 transcript path stems.
-2. Load each transcript JSON from `transcripts/{persona}/{persona}_raw/`.
-3. Combine all 3 into a single prompt with metadata headers (persona, course, exercise, turn count) before each transcript.
-4. Send the combined prompt to the judge for one holistic grade.
-5. Write the output `.json` to `bundles_gpt/` or `bundles_claude/` containing all original transcripts plus the grade.
-
-#### Graded Bundle Output Schema
-
-Each graded bundle JSON contains:
-
-```json
-{
-  "bundle_file": "bundle_001.txt",
-  "transcript_count": 3,
-  "transcript_sources": ["chaotic/chaotic_raw/transcript_01", "..."],
-  "transcripts": [ ... ],
-  "grade": { ... }
-}
-```
-
-The `grade` object follows the same schema as individual transcript grading.
-
-#### Single Bundle Judging (Python API)
-
-```python
-from judge.run_judge_bundle import judge_transcript_bundle
-
-result = judge_transcript_bundle(
-    "transcripts/bundles/bundles_raw/bundle_01/bundle_001.txt",
-    provider="gpt",
-    prompt_name="judge_05",
-    rubric_name="rubric_05",
-    output_path="transcripts/bundles/bundles_gpt/bundle_01/bundle_001.json",
-)
-print(result.total_score, result.max_score)
-```
-
-#### Research Questions
-
-- **Type 01 — Clueless variation:** How stable are scores across different clueless persona versions on the same exercise?
-- **Type 02 — Cooperative variation:** How stable are scores across different cooperative persona versions on the same exercise?
-- **Type 03 — Cross-family comparison:** How does judge behavior change when clueless and cooperative transcripts are mixed in one bundle?
-
-#### Bundle Type Documentation
-
-- [bundle_01.md](bundles/bundle_01.md) — Type 01 detailed explanation
-- [bundle_02.md](bundles/bundle_02.md) — Type 02 detailed explanation
-- [bundle_03.md](bundles/bundle_03.md) — Type 03 detailed explanation
 
 ## Visualization
 

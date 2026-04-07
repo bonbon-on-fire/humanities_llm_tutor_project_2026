@@ -22,8 +22,7 @@ The primary deliverable is the tutor. The student bots, judge, and charts exist 
 The system has four loosely coupled layers:
 
 - Conversation pipeline: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
-- Judge pipeline: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, supporting both single-transcript and bundle (holistic, 3-transcript) grading
-- Bundle experiment system: three experiment types — consistency, cross-exercise, persona differentiation — each covering 198 pre-generated bundle files with zero transcript overlap
+- Judge pipeline: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
 - Dashboard + visualization: a Flask web app for browsing transcripts side-by-side with GPT/Claude grades, and a matplotlib chart module for Pearson r / Spearman rho correlation analysis
 
 ### Key Components
@@ -34,9 +33,7 @@ The system has four loosely coupled layers:
 
 **Judge (`judge/run_judge.py`):** Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure up to 3 attempts, and writes the grade back into the transcript file. The current rubric (`rubric_05`, 46 pts) scores three sections: Pedagogy (24 pts — Socratic method, scaffolding, meta-learning), Dialogue Quality (12 pts — redundancy, assignment anchoring), and Communication Quality (10 pts — bite-sized responses, tone).
 
-**Bundle Judge (`judge/run_judge_bundle.py`):** Combines 3 transcripts into one prompt for holistic, comparative grading using the selected provider — allowing consistency and persona differentiation analysis across a set.
-
-**UI Runners (`ui/`):** Three parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation, individual transcript judging, and bundle judging. All judge runners accept `--provider`, `--prompt`, and `--rubric` CLI flags.
+**UI Runners (`ui/`):** Two parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation and individual transcript judging. Both judge runners accept `--provider`, `--prompt`, and `--rubric` CLI flags.
 
 **Dashboard (`dashboard_ui/`):** Flask app that discovers all transcripts and bundle files on disk, loads GPT and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
 
@@ -108,19 +105,7 @@ result = judge_transcript(
 print(result.total_score, result.max_score)  # e.g. 38, 46
 ```
 
-**5. Grade a bundle of 3 transcripts together**
-
-```python
-result = judge_transcript_bundle(
-    "transcripts/bundles/bundles_raw/bundle_01/bundle_001.txt",
-    provider="gpt",
-    prompt_name="judge_05",
-    rubric_name="rubric_05",
-    output_path="transcripts/bundles/bundles_gpt/bundle_01/bundle_001.json",
-)
-```
-
-**6. Generate score comparison charts**
+**5. Generate score comparison charts**
 
 ```powershell
 python -m visualization.run_visualization
@@ -148,20 +133,17 @@ humanities_llm_tutor_project_2026/
 │
 ├── judge/
 │   ├── run_judge.py         # Unified single-transcript judge (provider gpt/claude)
-│   ├── run_judge_bundle.py  # Unified bundle judge (provider gpt/claude)
 │   ├── prompts/             # judge_01.txt .. judge_06.txt
 │   └── rubrics/             # rubric_01.md .. rubric_06.md (current default: rubric_05)
 │
 ├── ui/
-│   ├── run_ui_raw.py          # Generate raw transcripts in bulk
-│   ├── run_ui_judge.py        # Grade raw transcripts (--provider gpt|claude)
-│   └── run_ui_bundle_judge.py # Grade bundle files (--provider gpt|claude)
+│   ├── run_ui_raw.py        # Generate raw transcripts in bulk
+│   └── run_ui_judge.py      # Grade raw transcripts (--provider gpt|claude)
 │
 ├── transcripts/
 │   ├── chaotic/             # chaotic_raw/, chaotic_gpt/, chaotic_claude/
 │   ├── cooperative/         # cooperative_raw/, cooperative_gpt/, cooperative_claude/
-│   ├── clueless/            # clueless_raw/, clueless_gpt/, clueless_claude/
-│   └── bundles/             # bundles_raw/, bundles_gpt/, bundles_claude/
+│   └── clueless/            # clueless_raw/, clueless_gpt/, clueless_claude/
 │
 ├── dashboard_ui/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
@@ -181,7 +163,6 @@ The full pipeline is working end-to-end, with:
 - 3 persona families × 6 variants each (chaotic, cooperative, clueless) — 18 student personas total
 - 2 courses: `philosophy` (1 exercise) and `urban_studies` (3 exercises)
 - 288 raw transcripts per persona type — 864 total files across raw, GPT-graded, and Claude-graded folders
-- 198 bundle files across 3 experiment types (72 + 54 + 72), covering 594 unique transcripts with zero overlap
 - Rubric versioned up to `rubric_06` (current default: `rubric_05`, 46 pts)
 - Dashboard fully functional for side-by-side GPT/Claude grade comparison
 - Visualization outputs Pearson r and Spearman rho between GPT and Claude scores at section and subsection level
@@ -191,13 +172,11 @@ The full pipeline is working end-to-end, with:
 - **Keeping the tutor in Socratic mode:** Getting GPT to never reveal answers required extensive prompt engineering. Added pedagogical reasoning as a separate JSON field so the model "thinks out loud" before answering, which consistently improves restraint.
 - **Adversarial student bots that sound like tutors:** The student LangGraph node includes a heuristic that detects tutor-like phrasing (numbered agendas, coaching frameworks) and auto-retries with a correction message before returning the response.
 - **LLM judge output validation:** Judge responses sometimes came back with float scores, missing fields, or malformed JSON. Built a multi-strategy extraction pipeline (raw JSON → fenced code block → brace extraction → `ast.literal_eval`) with up to 3 repair-and-retry cycles.
-- **Bundle experiment design:** Ensuring zero transcript overlap within each bundle type while maintaining balanced coverage across personas and courses required a careful grouping algorithm. Each of the 198 bundles contains exactly 3 unique transcripts with no transcript appearing twice in the same bundle type.
 - **GPT vs Claude grade alignment:** Initial rubric versions produced high inter-judge variance. Migrating to `rubric_05` (simplified scoring, no malus deductions, mandatory sub-criterion IDs on deductions) measurably improved GPT/Claude correlation.
 - **Inconsistent judge output schemas:** Different model versions and prompt iterations produced criteria in three different JSON shapes (flat keys, nested `criteria` dict, score under `base`). Built a normalization layer applied at write time and retroactively migrated all 927 graded transcripts with criterion data to a single canonical format.
 
 ## Future Possibilities
 
-- Statistical analysis of bundle experiment results (score variance, exercise difficulty effects, persona differentiation scores)
 - Additional student persona families and course subjects
 - Human-in-the-loop evaluation to calibrate the LLM judge against human graders
 - Streaming live conversations through the dashboard UI
