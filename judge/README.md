@@ -32,6 +32,19 @@ judge/
 
 Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 
+## Manual grading workbook
+
+`judge/hand_grade_judge.xlsx` is structured for rubric-level deduction entry with 4 sheets:
+- `compiled grading`
+- `faizan grading`
+- `romain grading`
+- `nishita grading`
+
+`faizan grading` / `romain grading` / `nishita grading` include a `transcript` column after `transcript number`.
+Deduction columns follow `rubric_08` subsections (excluding `1.3.C`).
+`total score` is computed as `42 - SUM(deductions)` per row.
+In `compiled grading`, rows for `faizan`/`romain`/`nishita` auto-pull deduction values from the corresponding grader sheet via key-based lookup formulas; `claude` rows are manual-entry.
+
 ## How it works
 
 1. Load prompt from `prompts/<prompt_name>.txt`.
