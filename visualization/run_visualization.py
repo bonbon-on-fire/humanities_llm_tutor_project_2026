@@ -67,6 +67,7 @@ class HandGradeRow:
     transcript_number: int
     grader_name: str
     total_score: float
+    subsection_deductions: dict[str, float] = field(default_factory=dict)
 
 
 # ---------------------------------------------------------------------------
@@ -298,7 +299,12 @@ def _read_hand_grade_rows(xlsx_path: Path, *, grader_name: str) -> list[HandGrad
         return []
 
     idx_grader = headers.index("grader name") if "grader name" in headers else None
-    deduction_indices = [i for i, h in enumerate(headers) if re.match(r"^\d+\.\d+\.[a-z]$", h)]
+    deduction_columns = [
+        (i, h.upper())
+        for i, h in enumerate(headers)
+        if re.match(r"^\d+\.\d+\.[a-z]$", h)
+    ]
+    deduction_indices = [i for i, _ in deduction_columns]
     max_total_score = 44.0
     rows: list[HandGradeRow] = []
     for r in ws.iter_rows(min_row=2, values_only=True):
@@ -319,12 +325,17 @@ def _read_hand_grade_rows(xlsx_path: Path, *, grader_name: str) -> list[HandGrad
                 if math.isfinite(d):
                     deduction_sum += d
             total = max_total_score - deduction_sum
+        subsection_deductions: dict[str, float] = {}
+        for didx, sid in deduction_columns:
+            d = _parse_score(r[didx])
+            subsection_deductions[sid] = d if math.isfinite(d) else 0.0
         rows.append(
             HandGradeRow(
                 persona_type=persona,
                 transcript_number=transcript_num,
                 grader_name=grader,
                 total_score=total,
+                subsection_deductions=subsection_deductions,
             )
         )
     return rows
@@ -746,6 +757,118 @@ def _chart_faizan_vs_gpt_vs_claude(
         bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
     )
 
+    fig.tight_layout()
+    fig.savefig(out_dir / output_name, dpi=150)
+    plt.close(fig)
+    print(f"  [{chart_idx}] {output_name}")
+
+
+def _level3_sort_key(sid: str) -> tuple[int, int, str]:
+    """Sort ids like 1.3.A by numeric prefix then lexical suffix."""
+    parts = sid.split(".")
+    if len(parts) >= 3 and parts[0].isdigit() and parts[1].isdigit():
+        return (int(parts[0]), int(parts[1]), parts[2])
+    if len(parts) >= 2 and parts[0].isdigit() and parts[1].isdigit():
+        return (int(parts[0]), int(parts[1]), "")
+    return (999, 999, sid)
+
+
+def _collapse_deep_deductions_to_level3(scores: dict[str, float]) -> dict[str, float]:
+    """Collapse deep ids like 1.3.A.a to level-3 ids like 1.3.A."""
+    out: dict[str, float] = {}
+    for sid, val in scores.items():
+        sid3 = _to_level3_subsection_id(sid)
+        if sid3 is None or not math.isfinite(val):
+            continue
+        out[sid3] = out.get(sid3, 0.0) + val
+    return out
+
+
+def _chart_faizan_vs_claude_subsection_heatmap(
+    faizan_rows: list[HandGradeRow],
+    claude_rows: list[GradeRow],
+    out_dir: Path,
+    *,
+    output_name: str,
+    chart_idx: int,
+) -> None:
+    """Heatmap of cross-correlation: Faizan subsection deductions vs Claude subsection deductions (X.X.X)."""
+    plt = _safe_import_matplotlib()
+
+    faizan_by_key = {(r.persona_type.lower(), r.transcript_number): r for r in faizan_rows}
+    claude_by_key = {(r.persona_type.lower(), _transcript_num(r)): r for r in claude_rows}
+    matched_keys = sorted(
+        set(faizan_by_key).intersection(set(claude_by_key)),
+        key=lambda k: (k[0], k[1]),
+    )
+    if len(matched_keys) < 2:
+        print(f"  [{chart_idx}] {output_name} (skipped: not enough matched transcripts)")
+        return
+
+    # Exclude transcripts where Faizan assigned a perfect total score.
+    faizan_scores = [faizan_by_key[k].total_score for k in matched_keys if math.isfinite(faizan_by_key[k].total_score)]
+    if not faizan_scores:
+        print(f"  [{chart_idx}] {output_name} (skipped: Faizan scores missing/non-finite)")
+        return
+    perfect_score = max(faizan_scores)
+    filtered_keys = [k for k in matched_keys if faizan_by_key[k].total_score < perfect_score]
+    removed_count = len(matched_keys) - len(filtered_keys)
+    if len(filtered_keys) < 2:
+        print(
+            f"  [{chart_idx}] {output_name} "
+            f"(skipped: too few transcripts after removing perfect Faizan scores={perfect_score:g})"
+        )
+        return
+
+    claude_level3_by_key: dict[tuple[str, int], dict[str, float]] = {}
+    for key in filtered_keys:
+        claude_level3_by_key[key] = _collapse_deep_deductions_to_level3(claude_by_key[key].sub_subsection_scores)
+
+    faizan_ids = sorted(
+        set(sid for key in filtered_keys for sid in faizan_by_key[key].subsection_deductions.keys()),
+        key=_level3_sort_key,
+    )
+    claude_ids = sorted(
+        set(sid for key in filtered_keys for sid in claude_level3_by_key[key].keys()),
+        key=_level3_sort_key,
+    )
+    axis_ids = sorted(set(faizan_ids).union(set(claude_ids)), key=_level3_sort_key)
+    if not axis_ids:
+        print(f"  [{chart_idx}] {output_name} (skipped: missing subsection deductions)")
+        return
+
+    faizan_series = {
+        sid: [faizan_by_key[k].subsection_deductions.get(sid, 0.0) for k in filtered_keys]
+        for sid in axis_ids
+    }
+    claude_series = {
+        sid: [claude_level3_by_key[k].get(sid, 0.0) for k in filtered_keys]
+        for sid in axis_ids
+    }
+
+    corr_matrix: list[list[float]] = []
+    for sid_f in axis_ids:
+        row: list[float] = []
+        for sid_c in axis_ids:
+            c = _pearson(faizan_series[sid_f], claude_series[sid_c])
+            row.append(c if c is not None else float("nan"))
+        corr_matrix.append(row)
+
+    fig, ax = plt.subplots(figsize=(11, 8))
+    im = ax.imshow(corr_matrix, cmap="coolwarm", vmin=-1, vmax=1)
+    ax.set_title(
+        "Faizan vs Claude Subsection Deduction Correlation Heatmap (X.X.X)\n"
+        f"Regular Claude grading only | n={len(filtered_keys)} "
+        f"(removed perfect={removed_count}, score={perfect_score:g})"
+    )
+    ax.set_xlabel("Claude subsection id")
+    ax.set_ylabel("Faizan subsection id")
+    ax.set_xticks(list(range(len(axis_ids))))
+    ax.set_yticks(list(range(len(axis_ids))))
+    ax.set_xticklabels(axis_ids, rotation=45, ha="right")
+    ax.set_yticklabels(axis_ids)
+    cbar = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+    cbar.set_label("Pearson correlation")
     fig.tight_layout()
     fig.savefig(out_dir / output_name, dpi=150)
     plt.close(fig)
@@ -1397,6 +1520,14 @@ def main() -> int:
             claude_all_rows,
             out_dir,
             output_name="hand_grades_faizan_vs_gpt_vs_claude.png",
+            chart_idx=chart_idx,
+        )
+        chart_idx += 1
+        _chart_faizan_vs_claude_subsection_heatmap(
+            faizan_rows,
+            claude_all_rows,
+            out_dir,
+            output_name="hand_grades_faizan_vs_claude_subsection_heatmap_xxx.png",
             chart_idx=chart_idx,
         )
         chart_idx += 1

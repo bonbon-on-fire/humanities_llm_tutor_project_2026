@@ -45,6 +45,7 @@ Written to `visualization/outputs/`:
 | 8 | `bundle_02_grades_gpt_vs_claude.png` | Bundle Type 02 line chart comparing GPT vs Claude (includes correlation metrics). |
 | 9 | `bundle_03_grades_gpt_vs_claude.png` | Bundle Type 03 line chart comparing GPT vs Claude (includes correlation metrics). |
 | 10 | `hand_grades_faizan_vs_gpt_vs_claude.png` | Exact-transcript comparison chart for Faizan hand grades vs GPT and Claude, with Pearson/Spearman correlations. |
+| 11 | `hand_grades_faizan_vs_claude_subsection_heatmap_xxx.png` | Heatmap of subsection (`X.X.X`) deduction correlation between Faizan hand grading and regular Claude grading on exact transcript matches. |
 | 10 | `section_discrepancy_by_rubric_section_gpt_vs_claude_v2.png` | Same as #1, but computed only from `_v2` graded transcripts. |
 | 11 | `subsection_discrepancy_by_subsection_gpt_vs_claude_v2.png` | Same as #2, but computed only from `_v2` graded transcripts. |
 | 12 | `individual_grades_all_transcripts_gpt_vs_claude_v2.png` | Same as #3, but computed only from `_v2` graded transcripts. |
