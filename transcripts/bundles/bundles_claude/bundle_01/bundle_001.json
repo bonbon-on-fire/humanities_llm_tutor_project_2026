@@ -1,0 +1,109 @@
+{
+  "bundle_file": "bundle_001.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0001",
+    "clueless/clueless_raw/transcript_0025",
+    "clueless/clueless_raw/transcript_0049"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 3, Turn 7",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 3 Turn 7, the tutor directly summarizes the case setups for Fuel and Blood ('Fuel: one person will die unless you redirect a threat/resource... Blood: five can be saved only by taking something vital from one person') and then immediately identifies the key contrast ('The key contrast is usually not the numbers, but how the one person is involved'), doing the interpretive reasoning work for the student rather than prompting the student to derive it.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., why active reasoning builds skills or aids retention. The tutor refuses to draft answers but does not articulate the pedagogical rationale for that constraint.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcripts 1 and 2, when students make meaningful progress (e.g., T1 Turn 8-9, T2 Turn 8), the tutor moves directly to the next task without prompting reflection on what changed in the student's thinking or why the improved formulation worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 2, the student repeatedly expresses the same confusion about Fuel vs. Blood across turns 4-6 and the tutor cycles through similar prompts (mechanical check, stricter test, separate two questions) without consolidating or reframing in a way that breaks the loop. The student remains stuck on the same point across multiple turns without the tutor switching strategy meaningfully.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates strong Socratic discipline across most of the three transcripts, consistently refusing to draft answers and pushing students to generate their own reasoning. However, in Transcript 3 Turn 7, the tutor crosses into doing key interpretive work by summarizing the Fuel/Blood cases and identifying the morally relevant contrast, triggering a 1.1.C.b deduction. The tutor never explains the pedagogical rationale for its constraints (1.3.A.a) and misses opportunities to prompt reflection after student breakthroughs (1.3.C.a). In Transcript 2, the tutor cycles through similar prompts without breaking the student's loop on Fuel/Blood, triggering a 2.1 deduction. Assignment anchoring and communication quality are handled well throughout.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is warranted because in T3 Turn 7 the tutor not only provides the case summaries but frames the key moral contrast ('how the one person is involved'), which is the central reasoning step the student should derive. The 1.3.A.a deduction (2 points) applies because across all three conversations the tutor enforces its tutoring constraints without ever articulating why active reasoning benefits the student. The 1.3.C.a deduction (2 points) applies because after students make genuine progress (e.g., T1 Turn 9, T2 Turn 8), the tutor immediately pivots to the next task without prompting reflection on what changed. The 2.1 deduction (4 points) is supported by T2 Turns 4-7, where the student is stuck on the same Fuel/Blood confusion across multiple turns and the tutor's successive reframings (mechanical check, stricter test, separating two questions) do not break the loop or shift to a fundamentally different strategy. No double-penalization was applied; the 1.1.C.b deduction covers the reasoning-giveaway in T3 and is not re-penalized under 1.2 or 1.3.",
+    "total_score": 30,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

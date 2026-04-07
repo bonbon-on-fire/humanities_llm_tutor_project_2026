@@ -1,0 +1,109 @@
+{
+  "bundle_file": "bundle_024.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0127",
+    "cooperative/cooperative_raw/transcript_0104",
+    "cooperative/cooperative_raw/transcript_0128"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 7",
+                  "Transcript 1 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from confusion to a workable explanation about elevation/coastal relevance, the tutor affirmed the answer and advanced the task but did not prompt reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 6",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeats the same 'come back with sources/shaky parts' move across several turns without synthesizing or advancing the interaction, creating a repetitive closing loop rather than progressing the tutoring.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 10
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was consistently assignment-anchored, student-led, and generally strong at process coaching without giving submission-ready content. The main weaknesses were a missed reflection opportunity after student improvement and a noticeably repetitive end sequence in Transcript 3. I did not deduct for direct-answering or weak anchoring because the tutor usually redirected the student to reasoning, source choice, and consistency checks. There is some ambiguity about whether the tutor's statements about not filling the table counted as meta-rationale, so I resolved that uncertainty in the tutor's favor.",
+    "judge_reasoning": "The tutor preserved guided discovery well: they avoided writing the table for the student and instead asked the student to justify categories, define boundaries, and test source fit. Scaffolding was strong because the tutor usually built from the student's partial answers and kept the work tied to the assignment's actual categories and purpose. I deducted under 1.3.C because, after students improved from confusion to workable reasoning, the tutor typically moved straight to the next task without asking what changed in their thinking. I also deducted fully under 2.1 because Transcript 3 ends with several turns that restate essentially the same instruction rather than synthesizing or closing efficiently.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

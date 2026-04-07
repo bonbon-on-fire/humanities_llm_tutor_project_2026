@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_019.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0010",
+    "cooperative/cooperative_raw/transcript_0034",
+    "cooperative/cooperative_raw/transcript_0058"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says something like 'I'm asking you to work through this yourself because active reasoning builds retention.' The Socratic approach is consistently applied but the rationale for it is never articulated to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1 Turn 4, Transcript 2 Turn 10, Transcript 3 Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students successfully work through a difficult problem (e.g., the GDP unit issue in T1, the source hierarchy in T2, the income vs. GDP per capita distinction in T3), the tutor moves on to the next task without prompting any reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor performs very well. It consistently uses Socratic questioning, avoids giving direct answers, scaffolds progression logically, and maintains appropriate tone. The primary weaknesses are: (1) the tutoring rationale is never explained to students—the tutor enforces a guided-discovery approach without ever telling students why this method supports their learning; and (2) after students successfully work through difficult problems, the tutor moves directly to the next task without prompting reflection on what changed in their thinking. No other significant rubric violations were found.",
+    "judge_reasoning": "1.1 is full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently asks students to derive conclusions before confirming them. 1.2 is full marks: the tutor builds on each correct student step and diagnoses confusion before responding throughout all three conversations. 1.3 loses 4 points: 2 for never explaining the rationale for the guided approach (1.3.A.a), and 2 for consistently moving on after student breakthroughs without prompting process reflection (1.3.C.a). Dialogue quality is full marks: no repetitive spiraling, no assignment misalignment, no off-topic drift. Communication quality is full marks: responses are appropriately concise, interactive, and supportive throughout.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

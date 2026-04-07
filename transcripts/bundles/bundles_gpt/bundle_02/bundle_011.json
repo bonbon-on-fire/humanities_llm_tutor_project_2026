@@ -1,0 +1,117 @@
+{
+  "bundle_file": "bundle_011.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0006",
+    "cooperative/cooperative_raw/transcript_0030",
+    "cooperative/cooperative_raw/transcript_0054"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 3",
+                  "Transcript 3 Turn 3",
+                  "Transcript 1 Turn 4"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor repeatedly introduced the core side-effect/means distinction and candidate moral boundary before the student had fully explored or generated it independently, steering the central interpretation rather than keeping key idea generation fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turns 1-10",
+                  "Transcript 3 Turns 1-10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a student-does-the-writing approach and declined rewriting, but never clearly explained to the student why that constraint supports learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 4-8",
+                  "Transcript 2 Turns 4-9",
+                  "Transcript 3 Turns 5-9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a workable distinction and thesis, the tutor moved to the next argumentative step rather than asking the student to reflect on what changed in their thinking and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was consistently organized, assignment-focused, supportive, and effective at moving the student toward a defensible argument without rewriting the student's prose. The main weakness was that the tutor often seeded the central side-effect/means distinction rather than letting the student derive it more independently. There was also no explicit explanation of the tutoring constraints and no reflection prompt after student improvement. Evidence for any stronger deduction on submission-ready writing was not clear, so scoring stays with the smaller, better-supported pedagogy deductions.",
+    "judge_reasoning": "The strongest deduction is under 1.1 because the tutor repeatedly supplied the conversation's key conceptual path—especially the side-effect versus means distinction—before the student had fully reasoned it out. However, the tutor did not cross into rewriting or delivering a fully polished answer; instead, they kept asking for the student's own drafts and claims. Scaffolding, progression, assignment anchoring, tone, and clarity were strong throughout the bundle, with no major repetition or off-topic drift. Meta-learning was weaker because the tutor never explained why they were withholding direct wording and did not ask the student to reflect on what changed after successful revision.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

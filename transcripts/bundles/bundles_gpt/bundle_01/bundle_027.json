@@ -1,0 +1,141 @@
+{
+  "bundle_file": "bundle_027.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0014",
+    "clueless/clueless_raw/transcript_0038",
+    "clueless/clueless_raw/transcript_0062"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 8",
+                  "Transcript 2 Turn 3",
+                  "Transcript 2 Turn 8"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student repeatedly signaled broad confusion about the table structure, the tutor often answered with another explanation or procedure immediately instead of first diagnosing the exact sticking point through targeted questioning.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 3"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries against giving a finished row, but did not clearly explain the learning rationale for that constraint in terms of active reasoning, retention, or skill-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 4",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to workable drafts and ranking logic, the tutor moved directly to the next task step without prompting reflection on what changed in the student's thinking and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 4-9",
+                  "Transcript 2 Turns 3-10",
+                  "Transcript 3 Turns 2-7"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across the conversations, the tutor repeatedly returned to the same pattern of restating the table structure and asking for another row draft, even while the student remained stuck; there was limited synthesis or shift in strategy to break the spiral.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 2",
+                  "Transcript 1 Turn 6",
+                  "Transcript 3 Turn 6",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several replies used brusque or sharp phrasing such as 'You're overcomplicating,' 'Move on,' 'That's lazy thinking,' and 'Stop broadening the task,' which can undermine trust for a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 31,
+    "max_base_score": 46,
+    "overview": "The tutor generally stayed assignment-focused and avoided giving submission-ready content, but the conversations often looped on the same row-building routine without enough strategic change when the student remained confused. I did not deduct under 1.1 because the tutor consistently stopped short of writing a finished row, though some guidance came close to steering content selection. A few deductions are based on repeated tone and process patterns across the bundle rather than any single severe turn.",
+    "judge_reasoning": "The strongest positive evidence is that the tutor kept the student doing the work and repeatedly redirected back to the assignment structure rather than producing a finished table entry. Major deductions come from weak diagnosis of the student's actual confusion, repeated spiraling without a new instructional move, and missed chances to explain why the tutor would not provide a full example in learning-oriented terms. The tutor also missed reflection prompts after the student began producing workable rows and ranking logic. Communication was generally clear and concise, but several terse remarks made the tone less supportive than the rubric expects.",
+    "total_score": 31,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

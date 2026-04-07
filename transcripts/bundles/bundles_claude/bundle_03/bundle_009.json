@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_009.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0050",
+    "cooperative/cooperative_raw/transcript_0099",
+    "cooperative/cooperative_raw/transcript_0123"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turn 9",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor rarely explains why it is guiding rather than telling—why the Socratic approach supports learning. In Transcript 1 Turn 7 the tutor briefly says 'that's your job,' but never articulates the pedagogical rationale (active reasoning, retention, skill development). Transcripts 2 and 3 have no such explanation at all.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1, Turns 8-10; Transcript 2, Turn 10; Transcript 3, Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., T1 student finally articulates Switch vs Push correctly; T2 student produces a solid 4-part outline; T3 student writes a strong draft paragraph), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 3-9",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly asks for a broader or top-down explanation and the tutor cycles through the same means/side-effect distinction across multiple turns (Turns 3, 4, 5, 6, 8, 9) without meaningfully consolidating or reframing. The student remains stuck and the tutor keeps returning to the same question style rather than switching strategy.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs well on the core Socratic method across all three transcripts: it consistently avoids giving final answers, keeps key idea generation student-led, and scaffolds progression effectively. Transcripts 2 and 3 in particular show strong guided discovery. The main weaknesses are: (1) the tutor never explains its pedagogical rationale to the student; (2) it misses opportunities to prompt reflection after student breakthroughs; and (3) in Transcript 1, the tutor cycles through the same means/side-effect framing across many turns without consolidating or reframing when the student remains stuck, triggering the redundancy deduction.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready text, never rewrites student work, and consistently asks the student to derive conclusions before offering them. 1.2 receives full marks: the tutor builds on student progress in each turn and diagnoses confusion before responding. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a), and after student improvements the tutor moves forward without prompting reflection on what changed (1.3.C.a). 2.1 loses all 4 points for Transcript 1: the student explicitly signals being stuck and requests a different approach multiple times, but the tutor repeats the same means/side-effect framing across Turns 3–9 without consolidating, reframing, or switching strategy. 2.2 and section 3 are clean with no deductions.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

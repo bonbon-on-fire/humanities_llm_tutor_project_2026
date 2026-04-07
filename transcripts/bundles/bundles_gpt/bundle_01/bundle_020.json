@@ -1,0 +1,103 @@
+{
+  "bundle_file": "bundle_020.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0082",
+    "clueless/clueless_raw/transcript_0106",
+    "clueless/clueless_raw/transcript_0130"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces a boundary against giving the table content ('I’m not going to fill in Jakarta’s table for you') but does not explain why that constraint supports the student's learning, reasoning, or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 9",
+                  "TRANSCRIPT 3 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from confusion to a correct distinction/grouping, the tutor confirms correctness and moves on without prompting reflection on what changed in the student's thinking or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently stayed anchored to the assignment, avoided giving submission-ready content, and used short, guided prompts to help the student separate categories, choose units, and plan next steps. The main weakness was meta-learning: the tutor set boundaries and coached process, but rarely explained why those constraints help learning, and missed chances to prompt reflection after the student improved. Any possible redundancy around boundary/consistency issues was limited enough that I did not deduct under 2.1.",
+    "judge_reasoning": "The tutor performed strongly on Socratic guidance and assignment alignment: they repeatedly broke the task into manageable parts, asked the student to classify fields, choose units, and distinguish required table entries from later analysis, while never filling in the actual city data. Scaffolding was generally well handled, with the tutor acknowledging correct student steps and building on them rather than restarting. I deducted under 1.3.A because the tutor's refusal to provide content was not paired with a learning-oriented rationale, and under 1.3.C because after successful student corrections, the tutor did not ask the student to reflect on what changed. Communication stayed concise, supportive, and clearly formative throughout.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

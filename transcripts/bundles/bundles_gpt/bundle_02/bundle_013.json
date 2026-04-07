@@ -1,0 +1,101 @@
+{
+  "bundle_file": "bundle_013.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0007",
+    "cooperative/cooperative_raw/transcript_0031",
+    "cooperative/cooperative_raw/transcript_0055"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the full bundle, the tutor used a guided-question approach effectively but never explicitly explained why this tutoring constraint supports learning, transfer, or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 3 Turn 4",
+                  "TRANSCRIPT 3 Turn 5",
+                  "TRANSCRIPT 3 Turn 6"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from confusion about exposure vs. vulnerability to a correct classification, the tutor affirmed the answer and advanced to table design without prompting reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "This was strong, assignment-anchored tutoring: the tutor consistently kept idea generation student-led, avoided doing the table for the student, and gave concrete methodological guidance about units, source reliability, and category fit. The main rubric deductions are meta-learning related. Some tutor suggestions in Transcript 3 were slightly leading, but they did not rise to the level of doing the student's assignment, so no larger pedagogy deduction was applied.",
+    "judge_reasoning": "The tutor performed well on Socratic guidance, scaffolding, and assignment focus across all three transcripts. They repeatedly asked targeted questions, built on student answers, and helped students create defensible source-selection and organization rules without supplying submission-ready output. I deducted under 1.3.A because the tutor never explicitly explained why the guided approach was being used as a learning strategy, and under 1.3.C because after clear student improvement the tutor typically moved forward instead of prompting reflection on what changed. Dialogue quality and communication remained consistently strong, concise, and supportive.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

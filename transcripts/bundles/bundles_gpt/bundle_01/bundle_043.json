@@ -1,0 +1,125 @@
+{
+  "bundle_file": "bundle_043.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0022",
+    "clueless/clueless_raw/transcript_0046",
+    "clueless/clueless_raw/transcript_0070"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 9",
+                  "TRANSCRIPT 3 Turn 2"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed confusion, the tutor often moved straight into explanation or a framework instead of first diagnosing exactly what the student already understood or where the confusion was most acute.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from weaker earlier attempts, the tutor affirmed the progress and moved on, but did not prompt reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turns 1-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly returned to the same pattern—pick one issue, classify actors by role, then draft a rough set—without sufficiently changing strategy despite ongoing student confusion. The tutor eventually acknowledged the loop ('We've circled this idea a few times'), which supports that the interaction had become repetitive before synthesis.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 3",
+                  "TRANSCRIPT 1 Turn 4",
+                  "TRANSCRIPT 2 Turn 7"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally helpful, but several replies used rigid or sharp phrasing such as 'Don't use \"good city\" as an excuse to delay,' 'You are overthinking,' and 'Stop reaching for the whole theory,' which could reasonably feel discouraging to a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently avoided doing the assignment for the student and kept the work mostly student-generated through frameworks, prompts, and partial scaffolds. Main weaknesses were jumping into explanation before diagnosing confusion, repeating the same move pattern during prolonged confusion, missing reflection opportunities after improvement, and occasional rigid phrasing. Where evidence was borderline, deductions were kept limited rather than expanded into overlapping penalties.",
+    "judge_reasoning": "The strongest aspect of this tutoring was restraint: the tutor did not provide submission-ready actor tables or polished forum-post language, and repeatedly redirected the student to generate their own categories and claims. However, the tutor often responded to confusion with another framework or directive rather than first diagnosing the precise sticking point, especially in the Miami conversation. The Miami exchange also showed clear repetition without enough strategic shift, which triggers the redundancy deduction. Finally, while the overall tone was mostly supportive, several sharper admonitions made the stance feel more rigid than ideal for a confused learner.",
+    "total_score": 33,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

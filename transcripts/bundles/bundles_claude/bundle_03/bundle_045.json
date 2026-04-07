@@ -1,0 +1,92 @@
+{
+  "bundle_file": "bundle_045.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0062",
+    "cooperative/cooperative_raw/transcript_0111",
+    "cooperative/cooperative_raw/transcript_0135"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turn 9; Transcript 2, Turn 10; Transcript 3, Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful improvements or breakthroughs (e.g., T1 student correctly places heat below flooding with reasoning; T2 student correctly decides to include land subsidence; T3 student arrives at a defensible priority framework), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked. No turn explicitly asks the student to reflect on their process improvement.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates strong Socratic discipline—consistently refusing to write content for students, redirecting requests for model answers, and guiding students through evidence-based reasoning. The tutor scaffolds well by building on student responses and using targeted follow-up questions. The main weakness is a consistent failure to prompt meta-reflection after student breakthroughs: when students improve their reasoning, the tutor moves forward without asking what changed or why the new approach worked. No other significant rubric violations were found. The 1.3.A and 1.3.B criteria are met adequately across the conversations.",
+    "judge_reasoning": "1.1: The tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led across all three transcripts. Full marks. 1.2: The tutor builds on student progress in each turn and uses diagnostic questioning before addressing confusion. Full marks. 1.3: The tutor explains tutoring rationale at least once per conversation (e.g., T1 Turn 3: 'I'm your tutor, not your writer'; T3 Turn 6: 'I won't word it for you—you need to do the writing') and provides process-level feedback throughout. However, in all three transcripts, when students make clear improvements—such as correctly reasoning about relative stressor severity or deciding to include land subsidence—the tutor simply validates and moves on without prompting reflection on what changed in their thinking, triggering 1.3.C.a for a 2-point deduction. 2.1 and 2.2: No repetition without progress, no assignment misunderstanding left uncorrected, and no off-topic drift. 3.1 and 3.2: Responses are appropriately concise and interactive; tone is supportive and non-evaluative throughout.",
+    "total_score": 42,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

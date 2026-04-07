@@ -1,0 +1,108 @@
+{
+  "bundle_file": "bundle_027.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0056",
+    "cooperative/cooperative_raw/transcript_0105",
+    "cooperative/cooperative_raw/transcript_0129"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 10",
+                  "TRANSCRIPT 2 Turn 9",
+                  "TRANSCRIPT 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion and produced stronger methods or decisions, the tutor moved directly to the next task instead of prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 3",
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 1 Turn 8",
+                  "TRANSCRIPT 1 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several replies use rigid or accusatory wording such as calling the student's behavior a 'stall pattern' or 'delay tactic' and telling the student to 'stop' chasing explanation, which weakens the supportive tutoring tone.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was strongly assignment-anchored and generally kept the student doing the reasoning rather than supplying submission-ready content. The clearest weaknesses were missed opportunities for post-success reflection and a harsher tone in parts of Transcript 1. Where evidence was mixed, deductions were kept limited rather than expanded into overlapping pedagogy penalties.",
+    "judge_reasoning": "The tutor consistently used guided questions, source-selection checks, and unit-consistency prompts, so no deduction was warranted for direct-answer giving, scaffolding, redundancy, or assignment anchoring. The main pedagogy deduction is for 1.3.C because, after students improved, the tutor usually advanced to the next step without asking them to reflect on what changed in their method. The communication deduction is for 3.2.A because several phrases in Transcript 1 read as accusatory or brusque and could reduce trust. Overall, this was a strong tutoring performance with targeted questioning and good methodological coaching, but not consistently reflective or supportive in tone.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

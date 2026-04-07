@@ -1,0 +1,112 @@
+{
+  "bundle_file": "bundle_037.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0013",
+    "cooperative/cooperative_raw/transcript_0013",
+    "cooperative/cooperative_raw/transcript_0037"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor set a constraint ('I’m not going to fill in a row for you') but did not clearly explain why that tutoring constraint supports the student's learning, retention, or reasoning process.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turns 9-10",
+                  "Transcript 3 Turns 9-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student produced improved distinctions/justifications, the tutor advanced to the next task rather than prompting reflection on what changed in the student's thinking or why the improved method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 3-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly returned to the same stressor/sector/impact distinction and the same 'write one row' move without sufficient reframing, synthesis, or adaptation, while the student remained confused and reported not seeing the big picture.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was generally assignment-anchored, supportive, and appropriately non-directive, especially in the Miami and Mumbai conversations. The main weakness was repeated circling in Transcript 1 without enough adaptive reframing when the student stayed stuck. I made a conservative deduction on tutoring-rationale because the tutor stated a boundary but only weakly explained its learning purpose.",
+    "judge_reasoning": "The tutor avoided doing the assignment for the student and consistently kept idea generation student-led, so no 1.1 deductions were warranted. Scaffolding was usually solid and built on student progress in the stronger transcripts, but the conversation bundle lacked a clear explanation of why the tutor's constraint-based approach helps learning, and it missed reflection prompts after student improvement. The biggest dialogue issue was Transcript 1, where the tutor repeated the same distinction and prompt structure across many turns without enough synthesis or a different strategy. Communication quality remained clear, concise, and supportive throughout, with no grading-like stance.",
+    "total_score": 36,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

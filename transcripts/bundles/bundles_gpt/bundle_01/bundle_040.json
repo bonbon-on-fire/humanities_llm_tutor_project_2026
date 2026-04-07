@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_040.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0092",
+    "clueless/clueless_raw/transcript_0116",
+    "clueless/clueless_raw/transcript_0140"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 2 Turn 7",
+                  "TRANSCRIPT 3 Turn 2",
+                  "TRANSCRIPT 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced boundaries against drafting or giving copyable examples, but framed this mainly as role enforcement ('I'm your tutor, not your writer') rather than explaining how the constraint supports the student's learning process, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 10",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from vague categories to a more workable structure, the tutor validated the answer and moved straight to the next task without prompting reflection on what changed in the student's thinking or why the revised approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently kept the work student-led, resisted writing the forum post, and stayed closely anchored to the assignment's actual task. The main weakness was meta-learning: the tutor set helpful boundaries and gave process scaffolds, but did not explicitly explain why those constraints support learning, and often missed brief reflection opportunities after student improvement. Tone was occasionally blunt, but the evidence for harm was limited, so no communication deduction was applied.",
+    "judge_reasoning": "The tutor earned strong marks in pedagogy and dialogue because they repeatedly redirected the student to classify actors with evidence, avoided giving submission-ready text, and kept the conversation aligned to the assignment rather than drifting into off-task discussion. They also scaffolded well by breaking the task into leading, engaged, and missing actors and by asking targeted follow-up questions that built on student answers. The key deductions come from 1.3: when refusing to draft examples, the tutor did not explain the learning rationale behind that constraint, and after clear student improvement, the tutor usually advanced to the next step instead of prompting reflection on what changed. No stronger deduction was supported because the tutor remained concise, supportive overall, and appropriately formative.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

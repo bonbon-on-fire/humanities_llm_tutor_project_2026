@@ -1,0 +1,110 @@
+{
+  "bundle_file": "bundle_054.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0135",
+    "cooperative/cooperative_raw/transcript_0115",
+    "cooperative/cooperative_raw/transcript_0138"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turn 8",
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "The tutor provides a detailed fill-in template with 8 labeled fields ('Stressor:', 'Sector(s):', 'Rating:', 'Main impact:', 'Who/what is affected:', 'How often/how severe:', 'Evidence/source type:', 'Why this rating instead of a lower one:') that functions as near-final scaffolding for the student's table row. While the student is asked to fill it in, the template is so complete and structured that it essentially writes the row format for the student, crossing into editing/writing help rather than tutoring process.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student through questions rather than giving direct answers—no rationale is offered about active reasoning, retention, or skill development. The tutor enforces constraints (e.g., 'I'm not going to write a row for you') but never explains the pedagogical reason behind this approach.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcripts 2 and 3, students make clear improvements (e.g., T2 Turn 9 produces a solid 3-row draft; T3 Turn 9 makes a disciplined evidence-based decision). The tutor moves forward without prompting reflection on what changed in the student's thinking or reinforcing the method choices that led to improvement.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 3, Turn 8",
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "The tutor says 'Using my own judgment, not your instructor's rubric: this is good and logically consistent.' While the disclaimer is present, the phrasing 'this is good' without clarifying it is formative coaching feedback could be read as a quasi-evaluative judgment. However, the disclaimer does partially mitigate this. Deduction applied at minimum given the partial mitigation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 32,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates strong Socratic questioning and consistent assignment anchoring across all three transcripts, successfully guiding students through stressor identification, sector classification, and rating justification without giving away answers. The main deduction in 1.1 is for the detailed fill-in template in Transcript 1 Turn 8, which crosses into near-submission-ready writing help. The tutor never explains its pedagogical rationale for guided discovery, and misses reflection prompts after student improvements. Communication is generally concise and supportive. The 3.2 deduction is applied with some uncertainty given the partial disclaimer present.",
+    "judge_reasoning": "The 1.1.B.a deduction (6 pts) is triggered by the 8-field labeled template in T1 Turn 8, which provides near-final row structure rather than tutoring process. The 1.1.A.a full-removal is not triggered because the tutor never provides completed content—only structure. The 1.3.A.a deduction (2 pts) applies because no transcript contains an explicit rationale for the Socratic approach. The 1.3.C.a deduction (2 pts) applies because after clear student improvements in T2 and T3, the tutor advances without prompting reflection on what changed. The 3.2.B.b deduction (2 pts) is applied for T3 Turn 8 where evaluative language ('this is good') could be misread as grading, though the partial disclaimer reduces certainty. No deductions are warranted for dialogue quality, as the tutor consistently re-anchors to the assignment and avoids off-topic drift.",
+    "total_score": 32,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

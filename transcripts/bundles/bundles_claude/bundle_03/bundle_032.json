@@ -1,0 +1,120 @@
+{
+  "bundle_file": "bundle_032.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0033",
+    "cooperative/cooperative_raw/transcript_0059",
+    "cooperative/cooperative_raw/transcript_0083"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Transcript 1, Turn 9, the tutor provides a complete, category-by-category overview of how each required table field is defined and where to find it (e.g., 'Location: where the city proper is situated administratively and geographically; usually from city/government profile or atlas/map reference'). This is near-submission-ready guidance: the student can directly copy these definitions and source types into their table with minimal effort. The tutor carries the full reasoning work of defining every category and mapping it to a source type, which is the core intellectual task of the assignment.",
+                "points": 12
+              }
+            ],
+            "score": 0,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful progress (e.g., Transcript 3 student correctly distinguishes GDP from income per capita in Turn 10, or Transcript 2 student articulates a solid methodology by Turn 8-9), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved reasoning worked. No turn explicitly asks the student to reflect on their own learning process after a breakthrough.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor repeatedly cycles on the boundary/unit question across multiple turns (Turns 3-6) without consolidating or advancing. The student expresses the same confusion about city proper vs. metro area and source reliability across many turns, and the tutor keeps asking variants of the same question rather than synthesizing or reframing. The student explicitly says they are 'still shaky,' 'still fuzzy,' 'still overwhelmed' across consecutive turns, yet the tutor does not switch strategy meaningfully until Turn 9 when it finally provides the overview the student needed.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 26,
+    "max_base_score": 44,
+    "overview": "The tutor performs well in Transcripts 2 and 3, maintaining Socratic questioning, building on student progress, and keeping responses focused. However, Transcript 1 contains a significant violation in Turn 9, where the tutor provides a complete, category-by-category definition and source-type guide for every required table field—effectively doing the core intellectual work of the assignment for the student. This triggers the full 12-point deduction under 1.1.A.a. Additionally, Transcript 1 shows a pattern of spiraling on the boundary question without switching strategy, triggering the 2.1 deduction. Minor deductions apply for lack of post-success reflection prompts across all transcripts.",
+    "judge_reasoning": "The 1.1.A.a deduction is warranted because Turn 9 of Transcript 1 provides submission-ready content: every required category is defined and paired with a source type, which is precisely the intellectual work the student must do for the assignment. This is not a conceptual scaffold but a direct answer template. The 2.1.A.a deduction applies because Transcript 1 shows the tutor cycling on the same boundary confusion across six or more turns without reframing or synthesizing, while the student repeatedly signals the same unresolved confusion—the tutor's eventual Turn 9 overview confirms the student needed a different approach much earlier. The 1.3.C.a deduction applies because no transcript includes a moment where the tutor explicitly prompts the student to reflect on what changed in their thinking after a successful reasoning step. Communication quality and assignment anchoring are strong throughout all three transcripts.",
+    "total_score": 26,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

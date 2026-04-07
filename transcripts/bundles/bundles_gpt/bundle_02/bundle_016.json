@@ -1,0 +1,95 @@
+{
+  "bundle_file": "bundle_016.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0080",
+    "cooperative/cooperative_raw/transcript_0104",
+    "cooperative/cooperative_raw/transcript_0128"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier uncertainty and produced a stronger framework, the tutor affirmed the answer and moved directly to the next task instead of prompting reflection on what changed in the student's thinking or why the revised approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently assignment-focused, interactive, and method-oriented across the bundle. They avoided doing the table for the student, regularly used guided questions, and gave useful process guidance about prioritizing variables, matching boundaries, and checking source credibility. The only clear deduction is for missing reflection after successful revision; otherwise potential concerns about directiveness were not strong enough to justify larger penalties because the tutor still kept the student doing the substantive reasoning.",
+    "judge_reasoning": "The strongest evidence supports high scores for pedagogy and dialogue quality: the tutor repeatedly anchored to the exact table task, built on student responses, and asked the student to make distinctions rather than supplying finished content. There was no near-submission-ready writing, no line-editing of student prose, and no meaningful off-topic drift. The main miss was under 1.3.C, because after students corrected earlier misunderstandings, the tutor typically praised the improvement and advanced the task without asking them to articulate what changed in their reasoning. Communication remained concise, clear, and supportive throughout.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

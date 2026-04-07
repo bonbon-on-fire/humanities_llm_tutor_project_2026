@@ -1,0 +1,102 @@
+{
+  "bundle_file": "bundle_009.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0005",
+    "cooperative/cooperative_raw/transcript_0029",
+    "cooperative/cooperative_raw/transcript_0053"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundle, the tutor consistently used constraints like withholding direct case recall and pushing the student to generate distinctions, but never clearly explained why this tutoring style supports learning, retention, or argument-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 1 Turn 8",
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a workable classification or outline, the tutor typically advanced to the next task instead of asking the student to reflect briefly on what changed in their reasoning and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently strong on guided discovery: they kept the student doing the conceptual work, used short prompts, and stayed tightly anchored to the assignment and cases. No deduction was warranted for direct-answering, rewriting, drift, tone, or clarity. The only clear weaknesses were in meta-learning: explicit explanation of the tutoring rationale was absent, and chances to prompt reflection after student improvement were usually missed.",
+    "judge_reasoning": "Across the combined transcripts, the tutor maintained a genuinely Socratic approach by asking the student to articulate act consequentialism, classify cases, and test a candidate principle rather than supplying a submission-ready argument. The tutor also scaffolded well, building from the student's partial ideas and targeting confusion points like the structure of Fuel and the difference between means and side effects. I deducted under 1.3.A because the tutor never explicitly stated why they were withholding direct answers or requiring the student to reconstruct cases for learning purposes. I also deducted under 1.3.C because once the student moved from confusion to a workable rule or outline, the tutor generally proceeded onward rather than asking for brief reflection on what changed in the student's method.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

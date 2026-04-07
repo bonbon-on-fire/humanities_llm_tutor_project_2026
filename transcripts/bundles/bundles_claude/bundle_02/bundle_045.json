@@ -1,0 +1,99 @@
+{
+  "bundle_file": "bundle_045.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0023",
+    "cooperative/cooperative_raw/transcript_0047",
+    "cooperative/cooperative_raw/transcript_0072"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "T1 Turn 10, T2 Turn 10, T3 Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make clear progress (e.g., T1 student drafts a strong 3-part claim in Turn 8; T2 student produces a well-reasoned revised list in Turn 10; T3 student arrives at a sound framework by Turn 10), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked. No turn explicitly asks the student to reflect on the process shift from vague guessing to evidence-anchored reasoning.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": "T2 Turn 10",
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Transcript 2, Turn 10, the tutor says 'Yes—this is solid by my own judgment, not your instructor's rubric.' While the tutor attempts to disclaim grading authority, the phrasing 'this is solid' still reads as a near-evaluative endorsement of submission readiness. The clarification is partial but the overall framing could reasonably be read as a quality judgment rather than purely formative coaching guidance. This is a borderline case; applying the smaller deduction.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates strong Socratic practice: no direct answers are given, key ideas remain student-generated, and scaffolding builds progressively on student responses. The main weakness is a consistent failure to prompt meta-reflection after student improvement (1.3.C.a), present in all three conversations. A borderline deduction is applied in 3.2 for Transcript 2 Turn 10, where the tutor's 'this is solid' phrasing edges toward evaluative framing despite an attempted disclaimer. All other criteria are well-executed.",
+    "judge_reasoning": "1.1: The tutor never provides submission-ready content, never rewrites student text, and consistently withholds conclusions until students reason toward them—no deductions warranted. 1.2: Scaffolding is well-calibrated across all three conversations; the tutor builds on student progress and uses diagnostic questions before redirecting. 1.3: The tutor provides rationale for its approach (e.g., 'verify instead of guessing,' 'start from evidence') and gives process-level feedback, but in all three transcripts fails to pause after student improvement to ask what changed in their thinking—triggering 1.3.C.a once (applied once across the bundle as a single behavior pattern). 2.1 and 2.2: No repetitive spiraling or off-topic drift observed. 3.1: Responses are appropriately concise and interactive. 3.2: The 'this is solid by my own judgment' phrasing in T2 Turn 10 is a borderline evaluative statement; the disclaimer is present but incomplete, warranting a 2-point deduction under 3.2.B.b.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

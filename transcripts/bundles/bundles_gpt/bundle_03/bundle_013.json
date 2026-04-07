@@ -1,0 +1,104 @@
+{
+  "bundle_file": "bundle_013.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0003",
+    "cooperative/cooperative_raw/transcript_0005",
+    "cooperative/cooperative_raw/transcript_0029"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a step-by-step, non-answer-giving process and told the student not to outsource recall, but did not explicitly explain why those constraints help learning, retention, or independent philosophical reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a workable distinction or rule, the tutor moved directly to testing or extending it rather than asking the student to reflect on what changed in their thinking and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently used guided questioning, kept the student doing the core argumentative work, and stayed tightly anchored to the assignment. The main weaknesses were meta-level: the tutor imposed process constraints without clearly explaining the learning rationale, and missed chances to prompt reflection after student breakthroughs. There were a few direct clarifications of concepts such as means versus side effect, but they did not amount to submission-ready reasoning, so no 1.1 deduction was applied.",
+    "judge_reasoning": "The strongest evidence supports full credit for guided discovery, scaffolding, assignment focus, and communication: the tutor repeatedly broke the prompt into manageable tasks, asked targeted comparative questions, and avoided giving a ready-to-submit thesis or paragraph. The tutor also gave useful method-level coaching, such as telling the student to classify cases by causal structure, distinguish act from rule consequentialism, and move from intuition to principle. I deducted under 1.3.A because the tutor never clearly stated why the constrained, stepwise approach supports learning, and under 1.3.C because after student improvements the tutor usually advanced immediately rather than asking for brief reflection on what changed. No other deductions were clearly warranted by the transcript evidence.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

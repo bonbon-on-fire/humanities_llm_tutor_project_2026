@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_035.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0018",
+    "clueless/clueless_raw/transcript_0043",
+    "clueless/clueless_raw/transcript_0066"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "T1-T10 across all three transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three conversations, the tutor never explicitly explains why it is withholding direct answers or examples—i.e., it never articulates that guided discovery builds retention, active reasoning, or long-term skill. In Transcript 2 Turn 7 the tutor says 'I'm not going to draft the Jakarta row for you—that would cross into doing the assignment. I'm your tutor, so you need to produce the wording,' which is a constraint statement but not a rationale for how this supports learning. No conversation provides a clear pedagogical rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1 T8, Transcript 2 T10, Transcript 3 T10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., T1 student produces a rough row in T9; T2 student produces a draft row in T8 and improves in T10; T3 student produces a solid justification in T10), the tutor moves forward with the next task without prompting the student to reflect on what changed in their thinking or why the improved attempt worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 T5-T10, Transcript 2 T3-T9",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly asks for re-explanation of the same concepts (sectors, rating logic, overall assignment structure) across turns 5–10, and the tutor continues to re-explain with slight reframing rather than consolidating, synthesizing, or decisively redirecting. In Transcript 2, the student cycles on the same sector/stressor confusion from T3 through T9 without the tutor switching to a more targeted simplification or explicitly naming the pattern and breaking it. While the tutor does show some variation, the overall pattern across multiple turns in two transcripts constitutes repetition without sufficient synthesis.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs well on the core Socratic method criteria: it consistently refuses to do the assignment for students, avoids giving submission-ready content, and guides students through scaffolded questioning. Scaffolding and progression are solid across all three transcripts. The main weaknesses are: (1) the tutor never explains the pedagogical rationale for its constraints, only stating them as rules; (2) the tutor misses opportunities to prompt reflection after student improvement; and (3) in Transcripts 1 and 2, the tutor allows the student to spiral on the same confusion across many turns without sufficiently consolidating or reframing. Communication quality and assignment anchoring are strong throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key reasoning student-led across all three conversations. 1.2 receives full marks: the tutor builds on student progress (e.g., 'Better. Those are much closer to usable stressors') and uses diagnostic questioning before responding. 1.3 loses 2 points for 1.3.A.a because no conversation provides a genuine learning rationale—the closest is T2-T7's 'that would cross into doing the assignment,' which is a boundary statement, not a pedagogical explanation; and 2 points for 1.3.C.a because after student breakthroughs (T1-T9, T2-T8, T3-T10) the tutor moves forward without prompting reflection on what changed. 2.1 loses all 4 points because in Transcripts 1 and 2 the student cycles on the same confusion (sector classification, rating logic, assignment structure) across 5–7 turns and the tutor repeatedly re-explains with minor reframing rather than consolidating, naming the pattern, or decisively switching strategy. 2.2, 3.1, and 3.2 are all clean.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "bundle_file": "bundle_040.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0092",
+    "cooperative/cooperative_raw/transcript_0116",
+    "cooperative/cooperative_raw/transcript_0140"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundle, the tutor enforces process constraints such as not writing for the student, but does not clearly explain why those constraints support learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9-10",
+                  "Transcript 2 Turn 8-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves a weak initial classification into a more precise one, the tutor validates the revision and moves to evidence-checking or next steps without prompting reflection on what changed in the student's thinking and why the better version worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 7"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor is mostly supportive, but several phrasings are unnecessarily sharp or rigid (for example, 'you need a rule, not guesses,' 'don't let it become lazy thinking,' and 'stop circling'), which risks making the interaction feel punitive rather than fully trust-building.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 46,
+    "overview": "The tutor consistently keeps the work student-led, anchors tightly to the assignment, and gives strong process-oriented scaffolding around evidence, authority, participation, and representation. No direct submission-ready writing or major assignment drift appears. Deductions are concentrated in meta-learning, because the tutor does not explain the learning rationale for its constraints and usually misses reflection prompts after student improvement. There is also a small tone deduction due to a few unnecessarily harsh phrases, though the overall interaction remains constructive.",
+    "judge_reasoning": "The strongest aspect of the tutoring is pedagogy under 1.1 and 1.2: the tutor repeatedly asks the student to classify actors, justify categories, and strengthen claims with evidence instead of supplying final forum-ready answers. The tutor also gives useful method feedback such as distinguishing authority from visibility and separating vulnerability from representation, so no deduction was applied under 1.3.B. However, the tutor never explicitly explains why it refuses to do the student's writing, and after successful revisions it tends to move forward without asking the student to reflect on what changed. Communication is generally clear and concise, but a few sharper lines in Transcript 1 warrant a tone deduction.",
+    "total_score": 38,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

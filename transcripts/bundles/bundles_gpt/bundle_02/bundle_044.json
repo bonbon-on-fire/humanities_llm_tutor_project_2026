@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_044.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0094",
+    "cooperative/cooperative_raw/transcript_0118",
+    "cooperative/cooperative_raw/transcript_0142"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently keeps the work student-led, but does not explicitly explain why these constraints support learning or long-term skill development at any point in the conversations.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 7-8",
+                  "Transcript 2 Turns 6-8",
+                  "Transcript 3 Turns 7-8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from earlier uncertainty to clearer classifications or rules, the tutor moved directly into the next drafting step instead of prompting reflection on what changed in their thinking and why the improved method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundled conversations, the tutor is consistently strong on guided discovery, assignment anchoring, and concise supportive interaction. The main weakness is meta-learning: the tutor keeps the student responsible for the reasoning, but rarely explains why that constraint helps learning and misses chances to prompt brief reflection after student improvement. I considered but did not apply heavier pedagogy deductions because the tutor mostly offered frameworks and diagnostic questions rather than submission-ready content.",
+    "judge_reasoning": "The tutor avoided giving final forum-ready answers, did not rewrite student prose into polished submission text, and generally kept key idea generation with the student, so no deduction was warranted under 1.1. Scaffolding was strong: the tutor repeatedly narrowed vague categories into specific actors, built on student progress, and stayed closely tied to the assignment's leading/engaged/missing structure. The score drops in 1.3 because there is no explicit explanation of why the tutor is withholding direct answers for learning purposes, and after successful student corrections the tutor usually advances the task instead of asking for reflection on the method change. Communication and dialogue quality remained strong throughout: responses were bite-sized, supportive, and firmly anchored to the assignment without off-topic drift.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

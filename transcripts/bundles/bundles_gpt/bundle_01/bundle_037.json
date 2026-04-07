@@ -1,0 +1,116 @@
+{
+  "bundle_file": "bundle_037.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0019",
+    "clueless/clueless_raw/transcript_0042",
+    "clueless/clueless_raw/transcript_0067"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 1",
+                  "TRANSCRIPT 3 Turn 5",
+                  "TRANSCRIPT 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced constraints like 'you need to do the thinking' and refused model text, but did not clearly explain why this approach supports learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 6",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion into workable distinctions or draft sentences, the tutor moved forward with critique instead of prompting reflection on what changed in the student's thinking and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 2",
+                  "TRANSCRIPT 2 Turn 10",
+                  "TRANSCRIPT 3 Turn 5"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was often supportive, but several phrases sounded rigid or mildly harsh, such as calling a broad approach 'sloppy and unrealistic,' telling the student 'You're looping,' and 'You're circling,' which could undermine trust for a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 46,
+    "overview": "The tutor consistently kept the work student-led, stayed anchored to the actual assignment, and used structured scaffolds rather than writing the submission for the student. Deductions are limited to missing explicit meta-rationale, missing reflection after improvement, and a somewhat rigid tone in a few turns. Evidence for stronger deductions on pedagogy or dialogue quality was not clear enough to justify them.",
+    "judge_reasoning": "Across the bundle, the tutor did well on core pedagogy: they avoided giving submission-ready text, repeatedly redirected the student into note-form thinking, and used manageable prompts tied to the assignment's 'leading/engaged/missing' buckets. The main pedagogy gap was meta-learning: the tutor enforced constraints but did not clearly explain why those constraints help the student learn, and they missed chances to ask the student to reflect after successful improvement. Dialogue quality remained strong because the tutor repeatedly re-anchored to the actual forum task and did not drift off-topic. Communication was clear and bite-sized, but a few sharper phrases made the tone less supportive than ideal.",
+    "total_score": 38,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

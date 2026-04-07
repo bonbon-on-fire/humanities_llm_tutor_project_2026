@@ -1,0 +1,162 @@
+{
+  "bundle_file": "bundle_020.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0082",
+    "clueless/clueless_raw/transcript_0106",
+    "clueless/clueless_raw/transcript_0130"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  4,
+                  8,
+                  10
+                ],
+                "sub_criterion_id": "1.1.A.a",
+                "reason": "In Transcript 1, Turn 1, the tutor provides a full end-to-end breakdown of the assignment including a numbered list of all required categories, a 'smart way to do it' step-by-step process, and a practical search order—this is near-submission-ready procedural scaffolding that does the organizational work for the student. In Turn 4, the tutor again provides a complete end-to-end walkthrough with a numbered process and a 'practical search order' mapping each category to a source type. In Transcript 3, Turn 8, the tutor provides a detailed source-type mapping for every single table field with specific search query examples. Across all three transcripts, the tutor repeatedly provides comprehensive procedural walkthroughs that collectively constitute doing the assignment planning work for the student rather than guiding the student to derive it.",
+                "points": 12
+              }
+            ],
+            "score": 0,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  6
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Transcript 1, when the student says they are confused about all categories (Turn 3), the tutor jumps straight to re-explaining GDP, Koppen, and race/ethnicity without first diagnosing which specific aspect of each is confusing. In Turn 4, when the student asks for an end-to-end walkthrough, the tutor provides it without first checking what the student already understands. In Transcript 2, Turn 6, when the student asks which fields get messy for Jakarta, the tutor immediately lists them without probing what the student's specific confusion is.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding the student through questions rather than just giving answers. There is no moment where the tutor says something like 'I'm asking you to work this out yourself because active reasoning builds retention' or similar rationale for the tutoring approach.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, Turn 7, the student correctly answers 'higher density' after being confused. The tutor confirms and moves on without prompting reflection on what helped the student understand. In Transcript 2, Turn 5, the student correctly identifies 'city proper' as a defensible unit; the tutor moves on without reinforcing the reasoning process. No transcript shows the tutor prompting reflection after a student improvement.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 5,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through explaining the same categories (GDP, Koppen, race/ethnicity, location, area) across Turns 1, 2, 3, and 4 without meaningful synthesis or advancement. The student remains confused and the tutor repeats similar explanatory moves rather than reframing or consolidating. In Transcript 2, the boundary confusion (city proper vs metro) is revisited across Turns 2, 3, 4, 5, and 6 without resolution or a decisive pivot strategy.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  4,
+                  8
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "In Transcript 1, Turn 1, the tutor provides a multi-paragraph response with a numbered list of all categories, a 5-step process, and a closing question—far more than needed for an opening exchange. Turn 4 again provides a full numbered walkthrough plus a 'practical search order' when a single focused prompt would have been more appropriate. In Transcript 3, Turn 8, the tutor provides a comprehensive source-type mapping with specific search queries for every field, which is a long monologue where a shorter targeted prompt was needed.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 4,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 17,
+    "max_base_score": 44,
+    "overview": "The tutor maintains a supportive tone and consistently ends turns with questions, but repeatedly provides comprehensive procedural walkthroughs, category explanations, and source-type mappings that collectively do the assignment planning work for the student. The 1.1.A.a deduction is the most significant: across all three transcripts, the tutor provides near-submission-ready organizational content (full category lists, step-by-step processes, source-type maps with search queries) rather than guiding the student to derive these. Redundancy is also a significant issue, with the same concepts revisited across multiple turns without synthesis. The tutor never explains its pedagogical rationale and misses reflection opportunities after student successes.",
+    "judge_reasoning": "The 1.1.A.a deduction (all 12 points) is warranted because the tutor provides complete procedural frameworks across multiple turns—full category lists, numbered processes, and source-type mappings with specific search queries—that together constitute doing the assignment planning work for the student rather than guiding discovery. The 1.2.B.a deduction (3 points) applies because the tutor repeatedly jumps to explanations without first diagnosing the specific nature of student confusion. The 1.3 deductions (4 points total) reflect the absence of any tutoring rationale explanation and missed reflection opportunities after student improvements. The 2.1.A.a deduction (4 points) is supported by clear evidence of cycling on the same concepts across multiple turns without synthesis or reframing. The 3.1.A.a deduction (4 points) reflects the tutor's consistent use of multi-paragraph monologues where shorter, more targeted prompts were appropriate.",
+    "total_score": 17,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

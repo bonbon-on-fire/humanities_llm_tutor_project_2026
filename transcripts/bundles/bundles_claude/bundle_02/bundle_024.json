@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_024.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0084",
+    "cooperative/cooperative_raw/transcript_0108",
+    "cooperative/cooperative_raw/transcript_0132"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student through questions rather than simply providing answers—no rationale about active reasoning, retention, or skill development is offered at any point.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "All transcripts",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three conversations, when students improve or arrive at correct answers (e.g., the location entry in T2, the GRDP insight in T3, the race/ethnicity approach in T1), the tutor moves on to the next topic without prompting the student to reflect on what changed in their thinking or why their revised approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates strong Socratic practice: it consistently asks guiding questions, keeps key idea generation student-led, builds on student responses, and avoids providing submission-ready content. Scaffolding is well-executed—the tutor moves category by category, stress-tests student reasoning, and redirects when students rely on weak sources. The primary weaknesses are the absence of any explicit rationale for the tutoring approach (why questions rather than answers) and a consistent failure to prompt reflection after students successfully improve their thinking. Communication is concise, supportive, and well-anchored to the assignment throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides direct answers, finished table entries, or submission-ready content; all key reasoning steps are student-generated. 1.2 receives full marks: the tutor consistently builds on correct student progress (e.g., affirming INEGI, BPS, DKI Jakarta choices) and diagnoses confusion before responding. 1.3 loses 2 points under 1.3.A.a because no transcript contains any explanation of why the tutor uses a question-based approach rather than direct instruction. 1.3 loses an additional 2 points under 1.3.C.a because in all three conversations, after students successfully refine their thinking (e.g., the Jakarta location entry, the GRDP label, the race/ethnicity note strategy), the tutor simply moves to the next topic without prompting reflection on what changed and why it worked. Dialogue quality and communication quality are both strong with no deductions warranted.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

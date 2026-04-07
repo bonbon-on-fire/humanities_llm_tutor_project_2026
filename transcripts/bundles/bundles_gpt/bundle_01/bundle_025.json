@@ -1,0 +1,115 @@
+{
+  "bundle_file": "bundle_025.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0013",
+    "clueless/clueless_raw/transcript_0037",
+    "clueless/clueless_raw/transcript_0061"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 2 Turn 7",
+                  "Transcript 3 Turn 3"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a 'I won't fill in the row for you' constraint, but did not clearly explain why that constraint supports the student's learning process beyond stating the tutor's role.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student made clearer progress following earlier confusion, the tutor moved straight into the next task rather than prompting reflection on what changed in the student's thinking and why the improved attempt worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 3-10",
+                  "Transcript 3 Turns 4-9"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly cycled through the same stressor/sector/impact distinction and repeated requests for a sample row without enough synthesis or a materially different strategy, even as the student stayed confused.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 10
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently avoided doing the student's assignment for them and stayed anchored to the stressors-table task. The main weaknesses were repetitive looping when the student remained confused and limited meta-learning support, especially around explaining tutoring constraints and prompting reflection after improvement. The evidence for the missing rationale deduction is somewhat borderline, so that deduction is applied conservatively and based only on the clearest instances.",
+    "judge_reasoning": "The tutor's strongest performance was in 1.1 and 2.2: they did not provide submission-ready rows and kept the discussion focused on the assignment's actual structure. However, the conversations often spiraled on the same distinction between stressor, sector, impact, and vulnerability, especially in Transcript 1, without enough strategic reframing, which warrants the full 2.1 deduction. Meta-learning was weaker than the core tutoring: the tutor refused to draft rows for the student but did not clearly explain why that constraint helps learning, and when the student finally produced stronger attempts, the tutor did not prompt reflection on what changed. Communication remained concise, clear, and supportive throughout, so no communication-quality deductions were taken.",
+    "total_score": 38,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

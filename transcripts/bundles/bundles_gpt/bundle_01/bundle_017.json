@@ -1,0 +1,127 @@
+{
+  "bundle_file": "bundle_017.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0009",
+    "clueless/clueless_raw/transcript_0033",
+    "clueless/clueless_raw/transcript_0057"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 5",
+                  "Transcript 3 Turn 6"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor explains that giving a full example or sentence template would be 'doing the assignment,' but does not clearly explain how withholding that support helps the student's learning, reasoning, or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student shows partial improvement or clearer understanding, the tutor moves directly to the next task instead of asking the student to reflect on what changed in their thinking and why the new framing worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 3-10",
+                  "Transcript 3 Turns 2-9"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across multiple turns, the tutor repeats similar reframings and question patterns without enough synthesis or a substantially new strategy, while the student remains broadly confused. The dialogue loops on the same conceptual distinctions instead of consolidating and advancing.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 3",
+                  "Transcript 2 Turn 6",
+                  "Transcript 3 Turn 4",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor repeatedly uses rigid phrasing such as 'Stop overthinking,' 'You're spiraling,' and 'Now stop looping,' which risks sounding impatient or dismissive even though the overall interaction remains task-focused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "The tutor stayed mostly process-oriented, avoided filling in the student's table, and gave useful structural guidance about categories, boundaries, and sources. The main weaknesses were repeated looping on similar explanations, limited meta-explanation for tutoring constraints, and a somewhat blunt tone. Assignment anchoring was mixed at moments, but the evidence was not strong enough for a separate deduction because the tutor also repeatedly restated the baseline-data purpose of the task.",
+    "judge_reasoning": "I did not deduct under 1.1 because the tutor consistently avoided giving Jakarta or Miami entries, polished prose, or submission-ready table content; the help stayed at the level of structure, distinctions, and process. The biggest issue was dialogue repetition: especially in Transcripts 1 and 3, the tutor cycled through similar conceptual reframings while the student remained confused, without switching decisively to a new approach or synthesis. I also deducted under 1.3 because the tutor enforced boundaries on direct help without clearly tying those constraints to learning benefits, and missed reflection opportunities after partial student improvement. Finally, repeated admonishing phrases made the tone somewhat rigid, though not overtly hostile.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "bundle_file": "bundle_013.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0006",
+    "clueless/clueless_raw/transcript_0031",
+    "clueless/clueless_raw/transcript_0055"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundle, the tutor enforced a process-only approach ('you need to do the researching,' 'I’m not going to choose it for you') but did not clearly explain at least once why that constraint supports the student's learning, retention, or independent skill-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 8",
+                  "TRANSCRIPT 1 Turn 9",
+                  "TRANSCRIPT 2 Turn 5",
+                  "TRANSCRIPT 2 Turn 6"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When the student improved after earlier confusion—for example correctly listing the row labels and roughly distinguishing GDP from income per capita—the tutor acknowledged correctness and moved on, but did not prompt reflection on what changed in the student's thinking or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 1 Turn 8",
+                  "TRANSCRIPT 1 Turn 9",
+                  "TRANSCRIPT 1 Turn 10",
+                  "TRANSCRIPT 2 Turn 7",
+                  "TRANSCRIPT 2 Turn 8",
+                  "TRANSCRIPT 2 Turn 9",
+                  "TRANSCRIPT 2 Turn 10",
+                  "TRANSCRIPT 3 Turn 7",
+                  "TRANSCRIPT 3 Turn 8",
+                  "TRANSCRIPT 3 Turn 9",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly returned to the same pattern—restate boundary-consistency logic, ask the student to choose a Jakarta unit, then ask another short application question—even after the student explicitly said they were still overwhelmed and needed a different kind of synthesis. The conversation advanced only minimally and often spiraled on the same sub-problem without enough consolidation or reframing.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 5",
+                  "TRANSCRIPT 1 Turn 10",
+                  "TRANSCRIPT 3 Turn 5"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone was sometimes unnecessarily sharp or rigid, using phrases like 'Fine—category by category,' 'That fear is mostly avoidance,' and 'Stop overcomplicating it.' These comments risk making the student's confusion feel judged rather than supported.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "The tutor consistently kept the work student-owned and stayed well anchored to the actual assignment, especially around source credibility, category meanings, and boundary consistency. I did not deduct for direct-answering because the tutor never supplied researched values or a submission-ready table. The main weaknesses were repetitive looping on the same Jakarta-boundary issue after the student remained overwhelmed, lack of an explicit learning rationale for the tutor's constraints, and some sharp phrasing. Any ambiguity was resolved conservatively in the tutor's favor on direct-work and scaffolding criteria.",
+    "judge_reasoning": "The strongest aspect of this tutoring was assignment alignment: the tutor repeatedly grounded the student in the required categories and in the need for consistent geographic scale, without doing the actual research for them. However, the dialogue often stalled because the tutor kept returning to essentially the same boundary-choice questioning instead of switching strategies more decisively once the student signaled persistent overload. I also deducted for missing meta-learning moves: the tutor enforced a process-only stance without clearly explaining why, and missed chances to ask the student to reflect after partial successes. Finally, several turns used a somewhat blunt tone that could undermine trust even though the overall intent remained supportive.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

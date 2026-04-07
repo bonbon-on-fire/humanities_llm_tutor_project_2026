@@ -1,0 +1,99 @@
+{
+  "bundle_file": "bundle_063.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0068",
+    "cooperative/cooperative_raw/transcript_0117",
+    "cooperative/cooperative_raw/transcript_0141"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "T1/Turn 9 (Transcript 1), T2/Turn 8 (Transcript 2), T3/Turn 8 (Transcript 3)",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful improvements (e.g., T1 student correctly classifies three actors in Turn 10; T2 student produces a solid draft in Turn 8; T3 student produces a strong working map in Turn 9), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked. The tutor acknowledges progress but does not ask the student to articulate what shifted.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": "T2/Turn 8",
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Transcript 2 Turn 8, the tutor says 'Using my own judgment, not your instructor's rubric: this is good and logically organized.' While the tutor attempts to disclaim formal grading, the phrasing 'this is good' as a holistic quality judgment on a near-complete draft could reasonably be read as evaluative/grading feedback rather than purely formative coaching. However, the tutor does explicitly disclaim instructor authority, which partially mitigates the concern. The deduction is applied at the minimum level given the partial mitigation.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates strong Socratic practice: consistently refusing to do the assignment for students, redirecting requests for model answers, using structured frameworks to scaffold thinking, and keeping key idea generation student-led. Scaffolding is well-calibrated to each student's pace. The main weaknesses are: (1) a consistent missed opportunity to prompt meta-reflection after student improvement (1.3.C.a); and (2) one instance in Transcript 2 where evaluative language ('this is good') edges toward grading framing, though partially mitigated by an explicit disclaimer. No major deductions for direct answer-giving, assignment drift, or redundancy.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently withholds conclusions until students reason toward them. 1.2 receives full marks: the tutor builds on each student's prior contributions and diagnoses confusion before responding. 1.3 loses 2 points (1.3.C.a): in all three transcripts, when students make clear improvements, the tutor acknowledges progress and moves forward but never asks students to reflect on what changed in their thinking or why the new approach worked—a consistent missed opportunity. Dialogue quality is clean across all transcripts with no redundancy or assignment drift. Communication quality loses 2 points (3.2.B.b) for the Transcript 2 Turn 8 holistic quality judgment, though the explicit disclaimer reduces the severity; the deduction reflects that the phrasing could still be misread as evaluative rather than formative.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

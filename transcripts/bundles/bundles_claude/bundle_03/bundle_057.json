@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_057.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0067",
+    "cooperative/cooperative_raw/transcript_0114",
+    "cooperative/cooperative_raw/transcript_0139"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All three transcripts, final turns",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is withholding direct answers or model text—i.e., it never articulates that the Socratic approach supports active reasoning, retention, or skill development. It simply refuses or redirects without stating the pedagogical rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1, Turns 6-10; Transcript 2, Turns 9-10; Transcript 3, Turns 9-10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students improve from vague or stuck responses to clearer outlines, the tutor moves directly to the next critique or question without prompting reflection on what changed in the student's thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 3-9",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly requests a model or full example across multiple turns (Turns 3, 5, 7, 9), and the tutor cycles through the same refusal-and-redirect pattern without meaningfully reframing the approach or synthesizing progress. While the tutor does eventually get the student to draft something, the repetitive loop across 6+ turns without consolidation or a shift in strategy is a pattern-level repetition issue.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly on core Socratic method and guided discovery across all three transcripts—never giving submission-ready answers, consistently refusing to write for students, and keeping key idea generation student-led. Scaffolding and progression are generally solid, with the tutor building on student responses and using targeted follow-up questions. The main weaknesses are: (1) the tutor never explains its pedagogical rationale for withholding direct answers, missing an opportunity to build meta-learning; (2) the tutor does not prompt reflection after student improvement; and (3) in Transcript 1, the tutor repeats the same refusal-and-redirect pattern across many turns without meaningfully reframing or synthesizing, creating a spiraling loop. Transcripts 2 and 3 show much better progression and avoid the spiraling issue.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces submission-ready content, never rewrites student text, and consistently keeps reasoning student-led across all three transcripts. 1.2 receives full marks: the tutor builds on student progress at each turn and uses diagnostic questioning before responding. 1.3 loses 4 points: the tutor never articulates why it is using a Socratic approach (1.3.A.a), and in all three transcripts fails to prompt reflection after student improvement (1.3.C.a). 2.1 loses 4 points for Transcript 1, where the student's repeated requests for a model text are met with the same refusal-redirect pattern across 6+ turns without reframing, synthesis, or a strategy shift—a clear pattern-level repetition. 2.2 retains full marks as the tutor consistently re-anchors to the assignment and avoids off-topic drift. Communication quality is strong throughout: responses are concise, well-structured, and maintain a supportive, non-grading tone.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

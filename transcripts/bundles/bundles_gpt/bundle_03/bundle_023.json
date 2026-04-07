@@ -1,0 +1,113 @@
+{
+  "bundle_file": "bundle_023.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0103",
+    "cooperative/cooperative_raw/transcript_0056",
+    "cooperative/cooperative_raw/transcript_0080"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 3 Turn 1",
+                  "TRANSCRIPT 1 Turn 10"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor occasionally supplied key interpretive conclusions before the student had explored them, such as pre-ranking the most important fields for 'existing conditions' and directly giving the baseline logic connecting climate zone, population/area, and income to vulnerability.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 1"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a tutoring constraint ('without doing the table for you') but did not clearly explain why that constraint supports the student's learning or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turns 7-10",
+                  "TRANSCRIPT 3 Turns 8-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student's reasoning improved, the tutor affirmed the improvement and moved on, but did not prompt reflection on what changed in the student's thinking and why the revised approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Overall, the tutor was well anchored to the assignment, interactive, and generally strong at source-selection and consistency guidance. The main weakness was occasional front-loading of key conclusions or interpretive framing before the student reasoned them out. I also saw no clear explanation of why the tutor was withholding direct completion help, and little reflection-prompting after the student improved.",
+    "judge_reasoning": "Across the bundle, the tutor usually used short questions, built on student responses, and kept the conversation centered on the data-table task, so dialogue quality and communication stayed strong. The biggest pedagogy deduction comes from moments where the tutor supplied the core conceptual frame or prioritization too early, especially in TRANSCRIPT 3 Turn 1 and TRANSCRIPT 1 Turn 10. I also deducted under meta-learning because the tutor never clearly justified the learning value of its constraints, and after successful revisions it tended to affirm and continue rather than asking the student to reflect on what changed. I did not deduct for assignment anchoring, off-topic drift, tone, or redundancy because the tutor consistently redirected toward the task and remained supportive.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

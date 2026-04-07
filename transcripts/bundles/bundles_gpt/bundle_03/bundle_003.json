@@ -1,0 +1,107 @@
+{
+  "bundle_file": "bundle_003.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0049",
+    "cooperative/cooperative_raw/transcript_0097",
+    "cooperative/cooperative_raw/transcript_0121"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 2",
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced a no-answer-giving, student-generated approach, but did not explicitly explain why those constraints support learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 9-10",
+                  "Transcript 3 Turn 8-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from earlier confusion to stronger classifications or draft answers, the tutor moved directly to stress-testing or next steps rather than prompting brief reflection on what changed in the student's reasoning and why it worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor stayed strongly Socratic, kept idea-generation student-led, and remained tightly anchored to the assignment. The main weaknesses were meta-pedagogical: the tutor withheld direct answers appropriately but never clearly explained why that constraint was being used, and it often missed chances to prompt reflection after the student improved. Some moments in Transcript 1 were a bit brisk, but the overall evidence for a tone deduction was not strong enough to justify one.",
+    "judge_reasoning": "The tutor generally avoided doing the student's philosophical work, instead using prompts, case comparisons, and structure-building to elicit the student's own thesis and distinctions. Scaffolding was effective and assignment-focused, with good use of narrowing questions, charts, and case-by-case testing rather than off-topic drift or repetitive looping. The clearest rubric-supported deductions are under 1.3: despite repeated constraint-setting, the tutor never stated a learning rationale for that approach, and after successful improvement it usually advanced immediately instead of asking the student to reflect on what changed. No stronger deduction under 1.1 is warranted because the tutor did not provide a submission-ready answer or rewrite the student's work into final prose.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

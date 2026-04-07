@@ -1,0 +1,119 @@
+{
+  "bundle_file": "bundle_019.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0010",
+    "clueless/clueless_raw/transcript_0034",
+    "clueless/clueless_raw/transcript_0058"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 3 Turn 6"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor directly supplied key conceptual reasoning that the student could have been guided to generate, such as explaining how each category connects to climate vulnerability/capacity and defining the place/people/economy framework instead of first eliciting the student's own interpretation.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 3",
+                  "Transcript 2 Turn 4",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to a workable distinction or classification, the tutor typically moved straight to the next task rather than asking the student to reflect on what changed in their thinking and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's phrasing was sometimes brusque or rigid, using lines such as \"Fine,\" \"You're looping,\" and \"Stop aiming for edge cases/perfect labels,\" which could reasonably feel dismissive even though the tutor remained task-focused.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor generally kept the student anchored to the actual table task, used workable scaffolds, and avoided giving submission-ready city data. Main deductions come from moments where the tutor supplied core conceptual links too directly, missed chances to prompt reflection after improvement, and sometimes used a somewhat sharp tone. I did not deduct for assignment anchoring or redundancy because there was still clear forward movement and repeated re-grounding to the prompt.",
+    "judge_reasoning": "The strongest positive evidence is the tutor's consistent redirection to the assignment requirements, source quality, and boundary consistency, all without producing a completed table for the student. However, in places the tutor took over key conceptual work by directly explaining how categories map onto climate relevance or by giving the organizing framework before the student fully reasoned it out. The tutor also missed reflection opportunities after successful corrections, especially when students moved from confusion to usable distinctions. Communication stayed mostly clear, but several brusque phrases warranted a tone deduction.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

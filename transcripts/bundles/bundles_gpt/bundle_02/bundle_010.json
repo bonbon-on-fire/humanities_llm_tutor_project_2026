@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_010.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0077",
+    "cooperative/cooperative_raw/transcript_0101",
+    "cooperative/cooperative_raw/transcript_0126"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 9",
+                  "TRANSCRIPT 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor sets constraints such as 'I’ll critique the logic, not write it for you' and refuses to guess lecture details, but does not explicitly explain a learning rationale like retention, active reasoning, or skill-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 10",
+                  "TRANSCRIPT 2 Turn 9",
+                  "TRANSCRIPT 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After clear student improvement, the tutor generally moves directly into the next test or objection instead of prompting brief reflection on what changed in the student's reasoning and why the improved version works better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently assignment-focused, interactive, and supportive across the bundle, with short prompts that kept the student doing the intellectual work. The main uncertainty was whether the repeated introduction of the means/side-effect distinction was too leading, but the student still had to formulate, test, and defend the actual thesis, so I did not deduct under 1.1. The clearest misses were meta-level: the tutor enforced constraints without clearly stating a learning rationale, and missed opportunities to ask the student to reflect after improving.",
+    "judge_reasoning": "Across the transcripts, the tutor generally used guided questioning well, built on the student's evolving ideas, and stayed tightly anchored to the philosophy prompt rather than drifting or supplying submission-ready prose. I did not deduct under 1.1 because, although the tutor suggested possible distinctions, the student still had to choose, refine, and apply the argument to the cases in their own words. The main deductions are under 1.3: the tutor imposed constraints without explicitly explaining why those constraints support learning, and after several improved student responses, the tutor moved straight to the next challenge instead of prompting reflection on what changed in the student's method. Communication and dialogue quality were otherwise strong: concise, supportive, and non-grading throughout.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

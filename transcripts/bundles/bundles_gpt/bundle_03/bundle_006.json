@@ -1,0 +1,116 @@
+{
+  "bundle_file": "bundle_006.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0121",
+    "cooperative/cooperative_raw/transcript_0098",
+    "cooperative/cooperative_raw/transcript_0122"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 4",
+                  "TRANSCRIPT 1 Turn 10"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor at times supplied the central interpretive bridge instead of keeping it fully student-led, especially by characterizing Fuel as involving side effect harm and Blood as more direct use, then later summarizing the student's alternative view in polished contrastive form. That gives away a key reasoning step in the assignment's core dispute.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turns 6-10",
+                  "TRANSCRIPT 2 Turns 8-10",
+                  "TRANSCRIPT 3 Turns 7-10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the conversations, the tutor consistently pushed the student to answer in their own words, but never clearly explained why that constraint supports learning, retention, or argument-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turns 7-9",
+                  "TRANSCRIPT 2 Turns 7-8",
+                  "TRANSCRIPT 3 Turns 5-7"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved following confusion, the tutor usually moved directly to the next task rather than prompting reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "The tutor was generally strong at keeping the discussion interactive, anchored to the assignment, and framed around the student's own reasoning. The main weakness was occasional over-help on the core means-versus-side-effect distinction, especially in one transcript where the case contrast was partially supplied for the student. Some deductions were kept modest because most turns still used guided questioning and avoided full submission-ready writing.",
+    "judge_reasoning": "Most of the bundle shows solid Socratic tutoring: the tutor repeatedly asked the student to apply act consequentialism, compare cases, and formulate a general rule in their own words. I deducted under 1.1 because the tutor sometimes supplied the crucial interpretation of Fuel versus Blood and later summarized the student's alternative view in a way that did part of the central reasoning. I also deducted under 1.3 because the tutor never explicitly explained why they were insisting on student-generated responses, and they missed chances to ask the student to reflect after improving from confusion. Dialogue control, assignment anchoring, clarity, and tone were all consistently strong, so those sections remained at full credit.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

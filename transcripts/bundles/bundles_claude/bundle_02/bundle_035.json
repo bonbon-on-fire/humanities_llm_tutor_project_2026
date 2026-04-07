@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_035.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0018",
+    "cooperative/cooperative_raw/transcript_0042",
+    "cooperative/cooperative_raw/transcript_0067"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—no rationale about active reasoning, retention, or skill development is offered. The tutoring constraints are enforced but never justified to the student.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students successfully work through a distinction or arrive at a defensible answer after initial confusion (e.g., Transcript 1 Turn 7, Transcript 2 Turn 9-10, Transcript 3 Turn 9-10), the tutor moves forward to the next stressor or task without prompting the student to reflect on what changed in their thinking or why the improved reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs very well across all three transcripts. Socratic method is consistently applied—the tutor never gives final answers or submission-ready content, always redirecting students to reason through distinctions themselves. Scaffolding is strong: the tutor builds on student progress, acknowledges correct steps, and uses targeted follow-up questions. Dialogue quality is excellent with no redundancy, good assignment anchoring, and no off-topic drift. Communication is concise and appropriately supportive. The two deductions are for (1) never explaining the rationale for the guided-discovery approach to the student, and (2) missing opportunities to prompt reflection after students successfully improve their reasoning.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides near-submission-ready content, never rewrites student text, and consistently lets students generate key ideas before confirming or refining them. 1.2 receives full marks: the tutor consistently builds on student progress and diagnoses confusion before responding. 1.3 loses 2 points under 1.3.A.a because no tutoring rationale is ever offered across any of the three conversations—the tutor enforces a Socratic approach without once explaining why this benefits the student. 1.3 loses another 2 points under 1.3.C.a because after students successfully work through confusions (e.g., the sea level rise vs. flooding distinction in T1, the heat vs. pollution comparison in T2, the monsoon flooding rating in T3), the tutor consistently moves to the next task without prompting reflection on what changed in the student's thinking. Dialogue and communication quality are strong throughout with no meaningful deductions warranted.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

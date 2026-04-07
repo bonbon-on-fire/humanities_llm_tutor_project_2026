@@ -1,0 +1,143 @@
+{
+  "bundle_file": "bundle_021.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0011",
+    "clueless/clueless_raw/transcript_0035",
+    "clueless/clueless_raw/transcript_0059"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "T1-Turn 3",
+                  "T1-Turn 6",
+                  "T1-Turn 7",
+                  "T1-Turn 9"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "Across all three transcripts, the student repeatedly signals the same confusion (feeling lost, wanting a full re-explanation) and the tutor repeatedly responds with another structured summary rather than diagnosing what specific gap is causing the looping. In Transcript 1, the tutor gives a full category-by-category walkthrough in Turn 3, then again in Turn 7, then again in Turn 9, without first probing what specifically the student still does not understand. The tutor does eventually note the student is 'circling' (T1-Turn 9) but does not use diagnostic questioning to isolate the root confusion before re-explaining.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "T1-Turn 1 through T1-Turn 10",
+                  "T2-Turn 1 through T2-Turn 10",
+                  "T3-Turn 1 through T3-Turn 10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student to make their own choices rather than simply providing answers. The tutor enforces a Socratic approach (e.g., T3-Turn 4: 'I'm not going to fill Jakarta in for you') but never articulates that this is to build the student's reasoning skills, retention, or long-term capability. The rationale for the tutoring constraint is never stated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "T1-Turn 9",
+                  "T2-Turn 8",
+                  "T3-Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make progress (e.g., T2-Turn 8 where the student correctly identifies GDP as the boundary problem, T3-Turn 7 where the student produces a rough placeholder structure), the tutor moves directly to the next task without prompting reflection on what changed in the student's thinking or why the approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "T1-Turn 3",
+                  "T1-Turn 7",
+                  "T1-Turn 9",
+                  "T3-Turn 7",
+                  "T3-Turn 8"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor provides a full category-by-category explanation in Turn 3, then again in Turn 7 ('zoom out—the bigger picture'), then again in Turn 9 ('Simple version, start to finish'), cycling through the same overview without meaningfully advancing the student's understanding or switching to a fundamentally different approach. In Transcript 3, similar repetition occurs in Turns 7 and 8. The tutor does note the looping in T1-Turn 9 but still responds with another full summary rather than a targeted reframe or a different strategy.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "T1-Turn 3",
+                  "T1-Turn 10",
+                  "T2-Turn 3",
+                  "T3-Turn 3"
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several tutor turns consist of multi-paragraph structured lists when a single focused question or prompt would have been more appropriate given the student's confusion. For example, T1-Turn 3 provides a full category-by-category breakdown across 8 bullet points, and T1-Turn 10 provides a full source-family taxonomy with category-by-category sourcing guidance, both in response to a student who was already overwhelmed. These monologue-style responses recur across transcripts rather than being isolated incidents.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 4,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 29,
+    "max_base_score": 44,
+    "overview": "The tutor maintains a consistently Socratic stance across all three transcripts, never providing submission-ready answers or doing the student's reasoning work. The tutor correctly refuses to fill in Jakarta's data directly (T3-Turn 4) and consistently redirects students toward making their own defensible choices. However, the tutor struggles significantly with the repetition problem: when students loop back asking for the same overview, the tutor tends to provide another structured summary rather than diagnosing the root confusion or switching to a fundamentally different approach. The tutor also never explains the rationale for its tutoring constraints, and misses opportunities to prompt reflection after student progress. Response length is frequently excessive given the students' overwhelmed state.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides near-submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led. 1.2 loses 3 points for repeated failure to diagnose before responding—when students loop with the same confusion, the tutor re-explains rather than asking targeted diagnostic questions to isolate the specific gap. 1.3 loses 4 points: the tutoring rationale is never articulated across any of the three conversations (1.3.A.a), and the tutor consistently moves to the next task after student progress without prompting reflection on what changed (1.3.C.a). 2.1 loses all 4 points because the tutor cycles through the same overview-style explanations multiple times across all three transcripts without meaningful synthesis or strategy shift, most clearly in Transcript 1 Turns 3, 7, and 9. 3.1 loses all 4 points because the tutor repeatedly uses multi-paragraph structured lists when the student is already overwhelmed, which is counterproductive and recurs as a pattern rather than being isolated.",
+    "total_score": 29,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

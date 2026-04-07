@@ -1,0 +1,107 @@
+{
+  "bundle_file": "bundle_005.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0097",
+    "cooperative/cooperative_raw/transcript_0050",
+    "cooperative/cooperative_raw/transcript_0074"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor gives useful prompts and structure, but never clearly explains a tutoring constraint or why the student is being asked to do the reasoning themselves for learning or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 8",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from uncertainty to a workable principle or outline, the tutor moves directly to the next step rather than prompting reflection on what changed in the student's reasoning and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently uses guided questioning, keeps the student's reasoning central, and stays tightly anchored to the assignment. A close call was the tutor's strong steering toward the means/side-effect framework, but the student still had to choose, apply, and defend the principle, so no 1.1 deduction was taken. The main weakness is meta-learning: the tutor does not explicitly explain the rationale for the tutoring approach and rarely asks the student to reflect on what changed after improvement.",
+    "judge_reasoning": "The tutor performed strongly on pedagogy and dialogue management: they repeatedly asked targeted questions, built on student answers, and avoided writing the student's final submission for them. The conversations stayed focused on act consequentialism and the relevant trolley-style cases, with no meaningful off-topic drift or assignment misframing. I deducted under 1.3 because, despite strong coaching, the tutor never explicitly explained why the student was being guided rather than told, and they missed chances to prompt reflection after the student moved from confusion to a stronger thesis or outline. Communication remained concise, supportive, and clearly formative throughout.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

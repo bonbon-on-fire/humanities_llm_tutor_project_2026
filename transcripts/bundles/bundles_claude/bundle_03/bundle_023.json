@@ -1,0 +1,94 @@
+{
+  "bundle_file": "bundle_023.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0103",
+    "cooperative/cooperative_raw/transcript_0056",
+    "cooperative/cooperative_raw/transcript_0080"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful improvements or arrive at correct reasoning (e.g., T1 Turn 8 student gives solid definition, T2 Turn 10 student reaches clarity on source accuracy, T3 Turn 10 student arrives at a strong framework), the tutor consistently moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates strong Socratic practice: it never gives submission-ready answers, consistently asks students to reason before confirming, builds on student progress, and maintains appropriate tone and bite-sized responses. The one consistent gap is the absence of reflective prompts after student breakthroughs—the tutor moves forward without asking students to articulate what changed in their thinking. No other rubric criteria show clear evidence of deduction.",
+    "judge_reasoning": "1.1: The tutor never provides near-submission-ready output, never rewrites student text, and consistently withholds conclusions until students attempt reasoning. Full marks. 1.2: The tutor builds on each student's prior answers and diagnoses confusion before redirecting (e.g., T1 Turn 6 boundary confusion, T2 Turn 4 scale mixing, T3 Turn 9 dropped physical area). Full marks. 1.3: The tutor provides some process-level feedback and implicitly models reasoning rationale, but never explicitly explains why it is guiding rather than telling (1.3.A.a borderline—no clear rationale statement found across all three transcripts, but the tutor's behavior is consistently coaching-oriented so this is ambiguous; applying smaller deduction only for 1.3.C.a which is clearly triggered). After students reach improved answers in all three conversations, the tutor simply advances without prompting reflection on what shifted. 2.1–2.2: No repetition spirals, no off-topic drift, no misunderstood assignment framing left uncorrected. 3.1–3.2: Responses are concise and interactive; tone is supportive and non-evaluative throughout.",
+    "total_score": 42,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

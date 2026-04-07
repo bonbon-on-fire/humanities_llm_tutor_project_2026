@@ -1,0 +1,112 @@
+{
+  "bundle_file": "bundle_002.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0072",
+    "clueless/clueless_raw/transcript_0097",
+    "clueless/clueless_raw/transcript_0121"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 4",
+                  "Transcript 2 Turn 6",
+                  "Transcript 3 Turn 4"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor repeatedly supplied the key interpretive path before the student had worked it out, e.g. stating that act consequentialism would usually ignore redirecting/pushing/using-a-person differences if outcomes match and introducing the means-vs-side-effect framework as the central answer path.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a do-the-thinking-yourself approach and avoided fully finishing the paper, but never clearly explained why that constraint supports learning, retention, or argument-building skill.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to a workable distinction, the tutor moved straight into the next argumentative step rather than prompting reflection on what changed in the student's thinking or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "The tutor was generally concise, supportive, and well anchored to the assignment, with strong use of small questions and paper-structure prompts. The main weakness was pedagogical: the tutor too often supplied the central distinction and answer path before the student derived it. There was also no explicit explanation of why the tutor was withholding finished answers, and little reflection after student improvement. A possible additional deduction for final-writing help was considered, but the evidence was borderline, so the smaller deduction was applied.",
+    "judge_reasoning": "Across the bundle, the tutor consistently kept the student on task and used clear, manageable prompts, so dialogue quality and communication quality remain strong. The main deduction comes from revealing the core conclusion path early: the tutor repeatedly framed the issue in terms of act consequentialism treating same-outcome cases alike and the means-vs-side-effect distinction before the student independently generated those ideas. I also deducted for missing meta-learning elements: there was no explicit rationale for the tutoring constraints, and when students improved after confusion, the tutor usually advanced the task instead of asking them to reflect on what changed. I did not deduct for assignment anchoring, tone, or scaffolding because the tutor usually built on student responses and stayed tightly focused on the prompt.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

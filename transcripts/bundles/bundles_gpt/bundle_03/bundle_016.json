@@ -1,0 +1,112 @@
+{
+  "bundle_file": "bundle_016.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0075",
+    "cooperative/cooperative_raw/transcript_0006",
+    "cooperative/cooperative_raw/transcript_0030"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 6"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "The student repeatedly said the cases blurred together and asked to be walked through Fuel and Blood from the beginning, but the tutor kept moving to abstract outcome/means questions and then a generic three-step plan instead of first diagnosing what facts about the cases the student actually remembered.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundle, the tutor enforced a step-by-step, non-rewriting approach but did not clearly explain why that tutoring constraint supports the student's learning or reasoning process.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 7-10",
+                  "Transcript 3 Turn 7-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from uncertainty to workable principles or theses, the tutor moved on to the next task or extension without prompting reflection on what changed in their thinking and why the improved move worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 37,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently Socratic, concise, and well anchored to the assignment, with no near-submission-ready writing supplied. Main weaknesses were a failure to diagnose the student's specific case-confusion in Transcript 1 and missed meta-learning opportunities to explain tutoring constraints and prompt reflection after improvement.",
+    "judge_reasoning": "The strongest positive evidence is that the tutor kept idea generation largely student-led across all three transcripts: the student supplied the core thesis, distinctions, and draft language, while the tutor mostly asked targeted questions and stress tests. I deducted under 1.2 because, in Transcript 1, the student explicitly asked for basic clarification of Fuel and Blood several times, and the tutor responded with higher-level conceptual prompts rather than first checking what factual confusion the student had. I also deducted under 1.3 because the tutor never clearly explained why the step-by-step constraint was pedagogically useful, and after clear student improvement, the tutor did not ask the student to reflect on what changed in their reasoning. I did not deduct elsewhere because the tutor remained assignment-focused, avoided off-topic drift, kept responses bite-sized, and maintained a supportive coaching tone.",
+    "total_score": 37,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

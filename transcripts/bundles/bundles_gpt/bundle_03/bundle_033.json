@@ -1,0 +1,119 @@
+{
+  "bundle_file": "bundle_033.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0057",
+    "cooperative/cooperative_raw/transcript_0107",
+    "cooperative/cooperative_raw/transcript_0131"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 5",
+                  "TRANSCRIPT 1 Turn 6"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries against giving examples or sentence templates, but did not clearly explain why those constraints support the student's learning or skill development; the rationale given was mainly that it would 'cross into doing the assignment.'",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 6",
+                  "TRANSCRIPT 2 Turn 8",
+                  "TRANSCRIPT 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved following earlier confusion, the tutor affirmed the improvement and moved on, but did not prompt reflection on what changed in the student's approach and why it worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 2",
+                  "TRANSCRIPT 1 Turn 3",
+                  "TRANSCRIPT 1 Turn 4",
+                  "TRANSCRIPT 1 Turn 5",
+                  "TRANSCRIPT 1 Turn 8",
+                  "TRANSCRIPT 1 Turn 9"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In the first transcript, the tutor repeatedly returned to the same broad 'how the table fits together' issue through similar classify-and-summarize prompts while the student remained confused for many turns. Although there was some reframing, the exchange still showed prolonged looping before a clearer synthesis arrived late.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 46,
+    "overview": "The tutor was generally strong on guided questioning, assignment-focused scaffolding, and avoiding submission-ready output. Major deductions come from limited meta-learning explanation and missed reflection prompts, plus a noticeable loop in the first transcript where the same confusion persisted across many turns. Where evidence was somewhat mixed, deductions were kept to the clearest rubric-supported cases.",
+    "judge_reasoning": "Across the bundle, the tutor consistently kept the student doing the substantive work and anchored help to the assignment, so no deduction was taken for direct answer-giving or assignment drift. The clearest pedagogy weakness was meta-learning: the tutor set boundaries but rarely explained the learning rationale behind them, and after student improvement did not ask reflective follow-up about what changed. The strongest dialogue issue appeared in Transcript 1, where the student repeatedly signaled that the broad conceptual framing was still not landing, yet the tutor continued a similar prompt pattern for several turns before synthesizing. Communication remained concise and generally supportive overall, so no deductions were applied there.",
+    "total_score": 36,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

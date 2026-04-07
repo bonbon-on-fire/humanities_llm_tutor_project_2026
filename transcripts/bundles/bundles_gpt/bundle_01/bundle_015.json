@@ -1,0 +1,125 @@
+{
+  "bundle_file": "bundle_015.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0008",
+    "clueless/clueless_raw/transcript_0032",
+    "clueless/clueless_raw/transcript_0056"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they needed the whole process explained and felt unsure, the tutor moved straight into generic process instructions rather than first diagnosing the specific point of confusion or checking what the student already understood.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion and produced workable structure or planning, the tutor moved directly to the next task instead of prompting reflection on what changed in the student's method and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 6-10",
+                  "Transcript 3 Turns 5-9"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly used the same pattern of telling the student not to overthink and pushing them to pick one item or move on, even while the student remained confused. There was some progress, but the dialogue still showed repeated pressure-forward moves before stronger synthesis or reframing.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 8-10",
+                  "Transcript 3 Turns 3, 7-10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's tone sometimes became rigid or dismissive, using language such as 'You're overcomplicating it,' 'That's a stall pattern,' 'another delay tactic,' and 'Stop seeking certainty before acting,' which risks discouraging a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 46,
+    "overview": "The tutor consistently avoided doing the assignment for the student and generally stayed well anchored to the task. The main weaknesses were a recurring push-forward style when the student was still confused, some repetitive interaction patterns, and a tone that occasionally sounded impatient. Where evidence was somewhat mixed, deductions were kept to the smaller supported set rather than adding speculative penalties.",
+    "judge_reasoning": "Across the combined transcript, the tutor showed solid boundary-setting and mostly used guided questions rather than providing submission-ready content, so no 1.1 deduction was warranted. However, there were clear moments where the tutor answered with generic process rules before diagnosing the student's exact confusion, and after successful student improvement the tutor missed chances to prompt reflection on what method had helped. Dialogue quality dropped because the tutor repeated similar 'don't overthink, pick one item' moves across several turns while confusion persisted, and communication quality was hurt by several dismissive phrasings that could undermine trust. The tutor still remained assignment-focused and generally clear in structure, which preserved credit in 2.2 and 3.1.",
+    "total_score": 33,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

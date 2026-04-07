@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_072.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0141",
+    "cooperative/cooperative_raw/transcript_0120",
+    "cooperative/cooperative_raw/transcript_0144"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—why this approach supports learning, retention, or skill development. The tutor simply declines to provide answers (e.g., 'I'm your tutor, not your writer') without articulating the pedagogical rationale behind that constraint.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students improve from vague or incorrect framings to more precise ones, the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked better. For example, in Transcript 1 Turn 9, after the student produces a solid core argument following earlier confusion, the tutor simply says 'That's a solid core argument' and moves on without asking the student to reflect on what shifted.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts, consistently using Socratic questioning, refusing to do the student's work, building on student progress, and maintaining appropriate tone. The primary weaknesses are the absence of any explicit rationale for the tutoring approach (why guided discovery rather than direct answers) and a consistent failure to prompt reflection after students improve. No near-submission-ready content was provided, no rewriting occurred, and key ideas remained student-generated throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led by asking questions before revealing any conclusions. 1.2 receives full marks: the tutor builds on each student's prior responses and diagnoses confusion through targeted questions before responding. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a)—the tutor declines to give answers but never says why this helps the student learn—and after students improve from weaker to stronger framings, the tutor consistently moves forward without prompting reflection on what changed (1.3.C.a). Dialogue quality and communication quality are both strong: responses are concise, interactive, well-anchored to the assignment, and maintain a supportive but non-grading tone throughout all three conversations.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

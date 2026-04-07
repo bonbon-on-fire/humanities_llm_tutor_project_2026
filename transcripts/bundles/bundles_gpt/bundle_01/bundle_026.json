@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_026.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0085",
+    "clueless/clueless_raw/transcript_0109",
+    "clueless/clueless_raw/transcript_0133"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 3 Turn 6",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a no-answer/no-example boundary, but the explanation stayed at 'I’m not going to fill the row for you' or 'I’m your tutor, not the person who fills the table for you' rather than clearly stating how this constraint supports learning through student reasoning or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 8-9",
+                  "Transcript 3 Turns 7-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "When the student improved from vague responses to a more workable justification or row, the tutor moved directly into the next step or more revision advice without prompting reflection on what changed in the student's thinking and why the improved method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently stayed assignment-anchored, used guided questions, and avoided giving submission-ready work. Scaffolding was generally strong and built from the student's partial ideas. The clearest weakness was meta-learning: the tutor enforced boundaries without explicitly explaining the learning rationale, and missed chances to prompt reflection after student improvement. Tone was occasionally brisk, but the overall evidence still supports a supportive, formative tutoring stance.",
+    "judge_reasoning": "The strongest evidence supports full credit for Socratic guidance and assignment anchoring: the tutor repeatedly broke the task into manageable parts, asked the student to generate the content, and refused to provide a finished row or polished answer. I did not deduct for scaffolding because the tutor usually built on partial student progress and addressed the actual confusion points with targeted frameworks. The main deductions are in 1.3, where the tutor did not clearly explain why the refusal to provide direct examples helps learning, and did not ask the student to reflect after improving from vague ideas to workable justifications. Communication stayed concise and generally supportive, so no further deductions were warranted.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

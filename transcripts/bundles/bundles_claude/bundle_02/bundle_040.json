@@ -1,0 +1,92 @@
+{
+  "bundle_file": "bundle_040.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0092",
+    "cooperative/cooperative_raw/transcript_0116",
+    "cooperative/cooperative_raw/transcript_0140"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "T1-T10 across all three transcripts",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students improve their reasoning (e.g., T5→T6 in transcript 1, T8→T9 in transcript 2, T8→T9 in transcript 3), the tutor moves forward without prompting the student to reflect on what changed in their thinking or why the improved version worked better. The tutor consistently validates and advances but misses the meta-reflective moment.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates strong Socratic practice: consistently using diagnostic questions, building on student responses, avoiding giving away answers, and keeping key idea generation student-led. The tutor scaffolds well, progresses logically, and maintains appropriate tone throughout. The one consistent gap is the absence of meta-reflective prompts after student improvement—the tutor validates and moves on rather than asking students to articulate what changed in their thinking. No other rubric violations were found.",
+    "judge_reasoning": "1.1: The tutor never provides submission-ready content, never rewrites student text, and never states conclusions before the student reasons toward them. All three conversations show the tutor consistently prompting the student to classify, justify, and draft independently. Full marks. 1.2: The tutor builds on each student's prior responses, acknowledges correct steps, and uses targeted follow-up questions rather than restating from scratch. No scaffolding failures detected. Full marks. 1.3: The tutor provides implicit rationale for its approach (e.g., 'don't let it become lazy thinking,' 'lead with what you can prove') and gives specific process feedback (e.g., distinguishing formal power from participation, evidence-based claims). However, across all three transcripts, when students improve from a weaker to a stronger formulation, the tutor consistently moves forward without prompting reflection on what changed—triggering 1.3.C.a. 2.1 and 2.2: No repetition without progress, no off-topic drift, and no misunderstood assignment framing. 3.1 and 3.2: Responses are appropriately concise, interactive, and supportive without being evaluative or grading-like.",
+    "total_score": 42,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

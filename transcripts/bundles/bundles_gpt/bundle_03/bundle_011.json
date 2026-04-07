@@ -1,0 +1,120 @@
+{
+  "bundle_file": "bundle_011.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0098",
+    "cooperative/cooperative_raw/transcript_0052",
+    "cooperative/cooperative_raw/transcript_0076"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 3",
+                  "TRANSCRIPT 2 Turn 3",
+                  "TRANSCRIPT 3 Turn 3"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor repeatedly foregrounded the key interpretive path itself—especially the means-versus-side-effect distinction—before the student had independently worked toward it, which reduced student-led idea generation even though the exchange remained interactive.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced process constraints such as not doing the writing for the student, but never clearly explained why those constraints support learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turns 9-10",
+                  "TRANSCRIPT 3 Turns 9-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student moved from confusion to a workable rule, the tutor shifted to further testing and critique without prompting reflection on what changed in the student's reasoning and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turns 4-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "When the student stayed muddled, the tutor kept returning to very similar means-versus-side-effect prompts without enough synthesis or a substantially different explanatory move, creating some spiraling before progress was consolidated.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently on-task, supportive, and generally scaffolded the student's reasoning in manageable steps. The main weakness was that the tutor too often supplied the central conceptual framework itself and, in one transcript especially, repeated that same frame across multiple turns without enough synthesis. Where evidence was somewhat mixed, deductions were kept to the smaller supported amount.",
+    "judge_reasoning": "Across the bundle, the tutor avoided giving submission-ready prose and usually kept the student actively responding, so there was no major deduction for direct answer-giving. However, the tutor repeatedly introduced the decisive means-versus-side-effect framework early, which limited student-led generation of the core philosophical distinction under 1.1. The tutor also never explicitly explained the learning rationale behind its constraints and missed chances to prompt reflection after student improvement. Dialogue quality was hurt most by Transcript 1, where similar prompts recurred without a strong reframing or summary, but assignment anchoring, clarity, and tone were otherwise strong.",
+    "total_score": 30,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

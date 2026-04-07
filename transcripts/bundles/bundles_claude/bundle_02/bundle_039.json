@@ -1,0 +1,92 @@
+{
+  "bundle_file": "bundle_039.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0020",
+    "cooperative/cooperative_raw/transcript_0044",
+    "cooperative/cooperative_raw/transcript_0068"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "T1 Turn 10, T2 Turn 10, T3 Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful improvements or arrive at clearer reasoning (e.g., T1 Turn 10 on residents as participants vs. populations, T2 Turn 10 on the government/developer distinction, T3 Turn 10 on cautious inference), the tutor moves forward with new tasks or stress-tests rather than prompting the student to reflect on what changed in their thinking and why the improved approach worked. No turn explicitly asks the student to reflect on their own reasoning process after a successful correction.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor consistently applies Socratic questioning, avoids giving submission-ready answers, scaffolds well from student responses, and maintains appropriate tone and bite-sized communication. The one clear deduction is for 1.3.C.a: the tutor never explicitly prompts students to reflect on what changed in their thinking after they improve, instead moving directly to the next challenge or stress-test. No other rubric criteria show clear evidence of deduction.",
+    "judge_reasoning": "1.1: The tutor never provides final answers, finished reasoning, or polished text. All three conversations keep the student doing the intellectual work, with the tutor asking probing questions and withholding conclusions. No deductions apply. 1.2: The tutor consistently builds on student progress (e.g., 'That distinction is promising,' 'This is strong') and diagnoses confusion before responding with targeted follow-up questions rather than method dumps. No deductions apply. 1.3: The tutor provides implicit rationale for its approach (e.g., 'Don't worry about polish yet. First get the logic clear') and gives specific process feedback throughout. However, in all three transcripts, when students successfully improve their reasoning, the tutor moves to the next task without asking the student to reflect on what changed and why it worked—triggering 1.3.C.a for a 2-point deduction. 2.1 and 2.2: No repetition without progress, no off-topic drift, and no misunderstood assignment framing goes uncorrected. 3.1 and 3.2: Responses are consistently concise and interactive, tone is supportive, and no grading language is used.",
+    "total_score": 42,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

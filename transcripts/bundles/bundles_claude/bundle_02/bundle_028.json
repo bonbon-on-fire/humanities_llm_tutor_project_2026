@@ -1,0 +1,99 @@
+{
+  "bundle_file": "bundle_028.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0086",
+    "cooperative/cooperative_raw/transcript_0110",
+    "cooperative/cooperative_raw/transcript_0134"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turn 10; Transcript 2, Turn 10; Transcript 3, Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, conversations end without the tutor prompting reflection on what changed in the student's thinking or what method worked. In T1 the tutor sends the student to verify facts without reflecting on the rating-building process; in T2 the tutor closes by directing next steps without asking the student to reflect on the stressor/impact distinction they just mastered; in T3 the tutor ends by asking the student to compare alternatives without pausing to note how the student's reasoning improved from Turn 1.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 3, Turn 9",
+                "sub_criterion_id": "3.2.B.a",
+                "reason": "The tutor says 'Using my own judgment—not your instructor's rubric—this is a strong draft,' which frames the feedback in a quasi-evaluative, grade-like register. While the disclaimer partially mitigates it, the phrasing 'this is a strong draft' functions as a summative quality judgment rather than purely formative coaching language, and could reasonably be read as an unofficial grade.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor demonstrates consistently strong Socratic practice: it never gives final answers or submission-ready content, keeps key idea generation student-led, scaffolds well by building on student progress, and stays tightly anchored to the assignment. The main weaknesses are (1) a recurring failure to prompt process reflection after student improvement at conversation close (1.3.C.a), and (2) one instance in Transcript 3 where the tutor's phrasing 'this is a strong draft' edges into evaluative/grade-like language despite a partial disclaimer (3.2.B.a). The 1.3.B criteria were borderline—the tutor does give method-level feedback in most turns—so no deduction was applied there. The 3.2.B.a deduction is applied once for the bundle rather than per transcript to avoid double-penalizing the same behavior pattern.",
+    "judge_reasoning": "1.1: The tutor consistently uses questions to guide students toward their own ratings and justifications, never supplying final numbers or submission-ready text. No deductions apply. 1.2: The tutor builds on each student's prior answers across all three conversations and does not restart from scratch; scaffolding is progressive and responsive. 1.3: The tutor provides good method-level feedback (e.g., distinguishing stressor vs. impact evidence in T2, explaining why splitting stressors is stronger in T3) and explains its approach implicitly, but across all three conversations it fails to pause after student improvement to ask what changed in the student's thinking—triggering the 1.3.C.a deduction. 3.2: In T3 Turn 9, 'this is a strong draft' reads as a summative quality judgment; even with the disclaimer it could be misread as grading rather than coaching, warranting a 2-point deduction under 3.2.B.a.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

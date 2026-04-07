@@ -1,0 +1,116 @@
+{
+  "bundle_file": "bundle_051.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0063",
+    "cooperative/cooperative_raw/transcript_0113",
+    "cooperative/cooperative_raw/transcript_0137"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—why the Socratic approach supports learning, retention, or skill development. The tutor enforces constraints (e.g., 'Stop asking for more rows,' 'I won't fill in a row for you') but never articulates the pedagogical rationale behind those constraints to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, after the student successfully produces a solid justification in Turn 7 following earlier confusion, the tutor moves forward without prompting reflection on what changed in the student's thinking. Similarly in Transcripts 2 and 3, when students improve their reasoning, the tutor advances without asking the student to reflect on what made their revised approach stronger.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts, consistently using Socratic questioning, refusing to do the assignment for students, scaffolding well from student responses, and maintaining appropriate tone and concise communication. The primary weaknesses are the absence of any explicit rationale for the tutoring approach (why guided discovery rather than direct answers) and a missed opportunity to prompt reflection after student improvement. No evidence of direct answer-giving, rewriting, or off-topic drift was found.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led across all three transcripts. 1.2 receives full marks: the tutor builds on student progress in each turn and uses diagnostic questions before addressing confusion. 1.3 loses 2 points under 1.3.A.a because the tutor never explains the pedagogical rationale for its constraints—it enforces them but never tells the student why this approach supports learning. 1.3 also loses 2 points under 1.3.C.a because after students improve (e.g., Transcript 1 Turn 7, Transcript 2 Turn 10), the tutor moves forward without prompting reflection on what changed in the student's thinking. Dialogue quality and communication quality are both strong, with no evidence of repetition without progress, assignment misanchoring, off-topic drift, monologue responses, or inappropriate tone.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

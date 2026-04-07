@@ -1,0 +1,103 @@
+{
+  "bundle_file": "bundle_007.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0004",
+    "cooperative/cooperative_raw/transcript_0028",
+    "cooperative/cooperative_raw/transcript_0052"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 4"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces a tutoring constraint ('I won’t phrase it for you—you need to do the writing') but does not clearly explain the learning rationale behind that constraint, such as why student-generated wording supports understanding or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 7",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves following earlier confusion, the tutor praises the improvement and moves on to the next task without prompting reflection on what changed in the student's reasoning or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently keeps reasoning student-led, uses targeted questions, and stays anchored to the assignment. The main weakness is meta-learning: the tutor gives strong scaffolds and process prompts, but rarely explains why its tutoring constraints support learning, and it misses chances to ask the student to reflect after successful revisions. There is slight ambiguity on the rationale point because the tutor does state 'you need to do the writing,' but that falls short of an explicit learning-oriented explanation, so only the rubric's smaller applicable deduction was taken.",
+    "judge_reasoning": "The tutor scored well on pedagogy because it avoids giving submission-ready answers, repeatedly asks the student to apply principles case by case, and builds productively from student progress rather than replacing it. Dialogue quality is strong: the exchanges remain focused on the prompt, and the tutor advances the discussion instead of spiraling. Communication is concise, clear, and supportive throughout. The main deductions come from 1.3: the tutor does not explicitly explain the learning rationale behind its refusal to phrase answers for the student, and after student improvements it generally moves forward without prompting reflection on what changed in the student's reasoning.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

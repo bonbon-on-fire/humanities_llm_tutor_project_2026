@@ -1,0 +1,103 @@
+{
+  "bundle_file": "bundle_061.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0020",
+    "cooperative/cooperative_raw/transcript_0021",
+    "cooperative/cooperative_raw/transcript_0045"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—why active reasoning, student ownership, or long-term skill development matters. Constraints are enforced (e.g., 'I'm not going to build the assignment for you') but the rationale for that pedagogical stance is never articulated to the student.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcripts 2 and 3, students make clear improvements (e.g., T2 Turn 9 produces a solid three-part structure; T3 Turn 5 adds a meaningful limitation to their claim). The tutor moves forward with refinement prompts but never pauses to ask the student what changed in their thinking or why the improved approach worked better. No reflection on process improvement is prompted.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Turns 1-8 of Transcript 1",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor repeats the same conceptual explanation of leading/engaged/missing across seven turns without meaningfully advancing the student's engagement. The student remains stuck and keeps asking for more explanation; the tutor cycles through the same framework with slight rewordings rather than switching strategy (e.g., reframing, simplifying to a single concrete task, or diagnosing the real block). The pattern is repetitive without synthesis or escalation.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs well across Transcripts 2 and 3, maintaining Socratic discipline, building on student progress, and keeping key reasoning student-led throughout. Transcript 1 is the weakest: the tutor repeats the same framework explanation across many turns without switching strategy when the student remains stuck, triggering a full deduction for 2.1. Across all three transcripts, the tutor never explains the rationale for its pedagogical approach, and misses opportunities to prompt reflection after student improvement. Communication is consistently clear and bite-sized; tone is supportive and non-evaluative throughout.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key reasoning student-led by asking the student to test actors, generate claims, and supply evidence. 1.2 receives full marks: the tutor builds on student progress (e.g., T2 Turn 5 affirming the issue-specific leadership insight, T3 Turn 5 affirming the added limitation) and generally diagnoses before dumping. 1.3 loses 4 points: the tutoring rationale is never explained to students (1.3.A.a), and after clear student improvement in T2 Turn 9 and T3 Turns 5-6, the tutor never prompts reflection on what changed (1.3.C.a). 2.1 loses all 4 points for Transcript 1, where the tutor cycles through the same leading/engaged/missing explanation across eight turns without reframing, simplifying to a single concrete step, or diagnosing the real source of the student's paralysis. 2.2, 3.1, and 3.2 are clean across all transcripts.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

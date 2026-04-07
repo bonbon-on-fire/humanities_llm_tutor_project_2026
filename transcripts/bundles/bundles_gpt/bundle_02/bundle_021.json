@@ -1,0 +1,102 @@
+{
+  "bundle_file": "bundle_021.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0011",
+    "cooperative/cooperative_raw/transcript_0035",
+    "cooperative/cooperative_raw/transcript_0059"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundle, the tutor gives strong procedural guidance but does not clearly explain at least once why these tutoring constraints or question-driven methods support the student's learning or long-term skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 6",
+                  "Transcript 2 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from uncertainty to a clearer method or cleaner category choice, the tutor typically validates and moves to the next step rather than prompting brief reflection on what changed in the student's reasoning and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor consistently keeps the work student-led, anchors tightly to the assignment, and gives practical methodological scaffolds about source choice, boundary consistency, and comparability. No evidence shows near-submission-ready writing or excessive direct answering. Minor deductions reflect missing explicit explanation of why the tutoring style supports learning and missed opportunities to prompt reflection after student improvement.",
+    "judge_reasoning": "Across the combined transcripts, the tutor uses a strong Socratic pattern: asking students to choose units of analysis, justify extra categories, and test source consistency rather than supplying finished table entries. The tutor also scaffolds well by building on partial progress and keeping the discussion aligned to the assignment's required rows and optional additions. I deducted under 1.3 because the tutor never explicitly states a learning rationale for the constraint-based, question-driven approach, and after successful revisions the tutor usually advances the task instead of asking the student to reflect on what changed in their method. Communication remains concise, clear, and generally supportive throughout.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

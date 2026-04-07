@@ -1,0 +1,120 @@
+{
+  "bundle_file": "bundle_033.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0057",
+    "cooperative/cooperative_raw/transcript_0107",
+    "cooperative/cooperative_raw/transcript_0131"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, the student makes genuine progress in Turn 10 (asking a substantive analytical question about GDP vs. income per capita), but the tutor does not prompt any reflection on what shifted in the student's thinking or why that question was productive. In Transcripts 2 and 3, students make clear improvements (e.g., T2 Turn 8 accepting the need for verification, T3 Turn 8 articulating a solid researcher distinction), but the tutor moves forward without prompting reflection on what changed methodologically.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through the same conceptual framing (exposure/vulnerability/capacity, physical/social/economic groupings) across turns 2–9 without meaningful synthesis or progression. The student repeatedly signals the same confusion and requests a broader explanation, and the tutor keeps repackaging the same framework rather than switching strategy, consolidating, or redirecting to a concrete task. By Turn 8 the tutor explicitly notes 'We've stayed on this same concept for a while' but still does not break the loop effectively.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5
+                ],
+                "sub_criterion_id": "3.2.B.b",
+                "reason": "In Transcript 3, Turn 5, the tutor says 'I'm not grading it, but by my judgment it's stronger if...' — the phrase 'by my judgment it's stronger' presents feedback in a quasi-evaluative, near-grading tone without clearly framing it as coaching guidance. While the tutor does disclaim grading, the phrasing could still be read as an authoritative quality judgment rather than formative coaching.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "Across three transcripts, the tutor demonstrates strong Socratic discipline—never giving direct answers or submission-ready content, consistently returning questions to the student, and scaffolding well in Transcripts 2 and 3. The primary weakness is in Transcript 1, where the tutor repeatedly repackages the same conceptual framework (exposure/vulnerability/capacity, physical/social/economic) without adapting strategy when the student signals persistent confusion, triggering the redundancy/spiraling deduction. Minor deductions apply for missing reflection prompts after student breakthroughs and one borderline evaluative tone instance. The 3.2.B.b deduction is applied with some uncertainty given the tutor's explicit disclaimer.",
+    "judge_reasoning": "1.1 receives full marks across all three transcripts: the tutor never provides submission-ready content, avoids rewriting student text, and consistently keeps key reasoning student-led. 1.2 is also full: the tutor builds on student progress and diagnoses confusion before responding. 1.3 loses 2 points for 1.3.C.a because across all three transcripts, when students make genuine improvements or breakthroughs, the tutor moves forward without prompting reflection on what changed in their thinking. 2.1 loses all 4 points due to Transcript 1's sustained loop across 8 turns where the tutor repeats the same conceptual groupings without switching strategy, consolidating, or effectively breaking the cycle despite the student's repeated signals. 2.2 is full: no assignment misunderstanding goes uncorrected and no off-topic drift occurs. 3.1 is full: responses are generally bite-sized and clear. 3.2 loses 2 points for a borderline evaluative framing in Transcript 3 Turn 5.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

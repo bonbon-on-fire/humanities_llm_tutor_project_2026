@@ -1,0 +1,117 @@
+{
+  "bundle_file": "bundle_004.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0074",
+    "clueless/clueless_raw/transcript_0098",
+    "clueless/clueless_raw/transcript_0122"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 2 Turn 3",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "When students were still unsure, the tutor repeatedly introduced the central answer path first—especially the means-versus-side-effect distinction—and then asked the student to work with it, rather than first eliciting that key idea from the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from confusion to a workable distinction, the tutor moved straight into the next application or drafting step instead of prompting a brief reflection on what changed in their thinking and why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 2"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor's refusals were sometimes phrased rigidly ('No—I’m your tutor, not a source of ready-made answers'; 'I’m not going to walk through all of them for you'), which risks sounding punitive rather than maximally supportive even though the overall intent was instructional.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor stayed focused on the assignment, avoided giving submission-ready prose, and used generally clear, scaffolded prompts. The main weakness was over-leading the core philosophical distinction: the tutor repeatedly supplied the means/side-effect framework before students independently generated it. I did not deduct on assignment anchoring or general scaffolding because the tutor usually acknowledged progress and kept the discussion on-task, though the boundary between helpful prompting and steering was somewhat close in places.",
+    "judge_reasoning": "The largest deduction is under 1.1 because the tutor repeatedly seeded the central interpretive idea—using a person as a means versus harming as a side effect—before the student had developed it, which limits student-led idea generation. I did not apply harsher direct-answer penalties because the tutor did not produce a submission-ready thesis or rewrite student prose into final form. A smaller pedagogy deduction applies because, after students improved, the tutor usually advanced immediately to application or drafting instead of asking them to reflect on what changed in their reasoning. Finally, the tutor's stance was mostly supportive and formative, but a few refusal lines were unnecessarily rigid in tone.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

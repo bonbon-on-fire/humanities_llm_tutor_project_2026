@@ -1,0 +1,119 @@
+{
+  "bundle_file": "bundle_029.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0015",
+    "clueless/clueless_raw/transcript_0039",
+    "clueless/clueless_raw/transcript_0063"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": "T1 Turn 5-6 (Transcript 1), T2 Turn 2 (Transcript 2), T3 Turn 2 (Transcript 2)",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 1 Turn 8, the tutor provides a full comparative breakdown of Miami, Phoenix, and Jakarta—including which stressors each city has, which sectors they touch, and what policy discussions they lead to—doing the key reasoning work of city selection for the student rather than guiding the student to derive these comparisons. Similarly in Transcript 1 Turn 9, the tutor again lays out the full project-fit reasoning for both Miami and Phoenix, including stressor types, sector links, and policy implications, before the student has attempted any of this reasoning. In Transcript 2 Turn 2, the tutor provides the cause/condition/stressor framework with Jakarta-specific examples (flooding as event/pressure, informal settlements as exposure factor) before the student has tried to classify them. In Transcript 3 Turn 4, the tutor gives a complete cause/condition/stressor split with Jakarta-specific examples for all three categories before the student attempts classification. These instances involve the tutor doing the bridge-from-evidence-to-conclusion reasoning rather than prompting the student to derive it.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 all turns, Transcript 2 all turns, Transcript 3 all turns",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than giving direct answers—no statement about active reasoning, retention, or skill development is offered. The tutor enforces a Socratic approach (e.g., 'I won't fill one in for you') but never explains the pedagogical rationale for this constraint to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1 Turns 5-10, Transcript 3 Turns 2-4",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 3, the student successfully classifies sea-level rise, land subsidence, and coastal flooding correctly in Turn 5 after struggling in prior turns, but the tutor moves directly to the next task without prompting reflection on what changed in the student's thinking or why the framework worked. In Transcript 1, when the student makes progress (e.g., Turn 4 correctly identifying health/infrastructure/social sectors), the tutor acknowledges it briefly but does not prompt reflection on the reasoning process that led there.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 Turns 1-6",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through essentially the same explanatory moves across six turns—restating the assignment structure, re-explaining stressors vs. general problems, re-explaining sectors, re-explaining the rating process—without meaningfully advancing or synthesizing. The student repeatedly asks for 'more explanation from scratch' and the tutor obliges with restatements rather than reframing, simplifying, or redirecting to a concrete task. The pattern repeats without consolidation through Turn 6.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 Turns 1, 5, 6, 8, 9, 10; Transcript 3 Turn 2",
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "Several tutor responses are multi-paragraph monologues where shorter, more targeted prompts would have been more appropriate. Transcript 1 Turn 8 provides a full comparative breakdown of three cities across multiple dimensions in a long block. Turn 9 again provides a full dual-city comparison. Transcript 3 Turn 2 lists all stressor types across all five sectors with examples before the student has attempted anything. These are cases where one or two focused questions would have been more pedagogically appropriate than extended explanatory blocks.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 4,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 26,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates genuine Socratic intent across all three transcripts—consistently refusing to fill in table rows directly, asking the student to classify and compare, and redirecting away from vague generalizing. However, several significant rubric violations reduce the score. The most impactful is 1.1.C.b: in multiple turns (especially Transcript 1 Turns 8-9 and Transcript 3 Turn 4), the tutor does the key comparative reasoning work—laying out full city comparisons, stressor classifications, and cause/condition/stressor frameworks with Jakarta-specific examples—before the student attempts the reasoning. In Transcript 1, the tutor also cycles through the same explanatory moves across six turns without synthesis or reframing (2.1.A.a), and several responses are unnecessarily long monologues (3.1.A.a). The tutor never explains its pedagogical rationale for guiding rather than answering (1.3.A.a), and misses reflection opportunities after student breakthroughs (1.3.C.a). Assignment anchoring and tone are consistently strong.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is supported by clear evidence in Transcript 1 Turns 8-9 where the tutor provides complete city-by-city stressor/sector/policy breakdowns, and Transcript 3 Turn 4 where the tutor gives a fully worked cause/condition/stressor taxonomy with Jakarta examples before the student attempts classification—these are cases of the tutor doing the bridge reasoning rather than prompting the student to derive it. The 2.1.A.a deduction (4 points) is supported by Transcript 1 Turns 1-6 where the tutor repeatedly restates the assignment structure in different words without advancing the conversation or switching to a different strategy when the student remains stuck. The 3.1.A.a deduction (4 points) is supported by multiple long multi-paragraph responses (Transcript 1 Turns 8-9, Transcript 3 Turn 2) where focused single questions would have been more appropriate. The 1.3.A.a and 1.3.C.a deductions are supported by the absence of any pedagogical rationale explanation and missed reflection moments after student success across all three transcripts.",
+    "total_score": 26,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

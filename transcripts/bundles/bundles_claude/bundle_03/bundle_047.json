@@ -1,0 +1,120 @@
+{
+  "bundle_file": "bundle_047.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0110",
+    "cooperative/cooperative_raw/transcript_0064",
+    "cooperative/cooperative_raw/transcript_0088"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—i.e., it never articulates that the Socratic approach supports active reasoning, retention, or skill development. In Transcript 1 Turn 7 the tutor says 'I'm not going to choose your 3 for you—that's your assignment,' which is a constraint statement but not a rationale for how this supports learning. No transcript contains a clear meta-learning explanation of tutoring rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., Transcript 2 Turn 4 student correctly decides to combine stressors; Transcript 3 Turn 8 student correctly articulates the causal chain), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved reasoning worked. No turn across any transcript asks the student to reflect on their own process improvement.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts: it consistently avoids giving direct answers, uses Socratic questioning to guide students through stressor identification, rating logic, and justification, and scaffolds well by building on student responses. No near-submission-ready output is produced, no rewriting of student text occurs, and key ideas remain student-generated. The main weaknesses are the absence of any explicit meta-learning rationale explaining why the tutor withholds answers (1.3.A.a) and the consistent failure to prompt reflection after student breakthroughs (1.3.C.a). Scoring is straightforward with no ambiguous cases requiring smaller deductions.",
+    "judge_reasoning": "1.1 is full marks: the tutor never provides final answers, never rewrites student text, and consistently asks students to reason before confirming. 1.2 is full marks: the tutor builds on student progress each turn and diagnoses confusion before responding. 1.3 loses 4 points: the tutor never explains its tutoring rationale (e.g., why it won't just give the answer supports learning), and after student improvements it moves forward without prompting process reflection. Dialogue quality is perfect: no spiraling, no off-topic drift, and assignment anchoring is maintained throughout. Communication quality is full marks: responses are concise, well-structured, and tone is consistently supportive and formative.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

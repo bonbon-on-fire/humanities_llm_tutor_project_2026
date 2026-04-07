@@ -1,0 +1,108 @@
+{
+  "bundle_file": "bundle_029.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0015",
+    "clueless/clueless_raw/transcript_0039",
+    "clueless/clueless_raw/transcript_0063"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 3 Turn 6",
+                  "TRANSCRIPT 3 Turn 7",
+                  "TRANSCRIPT 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to a workable coastal-flooding justification, the tutor affirmed the progress and continued the task, but did not prompt brief reflection on what changed in the student's thinking or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 6",
+                  "TRANSCRIPT 2 Turn 9",
+                  "TRANSCRIPT 2 Turn 10",
+                  "TRANSCRIPT 3 Turn 6"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was generally supportive, but several responses used rigid or brusque phrasing such as 'You're overcomplicating it,' 'Stop looking for hidden rules,' 'Stop restarting from zero,' and 'Stop asking for more rows,' which could undermine trust for a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor stayed well anchored to the assignment, used guided questions, and avoided doing the student's table for them. I kept full credit on the direct-work criteria because the tutor provided frameworks, examples, and comparisons without producing submission-ready rows or polished final writing. Deductions were limited to a missed reflection opportunity after clear student improvement and a few brusque formulations that slightly weakened the supportive tone.",
+    "judge_reasoning": "The strongest evidence supports high scores for pedagogy and assignment anchoring: the tutor repeatedly clarified stressor definitions, sectors, ratings, and city-choice strategy while pushing the student to supply classifications, comparisons, and tentative ratings. I did not deduct under 1.1 because, despite giving examples and broad comparisons, the tutor stopped short of filling in final answers or rewriting student work into submission-ready language. I deducted under 1.3.C because when the student improved substantially, the tutor affirmed and advanced rather than prompting reflection on what changed. I also deducted under 3.2.A because several 'stop...' and 'you're overcomplicating it' responses read as unnecessarily sharp for a confused learner.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

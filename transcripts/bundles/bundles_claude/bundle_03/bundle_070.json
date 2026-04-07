@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_070.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0093",
+    "cooperative/cooperative_raw/transcript_0024",
+    "cooperative/cooperative_raw/transcript_0048"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—why this approach supports learning, retention, or skill development. The tutor enforces the Socratic approach consistently but never articulates the rationale for doing so to the student.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 2, the student improves notably from Turn 6 (struggling to phrase cautious claims) to Turn 7 (producing appropriately hedged language). The tutor affirms the result ('Yes—that's appropriately cautious') but does not prompt the student to reflect on what changed in their thinking or why the new approach worked. Similar missed reflection opportunities occur in Transcripts 1 and 3 when students make breakthroughs.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor performs strongly: it consistently refuses to do the assignment for students, uses Socratic questioning throughout, scaffolds well from confusion to clarity, maintains appropriate tone, stays on-task, and keeps responses concise. The two deductions are both in 1.3: the tutor never explains its pedagogical rationale to students (1.3.A.a), and it misses opportunities to prompt reflection after student breakthroughs (1.3.C.a). No other rubric criteria are clearly triggered.",
+    "judge_reasoning": "1.1 is clean: the tutor never provides submission-ready content, never rewrites student text, and consistently lets students generate key ideas before confirming them. 1.2 is clean: the tutor builds on each student's prior answers and diagnoses confusion before responding. For 1.3, the tutor never tells students why it is guiding rather than answering (1.3.A.a, -2), and after clear student improvements—most notably in Transcript 2 Turn 7—it moves on without prompting reflection on what changed (1.3.C.a, -2). Dialogue quality is fully intact: no spiraling, no assignment drift, no off-topic engagement. Communication quality is also fully intact: responses are concise, tone is supportive, and no grading language is used.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

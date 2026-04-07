@@ -1,0 +1,116 @@
+{
+  "bundle_file": "bundle_012.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0122",
+    "cooperative/cooperative_raw/transcript_0100",
+    "cooperative/cooperative_raw/transcript_0124"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 2 Turn 3",
+                  "TRANSCRIPT 3 Turn 2"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor repeatedly supplies the central reasoning distinction itself—harming as a means versus side effect/foreseen harm—before the student independently develops it, which does part of the key argumentative work for the student.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 8",
+                  "TRANSCRIPT 3 Turn 9",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from uncertainty to a workable argument or draft, the tutor keeps refining the answer but does not pause to ask the student to reflect on what changed in their thinking or why the improved approach works.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 2"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The response 'No—I’m not going to walk through all of them for you' is more rigid than supportive and risks discouraging participation, even though the tutor later becomes more encouraging.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor is generally well-structured, assignment-focused, and strongly Socratic, with concise prompts and clear scaffolding. The main weakness is that the tutor repeatedly introduces the key 'means vs side effect' distinction rather than letting the student generate that argumentative pivot more independently. There is also one notably rigid refusal early on and missed opportunities to prompt reflection after the student improves.",
+    "judge_reasoning": "The strongest deduction is under 1.1 because the tutor repeatedly supplies the decisive philosophical distinction that drives the student's eventual critique of act consequentialism, which means the key reasoning is not fully student-led. I did not deduct for near-submission-ready output or rewriting because the tutor consistently asks the student to draft and keeps the final writing burden on the student. Scaffolding and assignment anchoring were strong throughout: the tutor breaks the task into parts, keeps attention on the prompt, and builds progressively from principle to cases to criticism. I deducted under 1.3 because, after clear student improvement, the tutor moves on to refinement without asking the student to reflect on what changed in their reasoning, and under 3.2 because one early refusal is unnecessarily sharp in tone.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_025.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0008",
+    "cooperative/cooperative_raw/transcript_0009",
+    "cooperative/cooperative_raw/transcript_0033"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than giving answers—no rationale is offered for the Socratic approach or why the student should do the reasoning work themselves. The tutor enforces constraints (e.g., refusing to fill in a Jakarta row in T1-Turn 7) but never explains that this supports learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1, Turns 1-10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, the student repeatedly cycles through confusion and occasionally makes small progress (e.g., Turn 4 correctly identifying that the table is mostly data-gathering, Turn 10 settling on city boundary). The tutor moves on without prompting the student to reflect on what changed in their thinking or why the chosen approach works.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 3-10",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly returns to the same confusion (overwhelmed, unsure about categories, unsure about scope) across nearly every turn. The tutor cycles through similar explanatory moves—listing categories, explaining the format, explaining city proper vs. metro—without meaningfully consolidating or advancing. While the tutor does eventually push back in Turn 10, the pattern of repetition without synthesis persists for most of the conversation.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "Across three transcripts, the tutor consistently avoids doing the assignment for students, uses Socratic questioning effectively, and maintains appropriate scaffolding for cooperative students (T2, T3). The main weaknesses are: (1) no rationale for the tutoring approach is ever offered across any transcript; (2) in Transcript 1, the tutor allows significant repetitive cycling without effective synthesis or reframing for most of the conversation, triggering the redundancy deduction; and (3) after moments of student progress, the tutor does not prompt reflection on what changed. Communication is generally clear and bite-sized, and tone is consistently supportive.",
+    "judge_reasoning": "1.1: No deductions—the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led across all three transcripts. 1.2: No deductions—the tutor builds on student progress (e.g., T2 Turn 3 'That's a better line of thinking') and generally diagnoses before responding. 1.3: Two deductions applied: the tutoring rationale is never explained in any transcript (1.3.A.a, -2), and in T1 the tutor misses clear opportunities to prompt reflection after the student makes progress from confusion (1.3.C.a, -2). 2.1: Full deduction applied for T1, where the student spirals through the same confusion across 8+ turns and the tutor repeats similar explanatory moves (listing categories, explaining format, explaining scope) without effective synthesis until Turn 10—this is a clear pattern-level repetition without progress. 2.2: No deductions—the tutor keeps students anchored to the assignment throughout. 3.1 and 3.2: No deductions—responses are appropriately concise and tone is supportive and non-evaluative.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

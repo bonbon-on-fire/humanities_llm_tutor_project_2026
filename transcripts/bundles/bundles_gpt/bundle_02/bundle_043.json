@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_043.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0022",
+    "cooperative/cooperative_raw/transcript_0046",
+    "cooperative/cooperative_raw/transcript_0070"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 2 Turn 7",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After clear student improvement from earlier uncertainty or overbroad reasoning, the tutor affirmed the stronger answer and moved forward without prompting the student to reflect on what changed in their thinking or why the revised method was better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was consistently Socratic, assignment-focused, and evidence-oriented. The only clear recurring miss was failing to prompt brief reflection after the student corrected earlier reasoning; some method rationale was present, so no further deduction was taken there.",
+    "judge_reasoning": "The tutor avoided giving submission-ready answers and instead used guided questions, distinctions, and evidence checks to keep idea generation student-led. The exchanges were well scaffolded: the tutor built on student progress, corrected overreach carefully, and repeatedly re-anchored the analysis to the forum task of identifying leading, engaged, and missing actors. Communication was concise, supportive, and clearly formative rather than grade-like. I deducted only under 1.3.C because, after successful revisions, the tutor typically praised the improvement and advanced without asking the student to articulate what changed in their reasoning.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

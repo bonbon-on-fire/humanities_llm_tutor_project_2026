@@ -1,0 +1,110 @@
+{
+  "bundle_file": "bundle_047.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0024",
+    "clueless/clueless_raw/transcript_0048",
+    "clueless/clueless_raw/transcript_0073"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 2, Turn 10",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor provides a fully worked hypothetical example with all three categories filled in (leading: mayor's office/city planning; engaged: university researchers, NGOs, utilities; missing: informal-settlement residents), including the reasoning for each. This does the key reasoning step for the student—demonstrating exactly how to classify actors and why—rather than letting the student derive the pattern themselves. While framed as a 'hypothetical,' it is substantively complete enough to be directly mapped onto Jakarta.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor enforces a Socratic approach and declines to write content for students, but never explicitly explains why this supports learning—e.g., that active reasoning builds retention or long-term skill. The rationale for the tutoring constraints is never articulated.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1 (Turn 7) and Transcript 3 (Turn 10), students make genuine progress (correctly classifying the mayor's office as leading; correctly reasoning about MBTA's domain-specific authority). The tutor moves forward without prompting any reflection on what changed in the student's thinking or why the reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 Turns 3-6; Transcript 2 Turns 3-7; Transcript 3 Turns 2-9",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "Across all three transcripts, the tutor repeatedly cycles through the same conceptual clarifications (leading/engaged/missing definitions, actor types, layered frameworks) across multiple turns without meaningfully advancing the student's work. Students remain stuck in the same confusion loop, and the tutor continues offering reframings of the same framework rather than switching to a fundamentally different strategy, consolidating progress, or redirecting to a simpler entry point. This is most pronounced in Transcript 3 where the student explicitly requests 'one more broad clarification' repeatedly through Turn 9 and the tutor continues to engage with the same conceptual territory.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates strong assignment anchoring, appropriate tone, and generally bite-sized responses. The main weaknesses are: (1) a fully worked hypothetical example in Transcript 2 Turn 10 that does the core reasoning for the student; (2) persistent spiraling across all three transcripts where the tutor re-explains the same framework without switching strategy or consolidating progress; (3) no explicit rationale for the Socratic tutoring approach; and (4) missed opportunities to prompt reflection after student breakthroughs. The 1.1.C.b deduction is the most significant single penalty, triggered by the hypothetical city walkthrough that effectively models the complete answer structure.",
+    "judge_reasoning": "For 1.1, the hypothetical coastal city example in Transcript 2 Turn 10 provides a fully classified three-category breakdown with reasoning for each slot, which constitutes doing the key reasoning step for the student (1.1.C.b, -6 pts). The 1.1.A.a threshold is not met because no single city-specific submission-ready content was assembled. For 1.3, the tutor never explains why it withholds direct answers or why guided discovery supports learning (1.3.A.a, -2 pts), and misses clear reflection prompts after student progress moments in T1-Turn7 and T3-Turn10 (1.3.C.a, -2 pts). For 2.1, all three transcripts show the tutor cycling through the same conceptual territory—redefining leading/engaged/missing, re-layering actor types—without consolidating or switching strategy when students remain stuck, meeting the 2.1.A.a criterion (-4 pts). Communication quality and assignment anchoring are strong throughout with no deductions warranted.",
+    "total_score": 30,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "bundle_file": "bundle_018.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0123",
+    "cooperative/cooperative_raw/transcript_0102",
+    "cooperative/cooperative_raw/transcript_0127"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 2 Turn 2",
+                  "Transcript 3 Turn 3"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor repeatedly introduced the central 'means vs. side effect' distinction before the student had independently generated it, steering the key interpretive path rather than keeping the main idea generation fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 6",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to a workable principle or outline, the tutor advanced to the next task without prompting reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 46,
+    "overview": "Across the bundled conversation, the tutor was consistently assignment-focused, concise, and interactive, with strong scaffolding and no direct submission-ready writing. The main weakness was that the tutor often seeded the key philosophical distinction ('means vs. side effect') instead of waiting for fuller student discovery. There was also a missed meta-learning opportunity after student improvement, though the evidence for lacking tutoring-rationale explanation was more ambiguous, so no deduction was taken there.",
+    "judge_reasoning": "The tutor generally performed well under the rubric: they avoided writing the student's answer, kept the exchange tightly anchored to the assignment, and used short guided prompts that built on the student's progress. The largest deduction is under 1.1 because multiple turns show the tutor supplying the conversation's central conceptual path—especially the means/side-effect framing—before the student had fully reasoned toward it. A smaller deduction applies under 1.3 because, after the student moved from confusion to a coherent rule or outline, the tutor did not pause for reflection on what changed in the student's method. No deductions were taken for redundancy, off-topic drift, or communication quality because the tutor remained clear, supportive, and appropriately formative throughout.",
+    "total_score": 36,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

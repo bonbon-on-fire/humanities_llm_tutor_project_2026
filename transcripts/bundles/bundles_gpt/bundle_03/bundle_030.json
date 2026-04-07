@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_030.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0128",
+    "cooperative/cooperative_raw/transcript_0106",
+    "cooperative/cooperative_raw/transcript_0130"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 2 Turn 1",
+                  "Transcript 3 Turn 1"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced student-led work and occasionally refused to provide direct output, but did not clearly explain a learning rationale for those constraints in terms of active reasoning, retention, or skill-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turns 4-7",
+                  "Transcript 3 Turns 2-4"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from uncertainty to stronger choices, the tutor affirmed the progress and moved on, but did not prompt reflection on what changed in the student's thinking or why the improved method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently kept the student doing the substantive work, used guided questions well, and stayed tightly anchored to the assignment. The main weaknesses were meta-level: the tutor rarely explained why its constraints supported learning, and it missed chances to prompt reflection after the student improved. Possible concerns about firmness of tone or mild repetition were ambiguous, so they were not deducted.",
+    "judge_reasoning": "The tutor performed strongly on pedagogy and dialogue control: it avoided giving submission-ready content, asked targeted questions, and kept the conversation focused on the city data table task. I deducted under 1.3.A because, although the tutor sometimes refused to do the work for the student, it did not clearly connect that constraint to learning benefits like independent reasoning or long-term skill development. I also deducted under 1.3.C because when students moved from vague ideas to clearer methods or more defensible indicators, the tutor praised the improvement but usually advanced without asking the student to articulate what changed. I did not deduct elsewhere because the tutor generally built on student responses, used manageable prompts, and maintained a supportive coaching stance.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

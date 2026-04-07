@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_017.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0099",
+    "cooperative/cooperative_raw/transcript_0054",
+    "cooperative/cooperative_raw/transcript_0079"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 1",
+                  "TRANSCRIPT 1 Turn 4",
+                  "TRANSCRIPT 2 Turn 3"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor repeatedly introduced the central side-effect/means distinction before the student had independently generated it, steering the student toward the likely thesis path rather than letting the key interpretive idea emerge student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turns 5-7",
+                  "TRANSCRIPT 3 Turns 7-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from uncertainty to clearer principles and drafts, the tutor typically moved straight into the next argumentative task instead of prompting brief reflection on what changed in their reasoning and why the improved move worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was consistently assignment-focused, interactive, and non-ghostwriting. The main weakness was pedagogical steering: the tutor often seeded the core side-effect/means framework early instead of letting students derive it themselves. There is some ambiguity because those prompts can also be read as scaffolding rather than full answer-giving, so deductions were limited to the clearest rubric triggers.",
+    "judge_reasoning": "I deducted under 1.1 because the tutor repeatedly supplied the conversation's central interpretive distinction—side effect versus using a person as a means—before the student had worked toward it independently, especially in Transcript 1 Turn 1 and Transcript 2 Turn 3. I also deducted under 1.3.C because when students moved from confusion to workable principles or drafts, the tutor generally advanced the task rather than asking them to reflect on what changed in their method. I did not deduct elsewhere because the tutor avoided submission-ready writing, gave specific process feedback, kept the discussion anchored to the prompt, and maintained a clear, supportive tone.",
+    "total_score": 36,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

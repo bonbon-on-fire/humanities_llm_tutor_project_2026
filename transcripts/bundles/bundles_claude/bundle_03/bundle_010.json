@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_010.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0074",
+    "cooperative/cooperative_raw/transcript_0004",
+    "cooperative/cooperative_raw/transcript_0028"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 1-10",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is withholding direct answers or why the Socratic approach supports learning. In Transcript 1 Turn 8 the tutor says 'I won't phrase it for you—you have to do the writing. My role is to help you think it through,' which is a brief statement of role but does not explain the pedagogical rationale (e.g., active reasoning, retention, skill development). Transcripts 2 and 3 similarly enforce the approach without explaining why it benefits the student's learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1, Turns 9-10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, after the student makes genuine progress in Turn 9 (articulating a three-part outline), the tutor critiques it and moves on without prompting reflection on what changed or why the student's thinking improved. Similarly in Transcripts 2 and 3, when students reach strong formulations, the tutor advances to the next task without pausing to ask what shifted in the student's reasoning.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 4-10",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles repeatedly on the same means/side-effect distinction across multiple turns without meaningfully consolidating or advancing. The student repeatedly says they are lost or confused, and the tutor keeps returning to the same question style (pick a case, apply the test) without reframing, simplifying, or acknowledging the spiral. By Turn 10 the student is still circling the same confusion from Turn 4.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor demonstrates strong Socratic discipline: it never gives submission-ready answers, consistently redirects students to generate their own reasoning, and avoids rewriting student text. Scaffolding is generally well-handled in Transcripts 2 and 3, where student progress is acknowledged and built upon. The main weaknesses are: (1) a persistent spiral in Transcript 1 where the tutor repeats the same question style without reframing despite the student's repeated confusion, triggering the redundancy deduction; (2) the tutor never explains the pedagogical rationale for its constraints across any transcript; and (3) the tutor misses opportunities to prompt reflection after student breakthroughs. The 1.3 deduction for meta-learning is applied once for the bundle rather than per-transcript to avoid double-penalizing.",
+    "judge_reasoning": "1.1: No deductions—the tutor never provides near-submission-ready output, never rewrites student text, and consistently keeps key idea generation student-led across all three transcripts. 1.2: No deductions—the tutor builds on student progress (e.g., 'Good start,' 'That's a strong direction') and generally diagnoses confusion before responding. 1.3: Two deductions applied: the tutor never explains why it withholds answers in terms of learning benefits (1.3.A.a, -2), and after student improvements the tutor advances without prompting reflection on what changed (1.3.C.a, -2). 2.1: Full deduction for Transcript 1, where the tutor cycles on the same means/side-effect question across six turns without reframing or consolidating despite the student's repeated expressions of confusion (-4). 2.2 and section 3: No deductions—the tutor stays on-task, maintains appropriate tone, and keeps responses focused and bite-sized.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "bundle_file": "bundle_016.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0080",
+    "cooperative/cooperative_raw/transcript_0104",
+    "cooperative/cooperative_raw/transcript_0128"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—why the Socratic approach, why asking the student to derive rankings or find sources themselves, supports learning. The tutoring rationale is never articulated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, after the student successfully arrives at the strong four-field framework in Turn 10 following several rounds of revision, the tutor moves forward without prompting reflection on what changed in the student's thinking or why the revised approach worked better. Similarly in Transcripts 2 and 3, when students reach correct conclusions after earlier confusion, the tutor advances without prompting process reflection.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts, consistently using Socratic questioning, building on student responses, maintaining appropriate tone, and keeping responses concise and interactive. The primary weaknesses are the absence of any explicit tutoring rationale explanation and missed opportunities to prompt process reflection after student improvement.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never gives submission-ready answers, never rewrites student text, and consistently lets students generate key ideas through guided questioning. 1.2 is fully intact: the tutor builds on each correct student step and diagnoses confusion before responding. 1.3 loses 4 points: the tutoring rationale is never explained across any of the three conversations (1.3.A.a), and after students successfully revise their thinking—most clearly in Transcript 1 Turn 10 and Transcript 2 Turn 8—the tutor moves forward without prompting reflection on what changed (1.3.C.a). Dialogue quality and communication quality are both strong, with no meaningful repetition, no off-topic drift, no monologuing, and a consistently supportive, non-evaluative tone.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

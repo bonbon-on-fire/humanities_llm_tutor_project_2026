@@ -1,0 +1,92 @@
+{
+  "bundle_file": "bundle_050.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0039",
+    "cooperative/cooperative_raw/transcript_0065",
+    "cooperative/cooperative_raw/transcript_0089"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 Turn 9, Transcript 2 Turn 7, Transcript 3 Turn 8",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful improvements or consolidate understanding (e.g., T1 Turn 9 student correctly distinguishes direct vs. compounding stressors; T2 Turn 7 student produces strong calibrated ratings; T3 Turn 8 student commits to gathering evidence first), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor demonstrates strong Socratic practice: it consistently avoids giving direct answers, keeps key idea generation student-led, scaffolds well from student responses, and maintains appropriate tone and bite-sized responses. The one consistent gap is the absence of reflective prompting after student breakthroughs—the tutor tends to move forward rather than asking the student to articulate what changed in their thinking. No other rubric criteria show clear evidence of deduction.",
+    "judge_reasoning": "1.1: No submission-ready content was provided, no student text was rewritten, and conclusions were never stated before student reasoning—full marks. 1.2: The tutor consistently built on student progress (e.g., T1 acknowledging flooding/informal-settlement distinction, T2 affirming sector choices) and used diagnostic questions before addressing confusion—full marks. 1.3: The tutor explained its rationale at least once per conversation (e.g., T1 Turn 9 'stop looking for hidden rules'; T3 Turn 7 'right now you're trying to rate before you've gathered the justification') and gave specific process-level feedback throughout, so 1.3.A and 1.3.B are intact. However, in all three transcripts, when students made clear improvements the tutor simply advanced the task without prompting reflection on what changed or why the new approach worked, triggering 1.3.C.a for a 2-point deduction. Dialogue quality and communication quality show no deductible issues: responses are concise, well-anchored to the assignment, and maintain a supportive, non-grading tone throughout.",
+    "total_score": 42,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

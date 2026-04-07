@@ -1,0 +1,112 @@
+{
+  "bundle_file": "bundle_038.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0091",
+    "clueless/clueless_raw/transcript_0115",
+    "clueless/clueless_raw/transcript_0139"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 3-7",
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Transcript 1, the student repeatedly signals the same confusion across multiple turns (Turns 3, 4, 5, 6, 7) without the tutor pausing to diagnose what specifically is blocking the student. The tutor continues offering reframings and structural prompts without first asking a targeted diagnostic question to isolate the root confusion. This pattern of jumping to re-explanation rather than diagnosing is most evident in Turns 3-5 where the tutor provides yet another analogy or structure without checking what the student already understands.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than giving answers—no rationale such as 'this helps you build the skill' or 'active reasoning improves retention' is offered. The tutor enforces constraints (e.g., 'I'm not going to build the list for you') without explaining the pedagogical purpose.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "All transcripts",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In none of the three transcripts does the student reach a clear success moment followed by tutor reflection prompting. The conversations end before full resolution, so there is no opportunity for the tutor to prompt reflection on what changed. However, in Transcript 2 Turn 10 and Transcript 3 Turn 10, when the student shows improved instincts (e.g., 'being mentioned is not the same as having power'), the tutor moves forward without prompting the student to reflect on what shifted in their thinking.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 1-7",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through multiple reframings of the same leading/engaged/missing distinction across seven turns without synthesizing or advancing. The student remains stuck and the tutor keeps offering new analogies and structures (ship metaphor, test questions, end-to-end process) without consolidating or switching strategy meaningfully. The tutor does eventually push back in Turn 7 ('You're overdwelling on classification'), but the pattern of repetition without synthesis across Turns 1-6 is substantial.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 44,
+    "overview": "The tutor maintains a consistently Socratic stance across all three transcripts, never giving submission-ready answers, never rewriting student text, and consistently redirecting students to do their own reasoning. The main weaknesses are: (1) in Transcript 1, a significant spiral where the tutor repeats similar reframings of the leading/engaged/missing distinction across many turns without diagnosing the root confusion or switching strategy; (2) across all transcripts, the tutor never explains the pedagogical rationale for its constraints; (3) the tutor misses opportunities to prompt reflection when students show improved instincts. Communication quality is strong throughout—responses are concise, well-structured, and appropriately supportive.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led across all three transcripts. 1.2 loses 3 points for 1.2.B.a: in Transcript 1 especially, the tutor repeatedly offers new reframings without first diagnosing what specifically is blocking the student, jumping to re-explanation rather than targeted diagnostic questioning. 1.3 loses 4 points: 2 for never explaining the tutoring rationale (1.3.A.a) and 2 for missing reflection prompts after student improvement moments (1.3.C.a). 2.1 loses all 4 points for the clear spiral in Transcript 1 where the tutor cycles through multiple reframings of the same concept across six-plus turns without meaningful synthesis or strategy shift. 2.2 and all of section 3 receive full marks as the tutor stays on-task, maintains appropriate tone, and communicates clearly and concisely.",
+    "total_score": 33,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

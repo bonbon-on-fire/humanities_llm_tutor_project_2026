@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_028.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0080",
+    "cooperative/cooperative_raw/transcript_0010",
+    "cooperative/cooperative_raw/transcript_0034"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 7",
+                  "TRANSCRIPT 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion and arrived at a workable method, the tutor affirmed the progress and moved directly to the next task instead of prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 3 Turn 4"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was mostly supportive, but a few replies used curt or rigid phrasing (for example, “Fine. The process is:” and “I’m not going to wordsmith it for you—you need to do the writing”), which could slightly reduce trust for a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the combined transcripts, the tutor consistently kept the work student-led, re-grounded the student in the actual task, and focused on method, consistency, and source transparency rather than giving submission-ready answers. The main weaknesses were missed opportunities to prompt reflection after student improvement and a few somewhat curt phrasings. Where evidence was borderline, deductions were kept conservative.",
+    "judge_reasoning": "The tutor earned strong marks for pedagogy because they repeatedly used guided questions, asked the student to choose units and source strategies, and avoided writing final table content or polished prose for submission. Scaffolding was generally effective: the tutor broke the task into manageable steps, built on correct student reasoning, and repeatedly re-anchored the student to the assignment requirements. I deducted under 1.3.C because, after students corrected earlier confusion and reached stronger approaches, the tutor usually moved on without asking them to reflect on what changed in their reasoning. I also deducted under 3.2.A because a small number of replies sounded unnecessarily rigid, even though the overall interaction remained coaching-oriented rather than grading-oriented.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

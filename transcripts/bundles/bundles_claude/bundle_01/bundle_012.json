@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_012.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0078",
+    "clueless/clueless_raw/transcript_0102",
+    "clueless/clueless_raw/transcript_0126"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 1, Turn 6, the tutor provides a 'full picture' summary that directly states act consequentialism permits killing 1 to save 5 in all cases and identifies the pressure point (outcome-only reasoning misses something), doing the key reasoning step for the student rather than guiding them to derive it. This gives the student the core analytical framework before they have worked it out themselves.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—i.e., never articulates that the Socratic approach supports learning, retention, or skill development. In Transcript 1 Turn 10 the tutor says 'I'm your tutor, not your writer' but this is a constraint statement, not a rationale for why this approach benefits the student's learning.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 2, after the student improves from vague confusion to a genuine draft claim in Turn 9, the tutor moves directly to testing the claim without prompting any reflection on what changed in the student's thinking or why the approach worked. Similarly in Transcript 3 Turn 9, after the student produces a strong three-part answer, the tutor immediately critiques without pausing to reinforce the method improvement.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates strong Socratic discipline across most of the three transcripts, consistently refusing to write answers for students and using structured prompts to guide reasoning. The main deduction is in 1.1 for Transcript 1 Turn 6, where the tutor provides a four-point 'full picture' summary that does the core analytical work—identifying what act consequentialism says, where the pressure point is, and what the essay question is really asking—before the student has derived these insights. This triggers the 1.1.C.b deduction. The tutor also never explains the rationale for its Socratic approach (1.3.A.a) and misses opportunities to prompt reflection after student improvement (1.3.C.a). Dialogue quality and communication quality are strong throughout.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is warranted because in Transcript 1 Turn 6, the tutor explicitly provides the 'full picture' including the key analytical conclusion that act consequentialism permits killing 1 to save 5 in all cases and that the essay question is whether outcome-only reasoning misses something—this is the central reasoning bridge the student should have been guided to construct. The 1.3.A.a deduction (2 points) applies because across all three transcripts the tutor never explains why it is guiding rather than answering, only asserting constraints without pedagogical rationale. The 1.3.C.a deduction (2 points) applies because in Transcripts 2 and 3, after students make genuine breakthroughs (Turn 9 in both), the tutor immediately pivots to testing or critiquing without any reflection prompt on what changed in the student's thinking. No deductions are warranted for 1.1.A (no submission-ready output given), 1.1.B (no rewriting of student text), 1.2 (scaffolding is consistently good), 2.1 (no unproductive spiraling), 2.2 (assignment anchoring is maintained), 3.1 (responses are appropriately concise), or 3.2 (tone is supportive and non-evaluative).",
+    "total_score": 34,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

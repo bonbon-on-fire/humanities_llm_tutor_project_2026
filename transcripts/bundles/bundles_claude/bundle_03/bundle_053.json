@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_053.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0111",
+    "cooperative/cooperative_raw/transcript_0067",
+    "cooperative/cooperative_raw/transcript_0090"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—why this approach supports learning, retention, or skill development. The tutor enforces constraints (e.g., 'I'm not going to fill a row for you') but does not articulate the pedagogical rationale behind this stance.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, after the student successfully distinguishes sea level rise from flooding (Turn 5) following earlier confusion, the tutor moves on without prompting reflection on what changed in the student's thinking. Similarly in Transcript 2, after the student resolves the sector confusion in Turn 6 ('I think that clicked a bit'), the tutor moves forward without asking the student to articulate what shifted. In Transcript 3, after the student produces a strong justification in Turn 10, the tutor affirms and redirects without prompting reflection on the reasoning process used.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs very well across all three transcripts. Socratic method is consistently applied—the tutor never gives submission-ready answers, keeps key idea generation student-led, and scaffolds effectively by building on student progress. Dialogue quality is strong with no off-topic drift, good assignment anchoring, and no repetitive spiraling. Communication is concise and appropriately supportive. The two deductions are for: (1) never explaining the pedagogical rationale for the tutoring approach, and (2) missing opportunities to prompt reflection after students successfully resolve confusion. The 1.3.B criterion was considered but not penalized, as the tutor does provide process-level feedback (e.g., distinguishing hazard from sector, evidence types, rating anchors).",
+    "judge_reasoning": "1.1 is fully intact: the tutor never provides submission-ready content, never rewrites student text, and consistently asks students to derive conclusions before confirming them. 1.2 is fully intact: the tutor builds on student progress at each turn and diagnoses confusion before responding. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a), and after multiple instances of student improvement following confusion, the tutor moves forward without prompting reflection on what changed (1.3.C.a). Dialogue and communication quality are strong throughout all three transcripts with no meaningful deductions warranted.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

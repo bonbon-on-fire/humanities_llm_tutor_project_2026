@@ -1,0 +1,95 @@
+{
+  "bundle_file": "bundle_033.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0017",
+    "clueless/clueless_raw/transcript_0041",
+    "clueless/clueless_raw/transcript_0065"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion to a clearer distinction or a workable draft, the tutor moved straight to the next task instead of prompting brief reflection on what changed in the student's thinking and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently stays anchored to the assignment, avoids supplying submission-ready table entries, and uses guided questioning plus workable heuristics to move students forward. The clearest missed rubric behavior is reflection: when students improved after confusion, the tutor typically advanced to the next step rather than asking them to articulate what changed and why it worked. Some wording was a bit brisk in places, but the overall stance remained coaching-oriented enough that a tone deduction was not clearly warranted.",
+    "judge_reasoning": "The tutor earns full credit on guided discovery because they repeatedly refused to provide filled-in rows or polished assignment text, instead asking students to generate stressors, sectors, and justifications themselves. Scaffolding was strong: the tutor clarified distinctions such as stressor vs. impact, offered compact structures for rows, and kept responses tied to the actual stressors table task. The main deduction is under meta-learning, because after successful corrections or clearer drafts, the tutor generally did not pause for reflective consolidation about what changed in the student's method. Dialogue and communication were otherwise clear, concise, and well anchored to the assignment.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

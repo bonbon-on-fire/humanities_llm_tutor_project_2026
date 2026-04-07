@@ -1,0 +1,103 @@
+{
+  "bundle_file": "bundle_044.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0094",
+    "clueless/clueless_raw/transcript_0118",
+    "clueless/clueless_raw/transcript_0142"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 3, Turn 8",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 3 Turn 8, the tutor provides a substantive overview of how Jakarta's climate governance works—describing the roles of city/provincial leadership, technical agencies, national government, private developers, and community groups. This does the key reasoning step for the student by explaining the governance landscape rather than guiding the student to discover it. The tutor then asks which categories seem most powerful, but the framing has already done the analytical work.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is withholding direct answers or why the guided-discovery approach supports the student's learning. It simply refuses or redirects without articulating the pedagogical rationale (e.g., active reasoning, retention, skill development).",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make progress (e.g., correctly identifying city government as leading, or low-income residents as missing), the tutor moves on to the next question without prompting reflection on what changed in the student's thinking or why their improved answer worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 44,
+    "overview": "The tutor generally maintains a Socratic stance across all three transcripts, refusing to write forum posts or list actors directly, and consistently redirecting students to apply their own reasoning. However, in Transcript 3 Turn 8, the tutor provides a substantive overview of Jakarta's climate governance structure that does the key analytical work for the student, triggering a 1.1.C.b deduction. The tutor also never explains its pedagogical rationale for withholding answers (1.3.A.a) and misses opportunities to prompt reflection after student progress (1.3.C.a). Scaffolding, dialogue quality, and communication quality are otherwise strong.",
+    "judge_reasoning": "The primary deduction is in 1.1 (6 points) for Transcript 3 Turn 8, where the tutor describes Jakarta's governance landscape in enough detail to do the student's analytical work—identifying which actors operate at which levels—before asking the student to choose. This is a clear 1.1.C.b violation. The 1.1.A.a trigger (full 12-point removal) was considered but not applied because the tutor does not provide submission-ready content across turns; the Turn 8 overview is explanatory but not a complete actor table or forum-ready answer. For 1.3, the tutor never articulates why it guides rather than tells (1.3.A.a, -2) and consistently moves on after student progress without prompting reflection on what changed (1.3.C.a, -2). Scaffolding (1.2) is solid throughout: the tutor builds on student answers and uses diagnostic questions. Dialogue quality and communication quality are strong with no notable redundancy, drift, or tone issues.",
+    "total_score": 34,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

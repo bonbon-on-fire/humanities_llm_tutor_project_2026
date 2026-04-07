@@ -1,0 +1,104 @@
+{
+  "bundle_file": "bundle_031.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0016",
+    "cooperative/cooperative_raw/transcript_0040",
+    "cooperative/cooperative_raw/transcript_0064"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 3 Turn 1"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced process constraints such as avoiding polished writing and not jumping to final answers, but did not explicitly explain why this tutoring approach supports the student's learning or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turns 3-5",
+                  "Transcript 3 Turns 9-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from a weaker attempt to a stronger reasoning frame, the tutor acknowledged the improvement and moved on, but did not prompt reflection on what changed in the student's thinking or why the revised approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently evidence-first, Socratic, and tightly anchored to the assignment. The main weaknesses were meta-level: the tutor did not explicitly explain the learning rationale for withholding direct answers, and after successful revision moments the tutor usually advanced the task instead of asking the student to reflect on what improved.",
+    "judge_reasoning": "Across the bundle, the tutor avoided doing the student's assignment for them and instead used guided questions, comparison frameworks, and evidence-focused prompts, so no deduction was warranted for 1.1 or 1.2. The tutor also stayed on-task, built directly on student responses, and used concise, supportive language throughout. I deducted under 1.3.A because the tutor enforced constraints like rough notes over polished writing without stating why that supports learning, and under 1.3.C because several improved student responses were praised but not followed by reflection prompts about the method change. I did not deduct for repetition because, despite similar structures across the bundled transcripts, each thread still progressed through increasingly specific reasoning tied to the student's city and stressors.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

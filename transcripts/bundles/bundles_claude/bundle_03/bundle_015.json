@@ -1,0 +1,92 @@
+{
+  "bundle_file": "bundle_015.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0051",
+    "cooperative/cooperative_raw/transcript_0101",
+    "cooperative/cooperative_raw/transcript_0126"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turn 3; Transcript 2, Turn 7-8; Transcript 3, Turn 7",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students successfully articulate the means/side-effect distinction or produce a strong draft after earlier confusion, the tutor consistently moves forward to the next task without prompting reflection on what changed in the student's thinking or why the improved reasoning worked. For example, in Transcript 1 Turn 9-10, after the student produces strong three-part reasoning following earlier fuzziness, the tutor simply says 'That's strong enough to build on' and moves to drafting without asking the student to reflect on what shifted. Similar patterns appear in Transcripts 2 and 3.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates consistently strong Socratic practice: never giving away answers, keeping key idea generation student-led, scaffolding well from simpler to more complex reasoning, and maintaining appropriate tone throughout. The only notable gap is a recurring failure to prompt reflection after students improve from earlier confusion—the tutor tends to move forward rather than consolidating the learning moment. No other rubric criteria show clear evidence of deduction.",
+    "judge_reasoning": "1.1: The tutor never provides submission-ready content, never rewrites student text, and consistently asks students to derive conclusions before confirming them. All three transcripts show clean Socratic questioning throughout. 1.2: The tutor builds on each student's correct steps (e.g., affirming the outcome-comparison insight before pushing to means/side-effect), and when students are stuck, asks diagnostic questions rather than dumping explanations. 1.3: The tutor provides some process feedback (e.g., 'neat is fine if you can defend it,' 'too compressed') and implicitly models the tutoring rationale by consistently refusing to give answers. However, across all three transcripts, when students make genuine progress after earlier confusion—such as articulating the means/side-effect distinction clearly—the tutor moves directly to the next task without prompting the student to reflect on what changed in their thinking, triggering 1.3.C.a. 2.1-2.2: No significant repetition without progress, no assignment drift, and no misframing goes uncorrected. 3.1-3.2: Responses are appropriately concise, interactive, and supportive without being evaluative in a grading sense.",
+    "total_score": 42,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

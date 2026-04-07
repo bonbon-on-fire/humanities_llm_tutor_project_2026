@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_007.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0002",
+    "cooperative/cooperative_raw/transcript_0003",
+    "cooperative/cooperative_raw/transcript_0027"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Turn 8 (Transcript 1), Turn 5 (Transcript 1)",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts the tutor never explicitly explains why it is guiding rather than giving answers—i.e., never articulates that the Socratic approach supports learning, retention, or skill development. In Transcript 1 Turn 7 the tutor says 'I'm your tutor, not your substitute writer' but this is a constraint statement, not a rationale for how the approach benefits the student's learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 2 Turn 10, Transcript 3 Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcripts 2 and 3, after the student successfully produces a strong 4-part outline/draft following earlier confusion and iteration, the tutor moves directly to the next challenge or pressure-test without prompting the student to reflect on what changed in their thinking or what made the final synthesis work.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor performs strongly: it never gives submission-ready answers, consistently uses Socratic questioning, builds on student progress, and maintains appropriate tone. The main deductions are in 1.3: the tutor never explains the pedagogical rationale for its guided approach (1.3.A.a), and at the successful conclusion of Transcripts 2 and 3 it misses the opportunity to prompt reflection on what changed in the student's thinking (1.3.C.a). The 1.3.B criterion is borderline—the tutor does give process-level feedback in most turns—so no deduction is applied there. All other criteria are met cleanly.",
+    "judge_reasoning": "1.1: The tutor never provides near-submission-ready content, never rewrites student text, and consistently asks the student to derive key ideas before confirming them. Full marks. 1.2: The tutor builds on each correct student step (e.g., affirming 'judge by consequences' before sharpening it; affirming the means/side-effect distinction before testing it) and uses diagnostic questions when students are stuck. Full marks. 1.3: The tutor never articulates why the Socratic method benefits the student's learning—the one near-rationale in Transcript 1 Turn 7 ('I'm your tutor, not your substitute writer') is a constraint assertion, not a learning rationale, triggering 1.3.A.a (-2). After students successfully produce strong outlines in Transcripts 2 and 3, the tutor immediately pivots to the next challenge without asking what changed or why the synthesis worked, triggering 1.3.C.a (-2). Dialogue quality and communication quality are clean: responses are appropriately concise, tone is supportive, no grading language is used, and the tutor stays on-task throughout.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "bundle_file": "bundle_020.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0031",
+    "cooperative/cooperative_raw/transcript_0055",
+    "cooperative/cooperative_raw/transcript_0078"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student through questions rather than providing direct answers—no rationale is given for the Socratic approach or how it supports learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 2 (cooperative), the student makes clear progress from confusion to a well-structured table design by Turn 8-9, but the tutor does not pause to prompt reflection on what changed in the student's thinking or why the approach worked. Similarly in Transcript 3, the student moves from uncertainty to a clear rule by Turn 7, with no reflective prompt from the tutor.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles repeatedly on the boundary-definition issue across turns 3–9 without meaningful synthesis or advancement. The student repeatedly expresses overwhelm and requests broader explanation, but the tutor continues asking similar comparison/judgment questions without reframing or consolidating progress. The conversation spirals on the same sub-point without resolution.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs well on core Socratic method and scaffolding across all three transcripts, never giving submission-ready answers and consistently returning questions to the student. The main weaknesses are: (1) no explicit rationale for the tutoring approach is ever offered across any transcript; (2) no reflective prompts after student success; and (3) in Transcript 1, the tutor cycles on the boundary-definition issue for seven turns without meaningful synthesis, despite the student repeatedly signaling overwhelm and requesting a broader framework.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides near-submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led across all three transcripts. 1.2 receives full marks: the tutor builds on student progress and generally diagnoses confusion before responding. 1.3 loses 4 points: no tutoring rationale is ever explained (1.3.A.a), and after clear student breakthroughs in Transcripts 2 and 3, the tutor never prompts reflection on what changed (1.3.C.a). 2.1 loses all 4 points for Transcript 1, where the tutor repeats similar boundary-comparison moves across turns 3–9 without consolidating or reframing, despite the student explicitly requesting a broader framework multiple times. 2.2 and all communication quality criteria receive full marks, as the tutor maintains assignment focus, appropriate tone, and clear bite-sized responses throughout.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

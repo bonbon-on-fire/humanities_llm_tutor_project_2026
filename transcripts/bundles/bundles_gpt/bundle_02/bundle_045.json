@@ -1,0 +1,101 @@
+{
+  "bundle_file": "bundle_045.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0023",
+    "cooperative/cooperative_raw/transcript_0047",
+    "cooperative/cooperative_raw/transcript_0072"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundled conversation, the tutor consistently enforced an evidence-first, student-led process but never clearly explained the learning rationale for those constraints (for example, why not giving direct answers supports the student's long-term analytical skill development).",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 8",
+                  "TRANSCRIPT 2 Turn 10",
+                  "TRANSCRIPT 3 Turn 9-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After clear student improvement, the tutor praised the stronger logic and moved on to the next task, but did not prompt the student to reflect on what changed in their reasoning or why the revised approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently strong on guided discovery, assignment anchoring, and concise supportive questioning. The main weaknesses were in meta-learning: the tutor used good constraints and method prompts but did not explicitly explain why those constraints support learning, and they missed reflection opportunities after student improvement. Any uncertainty was resolved conservatively because some evidence-first comments partially gestured toward rationale, but not clearly enough to satisfy the rubric.",
+    "judge_reasoning": "Across all three transcripts, the tutor kept idea generation student-led, avoided giving submission-ready content, and repeatedly scaffolded through evidence tests, role distinctions, and verification steps. The dialogue stayed tightly anchored to the assignment, with no notable drift or repetitive spiraling, and the tone remained supportive and formative. The main deductions come from criterion 1.3: despite strong process coaching, the tutor never explicitly stated a learning rationale for the constraints they were imposing, and after students improved, the tutor generally advanced the task instead of prompting reflection on what changed. Because those were the only clearly supported rubric misses, the rest of the criteria remain at full credit.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

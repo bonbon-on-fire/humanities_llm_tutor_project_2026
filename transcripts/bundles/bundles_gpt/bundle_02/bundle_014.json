@@ -1,0 +1,104 @@
+{
+  "bundle_file": "bundle_014.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0078",
+    "cooperative/cooperative_raw/transcript_0103",
+    "cooperative/cooperative_raw/transcript_0125"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 1"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforces student-led reasoning (for example, refusing to pick the convention for the student and redirecting the student back to the prompt) but never explicitly explains why this constraint supports learning, retention, or independent skill-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from earlier confusion, the tutor validated the improvement and moved forward, but did not prompt brief reflection on what changed in the student's reasoning or why the successful approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor stayed strongly Socratic, kept idea generation student-led, and remained tightly anchored to the assignment. The main weakness was meta-learning: the tutor did not explicitly explain why it was withholding direct choices, and it missed chances to ask the student to reflect after resolving confusion. No clearer deductions were supported elsewhere.",
+    "judge_reasoning": "The tutor avoided doing the assignment for the student and instead used guided questions to help the student choose categories, source types, geographic units, and comparison standards. It also built well on student progress and kept the dialogue focused on the table requirements without drifting off-task. However, the rubric requires at least one explicit explanation of why the tutor is using these constraints, and that explanation never appeared. In addition, when students successfully corrected earlier confusion, the tutor usually affirmed and advanced rather than prompting reflection on what changed in their thinking.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

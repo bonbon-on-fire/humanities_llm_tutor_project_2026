@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_012.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0079",
+    "cooperative/cooperative_raw/transcript_0102",
+    "cooperative/cooperative_raw/transcript_0127"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 1-10",
+                  "Transcript 2 Turns 1-10",
+                  "Transcript 3 Turns 1-10"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced a student-led process ('write your own version,' 'keep it rough,' 'I’ll critique the reasoning') but never explicitly explained why these constraints support learning, retention, or skill-building.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 7-10",
+                  "Transcript 2 Turns 6-10",
+                  "Transcript 3 Turns 6-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a workable principle, the tutor usually moved straight to the next refinement or drafting step rather than asking the student to reflect on what changed in their thinking and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the combined transcripts, the tutor was strongly Socratic, kept idea generation largely student-led, and stayed tightly anchored to the assignment. The main misses were meta-level: the tutor did not explicitly explain why the student-led constraints were pedagogically useful, and they missed chances to prompt reflection after the student's reasoning improved. Any possible concern that the tutor seeded the 'means vs side effect' distinction was outweighed by the fact that they presented it as a testable question rather than a finished answer path.",
+    "judge_reasoning": "The tutor avoided giving submission-ready philosophy content and instead repeatedly asked the student to test distinctions, apply principles across cases, and draft their own outline. Scaffolding was strong: the tutor built on the student's progress, diagnosed uncertainty about Fuel with targeted questions, and kept the discussion focused on act consequentialism and the lecture cases. I deducted under 1.3 because the tutor never explained the learning rationale for their constraints and did not ask the student to reflect on what changed after improvement. Communication and tone were clear, concise, supportive, and consistently formative rather than grade-like.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "bundle_file": "bundle_041.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0021",
+    "cooperative/cooperative_raw/transcript_0045",
+    "cooperative/cooperative_raw/transcript_0069"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 Turn 9-10, Transcript 2 Turn 9-10, Transcript 3 Turn 9-10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful improvements in their reasoning (e.g., T1 Turn 9 student produces a solid 3-part structure, T2 Turn 10 student correctly formats actors with evidence, T3 Turn 10 student writes a strong draft), the tutor moves forward with next steps or critique without prompting the student to reflect on what changed in their thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 3 Turn 10",
+                "sub_criterion_id": "3.2.B.a",
+                "reason": "In Transcript 3 Turn 10, the tutor says 'Using my own judgment, not your instructor's rubric: this is a strong draft with clear logic.' While the tutor attempts to disclaim formal grading, the phrasing 'strong draft with clear logic' functions as a summative evaluative judgment that could be read as a quasi-grade. However, the disclaimer partially mitigates this. Deduction applied for borderline evaluative framing without fully formative language.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs very well across all three transcripts, consistently using Socratic questioning, guiding students to derive their own conclusions, and scaffolding progressively from broad framing to specific evidence. No submission-ready content is produced; the tutor never rewrites student text or gives away key conclusions. The main weakness is a consistent failure to prompt meta-reflection after student improvement—when students make meaningful progress, the tutor moves on rather than asking what changed in their thinking. One borderline evaluative statement in Transcript 3 ('strong draft with clear logic') was flagged under 3.2.B.a, though the tutor's disclaimer reduces severity. The 1.3.A.a deduction was considered but not applied because the tutor does implicitly model the rationale for its approach (e.g., 'don't force the private sector in,' 'don't confuse influence with authority') even if it never explicitly states why this supports learning—this was judged ambiguous and the smaller deduction was chosen.",
+    "judge_reasoning": "Across all three transcripts, the tutor consistently avoids giving direct answers, instead using targeted questions to guide students through the leading/engaged/missing framework. Scaffolding is strong: the tutor builds on student responses, corrects vague labels, and pushes for evidence-based specificity. No deductions were warranted for 1.1 or 1.2. The 1.3.C.a deduction is well-supported: in all three conversations, when students produce improved reasoning (T1 Turn 9, T2 Turn 10, T3 Turn 10), the tutor pivots to next steps without prompting reflection on what changed. The 3.2.B.a deduction in Transcript 3 is applied cautiously—the tutor's disclaimer ('not your instructor's rubric') partially mitigates the evaluative framing, but 'strong draft with clear logic' still reads as a summative judgment rather than purely formative coaching language. No double-penalization was applied across criteria.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

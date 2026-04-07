@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_024.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0084",
+    "clueless/clueless_raw/transcript_0108",
+    "clueless/clueless_raw/transcript_0132"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turn 4",
+                  "Transcript 2, Turn 10",
+                  "Transcript 3, Turn 6"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student through questions rather than simply providing answers—i.e., no rationale is given for the Socratic/guided approach in terms of learning benefits, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turn 10",
+                  "Transcript 2, Turn 9",
+                  "Transcript 3, Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, conversations end without any moment where the student has clearly improved from confusion to understanding and the tutor prompts reflection on what changed. The tutor moves forward without reinforcing method choices after student progress.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs well across all three transcripts, consistently using Socratic questioning, avoiding giving submission-ready answers, scaffolding appropriately, and maintaining a supportive tone. The main weaknesses are the absence of any explicit rationale for the tutoring approach (why guided discovery rather than direct answers) and the lack of reflective prompts after student progress. The 1.3.B criterion is borderline—the tutor does give some process-level feedback (e.g., 'use this rule of thumb,' 'aim for value, unit, year, source')—but it is generally adequate enough not to trigger a deduction.",
+    "judge_reasoning": "1.1: The tutor never provides submission-ready content, never rewrites student text, and consistently asks the student to reason before confirming. No deductions apply. 1.2: The tutor builds on student responses (e.g., 'GDP is a strong guess'), diagnoses confusion before responding, and scaffolds progressively. No deductions apply. 1.3: The tutor never explains why it is using guided questioning rather than direct answers (1.3.A.a), and across all three conversations there is no moment where the tutor prompts the student to reflect on what changed after improvement (1.3.C.a). 1.3.B is not deducted because the tutor does provide some process-level direction (e.g., 'use this rule of thumb,' 'aim for value, unit, year, geography level, and source'). Dialogue quality and communication quality are strong throughout—responses are concise, on-topic, and appropriately toned.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "bundle_file": "bundle_040.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0085",
+    "cooperative/cooperative_raw/transcript_0014",
+    "cooperative/cooperative_raw/transcript_0038"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—i.e., it never articulates a rationale such as 'I'm asking you to work through this yourself because active reasoning builds retention and long-term skill.' The tutor enforces the Socratic approach consistently but never names the pedagogical reason for doing so.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., Transcript 1 Turn 9 student correctly links location+drainage to flooding duration; Transcript 2 Turn 6 student articulates solid justification logic; Transcript 3 Turn 7 student writes a defensible 3-part justification), the tutor moves on to the next topic without prompting the student to reflect on what changed in their thinking or why the improved reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly expresses confusion and asks for examples or re-explanations of the same rating logic across turns 6–10. The tutor cycles through similar prompts (asking the student to pick a rating, then defend it, then defend it again) without meaningfully consolidating or reframing. By Turn 10 the student is still second-guessing the same rating question that was introduced in Turn 9, and the tutor essentially repeats the same four-criteria framework it already gave.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly on Socratic method and avoiding direct answer-giving across all three transcripts, consistently pushing students to generate their own reasoning. Scaffolding is generally well-handled, building on student contributions. The main weaknesses are: (1) no tutoring rationale is ever explained to students; (2) no reflection is prompted after student breakthroughs; and (3) in Transcript 1, the tutor cycles on the rating question without effective reframing, triggering the redundancy deduction. The 2.1 deduction is applied only once (not triple-counted) as the rubric treats the bundle as a single evidence space.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never gives submission-ready answers, never rewrites student text, and consistently asks students to generate key ideas before confirming them. 1.2 is fully intact: the tutor builds on student progress (e.g., 'Good—that's specific and usable') and diagnoses confusion before responding. 1.3 loses 4 points: the tutor never explains why it withholds direct answers (1.3.A.a), and after clear student improvements it simply moves to the next stressor without prompting reflection on what changed (1.3.C.a). 2.1 loses 4 points: in Transcript 1, turns 6–10 show the tutor repeating the same rating-criteria framework across multiple turns without consolidating or reframing when the student remains stuck, constituting pattern-level repetition without synthesis. 2.2 is fully intact across all transcripts. 3.1 and 3.2 are fully intact: responses are concise, well-structured, and supportive throughout.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

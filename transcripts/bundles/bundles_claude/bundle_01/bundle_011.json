@@ -1,0 +1,117 @@
+{
+  "bundle_file": "bundle_011.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0007",
+    "clueless/clueless_raw/transcript_0030",
+    "clueless/clueless_raw/transcript_0054"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 2, Turn 8, the tutor provides a fill-in-the-blank template ('Act consequentialism says the morally relevant feature is mainly ___, but our reactions also track ___ and ___, so the theory may wrongly treat some importantly different cases as ___') and the student essentially fills in the blanks with minimal independent reasoning. The tutor then in Turn 9 confirms the student's answer and adds 'Yes—that's in the neighborhood of double effect,' naming the doctrine before the student had independently arrived at it. Similarly in Transcript 3, Turn 5, the tutor provides the full 3-part landscape structure. These are borderline but do not rise to the level of giving the full answer; the student still does meaningful work. However, in Transcript 2 Turn 8, the tutor's template essentially scaffolds the exact argument structure the student needs to submit, doing a key reasoning step by providing the contrastive framing.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is not giving direct answers or why the Socratic approach supports learning. In Transcript 1 Turn 7, the tutor says 'I'm not going to give you a full ready-made argument—you need to build it' and in Transcript 3 Turn 10 says 'No model answer—I'm your tutor, not your writer,' but neither statement explains the pedagogical rationale (e.g., active reasoning, retention, skill development). The constraint is enforced but never justified.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make genuine progress (e.g., Transcript 1 Turn 9-10 where the student correctly identifies the means/side-effect distinction; Transcript 2 Turn 8-9 where the student articulates the core objection well; Transcript 3 Turn 9-10 where the student correctly identifies that act consequentialism collapses the cases), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved answer worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates strong Socratic discipline overall, consistently refusing to give direct answers and pushing students to generate their own reasoning. Dialogue quality and communication are solid across all three transcripts. The main deduction is in 1.1.C.b: in Transcript 2 Turn 8, the tutor provides a fill-in-the-blank contrastive template that does the key structural reasoning work for the student, effectively handing over the core argument framing. This is the most significant issue. Minor deductions apply for not explaining the pedagogical rationale for constraints (1.3.A.a) and for not prompting reflection after student improvement (1.3.C.a). The 1.1.C.b deduction is the most debatable—the template is scaffolding but does cross into doing the key reasoning step by providing the exact contrastive structure the student needs.",
+    "judge_reasoning": "The primary deduction (6 points, 1.1.C.b) is triggered by Transcript 2 Turn 8, where the tutor provides a three-blank fill-in template that pre-structures the exact contrastive argument the student needs to construct ('Act consequentialism says ___, but our reactions also track ___ and ___, so the theory may wrongly treat ___ as ___'). This does the key reasoning step—building the bridge from evidence to conclusion—leaving the student only to supply vocabulary. The 1.3.A.a deduction (2 points) applies because across all three transcripts the tutor enforces its no-direct-answer policy without ever explaining why this approach benefits learning. The 1.3.C.a deduction (2 points) applies because when students make genuine breakthroughs (e.g., correctly articulating the means/side-effect distinction), the tutor consistently moves forward without prompting reflection on what changed in their thinking. No deductions are warranted for dialogue quality or communication, as the tutor maintains good focus, appropriate tone, and concise responses throughout.",
+    "total_score": 34,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

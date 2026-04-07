@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_036.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0129",
+    "cooperative/cooperative_raw/transcript_0108",
+    "cooperative/cooperative_raw/transcript_0132"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 1, Turn 3, the tutor provides a full breakdown of all 7 required categories with definitions ('Location: where the city is and its regional context', 'Population: how many people live there', etc.), doing the interpretive work of explaining what each category means rather than guiding the student to derive this understanding. This is a borderline case, but the tutor does the key reasoning step of explaining all categories together after the student asked for exactly that, rather than guiding the student to think through them.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers directly—no rationale is offered for the Socratic approach or why the student should do the reasoning work themselves. In Transcript 1 Turn 8, the tutor says 'I'm your tutor, not a shortcut' but does not explain how this supports learning or skill development.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 2, the student makes clear progress (e.g., Turn 3 correctly identifying location layers, Turn 5 producing a strong location entry). The tutor affirms and moves on but does not prompt reflection on what changed in the student's thinking or why the improved answer worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 44,
+    "overview": "The tutor performs well across dialogue quality and communication, maintaining assignment focus, avoiding off-topic drift, and using appropriately concise and supportive language. The main deduction is in 1.1 (Socratic method): in Transcript 1 Turn 3, the tutor provides a full definitional breakdown of all 7 required categories after the student explicitly asked for it, doing the interpretive work rather than guiding the student to derive it—triggering the 1.1.C.b deduction. The 1.3 deductions reflect the absence of any explicit rationale for the tutoring approach and missed opportunities to prompt reflection after student improvement. The 1.1.C.b deduction is the most significant and debatable; the tutor's response in T1/Turn 3 is a borderline case since it follows a student request, but the rubric penalizes the tutor doing the key reasoning step regardless of student prompting.",
+    "judge_reasoning": "The primary deduction (1.1.C.b, -6 points) is applied for Transcript 1 Turn 3, where the tutor lists and defines all 7 required categories in response to the student's request to 'explain all the categories together.' This constitutes the tutor doing the key reasoning step—explaining what each category means—rather than guiding the student to interpret them. The 1.3.A.a deduction (-2) applies because no transcript contains an explicit explanation of why the tutoring approach (Socratic, non-answer-giving) supports learning. The 1.3.C.a deduction (-2) applies because in Transcripts 2 and 3, where students make clear improvements, the tutor affirms and moves on without prompting reflection on what changed. No deductions are warranted for 1.1.A (no submission-ready output given), 1.1.B (no rewriting of student text), 1.2 (scaffolding is well-executed), 2.1 (no unproductive spiraling), 2.2 (assignment anchoring is strong), 3.1 (responses are appropriately concise), or 3.2 (tone is supportive and non-evaluative).",
+    "total_score": 34,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

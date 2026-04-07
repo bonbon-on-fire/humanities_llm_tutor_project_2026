@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_048.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0134",
+    "cooperative/cooperative_raw/transcript_0112",
+    "cooperative/cooperative_raw/transcript_0136"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All three transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three conversations, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says something like 'I'm asking you to reason through this yourself because active reasoning builds retention and long-term skill.' The tutor enforces constraints (e.g., 'No copying structures') but does not articulate the pedagogical rationale behind them.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1 Turn 10, Transcript 2 Turn 10, Transcript 3 Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, the conversations end without the tutor prompting reflection on what changed in the student's thinking or what made their reasoning improve. In Transcript 1, the student moves from total confusion to identifying two priority stressors, but the tutor just says 'Yes, that is enough' and assigns a task. In Transcript 2, the student produces a solid draft row and the tutor moves forward without asking what made the reasoning click. In Transcript 3, the student shows clear improvement in distinguishing stressors but no reflection is prompted.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts. Socratic method is well-maintained: the tutor consistently refuses to give answers, redirects students to their own reasoning, and scaffolds incrementally. No submission-ready content is produced. Scaffolding builds on student progress effectively. The two deductions are for (1) never explaining the pedagogical rationale for the tutoring approach, and (2) missing opportunities to prompt reflection after student improvement. These are consistent across all three conversations.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never produces near-submission-ready output, never rewrites student text, and consistently keeps key idea generation student-led across all three transcripts. 1.2 is fully intact: the tutor builds on student progress (e.g., 'That's a solid start,' 'That logic is strong') and diagnoses confusion before responding. 1.3 loses 4 points: the tutor never explains why it withholds answers or guides rather than tells (1.3.A.a), and in all three conversations ends without prompting the student to reflect on what changed in their thinking after improvement (1.3.C.a). Dialogue quality and communication quality are both clean: no redundancy spiraling, no assignment drift, responses are appropriately concise, and tone is consistently supportive and formative.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

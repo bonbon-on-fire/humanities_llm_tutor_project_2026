@@ -1,0 +1,122 @@
+{
+  "bundle_file": "bundle_019.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0006",
+    "cooperative/cooperative_raw/transcript_0007",
+    "cooperative/cooperative_raw/transcript_0031"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they were confused and asked to be walked through the process from scratch, the tutor moved straight into a 5-step workflow rather than first diagnosing exactly which part the student understood or misunderstood.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 3"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced a process-only constraint ('you need to do the researching,' 'We can do the process, not the research for you') but did not clearly explain why this approach supports the student's learning or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion and articulated a workable method, the tutor affirmed and advanced the task but did not prompt reflection on what changed in the student's thinking or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Saying 'That fear is mostly avoidance' reads as somewhat rigid and dismissive toward a struggling student, weakening the otherwise supportive coaching tone.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 35,
+    "max_base_score": 46,
+    "overview": "Across the bundled conversation, the tutor consistently avoided doing the assignment for the student and stayed well anchored to the task, especially around source reliability, geographic scale, and methodological consistency. The strongest pattern was process-focused scaffolding through targeted questions and source-selection rules. Main deductions come from limited diagnostic questioning in at least one stuck moment, missing explicit rationale for the tutoring constraint, lack of reflection prompts after student improvement, and one notably brusque tone moment. Some repetition in Transcript 1 was borderline, but there was enough reframing and forward movement that I did not deduct under redundancy.",
+    "judge_reasoning": "The tutor earned full credit for guided discovery because they did not provide submission-ready content or fill in the student's table with researched answers. They were especially strong at method-level coaching: defining source hierarchies, emphasizing unit consistency, and helping the student build a defensible research process. However, there was a clear instance of responding to confusion with a process dump rather than first diagnosing the student's exact sticking point, and the tutor never clearly explained why the process-only constraint was pedagogically useful. I also deducted for missing reflection after successful improvement and for one dismissive phrasing that undercut the otherwise supportive tone.",
+    "total_score": 35,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

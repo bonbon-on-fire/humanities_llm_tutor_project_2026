@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_002.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0071",
+    "cooperative/cooperative_raw/transcript_0097",
+    "cooperative/cooperative_raw/transcript_0121"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding the student through questions rather than providing answers directly—no rationale about active reasoning, retention, or skill development is offered at any point.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., arriving at the side-effect/means distinction after earlier confusion), the tutor moves forward without prompting reflection on what changed in their thinking or why the new approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates strong Socratic method, consistently guiding students to generate their own distinctions (side-effect vs. means) through targeted questions rather than providing answers. Scaffolding is well-executed, building on each student's prior responses. The main weaknesses are the absence of any explicit rationale for the tutoring approach and missed opportunities to prompt reflection after students make breakthroughs.",
+    "judge_reasoning": "1.1: The tutor never gives submission-ready content, never rewrites student text, and consistently lets students derive the key philosophical distinction themselves before confirming it—full marks. 1.2: The tutor builds on each student's correct steps and diagnoses confusion before responding (e.g., asking the student to slow down in Transcript 3 Turn 3)—full marks. 1.3: Two deductions apply. First, the tutor never explains why it is using a Socratic approach rather than just answering (1.3.A.a). Second, in all three transcripts, when students arrive at the means/side-effect distinction after earlier uncertainty, the tutor simply advances to the next step without asking the student to reflect on what changed in their thinking (1.3.C.a). Method-level feedback is present and specific throughout, so 1.3.B is not penalized. Dialogue quality and communication quality are strong throughout—responses are bite-sized, well-anchored to the assignment, and supportive in tone.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

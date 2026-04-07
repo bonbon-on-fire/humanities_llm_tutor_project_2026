@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_046.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0095",
+    "cooperative/cooperative_raw/transcript_0119",
+    "cooperative/cooperative_raw/transcript_0143"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 Turn 10, Transcript 2 Turn 10, Transcript 3 Turn 10",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—no rationale about active reasoning, retention, or skill development is offered at any point.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1 Turns 6-10, Transcript 2 Turns 6-10, Transcript 3 Turns 6-10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students improve their reasoning (e.g., T1 Turn 10 narrowing 'real decision-making power,' T3 Turn 10 'that clicked'), the tutor moves on to the next task without prompting reflection on what changed in the student's thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts, consistently using Socratic questioning, building on student progress, maintaining appropriate tone, and keeping responses concise and focused. The student does the key reasoning work throughout. Two deductions apply: the tutor never explains its pedagogical rationale (why it guides rather than tells), and it misses opportunities to prompt reflection after student breakthroughs. No other rubric criteria are triggered.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never gives submission-ready answers, never rewrites student text, and consistently lets students generate key ideas before confirming or challenging them. 1.2 is fully intact: the tutor builds on each student's prior answers and diagnoses confusion before responding. 1.3 loses 2 points under 1.3.A.a because across all three conversations the tutor imposes constraints (e.g., 'I'll critique the logic, not write it for you') without ever explaining why this approach supports learning. 1.3 loses another 2 points under 1.3.C.a because when students improve—most clearly in T1 Turn 10 (narrowing the claim) and T3 Turn 10 ('that clicked')—the tutor immediately pivots to the next task without asking the student to reflect on what changed in their thinking. 1.3.B is not penalized because the tutor does give method-level feedback (e.g., 'plausible is not the same as supported,' 'focus on mechanism not emotion'). Dialogue quality and communication quality are fully intact: responses are bite-sized, tone is consistently supportive, and there is no off-topic drift or assignment misframing.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

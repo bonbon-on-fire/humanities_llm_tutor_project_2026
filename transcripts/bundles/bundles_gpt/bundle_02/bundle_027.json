@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_027.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0014",
+    "cooperative/cooperative_raw/transcript_0038",
+    "cooperative/cooperative_raw/transcript_0062"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 2 Turn 7",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a workable method or stronger justification, the tutor affirmed the progress and moved on to the next stressor/task without prompting brief reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently used guided discovery, kept idea generation student-led, and stayed tightly anchored to the assignment. The main missed opportunity was meta-learning reflection: after students improved, the tutor usually validated and advanced rather than asking them to articulate what changed in their method.",
+    "judge_reasoning": "The tutor avoided giving submission-ready content and instead used targeted questions, comparisons, and criteria-building to help students generate their own sector labels, ratings, and justifications. Scaffolding was strong: the tutor built from student answers, clarified confusion points like severity versus scope, and repeatedly re-anchored ambiguous items such as air pollution to the assignment's climate-vulnerability focus. Communication remained concise, supportive, and non-grading throughout. The only clear deduction is under 1.3.C.a, because once students reached stronger reasoning, the tutor generally moved forward without a reflection prompt about what changed and why the new reasoning was better.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

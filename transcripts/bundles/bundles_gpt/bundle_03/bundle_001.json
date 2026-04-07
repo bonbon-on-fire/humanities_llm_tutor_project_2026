@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_001.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0001",
+    "cooperative/cooperative_raw/transcript_0001",
+    "cooperative/cooperative_raw/transcript_0025"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turns 7-8",
+                  "Transcript 2, Turns 3-5",
+                  "Transcript 3, Turns 8-9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from a vague intuition to a clearer principle, the tutor generally moves straight to the next argumentative step instead of prompting brief reflection on what changed in the student's reasoning and why the improved move worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turn 4",
+                  "Transcript 1, Turn 8"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor is mostly supportive, but a few lines are unnecessarily rigid for a confused student, especially 'Don't blur them together. That's exactly how you lose the argument' and 'Stop second-guessing that.'",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently uses guided questioning, keeps the student doing the substantive reasoning, and stays well anchored to the assignment. The main weaknesses are a missed opportunity for reflection after student improvement and a few brusque tone moments in Transcript 1. A possible deduction under tutoring-rationale was considered, but the tutor's refusal to provide full answers was at least somewhat framed as helping the student build the argument, so that ambiguity was resolved in the tutor's favor.",
+    "judge_reasoning": "The strongest evidence supports high pedagogy and dialogue scores: the tutor repeatedly breaks the task into manageable parts, asks targeted questions, and avoids giving submission-ready claims or prose. The tutor also builds well on student progress and keeps discussion focused on act consequentialism, the lecture cases, and the student's own principle. I deducted under 1.3 because, after students improved their reasoning, the tutor usually advanced to the next task instead of asking them to reflect on what changed in their method. I also deducted under 3.2 because a few comments in Transcript 1 were more rigid than supportive, even though the overall tone remained mostly constructive.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

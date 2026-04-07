@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_067.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0021",
+    "cooperative/cooperative_raw/transcript_0023",
+    "cooperative/cooperative_raw/transcript_0047"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 1-10; Transcript 2, Turns 1-10; Transcript 3, Turns 1-10",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says something like 'I'm asking you to work this out yourself because active reasoning builds retention.' The tutoring constraints are enforced but the rationale for them is never articulated to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1, Turns 9-10; Transcript 2, Turns 8-10; Transcript 3, Turns 9-10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., T1 student finally commits to Boston and names plausible actors; T2 student produces a strong draft; T3 student produces a well-structured revised list), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 1-8",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through the same conceptual explanations of the three buckets across multiple turns (Turns 1-5) without meaningfully consolidating or advancing. The student repeatedly says they are still confused, and the tutor re-explains the same framework rather than reframing, simplifying, or switching strategy. This pattern persists for roughly half the conversation before the tutor finally pushes the student to commit to a city.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs well overall: it avoids giving submission-ready answers, keeps key idea generation student-led, scaffolds appropriately in Transcripts 2 and 3, and maintains a supportive, focused tone throughout. The main weaknesses are: (1) a persistent spiraling pattern in Transcript 1 where the tutor re-explains the same framework multiple times without switching strategy when the student remains stuck; (2) the tutoring rationale is never explained to students across any transcript; and (3) the tutor consistently misses opportunities to prompt reflection after student improvement.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces submission-ready content, never rewrites student text, and consistently asks students to generate key ideas before confirming them. 1.2 receives full marks: the tutor builds on student progress in Transcripts 2 and 3, and in Transcript 1 it does eventually diagnose the student's avoidance pattern and push forward. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a, -2), and after students improve the tutor moves on without prompting reflection on what changed (1.3.C.a, -2). 2.1 loses all 4 points for Transcript 1, where the tutor repeats the same bucket-explanation framework across five turns without reframing or switching strategy despite the student's repeated confusion. 2.2 and all of Section 3 are clean: the tutor stays on-task, maintains appropriate tone, and keeps responses concise and clear.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

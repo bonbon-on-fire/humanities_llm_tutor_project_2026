@@ -1,0 +1,127 @@
+{
+  "bundle_file": "bundle_035.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0018",
+    "clueless/clueless_raw/transcript_0043",
+    "clueless/clueless_raw/transcript_0066"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 8",
+                  "Transcript 2 Turn 3"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student expressed broad confusion, the tutor often responded first with another full explanation, checklist, or framework rather than diagnosing exactly which part of the task the student already understood.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confused attempts to a workable row/justification, the tutor praised the result and moved on without prompting reflection on what changed in the student's reasoning or why the new approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 4-10",
+                  "Transcript 2 Turns 7-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly reused the same pattern of brief framework restatement plus another drafting prompt without enough synthesis or reframing, especially once the student remained stuck across several turns.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 6",
+                  "Transcript 2 Turn 7",
+                  "Transcript 3 Turn 5"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was mostly supportive, but several turns became unnecessarily rigid or scolding (for example, calling the student's approach a 'bad habit' and pressing them to 'commit'), which weakens tutoring trust.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 46,
+    "overview": "Holistically, the tutor stayed assignment-focused, avoided giving submission-ready content, and usually kept the student doing the core drafting and categorization work. The main weaknesses were repeated recycling of the same prompting pattern once confusion persisted, limited early diagnosis of what the student actually understood, and a few sharper-toned lines. Where evidence was borderline, smaller deductions were chosen rather than adding overlapping penalties.",
+    "judge_reasoning": "The strongest aspect of this tutoring was pedagogical restraint: the tutor consistently refused to draft the student's table or supply finished rows, while still offering usable structures and questions. However, the tutor often answered broad confusion with another explanatory framework instead of first pinpointing the student's exact misunderstanding, which warrants a scaffolding deduction. Dialogue quality dropped most in moments of persistent confusion, where the conversation spiraled through similar prompts and restatements without enough change in strategy. The tutor also missed chances to ask the student to reflect after successful improvement, and a few turns sounded more rigid than supportive.",
+    "total_score": 33,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

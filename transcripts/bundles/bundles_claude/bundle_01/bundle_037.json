@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_037.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0019",
+    "clueless/clueless_raw/transcript_0042",
+    "clueless/clueless_raw/transcript_0067"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., why active reasoning or drafting builds skills. It enforces constraints (e.g., 'No model text—I'm not going to write it for you') but never articulates the pedagogical rationale behind those constraints.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "T1 Turn 10, T2 Turn 10, T3 Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., T1 Turn 9 rough bullets, T3 Turn 10 five-sentence draft), the tutor moves directly to the next critique or question without prompting the student to reflect on what changed in their thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "T1 Turns 3-8, T2 Turns 3-9",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcripts 1 and 2, the tutor cycles through similar reframings of the same core concept (buckets, power map, 3-question framework) across multiple turns without meaningfully consolidating or advancing. The student repeatedly says 'it's not clicking' or 'I need it explained another way,' and the tutor responds with yet another reframing rather than switching strategy—e.g., summarizing what has been established, simplifying to a single concrete step, or explicitly noting the loop. This pattern-level repetition without synthesis is most pronounced in T1 Turns 3–8 and T2 Turns 3–9.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor maintains strong Socratic discipline across all three transcripts—never writing for the student, consistently redirecting to student-generated reasoning, and keeping the assignment well-anchored. Pedagogy in 1.1 and 1.2 is largely sound. The main weaknesses are: (1) no tutoring rationale is ever explained to the student (1.3.A); (2) no reflection is prompted after student progress (1.3.C); and (3) in Transcripts 1 and 2, the tutor falls into a repetition loop—cycling through multiple reframings of the same concept without consolidating or switching strategy when the student keeps saying it is not clicking (2.1.A). Transcript 3 handles the loop somewhat better by Turn 5 (firm refusal + outline demand) and Turn 9 (content skeleton), but Transcripts 1 and 2 show clear pattern-level repetition without synthesis.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces near-submission-ready text, never rewrites student work, and consistently keeps key idea generation student-led. 1.2 receives full marks: the tutor builds on student progress (e.g., affirming rough bullets before pushing for reasoning) and asks diagnostic questions before responding. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a), and after students improve—most clearly in T1 Turn 9 and T3 Turn 10—the tutor moves straight to the next critique without prompting reflection on what changed (1.3.C.a). 2.1 loses all 4 points: in T1 and T2, the tutor repeats structurally similar reframings (power map, 3-question framework, bucket definitions) across 5–6 turns without consolidating what has been established or switching to a meaningfully different strategy when the student explicitly says the approach is not working. 2.2, 3.1, and 3.2 are all clean—no off-topic drift, no assignment misanchoring, responses are appropriately concise, and tone is consistently supportive without being evaluative.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

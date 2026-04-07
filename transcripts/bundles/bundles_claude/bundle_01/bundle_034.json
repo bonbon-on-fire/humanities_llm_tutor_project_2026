@@ -1,0 +1,126 @@
+{
+  "bundle_file": "bundle_034.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0089",
+    "clueless/clueless_raw/transcript_0113",
+    "clueless/clueless_raw/transcript_0137"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turn 9",
+                  "Transcript 1, Turn 10"
+                ],
+                "sub_criterion_id": "1.2.A.a",
+                "reason": "In Transcript 1, the student repeatedly signals they are stuck and looping (Turns 7-10), but the tutor does not meaningfully build on what the student has already established (e.g., the student correctly identified flooding as severe, named sectors, and understood the row structure). Instead, the tutor restarts with broad summaries rather than scaffolding from the student's partial progress.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, all turns",
+                  "Transcript 2, all turns",
+                  "Transcript 3, all turns"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than giving answers—no rationale about active reasoning, retention, or skill development is offered. The tutor enforces constraints (e.g., 'I won't fill in a row for you') without explaining the pedagogical purpose.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turn 9",
+                  "Transcript 2, Turn 7",
+                  "Transcript 3, Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make progress (e.g., T1 student correctly identifies sectors and severity reasoning; T2 student narrows to a workable stressor list; T3 student drafts a rough row), the tutor moves on without prompting reflection on what changed or why the student's thinking improved.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turns 7-10",
+                  "Transcript 2, Turns 3-5"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through similar broad explanations of the assignment structure across Turns 7-10 without consolidating or advancing the student's understanding. The student remains stuck and the tutor repeats the same pattern (explain the steps, ask a question) without reframing or switching strategy. In Transcript 2, a similar loop occurs around categorization without synthesis.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 44,
+    "overview": "The tutor maintains a consistently Socratic approach across all three transcripts, never giving direct answers or completing assignment work for students. It appropriately redirects students to their own reasoning and keeps responses concise. However, it fails to explain its pedagogical rationale at any point, misses opportunities to prompt reflection after student progress, and in Transcript 1 notably loops through the same broad explanations without adapting strategy when the student remains stuck. The 2.1 deduction reflects a clear pattern of repetition without synthesis in Transcript 1 especially.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently asks students to generate ideas before confirming them. 1.2 loses 3 points because in Transcript 1 the tutor fails to build on the student's established partial progress (correct sector identification, severity reasoning) and instead restarts with broad summaries in the final turns. 1.3 loses 4 points: no tutoring rationale is ever offered across any transcript (1.3.A.a), and no reflection is prompted after student improvement moments (1.3.C.a). 2.1 loses all 4 points because Transcript 1 shows a clear pattern of the tutor repeating the same explanation-then-question structure across Turns 7-10 without reframing, consolidating, or switching strategy despite the student remaining stuck. 2.2, 3.1, and 3.2 are clean with no deductions warranted.",
+    "total_score": 33,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "bundle_file": "bundle_025.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0013",
+    "clueless/clueless_raw/transcript_0037",
+    "clueless/clueless_raw/transcript_0061"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcripts 1, 2, 3 — multiple turns",
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "Across all three transcripts, when students repeatedly express confusion and get stuck, the tutor tends to re-explain or reframe rather than first diagnosing what specifically the student misunderstands. For example, in Transcript 1 the student says 'I'm still pretty lost on the full picture' multiple times and the tutor responds with re-explanations rather than targeted diagnostic questions to isolate the exact confusion point. Similarly in Transcripts 2 and 3, the tutor often jumps to providing a new framework or rule rather than probing what the student already understands before responding.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All three transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding the student through questions rather than just giving answers — i.e., no rationale is offered for the tutoring approach (e.g., active reasoning, retention, skill development). In Transcript 1 Turn 7, the tutor says 'I'm not going to fill in a row for you. My role is to help you build it yourself,' which is close but does not explain the pedagogical reason behind this constraint.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "All three transcripts",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make progress (e.g., Transcript 2 Turn 8 where the student produces a rough row, Transcript 3 Turn 10 where the student correctly identifies top sectors), the tutor moves forward without prompting reflection on what changed in the student's thinking or reinforcing the method that led to improvement.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 17,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 5–10",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly asks for a 'big picture' explanation and the tutor cycles through multiple re-explanations of the same stressor/sector/impact distinction across turns 3, 8, 9, and 10 without meaningfully advancing the student's understanding or switching to a different strategy such as asking the student to commit to a city or attempt a row. The student remains stuck in the same loop for the entire second half of the conversation.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 33,
+    "max_base_score": 44,
+    "overview": "The tutor maintains a consistently Socratic stance across all three transcripts, refusing to fill in rows or give direct answers, and keeps responses concise and well-structured. However, Transcript 1 shows a significant pattern-level repetition problem: the student cycles through the same confusion about stressor/sector/impact for nearly the entire conversation without the tutor switching strategies or forcing a commitment. Diagnostic questioning before re-explaining is also weak across all transcripts — the tutor tends to re-explain rather than probe what specifically the student already understands. Meta-learning rationale is never explicitly offered, and reflection after student progress is consistently missed.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led by asking the student to attempt rows themselves. 1.2 loses 3 points for 1.2.B.a: when students express confusion, the tutor typically responds with a new framework or re-explanation rather than first asking targeted diagnostic questions to isolate the specific confusion point. 1.3 loses 2 points for 1.3.A.a (no pedagogical rationale ever given beyond 'my role is to help you build it yourself') and 2 points for 1.3.C.a (no reflection prompted after student progress in any transcript). 2.1 loses all 4 points for Transcript 1, where the tutor repeats the stressor/sector/impact distinction across at least four turns without synthesis, reframing, or forcing a concrete commitment from the student. 2.2 and section 3 have no clear deduction triggers.",
+    "total_score": 33,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

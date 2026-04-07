@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_027.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0014",
+    "cooperative/cooperative_raw/transcript_0038",
+    "cooperative/cooperative_raw/transcript_0062"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than giving answers—no rationale about active reasoning, retention, or skill development is offered. The tutor enforces a Socratic approach consistently but never articulates to the student why this method supports learning.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make clear improvements (e.g., Transcript 1 Turn 6 after the student nails the flooding justification; Transcript 2 Turn 7 after the student writes a solid justification; Transcript 3 Turn 8 after the student defines their own scale), the tutor moves directly to the next stressor without prompting any reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs very well across all three transcripts. Socratic method is applied consistently—students are never given answers, ratings, or justifications directly; instead they are prompted to reason through each step themselves. Scaffolding is strong: the tutor builds on student progress turn by turn, acknowledges correct reasoning, and advances the conversation without restarting. Dialogue quality is excellent with no redundancy, no off-topic drift, and consistent assignment anchoring. Communication is concise and appropriately supportive. Two deductions apply: the tutor never explains the rationale for its guided approach (1.3.A.a), and misses opportunities to prompt reflection after student improvement (1.3.C.a). No evidence of submission-ready output, editing help, or key idea generation by the tutor.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never provides final answers, ratings, or submission-ready justifications—students generate all key ideas and reasoning. 1.2 is fully intact: the tutor consistently builds on student progress and diagnoses confusion before responding. 1.3 loses 4 points: the tutoring rationale is never explained to students (1.3.A.a), and after clear student improvements the tutor moves on without prompting reflection on what changed (1.3.C.a, evidenced in all three transcripts). Dialogue and communication quality are strong throughout with no meaningful deductions warranted.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

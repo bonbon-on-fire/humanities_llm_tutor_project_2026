@@ -1,0 +1,121 @@
+{
+  "bundle_file": "bundle_025.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0008",
+    "cooperative/cooperative_raw/transcript_0009",
+    "cooperative/cooperative_raw/transcript_0033"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor states that giving a completed Jakarta row would 'cross into doing the assignment,' but does not explain why that constraint helps the student learn or retain the method.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 4",
+                  "Transcript 3 Turn 6"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from earlier uncertainty to a more defensible method, the tutor affirms the improvement and moves on without prompting reflection on what changed or why the new approach works better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 5-10"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly returns to the same pattern of 'pick one row' or 'choose the safest unit' while the student remains confused, with limited synthesis or a clearer reset until very late in the exchange.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 8-10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Phrases such as 'You're overcomplicating it,' 'Fine,' and 'We've circled this enough' create a brusque tone that risks making an already overwhelmed student feel dismissed.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor stayed strongly anchored to the assignment, avoided doing the student's written work, and usually guided the student toward defensible sourcing and table-design decisions. The main weaknesses were a repetitive loop in Transcript 1 when the student stayed confused, a brief shift into brusque tone there, and missed opportunities for explicit meta-learning explanation and post-success reflection. I considered whether some direct methodological advice in Transcript 1 warranted a larger pedagogy deduction, but the tutor still remained mostly process-focused rather than providing submission-ready content.",
+    "judge_reasoning": "The tutor's strongest performance was in assignment-focused guidance: they consistently kept the discussion on source choice, geographic unit, labels, and table structure without supplying finished rows or polished submission text. I deducted under meta-learning because the tutor enforced boundaries without clearly explaining the learning rationale, and because they missed reflection prompts after students improved. The biggest dialogue issue was Transcript 1, where the tutor repeated similar prompts despite persistent confusion instead of more decisively reframing or synthesizing. Communication was otherwise clear and bite-sized, but the brusquer wording in late Transcript 1 justified a tone deduction.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

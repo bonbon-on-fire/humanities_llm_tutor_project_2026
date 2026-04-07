@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_017.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0009",
+    "cooperative/cooperative_raw/transcript_0033",
+    "cooperative/cooperative_raw/transcript_0057"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 1",
+                  "Transcript 1 Turn 7",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a method-first, student-led approach, but did not clearly explain why these constraints support learning or transfer beyond the immediate task.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the bundled transcripts, the tutor was consistently strong at guided discovery, assignment-focused scaffolding, and concise, supportive interaction. The main deduction is for missing an explicit explanation of why the tutor was insisting on student-generated method and decision rules. I considered a reflection-after-improvement deduction under 1.3.C, but the failure-to-success moments were not clear enough to justify it confidently.",
+    "judge_reasoning": "The tutor stayed well within a Socratic, process-oriented mode: they asked the student to choose boundaries, define indicators, set source hierarchies, and justify proxy decisions rather than supplying submission-ready content. They also scaffolded effectively by building on student answers, narrowing the problem to definitions and geographic consistency, and keeping the conversation tightly anchored to the assignment. The clearest weakness was meta-rationale: although the tutor often said to stop circling or use a method, they did not explicitly explain how this constraint helps the student's long-term learning. Communication quality was strong overall, with short, clear prompts and a supportive, non-grading tone.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

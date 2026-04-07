@@ -1,0 +1,117 @@
+{
+  "bundle_file": "bundle_030.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0087",
+    "clueless/clueless_raw/transcript_0111",
+    "clueless/clueless_raw/transcript_0135"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 2",
+                  "TRANSCRIPT 3 Turn 2"
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "When the student said they were confused, the tutor often moved straight into broad explanations or frameworks rather than first diagnosing what the student already understood or where the confusion specifically lay.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 10",
+                  "TRANSCRIPT 3 Turns 8-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student showed improvement following earlier confusion, the tutor continued the task without asking the student to reflect on what changed in their thinking or why the new approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 19,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 3",
+                  "TRANSCRIPT 1 Turn 5",
+                  "TRANSCRIPT 1 Turn 9",
+                  "TRANSCRIPT 1 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was often productive, but several replies were unnecessarily rigid or curt (for example, 'Then stop trying,' 'you're just thinking in circles,' and 'Fine. Commit to it'), which risks discouraging a confused student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 37,
+    "max_base_score": 46,
+    "overview": "The tutor consistently avoided doing the assignment for the student and kept the work mostly student-led, while staying well anchored to the actual stressors-table task. Major deductions come from insufficient diagnostic questioning before explanatory responses, missed reflection prompts after student improvement, and a somewhat rigid tone in parts of the exchange. There was some repetition across prompts, but not enough clear evidence of full spiraling to justify a dialogue-quality deduction.",
+    "judge_reasoning": "Across the bundle, the tutor generally used guided questioning, refused to provide submission-ready rows, and gave useful process-oriented support tied closely to the assignment. The main pedagogy weakness was that the tutor often responded to confusion with immediate explanation instead of first isolating the student's exact misunderstanding. The tutor also missed chances to ask the student to reflect after improved attempts, which the rubric specifically rewards. Communication was mostly clear and concise, but some phrasing was sharper than necessary and could feel discouraging to a struggling student.",
+    "total_score": 37,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

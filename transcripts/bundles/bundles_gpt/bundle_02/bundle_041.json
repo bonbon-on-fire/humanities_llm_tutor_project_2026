@@ -1,0 +1,104 @@
+{
+  "bundle_file": "bundle_041.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0021",
+    "cooperative/cooperative_raw/transcript_0045",
+    "cooperative/cooperative_raw/transcript_0069"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced process constraints such as not guessing and not writing the post for the student, but never explicitly explained why these constraints support learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turns 4-5",
+                  "Transcript 3 Turns 8-9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier uncertainty to a stronger classification approach, the tutor affirmed the progress and moved forward without prompting reflection on what changed in the student's thinking or why the revised method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was consistently evidence-based, student-led, and closely anchored to the assignment. The main weaknesses were in meta-learning: the tutor did not explicitly explain the learning rationale behind its constraints, and it missed chances to ask the student to reflect after successful revision.",
+    "judge_reasoning": "The tutor strongly met the core pedagogy standard by avoiding direct answer-writing, keeping idea generation with the student, and using targeted questions to help the student classify actors by authority, participation, and exclusion. Scaffolding was effective throughout: the tutor built on student progress, narrowed vague categories, and repeatedly re-grounded the work in documents, evidence, and the forum-post deliverable. The principal deductions come from criterion 1.3, because the tutor never clearly stated why its constraints supported learning and usually advanced immediately after improvement instead of prompting reflection on the student's changed method. Dialogue and communication stayed strong: the tutor was concise, supportive, non-grading, and consistently on-task.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

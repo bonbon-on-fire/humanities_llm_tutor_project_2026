@@ -1,0 +1,104 @@
+{
+  "bundle_file": "bundle_001.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0001",
+    "cooperative/cooperative_raw/transcript_0025",
+    "cooperative/cooperative_raw/transcript_0049"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 3 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced boundaries on doing the student's work ('I won’t write the thesis for you'; 'I won’t fill in the cases for you') but did not clearly explain that these constraints were meant to strengthen the student's own reasoning or long-term learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turns 4-5",
+                  "Transcript 2 Turns 8-9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from a weaker attempt to a clearer principle, the tutor moved on to the next analytical step rather than prompting reflection on what changed in the student's thinking and why the revised approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          }
+        },
+        "base": {
+          "score": 10,
+          "max": 10
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor stayed strongly Socratic, kept idea generation student-led, and anchored discussion to the assignment's core comparison between act consequentialism and means/side-effect style alternatives. The main weakness was meta-level support: the tutor imposed helpful constraints without clearly stating the learning rationale, and usually did not ask the student to reflect after improving. A possible additional deduction around Transcript 3 was not applied because the tutor's refusal to restate the cases still redirected the student with a practical retrieval template.",
+    "judge_reasoning": "The tutor consistently avoided giving submission-ready claims or polished prose, instead using questions, tests, and conditional framing to make the student articulate the argument. Scaffolding was generally strong: the tutor built on student progress, focused discussion on the relevant cases, and kept responses concise and supportive. The main deductions fall under 1.3 because, despite enforcing good tutoring boundaries, the tutor did not explicitly explain why those constraints support learning, and after successful revisions the tutor typically advanced without prompting brief reflection on what changed. No deductions were taken for dialogue quality or communication because the exchanges stayed on-task, progressive, and appropriately formative.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

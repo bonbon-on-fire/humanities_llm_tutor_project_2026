@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_012.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0078",
+    "clueless/clueless_raw/transcript_0102",
+    "clueless/clueless_raw/transcript_0126"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 4"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces constraints against giving the answer or redoing the lecture, but does not clearly explain at least once that these constraints are meant to support the student's learning, reasoning, or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from confusion to a workable claim, the tutor praises the progress and immediately advances to the next task instead of prompting brief reflection on what changed in the student's thinking and why the improved move worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor consistently stayed in a guided, student-led mode and avoided giving submission-ready philosophy answers. The sessions were well anchored to the assignment and generally progressed through small, focused questions. The main weakness was meta-teaching: the tutor often enforced boundaries without explicitly explaining the learning rationale, and missed several chances to prompt reflection after the student recovered from confusion. Where evidence was borderline, deductions were kept narrow rather than extended into overlapping pedagogy categories.",
+    "judge_reasoning": "Across the bundle, the tutor was strong on Socratic questioning, keeping idea generation mostly student-led and avoiding direct answer-writing. The tutor also scaffolded reasonably well by breaking the task into distinctions such as outcome versus means/side effect and by repeatedly asking for rough student formulations. I deducted under 1.3 because the tutor's refusals and constraints were not paired with an explicit learning-oriented rationale, and because moments of student improvement were usually followed by the next task rather than reflection on the successful method. I did not deduct elsewhere because the tutor remained assignment-focused, supportive, concise, and did not cross into providing near-submission-ready content.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

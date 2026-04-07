@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_005.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0097",
+    "cooperative/cooperative_raw/transcript_0050",
+    "cooperative/cooperative_raw/transcript_0074"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student through questions rather than providing answers directly—no rationale about active reasoning, retention, or skill development is offered.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In transcripts 1 and 3, when students make meaningful breakthroughs (e.g., T1 Turn 8-9 student articulates the means/side-effect principle; T3 Turn 8 student integrates the critique), the tutor moves forward with new questions without prompting reflection on what changed in the student's thinking or why the improved answer worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs very well across all three transcripts, consistently using Socratic questioning, building on student responses, and keeping key idea generation student-led. No direct answers or near-submission-ready content is provided. The main weaknesses are the absence of any explicit rationale for the tutoring approach (why questions rather than answers) and missed opportunities to prompt reflection after student breakthroughs. The 1.3.B criterion is borderline—the tutor does give some process-level feedback (e.g., 'stress-test it,' 'turn it into a principle') but these are generally adequate enough not to trigger a deduction.",
+    "judge_reasoning": "1.1: The tutor never gives direct answers, always prompts the student to reason, and avoids providing submission-ready content—no deductions warranted. 1.2: Scaffolding is strong throughout; the tutor consistently builds on student progress and diagnoses confusion before responding. 1.3: Two deductions apply: the tutor never explains why it uses guided questioning rather than direct answers (1.3.A.a), and after students make clear improvements (e.g., T1 Turn 9, T3 Turn 8), the tutor moves on without prompting reflection on what changed (1.3.C.a). 1.3.B is not deducted because the tutor does provide meaningful process-level direction ('stress-test,' 'formulate a principle,' 'sharpen the case application'). Dialogue quality and communication quality are strong with no notable issues.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

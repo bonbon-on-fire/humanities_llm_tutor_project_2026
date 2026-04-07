@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_029.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0015",
+    "cooperative/cooperative_raw/transcript_0039",
+    "cooperative/cooperative_raw/transcript_0063"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All three transcripts, throughout",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explains why it is guiding rather than giving answers—no rationale such as 'I want you to reason through this yourself so you retain the skill' or similar meta-learning explanation appears in any of the three conversations.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1 Turn 9, Transcript 2 Turn 9, Transcript 3 Turn 8",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students produce notably improved responses (e.g., T1 Turn 9 strong justification sentences, T2 Turn 9 draft table entries, T3 Turn 8 strong reasoning), the tutor moves forward with the next task without prompting the student to reflect on what changed in their thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor performs very well on Socratic method, scaffolding, dialogue quality, and communication. It consistently avoids giving submission-ready answers, builds on student progress, keeps responses concise, and maintains a supportive tone. The two deductions are both in 1.3: the tutor never explains its pedagogical rationale (why it guides rather than tells), and it misses opportunities to prompt reflection after students make clear improvements.",
+    "judge_reasoning": "1.1: No near-submission-ready output, no rewriting of student text, and no pre-empting of key ideas—full marks. 1.2: The tutor consistently builds on correct student steps and diagnoses confusion before responding—full marks. 1.3: The tutoring rationale is never articulated in any of the three conversations (1.3.A.a, -2 pts). Additionally, after clear student improvement moments (T1 Turn 9, T2 Turn 9, T3 Turn 8) the tutor moves straight to the next task without prompting reflection on what changed (1.3.C.a, -2 pts). 1.3.B is not triggered because the tutor gives specific, process-level feedback throughout. Dialogue quality and communication quality are both clean: no repetition without progress, no assignment drift, responses are appropriately bite-sized, and tone is consistently supportive and formative.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

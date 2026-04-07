@@ -1,0 +1,103 @@
+{
+  "bundle_file": "bundle_022.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0083",
+    "cooperative/cooperative_raw/transcript_0107",
+    "cooperative/cooperative_raw/transcript_0131"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—no rationale about active reasoning, retention, or skill development is offered to the student.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three conversations, when students improve their reasoning (e.g., T1 Turn 8 on water supply vs. tree canopy, T2 Turn 8 on source verification, T3 Turn 8 on ACS distinction), the tutor affirms and moves on without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": "T3 Turn 5",
+                "sub_criterion_id": "3.2.B.a",
+                "reason": "In Transcript 3, Turn 5, the tutor says 'I'm not grading it, but by my judgment it's stronger if...' — the phrase 'by my judgment it's stronger' combined with the grading disclaimer creates ambiguity; however, the tutor does clarify it is not grading. This is borderline. On balance, the clarification 'I'm not grading it' is present, so the formative framing is maintained. No deduction applied.",
+                "points": 0
+              }
+            ],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor demonstrates strong Socratic method, consistently guiding students through questioning rather than providing answers. Scaffolding is well-executed, building on student responses turn by turn. The main weaknesses are: (1) no explicit rationale for the tutoring approach is ever shared with students, and (2) the tutor misses opportunities to prompt reflection after student improvement. Communication is concise and appropriately supportive throughout. No major issues with assignment anchoring, off-topic drift, or redundancy.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never gives submission-ready answers, never rewrites student text, and consistently lets students generate key ideas before confirming. 1.2 receives full marks: the tutor builds on student progress each turn and uses diagnostic questioning before addressing confusion. 1.3 loses 2 points for 1.3.A.a because no tutoring rationale is ever explained across all three conversations, and 2 points for 1.3.C.a because after clear student improvements (e.g., T1 Turn 8, T2 Turn 8, T3 Turn 8), the tutor affirms and advances without prompting reflection on what changed. 1.3.B is not penalized as the tutor does provide process-level feedback (e.g., 'that's a stronger line of reasoning,' 'you're thinking like a researcher now,' with specific method direction). Dialogue quality and communication quality are both strong with no deductions warranted.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

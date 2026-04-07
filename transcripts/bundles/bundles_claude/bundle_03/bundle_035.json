@@ -1,0 +1,120 @@
+{
+  "bundle_file": "bundle_035.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0105",
+    "cooperative/cooperative_raw/transcript_0060",
+    "cooperative/cooperative_raw/transcript_0084"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that the Socratic approach supports active reasoning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make progress (e.g., correctly identifying GDP vs. income, correctly reasoning about boundary consistency, correctly identifying INEGI), the tutor moves forward without prompting any reflection on what changed in the student's thinking or why the improved reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts, consistently using Socratic questioning, building on student responses, maintaining appropriate tone, and keeping responses concise. The primary weaknesses are the absence of any meta-learning rationale explaining why the guided-discovery approach is used, and the lack of reflection prompts after student improvement. No direct answers or submission-ready content were provided; the student was always asked to reason first.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never gives final answers, never rewrites student text, and never states conclusions before the student reasons. 1.2 is fully intact: the tutor consistently builds on correct student steps and diagnoses confusion before responding. 1.3 loses 4 points: the tutor never explains its tutoring rationale (1.3.A.a) across any of the three conversations, and never prompts reflection after student improvement (1.3.C.a), missing multiple clear opportunities in all three transcripts. Dialogue quality and communication quality are both strong with no evidence of repetition without progress, off-topic drift, monologue responses, or inappropriate tone.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "bundle_file": "bundle_022.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0079",
+    "cooperative/cooperative_raw/transcript_0008",
+    "cooperative/cooperative_raw/transcript_0032"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turn 6",
+                  "Transcript 1, Turn 9-10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, the student repeatedly expresses confusion and the tutor resets or moves on without prompting reflection on what the student did get right or what changed in their thinking. For example, after the student correctly states the year-selection rule in Turn 9, the tutor validates it and moves on without asking the student to reflect on how they arrived at that understanding.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1, Turns 1-6"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly says they are confused and need things explained from scratch (Turns 2, 3, 5, 6). The tutor cycles through similar explanatory moves—listing categories, listing source types, restating the process—without meaningfully synthesizing or reframing to break the loop. By Turn 6, the tutor literally resets 'from scratch' again, repeating the same step-by-step structure already given in Turn 1, without diagnosing why the student keeps getting stuck or switching to a fundamentally different approach.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor consistently avoids giving submission-ready answers, uses Socratic questioning effectively, and maintains appropriate tone and assignment anchoring. Transcripts 2 and 3 (Jakarta/cooperative students) show strong scaffolding, good source-hierarchy reasoning, and appropriate progression. Transcript 1 (NYC/clueless student) shows a pattern-level repetition problem: the student repeatedly signals confusion and the tutor cycles through similar explanatory moves without meaningfully reframing or diagnosing the root confusion, culminating in a literal 'reset from scratch' in Turn 6. A minor deduction is applied for insufficient reflection prompting after student success in Transcript 1.",
+    "judge_reasoning": "1.1 receives full marks across all transcripts: the tutor never provides submission-ready content, avoids rewriting student text, and consistently asks students to derive conclusions before offering them. 1.2 receives full marks: the tutor builds on correct student responses (e.g., validating the year-selection rule, the boundary decision) and generally diagnoses before responding. 1.3 loses 2 points under 1.3.C.a: in Transcript 1, after the student correctly articulates the year-selection principle in Turn 9, the tutor validates and moves on without prompting reflection on what changed in the student's thinking; this pattern recurs. 2.1 loses all 4 points under 2.1.A.a for Transcript 1: the student signals confusion five times across six turns, and the tutor responds each time with a similar list-based explanation rather than reframing, simplifying, or diagnosing the underlying confusion—culminating in a full restart in Turn 6 that mirrors Turn 1. 2.2, 3.1, and 3.2 receive full marks: the tutor stays on-task, keeps responses appropriately concise, and maintains a supportive, non-evaluative tone throughout.",
+    "total_score": 38,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

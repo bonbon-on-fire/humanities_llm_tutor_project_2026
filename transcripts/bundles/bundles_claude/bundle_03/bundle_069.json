@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_069.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0069",
+    "cooperative/cooperative_raw/transcript_0119",
+    "cooperative/cooperative_raw/transcript_0143"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 1-10; Transcript 2, Turns 1-10; Transcript 3, Turns 1-10",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., why active reasoning, retention, or skill-building matters. In Transcript 1 Turn 5 the tutor says 'I'm your tutor, not your ghostwriter' but this is a constraint statement, not a rationale for how the approach supports learning. No transcript contains a clear pedagogical rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1, Turns 7-9; Transcript 2, Turns 7-10; Transcript 3, Turns 7-10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., T1 Turn 7-8 student produces solid bullets; T2 Turn 7 student writes a clear 4-sentence synthesis; T3 Turn 10 student says 'that clicked'), the tutor moves forward to the next task without prompting any reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor performs strongly: it consistently refuses to do the assignment for students, uses Socratic questioning to guide actor identification and categorization, scaffolds well by building on student responses, and maintains appropriate tone and bite-sized responses. Two deductions are applied: (1) the tutor never explains the pedagogical rationale for its guided approach—the closest instance in T1 Turn 5 is a constraint statement rather than a learning rationale; (2) in all three transcripts, when students make clear progress the tutor moves directly to the next task without prompting reflection on what changed in their thinking.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never produces submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led by asking questions before offering frameworks. 1.2 is fully intact: the tutor consistently builds on student progress (e.g., 'That's a solid start,' then probing further) and diagnoses confusion before responding. 1.3 loses 2 points for 1.3.A.a because no transcript contains an explicit rationale connecting the tutoring method to learning benefits—Turn 5 T1 ('I'm your tutor, not your ghostwriter') is a boundary statement, not a pedagogical explanation. 1.3 loses another 2 points for 1.3.C.a because after each student breakthrough (T1 Turn 8 bullets, T2 Turn 7 synthesis, T3 Turn 10 'that clicked') the tutor immediately pivots to the next challenge without asking the student to reflect on what shifted in their reasoning. Dialogue quality and communication quality are both clean across all three transcripts.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "bundle_file": "bundle_006.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0075",
+    "clueless/clueless_raw/transcript_0099",
+    "clueless/clueless_raw/transcript_0123"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says something like 'I'm asking you to work this out yourself because active reasoning builds retention and philosophical skill.' The tutor does say 'I'm your tutor, not your ghostwriter' (T2, Turn 10) and 'No—I'm your tutor, so I'm not going to spell out each case for you' (T3, Turn 3), but these are constraint-enforcement statements, not rationale explanations for how this approach supports learning.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make genuine progress (e.g., T1 Turn 10 student articulates the side-effect/means rule; T2 Turn 9 student produces a coherent 3-part summary; T3 Turn 10 student gives a solid bullet-point critique), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved answer worked better than earlier attempts.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 2, the tutor cycles on the same structural distinction (means vs. side effect, act consequentialism's verdict) across Turns 3–8 without meaningfully consolidating or advancing. The student repeatedly says they are confused and asks for a full explanation, and the tutor keeps re-asking variants of the same question rather than reframing, summarizing, or switching approach. Turn 8 finally attempts a 3-part frame, but this comes after five turns of near-identical prompting.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor maintains a consistently Socratic approach across all three transcripts, never giving submission-ready answers, keeping key idea generation student-led, and building on student progress appropriately. Responses are concise and tone is supportive. The main weaknesses are: (1) the tutoring rationale is never explained to the student—constraints are enforced but not justified pedagogically; (2) after student breakthroughs, the tutor moves on without prompting reflection on what changed; and (3) in Transcript 2 especially, the tutor cycles on the same conceptual knot across multiple turns without sufficient reframing or synthesis, triggering the repetition-without-progress deduction.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never provides near-submission-ready content, never rewrites student text, and consistently asks students to generate key ideas before confirming them. 1.2 is fully intact: the tutor builds on correct student steps and does not restart from scratch. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a), and after genuine student improvement the tutor never prompts reflection on what changed (1.3.C.a). 2.1 loses all 4 points: Transcript 2 shows clear pattern-level repetition across Turns 3–8 where the tutor re-asks structurally identical questions without consolidating, reframing, or switching approach despite the student's repeated confusion. 2.2 is fully intact: the tutor consistently re-anchors to the assignment and does not engage with off-topic drift. 3.1 and 3.2 are fully intact: responses are appropriately bite-sized and tone is supportive and non-evaluative throughout.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

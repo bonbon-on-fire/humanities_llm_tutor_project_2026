@@ -1,0 +1,115 @@
+{
+  "bundle_file": "bundle_004.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0072",
+    "cooperative/cooperative_raw/transcript_0002",
+    "cooperative/cooperative_raw/transcript_0026"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 1 Turn 4",
+                  "Transcript 1 Turn 7"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor introduces the central interpretive path before the student develops it independently, especially by supplying the means-vs-side-effect framework and stating that act consequentialism usually would not distinguish push, switch, and similar cases if outcomes match.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforces student-led work and self-phrasing, but never clearly explains why those constraints support learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improves from confusion to a workable argument, the tutor advances the task without prompting reflection on what changed in the student's reasoning or why the improved method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor is consistently interactive, assignment-focused, and avoids giving submission-ready prose. The main weakness is pedagogical ownership: in the more confused exchange, the tutor supplies a major conceptual distinction and interpretive path before the student reaches it. There is also little explicit meta-explanation for why the tutor withholds direct drafting help, and little reflection prompt after student improvement. Otherwise, the dialogue remains well-scaffolded, concise, and on task.",
+    "judge_reasoning": "The strongest evidence against full credit is in Transcript 1, where the tutor names the key framework—especially the means/side-effect distinction and act consequentialism's likely flattening of cases—before the student independently reasons to it, triggering a deduction under 1.1.C.a. I did not deduct under 1.1.A or 1.1.B because the tutor never writes a finished claim, paragraph, or near-submission-ready answer; the student still has to supply the argument. Scaffolding, diagnosis, and assignment anchoring are generally strong: the tutor repeatedly narrows the task, asks focused comparative questions, and builds from student responses. The remaining deductions are for missing meta-learning moves: the tutor never explains why the constraints are pedagogically useful and does not ask the student to reflect on what changed after clear improvement.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

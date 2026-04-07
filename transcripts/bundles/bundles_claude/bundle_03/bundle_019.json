@@ -1,0 +1,120 @@
+{
+  "bundle_file": "bundle_019.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0006",
+    "cooperative/cooperative_raw/transcript_0007",
+    "cooperative/cooperative_raw/transcript_0031"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—i.e., it never articulates that the Socratic approach supports active reasoning, retention, or skill development. In Transcript 1 the tutor says 'you need to do the researching. My job is to help you structure it,' which is a constraint statement but not a rationale for why that supports learning. No transcript contains a clear pedagogical rationale.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., Transcript 2 Turn 10 student correctly identifies DKI Jakarta as the unit; Transcript 3 Turn 7 student arrives at a defensible indicator set), the tutor moves directly to the next task without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts: it consistently avoids doing the research or reasoning for students, uses Socratic questioning effectively, scaffolds well from broad to specific, maintains assignment anchoring, and keeps responses concise and appropriately toned. The two deductions are for (1) never articulating a clear pedagogical rationale for the guided-discovery approach (1.3.A.a) and (2) missing opportunities to prompt reflection after student improvement (1.3.C.a). No evidence of direct answer-giving, rewriting, or off-topic drift was found.",
+    "judge_reasoning": "1.1: No deductions warranted. The tutor never provides submission-ready content, never rewrites student text, and consistently asks students to derive conclusions before confirming them. 1.2: No deductions. The tutor builds on each correct student step and uses diagnostic questions before addressing confusion. 1.3: Two deductions applied. First, while the tutor does state constraints ('you need to do the researching'), it never explains why this approach benefits learning—no mention of active reasoning, retention, or skill-building—triggering 1.3.A.a (-2). Second, in all three transcripts, when students make clear progress (e.g., arriving at a defensible source hierarchy or unit choice), the tutor immediately pivots to the next task without asking the student to reflect on what changed in their thinking, triggering 1.3.C.a (-2). Sections 2 and 3 are clean: no repetition without progress, no assignment drift, responses are appropriately concise, and tone is consistently supportive without implying formal grading.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

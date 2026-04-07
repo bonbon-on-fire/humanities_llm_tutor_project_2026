@@ -1,0 +1,107 @@
+{
+  "bundle_file": "bundle_016.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0080",
+    "clueless/clueless_raw/transcript_0104",
+    "clueless/clueless_raw/transcript_0128"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turns 4-6"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from earlier confusion into more usable reasoning (for example, identifying city proper as a defensible scope and distinguishing easier vs. harder rows), the tutor moved straight into the next task instead of prompting brief reflection on what changed in the student's thinking and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 2 Turn 5",
+                  "Transcript 3 Turn 3",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was often supportive, but several phrases came across as unnecessarily abrupt or rigid, such as 'Fine,' 'Stop spiraling,' 'No—I’m not going to build the table for you,' and 'Now stop second-guessing.' This risks making the student feel scolded rather than coached.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently kept the work student-led, avoided giving submission-ready output, and repeatedly re-anchored students to the actual task of building a city data table rather than doing later climate analysis. The strongest features were scaffolding around scope, source credibility, and stepwise search plans. Deductions are limited to one missed meta-learning opportunity after student improvement and a small tone penalty for several abrupt phrases. There is mild ambiguity on tone because the tutor was otherwise supportive, so the deduction is kept modest. The top-level maximum follows the provided output instruction.",
+    "judge_reasoning": "The tutor performed well on the core pedagogy: they did not write the assignment for the student, they used many short prompts to keep decisions student-owned, and they repeatedly grounded the conversation in the assignment's actual requirements. Scaffolding was generally effective, especially around boundary consistency, source selection, and turning overwhelm into next steps. I deducted under 1.3 because when students finally arrived at better reasoning, the tutor usually advanced the task rather than asking them to reflect on what changed in their method. I also deducted under 3.2 because some responses were sharper than necessary, even though the overall stance remained formative rather than grading-oriented.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_033.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0017",
+    "clueless/clueless_raw/transcript_0041",
+    "clueless/clueless_raw/transcript_0065"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor never explicitly explains why it is guiding rather than giving answers—e.g., never says something like 'I'm asking you to work through this yourself because active reasoning builds retention.' Constraints are enforced but the rationale for the tutoring approach is never articulated.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1 Turn 4, Transcript 2 Turn 10, Transcript 3 Turn 9",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful progress (e.g., T1 Turn 6 student correctly identifies flooding as highest priority; T2 Turn 9 student correctly distinguishes stressors from impacts; T3 Turn 8 student produces a structurally sound row), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1 Turns 3-10, Transcript 2 Turns 3-9",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcripts 1 and 2, the tutor repeatedly cycles through the same structural explanations (what a row looks like, how to categorize stressors, what evidence counts) across multiple turns without meaningfully advancing the student's position. The student in T1 remains stuck on the same conceptual loop from Turn 3 through Turn 10, and the tutor keeps re-explaining the table structure rather than reframing, simplifying, or redirecting to a concrete drafting task earlier. However, Transcript 3 shows better progression, so the deduction is partial in severity.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates strong Socratic discipline across all three transcripts—never writing assignment content for students, consistently redirecting requests for model answers, and scaffolding through targeted questions. Pedagogy is largely sound. The main weaknesses are: (1) a recurring spiral pattern in Transcripts 1 and 2 where the tutor re-explains the same structural concepts across many turns without reframing or forcing a concrete drafting step earlier; (2) absence of any meta-learning rationale explaining why the tutoring approach is structured as it is; and (3) missed opportunities to prompt reflection after student breakthroughs.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never produces submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led. 1.2 receives full marks: the tutor builds on student progress (e.g., affirming correct stressor/impact distinctions) and uses diagnostic questioning before responding. 1.3 loses 4 points: the tutoring rationale is never explained (1.3.A.a), and after clear student improvements the tutor moves on without prompting reflection on what changed (1.3.C.a). 2.1 loses all 4 points: in Transcripts 1 and 2, the tutor cycles through the same structural explanations (table format, evidence types, sector categories) across 6-8 turns without consolidating or switching to a more targeted approach, leaving students in the same confused state turn after turn. 2.2 retains full marks as the tutor consistently keeps students anchored to the assignment. Communication quality is strong throughout—responses are concise, well-structured, and supportive without being evaluative.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

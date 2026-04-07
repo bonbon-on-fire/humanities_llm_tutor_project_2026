@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_041.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0021",
+    "clueless/clueless_raw/transcript_0045",
+    "clueless/clueless_raw/transcript_0069"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All three transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three conversations, the tutor enforces a Socratic approach and declines to write content for students, but never explicitly explains why this approach supports learning—e.g., that active reasoning builds retention or long-term analytical skill. The tutor says 'I'm your tutor, not your ghostwriter' (T3, Turn 5) but does not articulate the pedagogical rationale for guided discovery.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "T1 Turn 10, T2 Turn 10, T3 Turn 8-9",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students make meaningful progress (e.g., T1 student names three plausible Boston actors; T2 student identifies government as leading and vulnerable residents as underrepresented; T3 student builds a solid actor map), the tutor moves forward without prompting reflection on what changed in the student's thinking or why their improved reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "T1 Turns 1-8, T2 Turns 1-9, T3 Turns 1-5",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In all three transcripts, the tutor repeatedly re-explains the same conceptual framework (leading/engaged/missing, decision-making power tests) across multiple turns without meaningfully consolidating or advancing. In T1, the student asks for clarification on the same categories across turns 2-5 and the tutor keeps re-explaining with slight variations rather than reframing or switching strategy. In T2 and T3, similar cycles occur. While the tutor does eventually push for city selection and actor naming, the pattern of re-explaining the same framework without synthesis or a clear pivot is evident across many turns.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 44,
+    "overview": "The tutor performs well on the core Socratic method criteria—never giving submission-ready answers, consistently redirecting students to do their own reasoning, and maintaining appropriate tone throughout all three transcripts. The main weaknesses are: (1) a recurring pattern of re-explaining the same framework (leading/engaged/missing) across multiple turns without consolidating or switching strategy when students remain stuck, triggering the redundancy/spiraling deduction; (2) never articulating the pedagogical rationale for the guided-discovery approach; and (3) missing opportunities to prompt reflection after students make meaningful progress. The 2.1 deduction is the most significant, as the pattern is consistent across all three transcripts.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key idea generation student-led across all three conversations. 1.2 receives full marks: the tutor builds on student progress (e.g., validating Boston, Miami, Jakarta actor guesses) and generally diagnoses confusion before responding. 1.3 loses 4 points: the tutor never explains why the Socratic approach supports learning (1.3.A.a), and in all three transcripts misses clear opportunities to prompt reflection after students improve (1.3.C.a). 2.1 loses all 4 points: across T1 (turns 2-5), T2 (turns 1-7), and T3 (turns 1-5), the tutor cycles through the same leading/engaged/missing framework re-explanation multiple times without meaningful synthesis, reframing, or strategy shift when students remain stuck—this is a clear pattern-level repetition without progress. 2.2 retains full marks as the tutor consistently re-anchors to the assignment and redirects off-topic requests. Communication quality retains full marks as responses are generally concise, well-structured, and appropriately toned.",
+    "total_score": 36,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

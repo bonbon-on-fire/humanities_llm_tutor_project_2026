@@ -1,0 +1,129 @@
+{
+  "bundle_file": "bundle_039.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0020",
+    "clueless/clueless_raw/transcript_0044",
+    "clueless/clueless_raw/transcript_0068"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 7",
+                  "TRANSCRIPT 3 Turn 4",
+                  "TRANSCRIPT 3 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced limits on giving examples or drafting the post ('that would do the assignment for you') but did not explain a learning rationale such as why student-generated reasoning would improve understanding or retention.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 3 Turn 7",
+                  "TRANSCRIPT 3 Turn 8",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from vague notes to a workable lead/engaged/missing set, the tutor affirmed the answer and moved on without prompting reflection on what changed in the student's thinking or why the revised method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 3",
+                  "TRANSCRIPT 1 Turn 5",
+                  "TRANSCRIPT 1 Turn 6",
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 1 Turn 8"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly cycled through the same category definitions and push-to-name-an-actor move while the student remained confused, with limited synthesis or reframing until late in the exchange.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 7",
+                  "TRANSCRIPT 3 Turn 6"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Some phrasing became sharp and potentially discouraging, such as 'Now stop circling' and 'Stop using uncertainty as an excuse to stall,' which risks harming trust with a struggling student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "The tutor stayed well anchored to the assignment, avoided giving submission-ready city-specific answers, and generally used guided prompts and usable heuristics. Main weaknesses were repeated conceptual looping with little strategic reset, missing explicit learning rationale for withholding direct examples, and a few unnecessarily harsh lines. No deduction was taken for direct-answer risk because the tutor consistently refused to draft the student's post or provide a ready-made actor list.",
+    "judge_reasoning": "Across the bundle, the tutor was mostly process-oriented: they defined the task, asked for evidence, and pushed the student to classify actors rather than supplying a finished forum post. The largest deduction is for redundancy, especially in Transcript 1, where the tutor kept re-explaining the same leading/engaged/missing framework without enough new synthesis while the student remained stuck. A smaller pedagogy deduction applies because the tutor enforced constraints against doing the assignment for the student but never explicitly explained how that supports learning, and they missed a reflection opportunity after improvement in Transcript 3. Communication was generally clear, but a few comments were noticeably abrasive and warranted a tone deduction.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

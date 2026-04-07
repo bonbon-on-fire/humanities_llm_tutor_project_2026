@@ -1,0 +1,106 @@
+{
+  "bundle_file": "bundle_033.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0017",
+    "cooperative/cooperative_raw/transcript_0041",
+    "cooperative/cooperative_raw/transcript_0065"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 1",
+                  "Transcript 2 Turn 1",
+                  "Transcript 3 Turn 1"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor repeatedly enforced a student-led process ('you need to do the sorting,' 'you need a method, not guesses') but did not clearly explain at least once why these constraints support learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 8",
+                  "Transcript 2 Turn 6",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier uncertainty, the tutor typically moved straight to the next task rather than prompting reflection on what changed in the student's reasoning and why the improved method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundled conversation, the tutor was strongly assignment-anchored, consistently student-led, and avoided giving submission-ready content. The main weakness was meta-learning: the tutor enforced constraints but rarely explained why that process supports learning, and usually did not ask the student to reflect after an improved attempt. No other deductions were clearly supported, so ambiguous cases were left at full credit.",
+    "judge_reasoning": "The tutor maintained a strong guided-discovery approach throughout all three transcripts by asking the student to classify stressors, compare criteria, and calibrate ratings rather than supplying finished table entries or polished wording. Scaffolding was effective and progressive: the tutor built on student answers, narrowed confusion points, and kept the discussion tightly aligned to the assignment. The major deductions come from criterion 1.3, because the tutor did not explicitly explain the learning rationale behind the student-led constraints and generally moved forward after student improvement without prompting reflection on what changed. Communication remained concise, supportive, and non-grading, with no substantial repetition or off-topic drift.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

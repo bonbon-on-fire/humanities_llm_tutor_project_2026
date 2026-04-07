@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_038.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0037",
+    "cooperative/cooperative_raw/transcript_0061",
+    "cooperative/cooperative_raw/transcript_0085"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All three transcripts",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three conversations, the tutor never explains why it is guiding rather than giving answers—no rationale is offered about active reasoning, retention, or skill development. The tutor enforces a Socratic approach consistently but never articulates to the student why this method supports their learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 1, Turns 8-10; Transcript 3, Turns 8-9",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 1, the student makes genuine progress in Turn 8 (producing a first attempt at a row) after struggling, but the tutor moves directly to critique without prompting reflection on what changed or why the attempt worked better. In Transcript 3, the student produces a solid justification attempt in Turn 9 after iterative improvement, but the tutor again moves straight to critique without asking the student to reflect on what made their reasoning stronger.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts, consistently applying Socratic questioning, refusing to do the work for students, building on student progress, and keeping responses concise and focused. The primary weaknesses are the absence of any meta-learning rationale explaining why the tutor guides rather than answers, and missed opportunities to prompt reflection after students make genuine improvements. No submission-ready content was provided, no editing was done, and key ideas remained student-generated throughout.",
+    "judge_reasoning": "Criterion 1.1 receives full marks: the tutor never provides near-submission-ready output, never rewrites student text, and consistently keeps key idea generation student-led across all three conversations. Criterion 1.2 receives full marks: the tutor builds on student progress (e.g., 'Don't restart. Your distinction is already workable.' in T1T4; 'Your logic is solid.' in T2T5) and diagnoses confusion before responding. Criterion 1.3 loses 2 points under 1.3.A.a because the tutor never explains to any student why it is using guided questioning rather than direct answers—no rationale about learning, retention, or skill-building is offered in any of the three conversations. An additional 2 points are deducted under 1.3.C.a because in Transcript 1 Turn 8 and Transcript 3 Turn 9, students make meaningful improvements from prior failed attempts but the tutor moves directly to critique without prompting reflection on what changed or why the new approach worked. Dialogue quality and communication quality are both strong, with no evidence of repetition without progress, assignment drift, monologue responses, or inappropriate tone.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

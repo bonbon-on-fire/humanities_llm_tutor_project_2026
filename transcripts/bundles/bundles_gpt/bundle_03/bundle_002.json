@@ -1,0 +1,117 @@
+{
+  "bundle_file": "bundle_002.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0025",
+    "cooperative/cooperative_raw/transcript_0049",
+    "cooperative/cooperative_raw/transcript_0071"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 4",
+                  "TRANSCRIPT 1 Turn 8",
+                  "TRANSCRIPT 1 Turn 10",
+                  "TRANSCRIPT 3 Turn 5"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "The tutor repeatedly supplied the central interpretive distinction and even the likely alternative principle ('used/targeted as a means' vs. 'side effect') before the student had fully reasoned to it independently, then asked the student to work from that revealed frame.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 9",
+                  "TRANSCRIPT 2 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor set boundaries like not drafting or not filling in the cases, but did not clearly explain at least once that these constraints were meant to support the student's own reasoning, retention, or long-term writing skill.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 3 Turn 8",
+                  "TRANSCRIPT 3 Turn 9",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a workable thesis and rationale, the tutor moved directly to assembling the answer rather than prompting reflection on what changed in the student's thinking and why that approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was generally structured, concise, supportive, and well anchored to the assignment. The main weakness was pedagogical: in several places the tutor revealed the essay's key distinction and likely thesis too early, instead of keeping that core idea generation fully student-led. I did not apply the harsher near-submission-ready deduction because the tutor stopped short of writing a full answer or polished paragraph. There was also no explicit learning rationale for the tutor's constraints and no reflection prompt after a clear student improvement.",
+    "judge_reasoning": "The largest deduction is under 1.1 because the tutor repeatedly named the decisive means-versus-side-effect distinction and the likely alternative principle before the student had independently derived it, especially in Transcript 1 and Transcript 3. I kept that deduction at 6 rather than 12 because the tutor did not produce a full submission-ready response or rewrite the student's prose. I also deducted under 1.3.A since the tutor enforced no-drafting boundaries without explaining the learning purpose behind them, and under 1.3.C because the tutor missed a chance to ask the student to reflect after moving from confusion to a defensible thesis. Otherwise, the tutor scaffolded well, stayed on task, and maintained clear, supportive communication.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

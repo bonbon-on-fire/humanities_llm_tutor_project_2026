@@ -1,0 +1,150 @@
+{
+  "bundle_file": "bundle_049.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0015",
+    "cooperative/cooperative_raw/transcript_0017",
+    "cooperative/cooperative_raw/transcript_0041"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 1, Turns 8–10, the tutor provides detailed comparative breakdowns of Miami, Phoenix, and Jakarta (stressor types, sector links, policy implications) and then in Turn 10 walks through the full heat stressor chain (stressor → sectors → evidence → rating → priority) before the student has attempted any of this reasoning. The tutor is doing the key reasoning step—identifying which stressors fit which sectors, what evidence to look for, and how the chain works—rather than asking the student to derive it.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "1.2.B.a",
+                "reason": "In Transcript 1, the student repeatedly signals they haven't chosen a city yet as the root cause of their confusion (Turns 5–6). The tutor continues to re-explain the table-building process in full (Turn 5) before diagnosing that the city-selection block is the actual sticking point. A diagnostic question about what specifically is preventing city selection would have been more appropriate before another full process dump.",
+                "points": 3
+              }
+            ],
+            "score": 3,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding rather than giving answers—no rationale about active reasoning, retention, or skill development is offered to the student.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcript 2, after the student successfully corrects their heat ranking (Turn 8) and produces defensible ratings (Turn 9), the tutor moves directly to Step 5 without prompting any reflection on what changed in the student's thinking or why the revised approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 11,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through essentially the same explanation of the assignment structure across Turns 1, 2, 3, 5, and 6 without meaningful synthesis or escalation. The student keeps asking for the same thing ('explain from scratch,' 'walk me through,' 'unpack the whole assignment') and the tutor repeats similar process overviews rather than reframing, simplifying to a single concrete step, or diagnosing why the student is stuck.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  5,
+                  6,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "3.1.A.a",
+                "reason": "In Transcript 1, multiple tutor turns (1, 5, 6, 8, 9, 10) contain multi-paragraph structured lists when a single focused question or one concrete prompt would have been more appropriate given the student's confusion. The tutor repeatedly delivers full process overviews rather than bite-sized interactive steps.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 4,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 23,
+    "max_base_score": 44,
+    "overview": "The tutor performs well in Transcripts 2 and 3, using Socratic questioning effectively with cooperative students who engage actively. However, Transcript 1 reveals significant weaknesses: the tutor repeatedly re-explains the full assignment structure without diagnosing the student's actual block (no city chosen), cycles through similar explanations without synthesis, and in Turn 10 walks through the complete heat stressor reasoning chain before the student attempts it. Across all transcripts, the tutor never explains its pedagogical rationale, misses reflection prompts after student improvement, and frequently uses multi-paragraph responses where focused single questions were needed.",
+    "judge_reasoning": "1.1 loses 6 points for 1.1.C.b: in Transcript 1 Turn 10, the tutor provides the full stressor-to-priority reasoning chain (sectors, evidence types, rating logic) before the student attempts it, doing the key reasoning step. 1.2 loses 3 points for 1.2.B.a: in Transcript 1 the tutor repeatedly re-explains process without first diagnosing that the student's root block is not having chosen a city. 1.3 loses 2 points for 1.3.A.a (no tutoring rationale ever given) and 2 points for 1.3.C.a (no reflection prompt after student improvement in Transcript 2). 2.1 loses 4 points for pattern-level repetition in Transcript 1 where the tutor cycles through the same assignment overview across six turns without reframing or escalating. 3.1 loses 4 points for repeated multi-paragraph overviews in Transcript 1 where single focused prompts were needed.",
+    "total_score": 23,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

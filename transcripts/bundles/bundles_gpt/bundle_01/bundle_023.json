@@ -1,0 +1,118 @@
+{
+  "bundle_file": "bundle_023.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0012",
+    "clueless/clueless_raw/transcript_0036",
+    "clueless/clueless_raw/transcript_0060"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 7",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student made clearer progress, the tutor acknowledged it and moved to the next task, but did not prompt reflection on what changed in the student's thinking or why the improved move worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turns 5-10",
+                  "Transcript 3 Turns 5-9"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "The tutor repeatedly used the same pattern of telling the student not to overthink and to draft rows first, even as the student stayed confused. The dialogue would have benefited from more synthesis, reframing, or a different simplification strategy instead of repeated anti-spiraling prompts.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 5",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Several lines come across as sharper than supportive, such as 'You're overcomplicating it,' 'You're stuck in the same loop,' 'No—I’m your tutor, not a template generator,' and 'You’re circling.' These moments risk making the interaction feel rigid rather than encouraging.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 36,
+    "max_base_score": 46,
+    "overview": "Tutor consistently avoided doing the assignment for the student and kept the work anchored to the actual table task, especially around scope, sources, and unit consistency. The strongest issues were repeated conversational looping when the student remained stuck, a missed chance to prompt reflection after improvement, and a few brusque phrasing choices. Some guidance was fairly directive procedurally, but it did not cross into submission-ready output, so no 1.1 deduction was applied.",
+    "judge_reasoning": "I kept full credit on 1.1 and 2.2 because the tutor never filled Jakarta-specific rows, wrote final prose, or drifted off the assignment; instead, the tutor repeatedly asked the student to choose units, source types, and draft entries. I deducted under 1.3.C because when the student improved—for example by distinguishing data from source or proposing workable location/climate entries—the tutor advanced the task without asking the student to reflect on what changed. I deducted all 4 points under 2.1 because across the bundle the tutor repeatedly relied on the same 'don't overthink, just draft it' move while the student continued spiraling, with limited synthesis or strategic reframing. I also deducted 2 points under 3.2.A because several responses were noticeably rigid in tone and could discourage a confused student.",
+    "total_score": 36,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

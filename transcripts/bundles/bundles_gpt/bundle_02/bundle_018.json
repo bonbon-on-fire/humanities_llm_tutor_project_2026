@@ -1,0 +1,100 @@
+{
+  "bundle_file": "bundle_018.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0081",
+    "cooperative/cooperative_raw/transcript_0105",
+    "cooperative/cooperative_raw/transcript_0129"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the full bundle, the tutor consistently keeps the work student-led, but never explicitly explains why that constraint supports learning, such as building the student's own reasoning, source-validation habits, or long-term skill transfer.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 1 Turn 5",
+                  "TRANSCRIPT 3 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier confusion (for example, narrowing optional categories in Transcript 1 and settling on a consistent administrative unit in Transcript 3), the tutor validated the step and moved forward without prompting brief reflection on what changed in the student's thinking or why the new method worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently student-led, assignment-anchored, and method-focused across all three transcripts, with no near-submission-ready writing or off-topic drift. Responses were concise and supportive, and the tutor repeatedly guided the student toward source consistency, boundary definitions, and assignment-fit decisions. The main missed elements were meta-level explanation of why the tutor was using this constrained, question-driven approach and reflection prompts after students corrected earlier misunderstandings.",
+    "judge_reasoning": "The strongest evidence supports high marks for 1.1, 1.2, 2.1, 2.2, 3.1, and 3.2: the tutor avoided doing the assignment for the student, used guided questions, built on student answers, and kept the discussion tightly tied to the data-table task. Method feedback was also strong, especially around geographic-unit consistency, source labeling, and how to handle race/ethnicity categories across contexts. I deducted under 1.3.A.a because the tutor never explicitly stated why they were withholding direct answers or structuring the interaction this way for learning benefit. I also deducted under 1.3.C.a because after several clear improvements, the tutor moved on instead of prompting the student to articulate what changed and why the revised approach was better.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

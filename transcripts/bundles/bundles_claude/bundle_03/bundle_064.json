@@ -1,0 +1,92 @@
+{
+  "bundle_file": "bundle_064.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0092",
+    "cooperative/cooperative_raw/transcript_0022",
+    "cooperative/cooperative_raw/transcript_0046"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Turn 9-10 (Transcript 1), Turn 8-10 (Transcript 2), Turn 9-10 (Transcript 3)",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful progress (e.g., arriving at correct bucket structures, refining their reasoning), the tutor moves on to the next step without prompting reflection on what changed in their thinking or why the improved approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts, the tutor consistently avoids doing the work for students, uses Socratic questioning effectively, scaffolds well from confusion to structured thinking, and maintains appropriate tone and bite-sized responses. The main gap is a failure to prompt reflection after student improvement—when students arrive at better answers, the tutor moves forward without asking what changed or why the new approach is stronger. No other rubric violations were clearly evidenced.",
+    "judge_reasoning": "1.1: The tutor never provides submission-ready content, avoids rewriting student text, and consistently asks students to generate key ideas before confirming them. In Transcript 1, the tutor explicitly refuses to draft the forum post. All three conversations maintain strong Socratic discipline. 1.2: Scaffolding is well-executed across all transcripts—the tutor builds on student progress (e.g., affirming correct bucket logic before pushing for specificity) and diagnoses confusion before responding. 1.3: The tutor provides some process feedback (e.g., 'don't use visibility alone, use function and evidence') and implicitly models rationale through questioning, but never explicitly explains why the tutoring approach supports learning. More critically, after students make meaningful improvements—such as arriving at the correct three-bucket structure—the tutor consistently moves to the next task without prompting reflection on what changed in their thinking, triggering the 1.3.C.a deduction. Sections 2 and 3 are clean: no repetition without progress, no assignment drift, responses are concise and well-toned throughout.",
+    "total_score": 42,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "bundle_file": "bundle_032.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0088",
+    "clueless/clueless_raw/transcript_0112",
+    "clueless/clueless_raw/transcript_0136"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from confusion to workable row drafts or justifications, the tutor continued coaching the next refinement step but did not prompt reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 5,
+            "max": 5
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 5",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "The tutor was often supportive, but several lines became rigid or abrasive (for example 'We’ve circled this idea a few times now,' 'Stop spiraling on precision,' and 'Now stop blanking'), which risks discouraging student participation.",
+                "points": 2
+              }
+            ],
+            "score": 3,
+            "max": 5
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 10
+        }
+      }
+    },
+    "total_base_score": 42,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently used guided discovery, avoided ghostwriting, and stayed tightly anchored to the assignment. The main weaknesses were a missed chance to prompt reflection after student improvement and a periodically sharp tone. No other deductions were clearly supported; where the tutor was firm about not giving copyable rows, the conversation still remained generally task-focused and pedagogically sound.",
+    "judge_reasoning": "The tutor earned strong marks for pedagogy because they repeatedly refused to provide submission-ready rows, kept idea generation with the student, and scaffolded the task into manageable decisions about stressors, sectors, ratings, and justification. Dialogue quality was strong: the tutor continually re-anchored to the actual stressors-table task and did not drift off-topic. The main pedagogy deduction is for missing reflection prompts after students improved from vague confusion to usable drafts. The communication deduction comes from several brusque directives that could undermine trust even though the overall interaction remained mostly supportive.",
+    "total_score": 42,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

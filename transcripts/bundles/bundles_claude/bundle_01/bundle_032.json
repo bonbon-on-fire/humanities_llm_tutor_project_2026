@@ -1,0 +1,99 @@
+{
+  "bundle_file": "bundle_032.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0088",
+    "clueless/clueless_raw/transcript_0112",
+    "clueless/clueless_raw/transcript_0136"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "All three transcripts, final turns",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In all three transcripts, when students produce improved draft justifications at the end, the tutor moves directly to pointing out remaining weaknesses and asking for further revision without prompting any reflection on what changed in the student's thinking or why the improved attempt worked better than earlier ones.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 1-5; Transcript 3, Turns 3-5",
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles through the same 'what is your city / name a stressor' prompt across five consecutive turns without meaningfully reframing or advancing the approach when the student keeps deflecting. In Transcript 3, the student repeatedly asks for examples or templates and the tutor repeats the same refusal pattern without switching to a different scaffolding strategy to break the loop.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 44,
+    "overview": "The tutor performs well overall: it consistently refuses to do the assignment for students, keeps key idea generation student-led, scaffolds from broad to specific, and maintains a supportive but firm tone. The main weaknesses are (1) a pattern of repetitive cycling in Transcripts 1 and 3 where the same prompt style is reused across multiple turns without reframing when students remain stuck, and (2) a missed opportunity across all three transcripts to prompt reflection after students finally produce improved drafts at the end.",
+    "judge_reasoning": "1.1 is fully intact: the tutor never provides submission-ready content, never rewrites student text, and consistently withholds conclusions until students reason toward them. 1.2 is fully intact: the tutor builds on student progress (e.g., 'That's finally something usable') and diagnoses confusion before responding. 1.3 loses 2 points under 1.3.C.a because in all three transcripts the final turn, where the student produces a meaningfully improved draft, is met only with critique of remaining weaknesses rather than any reflection prompt about what changed or why the new attempt worked. 2.1 loses all 4 points: in Transcript 1 the tutor asks 'what is your city / name a stressor' in essentially the same form across five turns without switching strategy, and in Transcript 3 the refusal-to-give-examples pattern repeats without reframing, constituting pattern-level repetition without synthesis. 2.2, 3.1, and 3.2 show no deductible issues.",
+    "total_score": 38,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

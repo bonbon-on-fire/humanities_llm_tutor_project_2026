@@ -1,0 +1,100 @@
+{
+  "bundle_file": "bundle_039.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0020",
+    "cooperative/cooperative_raw/transcript_0044",
+    "cooperative/cooperative_raw/transcript_0068"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across the bundle, the tutor enforced process constraints well (for example, refusing to phrase sentences for the student and prioritizing evidence over guesses), but did not clearly explain at least once why this constraint-based approach supports learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "TRANSCRIPT 2 Turn 10",
+                  "TRANSCRIPT 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from earlier uncertainty into stronger distinctions or cautious claims, the tutor validated the result and moved on to the next task or stress test without prompting reflection on what changed in the student's reasoning and why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "The tutor was consistently evidence-focused, assignment-anchored, and student-led across the bundle. The main weaknesses were meta-pedagogical: the tutor did not explicitly explain why the tutoring constraints were being used, and it missed chances to prompt reflection after student improvement. No larger deductions were supported because the tutor avoided writing the assignment for the student and generally scaffolded well.",
+    "judge_reasoning": "The strongest evidence supports high marks in guided discovery: the tutor repeatedly asked the student to verify sources, distinguish authority from influence, and generate classifications in their own words rather than supplying submission-ready content. Scaffolding was also strong, with the tutor building from partial student insights and redirecting toward specific evidence tests. The main deductions fall under 1.3 because the tutor never clearly stated why its constraint-based approach helps learning, and after successful revisions it tended to validate and advance instead of asking the student to reflect on what changed in their method. Dialogue and communication remained concise, supportive, and tightly tied to the assignment throughout.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

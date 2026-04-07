@@ -1,0 +1,96 @@
+{
+  "bundle_file": "bundle_014.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0027",
+    "cooperative/cooperative_raw/transcript_0053",
+    "cooperative/cooperative_raw/transcript_0077"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving answers—e.g., why Socratic questioning supports learning, retention, or skill development. Constraints are enforced (e.g., T1-Turn10: 'I can't phrase it for you') but the rationale for that constraint is never articulated.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In multiple transcripts, when students make clear progress (e.g., T2-Turn9 student produces a clean outline; T3-Turn8 student drafts all four parts), the tutor moves immediately to the next challenge without prompting any reflection on what changed in the student's thinking or why the improved approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "Across all three transcripts the tutor performs strongly: it never gives submission-ready answers, consistently uses Socratic questioning, builds on student progress, stays on-task, and maintains a supportive tone. The primary weaknesses are the absence of any explicit rationale for the tutoring approach (why guided discovery rather than direct answers) and a consistent failure to prompt reflection after students make meaningful progress. Process-level feedback is generally present but occasionally thin. No major deductions were warranted in dialogue quality or communication quality.",
+    "judge_reasoning": "1.1 is clean: the tutor never produces near-submission-ready content, never rewrites student text, and consistently lets students generate key ideas before confirming them. 1.2 is clean: the tutor builds on each correct student step and uses diagnostic questions before redirecting. 1.3 loses 2 points under 1.3.A.a because the tutoring rationale is never explained—constraints are enforced (T1-Turn10 explicitly refuses to phrase the thesis) but the pedagogical 'why' is absent throughout all three conversations. 1.3 loses another 2 points under 1.3.C.a because after clear student breakthroughs (T2-Turn9, T3-Turn8, T1-Turn9) the tutor immediately pivots to the next challenge without any reflection prompt on what changed or why the improved thinking worked. Dialogue quality and communication quality are both strong with no evidence supporting deductions.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

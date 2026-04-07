@@ -1,0 +1,116 @@
+{
+  "bundle_file": "bundle_026.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0032",
+    "cooperative/cooperative_raw/transcript_0057",
+    "cooperative/cooperative_raw/transcript_0081"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "Across all three transcripts, when students make meaningful improvements or arrive at correct reasoning (e.g., T1 Turn 7 location draft, T2 Turns 5 and 7, T3 Turn 10), the tutor consistently moves on to the next task without prompting the student to reflect on what changed in their thinking or why their improved approach worked. No turn in any transcript asks the student to articulate what shifted in their reasoning after a successful step.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 22,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the student repeatedly expresses the same uncertainty about how detailed each field should be across turns 3–7. The tutor cycles through similar prompts (pick one, move on, use a filter) without consolidating or reframing in a way that breaks the loop. The student remains stuck in the same pattern for multiple turns before the tutor finally provides a structural overview in Turn 8, which arguably should have come earlier to break the spiral.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 38,
+    "max_base_score": 44,
+    "overview": "The tutor performs well overall across three transcripts, consistently using Socratic questioning, avoiding giving direct answers, maintaining appropriate tone, and keeping responses concise. The main weaknesses are: (1) a recurring failure to prompt reflection after student improvement moments, and (2) in Transcript 1, a prolonged spiral where the student's repeated uncertainty about field-level detail was not broken efficiently—the tutor cycled through similar prompts for several turns before providing the structural overview that was needed earlier. Transcripts 2 and 3 show stronger scaffolding and progression. The 2.1 deduction is applied primarily on the basis of Transcript 1 evidence, which is the clearest case of pattern-level repetition without synthesis.",
+    "judge_reasoning": "1.1 receives full marks: the tutor never provides submission-ready content, never rewrites student text, and consistently keeps key reasoning student-led across all three transcripts. 1.2 receives full marks: the tutor builds on student progress and diagnoses confusion before responding throughout. 1.3 loses 2 points under 1.3.C.a because no transcript contains a turn where the tutor asks the student to reflect on what changed after an improvement—the tutor always pivots immediately to the next task. 2.1 loses 4 points under 2.1.A.a based on Transcript 1 turns 3–7, where the student's identical uncertainty pattern persists across five turns and the tutor repeats structurally similar prompts without reframing, consolidating, or switching strategy until Turn 8. 2.2 and all communication quality criteria receive full marks: the tutor stays on-task, redirects appropriately, keeps responses bite-sized, and maintains a supportive, non-evaluative tone throughout.",
+    "total_score": 38,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

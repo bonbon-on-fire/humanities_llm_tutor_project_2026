@@ -1,0 +1,123 @@
+{
+  "bundle_file": "bundle_030.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0128",
+    "cooperative/cooperative_raw/transcript_0106",
+    "cooperative/cooperative_raw/transcript_0130"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  9
+                ],
+                "sub_criterion_id": "1.1.B.a",
+                "reason": "In Transcript 1, Turn 9, the tutor provides a full source map for every single row category (location, population, race/ethnicity, area, income, GDP, Koppen), essentially doing the research planning work for the student rather than guiding them to reason through source selection themselves. This is borderline but does not rise to 1.1.A.a since it is a source-type guide rather than actual data or final assignment content. However, it does constitute rewriting/replacing the student's process with a ready-made answer list.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding rather than giving direct answers—no rationale is offered for the Socratic approach or why the student should do the reasoning work themselves. The tutor declines to build the table in Transcript 1 Turn 3 but does not explain the pedagogical reason.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcripts 2 and 3, students make clear improvements (e.g., T2 Turn 7 student gives strong reasoning about population-based measures; T3 Turn 8 student correctly identifies the need for traceable sources), but the tutor moves on without prompting reflection on what changed in their thinking or why the improved reasoning worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 1, the tutor cycles repeatedly through the same pattern of asking the student to choose between Jakarta and Phoenix, explaining boundary types, and discussing source types across multiple turns without meaningful synthesis or progression. The student explicitly signals confusion multiple times ('that didn't clear it up,' 'that approach didn't fully click,' 'that still didn't totally unstick me') and the tutor continues similar question patterns rather than reframing or consolidating.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 44,
+    "overview": "The tutor performs well in Transcripts 2 and 3, maintaining a Socratic approach, building on student progress, and keeping responses focused. Transcript 1 shows notable weaknesses: the tutor spirals without synthesis when the student repeatedly signals confusion, and in Turn 9 provides a comprehensive source map for every row that crosses into doing the research planning work for the student (triggering 1.1.B.a). The 1.1.B.a deduction is the most significant judgment call—the source map is not final assignment content but does replace student reasoning with a ready-made answer. Across all transcripts, the tutor never explains its pedagogical rationale and misses reflection prompts after student improvements.",
+    "judge_reasoning": "1.1.B.a is triggered by Transcript 1 Turn 9, where the tutor provides a complete, row-by-row source map covering every required category, effectively doing the research planning the student should perform. This is not submission-ready data but it does replace the student's reasoning process with a finished guide, meeting the criterion for rewriting/replacing student process work. 1.1.A.a is not triggered because no actual data values or final table content is provided. 2.1.A.a is triggered by Transcript 1's repeated cycling through city choice, boundary definitions, and source types across 10 turns without synthesis, despite the student explicitly flagging that each approach 'didn't click.' 1.3.A.a is deducted because no transcript contains an explanation of why the tutor guides rather than answers directly. 1.3.C.a is deducted because clear student improvements in T2 and T3 are acknowledged but not followed by reflection prompts on what changed in the student's thinking.",
+    "total_score": 30,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

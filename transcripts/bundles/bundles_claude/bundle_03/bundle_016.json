@@ -1,0 +1,98 @@
+{
+  "bundle_file": "bundle_016.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0075",
+    "cooperative/cooperative_raw/transcript_0006",
+    "cooperative/cooperative_raw/transcript_0030"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 1, Turns 1-10; Transcript 2, Turns 1-10; Transcript 3, Turns 1-10",
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explicitly explains why it is guiding the student through questions rather than simply providing answers—no rationale about active reasoning, retention, or skill development is offered. The tutor enforces a Socratic approach throughout but never articulates why this method supports learning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": "Transcript 2, Turn 10; Transcript 3, Turn 10",
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcripts 2 and 3, after the student successfully produces a strong thesis or draft following earlier uncertainty, the tutor moves directly to the next task (asking for case mapping or critique) without prompting the student to reflect on what changed in their thinking or why their reasoning improved. The opportunity to reinforce the method is missed.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 44,
+    "overview": "The tutor performs strongly across all three transcripts. Socratic method is consistently applied—the tutor never gives away the answer, always prompts the student to reason first, and builds incrementally on student responses. Scaffolding is well-calibrated: in Transcript 1 with a confused student, the tutor simplifies and resets appropriately; in Transcripts 2 and 3 with more cooperative students, it advances the argument efficiently. No submission-ready content is produced. The main weaknesses are the absence of any explicit rationale for the tutoring approach (1.3.A.a) and a missed opportunity to prompt process reflection after student improvement (1.3.C.a). Communication is concise and appropriately supportive throughout.",
+    "judge_reasoning": "1.1: The tutor never provides final answers, finished arguments, or submission-ready text. All key reasoning steps—defining act consequentialism, classifying cases, formulating the side-effect/means distinction, and defending it—are elicited from the student. No deductions apply. 1.2: Scaffolding is responsive; in Transcript 1 the tutor correctly diagnoses overload and resets, and in all transcripts it builds on correct student contributions. No deductions apply. 1.3: Two deductions are warranted. First, across all three conversations the tutor never explains why it uses guided questioning rather than direct explanation—this is a clear omission of tutoring rationale (1.3.A.a, -2). Second, in Transcripts 2 and 3 the student reaches a strong conclusion after working through confusion, but the tutor immediately pivots to the next task without asking the student to reflect on what changed in their thinking (1.3.C.a, -2). 1.3.B is not penalized because the tutor does give process-level feedback (e.g., 'don't jump to a polished principle yet,' 'make it precise, not elegant'). Dialogue quality and communication quality are both strong with no evidence of repetition, drift, off-topic engagement, monologuing, or tone issues.",
+    "total_score": 40,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

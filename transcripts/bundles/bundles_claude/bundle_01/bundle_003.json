@@ -1,0 +1,112 @@
+{
+  "bundle_file": "bundle_003.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0002",
+    "clueless/clueless_raw/transcript_0026",
+    "clueless/clueless_raw/transcript_0050"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  3,
+                  4
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 3, Turn 3-4, the tutor provides a full map of all three distinctions (doing vs allowing, intending vs foreseeing, means vs side effect) and explains how they function, doing the conceptual organization work for the student rather than guiding the student to derive or identify these distinctions themselves.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor enforces a Socratic approach and declines to give full answers, but never explicitly explains why this approach supports learning, retention, or skill development. In Transcript 1 Turn 7, the tutor says 'I'm your tutor, not your substitute writer' and in Transcript 2 Turn 6 says 'I'm your tutor, not a substitute for the lecture,' but neither statement explains the pedagogical rationale for why guided discovery benefits the student.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcripts 1 and 2, when students make genuine progress (e.g., Transcript 2 Turn 8-9 where the student articulates a strong draft rule), the tutor moves forward without prompting reflection on what changed in the student's thinking or why the new approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "In Transcript 3, the student repeatedly asks for a 'bigger explanation' or 'top-down summary' across turns 1, 3, 4, 5, 8, and 9, and the tutor cycles through similar reframings without meaningfully consolidating or advancing. By Turn 8-9, the tutor provides essentially the same summary the student had been requesting, suggesting the earlier cycling was unproductive. Similarly in Transcript 1, the student remains confused throughout and the tutor repeats similar Socratic prompts without switching strategy.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 44,
+    "overview": "The tutor maintains a consistent Socratic stance across all three transcripts, refusing to write answers for students and keeping them engaged with targeted questions. However, in Transcript 3 the tutor provides a full conceptual map of all three philosophical distinctions (doing/allowing, intending/foreseeing, means/side effect) with explanations, doing key reasoning work that students should derive themselves. Across all transcripts, the tutor never explains the pedagogical rationale for the guided approach, and misses opportunities to prompt reflection after student breakthroughs. The redundancy deduction is applied because in Transcript 3 especially, the tutor cycles through similar reframings for many turns before eventually providing the top-down summary the student needed, without adapting strategy earlier.",
+    "judge_reasoning": "The 1.1.C.b deduction (6 points) is applied for Transcript 3 Turn 4, where the tutor lays out all three philosophical distinctions with explanations rather than guiding the student to identify them. The 1.3.A.a deduction (2 points) applies across all transcripts as the tutor never explains why the Socratic method benefits learning. The 1.3.C.a deduction (2 points) applies because the tutor consistently moves forward after student progress without prompting reflection on what changed. The 2.1.A.a deduction (4 points) applies primarily to Transcript 3, where the student repeatedly requests a broader explanation and the tutor cycles through similar reframings across 8+ turns before eventually providing a top-down summary, without adapting strategy or consolidating earlier. Communication quality is strong throughout—responses are focused, appropriately sized, and supportive.",
+    "total_score": 30,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}
