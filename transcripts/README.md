@@ -38,7 +38,7 @@ transcripts/
 | clueless    | 96  | 96         | 96            | 288     |
 | **Total**   | 288 | 288        | 288           | **864** |
 
-Bundle files: 198 (72 + 54 + 72 across 3 experiment types).
+Bundle files: 168 (48 + 48 + 72 across 3 experiment types).
 
 ## Subfolder Convention
 
@@ -173,19 +173,18 @@ Parallelism is controlled by `PARALLEL_WORKERS` (default: 6) at the top of `run_
 
 | Type | Description | Count |
 | ---- | ----------- | ----- |
-| **01** | Same persona + version + exercise — tests judge consistency | 72 |
-| **02** | Same persona + version, different exercise — tests cross-exercise validity | 54 |
-| **03** | Different persona, same version + exercise — tests persona differentiation | 72 |
+| **01** | Different `clueless` personas, same exercise | 48 |
+| **02** | Different `cooperative` personas, same exercise | 48 |
+| **03** | Mixed `clueless` + `cooperative` personas, same exercise | 72 |
 
-**Total**: 198 bundle files covering 594 unique transcripts (3 per bundle).
+**Total**: 168 bundle files (3 transcripts per bundle).
 
 #### Experimental Design
 
-- **Zero overlap**: each transcript appears in exactly one bundle per type — no duplicates within a type.
-- **Type 01** controls persona, version, and exercise (what varies: random trial selection).
-- **Type 02** controls persona and version (what varies: exercise).
-- **Type 03** controls version and exercise (what varies: persona).
-- All available raw transcripts across `chaotic`, `cooperative`, and `clueless` are included, covering both `philosophy` and `urban_studies` courses.
+- **Type 01**: each bundle contains 3 different `clueless_XX` personas from the same course+exercise pair.
+- **Type 02**: each bundle contains 3 different `cooperative_XX` personas from the same course+exercise pair.
+- **Type 03**: each bundle contains both persona families (`clueless_XX` and `cooperative_XX`) from the same course+exercise pair.
+- Current bundle generation targets `clueless` and `cooperative` raw transcripts.
 
 #### Bundle File Format
 
@@ -241,9 +240,9 @@ print(result.total_score, result.max_score)
 
 #### Research Questions
 
-- **Type 01 — Judge reliability**: How consistent are scores for similar conversations? Which rubric criteria show the most/least variance?
-- **Type 02 — Cross-exercise validity**: Are some exercises systematically harder? How should exercise difficulty be calibrated?
-- **Type 03 — Persona differentiation**: Can the judge distinguish between different student types? Are scoring standards appropriately adapted per persona?
+- **Type 01 — Clueless variation:** How stable are scores across different clueless persona versions on the same exercise?
+- **Type 02 — Cooperative variation:** How stable are scores across different cooperative persona versions on the same exercise?
+- **Type 03 — Cross-family comparison:** How does judge behavior change when clueless and cooperative transcripts are mixed in one bundle?
 
 #### Bundle Type Documentation
 

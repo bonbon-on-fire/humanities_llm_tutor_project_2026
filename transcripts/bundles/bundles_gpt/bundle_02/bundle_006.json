@@ -1,0 +1,112 @@
+{
+  "bundle_file": "bundle_006.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0075",
+    "cooperative/cooperative_raw/transcript_0099",
+    "cooperative/cooperative_raw/transcript_0123"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 3",
+                  "Transcript 2 Turn 2",
+                  "Transcript 3 Turn 4"
+                ],
+                "sub_criterion_id": "1.1.C.a",
+                "reason": "Before the student independently developed an alternative view, the tutor repeatedly introduced the central means-vs-side-effect / intention framing that drives the anti-consequentialist answer path, so key idea generation was not fully student-led.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor consistently enforced a guided, student-generated process, but never explicitly explained why that approach was being used for learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 8",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from uncertainty to a workable principle or draft, the tutor advanced to the next task rather than prompting reflection on what changed in the student's reasoning and why it worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor was consistently focused, supportive, and interactive, with strong stepwise scaffolding tied closely to the assignment. The main pedagogy deduction is that the tutor repeatedly seeded the core philosophical distinction that structures the likely answer, rather than letting the student generate that key idea more independently. I did not deduct more heavily because the tutor still avoided polished essay-writing for the student and kept asking the student to apply, test, and articulate the view in their own words.",
+    "judge_reasoning": "The tutor handled confusion well by diagnosing weak spots, especially around Fuel and Blood, and by breaking the task into manageable comparative steps; this supports full credit for scaffolding and dialogue quality. However, in multiple transcripts the tutor introduced the central means-versus-side-effect distinction before the student had really explored alternatives, which fits the rubric's concern about revealing the answer path. Meta-learning was also incomplete: the tutor never explained why the guided approach was being used, and after clear student improvement the tutor typically moved forward without reflection on what changed. Communication remained clear, concise, and supportive throughout, with no evidence of grading stance or off-topic drift.",
+    "total_score": 34,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -12,6 +12,7 @@ Current defaults in code:
 judge/
   run_judge.py                 — unified single-transcript judge core (provider: gpt|claude)
   run_judge_bundle.py           — unified bundle judge core (provider: gpt|claude)
+  hand_grade_judge.xlsx         — manual grading workbook for judge calibration
   README.md
   prompts/
     judge_01.txt           — baseline prompt template

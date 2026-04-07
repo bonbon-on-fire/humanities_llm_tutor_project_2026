@@ -205,7 +205,7 @@ The full pipeline is working end-to-end, with:
 
 ## TL;DR
 
-A Socratic LLM tutor built for MIT OpenCourseWare that guides students through humanities assignments using guided discovery and never gives answers directly — validated against simulated adversarial conversations, graded automatically by GPT & Claude judges across a structured rubric, and analyzed to measure judge consistency before deployment.
+A Socratic LLM tutor built for MIT OpenCourseWare that guides students through humanities assignments using guided discovery and never gives answers directly—validated against simulated adversarial conversations, graded automatically by GPT & Claude judges across a structured rubric, and analyzed to measure judge consistency before deployment.
 
 ---
 

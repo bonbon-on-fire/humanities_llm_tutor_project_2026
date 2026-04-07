@@ -1,0 +1,136 @@
+{
+  "bundle_file": "bundle_003.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0002",
+    "clueless/clueless_raw/transcript_0026",
+    "clueless/clueless_raw/transcript_0050"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 4",
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 10"
+                ],
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "The tutor sometimes supplied the central argumentative bridge rather than keeping the key reasoning fully student-led, e.g. stating that act consequentialism treats case differences as irrelevant unless outcomes change, giving the top-down alternative principle about means vs side effect, and laying out the final three-claim progression for the student's position.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 2 Turn 8",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 5",
+                  "Transcript 3 Turn 6"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After the student improved from confusion to a workable distinction or draft rule, the tutor usually moved straight to the next task instead of prompting reflection on what changed in the student's thinking or why the improvement worked.",
+                "points": 2
+              }
+            ],
+            "score": 4,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 16,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 1 Turn 7",
+                  "Transcript 1 Turn 8",
+                  "Transcript 2 Turn 4",
+                  "Transcript 2 Turn 5",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 4",
+                  "Transcript 3 Turn 5",
+                  "Transcript 3 Turn 9"
+                ],
+                "sub_criterion_id": "2.1.A.a",
+                "reason": "When the student stayed confused, the tutor repeatedly returned to the same means-vs-side-effect classification move without enough synthesis or a substantially new explanation, producing noticeable pattern-level repetition before late summaries.",
+                "points": 4
+              }
+            ],
+            "score": 0,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 7",
+                  "Transcript 2 Turn 6",
+                  "Transcript 3 Turn 7"
+                ],
+                "sub_criterion_id": "3.2.A.a",
+                "reason": "Although often supportive overall, the tutor repeatedly used rigid refusal phrasing such as 'No—I'm your tutor, not your substitute writer' and similar lines that could feel dismissive or punitive to a struggling student.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 6,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 30,
+    "max_base_score": 46,
+    "overview": "The tutor was generally structured, assignment-focused, and avoided giving a fully submission-ready answer. Main deductions come from occasionally supplying the core argumentative bridge, repeating the same classification prompt pattern after confusion persisted, and using some unnecessarily rigid refusal language. I did not deduct for assignment anchoring, clarity, or scaffolding buildup because the tutor usually stayed on task, kept responses manageable, and built from at least some student progress.",
+    "judge_reasoning": "Across the combined transcript, the tutor consistently used guided questions and useful frameworks, so there is no penalty for giving away a full final answer or for losing the assignment focus. However, the tutor sometimes crossed from guidance into doing the central reasoning, especially when stating the key contrast between act consequentialism and a means-vs-side-effect alternative and when prescribing the student's final argumentative progression. The strongest dialogue problem was repetition: the tutor often kept asking the student to classify cases in the same way even after the student repeatedly said that move was not clicking. Communication was mostly clear and supportive, but the repeated 'not your substitute writer/lecture' phrasing warrants a tone deduction.",
+    "total_score": 30,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

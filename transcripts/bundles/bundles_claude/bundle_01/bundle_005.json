@@ -1,0 +1,103 @@
+{
+  "bundle_file": "bundle_005.txt",
+  "provider": "claude",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "clueless/clueless_raw/transcript_0003",
+    "clueless/clueless_raw/transcript_0027",
+    "clueless/clueless_raw/transcript_0051"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [
+              {
+                "evidence_turns": "Transcript 3, Turn 6",
+                "sub_criterion_id": "1.1.C.b",
+                "reason": "In Transcript 3 Turn 6, the tutor provides a 'broad map' that directly states the key interpretive conclusion ('act consequentialism tends to treat all equal-number tradeoffs alike; many people think some cases differ because killing as a means is harder to justify than causing death as a side effect') before the student has reasoned to it. This gives the student the central analytical framework rather than guiding them to derive it.",
+                "points": 6
+              }
+            ],
+            "score": 6,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "Across all three transcripts, the tutor never explains why it is guiding the student through questions rather than simply providing answers. There is no moment where the tutor articulates that this Socratic approach supports learning, retention, or skill development.",
+                "points": 2
+              },
+              {
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "In Transcripts 1, 2, and 3, when students make meaningful progress (e.g., Transcript 3 Turn 9 where the student produces three strong sentences), the tutor moves forward without prompting reflection on what changed in their thinking or why the new approach worked better.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 14,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 34,
+    "max_base_score": 44,
+    "overview": "The tutor demonstrates strong scaffolding and dialogue management across all three transcripts, consistently breaking the problem into manageable steps and redirecting student requests for full explanations into targeted questions. The main deduction is in 1.1 for Transcript 3 Turn 6, where the tutor provides the central analytical framework ('broad map') directly rather than guiding the student to derive it. The 1.1.C.b deduction is the primary concern; the rubric caps 1.1 at 12 points total. The tutor also never explains its Socratic rationale to students and misses reflection prompts after student breakthroughs.",
+    "judge_reasoning": "The 6-point deduction under 1.1.C.b is triggered by Transcript 3 Turn 6, where the tutor states the key interpretive conclusion—that act consequentialism treats equal-number tradeoffs alike while many find means-killing less permissible—before the student reasons to it. This is the bridge from evidence to conclusion delivered directly. The 1.3.A.a deduction applies because no transcript contains any explanation of why the tutor uses guided questioning rather than direct answers. The 1.3.C.a deduction applies because in all three transcripts, when students make clear progress (notably Transcript 3 Turn 9), the tutor moves forward without prompting reflection on what changed in their thinking. Scaffolding and dialogue quality are strong throughout: the tutor consistently builds on student responses, avoids redundancy, and keeps the conversation anchored to the assignment.",
+    "total_score": 34,
+    "max_score": 44,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    "judge_llm_calls": 1
+  }
+}

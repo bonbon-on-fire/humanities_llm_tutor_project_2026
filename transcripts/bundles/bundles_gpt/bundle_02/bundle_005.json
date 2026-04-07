@@ -1,0 +1,105 @@
+{
+  "bundle_file": "bundle_005.txt",
+  "provider": "gpt",
+  "prompt_name": "judge_08",
+  "rubric_name": "rubric_07",
+  "transcripts": [
+    "cooperative/cooperative_raw/transcript_0003",
+    "cooperative/cooperative_raw/transcript_0027",
+    "cooperative/cooperative_raw/transcript_0051"
+  ],
+  "grade": {
+    "sections": {
+      "1_pedagogy": {
+        "criteria": {
+          "1.1": {
+            "deductions": [],
+            "score": 12,
+            "max": 12
+          },
+          "1.2": {
+            "deductions": [],
+            "score": 6,
+            "max": 6
+          },
+          "1.3": {
+            "deductions": [
+              {
+                "evidence_turns": [
+                  "Transcript 3 Turn 7",
+                  "Transcript 1 Turn 5"
+                ],
+                "sub_criterion_id": "1.3.A.a",
+                "reason": "The tutor enforced process constraints such as not wording the answer for the student and focusing on case-sorting before drafting, but did not clearly explain why those constraints support learning, retention, or independent reasoning.",
+                "points": 2
+              },
+              {
+                "evidence_turns": [
+                  "Transcript 1 Turn 6",
+                  "Transcript 2 Turn 9",
+                  "Transcript 3 Turn 8"
+                ],
+                "sub_criterion_id": "1.3.C.a",
+                "reason": "After students improved from earlier uncertainty into clearer distinctions or draft arguments, the tutor moved forward to the next task rather than prompting brief reflection on what changed in their thinking and why the stronger approach worked.",
+                "points": 2
+              }
+            ],
+            "score": 2,
+            "max": 6
+          }
+        },
+        "base": {
+          "score": 20,
+          "max": 24
+        }
+      },
+      "2_dialogue_quality": {
+        "criteria": {
+          "2.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "2.2": {
+            "deductions": [],
+            "score": 8,
+            "max": 8
+          }
+        },
+        "base": {
+          "score": 12,
+          "max": 12
+        }
+      },
+      "3_communication_quality": {
+        "criteria": {
+          "3.1": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          },
+          "3.2": {
+            "deductions": [],
+            "score": 4,
+            "max": 4
+          }
+        },
+        "base": {
+          "score": 8,
+          "max": 8
+        }
+      }
+    },
+    "total_base_score": 40,
+    "max_base_score": 46,
+    "overview": "Across the bundle, the tutor consistently used guided questioning, kept the student doing the substantive reasoning, and stayed tightly anchored to the philosophy assignment. The main weakness was meta-learning: the tutor rarely explained why its tutoring constraints were pedagogically useful, and it missed chances to prompt reflection after the student improved. Evidence for any stronger pedagogy deduction was limited, so ambiguous cases were scored conservatively.",
+    "judge_reasoning": "The tutor performed strongly on core pedagogy and dialogue management: it avoided giving submission-ready prose, used short Socratic prompts, built from student answers, and kept the discussion centered on act consequentialism, trolley cases, Fuel, and Blood. It also provided useful process guidance such as separating the theory's view from the student's own view and pressure-testing principles across cases. The principal deductions fall under meta-learning because the tutor did not explicitly justify its tutoring constraints in learning-oriented terms, and after notable student improvements it generally advanced the task instead of asking the student to reflect on what changed in their reasoning. Communication remained clear, supportive, and non-grading throughout.",
+    "total_score": 40,
+    "max_score": 46,
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.4"
+    },
+    "judge_llm_calls": 1
+  }
+}

@@ -58,7 +58,7 @@ def _discover_bundle_types() -> list[str]:
     bundle_types = []
     for path in raw_dir.iterdir():
         if path.is_dir() and path.name.startswith("bundle_"):
-            bundle_type = path.name[6:]  # Remove "bundle_" prefix
+            bundle_type = path.name[7:]  # Remove "bundle_" prefix
             if bundle_type.isdigit():
                 bundle_types.append(bundle_type.zfill(2))
     return sorted(bundle_types)
