@@ -3,11 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "transcripts": [
-    "clueless/clueless_raw/transcript_0039",
-    "cooperative/cooperative_raw/transcript_0065",
-    "cooperative/cooperative_raw/transcript_0089"
-  ],
   "grade": {
     "sections": {
       "1_pedagogy": {
@@ -87,5 +82,231 @@
       "model": "gpt-5.4"
     },
     "judge_llm_calls": 1
-  }
+  },
+  "transcript_sources": [
+    "clueless/clueless_raw/transcript_0039",
+    "cooperative/cooperative_raw/transcript_0065",
+    "cooperative/cooperative_raw/transcript_0089"
+  ],
+  "transcripts": [
+    {
+      "stem": "clueless/clueless_raw/transcript_0039",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_02",
+      "course": "urban_studies",
+      "exercise_number": "02",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nAs you further the investigation of your chosen case study city, exploring existing climate-related vulnerabilities prevalent in your city will support you in building an understanding of your city's core climate-related challenges, toward developing a climate action plan in later assignments.\n\nAssignment Tasks\nYou will complete a City Case Study Stressors Table to record your city's key climate-related vulnerabilities.\nStep 1: Identify Vulnerabilities Across Multiple Sectors\nConsider vulnerabilities across the following sectors:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture\nStep 2: Categorize Stressors\nAs you investigate the specific stressors that your city faces (e.g. coastal flooding, air quality, extreme heat), list them in your table based on whether the stressor is:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture-related\n• Or a combination of multiple sectors\nStep 3: Rate Stressors\nRate each stressor for level of stress it causes in your city using a scale of 1-10:\n• 1 = lowest impact\n• 10 = highest impact\nNote: Ratings may duplicate if certain stressors are equally impacting your city (e.g. coastal flooding and sea level rise might both be rated as 10).\nStep 4: Justify Your Ratings\nFor each stressor, include an explanation of why you assigned that rating. What evidence or conditions support this severity level?\nStep 5: Identify Priority Stressors\nBased on your ratings and justifications, identify which stressors are the most important for your city to address. Consider both severity and urgency.\n\nHow This Supports Your Work\nThis Stressors Table will support:\n• Further research into the type of climate action strategies your city is deploying\n• Policy recommendations you will make to support further action in response to these stressors\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "I’m stuck on the City Case Study Stressors Table for my climate action class. I kind of get that I’m supposed to list vulnerabilities and rate them, but I don’t really know what counts as a “stressor” versus just a general problem.",
+          "tutor": "Think of a stressor as a specific climate-related pressure that creates harm, not just a broad city problem.\n\nSo ask yourself: is it a concrete climate hazard or condition like extreme heat, flooding, drought, wildfire smoke, or sea level rise—or is it a bigger outcome like poverty or housing insecurity that may make the impacts worse?\n\nWhat city did you choose? Give me 2 examples from your city, and we’ll sort together whether each one is a stressor, a vulnerability, or both.",
+          "pedagogical_reasoning": "I will clarify the distinction by prompting the student to define the terms through examples, rather than supplying a finished list for the assignment. This follows the Socratic method, keeps the response bite-sized, and stays tightly focused on the stressors table. I’ll ask a question that moves directly toward identifying valid stressors for the chosen city."
+        },
+        {
+          "turn": 2,
+          "student": "I picked Jakarta, but that’s kind of why I’m confused because everything seems connected there. Like “flooding” feels obvious, but then “informal settlements” also seems important and I can’t tell if that goes in the same table the same way.",
+          "tutor": "Good—you're noticing the key distinction.\n\nTry this test: which one is the climate-related pressure, and which one changes who gets hit hardest by it?\n\nFor Jakarta, would you say flooding is the event/pressure, while informal settlements affect exposure and capacity to cope? Or do you see it differently?\n\nGive me your classification for those two first.",
+          "pedagogical_reasoning": "I will help the student separate hazard from underlying vulnerability using Jakarta-specific examples, but I will not fill in the table for them. I’ll use guided discovery with a comparison question so the student can classify items themselves and move toward the assignment categories and ratings."
+        },
+        {
+          "turn": 3,
+          "student": "I think flooding is the pressure, and informal settlements are more about who gets affected worse. But then the assignment says list vulnerabilities across sectors, and the table is called stressors, so now I’m not sure if I’m supposed to put both in there or only the climate hazard-type things.",
+          "tutor": "You’re close. The table is centered on stressors, but your justifications can show how vulnerabilities across sectors shape their impact.\n\nSo ask: what is the thing causing climate-related stress in Jakarta, and what sector(s) does it affect or interact with?\n\nIf you made one row for flooding, how could you tag its sectors—environmental, infrastructure, social, health, culture? Which 2–3 would you choose first, and why?",
+          "pedagogical_reasoning": "I will resolve the student's confusion by distinguishing the table's core unit of analysis from contextual vulnerability factors, while still avoiding direct completion of the assignment. I’ll guide them to infer that the table should center on stressors but include cross-sector effects and justification, and I’ll ask a focused follow-up that advances their own table-building."
+        },
+        {
+          "turn": 4,
+          "student": "That’s where I freeze, because I can kind of argue all of them for flooding in Jakarta. I don’t know if I’m supposed to be selective or if I’m overthinking the sectors and ratings way too much.",
+          "tutor": "You are overthinking it a bit. If a stressor touches many sectors, that’s normal—don’t force only one.\n\nUse a simple rule: pick the 2–3 sectors most directly affected first, then mention the others in your justification if needed.\n\nFor flooding in Jakarta, which sector feels most immediate to you: infrastructure, social, or health? Start with one and defend it in one sentence.",
+          "pedagogical_reasoning": "The student is over-focusing on categorization detail, so I should reduce cognitive load, reassure them that overlap is acceptable, and redirect them to a practical decision rule. I will remain Socratic, avoid giving a completed row, keep it brief, and ask for a constrained choice that moves them toward filling the table."
+        },
+        {
+          "turn": 5,
+          "student": "Maybe infrastructure first, because flooding disrupts roads and drainage and damages buildings? But I still feel like I’m guessing, and then the 1–10 rating feels random unless I already know a ton about the city.",
+          "tutor": "That’s a solid start. A rating isn’t random if you tie it to evidence.\n\nAsk yourself 3 things: how often does it happen, how many people/systems does it affect, and how severe are the consequences when it happens?\n\nFor Jakarta flooding, which of those 3 seems strongest based on what you already know or have read?",
+          "pedagogical_reasoning": "The student has made a reasonable classification but is now blocked by uncertainty about evidence and scoring. I should validate the direction, then guide them toward a simple evidence-based rating framework without assigning a number for them. This keeps the response bite-sized, Socratic, and focused on moving the table forward."
+        },
+        {
+          "turn": 6,
+          "student": "Probably how many people and systems it affects, since it seems like flooding there hits transportation, homes, and a lot of neighborhoods. I’m still not sure how that turns into like a 7 versus a 9 though, and I’m kind of losing the difference between the rating and the justification.",
+          "tutor": "Good—separate them like this: the rating is your judgment; the justification is the evidence behind that judgment.\n\nSo first decide: is Jakarta flooding moderate, high, or extreme relative to the city’s other stressors? Then the justification explains why.\n\nIf 10 means among the city’s most serious climate stressors, would you place flooding in the top tier or not? What evidence makes you say that?",
+          "pedagogical_reasoning": "The student is stuck distinguishing two assignment components. I should sharpen that distinction with a minimal heuristic and prompt them to generate their own threshold language. This uses guided discovery, keeps the exchange concise, and avoids supplying a direct score or completed justification."
+        },
+        {
+          "turn": 7,
+          "student": "I’d probably put it in the top tier, but then I start second-guessing because Jakarta also has heat, air pollution, subsidence, sea level rise, and I don’t know if I’m supposed to compare flooding to all of those or just rate each one on its own.",
+          "tutor": "You should compare across Jakarta’s stressors so your scale stays consistent.\n\nDon’t solve all of them at once. Compare just two first: flooding vs extreme heat. Which creates greater overall stress for Jakarta right now, and why?\n\nOnce you can order pairs, the numbers get easier.",
+          "pedagogical_reasoning": "The student needs a decision rule for relative versus absolute scoring. I will guide them to infer that ratings should be internally consistent across the city’s stressors, not isolated, and I’ll narrow the task to pairwise comparison to reduce overwhelm. I will avoid assigning rankings myself."
+        },
+        {
+          "turn": 8,
+          "student": "I guess flooding maybe, but “right now” is what throws me off because sea level rise feels huge long-term and subsidence makes flooding worse, so I end up feeling like the categories overlap too much to rank anything cleanly.",
+          "tutor": "That overlap is real. You do not need perfectly clean categories—you need a defensible table.\n\nTry this: which items are direct stressors causing present harm, and which are longer-term or compounding conditions that intensify other stressors?\n\nWhere would you place these three: flooding, sea level rise, and subsidence? Make your own rough distinction.",
+          "pedagogical_reasoning": "The student is circling around overlap and temporal scope. I should introduce a practical distinction between immediate stressors and compounding drivers without constructing the table for them, and push them to choose a workable framing. This addresses the confusion while keeping the student responsible for the classification."
+        },
+        {
+          "turn": 9,
+          "student": "Maybe flooding is the direct present stressor, and sea level rise plus subsidence are more like compounding conditions? But then I’m worried I’m inventing a framework that the assignment didn’t ask for, and I still don’t know how many rows I’m even supposed to have.",
+          "tutor": "Stop looking for hidden rules that aren’t there. The assignment asks for key stressors, ratings, justifications, and priorities—not a perfect taxonomy.\n\nSo the real question is: how many stressors are enough to show multiple sectors and allow comparison? Would 5–7 major rows let you cover Jakarta’s main climate challenges without becoming messy?\n\nList your tentative 5 rows first, and then we’ll test whether they fit.",
+          "pedagogical_reasoning": "The student is seeking certainty about assignment structure. I will avoid inventing rigid requirements, remind them to stay anchored to the assignment text, and guide them toward a reasonable, defensible scope without specifying exact content. This keeps the response concise, Socratic, and focused on progress rather than perfection."
+        },
+        {
+          "turn": 10,
+          "student": "I think maybe: flooding, extreme heat, air quality/wildfire smoke, sea level rise, and water scarcity? I’m not even sure if air quality belongs if it’s partly from regional fires, and now I’m second-guessing all 5.",
+          "tutor": "This is a workable draft. Stop restarting from zero.\n\nUse one filter for each row: is it climate-related, does it materially affect Jakarta, and can you justify its severity?\n\nTake your most doubtful one—air quality/wildfire smoke. Even if the source is regional, does it still create climate-related stress in Jakarta? What evidence would you use to defend including it?",
+          "pedagogical_reasoning": "The student has produced a workable tentative list but is slipping back into global second-guessing. I should narrow the task, affirm that uncertainty is normal, and use targeted Socratic questions to test each item against the assignment: climate-related, city-relevant, harmful, and rateable. I will not approve or reject the list outright or supply new rows; instead I’ll ask the student to defend one uncertain item and distinguish local relevance from source. This moves them toward a defensible table while keeping the response brief."
+        }
+      ]
+    },
+    {
+      "stem": "cooperative/cooperative_raw/transcript_0065",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "cooperative_03",
+      "course": "urban_studies",
+      "exercise_number": "02",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nAs you further the investigation of your chosen case study city, exploring existing climate-related vulnerabilities prevalent in your city will support you in building an understanding of your city's core climate-related challenges, toward developing a climate action plan in later assignments.\n\nAssignment Tasks\nYou will complete a City Case Study Stressors Table to record your city's key climate-related vulnerabilities.\nStep 1: Identify Vulnerabilities Across Multiple Sectors\nConsider vulnerabilities across the following sectors:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture\nStep 2: Categorize Stressors\nAs you investigate the specific stressors that your city faces (e.g. coastal flooding, air quality, extreme heat), list them in your table based on whether the stressor is:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture-related\n• Or a combination of multiple sectors\nStep 3: Rate Stressors\nRate each stressor for level of stress it causes in your city using a scale of 1-10:\n• 1 = lowest impact\n• 10 = highest impact\nNote: Ratings may duplicate if certain stressors are equally impacting your city (e.g. coastal flooding and sea level rise might both be rated as 10).\nStep 4: Justify Your Ratings\nFor each stressor, include an explanation of why you assigned that rating. What evidence or conditions support this severity level?\nStep 5: Identify Priority Stressors\nBased on your ratings and justifications, identify which stressors are the most important for your city to address. Consider both severity and urgency.\n\nHow This Supports Your Work\nThis Stressors Table will support:\n• Further research into the type of climate action strategies your city is deploying\n• Policy recommendations you will make to support further action in response to these stressors\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "Hi, I’m working on a city case study stressors table for my climate action class. I’m a little unsure how to identify and rate vulnerabilities across sectors without making the ratings feel random. Could you help me figure out how to approach that?",
+          "tutor": "Yes—but you need a consistent method, not guesses. Start there.\n\nAsk yourself: what 2–3 factors will you use for every stressor? For example, how severe is it, how many people/systems it affects, and how often it happens.\n\nThen test that method on one stressor in your city. What city are you using, and what’s one climate stressor you already know is important there?",
+          "pedagogical_reasoning": "I will stay in tutor role, keep the response brief, and use Socratic questions to guide the student toward building their own rating method rather than giving a finished framework or completed table. To avoid making the ratings feel random, I will direct the student to define criteria tied to evidence, sectors, and urgency/severity from the assignment. I will not provide filled-in examples as solutions; instead I will ask the student to choose their city and think through what evidence would justify a rating."
+        },
+        {
+          "turn": 2,
+          "student": "I’m using Miami. One stressor is coastal flooding, and I think my factors could be severity, how many people or systems it affects, and frequency, but I’m not totally sure how to turn those into one 1–10 score.",
+          "tutor": "Those factors are strong enough. Don’t overcomplicate it.\n\nNow make them usable: for coastal flooding in Miami, which of the three seems strongest, and what evidence makes you say that? Then ask: does the combined picture feel low, medium, or high impact overall?\n\nIf you want, try this in your own words: give coastal flooding a tentative number and defend it with 2 pieces of evidence.",
+          "pedagogical_reasoning": "I will validate the student's proposed criteria and guide them to operationalize those criteria into a defensible single rating without supplying a finished scoring system. I will use short Socratic prompts that move directly toward the assignment requirement of rating and justification, keeping the student focused on Miami and coastal flooding."
+        },
+        {
+          "turn": 3,
+          "student": "I’d give coastal flooding maybe a 9. The strongest factor is probably severity, because Miami is low-lying and flooding can damage homes, roads, and utilities, and another piece of evidence is that high-tide flooding already happens pretty often there, not just during major storms.",
+          "tutor": "That’s a defensible start. But right now it’s still a bit broad.\n\nPush it one step further: which sectors does coastal flooding hit in Miami—environmental, social, health, infrastructure, culture—and which 2–3 are most directly affected?\n\nAlso, why a 9 instead of an 8 or 10? That distinction is where your justification becomes credible.",
+          "pedagogical_reasoning": "I will reinforce the student's reasoning, but not confirm a final answer as authoritative. I will push them to connect the stressor to sectors in the assignment and strengthen the justification with precision. This keeps the process student-driven and aligned with the stressors table requirements."
+        },
+        {
+          "turn": 4,
+          "student": "I think the most direct sectors are infrastructure, social, and environmental. Infrastructure because roads, drainage, and utilities get disrupted; social because some neighborhoods and residents are more exposed and have fewer resources to recover; and environmental because saltwater intrusion and ecosystem impacts can happen too. I said 9 instead of 10 because it’s extremely serious and frequent, but maybe not the single absolute worst-case stressor in every part of the city all the time.",
+          "tutor": "Good—now your rating is starting to sound reasoned instead of random.\n\nTo make it even stronger, compare it against one other Miami stressor. What would you rate extreme heat or hurricanes, and why would coastal flooding be lower, equal, or higher?\n\nThat comparison will help you calibrate the whole table.",
+          "pedagogical_reasoning": "I will acknowledge the student's progress and guide them to tighten the rating logic by comparing coastal flooding against another Miami stressor. Comparative reasoning helps reduce arbitrariness without me supplying rankings. I will keep it brief and ask a forward-moving question tied to priority setting in the assignment."
+        },
+        {
+          "turn": 5,
+          "student": "I’m a little stuck between hurricanes and extreme heat. My first instinct is hurricanes might also be a 9 or 10 because they can be catastrophic, but extreme heat could be high too since it affects a lot of people more regularly. I’m not sure if I should rate by sudden disaster potential or by everyday chronic impact.",
+          "tutor": "That’s the right tension: acute vs. chronic. Don’t dodge it—use it.\n\nAsk: which stressor causes broader harm over time, and which causes sharper harm in short bursts? Both can rate high, but for different reasons.\n\nSo for Miami, what is one argument for rating extreme heat high even if it looks less dramatic than hurricanes?",
+          "pedagogical_reasoning": "I will help the student resolve the confusion by steering them back to the assignment's emphasis on severity and urgency across sectors, using guided discovery rather than choosing for them. I will ask a contrastive question that helps them distinguish acute vs. chronic stressors and justify ratings consistently without giving exact numbers."
+        },
+        {
+          "turn": 6,
+          "student": "I think extreme heat could rate high because it affects people more continuously, not just during a storm. It can increase health risks, energy demand, and stress on vulnerable groups like older adults or outdoor workers, even if it doesn’t look as dramatic as a hurricane.",
+          "tutor": "Yes—that’s the kind of justification your table needs.\n\nNow commit: would you put extreme heat at 7, 8, 9, or 10? Pick one and explain why it is not one level higher and not one level lower.\n\nThen do the same for hurricanes. You need relative consistency more than perfection.",
+          "pedagogical_reasoning": "I will affirm the student's reasoning and push them to convert it into a concrete, comparative rating decision. This maintains the Socratic method and keeps the focus on the assignment. I will ask for a tentative number and a comparison to hurricanes to help them standardize their table."
+        },
+        {
+          "turn": 7,
+          "student": "I’d put extreme heat at 8 because it’s widespread and recurring, with clear health and infrastructure effects, but maybe not quite as immediately destructive as the biggest flooding or hurricane events. Not a 7 because it’s more than moderate inconvenience, and not a 9 because its impacts can be serious but are often less visibly catastrophic at one time.\n\nFor hurricanes, I’d probably say 9 because they can cause major damage, displacement, and cascading failures across multiple sectors. Not 8 because the potential consequences are huge, but not always 10 since the worst impacts depend on storm intensity and direct hits.",
+          "tutor": "That’s a strong calibration. Your numbers now sound justified, not random.\n\nYou’ve stayed on the same idea for a while, so integrate it: write a 2–3 sentence method for how you rate all stressors in Miami.\n\nThen apply it to one new stressor—maybe air quality, sea level rise, or water supply. Which one do you want to test next?",
+          "pedagogical_reasoning": "I will recognize the student's solid calibration work and guide them to synthesize the pattern into a reusable method for the rest of the table. Since several turns have focused on the same concept, I should prompt them to integrate what we've discussed into a concise written method and then move on to other stressors, as required by the instructions."
+        },
+        {
+          "turn": 8,
+          "student": "My method is to rate each stressor based on severity, how many people or systems it affects, and how often or consistently it occurs in Miami. I’m also comparing chronic stressors and acute disasters by looking at both long-term harm and short-term disruption, so the ratings stay relative to each other instead of feeling random.\n\nI want to test sea level rise next, but I’m not sure if that should be separate from coastal flooding or treated as part of it.",
+          "tutor": "Good method. Now be careful about overlap.\n\nAsk yourself: in your table, are coastal flooding and sea level rise the same phenomenon, or is one a driver and the other an observed stressor? If you keep both, can you justify different impacts or time scales?\n\nWhat would be meaningfully different in Miami between those two entries?",
+          "pedagogical_reasoning": "I will keep the student focused on the assignment and use guided discovery to help them decide whether to separate sea level rise from coastal flooding. I will not decide for them or provide a filled table entry. Instead, I’ll ask a distinction question that moves toward a defensible categorization and avoids redundancy."
+        },
+        {
+          "turn": 9,
+          "student": "I think sea level rise is more like the driver, and coastal flooding is the observed stressor people experience now. So I probably shouldn’t describe them exactly the same. Maybe the difference is time scale: coastal flooding is the more immediate recurring impact, while sea level rise is the long-term underlying process making flooding, saltwater intrusion, and land loss worse.",
+          "tutor": "Yes—that distinction is workable. Now decide if both entries earn their place.\n\nAsk: if you include both, will each have a different rating and justification? If not, you may be duplicating.\n\nSo which choice is stronger for your table: keep both with clearly different time horizons, or keep coastal flooding and mention sea level rise in its justification?",
+          "pedagogical_reasoning": "I will affirm the student's distinction and push them to make a concrete table decision without providing the final classification or rating. The response will remain bite-sized, Socratic, and focused on avoiding redundancy while moving toward completion of the stressors table."
+        },
+        {
+          "turn": 10,
+          "student": "I think the stronger choice is to keep coastal flooding as the main stressor and mention sea level rise in the justification. That feels less repetitive, and I can still explain that sea level rise is a long-term driver that increases the severity and frequency of flooding in Miami.",
+          "tutor": "That’s the stronger choice. It avoids redundancy and shows you understand cause vs. stressor.\n\nNext step: test your method on a non-flooding stressor so your table has range. Which one will you do next, and what sector combination do you think it belongs to?",
+          "pedagogical_reasoning": "I will affirm the student’s decision, note why it aligns with the assignment, and move them forward with one targeted prompt. I will not write the table entry for them or supply wording beyond a minimal checklist. This keeps the interaction Socratic, concise, and focused on completion of the stressors table."
+        }
+      ]
+    },
+    {
+      "stem": "cooperative/cooperative_raw/transcript_0089",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "cooperative_04",
+      "course": "urban_studies",
+      "exercise_number": "02",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nAs you further the investigation of your chosen case study city, exploring existing climate-related vulnerabilities prevalent in your city will support you in building an understanding of your city's core climate-related challenges, toward developing a climate action plan in later assignments.\n\nAssignment Tasks\nYou will complete a City Case Study Stressors Table to record your city's key climate-related vulnerabilities.\nStep 1: Identify Vulnerabilities Across Multiple Sectors\nConsider vulnerabilities across the following sectors:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture\nStep 2: Categorize Stressors\nAs you investigate the specific stressors that your city faces (e.g. coastal flooding, air quality, extreme heat), list them in your table based on whether the stressor is:\n• Environmental\n• Social\n• Health\n• Infrastructure\n• Culture-related\n• Or a combination of multiple sectors\nStep 3: Rate Stressors\nRate each stressor for level of stress it causes in your city using a scale of 1-10:\n• 1 = lowest impact\n• 10 = highest impact\nNote: Ratings may duplicate if certain stressors are equally impacting your city (e.g. coastal flooding and sea level rise might both be rated as 10).\nStep 4: Justify Your Ratings\nFor each stressor, include an explanation of why you assigned that rating. What evidence or conditions support this severity level?\nStep 5: Identify Priority Stressors\nBased on your ratings and justifications, identify which stressors are the most important for your city to address. Consider both severity and urgency.\n\nHow This Supports Your Work\nThis Stressors Table will support:\n• Further research into the type of climate action strategies your city is deploying\n• Policy recommendations you will make to support further action in response to these stressors\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "hi, I’m working on the city stressors table rn and kinda stuck on how to rate the stressors 1–10. can u help me figure out what makes a stressor like a 6 vs a 9?",
+          "tutor": "Yes—but you need to build the logic yourself. Start by asking: what makes a stressor more serious in your city?\n\nTry comparing a 6 and a 9 using these questions:\n1. How many people/areas does it affect?\n2. How often does it happen?\n3. How severe is the damage or disruption?\n4. How hard is recovery?\n5. Is it getting worse?\n\nSo, what would a “9” look like in your city on those dimensions, compared with a “6”? Pick one actual stressor and test it.",
+          "pedagogical_reasoning": "I should not give the student a finished rating system to copy into the assignment. Instead, I’ll use guided questions to help them build their own criteria for distinguishing moderate from severe stressors. This follows the Socratic method, stays tightly on the assignment task of rating and justifying stressors, and keeps the response brief. I’ll ask questions that move directly toward a usable framework: frequency, scale of harm, population affected, disruption, and recovery capacity."
+        },
+        {
+          "turn": 2,
+          "student": "ok, I think a 9 would hit a lot of ppl, happen pretty often, cause major damage, take a long time to recover from, and prob be getting worse. a 6 feels more like serious but not city-wide or not as frequent, right?",
+          "tutor": "Yes—that’s a solid distinction. A 6 is still important, but not as widespread, frequent, or hard to recover from as a 9.\n\nNow make it concrete: choose one stressor in your city and ask yourself:\n- Is it chronic or occasional?\n- Is it neighborhood-level or city-wide?\n- Does it disrupt daily life a lot?\n- Are the worst impacts concentrated in vulnerable groups?\n\nWhich stressor are you trying to rate first?",
+          "pedagogical_reasoning": "The student has already generated the core distinction, so I should affirm that progress and push them one step closer to applying it to the assignment. I will avoid giving a full rubric or direct ratings. Instead, I’ll ask them to operationalize their criteria on one real stressor from their chosen city, which keeps the conversation focused and advances toward the table’s justification column."
+        },
+        {
+          "turn": 3,
+          "student": "I’m looking at extreme heat first, and ngl I’m not sure if it should be like 8 or 9. it feels big, but idk if I’m overrating it.",
+          "tutor": "Don’t guess—test it. Ask:\n- Does extreme heat affect most of the city or mainly certain areas?\n- Is it already causing serious health/infrastructure disruption, or mostly risk?\n- Are heat events increasing in frequency/intensity?\n- Are vulnerable groups hit especially hard?\n\nIf you had to defend 9, what evidence would you use? And what evidence would make you hold it at 8 instead?",
+          "pedagogical_reasoning": "The student is close to a judgment but uncertain between two adjacent ratings. I should not decide for them. Instead, I’ll narrow the distinction with targeted Socratic questions tied to assignment criteria: breadth, trend, severity, unequal impacts, and system disruption. This helps them generate a justification they can use in the table without me supplying the rating."
+        },
+        {
+          "turn": 4,
+          "student": "I guess 9 if there are lots of heat waves, clear health impacts, and it affects most neighborhoods, esp ppl without AC. maybe 8 if it’s bad but more seasonal or uneven across the city?",
+          "tutor": "Good. That’s the kind of reasoning your table needs.\n\nNext step: what evidence do you actually have for your city—heat wave frequency, hospitalizations, deaths, grid strain, urban heat island patterns, AC access, worker exposure?\n\nList 2–3 pieces of evidence. Then you’ll see whether your own support leans more toward 8 or 9.",
+          "pedagogical_reasoning": "The student has essentially built a workable distinction. My role is to reinforce that reasoning and prompt them to translate it into assignment-ready justification, without writing it for them. I’ll ask for evidence categories so they can support the rating from sources and keep the discussion moving toward completion."
+        },
+        {
+          "turn": 5,
+          "student": "yeah that helps, but I’m kinda blanking rn on what counts as strong evidence vs weak evidence. can u give me a quick example?",
+          "tutor": "Quick test: strong evidence is specific, local, and measurable. Weak evidence is broad, vague, or indirect.\n\nStronger: city heat data over time, ER visits/deaths during heat events, outage records, maps of hottest neighborhoods.\nWeaker: “summers feel hotter,” a national article, or general claims without city data.\n\nWhat source do you have right now for your city, and how specific is it?",
+          "pedagogical_reasoning": "The student is asking for examples to distinguish evidence quality, which is appropriate and still within the assignment. I should avoid giving content they can paste or a city-specific solution. I’ll use brief generic examples contrasting stronger and weaker evidence, then immediately return the burden to the student to apply them to their city. This remains Socratic, concise, and focused on the rating justification task."
+        },
+        {
+          "turn": 6,
+          "student": "I have a city climate report and I think it mentions rising hot days plus some neighborhood heat differences. that sounds kinda strong, right?",
+          "tutor": "Yes—that sounds promising because it’s city-specific and measurable.\n\nBut don’t stay vague. Pull out the exact details:\n- How much are hot days increasing?\n- Which neighborhoods are hotter?\n- Does the report connect heat to health, infrastructure, or vulnerable populations?\n\nWhat are the 1–2 strongest facts from that report?",
+          "pedagogical_reasoning": "The student is checking whether their evidence is usable. I should confirm cautiously, explain why it is promising, and then push them to extract the exact details needed for the table. I must not compose the justification for them. A short prompt to identify the report’s concrete indicators will move them toward independent completion."
+        },
+        {
+          "turn": 7,
+          "student": "I haven’t pulled the exact numbers yet tbh. I should prob find those first, then decide if extreme heat is more like an 8 or 9, right?",
+          "tutor": "Exactly. Right now you’re trying to rate before you’ve gathered the justification.\n\nFind the numbers first, then ask: do they show severe, widespread, worsening impact with major disruption? If yes, argue upward. If the impact is serious but more limited or uneven, stay lower.\n\nGo get 2 concrete facts, then bring them back.",
+          "pedagogical_reasoning": "The student has identified the correct next step. I should affirm that and give a minimal process for deciding once they have the numbers, without assigning a rating. This keeps the response bite-sized, practical, and fully aligned with the assignment’s requirement to justify ratings with evidence."
+        },
+        {
+          "turn": 8,
+          "student": "ok yeah, I’ll grab 2 facts first and then try the rating. if I get stuck between 8 and 9 after that, I’ll ask again.",
+          "tutor": "Good. Bring back the 2 facts plus one sentence on who is most affected. That should be enough to justify your choice.\n\nIf you’re still stuck after that, we’ll compare your evidence against your own 8-vs-9 standard.",
+          "pedagogical_reasoning": "The student has a clear next step, so I should reinforce the plan and set a concise expectation for what they should return with. This maintains direction, uses guided discovery, and avoids solving the assignment for them."
+        },
+        {
+          "turn": 9,
+          "student": "sounds good, thanks — I’ll do that rn.",
+          "tutor": "Good. Go get the evidence, not the number first.\n\nWhen you’re back, we’ll test whether your facts really support the rating.",
+          "pedagogical_reasoning": "The student is ending this turn with a plan. I should briefly affirm and keep momentum without adding new content or drifting away from the assignment. This stays concise, tutor-focused, and reinforces the evidence-first approach."
+        },
+        {
+          "turn": 10,
+          "student": "got it, I’ll come back with the facts first.",
+          "tutor": "Good. Bring the facts, and we’ll pressure-test your reasoning from there.",
+          "pedagogical_reasoning": "The student is simply confirming the next step. I should reinforce the evidence-first approach and keep the interaction focused on the assignment without adding unnecessary scaffolding or solutions."
+        }
+      ]
+    }
+  ]
 }

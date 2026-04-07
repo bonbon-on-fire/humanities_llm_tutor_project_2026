@@ -3,11 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "transcripts": [
-    "clueless/clueless_raw/transcript_0006",
-    "clueless/clueless_raw/transcript_0031",
-    "clueless/clueless_raw/transcript_0055"
-  ],
   "grade": {
     "sections": {
       "1_pedagogy": {
@@ -31,10 +26,10 @@
               },
               {
                 "evidence_turns": [
-                  "TRANSCRIPT 1 Turn 8",
-                  "TRANSCRIPT 1 Turn 9",
-                  "TRANSCRIPT 2 Turn 5",
-                  "TRANSCRIPT 2 Turn 6"
+                  "Transcript 1 Turn 8",
+                  "Transcript 1 Turn 9",
+                  "Transcript 2 Turn 5",
+                  "Transcript 2 Turn 6"
                 ],
                 "sub_criterion_id": "1.3.C.a",
                 "reason": "When the student improved after earlier confusion—for example correctly listing the row labels and roughly distinguishing GDP from income per capita—the tutor acknowledged correctness and moved on, but did not prompt reflection on what changed in the student's thinking or why the new approach worked.",
@@ -56,18 +51,18 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "TRANSCRIPT 1 Turn 7",
-                  "TRANSCRIPT 1 Turn 8",
-                  "TRANSCRIPT 1 Turn 9",
-                  "TRANSCRIPT 1 Turn 10",
-                  "TRANSCRIPT 2 Turn 7",
-                  "TRANSCRIPT 2 Turn 8",
-                  "TRANSCRIPT 2 Turn 9",
-                  "TRANSCRIPT 2 Turn 10",
-                  "TRANSCRIPT 3 Turn 7",
-                  "TRANSCRIPT 3 Turn 8",
-                  "TRANSCRIPT 3 Turn 9",
-                  "TRANSCRIPT 3 Turn 10"
+                  "Transcript 1 Turn 7",
+                  "Transcript 1 Turn 8",
+                  "Transcript 1 Turn 9",
+                  "Transcript 1 Turn 10",
+                  "Transcript 2 Turn 7",
+                  "Transcript 2 Turn 8",
+                  "Transcript 2 Turn 9",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 7",
+                  "Transcript 3 Turn 8",
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
                 ],
                 "sub_criterion_id": "2.1.A.a",
                 "reason": "The tutor repeatedly returned to the same pattern—restate boundary-consistency logic, ask the student to choose a Jakarta unit, then ask another short application question—even after the student explicitly said they were still overwhelmed and needed a different kind of synthesis. The conversation advanced only minimally and often spiraled on the same sub-problem without enough consolidation or reframing.",
@@ -99,9 +94,9 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "TRANSCRIPT 1 Turn 5",
-                  "TRANSCRIPT 1 Turn 10",
-                  "TRANSCRIPT 3 Turn 5"
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 10",
+                  "Transcript 3 Turn 5"
                 ],
                 "sub_criterion_id": "3.2.A.a",
                 "reason": "The tutor's tone was sometimes unnecessarily sharp or rigid, using phrases like 'Fine—category by category,' 'That fear is mostly avoidance,' and 'Stop overcomplicating it.' These comments risk making the student's confusion feel judged rather than supported.",
@@ -129,5 +124,231 @@
       "model": "gpt-5.4"
     },
     "judge_llm_calls": 1
-  }
+  },
+  "transcript_sources": [
+    "clueless/clueless_raw/transcript_0006",
+    "clueless/clueless_raw/transcript_0031",
+    "clueless/clueless_raw/transcript_0055"
+  ],
+  "transcripts": [
+    {
+      "stem": "clueless/clueless_raw/transcript_0006",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_01",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "I’m kind of lost on this city data table assignment. Can you just explain the whole thing from the beginning?",
+          "tutor": "Yes—but you need to do the researching. My job is to help you structure it.\n\nStart with the big picture: this table is your city’s baseline profile. You’re gathering facts that help you later judge climate risks and priorities.\n\nYour table needs, at minimum:\n1. Location\n2. Population\n3. Race/ethnicity breakdown\n4. Physical area\n5. Income per capita\n6. GDP\n7. Köppen climate zone\n\nSo the task is really three steps:\n- choose/confirm your city\n- find a credible source for each category\n- organize the findings in a clean table\n\nThe important question first: what city are you using?",
+          "pedagogical_reasoning": "I will stay in the tutor role and give a concise overview of the assignment without completing it for the student. I will use guided discovery by breaking the task into a few essential components and then asking the student to supply the first key choice: their city. This keeps the response bite-sized, solution-directed, and avoids doing the work for them."
+        },
+        {
+          "turn": 2,
+          "student": "I think maybe Jakarta, but I’m not even sure how I’m supposed to start finding any of this. Like do I need totally different sources for every row, or is there just a basic way to do the whole thing?",
+          "tutor": "Good—stop worrying about every row at once. Think in source types, not rows.\n\nUsually, what kinds of sources would cover:\n- population and race/ethnicity\n- area and location\n- income/GDP\n- climate zone?\n\nA strong basic method is: start with official city or national statistics, then use a reputable international source if something is missing. What source do you think would be your first stop for Jakarta?",
+          "pedagogical_reasoning": "I will reduce overwhelm by helping the student build a research process rather than giving city-specific facts. I will use Socratic questions that move toward a workable method: identify likely source types, then verify consistency and citation. I will not provide the table content or complete the research for them."
+        },
+        {
+          "turn": 3,
+          "student": "I honestly don’t know. It all kind of blends together for me, and I’m confused about the climate zone part too. Can you just walk me through the whole process for Jakarta from scratch?",
+          "tutor": "We can do the process, not the research for you.\n\nUse this workflow:\n1. Make a table with the required categories.\n2. For each row, ask: what type of source would reasonably own this data?\n3. Prioritize official statistics first, then reputable international databases.\n4. Record the number and the source together so you don’t lose track.\n5. Check whether all numbers are from roughly similar years.\n\nFor climate zone, ask yourself: is that demographic/economic data, or physical geography/climate classification? What kind of source would classify climates rather than count people or money?",
+          "pedagogical_reasoning": "I will keep the student focused on process, not provide Jakarta’s data. I’ll use guided discovery with a minimal step-by-step workflow and targeted questions that move toward source selection and table construction. This addresses confusion while preserving the rule against giving solutions directly."
+        },
+        {
+          "turn": 4,
+          "student": "Maybe like a map or weather site? I’m not sure. I still feel like I don’t get how all the pieces fit together, especially because some things are city data and some are country data and I don’t know what counts.",
+          "tutor": "Better. Yes, climate zone would usually come from a climate classification map/database, not an income source.\n\nHere’s the key rule: this is a city data table, so default to city-level data. Only use country-level data if the assignment category can’t reasonably be found for the city, and then you should note that choice.\n\nSo ask yourself for each row: is this truly about the city itself, or am I slipping into national data because it’s easier?\n\nWhich of the required categories do you think should definitely be city-level for Jakarta?",
+          "pedagogical_reasoning": "I will clarify the assignment's organizing principle—city-level data first—and prompt the student to distinguish acceptable proxies when city-level data is unavailable. I will use Socratic questioning to help them decide what counts and how to justify it, without supplying specific Jakarta facts."
+        },
+        {
+          "turn": 5,
+          "student": "I mean probably population and area, but then I get stuck again with race/ethnicity and GDP because I don’t know if those are even available for a city. That’s why I kind of just want the full explanation of what to do for each category.",
+          "tutor": "Fine—category by category, but you still have to make the decisions.\n\nUse this test for each row:\n- Location: what basic geographic identifiers define the city?\n- Population: what source gives a city population figure, and what year is it?\n- Race/ethnicity: does your city or country publish a breakdown that meaningfully applies to the city?\n- Physical area: is this administrative city area or metro area? Don’t mix them.\n- Income per capita: can you find a city-level measure, or only a broader regional/national one?\n- GDP: is there a city GDP, metro GDP, or only national GDP? Which best matches your case study scale?\n- Köppen climate zone: what classification is assigned to the city’s location?\n\nThe real issue is scale consistency. Are you studying Jakarta proper, or the larger metro region?",
+          "pedagogical_reasoning": "The student is stuck on category-by-category expectations, so I will provide a compact framework for each category without giving any actual data or sources specific enough to complete the assignment. I will continue using guided discovery by pairing each category with a decision question the student must answer."
+        },
+        {
+          "turn": 6,
+          "student": "That’s part of why I’m confused — I don’t really know the difference well enough, and now I feel like if I pick the wrong scale the whole table will be wrong. Can you just explain the Jakarta proper vs metro thing in a simple way?",
+          "tutor": "Simple version:\n- City proper = the official administrative city boundary\n- Metro area = the wider urban region connected economically and physically to the city\n\nThose are not interchangeable. Population, area, and GDP can look very different depending on which one you use.\n\nFor this assignment, the safer move is usually to pick one scale and stay consistent. Which sounds more defensible for a “case study city” table: the official city, or the wider metro region?",
+          "pedagogical_reasoning": "The student is anxious about a foundational concept, so I will briefly explain the distinction in simple terms and then immediately push them to choose a scale for the assignment. This remains bite-sized and solution-directed without giving their table content."
+        },
+        {
+          "turn": 7,
+          "student": "I guess the official city? But I’m still not confident, and I kind of need the whole assignment to make sense in one picture, not just one choice at a time.",
+          "tutor": "Good. Then see the table as 3 blocks, not 7 random rows:\n\n- Identity of place: location, official city boundary, area\n- People and economy: population, race/ethnicity, income per capita, GDP\n- Physical climate context: Köppen zone\n\nOne picture: you are defining what Jakarta is, who lives there, what economic capacity it has, and what climate setting it sits in. That baseline helps later climate analysis.\n\nNow commit: will your table be for Jakarta’s official city boundary? If yes, your next step is to draft the row labels and a “source” column. Can you type those row labels out?",
+          "pedagogical_reasoning": "The student wants the assignment framed as a coherent whole. I should give a concise conceptual map of the table as a baseline profile and show how categories group together, then ask the student to commit to a scale and begin drafting. This supports guided discovery, avoids giving data, and keeps the response short."
+        },
+        {
+          "turn": 8,
+          "student": "I think yes, but I’m still shaky on it. My row labels would be like location, population, race/ethnicity, area, income per capita, GDP, and Köppen climate zone, right?",
+          "tutor": "Yes. Those are the core rows.\n\nBut your current setup is still too weak. Add columns that force clarity:\n- Data category\n- Value\n- Year\n- Geographic scale\n- Source\n\nThat will stop you from mixing city and metro data. What would you put in the “geographic scale” column for this assignment?",
+          "pedagogical_reasoning": "The student is making progress and has correctly identified the required categories. I should affirm that, keep the response brief, and push them to the next concrete step: setting up a table structure that includes scale/year/source so they avoid common mistakes. I will not provide content for Jakarta or write the assignment for them."
+        },
+        {
+          "turn": 9,
+          "student": "I’d put Jakarta official city boundary, I think. I’m still feeling pretty lost though — can you just say the whole setup one more time in a really simple way?",
+          "tutor": "Yes. Simple version:\n\nYour table is:\n- one city: Jakarta official city boundary\n- seven main rows: location, population, race/ethnicity, area, income per capita, GDP, Köppen climate zone\n- five useful columns: category, value, year, geographic scale, source\n\nYour job is to find one credible value for each row and keep the scale consistent.\n\nSo the first real task now is this: which 2 rows do you think will be easiest to research first?",
+          "pedagogical_reasoning": "The student is asking for repetition due to confusion, not for direct answers. I will give a very simple recap of the setup, reinforce the chosen scale, and end with one forward-moving question. This follows Socratic, guided discovery, stays bite-sized, and does not complete the assignment."
+        },
+        {
+          "turn": 10,
+          "student": "Probably location and population, but I’m not totally sure. I still feel like once I start I’m going to realize I don’t understand the rest at all.",
+          "tutor": "That fear is mostly avoidance. Start anyway.\n\nYes—location and population are good first rows because they teach the pattern: find a credible source, record the value, year, scale, and citation.\n\nOnce you do 2 rows, the rest will make more sense. What kind of source would you trust first for Jakarta’s population: city government, national statistics, or a random summary website?",
+          "pedagogical_reasoning": "The student is expressing uncertainty at the starting stage. I should reduce anxiety by confirming a manageable starting point and framing the assignment as iterative rather than all-at-once. I will use Socratic questioning to get them to begin with the easiest rows and notice the pattern they can reuse for the rest. I will not provide Jakarta data or sources directly, and I will keep it brief."
+        }
+      ]
+    },
+    {
+      "stem": "clueless/clueless_raw/transcript_0031",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_02",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "I’m kind of lost on the city data table for my climate case study. I don’t really get what each category is asking for or where I’m supposed to find the info.",
+          "tutor": "Let’s simplify it. First: what city did you choose?\n\nThen we can decode the table one field at a time. For each category, ask yourself: is this asking for location, people, economy, or climate?\n\nTry this:\n1. Which categories seem clearest to you already?\n2. Which 2 feel most confusing?\n\nFor sources, where would you expect to find each type of data: city government, national census, World Bank/OECD, or a climate classification map?",
+          "pedagogical_reasoning": "I should keep this brief, stay within the assignment, and use guided discovery rather than filling the table for the student. The student is confused about categories and sources, so I will reduce ambiguity by asking them to name their city and then prompting them to interpret one or two categories at a time. I will suggest source types, not do the lookup. This supports the assignment without giving a completed solution."
+        },
+        {
+          "turn": 2,
+          "student": "I picked Jakarta, but then I started second-guessing if I’m even supposed to use city proper data or metro data, so now all the categories are kind of blending together for me. The most confusing ones are probably GDP and the race/ethnicity breakdown because I don’t know what counts or what source is “right.”",
+          "tutor": "Good—your real issue is boundary definition, not the table itself.\n\nStart there: when the assignment says “city,” what geographic unit do you think your course most likely wants for Jakarta: the administrative city/province, or the larger metro region?\n\nWhichever you choose, the key is consistency. What would happen if you used city-proper population but metro GDP?\n\nFor GDP and ethnicity, ask: does your source define the same boundary you picked? Try naming one source you found for each, and we’ll test whether it fits.",
+          "pedagogical_reasoning": "The student has identified a specific city and two confusing categories. I should not resolve the whole table for them, but help them distinguish boundary definitions and source choices through targeted Socratic questions. The key learning step is recognizing that data depends on geographic unit and source consistency. I will guide them to decide on a unit of analysis for Jakarta and ask how they might justify it."
+        },
+        {
+          "turn": 3,
+          "student": "That’s where I’m stuck though, because I can kind of argue either one and then I spiral. I found numbers in different places, but I honestly can’t tell how to decide between them, and I’m worried I’m building the whole table wrong from the start.",
+          "tutor": "You’re over-fixating on the “perfect” choice. The bigger issue is making a defensible, consistent one.\n\nAsk yourself: which unit is easier to document across most categories for Jakarta using credible sources?\n\nChoose one and write a 1-sentence justification for yourself. What is your tentative choice right now, and why is it the more workable option?",
+          "pedagogical_reasoning": "The student is spiraling over a foundational but manageable issue. I should interrupt the unproductive loop, narrow the decision criterion, and ask for a practical written choice with justification. I must not choose the boundary for them, but I can frame a decision rule: pick one unit and keep it consistent. This moves them forward without giving the answer directly."
+        },
+        {
+          "turn": 4,
+          "student": "I guess maybe the administrative province, but I’m not confident and I still don’t really know how I’m supposed to think about all the categories together. Could you just explain the whole table in a simple way, like what each field is really trying to tell me and how I’m supposed to approach it?",
+          "tutor": "Yes. Think of the table as a snapshot of your city in 4 parts:\n\n1. Place: location, physical area\n2. People: population, race/ethnicity breakdown\n3. Economy: income per capita, GDP\n4. Climate context: Köppen climate zone\n\nEach field answers one question:\n- Location: where is the city and in what country/region?\n- Population: how many people live in your chosen boundary?\n- Race/ethnicity: how the population is socially/demographically grouped, if that data exists\n- Physical area: how much land the chosen boundary covers\n- Income per capita: average economic resources per person\n- GDP: total size of the city’s economy\n- Köppen zone: what broad climate type the city has\n\nYour job is not to find “perfect” numbers. It’s to use one clear boundary and credible sources consistently.\n\nCan you now sort the categories into those 4 parts and tell me which one still feels most unclear?",
+          "pedagogical_reasoning": "The student asked for a conceptual explanation of the whole table, not for filled-in answers. I should stay bite-sized, clarify the purpose of each category, organize them into themes, and preserve guided discovery by asking the student to map categories onto those themes. I will avoid providing Jakarta-specific data or wording for their submission."
+        },
+        {
+          "turn": 5,
+          "student": "I can sort them, but I still feel fuzzy because “income per capita” and “GDP” sound basically the same to me, and then the race/ethnicity one seems weird for Jakarta because I’m not even sure cities always report that. I think I need it explained more plainly or I’m going to keep mixing them up.",
+          "tutor": "Plainly:\n\n- GDP = the whole pie. Total economic output in the city.\n- Income per capita = slice per person. Average income/resources per resident.\n\nSo one is city-wide size; the other is per-person average. A place can have a big GDP and still low income per person.\n\nFor race/ethnicity: yes, sometimes city-level data is limited or defined differently. So the question is not “is there a perfect category?” but “does a credible source report some population-group breakdown for my chosen boundary?”\n\nNow you tell me: in your own words, what is the difference between GDP and income per capita?",
+          "pedagogical_reasoning": "The student is stuck on two conceptual distinctions. I should clarify them with plain-language contrasts and a guiding question, while not providing Jakarta-specific data or completing the table. Since they are circling the same confusion, I should keep it simple and push them to restate the distinction themselves."
+        },
+        {
+          "turn": 6,
+          "student": "I think GDP is like all the money/economic activity together, and income per capita is more like the average for each person? But I’m still not sure what I’d actually put in the table if I find one source giving national GDP stuff and another giving city income numbers.",
+          "tutor": "That distinction is basically right.\n\nNow be stricter with scale: if your table is about Jakarta, what’s the problem with pairing national GDP with city-level income per capita?\n\nUse this rule: each number should match your chosen unit as closely as possible. If it doesn’t, it may not belong in the main table.\n\nSo what would you do if you can only find national data for one category: include it with a clear note, or keep looking for city/province-level data?",
+          "pedagogical_reasoning": "The student has mostly grasped the concept but is now confronting source mismatch. I should affirm the distinction, then steer them toward the core rule: match the geographic scale to the chosen city boundary and avoid mixing national with city data unless explicitly framed. I will ask them to apply that rule rather than supply the solution."
+        },
+        {
+          "turn": 7,
+          "student": "That’s the part that keeps making me feel like I need a bigger explanation of what counts as acceptable for this assignment, because I don’t know when a note is enough versus when the data is just wrong to use. I’m kind of afraid of making a judgment call and having the whole thing be inconsistent.",
+          "tutor": "Use a simple test. A data point is more acceptable if:\n1. it matches your chosen boundary,\n2. it comes from a credible source,\n3. it’s reasonably recent,\n4. the source clearly defines the metric.\n\nA note is enough when the data is close but not perfect. It’s wrong to use when it’s a different scale and could mislead the reader.\n\nTest one category now—GDP or ethnicity. Does your current source pass those 4 checks?",
+          "pedagogical_reasoning": "The student needs a practical standard for acceptability, not a direct solution. I should provide a decision framework that helps them judge sources and consistency, while keeping the student responsible for applying it. Because they are stuck in a repeated uncertainty loop, I should break it with a short checklist and ask them to test one category against it."
+        },
+        {
+          "turn": 8,
+          "student": "I can try, but honestly I still feel like I’m guessing at all 4 checks. I have one GDP source that might be metro and another that might be province, and I don’t know how to compare them without someone walking me through the logic more broadly.",
+          "tutor": "We’re circling the same issue now. Don’t stay abstract—compare the two sources directly.\n\nFor each source, write 4 labels:\n- boundary used\n- year\n- exact GDP metric\n- institution/source\n\nThen ask: which one matches your chosen Jakarta boundary more closely?\n\nDo that comparison in 2 short lines here. If you want, we can stay on GDP, or move on to another category after that.",
+          "pedagogical_reasoning": "The student is still looping on the same concept. Per the instructions, I should point out the redundancy, refocus on the bigger picture, and ask them to integrate what we’ve discussed in a concrete attempt. I can offer a minimal comparison framework without choosing the source for them."
+        },
+        {
+          "turn": 9,
+          "student": "I’m still pretty overwhelmed and I think I need the big-picture logic first, not just the comparison. Could you go over how to judge sources across the whole table in a more general way, because right now every category feels like a different rule to me?",
+          "tutor": "Yes: use one rule for the whole table.\n\nThink in this order:\n1. Pick your boundary for Jakarta.\n2. For every category, prefer data that uses that same boundary.\n3. Prefer official or well-established sources.\n4. Prefer clearly defined, recent data.\n5. If a category isn’t available at that scale, either note the mismatch or leave it out rather than force bad data.\n\nSo the table is not “different rules for each field.” It’s one consistent geography plus credible sourcing.\n\nWhat boundary are you leaning toward now, and why would that make the rest of the table easier?",
+          "pedagogical_reasoning": "The student is overwhelmed and needs a unifying framework, not category-by-category lookup help. I should reduce cognitive load by giving one general logic for the whole table, while still not filling it in or making decisions for them. To preserve guided discovery, I’ll end with one focused question that asks them to apply the framework to their own case."
+        },
+        {
+          "turn": 10,
+          "student": "I’m leaning toward the administrative province, I think, just because it seems easier to keep consistent. But I still feel weirdly unsure about whether that means I should reinterpret everything through that lens, and I’m not sure I could apply it by myself to the rest of the fields.",
+          "tutor": "Yes—that’s the point. Once you choose the administrative province, you read every field through that same lens.\n\nSo for each category, ask: “Do these data describe the administrative province of Jakarta?” If yes, usable. If no, questionable.\n\nTry it now with 3 fields: population, area, and GDP. For each one, what would count as a match to your chosen boundary?",
+          "pedagogical_reasoning": "The student has made a workable choice but lacks confidence applying it. I should reinforce the decision rule, keep the response brief, and use guided discovery by asking them to apply the boundary to each category. I must not provide the table or sources directly. A concise checklist plus one question will move them forward."
+        }
+      ]
+    },
+    {
+      "stem": "clueless/clueless_raw/transcript_0055",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_03",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "I’m stuck on the Geographic and Demographic Data Table for my case study city. I’m not even sure what counts as “existing conditions,” and I kind of want a broad explanation of the whole assignment before I pick apart the details.",
+          "tutor": "Broadly, “existing conditions” means the city’s current baseline: where it is, who lives there, what its physical and economic profile looks like, and what climate context it sits in. That baseline helps you later judge climate risks and where adaptation/mitigation investment might matter most.\n\nFor this assignment, your table is basically a snapshot of the city now using the required categories: location, population, race/ethnicity breakdown, physical area, income per capita, GDP, and Köppen climate zone.\n\nBefore we go further: what city are you using, and which 2 of those categories feel most unclear to you?",
+          "pedagogical_reasoning": "I will give a concise overview of the assignment’s purpose without doing the work for the student. To follow the Socratic method and guided discovery, I’ll frame the explanation around what the table is meant to help them notice, then ask a focused question that moves them toward identifying the required categories for their own city. I will keep it brief, stay on the assignment theme, and avoid supplying a filled-in solution."
+        },
+        {
+          "turn": 2,
+          "student": "I picked Jakarta, but honestly most of it feels unclear. The GDP and Köppen climate zone parts especially confuse me, and I’m also not sure how detailed the race/ethnicity breakdown is supposed to be.",
+          "tutor": "Good—Jakarta is specific enough to work with. Don’t treat this as one giant task.\n\nThink of the 3 confusing items this way:\n1. GDP: is the assignment asking about the city’s overall economy or individual income?\n2. Köppen zone: is that about weather today, or long-term climate classification?\n3. Race/ethnicity breakdown: for Jakarta, would you expect a highly detailed neighborhood-level breakdown, or a broad population composition using available census categories?\n\nTake a shot: how would you define each of those in your own words before looking them up?",
+          "pedagogical_reasoning": "I’ll narrow the task by chunking the confusing parts into three categories and prompting the student to infer what each field is asking for. This keeps the response bite-sized, uses guided discovery, and avoids providing the table entries directly. I’ll ask targeted questions that move toward a workable interpretation of the assignment rather than a full solution."
+        },
+        {
+          "turn": 3,
+          "student": "I’m not really confident defining them myself because I feel like I’ll just get them wrong. Could you just explain all three pretty fully first, maybe with what kind of source I should use too?",
+          "tutor": "Yes—but keep it practical.\n\nGDP: total economic output of the city/metro in a year. It’s about the size of the economy, not what each person earns.\nIncome per capita: average income per person. Different measure.\nKöppen climate zone: a standardized long-term climate classification based on temperature/precipitation patterns, not this week’s weather.\nRace/ethnicity breakdown: use the broad population categories that official data actually reports for your city/country. Don’t invent extra detail.\n\nBest sources: city government, national statistics office/census, World Bank/UN, or a reputable city profile. For Köppen, use an academic or established climate reference.\n\nWhich one do you want to tackle first: finding a reliable GDP source, or figuring out what counts as an acceptable ethnicity source for Jakarta?",
+          "pedagogical_reasoning": "The student is asking for conceptual clarification, which is appropriate. I should explain the three categories enough to reduce uncertainty, but still avoid doing the assignment or supplying Jakarta-specific entries. I’ll keep it concise, frame the explanation as distinctions they can apply themselves, and end with a forward-moving question about source selection so they stay engaged in the process."
+        },
+        {
+          "turn": 4,
+          "student": "That helps, but I still feel kind of blurry on the whole table and how all the pieces fit together. I think I’d understand better if I had a more complete walkthrough of what each category is doing in the assignment, not just one piece at a time.",
+          "tutor": "Fair. Think of the table as a baseline profile of Jakarta before you analyze climate action.\n\nEach category does a job:\n- Location: places the city geographically and politically.\n- Population: shows scale of people affected.\n- Race/ethnicity breakdown: shows who lives there and hints at equity concerns.\n- Physical area: shows spatial scale/density context.\n- Income per capita: suggests household-level economic capacity.\n- GDP: suggests city-level economic capacity.\n- Köppen climate zone: gives the long-term climate setting.\n\nTogether, these help you ask later: what risks exist, who is vulnerable, and what resources the city may have.\n\nWhich 2 categories seem most directly connected to climate vulnerability, and which 2 seem more about capacity to respond?",
+          "pedagogical_reasoning": "I’ll provide a concise big-picture walkthrough of each required category’s purpose in the assignment without supplying Jakarta’s data. This addresses the student’s request for structure, keeps the focus on the specific assignment, and still uses guided discovery by ending with a question that asks them to connect the categories to climate planning."
+        },
+        {
+          "turn": 5,
+          "student": "I’m not sure, because it feels like they all connect to both. Also, when I try to answer questions like that, I end up second-guessing everything. That angle didn’t really click for me, so maybe I need a different explanation.",
+          "tutor": "Then use a simpler frame. Stop overcomplicating it.\n\nYour table is really just 3 buckets:\n- Place: location, physical area, Köppen zone\n- People: population, race/ethnicity breakdown\n- Resources/economy: income per capita, GDP\n\nThat’s it. You are not proving an argument yet. You are just building a factual city profile that later helps with climate risk and response.\n\nIf that frame works, which bucket feels easiest to fill in first for Jakarta: place, people, or resources?",
+          "pedagogical_reasoning": "The student is frustrated and the prior framing did not help. Per the rules, I can be less Socratic and use a relevant example structure, while still not giving the assignment answer. I’ll reframe the table as three buckets—place, people, resources—to simplify the whole task, then ask a concrete organizational question that moves them forward."
+        },
+        {
+          "turn": 6,
+          "student": "Maybe “place,” but I still kind of want the big-picture version first. I know you simplified it, but could you give me a more complete explanation of how someone would actually build the whole table from start to finish without getting lost?",
+          "tutor": "Yes. Build it in this order:\n\n1. Make the table with the required categories.\n2. Fill the easy factual fields first: location, population, area.\n3. Then add classification fields: Köppen climate zone.\n4. Then add socioeconomic fields: income per capita and GDP.\n5. Then add the race/ethnicity breakdown using whatever broad categories your best official source provides.\n6. For every entry, note the source and year so your data stays consistent.\n7. Last, scan for mismatch: city vs metro, different years, unclear definitions.\n\nThe goal is not depth yet—it’s a clean, credible baseline snapshot.\n\nWhat source do you think you should check first for Jakarta: city government, national statistics, or an international database?",
+          "pedagogical_reasoning": "The student wants process clarity, not direct answers. I should provide a high-level start-to-finish workflow for building the table while preserving boundaries: no filling it in, no writing for them. To maintain Socratic guidance, I’ll end with a concrete first-step question. I’ll keep it brief and assignment-focused."
+        },
+        {
+          "turn": 7,
+          "student": "I guess national statistics, but I’m still shaky because I don’t know how to tell if a source is “clean” or if I’m mixing city and metro data by accident. That didn’t fully solve it, so I’m trying a different angle: could you just spell out what a “clean, credible baseline snapshot” looks like in plain language?",
+          "tutor": "A “clean, credible baseline snapshot” means: one table, clear categories, data from trustworthy sources, and no hidden mixing of different places or years.\n\nPlain-language checklist:\n- Same place each time: Jakarta city, not sometimes metro/province\n- Recent enough data: years visible for each entry\n- Official or reputable source\n- Definitions match the category\n- If data isn’t exact, you label the limitation instead of pretending\n\nWhen you open a source, what exact geographic label does it use for Jakarta?",
+          "pedagogical_reasoning": "The student is still uncertain, so I should define the quality standard in plain language and give a short checklist for evaluating sources, without supplying data or writing the table. This remains within the assignment and uses guided discovery by ending with a focused question about source labels."
+        },
+        {
+          "turn": 8,
+          "student": "I haven’t opened one yet. I’m still at the point where I feel like I need the full picture explained before I can even tell what I’m looking for, and I keep worrying I’ll choose the wrong Jakarta unit.",
+          "tutor": "Here’s the full picture in plain terms: your job is to make one factual profile of one clearly defined Jakarta unit. Every number in the table should describe that same unit.\n\nSo first decide the unit: city proper, province/special capital region, or metro area. Then collect all categories for that same unit as consistently as possible. If one category only exists for a different unit, don’t hide that—note it.\n\nThe biggest mistake is not “picking the wrong one.” It’s mixing them carelessly.\n\nSo: for your assignment, do you think you should center Jakarta as the city proper, the special capital region, or the metro area?",
+          "pedagogical_reasoning": "The student is blocked by uncertainty and asking again for the big picture. I should respond with a concise, complete framing of the assignment plus the key distinction about geographic units, without giving any city-specific answers. To keep the Socratic method, I’ll end with a forced-choice question that helps them commit to a research unit and move forward."
+        },
+        {
+          "turn": 9,
+          "student": "I’m not sure, and this is where I freeze. Could you just tell me which Jakarta unit is probably the safest choice for this assignment and why, in a straightforward way?",
+          "tutor": "I’m not going to choose it for you. Your job is to justify the unit.\n\nSafest usually means: the unit with the most complete official data across all required categories. For Jakarta, compare these labels in sources: city proper, special capital region/province, metro area. The best choice is the one you can use consistently.\n\nAsk yourself: which unit is most likely to have official population, area, income, and demographic data all in one place?",
+          "pedagogical_reasoning": "The student is asking for a direct recommendation, but I must avoid making the core decision for them. I can narrow the choice by giving decision criteria and a practical heuristic, then ask them to choose based on source availability. This follows guided discovery, stays within the assignment, and keeps the answer bite-sized while addressing their freeze point."
+        },
+        {
+          "turn": 10,
+          "student": "I’d guess the special capital region/province, but I’m honestly guessing. I still want a broader explanation of why that would be better than city proper or metro, because I don’t trust my own judgment here.",
+          "tutor": "That guess is reasonable, but test it.\n\nBroadly:\n- City proper: best if the assignment is strictly about the municipal government unit, but data can be narrower or fragmented.\n- Province/special capital region: often better if that is the main governing and statistical unit, so required categories are easier to find consistently.\n- Metro area: useful for the real urban economy/population, but demographic and official governance data are often less consistent.\n\nSo the “better” choice is usually the one that is both politically meaningful and statistically complete.\n\nGiven that logic, what makes the special capital region a stronger candidate than metro for your table?",
+          "pedagogical_reasoning": "The student is asking for conceptual comparison, which is appropriate. I should explain the tradeoffs among city proper, province/special capital region, and metro area in general terms, without selecting the answer for them or filling the table. To stay Socratic and move toward action, I’ll end by asking them to apply the comparison to Jakarta and choose a tentative unit."
+        }
+      ]
+    }
+  ]
 }

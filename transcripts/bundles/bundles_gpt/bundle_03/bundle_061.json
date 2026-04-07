@@ -3,11 +3,6 @@
   "provider": "gpt",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "transcripts": [
-    "clueless/clueless_raw/transcript_0020",
-    "cooperative/cooperative_raw/transcript_0021",
-    "cooperative/cooperative_raw/transcript_0045"
-  ],
   "grade": {
     "sections": {
       "1_pedagogy": {
@@ -21,8 +16,8 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "TRANSCRIPT 1 Turn 5",
-                  "TRANSCRIPT 1 Turn 8"
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 8"
                 ],
                 "sub_criterion_id": "1.2.B.a",
                 "reason": "When the student repeatedly said they were overwhelmed and not ready to apply the method yet, the tutor mostly responded with another full process explanation rather than first isolating the exact confusion point through more targeted diagnostic questioning.",
@@ -36,7 +31,7 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "TRANSCRIPT 1 Turn 5"
+                  "Transcript 1 Turn 5"
                 ],
                 "sub_criterion_id": "1.3.A.a",
                 "reason": "The tutor enforced a tutoring constraint ('I'm not going to build the assignment for you') but did not clearly explain why this student-led approach supports learning, retention, or transfer.",
@@ -44,10 +39,10 @@
               },
               {
                 "evidence_turns": [
-                  "TRANSCRIPT 2 Turn 9",
-                  "TRANSCRIPT 2 Turn 10",
-                  "TRANSCRIPT 3 Turn 9",
-                  "TRANSCRIPT 3 Turn 10"
+                  "Transcript 2 Turn 9",
+                  "Transcript 2 Turn 10",
+                  "Transcript 3 Turn 9",
+                  "Transcript 3 Turn 10"
                 ],
                 "sub_criterion_id": "1.3.C.a",
                 "reason": "After the student improved from uncertainty to a workable claim/format, the tutor continued refining the work but did not prompt brief reflection on what changed in the student's reasoning or why the new approach worked.",
@@ -69,10 +64,10 @@
             "deductions": [
               {
                 "evidence_turns": [
-                  "TRANSCRIPT 1 Turn 5",
-                  "TRANSCRIPT 1 Turn 6",
-                  "TRANSCRIPT 1 Turn 7",
-                  "TRANSCRIPT 1 Turn 8"
+                  "Transcript 1 Turn 5",
+                  "Transcript 1 Turn 6",
+                  "Transcript 1 Turn 7",
+                  "Transcript 1 Turn 8"
                 ],
                 "sub_criterion_id": "2.1.A.a",
                 "reason": "The tutor repeated the same general explanation of the assignment and categories across multiple turns while the student stayed stuck, with limited synthesis or strategy change beyond re-asking for the city and restating the task.",
@@ -123,5 +118,231 @@
       "model": "gpt-5.4"
     },
     "judge_llm_calls": 1
-  }
+  },
+  "transcript_sources": [
+    "clueless/clueless_raw/transcript_0020",
+    "cooperative/cooperative_raw/transcript_0021",
+    "cooperative/cooperative_raw/transcript_0045"
+  ],
+  "transcripts": [
+    {
+      "stem": "clueless/clueless_raw/transcript_0020",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_01",
+      "course": "urban_studies",
+      "exercise_number": "03",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nA critical component in understanding how your case study city is performing in regards to climate adaptation and mitigation actions is recognizing who the key decision-making actors are in climate resilience work. Identify and analyze key decision-makers involved in climate action in your case study city.\n\nTask\nCreate a Decision-making Actors Table that maps:\n• Who's leading climate resilience work\n• Who's engaged in current efforts\n• Who's missing from climate strategies\n\nActor Types to Consider:\n• City/state government officials\n• Private sector leaders\n• Academic researchers\n• Community advocates\n• Affected residents (organized and unorganized)\n\nDeliverable\nDiscuss your findings in the course forum (no table submission required). Focus on which sectors are most active and identify gaps in participation.\n\nHow This Supports Your Work\nThis Decision-making Actors Table will support further work you undertake in mapping how actors are related to specific actions and if and how they are working together in these action efforts.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "I’m kinda lost on this climate action assignment. Can you just explain what I’m supposed to do from the beginning?",
+          "tutor": "Yes—start with the big picture: your job is to figure out who makes climate-action decisions in your case study city.\n\nYou’re basically doing 3 things:\n1. Identify the main actors involved in climate resilience/climate action.\n2. Sort them into: leading, engaged, and missing.\n3. Discuss what that reveals about which sectors have power and which are underrepresented.\n\nThe actor types the assignment wants you to consider are: government, private sector, researchers, community advocates, and residents.\n\nSo first question: what is your case study city, and have you found any climate plan, resilience plan, or city sustainability webpage for it yet?",
+          "pedagogical_reasoning": "I should orient the student to the assignment without doing the work for them. To follow the Socratic, guided-discovery approach, I will briefly restate the task, break it into a few manageable parts, and end with a focused question that moves them toward starting their own case-specific analysis. I will keep it bite-sized and avoid giving a finished solution or wording they can submit."
+        },
+        {
+          "turn": 2,
+          "student": "I picked a city, but I’m still confused about how to turn that into the forum post. Like do I just list people and organizations, or am I supposed to analyze them too? I feel like I need the whole process explained.",
+          "tutor": "Not just a list. The assignment asks for identification and analysis.\n\nThink of the process like this:\n1. Pick out actors in your city’s climate work.\n2. Group them: who leads, who participates, who is missing.\n3. Look for patterns: which sectors dominate? who has influence? who is left out?\n4. Turn those patterns into a short forum discussion.\n\nSo the table is your thinking tool; the forum post is your interpretation of the table.\n\nA useful check: if you only have names, you’re not done. If you can say why those actors matter and what gaps you notice, you’re analyzing.\n\nWhat city did you choose? Let’s identify just 3–5 likely actors first.",
+          "pedagogical_reasoning": "I should clarify the assignment structure while still making the student reason through the distinction between listing and analyzing. I will explain the process in a compact sequence, emphasize that the forum post should discuss patterns rather than dump names, and ask a targeted question that helps them begin organizing their own material. This stays within the assignment and avoids writing the post for them."
+        },
+        {
+          "turn": 3,
+          "student": "I don’t know, that’s where I get stuck. I can’t tell who “counts” as an actor versus just being mentioned somewhere, and then the leading vs engaged thing starts blurring together for me. Could you maybe just walk me through how to tell the difference in a general way?",
+          "tutor": "Yes. Use a simple test: an actor “counts” if they shape, carry out, influence, or are directly affected by climate action in the city.\n\nTry these distinctions:\n- Leading: sets agenda, controls policy, funding, or coordination.\n- Engaged: participates, advises, implements, supports, or pressures leaders.\n- Missing: should reasonably be involved, but you see little evidence they are.\n\nSo ask of each person/group:\n1. Do they make decisions?\n2. Do they help implement?\n3. Do they mainly advocate or respond?\n4. Are they affected but not included?\n\nPick one organization from your city and test it: what power does it actually have?",
+          "pedagogical_reasoning": "The student is asking for conceptual clarification, so I should define the categories in a general way without giving a solution. To preserve guided discovery, I’ll offer simple decision rules and then ask them to test those rules on their city. This keeps the response bite-sized, assignment-focused, and moves directly toward building their table."
+        },
+        {
+          "turn": 4,
+          "student": "That helps a little, but I’m still fuzzy. Like if a university does climate research, is that leading or just engaged? And if residents are heavily affected but not organized, do they count as missing or engaged or both? I think I’m mixing all the categories together.",
+          "tutor": "Good—those are exactly the borderline cases you need to think through.\n\nDon’t label by type; label by role in that city.\n- A university is leading only if it is actually steering decisions or coordinating action. If it mainly produces research or advice, what does that sound like?\n- Unorganized residents may “count” as affected actors, but if they have little visible role in strategy, which category fits that gap better?\n\nUse evidence, not assumptions. For each actor, ask: what are they doing, and how much influence do they have?\n\nWant to test those two cases on your city with actual examples?",
+          "pedagogical_reasoning": "The student is confused about category boundaries, so I should sharpen the concepts with conditional distinctions and push them to use evidence-based classification. I will avoid giving absolute answers, since categories depend on the city's context, and ask short questions that help them decide based on role, power, and evidence. This advances the assignment without doing it for them."
+        },
+        {
+          "turn": 5,
+          "student": "Maybe, but I’m honestly still overwhelmed by the whole assignment. Can you just give me a full example of how the table and forum post logic would work, like from start to finish, even if it’s generic?",
+          "tutor": "I’ll explain the process, but I’m not going to build the assignment for you.\n\nStart-to-finish logic:\n1. Find 2–3 city sources on climate/resilience.\n2. Pull out every actor named.\n3. For each one, note: what do they do? decision-maker, implementer, advisor, advocate, or affected group?\n4. Then sort:\n- Leading = directs policy/resources/coordination\n- Engaged = participates or influences but does not clearly lead\n- Missing = important group you expected to see, but barely/no presence\n5. Then ask: which sectors show up most? which are weak or absent?\n6. Your forum post discusses those patterns, not just names.\n\nBare-bones table structure:\n- Actor\n- Type\n- Evidence of role\n- Leading / Engaged / Missing\n- Why that category fits\n\nYour next move: name your city and find one climate-related source. What actors appear in it?",
+          "pedagogical_reasoning": "The student is overwhelmed, so I should reduce cognitive load by giving a generic process model without supplying a usable solution. To follow the rules, I will not write their forum post or fill a table for them. I will provide a minimal step-by-step workflow and a skeletal organizer, then ask them to apply it to their city. This stays Socratic by ending with a concrete next step they must do."
+        },
+        {
+          "turn": 6,
+          "student": "I still feel like if I do that I’ll second-guess every category. Like I might put someone as engaged and then realize they’re actually leading. Is there an easy rule of thumb for not overthinking it?",
+          "tutor": "Yes: classify by strongest visible evidence, not by perfect certainty.\n\nRule of thumb:\n- If they can make or coordinate city-level decisions, treat them as leading.\n- If they contribute, advise, pressure, or implement without clear control, treat them as engaged.\n- If they should matter but barely appear, treat them as missing.\n\nStop trying to make categories flawless. This assignment is about patterns of participation, not perfection.\n\nLet’s move forward: give me one actor from your city, and tell me what evidence you found about their role.",
+          "pedagogical_reasoning": "The student is getting stuck in perfectionism. I should interrupt that redundant thinking pattern, refocus on the bigger picture, and offer a practical heuristic that keeps them moving without promising certainty. I will ask them to commit to a provisional classification based on strongest evidence, which advances the assignment."
+        },
+        {
+          "turn": 7,
+          "student": "I barely have anything yet, that’s why I keep asking more generally. Could you just explain one more time, really simply, what the forum post is supposed to say?",
+          "tutor": "Really simply: your forum post should say who is most involved in climate action in your city, who else is participating, and who seems left out.\n\nSo it should answer 3 things:\n1. Who’s leading?\n2. Who’s engaged?\n3. Who’s missing, and why does that gap matter?\n\nThen one last point: what does this show about which sectors have the most voice in the city’s climate strategy?\n\nWe’ve gone over the general idea a few times. Now stop circling and try a 3-sentence attempt for your city—even if it’s rough.",
+          "pedagogical_reasoning": "The student has asked similar general questions repeatedly and is stuck before gathering evidence. I should simplify the task, emphasize the bigger picture, and then push them to produce a small written attempt rather than continue circling. I will not write the post, but I can state what it should accomplish in plain terms and ask for a draft-like summary from them."
+        },
+        {
+          "turn": 8,
+          "student": "I’m not ready to do that yet. I still feel like I need a more complete explanation before I can even start.",
+          "tutor": "Here’s the complete version, simply:\n\nThe assignment wants you to build a map of climate decision-making in your city.\n\nWhat you do:\n1. Choose your city.\n2. Look at city climate/resilience materials and maybe a few outside sources.\n3. Identify actors mentioned in climate work: government, businesses, universities, community groups, residents.\n4. Decide each actor’s role:\n- leading = directing policy, funding, or coordination\n- engaged = participating, advising, implementing, or advocating\n- missing = important group not clearly included\n5. Compare the categories and look for patterns.\n6. In the forum, discuss those patterns: which sectors are active, and where participation gaps exist.\n\nSo the point is not “name everyone.” The point is to show who has influence and who does not.\n\nThat is enough to start. Now take the first real step: what city are you using?",
+          "pedagogical_reasoning": "The student is stalled and asking repeatedly for the same general explanation. To follow the rules, I should avoid giving a full solution or writing for them, but I can be less Socratic and give a clearer, more structured explanation of the assignment's workflow. I should also set a boundary against endless repetition and direct them toward a concrete first step. The response should stay concise, assignment-focused, and end with a small action question."
+        },
+        {
+          "turn": 9,
+          "student": "I have no idea which source to trust first, and that’s making me feel stuck all over again. Could you just tell me the best kind of source to start with?",
+          "tutor": "Start with the official city government climate or sustainability source.\n\nBest first source:\n- city climate action plan\n- resilience plan\n- sustainability office webpage\n- mayor/city department climate page\n\nWhy first? It usually names the formal decision-makers and partner organizations.\n\nThen you can cross-check with news, NGOs, or university sources.\n\nWhat city are you working on, and have you found any official city climate page yet?",
+          "pedagogical_reasoning": "The student is blocked by source selection, so I should reduce uncertainty with a simple prioritized source order. To maintain guided discovery, I will not research the city for them or provide a completed list; instead I’ll suggest the most reliable starting source types and a quick criterion for why they matter, then ask them to choose one for their city. This keeps the response bite-sized and moves directly toward actionable progress."
+        },
+        {
+          "turn": 10,
+          "student": "I found some pages, but I’m still not sure if I’m reading them right. I think I need help figuring out what to pull out of them.",
+          "tutor": "Good. Don’t read for everything—read for 4 things:\n1. Who is named as responsible?\n2. Who is partnering or advising?\n3. Who is described as being consulted or affected?\n4. Who would you expect to see but don’t?\n\nFrom each page, pull out:\n- actor name\n- actor type\n- what the page says they do\n- your tentative label: leading, engaged, or missing\n\nStart with just 2 actors from one page. What’s the first actor named, and what does the page say they do?",
+          "pedagogical_reasoning": "The student now has sources and needs a concrete reading strategy. I should give a minimal extraction method tied directly to the assignment categories, without interpreting the source for them or writing their post. To keep it Socratic and move toward action, I'll list exactly what to look for and end by asking them to bring one example from their source."
+        }
+      ]
+    },
+    {
+      "stem": "cooperative/cooperative_raw/transcript_0021",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "cooperative_01",
+      "course": "urban_studies",
+      "exercise_number": "03",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nA critical component in understanding how your case study city is performing in regards to climate adaptation and mitigation actions is recognizing who the key decision-making actors are in climate resilience work. Identify and analyze key decision-makers involved in climate action in your case study city.\n\nTask\nCreate a Decision-making Actors Table that maps:\n• Who's leading climate resilience work\n• Who's engaged in current efforts\n• Who's missing from climate strategies\n\nActor Types to Consider:\n• City/state government officials\n• Private sector leaders\n• Academic researchers\n• Community advocates\n• Affected residents (organized and unorganized)\n\nDeliverable\nDiscuss your findings in the course forum (no table submission required). Focus on which sectors are most active and identify gaps in participation.\n\nHow This Supports Your Work\nThis Decision-making Actors Table will support further work you undertake in mapping how actors are related to specific actions and if and how they are working together in these action efforts.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "Hi, I’m working on the climate action assignment about decision-making actors in my case study city. I need help figuring out how to identify who’s leading, who’s engaged, and who’s missing without just making a random list.",
+          "tutor": "Good—don’t make a random list. Start from evidence, not categories alone.\n\nAsk of each actor you find: 1) Do they set policy or control money? 2) Do they implement, advise, or partner? 3) Are they affected but absent from decisions?\n\nSo: “leading” = decision power, “engaged” = active involvement without primary control, “missing” = relevant stakeholders with little visible role.\n\nWhat is your case study city, and what 2–3 climate plans, programs, or official documents have you looked at so far?",
+          "pedagogical_reasoning": "I will keep the response brief and use guided discovery rather than listing actors for the student. To avoid doing the assignment for them, I’ll give a simple decision process and ask targeted questions that move directly toward the required forum discussion: who leads, who participates, and who is missing. This stays focused on the assignment and helps the student build their own table from evidence rather than intuition."
+        },
+        {
+          "turn": 2,
+          "student": "My case study city is Jakarta. I’ve looked at Jakarta’s climate adaptation/resilience stuff pretty generally, but I’m not totally sure which documents count here—maybe the city resilience strategy, flood management plans, and national climate policy documents that affect Jakarta? Could you help me narrow which ones would be best to use as evidence?",
+          "tutor": "Yes—use documents that show who decides, who implements, and who is consulted.\n\nFor Jakarta, which 3 levels seem most relevant: 1) city/provincial strategy, 2) sector plan like flood/water/coastal management, 3) national policy shaping Jakarta?\n\nPick one document from each level. As you skim, look for: named agencies, partner organizations, funding sources, and any mention of community participation. Which specific document at the city/provincial level looks strongest to you?",
+          "pedagogical_reasoning": "I will not choose the documents for the student, but I will narrow the search by giving a small set of evidence types tied directly to the assignment. I’ll use Socratic questions to help the student distinguish city-level leadership, implementation, and external influence. This keeps the student doing the selection work while moving them toward a usable evidence base for identifying leading, engaged, and missing actors."
+        },
+        {
+          "turn": 3,
+          "student": "I think the strongest city/provincial one is probably Jakarta’s resilience strategy, since it should name agencies and partners pretty directly. I’m a little unsure if I should treat the provincial government as basically the “city” level for Jakarta, or if that’s an important distinction here.",
+          "tutor": "That distinction matters. Jakarta’s governance is unusual, so don’t blur it if the document itself separates roles.\n\nAsk: who formally has authority in the strategy—governor, provincial agencies, municipal/city administrations, or national bodies? Treat actors at the level the document assigns them.\n\nWhen you skim the strategy, what titles or institutions appear most often as responsible for action?",
+          "pedagogical_reasoning": "I will clarify the conceptual distinction without giving a finished answer. The response will push the student to think about governance structure because that matters for identifying decision-makers accurately in Jakarta. I’ll ask a forward-moving question that helps them translate the distinction into their actors table and forum discussion."
+        },
+        {
+          "turn": 4,
+          "student": "From what I remember, the governor and provincial agencies show up a lot, especially around planning, public works, and disaster management. I think national ministries also appear because Jakarta’s flooding and coastal issues go beyond just the province, but I’m not fully sure yet which of those count as leading versus just involved.",
+          "tutor": "You’re close. Don’t rely on frequency of mention alone.\n\nTest each actor with three questions: who authorizes, who funds, and who is accountable for outcomes? Actors doing most of that are more likely “leading.” Actors that coordinate, advise, or co-implement may be “engaged.”\n\nTake one example: a national ministry in a flood/coastal plan. Does it control decisions in Jakarta, or mainly support/coordinate?",
+          "pedagogical_reasoning": "I will help the student distinguish 'leading' from 'engaged' using authority, budget, and implementation tests, while still requiring the student to apply them. The questions are specific to the assignment and Jakarta’s governance context, moving the student toward building their own actor categories without me supplying the final classification."
+        },
+        {
+          "turn": 5,
+          "student": "I think it depends on the ministry, but for flood/coastal stuff some national ministries probably do more than just support because they control major infrastructure and funding. So I’m guessing they might actually be “leading” in some parts, even if the provincial government leads the broader city strategy. Is that the right way to split it?",
+          "tutor": "Yes—that’s a stronger approach. Leadership may be shared or issue-specific, not one fixed pyramid.\n\nSo don’t ask only “who leads Jakarta climate action?” Ask “who leads adaptation broadly, and who leads specific sectors like flooding, coastal defense, planning, or emergency response?”\n\nNow push it further: which actors seem engaged but not leading—NGOs, universities, private developers, neighborhood groups?",
+          "pedagogical_reasoning": "I will validate the student's emerging distinction while preventing oversimplification. The response will encourage them to organize leadership by issue area rather than force a single hierarchy, which aligns with the assignment's goal of analyzing actors in current climate efforts. I will end with a concrete prompt that gets them to start structuring their table and noticing gaps."
+        },
+        {
+          "turn": 6,
+          "student": "I’d put universities and NGOs in “engaged” first, since they probably contribute research, advocacy, or community programs but don’t usually control policy. I’m less sure about private developers, because they seem influential, but I can’t tell if that counts as formal leadership or just strong influence.",
+          "tutor": "Good—don’t confuse influence with decision-making power.\n\nAsk of private developers: are they named as formal partners, implementers, or funders in climate actions, or are they simply powerful interests in the background? If the latter, be careful.\n\nNext question: who is affected in Jakarta but least visible in plans—informal-settlement residents, fishers, low-income coastal communities, disabled residents, others?",
+          "pedagogical_reasoning": "I will sharpen the student's distinction between formal decision-making and influence, since the assignment is about decision-making actors rather than general stakeholders. I’ll use a Socratic contrast to help them decide how to classify private developers based on evidence, and then point them toward the 'missing' category to keep the conversation advancing."
+        },
+        {
+          "turn": 7,
+          "student": "I think informal-settlement residents and low-income coastal communities are probably the clearest “missing” groups, especially if plans talk about them as vulnerable but not as participants in decisions. Maybe fishers too, if coastal protection projects affect their livelihoods. I’m not sure whether I should list “missing” only if there’s zero participation, or also if they’re mentioned but only in a token way.",
+          "tutor": "Don’t make “missing” mean only total absence. Token inclusion can still count as a participation gap.\n\nA useful test: are these groups shaping priorities, or only described as beneficiaries/vulnerable populations? If they are spoken about but not given voice, that’s still a meaningful gap.\n\nCan you sort your evidence into two buckets: “consulted” versus “has decision influence”?",
+          "pedagogical_reasoning": "I will help the student refine the 'missing' category by introducing degrees of participation without supplying finalized wording for the assignment. This advances the analysis toward a more nuanced forum post and keeps the student centered on evidence from documents. I’ll ask them to apply the distinction to Jakarta so they generate the content themselves."
+        },
+        {
+          "turn": 8,
+          "student": "Yeah, that helps. I think I should separate groups that are consulted or represented in outreach from groups that actually influence priorities or resource allocation. I’m still a little stuck on how to turn that into a short forum post instead of a table.",
+          "tutor": "Then build the post around 3 moves, not a table dump:\n\n1) Which sectors appear to lead, with 1–2 pieces of evidence.\n2) Which actors are engaged but have less authority.\n3) Which affected groups are underrepresented or only tokenly included.\n\nWhat’s your one-sentence claim for each of those 3 parts?",
+          "pedagogical_reasoning": "I will keep the response concise and Socratic, helping the student convert their table logic into a forum-post structure without writing or suggesting actual prose. This follows the rule against doing the writing for them while moving them toward the deliverable: a discussion of active sectors and participation gaps."
+        },
+        {
+          "turn": 9,
+          "student": "Okay, let me try. My main claim is that Jakarta’s climate action seems to be led mostly by provincial government agencies, with some national ministries leading specific flood and coastal projects because they control infrastructure and funding. Then I’d say NGOs, universities, and maybe some private-sector actors are engaged, but they seem more advisory or implementation-focused than actually decision-making. Finally, I think the biggest gap is that highly affected groups like informal-settlement residents, low-income coastal communities, and possibly fishers are often described as vulnerable but don’t seem to have much real influence over priorities.",
+          "tutor": "That’s a solid structure. Now make it less generic.\n\nFor each claim, what is one concrete document-based indicator? For example: named agency responsibility, control of funding/infrastructure, or lack of participatory role.\n\nAlso, “private-sector actors” is too vague. Which kind exactly in Jakarta, and what evidence puts them in engaged rather than leading?",
+          "pedagogical_reasoning": "I will affirm the student's progress while pushing them to strengthen the argument with evidence and precision. I will not rewrite or polish their forum post; instead, I’ll ask targeted questions that help them verify each claim and avoid overgeneralization. This stays within the tutor role and keeps the next step manageable."
+        },
+        {
+          "turn": 10,
+          "student": "I think I can make the first one concrete by pointing to the resilience strategy naming provincial agencies as responsible for implementation, and to flood/coastal documents showing national ministries controlling major infrastructure or budgets. For private-sector actors, I probably need to be more specific—maybe developers or utilities—but I don’t want to guess if I can’t find them clearly named. Could you help me figure out whether it’s better to leave private sector out unless the documents explicitly show a role?",
+          "tutor": "Yes—don’t force the private sector in. If the documents don’t show a clear role, leaving it limited or noting weak visibility is stronger than guessing.\n\nAsk yourself: do you have evidence of a formal role, or only a suspicion of influence? If only suspicion, that’s not enough.\n\nGiven that, which sectors can you support confidently right now, and which one still needs one more source check?",
+          "pedagogical_reasoning": "I should reinforce evidence-based inclusion and avoid making unsupported claims for the student. A short Socratic response can help them choose between omission and cautious mention while keeping focus on the assignment’s required analysis of active sectors and gaps. I will not supply wording, only a decision rule and a question to prompt their own judgment."
+        }
+      ]
+    },
+    {
+      "stem": "cooperative/cooperative_raw/transcript_0045",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "cooperative_02",
+      "course": "urban_studies",
+      "exercise_number": "03",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nAssignment Overview\nA critical component in understanding how your case study city is performing in regards to climate adaptation and mitigation actions is recognizing who the key decision-making actors are in climate resilience work. Identify and analyze key decision-makers involved in climate action in your case study city.\n\nTask\nCreate a Decision-making Actors Table that maps:\n• Who's leading climate resilience work\n• Who's engaged in current efforts\n• Who's missing from climate strategies\n\nActor Types to Consider:\n• City/state government officials\n• Private sector leaders\n• Academic researchers\n• Community advocates\n• Affected residents (organized and unorganized)\n\nDeliverable\nDiscuss your findings in the course forum (no table submission required). Focus on which sectors are most active and identify gaps in participation.\n\nHow This Supports Your Work\nThis Decision-making Actors Table will support further work you undertake in mapping how actors are related to specific actions and if and how they are working together in these action efforts.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "Hi, I’m working on the decision-making actors assignment for my case study city, and I’m kind of stuck on how to organize who’s leading, who’s involved, and who’s missing. Could you help me figure out a simple way to sort the actors?",
+          "tutor": "Yes. Keep it simple: sort each actor by 2 questions: 1) Do they make decisions or mostly influence them? 2) Are they clearly active now, or notably absent?\n\nTry 3 buckets:\n- Leading: sets policy, controls budgets, approves plans\n- Engaged: participates, advises, funds, advocates, implements\n- Missing: highly affected or relevant, but not meaningfully included\n\nStart with 5 actor types from the assignment. For your city, who is the clearest example of each: one government actor, one private-sector actor, one academic actor, one community actor, and one resident group?",
+          "pedagogical_reasoning": "I will stay within the assignment and use guided discovery rather than sorting the actors for the student. I’ll give a very simple structure the student can apply, then ask targeted questions that move directly toward identifying leaders, participants, and gaps in their specific city. This keeps the response bite-sized, avoids giving a completed solution, and helps the student build their own table/forum post."
+        },
+        {
+          "turn": 2,
+          "student": "Okay, that helps. I think my city examples would be: the city sustainability or mayor’s office for government, a utility or major developer for private sector, a local university climate research center for academic, an environmental justice nonprofit for community, and maybe low-income residents in flood-prone neighborhoods as the resident group.  \n\nI’m not fully sure how specific I need to be though—do I need exact organizations and names, or is this level okay for the table first?",
+          "tutor": "Good start, but those labels are still a little vague. Ask yourself: could you explain what each actor actually does in climate action from that label alone?\n\nFor the table, aim for enough specificity that you can say their role. Not necessarily individual people—often organizations/offices are better.\n\nTest one example: if you write “mayor’s office,” what decision does it make, control, or influence in your city? If you can’t answer that clearly, make it more specific.",
+          "pedagogical_reasoning": "I will not decide the content for the student, but I will push them to infer the needed level of specificity from the assignment’s purpose: analyzing decision-makers and participation gaps. I’ll ask questions that help them test whether actor labels are precise enough to support later analysis, while keeping the response concise and on-task."
+        },
+        {
+          "turn": 3,
+          "student": "Yeah, I see the problem. “Mayor’s office” is too broad unless I can tie it to something like approving the climate plan or setting budget priorities.  \n\nSo I probably should use a specific office like the Department of Environment, City Planning Department, or public utility authority, depending on who actually runs climate stuff in my city. How do I tell whether an actor belongs in Leading vs just Engaged if they’re involved a lot but don’t make final decisions?",
+          "tutor": "Use authority as the test, not visibility.\n\nAsk:\n1) Can this actor approve policy, budgets, regulations, or plans?\n2) Can they block or redirect action?\n3) Are others mainly advising or implementing their decisions?\n\nIf mostly yes, that points to Leading. If they shape, pressure, fund, research, or implement without final authority, that points to Engaged.\n\nPick one actor from your city and test it with those 3 questions.",
+          "pedagogical_reasoning": "I will help the student build a decision rule without classifying actors for them. The response will use Socratic prompts that distinguish authority from participation and move directly toward the table categories. I’ll keep it short and ask the student to apply the rule to one actor from their city."
+        },
+        {
+          "turn": 4,
+          "student": "Let me try with the City Planning Department. I think they might count as Leading if they approve land use plans or zoning changes, because that can shape adaptation a lot. But if they’re just drafting recommendations and city council has to approve everything, then maybe they’re only Engaged?  \n\nI’m a little confused about shared authority though, because cities seem messy. Can something still be “Leading” if it only controls part of the process?",
+          "tutor": "Yes—shared authority is normal. An actor can still be Leading if it has real decision power over one important stage, even if it doesn’t control the whole process.\n\nAsk: does Planning merely recommend, or does it formally decide something meaningful—permits, zoning, plan adoption, review standards?\n\nIf it has partial but real authority, you can justify “Leading” for that domain. What exact power does your Planning Department have in your city?",
+          "pedagogical_reasoning": "I will validate the student's reasoning while pushing them to refine a practical criterion for shared authority. I will avoid giving a final classification and instead ask them to distinguish between formal authority over a part of the process versus advisory roles, which directly supports the assignment’s actor mapping. The response remains brief and Socratic."
+        },
+        {
+          "turn": 5,
+          "student": "I think in my city the Planning Department manages comprehensive planning and maybe development review, so it has some real power over where growth happens and whether resilience standards get built in. So I’d probably mark it as Leading, but specify that it leads on land use and development decisions, not all climate policy.  \n\nDoes that sound like the right kind of justification, or am I still being too general?",
+          "tutor": "That’s much better. The limitation you added is important.\n\nBut don’t stop at “some real power.” Make yourself name the mechanism: plan adoption, development review, zoning input, permit conditions, resilience standards, or something else.\n\nWhat is one concrete action or decision this department influences in your city that proves it belongs under Leading?",
+          "pedagogical_reasoning": "I will affirm the student's progress, point out the remaining need for evidence and precision, and ask a forward-moving question that helps them convert a broad claim into a defensible entry for the assignment. This maintains the Socratic method, avoids writing the student's content, and stays bite-sized."
+        },
+        {
+          "turn": 6,
+          "student": "I’d say development review is the clearest one, since that can determine whether new projects account for flood risk or resilience requirements. So my proof would be that the department can shape project approvals and the standards attached to them.  \n\nI’m still not sure if that’s concrete enough, but I think it’s better than just saying it “supports planning.”",
+          "tutor": "Yes, that’s concrete enough in principle. The weak spot now is evidence, not logic.\n\nAsk yourself: what city document, ordinance, plan, or department webpage would let you verify that role?\n\nThen do the same test for one actor that is clearly Engaged but not Leading. Which actor fits that best in your city?",
+          "pedagogical_reasoning": "I will reinforce the student's improvement and push them one step further toward evidence-based categorization without supplying wording or a finished entry. I'll keep it brief and ask a question that helps them identify a source or institutional mechanism, which strengthens their forum discussion and table logic."
+        },
+        {
+          "turn": 7,
+          "student": "I think a local university climate research center fits Engaged pretty well, since it can provide data, modeling, and reports, but it usually can’t approve policy or budgets. I’d verify that with the center’s project page or by checking whether city climate plans cite its research.  \n\nI’m guessing that makes sense, unless I’m oversimplifying academia too much.",
+          "tutor": "That makes sense. Don’t confuse influence with authority—that’s the key distinction, and you’re handling it well.\n\nYour nuance to check: is the research center only advising, or does it also sit on formal task forces or implementation partnerships? That still may be Engaged, but stronger Engaged.\n\nNow move to the hardest bucket: who is most affected in your city but least included in decisions?",
+          "pedagogical_reasoning": "I will acknowledge the student's sound reasoning while adding a small corrective nuance: some academic actors can influence strongly without formal authority. I’ll direct the student toward comparing formal power and influence, then prompt them to tackle the 'missing' category to keep the assignment moving forward."
+        },
+        {
+          "turn": 8,
+          "student": "I think it would be low-income renters in flood-prone neighborhoods, or maybe undocumented residents if my city has a big immigrant population. They’re really affected, but I’m not sure they’re included beyond public meetings that not everyone can access.  \n\nI’m kind of unsure how to prove “missing” without just assuming it. What counts as enough evidence for that?",
+          "tutor": "Good instinct, but don’t label them “missing” just because they’re vulnerable. Prove weak inclusion.\n\nLook for signs like: no representation on advisory groups, little outreach in relevant languages, meeting formats that exclude workers/renters, no partnerships with tenant/immigrant groups, or plans that mention them only as affected—not as participants.\n\nWhich of those can you actually check in your city’s climate plan or engagement materials?",
+          "pedagogical_reasoning": "I will help the student operationalize the 'missing' category through observable indicators rather than assumptions. This uses guided discovery, stays within the assignment, and nudges them toward evidence they can gather from city materials or participation records. I will keep it concise and end with a question that moves them toward application."
+        },
+        {
+          "turn": 9,
+          "student": "I can probably check whether advisory committees include tenant groups or immigrant organizations, and whether outreach materials are available in multiple languages. I can also see if the climate plan talks about those residents as partners in decision-making or just as populations at risk.  \n\nThat gives me a better way to justify “Missing.” I think my next step is to turn each actor into one line with actor name, bucket, role, and evidence—is that the right format?",
+          "tutor": "Yes—that format works well for this assignment.\n\nUse a simple line for each actor:\n- Actor\n- Bucket: Leading / Engaged / Missing\n- Specific role in climate resilience\n- Evidence\n- Sector type\n\nThat last field will help you discuss which sectors are most active and where participation gaps are.\n\nTry filling in 2 actors now—one Leading and one Missing—and check whether your evidence really supports the bucket.",
+          "pedagogical_reasoning": "I will confirm the student's proposed structure because it supports the assignment’s analytical goal, but I will still avoid drafting content for them. I’ll add one more field that helps with the forum discussion about active sectors and gaps, then ask the student to test the structure on one actor. This keeps the response brief and solution-oriented."
+        },
+        {
+          "turn": 10,
+          "student": "Okay, I’d do something like: Planning Department — Leading — shapes development review and resilience standards — evidence from city code/department page/comp plan — government. Then: low-income renters in flood-prone areas — Missing — highly affected by flooding but weakly represented in planning and outreach — evidence from advisory group membership and language/access review — residents.  \n\nI think that’s the structure I needed. I’m still a little worried the “Missing” one sounds less concrete than the government one, but at least now I know what to look for.",
+          "tutor": "Yes—your structure is solid. And your concern is valid: “Missing” often needs more careful proof than government actors.\n\nSo tighten it with observable absence: not just “affected,” but “not represented on X,” “not targeted by Y outreach,” or “not named as partners in Z plan.”\n\nBefore you move on, what is one specific sign of exclusion you expect to find for that resident group in your city?",
+          "pedagogical_reasoning": "I will affirm the student's progress, note the asymmetry in evidence between institutional and missing actors, and guide them to strengthen the weaker entry by making exclusion observable. This remains Socratic, brief, and focused on the assignment without writing their post for them."
+        }
+      ]
+    }
+  ]
 }

@@ -1170,64 +1170,6 @@ def _chart_bundle_scores(
     print(f"  [{chart_idx}] {filename}")
 
 
-def _chart_bundle_scores_single_provider(
-    rows: list[BundleGradeRow],
-    bundle_type: str,
-    out_dir: Path,
-    *,
-    provider_label: str,
-    output_name: str,
-    chart_idx: int,
-) -> None:
-    """Generate bundle total-score line chart for one provider."""
-    plt = _safe_import_matplotlib()
-    if not rows:
-        print(f"  [{chart_idx}] {output_name} (skipped: no {provider_label} bundle rows)")
-        return
-
-    by_name = {r.bundle_name: r for r in rows}
-
-    def _bundle_sort_key(name: str) -> int:
-        parts = name.split("_")
-        try:
-            return int(parts[-1])
-        except (ValueError, IndexError):
-            return 0
-
-    all_names = sorted(by_name.keys(), key=_bundle_sort_key)
-    x = list(range(len(all_names)))
-    y_vals = [by_name[n].total_score for n in all_names]
-    finite_vals = [v for v in y_vals if math.isfinite(v)]
-
-    fig, ax = plt.subplots(figsize=(16, 7))
-    color = "#a65dea" if provider_label.lower() == "gpt" else "#ff893a"
-    ax.plot(x, y_vals, label=provider_label.upper(), color=color, linewidth=1.4, marker="o", markersize=3)
-    ax.set_title(f"Bundle Type {bundle_type} — Total Score Per Bundle ({provider_label.upper()})")
-    ax.set_xlabel(f"Bundle index (bundle_001 – bundle_{len(all_names):03d})")
-    ax.set_ylabel("Total Score")
-    ax.grid(True, alpha=0.3)
-    ax.legend()
-
-    lines = [f"Bundles: {len(all_names)}"]
-    if finite_vals:
-        lines.append(f"{provider_label.upper()} mean: {sum(finite_vals)/len(finite_vals):.1f}")
-    ax.text(
-        0.01,
-        0.98,
-        "\n".join(lines),
-        transform=ax.transAxes,
-        ha="left",
-        va="top",
-        fontsize=9,
-        bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
-    )
-
-    fig.tight_layout()
-    fig.savefig(out_dir / output_name, dpi=150)
-    plt.close(fig)
-    print(f"  [{chart_idx}] {output_name}")
-
-
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -1454,56 +1396,28 @@ def main() -> int:
     else:
         print("No *_v3 graded transcript folders found. Skipping _v3 chart generation.")
 
+    # Regular bundle charts: exactly 3 (bundle_01, bundle_02, bundle_03), GPT vs Claude.
     bundle_type = "01"
-    bundle_gpt_all = _read_bundle_rows(bundles_dir, "gpt", bundle_type)
-    bundle_claude_all = _read_bundle_rows(bundles_dir, "claude", bundle_type)
-    print(f"Loaded bundle_{bundle_type} GPT: {len(bundle_gpt_all)} bundles   Claude: {len(bundle_claude_all)} bundles")
-
-    for persona in ("chaotic", "cooperative", "clueless"):
-        bundle_gpt = _filter_bundle_rows(bundle_gpt_all, {persona})
-        bundle_claude = _filter_bundle_rows(bundle_claude_all, {persona})
-        print(f"Loaded bundle_{bundle_type} {persona} GPT: {len(bundle_gpt)} bundles   Claude: {len(bundle_claude)} bundles")
-        if bundle_gpt or bundle_claude:
-            _chart_bundle_scores(
-                bundle_gpt,
-                bundle_claude,
-                bundle_type,
-                out_dir,
-                persona_label=persona,
-                output_name=f"bundle_{bundle_type}_grades_{persona}_gpt_vs_claude.png",
-                chart_idx=chart_idx,
-            )
-            chart_idx += 1
-        else:
-            print(f"  No {persona} bundle_{bundle_type} graded files found. Skipping chart.")
-
-    # Provider-only bundle charts for each bundle type (01/02/03): 2 * 3 = 6 charts.
     for bundle_type_single in ("01", "02", "03"):
         bundle_gpt_single = _read_bundle_rows(bundles_dir, "gpt", bundle_type_single)
         bundle_claude_single = _read_bundle_rows(bundles_dir, "claude", bundle_type_single)
         print(
-            f"Loaded bundle_{bundle_type_single} provider-only charts "
-            f"GPT: {len(bundle_gpt_single)} bundles   Claude: {len(bundle_claude_single)} bundles"
+            f"Loaded bundle_{bundle_type_single} GPT: {len(bundle_gpt_single)} bundles   "
+            f"Claude: {len(bundle_claude_single)} bundles"
         )
-
-        _chart_bundle_scores_single_provider(
-            bundle_gpt_single,
-            bundle_type_single,
-            out_dir,
-            provider_label="gpt",
-            output_name=f"bundle_{bundle_type_single}_grades_gpt_only.png",
-            chart_idx=chart_idx,
-        )
-        chart_idx += 1
-        _chart_bundle_scores_single_provider(
-            bundle_claude_single,
-            bundle_type_single,
-            out_dir,
-            provider_label="claude",
-            output_name=f"bundle_{bundle_type_single}_grades_claude_only.png",
-            chart_idx=chart_idx,
-        )
-        chart_idx += 1
+        if bundle_gpt_single or bundle_claude_single:
+            _chart_bundle_scores(
+                bundle_gpt_single,
+                bundle_claude_single,
+                bundle_type_single,
+                out_dir,
+                persona_label="all_personas",
+                output_name=f"bundle_{bundle_type_single}_grades_gpt_vs_claude.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
+        else:
+            print(f"  No bundle_{bundle_type_single} graded files found. Skipping chart.")
 
     bundle_gpt_v2_all = _read_bundle_rows_variant(bundles_dir, "gpt", bundle_type, "_v2")
     bundle_claude_v2_all = _read_bundle_rows_variant(bundles_dir, "claude", bundle_type, "_v2")

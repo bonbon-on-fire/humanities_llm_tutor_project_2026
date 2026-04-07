@@ -3,11 +3,6 @@
   "provider": "claude",
   "prompt_name": "judge_08",
   "rubric_name": "rubric_07",
-  "transcripts": [
-    "clueless/clueless_raw/transcript_0081",
-    "cooperative/cooperative_raw/transcript_0012",
-    "cooperative/cooperative_raw/transcript_0036"
-  ],
   "grade": {
     "sections": {
       "1_pedagogy": {
@@ -101,5 +96,231 @@
       "model": "claude-sonnet-4-6"
     },
     "judge_llm_calls": 1
-  }
+  },
+  "transcript_sources": [
+    "clueless/clueless_raw/transcript_0081",
+    "cooperative/cooperative_raw/transcript_0012",
+    "cooperative/cooperative_raw/transcript_0036"
+  ],
+  "transcripts": [
+    {
+      "stem": "clueless/clueless_raw/transcript_0081",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "clueless_04",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "idk i'm kinda lost on this city data table tbh, can u just explain the whole assignment from the start?",
+          "tutor": "Yes. Strip it down: your job is to build a basic profile of one city using a table.\n\nYou need to identify and record:\n- location\nn- population\n- race/ethnicity breakdown\n- physical area\n- income per capita\n- GDP\n- Koppen climate zone\n- any extra categories you think matter\n\nThe point is not just collecting facts. It’s to understand the city’s existing conditions so later you can analyze climate risks and where adaptation/mitigation investment might be needed.\n\nA smart way to start is:\n1. Confirm your city\n2. Make the table with the required categories as rows\n3. Find one reliable source for each row\n4. Note the year for each data point\n5. Watch for mismatched definitions or years\n\nBefore we go further: what city did you choose, and have you already found any source for it?",
+          "pedagogical_reasoning": "I will briefly reframe the assignment in simple steps, because the student is lost at the start and needs orientation before deeper questioning. I will still use guided discovery by breaking the task into parts and ending with a focused question that moves them toward beginning the work themselves. I will avoid giving a completed solution or doing the assignment for them, keep the response bite-sized, and stay strictly on this climate-action city data table."
+        },
+        {
+          "turn": 2,
+          "student": "uh maybe that's what's messing me up, i picked a city but now i'm not even sure what source counts or how to find the right data rn.",
+          "tutor": "Good—then the real problem is source quality, not the table itself.\n\nThink by data type: who would usually publish population, area, GDP, or climate classification? Government? Census agency? City office? International organization?\n\nA solid rule: prefer official or primary sources first, then reputable databases second. \nExamples of source types to look for:\n- national census/statistics office\n- city government or metro planning agency\n- World Bank / UN / OECD-type databases\n- peer-reviewed or institutional climate maps for Koppen zone\n\nYour next step: tell me the city, and name 1 source you found. I’ll question whether it’s strong enough.",
+          "pedagogical_reasoning": "The student’s obstacle is source selection, so I should narrow the task to evaluating source types rather than listing answers. I will use guided discovery by asking them to think about what kinds of institutions publish each data type and by giving only high-level categories of acceptable sources, not city-specific data. This keeps them working while reducing overwhelm and staying within the assignment."
+        },
+        {
+          "turn": 3,
+          "student": "i'm doing mexico city i think, but ngl can u just tell me like all the kinds of sources i should use for each category bc i'm confused again.",
+          "tutor": "Yes—but source types, not the data itself.\n\nFor each category, ask: who is the authority?\n- Location: city government, national maps/statistics office, atlas/database\n- Population: national census/statistics agency, metro planning agency\n- Race/ethnicity breakdown: national census or household survey agency\n- Physical area: city government, national geographic/statistics institute\n- Income per capita: national statistics office, OECD/World Bank, metro economic reports\n- GDP: national statistics office, metro/regional economic accounts, World Bank/OECD-type sources\n- Koppen climate zone: climate atlas, research article, university or meteorological source\n\nBe careful: some data may be for the city proper, metro area, federal district, or state. That mismatch can wreck the table.\n\nStart with one row only: which category do you want to verify first?",
+          "pedagogical_reasoning": "The student is asking for broad guidance on source types by category, which is appropriate. I will provide a concise mapping from each required data category to likely source types without filling in the table or giving city-specific data. To preserve guided discovery, I will end by asking the student to choose one category to research first and report back with a source."
+        },
+        {
+          "turn": 4,
+          "student": "honestly all of them still feel mixed together lol, can u explain city proper vs metro vs district from scratch?",
+          "tutor": "Yes. This matters a lot.\n\nThink of 3 possible boundaries:\n- City proper: the official administrative city boundary\n- Metro area: the larger built-up/economic region around the city, including surrounding municipalities\n- District/state/federal unit: a broader political unit that may overlap with the city but is not the same thing\n\nWhy it matters: population, area, GDP, and income can change a lot depending on which boundary a source uses.\n\nSo here’s the question you need to ask every source: what exact geographic unit is this number measuring?\n\nFor Mexico City, your job now is to check one source and tell me: does it describe the city itself, the metro area, or a larger political unit?",
+          "pedagogical_reasoning": "The student is confused about a core concept that affects the whole assignment, so I should explain the distinction in simple terms with a generic example and then immediately direct them to apply it to their case. I will avoid supplying Mexico City-specific facts and instead ask them to determine which unit their sources are using, moving them toward independent analysis."
+        },
+        {
+          "turn": 5,
+          "student": "i haven't checked yet tbh, i'm still stuck on what the assignment even wants me to use if sources don't match.",
+          "tutor": "It likely wants a consistent city profile, not perfect data harmony.\n\nSo your standard should be:\n- use the same geographic unit as much as possible\n- if one category only exists for a different unit, note that clearly\n- keep years and definitions visible\n\nThe mistake would be mixing units carelessly.\n\nSo decide this first: do you want your table centered on the official city boundary or the metro area? Which one do you think better fits a climate-action case study?",
+          "pedagogical_reasoning": "The student is still at the conceptual stage, so I should reduce ambiguity by clarifying the assignment’s likely expectation: consistency and transparency, not perfect uniformity. I will keep it concise, avoid giving direct content for Mexico City, and use questions that move the student toward choosing a boundary and documenting source mismatch. This supports guided discovery while addressing frustration."
+        },
+        {
+          "turn": 6,
+          "student": "idkkk maybe metro? but then race/ethnicity and climate zone and stuff gets weird, can u just walk me through the whole logic once bc i'm still super lost.",
+          "tutor": "Here’s the logic, once, cleanly:\n\n1. Pick the geographic unit you’re profiling.\n2. Use that same unit for as many categories as possible.\n3. For each number, record both the source and the year.\n4. If a category only exists for a different unit, include it only if you label the mismatch.\n5. Treat climate zone a little differently: it describes the place physically, not its economy or administration.\n6. The goal is a credible baseline, not perfect uniformity.\n\nSo stop trying to solve every row at once. First choose the unit.\n\nGiven this assignment, which seems more defensible for your table: the official city unit or the metro region?",
+          "pedagogical_reasoning": "The student remains globally confused, so I should give a concise organizing framework for the entire assignment without supplying actual answers. I will reduce cognitive load by presenting a simple decision sequence and emphasizing consistency, documentation, and fit-for-purpose. I will end with one concrete choice question so the student takes the next step."
+        },
+        {
+          "turn": 7,
+          "student": "i'm still not sure tbh, can u maybe just explain which one ppl usually use for assignments like this?",
+          "tutor": "Usually, people use the official city unit first, because it’s easier to define and easier to source consistently.\n\nMetro area is often used when the assignment is about regional systems—commuting, air quality, infrastructure, economic activity—but it creates more data-matching problems.\n\nSo ask yourself: is this table mainly establishing a clean baseline for one city government case, or for the whole urban region?\n\nWhich seems easier to defend in one sentence: city unit or metro unit?",
+          "pedagogical_reasoning": "The student wants a convention-based answer. I should avoid dictating a single 'correct' choice, since the assignment may allow either, but I can explain common practice and the tradeoffs. To keep Socratic momentum, I will ask them to align the choice with the assignment's purpose and then commit. This remains bite-sized and does not do the work for them."
+        },
+        {
+          "turn": 8,
+          "student": "probably city unit, but fr i still feel like i need the full big-picture explanation of how to build the table.",
+          "tutor": "Good. Then use the city unit as your default.\n\nBig picture:\n1. Make a table with the required rows.\n2. Add columns like: data point, year, geographic unit, source.\n3. For each row, find the strongest available source.\n4. Check: is it really for the city unit?\n5. If not, either keep looking or include it with a clear note.\n6. When done, scan for consistency across years and boundaries.\n7. Add extra categories only if they help explain climate vulnerability.\n\nThat’s the whole assignment: build a reliable baseline profile.\n\nNow do one concrete step: which row are you going to search first?",
+          "pedagogical_reasoning": "The student is still broadly confused, so I should give a concise end-to-end process for building the table while keeping them responsible for execution. I will avoid writing the table for them and will ask for a concrete next action. This follows guided discovery, keeps focus on the assignment, and uses minimal scaffolding."
+        },
+        {
+          "turn": 9,
+          "student": "maybe population, but can u also explain what counts as a strong source for that bc i keep second-guessing everything.",
+          "tutor": "Yes. For population, strongest usually means:\n- official national census/statistics agency\n- official city government demographic report using census data\n- reputable international database only if it clearly defines the city unit\n\nAsk 3 things:\n1. Who published it?\n2. What geographic unit is it using?\n3. What year is the estimate/count?\n\nIf a random website gives a number with no method or boundary, that’s weak.\n\nFind one population source and tell me: publisher, year, and whether it’s city proper or metro.",
+          "pedagogical_reasoning": "The student has identified a first row, so I should reinforce that progress and narrow the problem to evaluating source strength for population. I will provide a short hierarchy of source quality and a few checks the student can apply, without naming specific Mexico City figures or doing the search. I will end with a direct prompt asking them to test one source so they practice the evaluation themselves."
+        },
+        {
+          "turn": 10,
+          "student": "i haven't found one yet lol, i'm kinda overwhelmed rn and just want the whole thing dumbed down more.",
+          "tutor": "Fine. Dumbed down:\n\nYou are doing 4 things only:\n1. Pick one city boundary\n2. Find one number for each required row\n3. Write where each number came from\n4. Make sure you’re not mixing different boundaries by accident\n\nThat’s it.\n\nFor now, ignore every row except population.\nOpen search and look for the official statistics source for Mexico City population.\n\nWhen you find anything, don’t judge it yet—just bring me the link title or publisher name. Can you do that?",
+          "pedagogical_reasoning": "The student is overwhelmed, so I should reduce complexity and give a very simple workflow without doing the task for them. I will be less Socratic than usual because the rules allow that when the student is frustrated, but I will still end with one small action question that moves directly toward solving the assignment. I will keep it bite-sized, stay on the assignment, and avoid providing any actual table entries or writing for the student."
+        }
+      ]
+    },
+    {
+      "stem": "cooperative/cooperative_raw/transcript_0012",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "cooperative_01",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "Hi, I’m working on the geographic and demographic data table for my case study city in the climate course. I’m a little unsure what counts as the most reliable sources for things like GDP, income per capita, and the Köppen climate zone.",
+          "tutor": "Start by thinking source hierarchy: which is usually stronger for a city data table—official government statistics, international datasets, or random websites?\n\nFor each variable, ask yourself: who measures it, how often, and at what scale?\n- GDP / income per capita: what national statistics office, city statistical bureau, World Bank, OECD, or metro database might report it?\n- Köppen zone: what source actually maps climate classifications rather than just describing weather?\n\nA good next step: tell me your city, and for one variable, name 2 sources you found. Then we can test which is more reliable and why.",
+          "pedagogical_reasoning": "I will stay in the tutor role and keep the response brief. Instead of listing everything as a finished solution, I’ll guide the student to identify source types and evaluation criteria they can apply themselves. I’ll use Socratic questions that point directly toward completing the data table: official statistical agencies, city plans, international databases, and climate classification sources. I will not do the sourcing for them or fill in the table, and I will keep the focus tightly on this assignment."
+        },
+        {
+          "turn": 2,
+          "student": "My city is Boston. For GDP, I found the BEA and also a random city facts site, and I’m guessing the BEA is better because it’s official and seems to use metro-level data. Is that the right way to judge it?",
+          "tutor": "Yes—that’s the right direction. Now sharpen the judgment.\n\nAsk yourself:\n1. Which source is the original producer of the data?\n2. Which one matches your unit of analysis better: Boston city or Boston metro?\n3. Which source explains its method and year clearly?\n\nWhat problem might come up if you use metro GDP for a table that is supposed to describe the city itself?",
+          "pedagogical_reasoning": "I will affirm the student’s reasoning without declaring the final answer outright, then push them to justify source choice using assignment-relevant criteria: authority, geographic fit, methodology, and date. This keeps the exchange Socratic, bite-sized, and focused on the data table rather than doing the work for them."
+        },
+        {
+          "turn": 3,
+          "student": "I think the problem is that metro GDP includes a much bigger area than just Boston, so it could make the city look richer or larger economically than it actually is. I’m a little stuck on whether that means I shouldn’t use it at all, or if I can use it as long as I label it really clearly.",
+          "tutor": "Good—that’s the key issue.\n\nNow decide based on assignment fit: does the table ask for the city, or does it allow a broader urban region? If city-level GDP is unavailable, what’s the more defensible move: leave a note about data limits, or substitute metro GDP without comment?\n\nWhat would your table need to say so a reader can’t mistake metro GDP for Boston city GDP?",
+          "pedagogical_reasoning": "I will validate the student's concern, then guide them to make a methodological decision based on assignment fit and transparency rather than telling them what to choose. The Socratic questions will move toward a defensible approach: prioritize city-level data, use metro-level only if city-level is unavailable, and label units clearly. I will keep it concise and focused on the table."
+        },
+        {
+          "turn": 4,
+          "student": "I think I should note the data limit instead of slipping in metro GDP like it’s the same thing. If I use it, I’d need to label it something like “Boston-Cambridge-Newton metro GDP” with the year and source so nobody reads it as Boston city GDP.",
+          "tutor": "That’s a defensible approach. Clear labeling and a scope note matter.\n\nNow apply the same test to the other two:\n- For income per capita, what source is most likely to give city-level data for Boston?\n- For Köppen zone, what kind of source would count as a classification source rather than a general weather site?\n\nTry naming one likely source type for each.",
+          "pedagogical_reasoning": "I will reinforce the student's sound methodological reasoning and move them to the next variables in the assignment. I’ll continue using guided discovery by asking them to apply the same source-evaluation logic to income per capita and Köppen climate zone, without supplying the sources or answers myself."
+        },
+        {
+          "turn": 5,
+          "student": "For income per capita, I think Census data is probably the best bet, maybe ACS if it goes down to the city level. For Köppen, I’m guessing I should use an actual climate classification map or dataset, not just like Weather.com saying Boston has cold winters.",
+          "tutor": "Yes—both of those are on the right track.\n\nNow tighten them:\n- Census/ACS: are you finding household income, per capita income, or median income? Those are not interchangeable.\n- Köppen: does the source explicitly assign Boston a Köppen class, or are you inferring it from weather patterns?\n\nWhich of those two details do you still need to verify?",
+          "pedagogical_reasoning": "I will confirm the student's reasoning and prompt them to refine it by checking operational details: exact census table/measure and whether the climate source explicitly uses Köppen classes. This maintains the Socratic method and moves directly toward a usable entry in the table without giving the final source selection for them."
+        },
+        {
+          "turn": 6,
+          "student": "I still need to verify both, honestly. I keep mixing up per capita income with median household income, and I’m not sure how to find a source that directly gives Boston’s Köppen class instead of making me infer it.",
+          "tutor": "Then separate the concepts first.\n\nAsk: is “per capita income” a per-person average, or a household midpoint? If your source says “household,” can it satisfy the table as written?\n\nFor Köppen, look for a source where the class label itself appears in a map, dataset, or academic/government reference. What search terms could force that—using both “Boston” and “Köppen climate classification”?",
+          "pedagogical_reasoning": "The student is stuck on two concrete distinctions. I should reduce scaffolding only enough to unblock them, using targeted questions and minimal examples, while keeping them responsible for locating and interpreting the data. I will not provide the exact answer or a completed source, but I will direct them toward the conceptual checks needed for the table."
+        },
+        {
+          "turn": 7,
+          "student": "Per capita income is the per-person average, so if the source only gives household income then that doesn’t really match the table. For search terms, maybe “Boston Köppen climate classification,” “Boston climate zone Köppen,” or “Köppen map Boston Massachusetts”?",
+          "tutor": "Good. That distinction matters, and those search terms are sensible.\n\nNow test results with two filters:\n1. Does the source explicitly use Köppen labels?\n2. Is it authoritative enough for an academic table?\n\nBring me one result for income and one for Köppen, and we’ll check whether they truly fit the assignment.",
+          "pedagogical_reasoning": "I will acknowledge the student's correct distinction and encourage a practical next step: run those searches and then evaluate what they find using explicit criteria. This keeps them doing the discovery themselves. I’ll avoid giving specific sources or the classification code. I’ll also keep it concise and focused."
+        },
+        {
+          "turn": 8,
+          "student": "I found ACS for Boston per capita income, and for Köppen I found a climate classification map that labels the Boston area as Dfa. I’m not totally sure if the map source is academic enough, though.",
+          "tutor": "Good progress. Don’t ask first whether the map “looks academic”—ask what makes it credible.\n\nCheck 4 things:\n1. Who created it?\n2. Does it cite a dataset or method?\n3. Is there a publication, institution, or research context behind it?\n4. Can you trace it to an original source?\n\nWhat do you find when you inspect the map source that way?",
+          "pedagogical_reasoning": "I will keep the student focused on evaluating source quality rather than validating the final data value. I’ll use targeted Socratic criteria—authorship, method, date, and citation trail—to help them judge whether the Köppen map is acceptable for the assignment. I will not confirm the classification directly or provide a final solution."
+        },
+        {
+          "turn": 9,
+          "student": "I think that helps, because right now I only know the map has the Dfa label, but I haven’t really checked who made it or where it came from. I’m going to look for whether it’s tied to a university, published dataset, or original Köppen-Geiger source.",
+          "tutor": "That’s the right move. Provenance matters more than the label alone.\n\nNext step: for each table entry, record 4 things beside the value—source name, year, geographic unit, and any limitation note.\n\nWhen you’ve checked the Köppen source, tell me whether it has clear provenance. If not, what’s your backup plan?",
+          "pedagogical_reasoning": "I will reinforce the student’s sound evaluation plan and direct them to produce a concrete next-step deliverable for the assignment. This stays Socratic, brief, and focused on the table, without supplying the data or writing for them."
+        },
+        {
+          "turn": 10,
+          "student": "If it doesn’t have clear provenance, I think I should drop it and find a Köppen-Geiger map or dataset from a research or government source instead. I’ll keep the source name, year, geographic unit, and a note for each entry so I don’t mix city and metro data.",
+          "tutor": "Yes. That’s a solid method.\n\nYou’ve got the bigger picture now: consistency of geographic unit and source provenance. Don’t keep circling the same issue—apply it.\n\nPick your next two fields in the table and tell me what source you chose for each, plus any limitation note.",
+          "pedagogical_reasoning": "I will affirm the student's methodology and push them toward execution with one focused next task. This follows the Socratic method by asking them to apply the framework they developed, without giving sources or completing the table. It stays bite-sized and on-assignment."
+        }
+      ]
+    },
+    {
+      "stem": "cooperative/cooperative_raw/transcript_0036",
+      "tutor_prompt": "tutor_03",
+      "student_persona": "cooperative_02",
+      "course": "urban_studies",
+      "exercise_number": "01",
+      "turn_size": 10,
+      "context": "Urban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.",
+      "exercise": "Course context:\nUrban Studies 11.024x — Climate Action and Urban Sustainability\n\nThis 12-week course examines how cities around the world are responding to climate change through adaptation and mitigation strategies. Students select a case study city and progressively build an understanding of its climate vulnerabilities, decision-making actors, and action strategies through a series of scaffolded assignments.\n\nExercise:\nOverview\nYou have chosen a city to study during this 12-week course, either from the list of Case Study Cities included in the Case Study Cities information page, or another city of your own choosing. \nIn studying your case study city, beginning with an understanding of existing conditions will offer you insight into:\n• Current urban conditions and climate-related challenges faced by your city\n• Where investment in climate adaptation and mitigation efforts may need to be prioritized\n\nAssignment Tasks\nYou will complete a Geographic and Demographic Data Table for your chosen city.  Gather information on your city's location, population, population race/ethnicity breakdown, physical area, income per capita, GDP, and Koppen climate zone. Add further City Data categories if you feel they are relevant to your research.\n\nRun configuration:\n- Planned conversation length: 10 student+tutor exchanges.",
+      "turns": 10,
+      "exchanges": [
+        {
+          "turn": 1,
+          "student": "Hi — I’m working on the Geographic and Demographic Data Table for my case study city, but I’m not totally sure how to organize it. Could you help me figure out what categories I should include and how to find reliable sources for things like GDP, income per capita, and the Köppen climate zone?",
+          "tutor": "Start with the categories named in the assignment. What are those required fields, in your own words?\n\nA strong next step is to make a 2- or 3-column table: category, value, source/link. For reliability, what kinds of sources seem strongest for each item: city government, national census/statistics office, World Bank/OECD/UN, or a climate classification map/database?\n\nThink through these specifically:\n- GDP: city-level or metro-level?\n- Income per capita: household income or personal income?\n- Race/ethnicity: does your city’s country even collect that category?\n- Köppen zone: what map or dataset defines it?\n\nTell me your city, and list the categories you think belong in your table first.",
+          "pedagogical_reasoning": "I will stay in tutor role, keep the response brief, and use guided discovery rather than building the table for the student. I’ll point the student back to the assignment’s required categories, then ask focused questions that help them choose a structure and source strategy on their own. I’ll suggest source types, not do the research or write the table."
+        },
+        {
+          "turn": 2,
+          "student": "My city is Boston. I think the required fields are basically: location, total population, race/ethnicity breakdown, physical area, income per capita, GDP, and Köppen climate zone, plus a source for each.  \n\nI’m a little unsure about GDP though — should I use Boston city proper if I can find it, or metro GDP if that’s the only solid number? And for income per capita, I think it should be personal income per person, not household income, but I’m not 100% sure.",
+          "tutor": "Good—those categories match the assignment well.\n\nNow make a defensible rule: if the assignment is about the city, what should be your default geographic unit? And if a clean city-level figure doesn’t exist, what should you do to stay transparent?\n\nFor GDP, compare these options: city proper is a tighter match, but metro GDP may be more available. Which is better for accuracy to the assignment, and how could you label a metro figure so you’re not overstating it?\n\nFor income per capita, ask yourself: does “per capita” usually mean per person or per household? What source would let you confirm that for Boston?",
+          "pedagogical_reasoning": "I will affirm the student’s identification of the required categories, then guide them to resolve ambiguity by matching each metric to the assignment’s city focus and source reliability. I will avoid choosing the numbers for them and instead ask decision-making questions that move toward a defensible table design."
+        },
+        {
+          "turn": 3,
+          "student": "I think my default geographic unit should be Boston city proper, since the assignment is about the city itself. If I can’t find a clean city-level number, I should probably use a metro-level figure only as a backup and label it really clearly as “Boston metropolitan area GDP,” not just “Boston GDP.”  \n\nAnd yeah, “per capita” should mean per person, not per household. For Boston, I’m guessing the Census/ACS would be the best source to confirm that, but I’m not fully sure which table or wording I should look for.",
+          "tutor": "That’s a solid rule set.\n\nNow verify it at the source level. In Census/ACS, what exact phrase would distinguish per-person from household measures? Look for wording like “per capita income” versus “median household income.”\n\nFor Boston, can you find:\n- a city profile or ACS table naming “per capita income”\n- the geography label showing it is Boston city, not the metro area\n\nOnce you find those labels, paste the source title here and we’ll check if it’s defensible.",
+          "pedagogical_reasoning": "I will reinforce the student's sound reasoning, keep the response bite-sized, and ask targeted questions that help them identify the exact source language without giving them the lookup result. This follows Socratic guidance and keeps the student doing the research."
+        },
+        {
+          "turn": 4,
+          "student": "I think I should look for the exact phrase “per capita income (in past 12 months, inflation-adjusted dollars)” and make sure the geography says something like “Boston city, Massachusetts.” I’d avoid using “median household income” since that’s a different measure.  \n\nI haven’t found the exact source title yet — I’m a little stuck on where in ACS to look. Is it better to use data.census.gov city profile pages, or should I be searching specific ACS tables?",
+          "tutor": "Your distinction is correct. Now choose based on defensibility: which is easier to cite and verify later—a general profile page or a named ACS table with a table ID?\n\nAsk yourself:\n- Which one shows the geography more clearly?\n- Which one makes the variable label more precise?\n- Which one would an instructor trust more if they checked it?\n\nMy push: try both, then tell me which gives you a cleaner citation for Boston city.",
+          "pedagogical_reasoning": "I will keep the student focused on source selection, affirm the correct distinction they made, and prompt them to compare two Census source routes by reliability and traceability. I will not navigate the site for them or provide the exact table, preserving guided discovery."
+        },
+        {
+          "turn": 5,
+          "student": "I’m guessing a named ACS table with a table ID is probably more defensible, because it sounds easier to verify and more precise than just a profile page. It should also make the geography and the variable label clearer if someone checks it later.  \n\nI’d try both, but if I have to pick one, I think the ACS table is the safer citation. If I find one for Boston city, can I use the profile page just as a backup?",
+          "tutor": "Yes—primary source first, backup second. But don’t clutter the table with both unless needed.\n\nSet a rule: use the named ACS table as the main source when available; use the profile page only if it clearly shows the same measure and geography.\n\nNow apply that rule to GDP and Köppen zone. What would count as the most defensible primary source for each of those?",
+          "pedagogical_reasoning": "I will validate the student's reasoning, then direct them to establish a clear source hierarchy and apply the same logic to other fields. I will not provide the exact source or answer, keeping them responsible for the research."
+        },
+        {
+          "turn": 6,
+          "student": "For GDP, I think the most defensible primary source would be a government statistics source first—maybe BEA if it has something for Boston city or at least a clearly defined metro area. If it’s only metro GDP, I’d use it but label it as metro, not city.  \n\nFor the Köppen zone, I think the best primary source would be an actual climate classification map or dataset, not just a random website summary. I’m just not sure which specific Köppen source is considered standard enough to cite.",
+          "tutor": "Good. Your standard is getting sharper.\n\nFor Köppen, test candidates with 3 questions:\n- Is it based on the Köppen-Geiger system and clearly labeled as such?\n- Does it show methodology or dataset provenance?\n- Can you identify Boston’s zone from the map/data without guessing?\n\nWhat source type fits that best: a peer-reviewed map, a university dataset, or a general reference site? Pick one and justify why it’s stronger.",
+          "pedagogical_reasoning": "I’ll affirm the student’s source hierarchy and push them to choose a standard by evaluating authority, transparency, and geographic fit. I won’t name the exact source; instead I’ll ask narrowing questions that lead them to one defensible option and keep the focus on the assignment."
+        },
+        {
+          "turn": 7,
+          "student": "I’d pick a peer-reviewed Köppen-Geiger map or dataset, because that seems stronger than a general reference site. It’s more likely to show the method and provenance, and I can point to an established classification system instead of just a summary page.  \n\nI’m thinking a university-hosted dataset could also be okay if it clearly uses Köppen-Geiger and explains the source, but a peer-reviewed source still feels most defensible.",
+          "tutor": "That’s a defensible choice.\n\nYou have enough to build your framework now. Draft your table with these columns:\n- Category\n- Geographic unit\n- Value\n- Year\n- Source\n- Notes/definition\n\nBefore you fill it in, which 3 categories are most likely to create comparability problems for Boston, and what note would each need?",
+          "pedagogical_reasoning": "I will confirm the student's reasoning and move them toward actually constructing the table by asking for a source hierarchy and column structure. This advances the solution without supplying the content itself."
+        },
+        {
+          "turn": 8,
+          "student": "I think the 3 biggest comparability problems are GDP, race/ethnicity breakdown, and Köppen climate zone.  \n\nFor GDP, I’d note whether the number is for Boston city proper or the Boston metro area, because that changes the meaning a lot. For race/ethnicity, I’d note that the categories come from U.S. Census definitions and can overlap with ethnicity in specific ways. For Köppen, I’d note the exact Köppen-Geiger source/year and that the zone is based on classification maps, not just a local weather description.",
+          "tutor": "Good—those are the right comparability issues.\n\nNow stop theorizing and draft the table skeleton for all required fields using your source rules. For each row, write:\n- the geographic unit you’ll target\n- the source type you’ll try first\n- the note you may need\n\nPost that draft next.",
+          "pedagogical_reasoning": "I will acknowledge the student's strong reasoning and push them to convert it into a concrete draft without supplying content. To avoid redundancy, I’ll ask for a written attempt using the agreed framework and source rules. This keeps the interaction on-task and Socratic."
+        },
+        {
+          "turn": 9,
+          "student": "Okay, here’s my draft skeleton for Boston:\n\n| Category | Geographic unit I’ll target | Source type I’ll try first | Note I may need |\n|---|---|---|---|\n| Location | Boston city proper | City government or Census geography/profile | Need to be clear it’s Boston, Massachusetts, USA |\n| Population | Boston city proper | U.S. Census / ACS | Include year of estimate |\n| Race/ethnicity breakdown | Boston city proper | U.S. Census / ACS table | Categories follow Census definitions; race and ethnicity aren’t exactly the same thing |\n| Physical area | Boston city proper | Census geography or city government | Specify land area vs total area if needed |\n| Income per capita | Boston city proper | ACS named table | Make sure it says “per capita income,” not household income |\n| GDP | Boston city proper first; metro only if city isn’t available | BEA or other official economic statistics source | If metro only, label it clearly as metro GDP and not Boston city GDP |\n| Köppen climate zone | Boston city proper | Peer-reviewed Köppen-Geiger map/dataset | Cite the specific classification source/year since this is map-based |\n\nI think this is the structure I should use, but I’m still a little unsure whether “location” should just be written as a simple descriptor or if it needs an actual source too.",
+          "tutor": "This is a good framework. Clear and defensible.\n\nFor “location,” ask: is it a basic descriptor, or a factual data field that should still be verifiable? If every other row has a source, what happens to consistency if this one doesn’t?\n\nWhat would be the simplest authoritative source for location and area together?",
+          "pedagogical_reasoning": "The student has produced a strong draft, so I should affirm progress while pushing them to justify the final ambiguous field themselves. I will not decide for them outright; instead I’ll ask what the assignment expects and what makes the table verifiable. This keeps the response concise, Socratic, and focused on the assignment."
+        },
+        {
+          "turn": 10,
+          "student": "I think “location” is basic, but it should still be verifiable so the table stays consistent. The simplest source for both location and area is probably a Census geography page or Boston city government page.",
+          "tutor": "Yes. That’s the right standard: simple, authoritative, consistent.\n\nUse one source for location/area if it clearly covers both. Now move from structure to evidence: fill in 3 rows first—population, income per capita, and GDP—with value, year, and source.\n\nPost those 3 once you find them, and we’ll check whether your geography and definitions are consistent.",
+          "pedagogical_reasoning": "I will confirm the student’s conclusion and direct them to the next concrete step: filling the table with actual values and sources. I’ll keep it brief, avoid providing content, and ask for a partial filled draft so the student continues the work."
+        }
+      ]
+    }
+  ]
 }

@@ -35,7 +35,7 @@ Provider = Literal["gpt", "claude"]
 
 TRANSCRIPTS_DIR = REPO_ROOT / "transcripts"
 # Keep bundle transcript labels aligned with judge prompt wording.
-BUNDLE_TRANSCRIPT_LABEL_TEMPLATE = "TRANSCRIPT {index} OF {total}"
+BUNDLE_TRANSCRIPT_LABEL_TEMPLATE = "Transcript {index} of {total}"
 
 
 def _parse_bundle_file(bundle_file_path: Path) -> list[str]:
@@ -151,12 +151,24 @@ def judge_transcript_bundle(
         payload["timestamp_utc"] = datetime.now(timezone.utc).isoformat()
     payload = _order_grade_payload(payload)
 
+    # Build per-transcript entries matching individual transcript file structure
+    # (metadata + exchanges) so the bundle output is self-contained.
+    transcript_entries: list[dict[str, Any]] = []
+    for stem, data in transcripts:
+        entry: dict[str, Any] = {"stem": stem}
+        for key in ("tutor_prompt", "student_persona", "course", "exercise_number",
+                    "turn_size", "context", "exercise", "turns", "exchanges"):
+            if key in data:
+                entry[key] = data[key]
+        transcript_entries.append(entry)
+
     out_doc: dict[str, Any] = {
         "bundle_file": bundle_path.name,
         "provider": provider,
         "prompt_name": prompt_name,
         "rubric_name": rubric_name,
-        "transcripts": stems,
+        "transcript_sources": stems,
+        "transcripts": transcript_entries,
         "grade": payload,
     }
     if output_path:
