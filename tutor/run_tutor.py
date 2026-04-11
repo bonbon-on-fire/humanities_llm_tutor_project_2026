@@ -13,6 +13,7 @@ import re
 from pathlib import Path
 
 from dotenv import load_dotenv
+from langchain_anthropic import ChatAnthropic  # pyright: ignore[reportMissingImports]
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from langgraph.graph import END, START, StateGraph
@@ -38,6 +39,16 @@ def _require_openai_api_key() -> str:
     if not key:
         raise RuntimeError(
             "OPENAI_API_KEY (or OPENAI_KEY) environment variable is required but not set."
+        )
+    return key
+
+
+def _require_anthropic_api_key() -> str:
+    """Return the Anthropic API key from the environment or raise RuntimeError if absent."""
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        raise RuntimeError(
+            "ANTHROPIC_API_KEY environment variable is required but not set."
         )
     return key
 
@@ -127,12 +138,23 @@ def _build_invalid_input_reply() -> AIMessage:
     return AIMessage(content=json.dumps(payload, ensure_ascii=False))
 
 
-def create_tutor_graph(system_prompt: str):
-    """Build and compile the LangGraph for the tutor."""
-    model = ChatOpenAI(
-        model=os.environ.get("OPENAI_MODEL", "gpt-5.4"),
-        api_key=_require_openai_api_key(),
-    )
+def create_tutor_graph(system_prompt: str, *, provider: str = "gpt"):
+    """Build and compile the LangGraph for the tutor.
+
+    Args:
+        system_prompt: The fully-rendered system prompt text.
+        provider: ``"gpt"`` (default) uses OpenAI; ``"claude"`` uses Anthropic Claude.
+    """
+    if provider == "claude":
+        model = ChatAnthropic(
+            model=os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6"),
+            api_key=_require_anthropic_api_key(),
+        )
+    else:
+        model = ChatOpenAI(
+            model=os.environ.get("OPENAI_MODEL", "gpt-5.4"),
+            api_key=_require_openai_api_key(),
+        )
 
     def tutor_node(state: TutorState) -> dict:
         """Generate one tutor turn from current conversation state."""

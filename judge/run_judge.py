@@ -206,12 +206,68 @@ def _build_expected_schema(rubric_name: str) -> str:
     Rubric max totals:
     - rubric_05 / rubric_06 : 46 pts  (1.1=8, 1.2=8, 1.3=8, 2.1=6, 2.2=6, 3.1=5, 3.2=5)
     - rubric_07             : 44 pts  (1.1=12, 1.2=6, 1.3=6, 2.1=4, 2.2=8, 3.1=4, 3.2=4)
+    - rubric_08             : 40 pts  (1.1=12, 1.2=6, 1.3=2, 2.1=4, 2.2=8, 3.1=4, 3.2=4)
     - all others            : 47 pts  (default fallback, same shape as rubric_05)
     """
 
     _rn = rubric_name.strip().lower()
 
-    if _rn == "rubric_07":
+    if _rn == "rubric_08":
+        # Section 1: 12+6+2=20, Section 2: 4+8=12, Section 3: 4+4=8  → total 40
+        sample = {
+            "sections": {
+                "1_pedagogy": {
+                    "criteria": {
+                        "1.1": {
+                            "deductions": [
+                                {
+                                    "sub_criterion_id": "1.1.A.a",
+                                    "reason": "Example deduction reason.",
+                                    "points": 12,
+                                }
+                            ],
+                            "score": 0,
+                            "max": 12,
+                        },
+                        "1.2": {"deductions": [], "score": 6, "max": 6},
+                        "1.3": {
+                            "deductions": [
+                                {
+                                    "sub_criterion_id": "1.3.A.a",
+                                    "reason": "Example deduction reason.",
+                                    "points": 2,
+                                }
+                            ],
+                            "score": 0,
+                            "max": 2,
+                        },
+                    },
+                    "base": {"score": 6, "max": 20},
+                },
+                "2_dialogue_quality": {
+                    "criteria": {
+                        "2.1": {"deductions": [], "score": 4, "max": 4},
+                        "2.2": {"deductions": [], "score": 8, "max": 8},
+                    },
+                    "base": {"score": 12, "max": 12},
+                },
+                "3_communication_quality": {
+                    "criteria": {
+                        "3.1": {"deductions": [], "score": 4, "max": 4},
+                        "3.2": {"deductions": [], "score": 4, "max": 4},
+                    },
+                    "base": {"score": 8, "max": 8},
+                },
+            },
+            "total_base_score": 26,
+            "max_base_score": 40,
+            "overview": "Concise rubric-based summary.",
+            "judge_reasoning": "Explicit rationale for major deductions and score.",
+            "total_score": 26,
+            "max_score": 40,
+            "judge_llm_calls": 1,
+        }
+    elif _rn == "rubric_07":
         # Section 1: 12+6+6=24, Section 2: 4+8=12, Section 3: 4+4=8  → total 44
         sample = {
             "sections": {

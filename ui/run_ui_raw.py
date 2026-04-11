@@ -5,7 +5,7 @@ Run with interactive CLI:
     python -m ui.run_ui_raw
 
 Or run with command-line arguments:
-    python -m ui.run_ui_raw --tutor tutor_03 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
+    python -m ui.run_ui_raw --provider claude --tutor tutor_03 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
 """
 
 from __future__ import annotations
@@ -36,6 +36,7 @@ from ui.cli_utils import (
     parse_persona_type_and_version,
     prompt_integer,
     prompt_numbered_selection,
+    prompt_single_selection,
 )
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -74,6 +75,7 @@ class RunConfig:
     course: str
     exercise_number: str
     turn_size: int
+    provider: str = "gpt"
 
     @property
     def student_persona(self) -> str:
@@ -84,6 +86,7 @@ class RunConfig:
 @dataclass(frozen=True)
 class BundleConfig:
     """Configuration for the entire bundle run."""
+    provider: str
     tutor_prompts: list[str]
     student_personas: list[str]
     course_exercises: list[tuple[str, str]]
@@ -97,6 +100,15 @@ def _require_openai_api_key() -> None:
         return
     raise RuntimeError(
         "OPENAI_API_KEY (or OPENAI_KEY) environment variable is required but not set."
+    )
+
+
+def _require_anthropic_api_key() -> None:
+    """Raise RuntimeError if ANTHROPIC_API_KEY is not set in the environment."""
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return
+    raise RuntimeError(
+        "ANTHROPIC_API_KEY environment variable is required but not set."
     )
 
 
@@ -176,7 +188,10 @@ def _next_transcript_number(output_dir: Path) -> str:
 
 def _validate_bundle_config(config: BundleConfig) -> None:
     """Validate the bundle config against available assets; raises ValueError/RuntimeError on bad config."""
-    _require_openai_api_key()
+    if config.provider == "claude":
+        _require_anthropic_api_key()
+    else:
+        _require_openai_api_key()
     if config.turn_size <= 0:
         raise ValueError("Turn size must be a positive integer.")
     if config.trials <= 0:
@@ -228,7 +243,7 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
         config.tutor_prompt,
         assignment_override=assignment_text,
     )
-    tutor_graph = create_tutor_graph(system_prompt)
+    tutor_graph = create_tutor_graph(system_prompt, provider=config.provider)
     student_graph = build_student_graph(prompt_name=config.student_persona)
 
     transcript_exchanges: list[dict[str, object]] = []
@@ -260,7 +275,7 @@ def _run_conversation(config: RunConfig, assignment_text: str) -> list[dict[str,
                 tutor_error = error
                 if _is_retryable_openai_payload_error(error) and attempt < _TUTOR_CALL_MAX_RETRIES + 1:
                     # Rebuild graph before retrying in case model/client state is corrupted.
-                    tutor_graph = create_tutor_graph(system_prompt)
+                    tutor_graph = create_tutor_graph(system_prompt, provider=config.provider)
                     print(
                         "[Warn] transient tutor API payload error; "
                         f"retrying turn={turn_index + 1} attempt={attempt}/{_TUTOR_CALL_MAX_RETRIES + 1}"
@@ -323,6 +338,7 @@ def _save_raw_transcript(
         transcript_path = output_dir / f"{transcript_name}.json"
 
         payload = {
+            "tutor_provider": config.provider,
             "tutor_prompt": config.tutor_prompt,
             "student_persona": config.student_persona,
             "course": config.course,
@@ -354,6 +370,7 @@ def _iter_runs(bundle_config: BundleConfig):
                         course=course,
                         exercise_number=exercise_number,
                         turn_size=bundle_config.turn_size,
+                        provider=bundle_config.provider,
                     )
                     yield config, trial
 
@@ -361,7 +378,14 @@ def _iter_runs(bundle_config: BundleConfig):
 def _get_interactive_config() -> BundleConfig:
     """Get bundle configuration through interactive CLI prompts."""
     print("=== Raw Transcript Generation Configuration ===")
-    
+
+    # Tutor provider
+    provider = prompt_single_selection(
+        "Tutor provider",
+        ["gpt", "claude"],
+        required=True,
+    )
+
     # Tutor prompts
     available_tutor_prompts = _discover_tutor_prompts()
     selected_tutor_prompts = prompt_numbered_selection(
@@ -422,6 +446,7 @@ def _get_interactive_config() -> BundleConfig:
         trials = DEFAULT_TRIALS
     
     return BundleConfig(
+        provider=provider,
         tutor_prompts=selected_tutor_prompts,
         student_personas=selected_personas,
         course_exercises=selected_course_exercises,
@@ -445,6 +470,12 @@ Examples:
         """,
     )
     
+    parser.add_argument(
+        "--provider",
+        choices=["gpt", "claude"],
+        default="gpt",
+        help="Tutor LLM provider to use: gpt (default) or claude",
+    )
     parser.add_argument(
         "--tutor",
         nargs="+",
@@ -482,16 +513,16 @@ Examples:
 
 def _get_config_from_args(args: argparse.Namespace) -> BundleConfig:
     """Convert command-line arguments to BundleConfig."""
-    # Use defaults if not specified
     tutor_prompts = args.tutor or DEFAULT_TUTOR_PROMPTS
     student_personas = args.personas or DEFAULT_STUDENT_PERSONAS
-    
+
     if args.course and args.exercise:
         course_exercises = [(args.course, ex) for ex in args.exercise]
     else:
         course_exercises = DEFAULT_COURSE_EXERCISES
-    
+
     return BundleConfig(
+        provider=args.provider,
         tutor_prompts=tutor_prompts,
         student_personas=student_personas,
         course_exercises=course_exercises,
@@ -519,6 +550,7 @@ def _run_bundle(bundle_config: BundleConfig) -> int:
     
     summary_lines = [
         f"Will generate {total_combinations} raw transcripts:",
+        f"  • Tutor provider: {bundle_config.provider.upper()}",
         f"  • {len(bundle_config.tutor_prompts)} tutor prompt(s): {', '.join(bundle_config.tutor_prompts)}",
         f"  • {len(bundle_config.student_personas)} student persona(s) across {len(persona_groups)} type(s)",
     ]
@@ -539,7 +571,7 @@ def _run_bundle(bundle_config: BundleConfig) -> int:
         failed_runs = 0
         runs = list(_iter_runs(bundle_config))
         total_runs = len(runs)
-        print(f"[Raw Bundle] Running in parallel with {PARALLEL_WORKERS} workers.")
+        print(f"[Raw Bundle] Running in parallel with {PARALLEL_WORKERS} workers. Tutor provider: {bundle_config.provider.upper()}")
 
         def _run_one(config: RunConfig, trial: int) -> dict[str, object]:
             assignment_text = _build_assignment_text(

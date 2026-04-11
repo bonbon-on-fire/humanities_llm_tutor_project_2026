@@ -303,7 +303,7 @@ def _read_hand_grade_rows(xlsx_path: Path, *, grader_name: str) -> list[HandGrad
         if re.match(r"^\d+\.\d+\.[a-z]$", h)
     ]
     deduction_indices = [i for i, _ in deduction_columns]
-    max_total_score = 44.0
+    max_total_score = 40.0
     rows: list[HandGradeRow] = []
     for r in ws.iter_rows(min_row=2, values_only=True):
         persona = str(r[idx_persona] or "").strip().lower()

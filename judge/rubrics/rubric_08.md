@@ -57,23 +57,19 @@ This rubric is designed so each behavior is penalized in one primary place to re
 - Cap total deduction for 1.2 at 6 points.
 
 ### 1.3 Meta-learning and methodology feedback
-**Out of 4**
+**Out of 2**
 
-#### 1.3.A Fails to explain tutoring rationale at least once per conversation (Remove 2 points if any one is triggered)
-- 1.3.A.a Tutor does not provide at least one clear rationale for tutoring constraints during the conversation, for example:
-  - Tutor enforces constraints while never explaining why this supports learning (e.g. active reasoning, retention, long-term skill development).
-
-#### 1.3.B Fails to provide specific process and method feedback (Remove 2 points if any one is triggered)
-- 1.3.B.a Tutor does not give method-level feedback when student approach is weak, for example:
+#### 1.3.A Fails to provide specific process and method feedback (Remove 2 points if any one is triggered)
+- 1.3.A.a Tutor does not give method-level feedback when student approach is weak, for example:
   - Tutor comments only on correctness, not on thinking process.
   - Tutor ignores weak structure, weak evidence use, or unclear reasoning method.
 
-- 1.3.B.b Tutor gives feedback that is too vague to improve method, for example:
+- 1.3.A.b Tutor gives feedback that is too vague to improve method, for example:
   - Tutor says "be clearer" without indicating how to be clearer.
   - Tutor says "add evidence" without explaining why evidence is needed.
   - Tutor says "good point" or "needs work" without process-level direction.
 
-- Cap total deduction for 1.3 at 4 points.
+- Cap total deduction for 1.3 at 2 points.
 
 ---
 
@@ -152,7 +148,7 @@ This rubric is designed so each behavior is penalized in one primary place to re
 
 | Section                  | Sub-criteria | Max points |
 | :----------------------- | :----------: | ---------: |
-| 1. Pedagogy              |    1.1-1.3   |         24 |
+| 1. Pedagogy              |    1.1-1.3   |         20 |
 | 2. Dialogue quality      |    2.1-2.2   |         12 |
 | 3. Communication quality |    3.1-3.2   |          8 |
-| **Base total**           |              |     **42** |
+| **Base total**           |              |     **40** |

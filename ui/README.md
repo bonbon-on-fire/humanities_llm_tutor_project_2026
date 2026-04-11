@@ -14,15 +14,20 @@ python -m ui.run_ui_raw
 ```
 
 This will prompt you to select from numbered options:
+- **Tutor provider**: `gpt` or `claude` (required)
 - **Tutor prompts**: Available from `tutor/prompts/*.txt` (empty input = all)
-- **Student personas**: Available from `students/personas/*.txt` (empty input = all)  
+- **Student personas**: Available from `students/personas/*.txt` (empty input = all)
 - **Course/exercise combinations**: Available from `curriculum/` (empty input = all)
 - **Turn size**: Number of student+tutor exchanges per conversation
 - **Trials**: Number of trials per configuration
 
 **Command-line mode:**
 ```powershell
-python -m ui.run_ui_raw --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
+# Generate with GPT tutor (default)
+python -m ui.run_ui_raw --provider gpt --tutor tutor_03 --personas clueless_01 chaotic_02 --course philosophy --exercise 01 --turn-size 10 --trials 2
+
+# Generate with Claude tutor
+python -m ui.run_ui_raw --provider claude --tutor tutor_03 --personas clueless_01 --course philosophy --exercise 01 --turn-size 10 --trials 2
 ```
 
 Run matrix: `tutor_prompts x student_personas x course_exercises x trials`
@@ -97,6 +102,7 @@ All transcript flows include run metadata and exchanges:
 
 ```json
 {
+  "tutor_provider": "gpt",
   "tutor_prompt": "tutor_03",
   "student_persona": "chaotic_01",
   "course": "philosophy",
@@ -142,7 +148,7 @@ All UI scripts support both interactive and command-line modes:
 
 | Variable | Required | Description |
 | -------- | -------- | ----------- |
-| `OPENAI_API_KEY` | Yes | OpenAI API key. Fails immediately if not set. |
-| `OPENAI_MODEL` | No | Model name (default: `gpt-5.4`). |
-| `ANTHROPIC_API_KEY` | For Claude judge | Anthropic API key required when using Claude provider. |
-| `ANTHROPIC_MODEL` | No | Model name for Claude judge (default: `claude-sonnet-4-6`). |
+| `OPENAI_API_KEY` | For GPT | OpenAI API key. Required when using GPT as tutor or judge provider. |
+| `OPENAI_MODEL` | No | OpenAI model name (default: `gpt-5.4`). |
+| `ANTHROPIC_API_KEY` | For Claude | Anthropic API key. Required when using Claude as tutor or judge provider. |
+| `ANTHROPIC_MODEL` | No | Anthropic model name for Claude tutor or judge (default: `claude-sonnet-4-6`). |
