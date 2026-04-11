@@ -1,4 +1,4 @@
-"""Rebuild judge/hand_grade_judge.xlsx with stratified sample and embedded transcript text."""
+"""Rebuild judge/hand_grade_workbook.xlsx with stratified sample and embedded transcript text."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from openpyxl.utils import get_column_letter
 
 REPO = Path(__file__).resolve().parents[1]
 TRANSCRIPTS = REPO / "transcripts"
-OUT_XLSX = REPO / "judge" / "hand_grade_judge.xlsx"
+OUT_XLSX = REPO / "judge" / "hand_grade_workbook.xlsx"
 RNG = random.Random(42)
 EXCEL_CELL_MAX = 32767
 
@@ -197,7 +197,7 @@ def main() -> int:
             ccell = ws.cell(row=row, column=3, value=body)
             ccell.alignment = body_align
             ws.cell(row=row, column=4, value=grader)
-            ws.cell(row=row, column=18, value=f"=42-SUM(E{row}:Q{row})")
+            ws.cell(row=row, column=18, value=f"=40-SUM(E{row}:Q{row})")
             ws.cell(row=row, column=19, value=f'=A{row}&"|"&B{row}')
             row += 1
 
@@ -218,7 +218,7 @@ def main() -> int:
                     f'IF($C{row}="nishita",IFERROR(INDEX(\'nishita grading\'!$E:$Q,'
                     f'MATCH($A{row}&"|"&$B{row},\'nishita grading\'!$S:$S,0),COLUMN()-3),""),"")))'
                 )
-            ws_compiled.cell(row=row, column=17, value=f"=42-SUM(D{row}:P{row})")
+            ws_compiled.cell(row=row, column=17, value=f"=40-SUM(D{row}:P{row})")
             ws_compiled.cell(row=row, column=18, value=f'=A{row}&"|"&B{row}')
             row += 1
 
