@@ -1,9 +1,11 @@
 """
-Build GPT vs Claude grading comparison charts.
+Build transcript grading visualizations.
 
 Reads judged transcripts from:
-    transcripts/<persona_type>/<persona_type>_gpt/transcript_*.json
     transcripts/<persona_type>/<persona_type>_claude/transcript_*.json
+
+Each run generates every configured chart (no prompts). Currently: Claude total
+score per transcript (all transcripts, plus one chart per persona family).
 
 Usage:
     python -m visualization.run_visualization
@@ -482,6 +484,58 @@ def _chart_line_scores(
     ax.text(
         0.01, 0.98, "\n".join(lines), transform=ax.transAxes, ha="left", va="top",
         fontsize=9, bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
+    )
+
+    fig.tight_layout()
+    fig.savefig(out_dir / output_name, dpi=150)
+    plt.close(fig)
+    print(f"  [{chart_idx}] {output_name}")
+
+
+def _chart_provider_total_scores_per_transcript(
+    rows: list[GradeRow],
+    out_dir: Path,
+    *,
+    provider_label: str,
+    scope_label: str,
+    output_name: str,
+    chart_idx: int,
+) -> None:
+    """Line chart of total scores for one judge provider over sorted transcript rows."""
+    plt = _safe_import_matplotlib()
+    from matplotlib.ticker import MaxNLocator
+
+    if not rows:
+        print(f"  [{chart_idx}] {output_name} (skipped: no rows)")
+        return
+
+    sorted_rows = sorted(rows, key=_sort_key)
+    x = list(range(len(sorted_rows)))
+    y = [r.total_score for r in sorted_rows]
+    finite = [v for v in y if math.isfinite(v)]
+
+    fig, ax = plt.subplots(figsize=(16, 7))
+    color = "#ff893a" if provider_label.lower() == "claude" else "#a65dea"
+    ax.plot(x, y, label=provider_label.upper(), color=color, linewidth=1.4, marker="o", markersize=2.5)
+    ax.set_title(f"{provider_label.upper()} total score per transcript ({scope_label})")
+    ax.set_xlabel("Transcript index (sorted by persona / course / exercise)")
+    ax.set_ylabel("Total score")
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+
+    lines = [f"Transcripts: {len(sorted_rows)}"]
+    if finite:
+        lines.append(f"Mean: {sum(finite) / len(finite):.1f}")
+    ax.text(
+        0.01,
+        0.98,
+        "\n".join(lines),
+        transform=ax.transAxes,
+        ha="left",
+        va="top",
+        fontsize=9,
+        bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
     )
 
     fig.tight_layout()
@@ -1204,103 +1258,48 @@ def _chart_sub_subsection_correlation_heatmap(
 # ---------------------------------------------------------------------------
 
 def main() -> int:
-    """Entry point: load all graded transcript data, generate comparison charts, print summary."""
+    """Entry point: load Claude-graded transcripts and generate all configured charts."""
     repo_root = Path(__file__).resolve().parent.parent
     transcripts_dir = repo_root / "transcripts"
     out_dir = repo_root / "visualization" / "outputs"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    gpt_all_rows = _read_provider_rows(transcripts_dir, "gpt")
     claude_all_rows = _read_provider_rows(transcripts_dir, "claude")
+    print(f"Loaded Claude: {len(claude_all_rows)} transcripts")
 
-    print(f"Loaded GPT: {len(gpt_all_rows)} transcripts   Claude: {len(claude_all_rows)} transcripts")
-
-    if not gpt_all_rows and not claude_all_rows:
-        print("No judged transcripts found. Run 'python -m ui.run_ui_judge --provider gpt' or '--provider claude' first.")
+    if not claude_all_rows:
+        print(
+            "No Claude judged transcripts found under "
+            "transcripts/<persona>/<persona>_claude/transcript_*.json. "
+            "Run the judge for Claude first."
+        )
         return 1
 
     chart_idx = 1
 
-    _chart_section_discrepancies(
-        gpt_all_rows,
-        claude_all_rows,
-        out_dir,
-        chart_idx=chart_idx,
-        output_name="section_discrepancy_by_rubric_section_gpt_vs_claude.png",
-    )
-    chart_idx += 1
-
-    _chart_subsection_discrepancies(
-        gpt_all_rows,
-        claude_all_rows,
-        out_dir,
-        chart_idx=chart_idx,
-        output_name="subsection_discrepancy_by_subsection_gpt_vs_claude.png",
-    )
-    chart_idx += 1
-
-    _chart_line_scores(
-        gpt_all_rows,
-        claude_all_rows,
-        out_dir,
-        persona_label="all_transcripts",
-        output_name="individual_grades_all_transcripts_gpt_vs_claude.png",
-        chart_idx=chart_idx,
-    )
-    chart_idx += 1
-
-    hand_grade_path = repo_root / "judge" / "hand_grade_workbook.xlsx"
-    faizan_rows = _read_hand_grade_rows(hand_grade_path, grader_name="faizan")
-    if faizan_rows:
-        _chart_faizan_vs_gpt_vs_claude(
-            faizan_rows,
-            gpt_all_rows,
-            claude_all_rows,
-            out_dir,
-            output_name="hand_grades_faizan_vs_gpt_vs_claude.png",
-            chart_idx=chart_idx,
-        )
-        chart_idx += 1
-        _chart_faizan_vs_claude_subsection_heatmap(
-            faizan_rows,
-            claude_all_rows,
-            out_dir,
-            output_name="hand_grades_faizan_vs_claude_subsection_heatmap_xxx.png",
-            chart_idx=chart_idx,
-        )
-        chart_idx += 1
-    else:
-        print("No Faizan hand-grade rows found in judge/hand_grade_workbook.xlsx. Skipping hand-grade comparison chart.")
-
-    # Subsection-correlation heatmaps: exactly 3
-    # 1) all providers combined, 2) GPT all personas, 3) Claude all personas.
-    _chart_subsection_correlation_heatmap(
-        gpt_all_rows + claude_all_rows,
-        out_dir,
-        provider_label="all_providers",
-        persona_label="all_personas",
-        chart_idx=chart_idx,
-        output_name="subsection_correlation_heatmap_all_providers_all_personas_normalized.png",
-    )
-    chart_idx += 1
-    _chart_subsection_correlation_heatmap(
-        gpt_all_rows,
-        out_dir,
-        provider_label="gpt",
-        persona_label="all_personas",
-        chart_idx=chart_idx,
-        output_name="subsection_correlation_heatmap_gpt_all_personas_normalized.png",
-    )
-    chart_idx += 1
-    _chart_subsection_correlation_heatmap(
+    _chart_provider_total_scores_per_transcript(
         claude_all_rows,
         out_dir,
         provider_label="claude",
-        persona_label="all_personas",
+        scope_label="all transcripts",
+        output_name="claude_grades_all_transcripts.png",
         chart_idx=chart_idx,
-        output_name="subsection_correlation_heatmap_claude_all_personas_normalized.png",
     )
     chart_idx += 1
+
+    persona_families = sorted({r.persona_type.lower() for r in claude_all_rows})
+    for persona in persona_families:
+        subset = _filter_individual_rows(claude_all_rows, {persona})
+        if subset:
+            _chart_provider_total_scores_per_transcript(
+                subset,
+                out_dir,
+                provider_label="claude",
+                scope_label=f"{persona} only",
+                output_name=f"claude_grades_{persona}_transcripts.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
 
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0
