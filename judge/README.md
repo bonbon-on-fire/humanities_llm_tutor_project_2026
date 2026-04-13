@@ -40,7 +40,7 @@ Transcripts live in the top-level `transcripts/` folder (not inside `judge/`).
 - `romain grading`
 - `nishita grading`
 
-`faizan grading` / `romain grading` / `nishita grading` include a `transcript` column after `transcript number`.
+`faizan grading` / `romain grading` / `nishita grading` include a `transcript` column after `transcript number` (plain text per turn, same field order as raw JSON: `turn`, `student`, `tutor`, `pedagogical_reasoning`, labeled `turn:` / `student:` / `tutor:` / `pedagological reasoning:`).
 Deduction columns follow `rubric_08` subsections (excluding `1.3.C`).
 `total score` is computed as `40 - SUM(deductions)` per row (rubric_08 base total).
 In `compiled grading`, rows for `faizan`/`romain`/`nishita` auto-pull deduction values from the corresponding grader sheet via key-based lookup formulas. `claude` rows can be filled from existing `*_claude` transcript grades with `python judge/fill_claude_hand_workbook.py` (subsection deductions derived from each grade’s `sub_criterion_id` / `points` fields).

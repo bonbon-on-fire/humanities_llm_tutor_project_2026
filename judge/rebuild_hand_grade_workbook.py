@@ -58,9 +58,9 @@ def format_transcript_cell(data: dict) -> str:
         ).strip()
         blocks.append(
             f"turn: {turn}\n"
-            f"tutor: {tutor}\n"
             f"student: {student}\n"
-            f"pedagogical reasoning: {reason}"
+            f"tutor: {tutor}\n"
+            f"pedagological reasoning: {reason}"
         )
     text = "\n\n".join(blocks)
     if len(text) > EXCEL_CELL_MAX:
