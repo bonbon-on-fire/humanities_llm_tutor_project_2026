@@ -544,6 +544,86 @@ def _chart_provider_total_scores_per_transcript(
     print(f"  [{chart_idx}] {output_name}")
 
 
+def _chart_hand_grader_vs_claude(
+    hand_rows: list[HandGradeRow],
+    claude_rows: list[GradeRow],
+    out_dir: Path,
+    *,
+    grader_label: str,
+    output_name: str,
+    chart_idx: int,
+) -> None:
+    """Line chart: hand total score vs Claude total score on exact (persona type, transcript number) matches."""
+    plt = _safe_import_matplotlib()
+    from matplotlib.ticker import MaxNLocator
+
+    hand_by_key: dict[tuple[str, int], HandGradeRow] = {}
+    for r in hand_rows:
+        hand_by_key[(r.persona_type.lower(), r.transcript_number)] = r
+
+    claude_by_key: dict[tuple[str, int], GradeRow] = {}
+    for r in claude_rows:
+        claude_by_key[(r.persona_type.lower(), _transcript_num(r))] = r
+
+    matched_keys = sorted(
+        set(hand_by_key).intersection(set(claude_by_key)),
+        key=lambda k: (k[0], k[1]),
+    )
+    if not matched_keys:
+        print(f"  [{chart_idx}] {output_name} (skipped: no hand/Claude transcript overlap)")
+        return
+
+    x = list(range(len(matched_keys)))
+    y_hand = [hand_by_key[k].total_score for k in matched_keys]
+    y_claude = [claude_by_key[k].total_score for k in matched_keys]
+
+    paired_h: list[float] = []
+    paired_c: list[float] = []
+    for k in matched_keys:
+        h, c = hand_by_key[k].total_score, claude_by_key[k].total_score
+        if math.isfinite(h) and math.isfinite(c):
+            paired_h.append(h)
+            paired_c.append(c)
+
+    fig, ax = plt.subplots(figsize=(16, 7))
+    ax.plot(x, y_hand, label=f"{grader_label} (hand)", color="#2ca02c", linewidth=1.4, marker="o", markersize=2.5)
+    ax.plot(x, y_claude, label="Claude", color="#ff893a", linewidth=1.4, marker="o", markersize=2.5)
+    ax.set_title(f"{grader_label} vs Claude — total score (matched transcripts)")
+    ax.set_xlabel("Matched transcript index (sorted by persona type, transcript number)")
+    ax.set_ylabel("Total score")
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+
+    pearson_v = _pearson(paired_h, paired_c)
+    spearman_v = _spearman(paired_h, paired_c)
+    lines = [
+        f"Paired transcripts: {len(paired_h)}",
+        f"Pearson Correlation = {pearson_v:.3f}" if pearson_v is not None else "Pearson Correlation = N/A",
+        f"Spearman ρ = {spearman_v:.3f}" if spearman_v is not None else "Spearman ρ = N/A",
+    ]
+    if paired_h:
+        lines.append(
+            f"{grader_label} mean: {sum(paired_h) / len(paired_h):.1f}   "
+            f"Claude mean: {sum(paired_c) / len(paired_c):.1f}"
+        )
+    ax.text(
+        0.01,
+        0.98,
+        "\n".join(lines),
+        transform=ax.transAxes,
+        ha="left",
+        va="top",
+        fontsize=9,
+        bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "alpha": 0.85, "edgecolor": "#ccc"},
+    )
+
+    fig.tight_layout()
+    fig.savefig(out_dir / output_name, dpi=150)
+    plt.close(fig)
+    print(f"  [{chart_idx}] {output_name}")
+
+
 def _chart_faizan_vs_gpt_vs_claude(
     faizan_rows: list[HandGradeRow],
     gpt_rows: list[GradeRow],
@@ -1300,6 +1380,26 @@ def main() -> int:
                 chart_idx=chart_idx,
             )
             chart_idx += 1
+
+    hand_grade_path = repo_root / "judge" / "hand_grade_workbook.xlsx"
+    for grader_key, grader_label in (
+        ("faizan", "Faizan"),
+        ("romain", "Romain"),
+        ("nishita", "Nishita"),
+    ):
+        hand_rows = _read_hand_grade_rows(hand_grade_path, grader_name=grader_key)
+        if hand_rows:
+            _chart_hand_grader_vs_claude(
+                hand_rows,
+                claude_all_rows,
+                out_dir,
+                grader_label=grader_label,
+                output_name=f"hand_grades_{grader_key}_vs_claude.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
+        else:
+            print(f"No hand-grade rows for '{grader_key}' in {hand_grade_path.name}. Skipping {grader_key}_vs_claude chart.")
 
     print(f"\n[Done] Charts saved to: {out_dir}")
     return 0
