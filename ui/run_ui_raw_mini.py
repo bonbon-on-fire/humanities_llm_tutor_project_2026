@@ -97,25 +97,28 @@ def interactive_main() -> int:
     sp = data.get("student_persona", "?")
     print(f"\nLoaded {source_stem}.json  student_persona={sp}  last_turn={max_turn}")
 
-    resume_after = prompt_integer(
-        f"Resume after turn (inclusive history: keep turns 1 through this turn; max {max_turn})",
+    resume_from = prompt_integer(
+        (
+            f"Resume from turn / pivot X (1–{max_turn}): keep full student+tutor for turns 1..X-1; "
+            f"for turn X keep only the saved student line, then the new tutor replies first."
+        ),
         min_value=1,
         max_value=max_turn,
     )
-    if resume_after is None:
+    if resume_from is None:
         print("Cancelled.")
         return 1
 
     additional = prompt_integer(
-        "Additional turns (new student+tutor exchanges to generate)",
-        min_value=1,
+        "Additional turns (full student+tutor exchanges after the new tutor reply for turn X; 0 = only regenerate tutor at X)",
+        min_value=0,
         max_value=100,
     )
     if additional is None:
         print("Cancelled.")
         return 1
 
-    total_final = resume_after + additional
+    total_final = resume_from + additional
     tutor_provider = prompt_single_selection(
         "Tutor provider (for continuation only)",
         ["gpt", "claude"],
@@ -139,10 +142,12 @@ def interactive_main() -> int:
     if not tutor_prompt:
         return 1
 
+    kept_turns = f"1–{resume_from - 1}" if resume_from > 1 else "(none before pivot)"
     summary = (
         f"Continue {persona_type}/{source_stem}.json\n"
-        f"  • History: turns 1–{resume_after} unchanged\n"
-        f"  • Generate: {additional} new exchange(s) → final turn count up to {total_final}\n"
+        f"  • Keep as-is: turns {kept_turns} (full student+tutor each)\n"
+        f"  • Pivot turn {resume_from}: same student text as file; tutor regenerated first\n"
+        f"  • Then: {additional} further full exchange(s) → final turn index up to {total_final}\n"
         f"  • Tutor: {tutor_prompt} ({tutor_provider.upper()})\n"
         f"  • Output: transcripts/{persona_type}/{persona_type}_mini/"
     )
@@ -153,7 +158,7 @@ def interactive_main() -> int:
     params = MiniContinuationParams(
         persona_type=persona_type,
         source_transcript_stem=source_stem,
-        resume_after_turn=resume_after,
+        resume_from_turn=resume_from,
         additional_turns=additional,
         tutor_prompt=tutor_prompt,
         tutor_provider=tutor_provider,

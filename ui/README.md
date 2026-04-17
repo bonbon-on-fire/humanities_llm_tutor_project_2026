@@ -38,7 +38,30 @@ Run matrix: `tutor_prompts x student_personas x course_exercises x trials`
 - Automatic API key validation
 - Interactive confirmation before processing
 
-### 2) Judge raw transcripts (GPT or Claude)
+### 2) Mini continuation (pivot a raw transcript, new tutor)
+
+For quick experiments: fork a **raw** transcript at a **pivot turn** `X`, keep full student+tutor for turns `1 .. X-1`, keep **only** the saved **student** line for turn `X`, then run the **new tutor** first (regenerating the tutor side of turn `X`). After that, append more full student+tutor exchanges. The student model stays **OpenAI** (same as `run_student`); you choose the **tutor** provider (`gpt` or `claude`) for continuation.
+
+**Interactive (recommended):**
+```powershell
+python -m ui.run_ui_raw_mini
+```
+
+**Command-line** (same flags as the tutor module; `ui.run_ui_raw_mini` forwards any arguments):
+```powershell
+python -m tutor.run_tutor_mini --persona-type chaotic --transcript transcript_01 --resume-from-turn 5 --additional-turns 3 --tutor-prompt tutor_04 --tutor-provider gpt
+```
+
+**Options (`tutor.run_tutor_mini`):**
+- `--persona-type`: Folder under `transcripts/` (`chaotic`, `chitchat`, `clueless`, `cooperative`)
+- `--transcript`: Stem in the persona’s `*_raw` folder (e.g. `transcript_01`)
+- `--resume-from-turn`: Pivot `X` — full history through turn `X-1`; turn `X` uses file student text only, then tutor replies first
+- `--additional-turns`: Count of **full** student+tutor exchanges **after** that new tutor reply (`0` = only regenerate tutor at turn `X`)
+- `--tutor-prompt`, `--tutor-provider`: Tutor prompt stem and `gpt` or `claude` for continuation
+
+**Output:** `transcripts/<type>/<type>_mini/transcript_XXXX.json`. Saved JSON includes `mini_continuation` (source path, `resume_from_turn`, `additional_turns`, original tutor fields).
+
+### 3) Judge raw transcripts (GPT or Claude)
 
 **Interactive mode (default):**
 ```powershell
@@ -75,8 +98,9 @@ The script automatically discovers all raw transcripts in `*_raw` folders, copie
 Raw transcripts are saved to persona-specific raw folders:
 
 - `transcripts/chaotic/chaotic_raw/`
-- `transcripts/cooperative/cooperative_raw/`
+- `transcripts/chitchat/chitchat_raw/`
 - `transcripts/clueless/clueless_raw/`
+- `transcripts/cooperative/cooperative_raw/`
 
 Each file is auto-named as `transcript_XXXX.json`.
 
@@ -86,15 +110,24 @@ Judged transcripts are saved to provider-specific folders:
 
 **GPT judged:**
 - `transcripts/chaotic/chaotic_gpt/`
-- `transcripts/cooperative/cooperative_gpt/`
+- `transcripts/chitchat/chitchat_gpt/`
 - `transcripts/clueless/clueless_gpt/`
+- `transcripts/cooperative/cooperative_gpt/`
 
 **Claude judged:**
 - `transcripts/chaotic/chaotic_claude/`
-- `transcripts/cooperative/cooperative_claude/`
+- `transcripts/chitchat/chitchat_claude/`
 - `transcripts/clueless/clueless_claude/`
+- `transcripts/cooperative/cooperative_claude/`
 
 Each output file uses the same stem as raw input: `transcript_XXXX.json`
+
+### Mini continuation outputs (`ui.run_ui_raw_mini` / `tutor.run_tutor_mini`)
+
+- `transcripts/chaotic/chaotic_mini/`
+- `transcripts/chitchat/chitchat_mini/`
+- `transcripts/clueless/clueless_mini/`
+- `transcripts/cooperative/cooperative_mini/`
 
 ## Transcript schema (core fields)
 
@@ -128,9 +161,14 @@ Judged transcripts additionally include:
 - `judge_rubric`
 - `grade`
 
+Mini continuation outputs additionally include:
+
+- `student_provider`: `gpt` (student stack is always OpenAI here)
+- `mini_continuation` (object): `source_transcript`, `source_stem`, `resume_from_turn`, `additional_turns`, `original_tutor_prompt`, `original_tutor_provider`
+
 ## Interactive CLI Features
 
-All UI scripts support both interactive and command-line modes:
+`run_ui_raw`, `run_ui_judge`, and related judge runners support both interactive and command-line modes. **`run_ui_raw_mini`** is interactive when run with **no** arguments; with arguments it delegates to **`tutor.run_tutor_mini`** (same parser as `python -m tutor.run_tutor_mini`).
 
 - **Interactive mode**: Run without arguments to get numbered selection prompts
 - **Command-line mode**: Provide all required arguments to skip prompts
