@@ -1,9 +1,11 @@
 """
-Continue a raw transcript from a chosen turn with a (possibly different) tutor prompt.
+Continue a raw transcript from a chosen pivot turn with a (possibly different) tutor prompt.
 
-Rebuilds tutor/student LangChain message history from saved exchanges, then runs
-additional student+tutor turns. Student uses OpenAI (same stack as ``run_student``);
-tutor provider is selectable (gpt/claude).
+History keeps full student+tutor exchanges for turns ``1 .. X-1``. For turn ``X`` only the
+student line from the file is kept; the tutor replies first (regenerated), then
+``additional_turns`` full student+tutor exchanges run for turns ``X+1`` onward.
+
+Student uses OpenAI (same stack as ``run_student``); tutor provider is selectable (gpt/claude).
 
 Used by ``ui.run_ui_raw_mini`` and usable standalone via ``python -m tutor.run_tutor_mini``.
 """
@@ -61,7 +63,7 @@ class MiniContinuationParams:
 
     persona_type: str
     source_transcript_stem: str
-    resume_after_turn: int
+    resume_from_turn: int
     additional_turns: int
     tutor_prompt: str
     tutor_provider: str
@@ -136,7 +138,7 @@ def build_histories_through_turn(
     max_turn = max(by_turn.keys()) if by_turn else 0
     if through_turn_inclusive > max_turn:
         raise ValueError(
-            f"resume_after_turn={through_turn_inclusive} exceeds last turn in transcript ({max_turn})"
+            f"through_turn_inclusive={through_turn_inclusive} exceeds last turn in transcript ({max_turn})"
         )
 
     tutor_messages: list = []
@@ -161,6 +163,48 @@ def build_histories_through_turn(
     return tutor_messages, student_messages
 
 
+def build_histories_resume_pivot(
+    exchanges: list[dict[str, Any]],
+    *,
+    pivot_turn: int,
+) -> tuple[list, list, str]:
+    """
+    Rebuild histories so turns ``1 .. pivot_turn-1`` are complete; turn ``pivot_turn`` has
+    only the student message (tutor not yet in state).
+
+    Returns ``(tutor_messages, student_messages, student_text_for_pivot)``.
+    """
+    if pivot_turn < 1:
+        raise ValueError("pivot_turn must be >= 1")
+    by_turn: dict[int, dict[str, Any]] = {}
+    for ex in exchanges:
+        t = ex.get("turn")
+        if isinstance(t, int):
+            by_turn[t] = ex
+    max_turn = max(by_turn.keys()) if by_turn else 0
+    if pivot_turn > max_turn:
+        raise ValueError(
+            f"resume_from_turn={pivot_turn} exceeds last turn in transcript ({max_turn})"
+        )
+
+    if pivot_turn == 1:
+        tutor_messages: list = []
+        student_messages: list = [HumanMessage(content=_TUTOR_GREETING)]
+    else:
+        tutor_messages, student_messages = build_histories_through_turn(
+            exchanges, through_turn_inclusive=pivot_turn - 1
+        )
+
+    ex_pivot = by_turn[pivot_turn]
+    student_text = ex_pivot.get("student")
+    if not isinstance(student_text, str):
+        student_text = str(student_text)
+
+    tutor_messages.append(HumanMessage(content=student_text))
+    student_messages.append(AIMessage(content=student_text))
+    return tutor_messages, student_messages, student_text
+
+
 def _next_transcript_number(output_dir: Path) -> str:
     used_numbers: set[int] = set()
     if output_dir.exists():
@@ -177,19 +221,21 @@ def _next_transcript_number(output_dir: Path) -> str:
 def continue_from_transcript(
     data: dict[str, Any],
     *,
-    resume_after_turn: int,
+    resume_from_turn: int,
     additional_turns: int,
     tutor_prompt: str,
     tutor_provider: str,
     source_path: Path | None = None,
 ) -> tuple[dict[str, Any], Path]:
     """
-    Run *additional_turns* new exchanges after *resume_after_turn* (inclusive history).
+    Keep turns ``1 .. resume_from_turn-1`` unchanged; at turn ``resume_from_turn`` keep only
+    the saved student line, regenerate the tutor reply first, then run *additional_turns*
+    full student+tutor exchanges for turns ``resume_from_turn+1`` onward.
 
     Returns ``(payload_dict, output_path_written)``.
     """
-    if additional_turns < 1:
-        raise ValueError("additional_turns must be >= 1")
+    if additional_turns < 0:
+        raise ValueError("additional_turns must be >= 0")
 
     exchanges_raw = data.get("exchanges")
     if not isinstance(exchanges_raw, list):
@@ -215,36 +261,23 @@ def continue_from_transcript(
     if not isinstance(exercise_number, str):
         exercise_number = str(exercise_number or "")
 
-    tutor_messages, student_messages = build_histories_through_turn(
-        exchanges, through_turn_inclusive=resume_after_turn
+    tutor_messages, student_messages, student_text_pivot = build_histories_resume_pivot(
+        exchanges, pivot_turn=resume_from_turn
     )
 
-    total_planned_turns = resume_after_turn + additional_turns
+    total_planned_turns = resume_from_turn + additional_turns
     system_prompt = load_system_prompt(tutor_prompt, assignment_override=assignment_text)
     tutor_graph = create_tutor_graph(system_prompt, provider=tutor_provider)
     student_graph = build_student_graph(prompt_name=student_persona)
 
     new_exchanges: list[dict[str, object]] = []
-    for offset in range(additional_turns):
-        turn_index = resume_after_turn + offset + 1
-        student_message = get_next_student_message(
-            student_messages,
-            assignment=assignment_text,
-            turn_size=total_planned_turns,
-            graph=student_graph,
-        )
-        student_text = (
-            student_message.content
-            if isinstance(student_message.content, str)
-            else str(student_message.content)
-        )
 
-        tutor_messages.append(HumanMessage(content=student_text))
+    def _one_tutor_reply(turn_index: int) -> tuple[str, str]:
         tutor_error: Exception | None = None
-        tutor_text = ""
+        tutor_text_local = ""
         for attempt in range(1, _TUTOR_CALL_MAX_RETRIES + 2):
             try:
-                tutor_messages, tutor_text = get_tutor_reply(
+                tutor_messages, tutor_text_local = get_tutor_reply(
                     tutor_messages, graph=tutor_graph
                 )
                 tutor_error = None
@@ -261,11 +294,11 @@ def continue_from_transcript(
                 break
         if tutor_error is not None:
             raise RuntimeError(
-                f"Tutor call failed (continuation turn={turn_index}, persona={student_persona}). "
+                f"Tutor call failed (turn={turn_index}, persona={student_persona}). "
                 f"Last error: {tutor_error}"
             ) from tutor_error
 
-        tutor_reasoning = ""
+        reasoning = ""
         last_msg = tutor_messages[-1] if tutor_messages else None
         if isinstance(last_msg, AIMessage):
             raw_content = (
@@ -274,11 +307,41 @@ def continue_from_transcript(
                 else str(last_msg.content)
             )
             parsed_reasoning, _ = parse_tutor_response(raw_content)
-            tutor_reasoning = (
+            reasoning = (
                 parsed_reasoning.strip()
                 if isinstance(parsed_reasoning, str) and parsed_reasoning.strip()
                 else ""
             )
+        return tutor_text_local, reasoning
+
+    # Regenerate tutor for pivot turn X (student line unchanged from file).
+    tutor_text_x, tutor_reasoning_x = _one_tutor_reply(resume_from_turn)
+    student_messages.append(HumanMessage(content=tutor_text_x))
+    new_exchanges.append(
+        {
+            "turn": resume_from_turn,
+            "student": student_text_pivot,
+            "tutor": tutor_text_x,
+            "pedagogical_reasoning": tutor_reasoning_x,
+        }
+    )
+
+    for offset in range(additional_turns):
+        turn_index = resume_from_turn + 1 + offset
+        student_message = get_next_student_message(
+            student_messages,
+            assignment=assignment_text,
+            turn_size=total_planned_turns,
+            graph=student_graph,
+        )
+        student_text = (
+            student_message.content
+            if isinstance(student_message.content, str)
+            else str(student_message.content)
+        )
+
+        tutor_messages.append(HumanMessage(content=student_text))
+        tutor_text, tutor_reasoning = _one_tutor_reply(turn_index)
 
         student_messages.append(student_message)
         student_messages.append(HumanMessage(content=tutor_text))
@@ -299,7 +362,7 @@ def continue_from_transcript(
     prefix_list = [
         by_turn_merge[t]
         for t in sorted(by_turn_merge.keys())
-        if t <= resume_after_turn
+        if t < resume_from_turn
     ]
     merged = prefix_list + new_exchanges
 
@@ -335,7 +398,7 @@ def continue_from_transcript(
         "mini_continuation": {
             "source_transcript": source_rel,
             "source_stem": source_path.stem if source_path else None,
-            "resume_after_turn": resume_after_turn,
+            "resume_from_turn": resume_from_turn,
             "additional_turns": additional_turns,
             "original_tutor_prompt": data.get("tutor_prompt"),
             "original_tutor_provider": data.get("tutor_provider"),
@@ -363,7 +426,7 @@ def run_mini(params: MiniContinuationParams) -> Path:
             )
     _, out_path = continue_from_transcript(
         data,
-        resume_after_turn=params.resume_after_turn,
+        resume_from_turn=params.resume_from_turn,
         additional_turns=params.additional_turns,
         tutor_prompt=params.tutor_prompt,
         tutor_provider=params.tutor_provider,
@@ -400,7 +463,9 @@ def _discover_tutor_prompts() -> list[str]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
-            "Continue a raw transcript from a completed turn with a chosen tutor prompt."
+            "Continue a raw transcript from a pivot turn: keep full exchanges before that "
+            "turn, keep only the student line on the pivot turn, regenerate the tutor there first, "
+            "then append additional student+tutor exchanges."
         )
     )
     parser.add_argument(
@@ -415,16 +480,19 @@ def main(argv: list[str] | None = None) -> int:
         help="Transcript stem in raw folder (e.g. transcript_01).",
     )
     parser.add_argument(
-        "--resume-after-turn",
+        "--resume-from-turn",
         type=int,
         required=True,
-        help="Last turn to keep as history (inclusive); next generated turn is this plus one.",
+        help=(
+            "Pivot turn X: keep full exchanges for turns 1..X-1; keep only the student message "
+            "for turn X; regenerate the tutor for turn X first, then continue."
+        ),
     )
     parser.add_argument(
         "--additional-turns",
         type=int,
         required=True,
-        help="Number of new student+tutor exchanges to generate.",
+        help="Number of new full student+tutor exchanges after the regenerated turn X (0 allowed).",
     )
     parser.add_argument(
         "--tutor-prompt",
@@ -454,7 +522,7 @@ def main(argv: list[str] | None = None) -> int:
     params = MiniContinuationParams(
         persona_type=args.persona_type,
         source_transcript_stem=args.transcript.removesuffix(".json"),
-        resume_after_turn=args.resume_after_turn,
+        resume_from_turn=args.resume_from_turn,
         additional_turns=args.additional_turns,
         tutor_prompt=args.tutor_prompt,
         tutor_provider=args.tutor_provider,
