@@ -273,6 +273,7 @@ def continue_from_transcript(
     new_exchanges: list[dict[str, object]] = []
 
     def _one_tutor_reply(turn_index: int) -> tuple[str, str]:
+        nonlocal tutor_messages, tutor_graph
         tutor_error: Exception | None = None
         tutor_text_local = ""
         for attempt in range(1, _TUTOR_CALL_MAX_RETRIES + 2):
