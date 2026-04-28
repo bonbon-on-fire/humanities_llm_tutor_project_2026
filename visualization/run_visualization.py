@@ -1456,6 +1456,9 @@ def main() -> int:
     claude_mini_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_mini")
     print(f"Loaded Claude mini: {len(claude_mini_rows)} transcripts")
 
+    claude_tutor05_rows = _read_provider_rows_variant(transcripts_dir, "claude", "_tutor_05")
+    print(f"Loaded Claude tutor_05: {len(claude_tutor05_rows)} transcripts")
+
     chart_idx = 1
 
     _chart_provider_total_scores_per_transcript(
@@ -1520,6 +1523,19 @@ def main() -> int:
                     f"(missing sheet '{grader_key} grading' / 'compiled grading', wrong headers, "
                     "or no rows for that grader). Skipping chart."
                 )
+
+    for persona in ("chaotic", "clueless", "cooperative"):
+        subset_05 = _filter_individual_rows(claude_tutor05_rows, {persona})
+        if subset_05:
+            _chart_provider_total_scores_per_transcript(
+                subset_05,
+                out_dir,
+                provider_label="claude",
+                scope_label=f"{persona} — tutor_05",
+                output_name=f"claude_tutor_05_grades_{persona}.png",
+                chart_idx=chart_idx,
+            )
+            chart_idx += 1
 
     for persona in ("chaotic", "clueless"):
         orig_subset = _filter_individual_rows(claude_all_rows, {persona})
