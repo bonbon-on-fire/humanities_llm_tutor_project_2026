@@ -93,17 +93,23 @@ def _discover_judge_rubrics() -> list[str]:
     return sorted(path.stem for path in judge_rubrics_dir.glob("rubric_*.md"))
 
 
-def _provider_target_path(raw_path: Path, provider: str, source_suffix: str = "raw") -> Path:
+def _provider_target_path(
+    raw_path: Path,
+    provider: str,
+    source_suffix: str = "raw",
+    output_suffix: str | None = None,
+) -> Path:
     """Map a source transcript path to its graded counterpart folder.
 
-    For ``source_suffix="raw"`` the existing convention is preserved:
-    ``*_raw/`` → ``*_{provider}/``.
-    For any other suffix the suffix is appended:
-    ``*_{suffix}/`` → ``*_{provider}_{suffix}/``.
+    If *output_suffix* is given, the target folder is ``*_{provider}_{output_suffix}/``.
+    Otherwise falls back to the auto-derived name:
+    ``*_raw/`` → ``*_{provider}/``, ``*_{suffix}/`` → ``*_{provider}_{suffix}/``.
     """
     persona_dir = raw_path.parent.parent
     persona_type = persona_dir.name
-    if source_suffix == "raw":
+    if output_suffix is not None:
+        target_folder = f"{persona_type}_{provider}_{output_suffix}"
+    elif source_suffix == "raw":
         target_folder = f"{persona_type}_{provider}"
     else:
         target_folder = f"{persona_type}_{provider}_{source_suffix}"
@@ -252,6 +258,12 @@ Examples:
              "Output folder is *_{provider}/ for 'raw', *_{provider}_{suffix}/ otherwise.",
     )
     parser.add_argument(
+        "--output-suffix",
+        default=None,
+        help="Override output folder suffix. Target becomes *_{provider}_{suffix}/. "
+             "If omitted, derived from --source-suffix.",
+    )
+    parser.add_argument(
         "--yes", "-y",
         action="store_true",
         help="Skip confirmation prompt (useful for non-interactive / background runs).",
@@ -260,7 +272,7 @@ Examples:
     return parser.parse_args()
 
 
-def _run_judging(provider: str, prompt_name: str, rubric_name: str, source_suffix: str = "raw", yes: bool = False) -> int:
+def _run_judging(provider: str, prompt_name: str, rubric_name: str, source_suffix: str = "raw", yes: bool = False, output_suffix: str | None = None) -> int:
     """Run the judging process with the given configuration."""
     # Check API key based on provider
     try:
@@ -277,7 +289,9 @@ def _run_judging(provider: str, prompt_name: str, rubric_name: str, source_suffi
         print(f"No *_{source_suffix}/ transcripts found under {TRANSCRIPTS_DIR}")
         return 1
 
-    if source_suffix == "raw":
+    if output_suffix is not None:
+        target_label = f"*_{provider}_{output_suffix}/"
+    elif source_suffix == "raw":
         target_label = f"*_{provider}/"
     else:
         target_label = f"*_{provider}_{source_suffix}/"
@@ -305,7 +319,7 @@ def _run_judging(provider: str, prompt_name: str, rubric_name: str, source_suffi
 
     tasks: list[tuple[Path, Path]] = []
     for raw_path in source_files:
-        target_path = _provider_target_path(raw_path, provider, source_suffix)
+        target_path = _provider_target_path(raw_path, provider, source_suffix, output_suffix)
         tasks.append((raw_path, target_path))
 
     global _progress_done
@@ -380,7 +394,7 @@ def main(argv: list[str] | None = None) -> int:
                 print("Error: --rubric is required in non-interactive mode")
                 return 1
 
-        return _run_judging(provider, prompt_name, rubric_name, source_suffix=args.source_suffix, yes=args.yes)
+        return _run_judging(provider, prompt_name, rubric_name, source_suffix=args.source_suffix, yes=args.yes, output_suffix=args.output_suffix)
         
     except (RuntimeError, ValueError) as error:
         print(f"Error: {error}")
