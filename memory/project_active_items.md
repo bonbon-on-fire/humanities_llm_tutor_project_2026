@@ -21,7 +21,7 @@ From the 04/22/2026 meeting (Nishita Bhakar + Faizan Siddiqi):
 - [ ] Faizan to send additional turns with issues from hand-graded transcripts (to expand reference table)
 - [ ] Run 30 raw transcripts (10 per tutor prompt × 3 prompts) with new tutor prompt
 - [ ] Grade the 30 new + mini-regenerated transcripts with the judge
-- [ ] Ensure dashboard works with new transcript types (`*_mini/`, `*_two_layer_raw/`)
+- [x] Ensure dashboard works with new transcript types (`*_mini/`)
 
 **Reference transcripts (working set for prompt iteration):**
 - chaotic 0007 T3, 0015 T8, 0097 T5 → violates 1.1.C

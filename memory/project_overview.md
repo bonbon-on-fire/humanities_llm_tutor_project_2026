@@ -18,10 +18,12 @@ Socratic LLM tutor for MIT OpenCourseWare (OCW) humanities/social sciences cours
 
 **Scale:** 18 personas (chaotic/cooperative/clueless × 6), 2 courses (philosophy + urban_studies), 864 total transcripts, graded by both GPT and Claude judges.
 
-**Active work (as of 04/16/2026):**
-- Iterating on tutor prompt (tutor_05 in progress)
-- Planning two-layer agentic tutor (rubric-aware verifier pre-screens output, max 1 retry/turn)
-- Implementing `run_ui_mini` restore-at-turn-X semantics
-- Curating working transcript set for prompt iteration
+**Active work (as of 05/01/2026):**
+- Iterating on tutor prompt (tutor_05 current)
+- Human testing via web UI to surface issues AI-student runs miss
+- Simulating turn-specific reference issues with `run_ui_raw_mini_batch_reference.py` (25 mini runs, all in `*_mini/` with `_01`/`_02` suffix)
+- Dashboard shows all `*_mini/` files against their raw source (mini-centric view)
+
+**Removed:** `run_ui_judge_mini`, `run_ui_raw_two_layer`, `judge/run_judge_mini.py`, `tutor/run_tutor_two_layer.py` — two-layer tutor and comparison mini judge are not pursued.
 
 **How to apply:** Frame suggestions around the LangGraph architecture, prompt-file versioning pattern, and rubric-driven evaluation workflow.
