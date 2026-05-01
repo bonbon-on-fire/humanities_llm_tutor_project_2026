@@ -477,7 +477,7 @@
     const parts = [];
     if (selections.tutor) parts.push(selections.tutor);
     if (selections.course) parts.push(selections.course);
-    if (selections.exercise) parts.push('exercise ' + selections.exercise);
+    if (selections.exercise) parts.push('exercise_' + selections.exercise);
 
     parts.forEach((part, i) => {
       const chip = document.createElement('span');
