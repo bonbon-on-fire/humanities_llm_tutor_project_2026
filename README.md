@@ -33,7 +33,7 @@ The system has four loosely coupled layers:
 
 **Judge (`judge/run_judge.py`):** Reads a transcript, constructs a grading prompt by injecting the rubric and output schema, and calls the selected provider (`gpt` or `claude`). Validates the JSON response against the rubric spec, auto-repairs on failure up to 3 attempts, and writes the grade back into the transcript file. The current rubric (`rubric_05`, 46 pts) scores three sections: Pedagogy (24 pts — Socratic method, scaffolding, meta-learning), Dialogue Quality (12 pts — redundancy, assignment anchoring), and Communication Quality (10 pts — bite-sized responses, tone).
 
-**UI Runners (`ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), two-layer raw generation (`run_ui_raw_two_layer`), transcript judging (`run_ui_judge`), and mini judge comparison (`run_ui_judge_mini`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
+**UI Runners (`ui/`):** Parallelized runners using `ThreadPoolExecutor` (default 6 workers) — raw transcript generation (`run_ui_raw`), mini-continuation generation (`run_ui_raw_mini`), transcript judging (`run_ui_judge`). Runners accept `--provider`, `--prompt`, `--rubric`, `--source-suffix`, `--output-suffix`, and `--yes` CLI flags as applicable.
 
 **Dashboard (`dashboard_ui/`):** Flask app that discovers all raw transcripts on disk, loads Claude Mini (tutor_05) and Claude grades for each, and serves a sortable comparison table and per-transcript detail view via a single-page JS frontend.
 

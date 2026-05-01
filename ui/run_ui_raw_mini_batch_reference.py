@@ -115,16 +115,16 @@ def main(argv: list[str] | None = None) -> int:
                 output_stem=output_stem,
             )
             out_path = run_mini(params)
-            print(f"  OK → {out_path.relative_to(_REPO_ROOT)}\n")
+            print(f"  OK -> {out_path.relative_to(_REPO_ROOT)}\n")
         except Exception as e:  # noqa: BLE001
-            msg = f"  FAIL — {e}"
+            msg = f"  FAIL - {e}"
             print(f"{msg}\n")
             failures.append(f"{label}: {e}")
 
     if failures:
         print(f"\n{len(failures)} failure(s):")
         for f in failures:
-            print(f"  • {f}")
+            print(f"  - {f}")
         return 1
 
     print(f"Done. {total} run(s) completed.")
