@@ -74,8 +74,8 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      padding: 24px 0 16px;
+      gap: 14px;
+      padding: 20px 0 16px;
       overflow-y: auto;
     }
 
@@ -84,7 +84,7 @@
       align-items: center;
       gap: 6px;
       flex-wrap: wrap;
-      min-height: 26px;
+      min-height: 24px;
     }
 
     .breadcrumb-chip {
@@ -96,16 +96,13 @@
       border-radius: 20px;
     }
 
-    .breadcrumb-sep {
-      color: #a0aec0;
-      font-size: 0.82rem;
-    }
+    .breadcrumb-sep { color: #a0aec0; font-size: 0.82rem; }
 
     .wizard-step { display: none; }
     .wizard-step.active {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .wizard-heading {
@@ -121,7 +118,7 @@
     }
 
     .option-btn {
-      padding: 10px 18px;
+      padding: 9px 16px;
       background: #fff;
       border: 1.5px solid #cbd5e0;
       border-radius: 8px;
@@ -132,10 +129,40 @@
       transition: background 0.15s, border-color 0.15s;
     }
     .option-btn:hover { background: #edf2f7; border-color: #a0aec0; }
+    .option-btn.selected {
+      background: #ebf8ff;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    /* Preview box shown below buttons when an option is selected */
+    .preview-box {
+      display: none;
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: #4a5568;
+      max-height: 220px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .preview-box.show { display: block; }
+
+    /* Navigation row: Back on left, Next on right */
+    .wizard-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
 
     .wizard-back {
-      align-self: flex-start;
-      padding: 6px 14px;
+      padding: 7px 14px;
       background: transparent;
       border: 1px solid #cbd5e0;
       border-radius: 6px;
@@ -146,11 +173,26 @@
     }
     .wizard-back:hover { background: #edf2f7; }
 
+    .wizard-next {
+      display: none;
+      padding: 8px 20px;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .wizard-next.show { display: inline-block; }
+    .wizard-next:hover { background: #2563eb; }
+
     #wizard-loading {
       display: none;
       color: #718096;
       font-size: 0.92rem;
-      padding: 8px 0;
+      padding: 6px 0;
     }
 
     /* ---- Chat panel ---- */
@@ -345,21 +387,36 @@
   <div id="wizard">
     <div id="breadcrumb"></div>
 
+    <!-- Step 1: Tutor -->
     <div class="wizard-step active" id="step-tutor">
       <div class="wizard-heading">Choose a tutor</div>
       <div class="option-grid" id="tutor-options"></div>
+      <div class="preview-box" id="tutor-preview"></div>
+      <div class="wizard-nav" style="justify-content: flex-end;">
+        <button class="wizard-next" id="next-from-tutor">Next &rarr;</button>
+      </div>
     </div>
 
+    <!-- Step 2: Course -->
     <div class="wizard-step" id="step-course">
       <div class="wizard-heading">Choose a course</div>
       <div class="option-grid" id="course-options"></div>
-      <button class="wizard-back" id="back-to-tutor">Back</button>
+      <div class="preview-box" id="course-preview"></div>
+      <div class="wizard-nav">
+        <button class="wizard-back" id="back-to-tutor">Back</button>
+        <button class="wizard-next" id="next-from-course">Next &rarr;</button>
+      </div>
     </div>
 
+    <!-- Step 3: Exercise -->
     <div class="wizard-step" id="step-exercise">
       <div class="wizard-heading">Choose an exercise</div>
       <div class="option-grid" id="exercise-options"></div>
-      <button class="wizard-back" id="back-to-course">Back</button>
+      <div class="preview-box" id="exercise-preview"></div>
+      <div class="wizard-nav">
+        <button class="wizard-back" id="back-to-course">Back</button>
+        <button class="wizard-next" id="start-conversation">Start conversation &rarr;</button>
+      </div>
     </div>
 
     <div id="wizard-loading">Starting conversation...</div>
@@ -414,14 +471,7 @@
     setTimeout(() => { toast.style.display = 'none'; }, 3500);
   }
 
-  // ---- Wizard step management ----
-  function showStep(name) {
-    Object.values(steps).forEach(el => el.classList.remove('active'));
-    if (name && steps[name]) steps[name].classList.add('active');
-    wizardLoadingEl.style.display = name === 'loading' ? 'block' : 'none';
-    updateBreadcrumb();
-  }
-
+  // ---- Breadcrumb ----
   function updateBreadcrumb() {
     breadcrumbEl.innerHTML = '';
     const parts = [];
@@ -443,6 +493,15 @@
     });
   }
 
+  // ---- Step management ----
+  function showStep(name) {
+    Object.values(steps).forEach(el => el.classList.remove('active'));
+    if (name && steps[name]) steps[name].classList.add('active');
+    wizardLoadingEl.style.display = name === 'loading' ? 'block' : 'none';
+    updateBreadcrumb();
+  }
+
+  // ---- Session info chips (shown in chat) ----
   function updateSessionInfo() {
     sessionInfoEl.innerHTML = '';
     const items = [selections.tutor, selections.course, 'exercise ' + selections.exercise];
@@ -460,12 +519,21 @@
     });
   }
 
+  // ---- Option buttons ----
   function makeOptionBtn(label, onClick) {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
     btn.textContent = label;
-    btn.addEventListener('click', onClick);
+    btn.addEventListener('click', () => onClick(btn));
     return btn;
+  }
+
+  function setPreview(previewId, nextId, text, selected) {
+    const previewEl = document.getElementById(previewId);
+    const nextEl = document.getElementById(nextId);
+    previewEl.textContent = text || '';
+    previewEl.classList.toggle('show', !!text);
+    nextEl.classList.toggle('show', selected === true);
   }
 
   // ---- Load config ----
@@ -479,60 +547,103 @@
     }
   }
 
+  // ---- Step 1: Tutor ----
   function populateTutorStep() {
     const grid = document.getElementById('tutor-options');
     grid.innerHTML = '';
     (configData.tutor_versions || []).forEach(v => {
-      grid.appendChild(makeOptionBtn(v, () => selectTutor(v)));
+      const btn = makeOptionBtn(v, (b) => selectTutor(v, b));
+      if (selections.tutor === v) btn.classList.add('selected');
+      grid.appendChild(btn);
     });
+    const tutorText = selections.tutor ? (configData.tutor_texts || {})[selections.tutor] : null;
+    setPreview('tutor-preview', 'next-from-tutor', tutorText, !!selections.tutor);
   }
 
-  function selectTutor(version) {
+  function selectTutor(version, btn) {
+    document.querySelectorAll('#tutor-options .option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
     selections.tutor = version;
+    updateBreadcrumb();
+    setPreview('tutor-preview', 'next-from-tutor', (configData.tutor_texts || {})[version] || '', true);
+  }
+
+  document.getElementById('next-from-tutor').addEventListener('click', () => {
+    if (!selections.tutor) return;
     selections.course = null;
     selections.exercise = null;
     populateCourseStep();
     showStep('course');
-  }
+  });
 
+  // ---- Step 2: Course ----
   function populateCourseStep() {
     const grid = document.getElementById('course-options');
     grid.innerHTML = '';
     (configData.courses || []).forEach(c => {
-      grid.appendChild(makeOptionBtn(c, () => selectCourse(c)));
+      const btn = makeOptionBtn(c, (b) => selectCourse(c, b));
+      if (selections.course === c) btn.classList.add('selected');
+      grid.appendChild(btn);
     });
+    const courseText = selections.course ? (configData.course_texts || {})[selections.course] : null;
+    setPreview('course-preview', 'next-from-course', courseText, !!selections.course);
   }
 
-  function selectCourse(course) {
+  function selectCourse(course, btn) {
+    document.querySelectorAll('#course-options .option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
     selections.course = course;
-    selections.exercise = null;
-    populateExerciseStep(course);
-    showStep('exercise');
+    updateBreadcrumb();
+    setPreview('course-preview', 'next-from-course', (configData.course_texts || {})[course] || '', true);
   }
 
+  document.getElementById('back-to-tutor').addEventListener('click', () => {
+    selections.course = null;
+    selections.exercise = null;
+    populateTutorStep();
+    showStep('tutor');
+  });
+
+  document.getElementById('next-from-course').addEventListener('click', () => {
+    if (!selections.course) return;
+    selections.exercise = null;
+    populateExerciseStep(selections.course);
+    showStep('exercise');
+  });
+
+  // ---- Step 3: Exercise ----
   function populateExerciseStep(course) {
     const grid = document.getElementById('exercise-options');
     grid.innerHTML = '';
     (configData.course_exercises[course] || []).forEach(num => {
-      grid.appendChild(makeOptionBtn('exercise ' + num, () => selectExercise(num)));
+      const btn = makeOptionBtn('exercise ' + num, (b) => selectExercise(num, b));
+      if (selections.exercise === num) btn.classList.add('selected');
+      grid.appendChild(btn);
     });
+    const exText = selections.exercise
+      ? ((configData.exercise_texts || {})[course] || {})[selections.exercise]
+      : null;
+    setPreview('exercise-preview', 'start-conversation', exText, !!selections.exercise);
   }
 
-  function selectExercise(num) {
+  function selectExercise(num, btn) {
+    document.querySelectorAll('#exercise-options .option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
     selections.exercise = num;
-    startConversation();
+    updateBreadcrumb();
+    const text = ((configData.exercise_texts || {})[selections.course] || {})[num] || '';
+    setPreview('exercise-preview', 'start-conversation', text, true);
   }
-
-  // ---- Back navigation ----
-  document.getElementById('back-to-tutor').addEventListener('click', () => {
-    selections.course = null;
-    selections.exercise = null;
-    showStep('tutor');
-  });
 
   document.getElementById('back-to-course').addEventListener('click', () => {
     selections.exercise = null;
+    populateCourseStep();
     showStep('course');
+  });
+
+  document.getElementById('start-conversation').addEventListener('click', () => {
+    if (!selections.exercise) return;
+    startConversation();
   });
 
   // ---- Start conversation ----
@@ -566,6 +677,7 @@
     wizardEl.style.display = 'flex';
     newConvBtn.style.display = 'none';
     selections = { tutor: null, course: null, exercise: null };
+    populateTutorStep();
     showStep('tutor');
   });
 

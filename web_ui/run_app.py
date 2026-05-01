@@ -73,6 +73,7 @@ def _load_assignment_text(course: str, exercise_num: str) -> str:
 # ---------------------------------------------------------------------------
 
 app = Flask(__name__, template_folder="templates")
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-key-change-in-prod")
 
 # In-memory session store: sid -> session data
@@ -136,14 +137,38 @@ def index():
 
 @app.route("/api/config-options", methods=["GET"])
 def config_options():
-    """Return available tutor versions, courses, and exercises for the wizard."""
+    """Return available tutor versions, courses, exercises, and their text content."""
     tutor_versions = _discover_tutor_versions()
     courses = _discover_courses()
     course_exercises = {c: _discover_exercises(c) for c in courses}
+
+    tutor_texts: dict[str, str] = {}
+    for v in tutor_versions:
+        p = _TUTOR_PROMPTS_DIR / f"{v}.txt"
+        if p.exists():
+            tutor_texts[v] = p.read_text(encoding="utf-8").strip()
+
+    course_texts: dict[str, str] = {}
+    for c in courses:
+        p = _CURRICULUM_DIR / c / "course.txt"
+        if p.exists():
+            course_texts[c] = p.read_text(encoding="utf-8").strip()
+
+    exercise_texts: dict[str, dict[str, str]] = {}
+    for c in courses:
+        exercise_texts[c] = {}
+        for num in course_exercises.get(c, []):
+            p = _CURRICULUM_DIR / c / f"exercise_{num}.txt"
+            if p.exists():
+                exercise_texts[c][num] = p.read_text(encoding="utf-8").strip()
+
     return jsonify({
         "tutor_versions": tutor_versions,
+        "tutor_texts": tutor_texts,
         "courses": courses,
+        "course_texts": course_texts,
         "course_exercises": course_exercises,
+        "exercise_texts": exercise_texts,
     })
 
 
