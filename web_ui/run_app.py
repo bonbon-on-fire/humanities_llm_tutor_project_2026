@@ -1,9 +1,9 @@
 """
 Web UI — Flask app for the Humanities LLM Tutor.
 
-Same pipeline as the terminal UI but browser-based:
-  - Configure tutor prompt, student persona, course, exercise
-  - Chat with the tutor directly or let a student bot generate messages
+Same tutor pipeline as the terminal UI but browser-based:
+  - 3-step wizard to pick tutor prompt, course, and exercise
+  - Chat directly with the tutor as a human student
   - Debug mode shows pedagogical reasoning
 """
 
@@ -17,7 +17,6 @@ from pathlib import Path
 from flask import Flask, jsonify, render_template, request, session
 from langchain_core.messages import AIMessage, HumanMessage
 
-from students.run_student import get_next_student_message, list_personas
 from tutor.run_tutor import create_tutor_graph, load_system_prompt, parse_tutor_response
 
 # ---------------------------------------------------------------------------
@@ -27,9 +26,6 @@ from tutor.run_tutor import create_tutor_graph, load_system_prompt, parse_tutor_
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 _TUTOR_PROMPTS_DIR = _REPO_ROOT / "tutor" / "prompts"
 _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
-_PERSONAS_DIR = _REPO_ROOT / "students" / "personas"
-
-_PERSONA_TYPES: tuple[str, ...] = ("chaotic", "chitchat", "clueless")
 
 
 def _discover_tutor_versions() -> list[str]:
@@ -56,35 +52,20 @@ def _discover_exercises(course: str) -> list[str]:
     return numbers
 
 
-def _discover_persona_versions(persona_type: str) -> list[str]:
-    versions: list[str] = []
-    for p in sorted(_PERSONAS_DIR.glob(f"{persona_type}_*.txt")):
-        m = re.match(rf"^{re.escape(persona_type)}_(\d{{2}})\.txt$", p.name)
-        if m:
-            versions.append(m.group(1))
-    return versions
-
-
-def _load_assignment_text(course: str, exercise_num: str, turn_size: int | None = None) -> str:
-    """Load combined assignment context: course.txt + exercise_XX.txt (+ optional turn size)."""
+def _load_assignment_text(course: str, exercise_num: str) -> str:
+    """Load combined assignment context: course.txt + exercise_XX.txt."""
     course_dir = _CURRICULUM_DIR / course
     course_path = course_dir / "course.txt"
     exercise_path = course_dir / f"exercise_{exercise_num}.txt"
 
     course_text = course_path.read_text(encoding="utf-8").strip()
     exercise_text = exercise_path.read_text(encoding="utf-8").strip()
-    assignment_text = (
+    return (
         "Course context:\n"
         f"{course_text}\n\n"
         "Exercise:\n"
         f"{exercise_text}"
     )
-    if isinstance(turn_size, int) and turn_size > 0:
-        assignment_text += (
-            "\n\nRun configuration:\n"
-            f"- Planned conversation length: {turn_size} student+tutor exchanges."
-        )
-    return assignment_text
 
 
 # ---------------------------------------------------------------------------
@@ -126,16 +107,6 @@ def _to_tutor_msgs(conv: list) -> list:
     return result
 
 
-def _to_student_msgs(conv: list) -> list:
-    result = []
-    for m in conv:
-        if m["role"] == "tutor":
-            result.append(HumanMessage(content=m["content"]))
-        else:
-            result.append(AIMessage(content=m["content"]))
-    return result
-
-
 def _invoke_tutor(sess: dict, messages: list) -> tuple[str, str, str | None]:
     """Invoke tutor graph. Returns (tutor_text, raw_content, reasoning)."""
     result = sess["tutor_graph"].invoke({"messages": messages})
@@ -165,22 +136,12 @@ def index():
 
 @app.route("/api/config-options", methods=["GET"])
 def config_options():
-    """Return all available configuration options for the UI dropdowns."""
+    """Return available tutor versions, courses, and exercises for the wizard."""
     tutor_versions = _discover_tutor_versions()
     courses = _discover_courses()
-
-    course_exercises: dict[str, list[str]] = {}
-    for c in courses:
-        course_exercises[c] = _discover_exercises(c)
-
-    persona_versions: dict[str, list[str]] = {}
-    for pt in _PERSONA_TYPES:
-        persona_versions[pt] = _discover_persona_versions(pt)
-
+    course_exercises = {c: _discover_exercises(c) for c in courses}
     return jsonify({
         "tutor_versions": tutor_versions,
-        "persona_types": list(_PERSONA_TYPES),
-        "persona_versions": persona_versions,
         "courses": courses,
         "course_exercises": course_exercises,
     })
@@ -192,31 +153,18 @@ def config_options():
 
 @app.route("/api/start", methods=["POST"])
 def start():
-    """Start a new conversation with the given config."""
+    """Start a new conversation with the given tutor, course, and exercise."""
     data = request.get_json(silent=True) or {}
     tutor_version = data.get("tutor_version", "tutor_01")
-    persona_type = data.get("persona_type", "chaotic")
-    persona_version = data.get("persona_version", "01")
     course = data.get("course", "")
     exercise_num = data.get("exercise_num", "01")
-    turn_size_raw = data.get("turn_size")
     debug = data.get("debug", False)
 
     if not course:
         return jsonify({"error": "Course is required."}), 400
 
-    turn_size: int | None = None
-    if turn_size_raw is not None:
-        try:
-            parsed_turn_size = int(turn_size_raw)
-        except (TypeError, ValueError):
-            return jsonify({"error": "turn_size must be a positive integer."}), 400
-        if parsed_turn_size <= 0:
-            return jsonify({"error": "turn_size must be a positive integer."}), 400
-        turn_size = parsed_turn_size
-
     try:
-        assignment_text = _load_assignment_text(course, exercise_num, turn_size)
+        assignment_text = _load_assignment_text(course, exercise_num)
     except FileNotFoundError:
         return jsonify(
             {"error": f"Missing curriculum file for {course}: course.txt or exercise_{exercise_num}.txt"}
@@ -230,12 +178,8 @@ def start():
     sess["tutor_graph"] = tutor_graph
     sess["config"] = {
         "tutor_version": tutor_version,
-        "persona_type": persona_type,
-        "persona_version": persona_version,
-        "prompt_name": f"{persona_type}_{persona_version}",
         "course": course,
         "exercise_num": exercise_num,
-        "turn_size": turn_size,
         "assignment_text": assignment_text,
     }
 
@@ -275,45 +219,7 @@ def chat():
         "raw_content": raw_content, "reasoning": reasoning,
     })
 
-    response = {"student": user_msg, "tutor": tutor_text}
-    if debug and reasoning:
-        response["reasoning"] = reasoning
-    return jsonify(response)
-
-
-@app.route("/api/student-turn", methods=["POST"])
-def student_turn():
-    """Generate a student-bot message then get the tutor's reply."""
-    data = request.get_json(silent=True) or {}
-    debug = data.get("debug", False)
-
-    sess = _get_session_data()
-    if sess["tutor_graph"] is None or sess["config"] is None:
-        return jsonify({"error": "No active conversation. Start one first."}), 400
-
-    conv = sess["conv"]
-    if not conv or conv[-1]["role"] != "tutor":
-        return jsonify({"error": "A tutor message must be the last in the conversation."}), 400
-
-    cfg = sess["config"]
-    student_msgs = _to_student_msgs(conv)
-    bot_msg = get_next_student_message(
-        student_msgs,
-        prompt_name=cfg["prompt_name"],
-        assignment=cfg["assignment_text"],
-        turn_size=cfg.get("turn_size"),
-    )
-    student_text = bot_msg.content if isinstance(bot_msg.content, str) else str(bot_msg.content)
-    conv.append({"role": "student", "content": student_text})
-
-    tutor_msgs = _to_tutor_msgs(conv)
-    tutor_text, raw_content, reasoning = _invoke_tutor(sess, tutor_msgs)
-    conv.append({
-        "role": "tutor", "content": tutor_text,
-        "raw_content": raw_content, "reasoning": reasoning,
-    })
-
-    response = {"student": student_text, "tutor": tutor_text}
+    response = {"tutor": tutor_text}
     if debug and reasoning:
         response["reasoning"] = reasoning
     return jsonify(response)

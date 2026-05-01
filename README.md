@@ -199,6 +199,10 @@ humanities_llm_tutor_project_2026/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
 │   └── static/app.js        # Frontend: routing, sortable table, Chart.js histograms
 │
+├── web_ui/
+│   ├── run_app.py           # Flask app: wizard config + chat API routes
+│   └── templates/index.html # 3-step wizard (tutor → course → exercise) + human chat
+│
 ├── visualization/
 │   └── run_visualization.py # Score charts: per-prompt, original vs mini, hand-grade correlation
 │
