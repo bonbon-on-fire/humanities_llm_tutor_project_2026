@@ -315,7 +315,7 @@ transcripts/           — moved from judge/transcripts/
 
 Transcripts are test-run artifacts shared between the UI (producer) and judge (consumer).
 
-#### 3d. Rubric 04 scoring migration ✦ COMPLETED
+#### 3d. Rubric 04 scoring migration ✦ DECIDED
 
 - Judge defaults now use `rubric_04` (prompt remains `judge_03`).
 - Judge score contract migrated from `33 base + 9 bonus = 42 max` to:
@@ -331,7 +331,7 @@ Transcripts are test-run artifacts shared between the UI (producer) and judge (c
   - For `rubric_04`, each deduction now requires `sub_criterion_id` tied to exact rubric sub-sub IDs (e.g. `1.1.A.a`, `2.2.D.a`).
   - Judge prompts and schema now explicitly require the sub-sub ID per deduction.
 
-#### 3e. Judge JSON robustness hardening ✦ COMPLETED
+#### 3e. Judge JSON robustness hardening ✦ DECIDED
 
 - Hardened judge output parsing to recover common non-strict model payloads:
   - accepts Python-literal dict output (single quotes / tuple values) via safe `ast.literal_eval` fallback
@@ -505,6 +505,259 @@ Absent `figures` field = no figures attached (treated as empty list). Existing t
 - Per-figure cost caps or batching
 - CLI flag to suppress figures (always-on)
 - `.pdf` or `.svg` format support
+
+---
+
+### Phase 7: Human-uploaded figures via web_ui ✦ PROPOSED
+
+**Problem:** Phase 6 makes figures part of the curriculum *context*. But real OCW learners using the web chat will also want to attach their own images — a photo of handwritten work, a screenshot of their Excel table, a phone-camera capture of a hand-drawn Power/Actors Map — and have the tutor respond to that visual content. The current `web_ui` chat composer accepts text only.
+
+**Decision:** Add per-message image upload to the `web_ui` chat composer for real human students. Tutor receives multimodal user messages and responds. Live interactive only — no disk persistence in this phase; Postgres-backed persistence is a separate future concern. Simulated student bots remain text-only (deferred non-goal).
+
+**Web UI changes (`web_ui/templates/index.html` + `web_ui/run_app.py`):**
+- File input + drag-and-drop zone on the chat composer
+- Accept PNG, JPG, JPEG only; reject others client-side with a clear error
+- Show preview thumbnails before send; allow per-thumbnail removal
+- Allow multiple files per message; clear staged files after send
+- Disable upload control while a tutor reply is pending
+
+**API change: `POST /api/chat`**
+- Switch to `multipart/form-data` (text field + 0+ image file fields)
+- Server-side validation:
+  - Format whitelist (`image/png`, `image/jpeg`)
+  - Per-file size cap (e.g., 10 MB; constant)
+  - Per-request file count cap (e.g., 5; constant)
+  - Reject with 400 + structured error body if any check fails
+
+**Backend (`web_ui/run_app.py`):**
+- Parse uploads, validate, base64-encode in-memory using `utils.figures.image_to_data_url`
+- Build multimodal HumanMessage content blocks using `utils.figures.build_multimodal_content` (reused from Phase 6)
+- Append message to the existing in-memory conversation state for the session
+- Forward to tutor via the existing tutor chain
+- No disk writes — uploads live in the Flask session/memory and disappear when the session ends
+
+**Tutor (`tutor/run_tutor.py`):**
+- No new changes beyond Phase 6 — the tutor multimodal HumanMessage path established there is reused
+- HumanMessage content may now be a list-of-blocks instead of a string; LangChain handles both shapes natively
+
+**Reuse from Phase 6:**
+- `utils/figures.py::image_to_data_url(path | bytes)` — accepts a Path *or* raw bytes (small extension for the upload path)
+- `utils/figures.py::build_multimodal_content(text, figures_or_bytes_list)` — same signature
+
+**Dependencies:**
+- **Phase 6 must land first.** Without it the tutor cannot receive multimodal HumanMessages at all. Phase 7 piggybacks on the same plumbing.
+
+**Implementation order:**
+1. Extend `utils/figures.py` to accept raw bytes (not only Paths) for the encoder helper
+2. `web_ui/run_app.py` — switch `/api/chat` to multipart; validate; build multimodal HumanMessage
+3. `web_ui/templates/index.html` — file picker + drag-drop + thumbnail previews
+4. `web_ui/README.md` — document the upload control + size/format limits
+
+**Explicit non-goals:**
+- Bot-uploaded figures (simulated student attaching images from a pre-staged library)
+- Disk-based transcript persistence for human chats (deferred to Postgres migration)
+- Judge integration for human conversations (depends on persistence)
+- Per-turn `student_attachments` field in the transcript schema (depends on persistence)
+- File types other than PNG/JPG (no PDF, SVG, video, audio)
+- Long-term storage of uploaded images
+- Image preprocessing (resize / compress / strip-EXIF)
+
+---
+
+### Phase 8: Production-shape embeddable tutor app (`main_ui/`) ✦ PROPOSED
+
+**Problem:** The existing `web_ui/` is a developer/TA testing harness — a 3-step wizard with no persistence, no identity, no iframe-friendly mode. Real OCW students need a different shape: course/exercise hardcoded per page, conversation history persists across reloads, best-effort student identity for longitudinal tracking, and an iframe-ready single-page chat. Rather than reshape `web_ui/` (which would break testing workflows), build a separate production-shape app from scratch.
+
+**Decision:** New top-level folder `main_ui/`, distinct from `web_ui/`. Local-only for this phase — production hosting is a later concern. Postgres for persistence, email-after-3-messages for identity (per meeting notes 2026-05-08), and full integration with the multimodal pipeline from Phases 6 + 7.
+
+| | Existing `web_ui/` | New `main_ui/` |
+| --- | --- | --- |
+| **Audience** | Developers / TAs testing tutor configs | Real students embedded in OCW course pages |
+| **UI** | 3-step wizard (tutor, course, exercise) | No wizard — course/exercise come from URL params |
+| **Persistence** | In-memory only | Postgres-backed conversation history |
+| **Identity** | None | Email-after-3-messages flow |
+| **Status** | Stays as-is — testing harness | New work |
+
+**Folder structure:**
+
+```text
+main_ui/
+  __init__.py
+  __main__.py                 — python -m main_ui
+  run_app.py                  — Flask app + route registration
+  config.py                   — env-driven config (DATABASE_URL, SECRET_KEY)
+  README.md
+  db/
+    __init__.py
+    models.py                 — SQLAlchemy: Conversation, Message, UploadedImage
+    migrations/               — Alembic migrations (versions/, env.py, alembic.ini)
+  routes/
+    __init__.py
+    embed.py                  — GET /embed (main iframe entry)
+    chat.py                   — POST /api/chat (multimodal text + image)
+    identity.py               — POST /api/email, GET /api/whoami
+    history.py                — GET /api/history, GET /api/conversation/<id>
+  services/
+    conversation.py           — create / resume / append conversation logic
+    tutor_bridge.py           — wraps tutor.run_tutor.create_tutor_graph
+    image_storage.py          — saves uploaded PNG/JPG to disk + DB row
+  templates/
+    embed.html                — single-page iframe-friendly chat UI
+  static/
+    js/chat.js                — vanilla JS: chat loop, message counter, email modal
+    css/chat.css
+  uploads/                    — local-disk image storage (gitignored)
+  test_host.html              — standalone HTML that iframes main_ui for local dev
+  tests/
+    test_routes.py
+    test_models.py
+```
+
+**Stack:**
+- Flask + Jinja2 (same pattern as `web_ui/`)
+- SQLAlchemy 2.x + Alembic for migrations
+- `psycopg[binary]` (psycopg v3) for PostgreSQL
+- Postgres via Docker locally (`postgres:16` container); SQLite supported via `DATABASE_URL` for ultra-quick dev
+- Vanilla JS frontend (no framework — same pattern as `web_ui/`)
+- Imports `tutor.run_tutor` directly — no LLM logic duplicated
+
+**Routes / API:**
+
+| Method | Path | Purpose |
+| ------ | ---- | ------- |
+| GET | `/embed?course=&exercise=&tutor=` | Serve chat HTML; defaults `tutor=tutor_05` |
+| GET | `/api/whoami` | Returns cookie state: `{session_id, email?, conversation_id?}` |
+| POST | `/api/chat` (multipart) | `text` + optional `files[]` images → tutor reply |
+| POST | `/api/email` | `{email}` — validate `@` + `.`, store in DB + cookie |
+| GET | `/api/history` | List past conversations for current email |
+| GET | `/api/conversation/<id>` | Full read-only message log |
+
+**Database schema:**
+
+```sql
+CREATE TABLE conversations (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  session_id TEXT NOT NULL,           -- anonymous cookie UUID (always present)
+  email TEXT,                          -- nullable until student provides
+  course TEXT NOT NULL,
+  exercise_number TEXT NOT NULL,
+  tutor_prompt TEXT NOT NULL,
+  started_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  last_active_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX idx_conversations_email ON conversations(email);
+CREATE INDEX idx_conversations_session_id ON conversations(session_id);
+
+CREATE TABLE messages (
+  id BIGSERIAL PRIMARY KEY,
+  conversation_id UUID NOT NULL REFERENCES conversations(id) ON DELETE CASCADE,
+  turn INTEGER NOT NULL,
+  role TEXT NOT NULL CHECK (role IN ('student', 'tutor')),
+  content TEXT NOT NULL,
+  pedagogical_reasoning TEXT,         -- only set on tutor rows
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX idx_messages_conversation ON messages(conversation_id);
+
+CREATE TABLE uploaded_images (
+  id BIGSERIAL PRIMARY KEY,
+  message_id BIGINT NOT NULL REFERENCES messages(id) ON DELETE CASCADE,
+  filename TEXT NOT NULL,             -- relative path under uploads/
+  mime_type TEXT NOT NULL,
+  size_bytes INTEGER NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+```
+
+**Identity / cookie flow:**
+
+1. **First-ever load** — student opens `/embed?course=X&exercise=Y`
+   - Backend: no `tutor_session_id` cookie → generate UUID → `Set-Cookie: tutor_session_id=<uuid>; SameSite=None; Secure; Partitioned`
+   - Returns chat HTML
+   - Frontend `GET /api/whoami` → `{session_id, email: null, conversation_id: null}`
+2. **First message** — frontend `POST /api/chat {text: ...}`
+   - Backend INSERTs new `conversations` row (session_id, course, exercise, no email)
+   - INSERT `messages` row (role='student', turn=1)
+   - Build tutor input: curriculum context + figures (Phase 6) + new message
+   - Call tutor → reply
+   - INSERT `messages` row (role='tutor', turn=1, with pedagogical_reasoning)
+   - Return `{tutor_reply, conversation_id, message_count: 1}`
+3. **Messages 2 and 3** — same flow, conversation_id reused
+4. **After 3rd user message** — frontend triggers email modal
+   - Modal copy: "What email did you use to sign up for this course?"
+   - Client-side validate: contains `@` AND `.`
+   - `POST /api/email {email}` → backend re-validates → UPDATE conversation → `Set-Cookie: tutor_email=<email>`
+   - **Backfill**: UPDATE past `conversations` rows with same `session_id` and null email to retroactively link
+5. **Returning user (future load)** — possibly different exercise
+   - Backend reads cookies; frontend `GET /api/whoami` → `{session_id, email, conversation_id: null}`
+   - Frontend `GET /api/history` → list of past conversations for this email
+   - Renders collapsed history sidebar
+   - Each iframe load = a fresh conversation; past convos are browsable (read-only) but not resumed (per meeting notes)
+
+**Frontend UX:**
+- Chat composer: textarea + file picker + drag-drop overlay + send button
+- Messages render top-to-bottom (user right, tutor left)
+- Collapsed history sidebar — toggle to expand
+- Email modal — full-screen overlay after 3rd user message, single email input + submit
+- Loading spinner + disabled send during in-flight requests
+- Errors shown inline with gentle copy
+
+**Local dev workflow:**
+
+```powershell
+# 1. Start Postgres locally via Docker
+docker run -d --name tutor-postgres -e POSTGRES_PASSWORD=dev -e POSTGRES_DB=tutor -p 5432:5432 postgres:16
+
+# 2. Set env vars (or use a .env file)
+$env:DATABASE_URL = "postgresql+psycopg://postgres:dev@localhost:5432/tutor"
+$env:OPENAI_API_KEY = "sk-..."
+
+# 3. Run migrations
+alembic -c main_ui/db/migrations/alembic.ini upgrade head
+
+# 4. Start the app (port 5001 — 5000 belongs to web_ui)
+python -m main_ui
+
+# 5. Test directly
+# Open http://localhost:5001/embed?course=cities_and_climate_change&exercise=04
+
+# 6. Test iframe embedding
+# Open main_ui/test_host.html in a browser
+```
+
+**Test iframe page (`main_ui/test_host.html`):** plain HTML with several iframes at different widths pointing at different course/exercise combos. Verifies iframe load, cookie behavior, responsive layout at OCW-sidebar widths, and email-modal rendering inside the iframe.
+
+**Dependencies on earlier phases:**
+- **Phase 6 (figures in context)** — required. The tutor calls from `main_ui/` need the multimodal pipeline so the LLM sees curriculum figures.
+- **Phase 7 (uploads in web_ui)** — not a hard dependency, but `utils/figures.py` from Phase 6 is reused here for upload encoding.
+
+**Implementation order:**
+1. Folder skeleton + Flask app + `python -m main_ui` boots
+2. Database schema + Alembic migrations + SQLAlchemy models
+3. Session cookie management + `/api/whoami` + `/embed` route (no chat yet)
+4. Tutor bridge — wire to existing `tutor.run_tutor.create_tutor_graph`
+5. `/api/chat` text-only — create conversation + persist messages + return tutor reply
+6. Frontend chat UI — render, send, styling
+7. Email modal — message counter, `/api/email`, cookie set + backfill
+8. Conversation history — `/api/history`, sidebar UI
+9. Image uploads — multipart `/api/chat`, `uploads/` storage, `uploaded_images` table, multimodal forwarding (depends on Phase 6)
+10. Test iframe page (`test_host.html`)
+11. Tests + README + documentation
+
+**Explicit non-goals for this phase:**
+- Production hosting (Railway / Render / Heroku) — local only
+- HTTPS + production CSP allowlist — local HTTP is fine for now
+- OAuth / SSO / MIT auth — explicitly out per meeting notes
+- Admin dashboard for browsing logged conversations
+- Real-time streaming (still request/response per message)
+- Tutor version selector in `main_ui` (always defaults to latest)
+- Email verification (best-effort — per meeting notes a wrong email is acceptable)
+- Image preprocessing / virus scanning / size optimization
+- Rate limiting / abuse protection
+- Conversation deletion / GDPR tooling
+- Cross-conversation context (tutor sees only the current conversation; past ones are browsable history only)
+- PostMessage-based parent/iframe communication
+- OCW-specific analytics callbacks
 
 ---
 
