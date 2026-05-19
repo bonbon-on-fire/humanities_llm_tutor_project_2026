@@ -704,13 +704,171 @@ curl -s -X POST -H "Content-Type: application/json" -d '{"text":"x","course":"ci
 
 ---
 
+## Step 6: Frontend chat UI ✦ ACTIVE
+
+**Goal:** Replace the Step 3 placeholder ("Tutor loading…") with a functional chat interface — message list, composer, send button, loading indicator. The page reads `tutor-config` from its embedded JSON block, sends `POST /api/chat` over fetch, and renders replies. After this step, a student can actually have a tutoring session by opening `/embed?course=…&exercise=…` and typing.
+
+Vanilla JS only. No framework, no build step. Matches the rest of the codebase (`web_ui/templates/index.html` is also vanilla). Step 6 is the first step that produces a visibly student-usable thing.
+
+#### Files to create
+
+```text
+main_ui/
+  static/
+    js/
+      chat.js                           # all chat behavior
+    css/
+      chat.css                          # all styling
+```
+
+Plus edits to:
+- `main_ui/templates/embed.html` — replace the placeholder body with real chat scaffolding; link the new JS + CSS
+
+No new Python — Step 5's `/api/chat` is the API surface, unchanged.
+
+#### Purpose of each file
+
+**`main_ui/templates/embed.html` (modified)**
+- **Owns:** the HTML scaffolding — `<head>` with viewport + title + CSS link; `<body>` with three regions (message list, composer, error banner); the `<script type="application/json" id="tutor-config">` block (kept from Step 3); a `<script src="…/chat.js" defer>` link.
+- **Stays declarative:** no inline JS. All behavior in `chat.js`.
+- **Templated values:** the Jinja-rendered `tutor_config` dict tells JS what course/exercise/tutor this iframe is for. No other server-side rendering — every message is added by JS as the conversation progresses.
+
+**`main_ui/static/js/chat.js`**
+- **Owns:** all client-side state and behavior. One file, no modules, no bundler — loaded via a plain `<script defer>` tag.
+- **Responsibilities:**
+  - Read `tutor-config` JSON on load and stash it in a module-scoped object.
+  - Hold conversation state: `conversation_id` (null until first POST returns one), `is_sending` (bool gate), `student_message_count` (for future Step 7 trigger).
+  - Wire up DOM event handlers: send button click, Enter key (without Shift), Shift+Enter for newline, textarea auto-grow (optional, low-priority).
+  - Implement `sendMessage(text)` — POST to `/api/chat`, on success render the tutor reply; on error render an inline error banner without dropping the user's typed text.
+  - Implement `renderMessage({role, content})` — append a message bubble to the list with correct CSS class.
+  - Implement `setSending(bool)` — toggle the composer's disabled state and the "tutor is thinking…" indicator.
+  - Auto-scroll the message list to the bottom on every new message.
+  - Auto-focus the textarea on page load (so embedded iframes are immediately typable).
+- **What it deliberately doesn't own:**
+  - No image upload UI (Step 9).
+  - No email modal (Step 7).
+  - No history sidebar (Step 8).
+  - No streaming — single request/response per turn.
+  - No markdown parsing — `white-space: pre-wrap` CSS handles `\n` line breaks; bold/italics/lists stay as raw text. Acceptable for Step 6; revisit if tutor replies start producing markdown the students miss.
+
+**`main_ui/static/css/chat.css`**
+- **Owns:** layout (flex column: list grows, composer pinned at bottom), message bubble styles (student right-aligned with one color, tutor left-aligned with another), composer styling (textarea + button), loading indicator, error banner, narrow-width responsiveness.
+- **Plain CSS** — no preprocessor, no framework. One file, ~150 lines max.
+
+#### UI layout (described in prose)
+
+```
++-------------------------------------------+
+|  [optional thin header showing the course |
+|   and exercise; e.g. "cities · ex 04"]    |
++-------------------------------------------+
+|                                           |
+|        [tutor reply bubble, left]         |
+|                                           |
+|        [student message bubble, right]    |
+|                                           |
+|        [tutor reply bubble, left]         |
+|                                           |
+|        … scrollable …                     |
+|                                           |
++-------------------------------------------+
+| [inline error banner, only if error]      |
++-------------------------------------------+
+|  +-------------------------------------+  |
+|  | textarea (multiline, auto-resize)   |  |
+|  +-------------------------------------+  |
+|  [Send]   [tutor is thinking… indicator]  |
++-------------------------------------------+
+```
+
+- **Message bubbles:** rounded, padded; student bubbles right-aligned with a tinted background; tutor bubbles left-aligned with a neutral background. White-space: pre-wrap so the tutor's multi-line numbered lists render legibly.
+- **Composer:** textarea grows up to ~6 lines then scrolls internally; Send button to the right (disabled when textarea is empty or `is_sending` is true).
+- **Loading indicator:** small "tutor is thinking…" text or three-dot animation next to the Send button while a POST is in flight. No fancy spinner.
+- **Error banner:** above the composer, dismissible (× button), red-ish background, plain text reason from the server's response body when available.
+- **Narrow widths:** Phase 8 says iframes may live in OCW sidebars; test at 320-360px width. Composer must stay usable; message bubbles get narrower but don't break.
+
+#### State machine
+
+Three states, transitions are obvious:
+- `idle` — composer enabled, no in-flight request
+- `sending` — composer disabled, loading indicator visible, fetch in flight
+- `errored` — same as `idle` but with an error banner present; banner clears on next successful send
+
+State transitions:
+- `idle` → `sending`: user submits a non-empty message
+- `sending` → `idle`: response received and parsed successfully (whether HTTP 2xx or a clean error)
+- Any → `errored`: HTTP error or network failure; user's typed text preserved in textarea
+
+#### Acceptance criteria
+
+1. **`/embed?course=cities_and_climate_change&exercise=04` renders the chat UI**, not the Step 3 placeholder text.
+2. **Composer visible:** textarea + Send button render side-by-side (or stacked at narrow widths).
+3. **Send works end-to-end:** typing text and clicking Send issues `POST /api/chat` with `{text, course, exercise, tutor, conversation_id?}`; on 200, the student's text appears as a bubble, then the tutor's reply appears as a separate bubble.
+4. **`conversation_id` captured and reused:** after the first POST returns it, all subsequent POSTs from the same page load include it.
+5. **Loading state:** while a POST is in flight, the Send button is disabled and a "tutor is thinking…" indicator is shown.
+6. **Enter / Shift+Enter:** Enter sends (when text is non-empty); Shift+Enter inserts a newline.
+7. **Empty text doesn't submit:** clicking Send (or pressing Enter) on an empty/whitespace-only textarea does nothing.
+8. **Errors render inline:** an HTTP 4xx/5xx (e.g. tutor failure) shows the response's `reason` in an error banner; the user's typed text stays in the textarea so they can retry.
+9. **Auto-scroll:** message list scrolls to bottom on each new message.
+10. **Auto-focus:** textarea has focus on initial page load (so students inside an iframe can start typing immediately).
+11. **Multi-turn works:** sending 5+ messages produces a coherent conversation with correct turn ordering and bubble styling.
+12. **Narrow-width readable:** at 320px the layout doesn't break; bubbles fit; composer remains usable.
+13. **Newlines render:** tutor replies with `\n` and numbered lists display as multi-line, not as one wall of text.
+14. **No XSS:** student types `<script>alert(1)</script>` — text renders literally, no script execution.
+15. **All Step 1-5 endpoints still respond** with the contracts from their respective acceptance criteria.
+
+#### Verification steps (manual)
+
+```powershell
+# Boot main_ui
+python -m main_ui
+
+# Open in a real browser
+start http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04
+
+# Smoke test inside the browser:
+# 1. Type "I am starting exercise 4" → click Send
+# 2. Observe student bubble appears, "tutor is thinking…" shows, tutor reply renders
+# 3. Type "Boston" → press Enter (without Shift)
+# 4. Observe second exchange uses the same conversation_id (check network tab payloads)
+# 5. Type empty + click Send → nothing happens
+# 6. Type "<script>alert(1)</script>" → renders as literal text, no alert
+# 7. Type many lines using Shift+Enter, then send → newlines preserved both directions
+# 8. Open DevTools → Resize viewport to 320px wide → layout stays usable
+# 9. Open DevTools → Application → Cookies → confirm tutor_session_id present
+# 10. Open DevTools → Network → confirm /api/chat requests include conversation_id from message 2 onward
+```
+
+#### What's deliberately NOT in Step 6
+
+- **No image uploads** (Step 9). The composer is text-only.
+- **No email modal** (Step 7). `student_message_count` is captured from responses but not used yet.
+- **No history sidebar** (Step 8). New page loads start a fresh conversation; no way to see past ones.
+- **No "new conversation" button.** Per meeting notes, each iframe load is a new conversation; refreshing the page is the explicit way to start over.
+- **No streaming.** Replies arrive in one chunk after the LLM finishes.
+- **No markdown rendering.** Whitespace + line breaks preserved via CSS; bold/italics stay as raw asterisks. Trade-off for keeping the JS small; revisit if students complain.
+- **No themes / dark mode.** One light style. Trivial to add later.
+- **No tests** (Step 11).
+- **No iframe test harness** — Step 10 builds `test_host.html`.
+
+#### Risks / gotchas
+
+- **XSS via `innerHTML`:** never inject tutor or student text via `.innerHTML`. Use `textContent` (or `createTextNode`). Tutor replies are LLM-generated and effectively untrusted; render as text only. Verified by AC14.
+- **Auto-scroll fights user scrolling:** if the student scrolls up to re-read an earlier reply, naive auto-scroll yanks them back to the bottom on the next message. Step 6 keeps the simple "always scroll to bottom" behavior — call it out as a known papercut and revisit if it annoys real students during testing.
+- **Race on double-clicks:** rapid double-clicks on Send before the disabled state propagates could fire two requests. Set a `is_sending` JS flag and check it at the top of `sendMessage` to short-circuit.
+- **Lost text on network error:** the user's draft must NOT be cleared from the textarea on error — only on successful send. Easy to get wrong if `sendMessage` clears the textarea before awaiting the fetch response.
+- **Long tutor replies + slow networks:** the fetch has no timeout; if the LLM hangs, the page sits in `sending` forever. Add a client-side timeout (e.g. 60s) and surface a friendly error when it trips.
+- **CSP for inline JS:** when we add `Content-Security-Policy` headers later (production hardening), inline `<script>` will be blocked unless explicitly allowed. The `tutor-config` block uses `type="application/json"` which is just data (not executed), so it's fine. The actual `chat.js` is an external file, also fine. No inline event handlers.
+- **Mobile-keyboard Enter behavior:** Enter on phone keyboards sometimes means newline, not submit. Keeping the visible Send button means students always have a non-keyboard option.
+- **Focus management in iframes:** auto-focusing the textarea works inside an iframe only if the iframe itself has focus. Browsers grant focus on click but not on initial load if the user hasn't clicked into it. Acceptable trade-off; cursor still goes to the textarea once the student clicks anywhere.
+- **Long messages clobber the layout:** a 2000-character tutor reply should wrap inside the bubble, not overflow the iframe. Test in a long-reply scenario as part of AC11.
+- **No CSRF protection.** `POST /api/chat` accepts any same-origin request without a CSRF token. Iframed cross-origin requests will be blocked by the browser's same-origin policy (the iframe and the API share an origin). For production we'd add SameSite-Strict-style protection or CSRF tokens; not needed for Step 6.
+
+---
+
 ## Future steps (just placeholders for now)
 
 These will get fleshed out as we work through them. Each maps to the implementation order in [Phase 8 of the main PLANNING.md](../PLANNING.md).
-
-### Step 6: Frontend chat UI
-
-Build `main_ui/templates/embed.html` + `main_ui/static/js/chat.js` + `main_ui/static/css/chat.css`. Render messages, send via fetch, basic styling. Vanilla JS only.
 
 ### Step 7: Email modal
 
