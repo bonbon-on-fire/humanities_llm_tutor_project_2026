@@ -218,6 +218,13 @@ body {
     color: var(--text);
 }
 
+/* Hide the fixed toggle when the sidebar is open — the sidebar's own close
+   button in its header handles closing. Prevents the icon from overlapping
+   the "AskTIM" title. */
+body:has(.sidebar[data-open="true"]) .history-toggle {
+    display: none;
+}
+
 .history-toggle-icon {
     width: 20px;
     height: 20px;
