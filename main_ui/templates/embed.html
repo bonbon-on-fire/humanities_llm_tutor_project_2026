@@ -42,15 +42,15 @@
                 Enter the email you used to sign up for this course. We use it to connect
                 this conversation with your other work in the class.
             </p>
-            <form id="email-form" class="modal-form" autocomplete="off">
+            <form id="email-form" class="modal-form" autocomplete="off" novalidate>
                 <input
-                    type="email"
+                    type="text"
                     id="email-input"
                     class="email-input"
-                    placeholder="you@example.edu"
+                    placeholder="Enter your email"
                     aria-label="Your email"
                     autocomplete="email"
-                    required>
+                    title="">
                 <div class="modal-error" id="email-error" role="alert" hidden></div>
                 <div class="modal-actions">
                     <button type="button" id="email-skip" class="modal-skip">Skip</button>
