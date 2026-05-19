@@ -65,7 +65,12 @@
       "Bash(curl -s \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04\")",
       "Bash(curl -s \"http://127.0.0.1:5001/embed?course=nope&exercise=04\")",
       "Bash(curl -s \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04&tutor=tutor_99\")",
-      "Bash(curl -s \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04&tutor=tutor_03\")"
+      "Bash(curl -s \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04&tutor=tutor_03\")",
+      "PowerShell($openai = if \\($env:OPENAI_API_KEY\\) { \"SET \\(length: $\\($env:OPENAI_API_KEY.Length\\)\\)\" } else { \"NOT SET\" }; $anthropic = if \\($env:ANTHROPIC_API_KEY\\) { \"SET \\(length: $\\($env:ANTHROPIC_API_KEY.Length\\)\\)\" } else { \"NOT SET\" }; Write-Output \"OPENAI_API_KEY: $openai\"; Write-Output \"ANTHROPIC_API_KEY: $anthropic\"; Write-Output \"\"; Write-Output \".env file in repo root:\"; if \\(Test-Path .env\\) { \\(Get-Content .env | Where-Object { $_ -match \"_API_KEY\" } | ForEach-Object { \\($_ -split \"=\"\\)[0] + \"=<redacted>\" }\\) -join \"`n\" } else { \"no .env file\" })",
+      "Bash(python -c ' *)",
+      "Bash(curl -s http://127.0.0.1:5001/health)",
+      "Bash(curl -s \"http://127.0.0.1:5001/api/whoami\")",
+      "Bash(curl -s -I \"http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04\")"
     ],
     "additionalDirectories": [
       "D:\\humanities_llm_tutor_project_2026\\docs\\superpowers"

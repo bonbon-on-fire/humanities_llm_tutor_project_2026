@@ -395,7 +395,14 @@ No new packages. Uses only `flask` (already installed) and Python stdlib (`uuid`
 
 ---
 
-## Step 4: Tutor bridge ✦ ACTIVE
+## Step 4: Tutor bridge ✦ COMPLETED
+
+**Verified locally** with real OpenAI API call: single-turn smoke test (`history=[]` + new message) returned a Socratic reply referencing the actual exercise_04 content; multi-turn smoke test (history with 2 prior turns + "Boston" as the new student message) produced a coherent next-turn reply that acknowledged the chosen city and asked a more focused follow-up. Graph cache verified by checking object identity across repeat calls with the same `(tutor, course, exercise)` key.
+
+**Implementation notes:**
+- Reused upstream `tutor.run_tutor` API (`load_system_prompt`, `create_tutor_graph`, `parse_tutor_response`, and upstream `get_tutor_reply` imported under an aliased name to avoid colliding with our own).
+- `build_assignment_text` reads `course.txt` (required-ish — falls through silently if absent), `syllabus.txt` (optional), and `exercise_<NN>.txt` (required). No `Run configuration` block since `main_ui` chats are open-ended.
+- `.env` loading added to `main_ui/__init__.py` so `OPENAI_API_KEY` from the repo's `.env` is picked up automatically by every entrypoint without manual `$env:` setup.
 
 **Goal:** Make `main_ui/` able to obtain a real tutor reply programmatically, by wrapping the existing `tutor.run_tutor` API in a thin bridge. No HTTP routes, no DB writes, no frontend changes — just confirm the wiring works end-to-end: feed in `(course, exercise, tutor, history, new_message)` from a Python REPL, get a tutor reply back, and we're confident Step 5 can plug it into `/api/chat`.
 
@@ -410,9 +417,13 @@ main_ui/
     tutor_bridge.py                   # assignment-text builder + tutor-reply entry point
 ```
 
-No edits to existing files. Step 4 is purely additive.
+Plus a small edit to `main_ui/__init__.py` to auto-load `.env` at import time (so `OPENAI_API_KEY` from the project's `.env` file is available to every entrypoint without manual `$env:OPENAI_API_KEY` setup). Uses `python-dotenv` (already in `requirements.txt`). Other project modules (`tutor/`, `web_ui/`, `judge/`) deliberately don't load `.env` per Phase 2/5 cleanups — `main_ui/` reintroduces it at the package level, scoped only to this app.
 
 #### Purpose of each file
+
+**`main_ui/__init__.py` (modified)**
+- **Adds:** a `dotenv.load_dotenv()` call at import time, pointing at the repo-root `.env`. Wrapped in a try/except for the case where `python-dotenv` is missing or the file doesn't exist — the app should still boot, just without auto-loaded env vars.
+- **Why scoped to `main_ui/`:** other modules (`tutor`, `judge`, `students`, `web_ui`) deliberately don't load `.env` per the Phase 2/5 cleanups. We're not undoing that decision — we're carving a localized exception so `main_ui/` entrypoints (`python -m main_ui` and `python -c "from main_ui..."` smoke tests) don't require manual env setup.
 
 **`main_ui/services/__init__.py`**
 - **Purpose:** package marker. Empty file. Later steps may add a stable public API surface here once we have multiple services (`conversation.py`, `image_storage.py`).
