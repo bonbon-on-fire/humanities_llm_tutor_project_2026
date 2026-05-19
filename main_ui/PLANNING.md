@@ -395,13 +395,136 @@ No new packages. Uses only `flask` (already installed) and Python stdlib (`uuid`
 
 ---
 
+## Step 4: Tutor bridge ✦ ACTIVE
+
+**Goal:** Make `main_ui/` able to obtain a real tutor reply programmatically, by wrapping the existing `tutor.run_tutor` API in a thin bridge. No HTTP routes, no DB writes, no frontend changes — just confirm the wiring works end-to-end: feed in `(course, exercise, tutor, history, new_message)` from a Python REPL, get a tutor reply back, and we're confident Step 5 can plug it into `/api/chat`.
+
+This step is the smallest possible "the LLM actually replies" milestone. It lets us catch wiring problems (missing env vars, import paths, message shape mismatches) before adding the complexity of conversation persistence in Step 5.
+
+#### Files to create
+
+```text
+main_ui/
+  services/
+    __init__.py                       # package marker
+    tutor_bridge.py                   # assignment-text builder + tutor-reply entry point
+```
+
+No edits to existing files. Step 4 is purely additive.
+
+#### Purpose of each file
+
+**`main_ui/services/__init__.py`**
+- **Purpose:** package marker. Empty file. Later steps may add a stable public API surface here once we have multiple services (`conversation.py`, `image_storage.py`).
+
+**`main_ui/services/tutor_bridge.py`**
+- **Purpose:** the one place in `main_ui/` that knows how to talk to `tutor.run_tutor`. Anything that needs a tutor reply (Step 5's `/api/chat`, future test scripts) calls this module — never the underlying `tutor.run_tutor` API directly.
+- **Owns:**
+  - `build_assignment_text(course, exercise) -> str` — concatenates `curriculum/<course>/course.txt`, optional `curriculum/<course>/syllabus.txt`, and `curriculum/<course>/exercise_<NN>.txt` into the assignment string the tutor's `<Assignment>` slot expects. Mirrors what `ui/run_ui_raw.py:_build_assignment_text` does but without the `turn_size` line (open-ended chat, no planned conversation length).
+  - A module-level graph cache keyed by `(tutor, course, exercise)` so repeat calls don't rebuild the LangGraph.
+  - `get_tutor_reply(*, course, exercise, tutor, history, new_student_message) -> dict` — the single public entry point.
+  - Internal helpers for converting our simple message dicts (`{"role": "student"|"tutor", "content": str}`) to LangChain `HumanMessage` / `AIMessage` instances.
+- **What it deliberately does NOT own:**
+  - Conversation creation / DB writes — Step 5's `services/conversation.py`.
+  - Cookie handling — Step 3's `cookies.py`.
+  - Multimodal figure attachments — Phase 6 + Step 9.
+  - Streaming — out of scope for the entire project until further notice.
+
+#### API surface
+
+```python
+def build_assignment_text(course: str, exercise: str) -> str:
+    """Build the assignment string for the tutor's <Assignment> slot."""
+
+def get_tutor_reply(
+    *,
+    course: str,
+    exercise: str,
+    tutor: str,
+    history: list[dict],          # each: {"role": "student"|"tutor", "content": str}
+    new_student_message: str,
+) -> dict:                         # {"reply": str, "reasoning": str | None}
+    """Get one tutor reply given the conversation state and new student message."""
+```
+
+Keyword-only args on `get_tutor_reply` — there are 5 of them and they're easy to mix up positionally. The message-dict shape (`role`, `content`) matches the DB column names from Step 2 so Step 5 can pass query results in directly without remapping.
+
+Return is a plain dict, not a dataclass — small surface, easy to JSON-serialize for Step 5's `/api/chat` response. Two keys:
+- `reply` — the student-facing answer text the tutor produced
+- `reasoning` — the tutor's internal `pedagogical-reasoning` (the JSON field that gets hidden from students; stored in DB for debugging and judge grading later)
+
+#### Caching strategy
+
+A module-level `dict[(tutor, course, exercise), CompiledStateGraph]` stores constructed graphs. Misses build via `load_system_prompt(tutor, assignment_override=build_assignment_text(...))` followed by `create_tutor_graph(system_prompt)`.
+
+Cache lifetime = process lifetime. Restarting the Flask app drops the cache (acceptable for local dev). If curriculum files change mid-process, the cached graph stays stale until restart — surfaced as a known gotcha rather than a bug to fix now.
+
+Not thread-safe (plain dict). Flask's dev server is single-threaded so this is fine; future production hosting with gunicorn workers needs a per-process cache anyway (same dict shape works because each worker is its own Python process).
+
+#### Dependencies
+
+- No new pip packages.
+- Imports from existing project modules: `tutor.run_tutor` (`load_system_prompt`, `create_tutor_graph`, `get_tutor_reply` — the last one re-exported under a different local name to avoid colliding with our own function).
+- Imports `HumanMessage` and `AIMessage` from `langchain_core.messages` (already a project dep).
+- Requires `OPENAI_API_KEY` to be set — the existing tutor module fails fast if it isn't. The bridge inherits that behavior; no extra check needed.
+
+#### Acceptance criteria
+
+1. **Public API imports cleanly.** `from main_ui.services.tutor_bridge import get_tutor_reply, build_assignment_text` works from anywhere in the repo.
+2. **Assignment text builds non-empty.** `build_assignment_text("cities_and_climate_change", "04")` returns a string containing both the course-level context (from `course.txt`) and the exercise text (from `exercise_04.txt`).
+3. **First call succeeds.** `get_tutor_reply(course="cities_and_climate_change", exercise="04", tutor="tutor_05", history=[], new_student_message="I'm starting exercise 4. What should I do first?")` returns a dict with non-empty `reply`. The `reasoning` field is either a non-empty string or `None` (depending on whether the tutor's JSON parsed both fields).
+4. **Reply respects tutor persona.** The reply is Socratic — asks a guiding question, does not deliver a direct answer. Qualitative check during smoke testing, not an assertion.
+5. **Multi-turn coherence.** Calling again with a non-empty `history` list produces a continuing reply that references prior turns appropriately.
+6. **Graph is cached.** A second call with the same `(tutor, course, exercise)` re-uses the cached graph. Verifiable by adding a temporary print or by inspecting the cache dict directly during testing.
+7. **Existing routes unaffected.** `python -m main_ui` boots; `/health`, `/embed`, `/api/whoami` continue to respond per their Step 1-3 contracts.
+
+#### Verification steps (manual)
+
+```powershell
+# 1. Ensure OPENAI_API_KEY is set
+$env:OPENAI_API_KEY = "sk-..."
+
+# 2. Smoke test from the repo root
+python -c "from main_ui.services.tutor_bridge import build_assignment_text; print(build_assignment_text('cities_and_climate_change', '04')[:400])"
+
+# 3. End-to-end tutor reply
+python -c "from main_ui.services.tutor_bridge import get_tutor_reply; r = get_tutor_reply(course='cities_and_climate_change', exercise='04', tutor='tutor_05', history=[], new_student_message='I am starting exercise 4. Where do I begin?'); import json; print(json.dumps(r, indent=2))"
+
+# 4. Multi-turn sanity check
+python -c "from main_ui.services.tutor_bridge import get_tutor_reply; hist = [{'role':'student','content':'Hello'},{'role':'tutor','content':'Hi! What city are you studying?'}]; r = get_tutor_reply(course='cities_and_climate_change', exercise='04', tutor='tutor_05', history=hist, new_student_message='Boston.'); print(r['reply'])"
+
+# 5. Confirm Flask still works
+python -m main_ui
+# In another shell:
+curl http://127.0.0.1:5001/health
+curl http://127.0.0.1:5001/embed?course=cities_and_climate_change&exercise=04 | head -20
+```
+
+#### What's deliberately NOT in Step 4
+
+- **No HTTP routes** — `/api/chat` is Step 5.
+- **No DB writes** — `conversations` and `messages` tables remain empty.
+- **No Flask integration of session lifecycle** — the bridge is plain Python; Flask wiring happens when Step 5 adds the chat route.
+- **No frontend changes** — `embed.html` placeholder stays untouched.
+- **No streaming** — single request/response per call.
+- **No multimodal / figures** — Phase 6 and Step 9 layer those in later.
+- **No tests** — Step 11.
+
+#### Risks / gotchas
+
+- **`OPENAI_API_KEY` must be set or the import-time/call-time chain fails.** The existing tutor module fails fast on missing key; the bridge surfaces that error cleanly. Document in the docstring; remind during verification.
+- **Cost per smoke-test call.** Every test call is a real LLM call (cents at most, but worth flagging — repeated automated runs add up). No mocking in this step; mocks belong to Step 11 tests.
+- **JSON parsing fragility.** The tutor returns a JSON object with `pedagogical-reasoning` and `Student-facing-answer`. `parse_tutor_response` in `tutor.run_tutor` already handles minor malformations. The bridge does NOT add additional repair logic — if the underlying tutor returns garbage, the bridge raises whatever exception the tutor surfaces.
+- **Cache staleness on curriculum edits.** Mid-process changes to `curriculum/<course>/exercise_<NN>.txt` won't reach a cached graph. Restart the process to pick up edits, or extend the cache with file-mtime tracking later if it becomes painful.
+- **Path resolution for `_REPO_ROOT`.** `main_ui/services/tutor_bridge.py` is three levels deep from the repo root; use `Path(__file__).resolve().parents[2]` (same trick `routes/embed.py` uses).
+- **Local name collision with `get_tutor_reply`.** Both `tutor.run_tutor` and our bridge expose a function named `get_tutor_reply`. Import the upstream one as `from tutor.run_tutor import get_tutor_reply as get_tutor_reply_upstream` to avoid shadowing.
+- **Concurrency.** Module-level cache dict is not thread-safe. Flask dev server is single-threaded so this is a non-issue. Document and revisit when we hit a multi-process / multi-thread environment.
+
+---
+
 ## Future steps (just placeholders for now)
 
 These will get fleshed out as we work through them. Each maps to the implementation order in [Phase 8 of the main PLANNING.md](../PLANNING.md).
-
-### Step 4: Tutor bridge
-
-Add `main_ui/services/tutor_bridge.py` that wraps `tutor.run_tutor.create_tutor_graph`. No HTTP route yet — just confirm we can build a tutor graph and get a reply programmatically from `main_ui/`.
 
 ### Step 5: `/api/chat` text-only
 
