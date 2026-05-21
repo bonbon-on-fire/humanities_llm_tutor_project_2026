@@ -15,9 +15,12 @@
     const emailModal = document.getElementById("email-modal");
     const emailForm = document.getElementById("email-form");
     const emailInput = document.getElementById("email-input");
+    const passwordInput = document.getElementById("password-input");
     const emailSubmit = document.getElementById("email-submit");
     const emailSkip = document.getElementById("email-skip");
     const emailError = document.getElementById("email-error");
+
+    const MIN_PASSWORD_LENGTH = 6;
 
     const historyToggle = document.getElementById("history-toggle");
     const sidebar = document.getElementById("sidebar");
@@ -106,8 +109,15 @@
         return value.includes("@") && value.includes(".");
     }
 
+    function passwordLooksValid(value) {
+        return value.length >= MIN_PASSWORD_LENGTH;
+    }
+
     function updateEmailSubmit() {
-        emailSubmit.disabled = !emailLooksValid(emailInput.value.trim());
+        emailSubmit.disabled = !(
+            emailLooksValid(emailInput.value.trim()) &&
+            passwordLooksValid(passwordInput.value)
+        );
     }
 
     function openEmailModal() {
@@ -116,6 +126,7 @@
         emailError.hidden = true;
         emailError.textContent = "";
         emailInput.value = "";
+        passwordInput.value = "";
         updateEmailSubmit();
         emailModal.hidden = false;
         emailInput.focus();
@@ -322,26 +333,35 @@
 
     async function submitEmail(event) {
         event.preventDefault();
-        const value = emailInput.value.trim();
-        if (!emailLooksValid(value)) return;
+        const emailValue = emailInput.value.trim();
+        const passwordValue = passwordInput.value;
+        if (!emailLooksValid(emailValue) || !passwordLooksValid(passwordValue)) return;
 
         emailSubmit.disabled = true;
         emailError.hidden = true;
 
         try {
-            const response = await fetch("/api/email", {
+            const response = await fetch("/api/identity", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email: value }),
+                body: JSON.stringify({
+                    email: emailValue,
+                    password: passwordValue,
+                }),
             });
 
             if (!response.ok) {
-                let reason = "Could not save your email. Please try again.";
+                let reason = "Could not save your details. Please try again.";
+                let errorCode = "";
                 try {
                     const body = await response.json();
+                    if (body && body.error) errorCode = body.error;
                     if (body && body.reason) reason = body.reason;
                 } catch (_) {
                     /* ignore body-parse errors */
+                }
+                if (errorCode === "wrong_password") {
+                    reason = "Wrong password for that email. Try again.";
                 }
                 emailError.textContent = reason;
                 emailError.hidden = false;
@@ -562,8 +582,9 @@
 
     errorDismiss.addEventListener("click", hideError);
 
-    // Email modal wiring (Step 7)
+    // Email + password modal wiring
     emailInput.addEventListener("input", updateEmailSubmit);
+    passwordInput.addEventListener("input", updateEmailSubmit);
     emailForm.addEventListener("submit", submitEmail);
     emailSkip.addEventListener("click", () => closeEmailModal({ dismissed: true }));
     emailModal.addEventListener("click", (event) => {

@@ -90,8 +90,9 @@
         <div class="modal-card">
             <h2 id="email-modal-title" class="modal-title">Help us track your progress</h2>
             <p id="email-modal-body" class="modal-body">
-                Enter the email you used to sign up for this course. We use it to connect
-                this conversation with your other work in the class.
+                Enter the email you used to sign up for this course, plus a password
+                of your choosing. We use these to connect this conversation with your
+                other work — and to keep your chats yours when you switch devices.
             </p>
             <form id="email-form" class="modal-form" autocomplete="off" novalidate>
                 <input
@@ -101,6 +102,14 @@
                     placeholder="Enter your email"
                     aria-label="Your email"
                     autocomplete="email"
+                    title="">
+                <input
+                    type="password"
+                    id="password-input"
+                    class="email-input"
+                    placeholder="Set a password (6+ characters)"
+                    aria-label="Your password"
+                    autocomplete="current-password"
                     title="">
                 <div class="modal-error" id="email-error" role="alert" hidden></div>
                 <div class="modal-actions">
