@@ -27,8 +27,7 @@ from tutor.run_tutor import stream_tutor_reply as _upstream_stream_tutor_reply
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
 _CURRICULUM_DIR = _REPO_ROOT / "curriculum"
-_CONTEXT_DIR = Path(__file__).resolve().parents[1] / "context"
-_ABOUT_ASKTIM_PATH = _CONTEXT_DIR / "about_asktim.txt"
+_ABOUT_ASKTIM_PATH = Path(__file__).resolve().parents[1] / "about_asktim.txt"
 
 
 _graph_cache: dict[tuple[str, str, str], object] = {}
@@ -46,7 +45,7 @@ def build_assignment_text(course: str, exercise: str) -> str:
     `Run configuration` block — main_ui chats are open-ended, no planned
     turn count. The leading block describes the AskTIM deployment so the
     tutor can coherently answer "what are you?" / "where am I?" questions;
-    it lives in `main_ui/context/about_asktim.txt` and is only read here so
+    it lives at `main_ui/about_asktim.txt` and is only read here so
     `tutor/`, `web_ui/`, and the bulk-transcript runners stay unaware of it.
     """
     course_dir = _CURRICULUM_DIR / course
