@@ -2,6 +2,8 @@
 
 Browser-based chat interface for the Humanities LLM Tutor. A 3-step wizard selects tutor prompt, course, and exercise, then opens a human-student chat session.
 
+> This is the **TA / developer testing harness**. The student-facing iframe-embeddable app lives in [`main_ui/`](../main_ui/README.md). Both can run side-by-side — `web_ui/` on port `5000`, `main_ui/` on `5001`.
+
 ## Structure
 
 ```
