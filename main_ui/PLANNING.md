@@ -1068,7 +1068,9 @@ with get_session() as s:
 
 ---
 
-## Step 8: Conversation history ✦ ACTIVE
+## Step 8: Conversation history ✦ COMPLETED
+
+**Verified locally** via curl + browser. All API criteria pass: `/api/history` returns `{email, conversations}`, with conversations sorted by `last_active_at DESC`, each with course / exercise_number / message_count / last_message_snippet (per design refined after first pass). `/api/conversation/<id>` returns 404 (not 403) for unauthorized or unknown UUIDs, 400 for malformed UUIDs, full message log (no `pedagogical_reasoning`) otherwise. Backend `find_or_create_conversation` extended to accept ownership via either session_id OR email match for cross-browser continuity. Frontend extended with sidebar push (margin/width animation), New chat button, Add email button (re-entry after dismiss), active-conversation highlight, live sidebar reorder on each send, in-flight abort on conversation switch, and AskTIM · Beta branding in the sidebar header with a course-name banner at the top. Detail-view DOM kept around but unused — the original read-only design was replaced with continuable past conversations per follow-up meeting feedback.
 
 **Goal:** Returning students should see their past tutoring sessions across courses and exercises. After Step 7, the email links sessions together; Step 8 surfaces that link visually as a **collapsed sidebar** listing past conversations, with a **read-only detail view** for inspecting any of them.
 
@@ -1335,18 +1337,125 @@ curl http://127.0.0.1:5001/api/conversation/not-a-uuid
 
 ---
 
+## Step 9: Token streaming for tutor replies ✦ ACTIVE
+
+**Goal:** Switch `/api/chat` from "single JSON response after the full reply lands" to "stream tokens to the client as the LLM generates them," so the tutor's message appears to type itself out in the chat. Same total latency end-to-end, but perceived speed and student attention both improve dramatically — and it matches the UX students already expect from ChatGPT / Claude.ai. Raised as a top-priority feature in the 2026-05-19 meeting notes.
+
+#### Files to modify
+
+```text
+tutor/run_tutor.py                       # add stream_tutor_reply that yields chunks
+main_ui/services/tutor_bridge.py         # streaming wrapper that yields token chunks
+main_ui/routes/chat.py                   # change /api/chat to return Server-Sent Events
+main_ui/services/conversation.py         # tweak append_exchange for post-stream buffered insert
+main_ui/static/js/chat.js                # switch fetch().then(json) to a streaming reader
+```
+
+No new files. Step 9 is purely additive/refactor to the existing chat path.
+
+#### Purpose of each change
+
+**`tutor/run_tutor.py`**
+- **Adds:** a `stream_tutor_reply(...)` generator that mirrors the signature of `get_tutor_reply` but yields incremental string chunks instead of returning the full reply. Internally uses LangChain's `.stream()` on the same graph. Final yield (or a sentinel) returns the full assembled JSON so the caller can `parse_tutor_response` it for `pedagogical-reasoning` + `Student-facing-answer`.
+
+**`main_ui/services/tutor_bridge.py`**
+- **Adds:** `stream_tutor_reply(*, course, exercise, tutor, history, new_student_message)` that delegates to the upstream streamer, reuses the same graph cache, and yields `{"type": "delta", "text": "..."}` event dicts as tokens arrive, plus a final `{"type": "done", "reply": "...", "reasoning": "..."}` once the upstream stream finishes.
+
+**`main_ui/routes/chat.py`**
+- **Changes:** `POST /api/chat` returns `text/event-stream` (Server-Sent Events) instead of `application/json`. The stream emits structured events as the tokens arrive, then a final event with `conversation_id`, the full assembled reply, and `student_message_count`. DB persistence happens after the final assembled reply lands — student message is INSERTed at stream start, tutor message at stream end. Cross-session ownership check is unchanged.
+- **Event shape (per chunk):**
+  - `event: delta\n` `data: {"text": "..."}` — incremental tokens
+  - `event: done\n` `data: {"conversation_id": "...", "reply": "...", "student_message_count": N}` — final
+  - `event: error\n` `data: {"reason": "..."}` — mid-stream failure
+
+**`main_ui/services/conversation.py`**
+- **Minor adjustment:** `append_exchange` already accepts the full text. May expose a small helper `start_exchange_student_only(...)` that inserts just the student message at stream start, then a follow-up `complete_exchange_tutor(...)` that inserts the tutor row when the stream ends. Keeps the row pair atomic from the student's perspective, but allows partial persistence if the stream is interrupted (student message stays, tutor message is null/absent).
+
+**`main_ui/static/js/chat.js`**
+- **Replaces:** the `fetch("/api/chat").then(r => r.json())` flow with a streaming consumer using `fetch(...)` + `response.body.getReader()` and a TextDecoder + SSE parser. As `delta` events arrive, append `text` to the tutor bubble's `textContent`. The thinking placeholder becomes the same bubble — pre-create the tutor bubble empty, then fill it from the stream. On `done`, update `conversationId` + `studentMessageCount` and call `maybeShowEmailModal(...)` + the sidebar reorder, same as today.
+
+#### The JSON-streaming problem (the hard part)
+
+The tutor returns a single JSON object with `pedagogical-reasoning` and `Student-facing-answer` keys. If we stream the raw output, the student sees the JSON syntax (`{"pedagogical-reasoning": "...`) appearing in the bubble — leaks the hidden reasoning AND looks terrible.
+
+Three options:
+
+| Approach | How it works | Trade-off |
+| --- | --- | --- |
+| **A. Server-side incremental parse** | Server parses the incoming token stream incrementally. Only forwards bytes that fall inside the `Student-facing-answer` field's value. | Cleanest UX; correct hiding of reasoning. Requires an incremental JSON parser or a regex-on-running-buffer hack. |
+| **B. Buffer reasoning, stream answer** | Have the tutor prompt instruct the model to output `pedagogical-reasoning` first, then `Student-facing-answer`. Server buffers until reasoning is complete, then streams the rest. | Simpler parser (find the answer field start, stream from there). Depends on a fixed field order in the LLM output, which the prompt currently asks for. |
+| **C. Restructure tutor output** | Change the tutor prompt to return plain text (student-facing only) and pull pedagogical reasoning via a separate non-streaming call (or omit it). | Cleanest implementation; biggest behavior change. Loses the simultaneous reasoning+answer pattern the judge currently consumes. |
+
+Recommendation: start with **B** (smallest change, mostly buffer-and-then-stream-from-offset logic), fall back to **A** if order-dependence proves fragile. Defer **C** as a future refactor.
+
+#### Acceptance criteria
+
+1. **Streaming works end-to-end.** `POST /api/chat` returns an SSE stream; client appends tokens to the tutor bubble as they arrive.
+2. **Pedagogical reasoning never appears in the bubble** — neither during nor after the stream. (Same hide-from-student policy as Step 5.)
+3. **Final event contains metadata.** `done` event has `conversation_id`, full assembled `reply`, and `student_message_count`. Client uses these to update state and trigger the email modal threshold.
+4. **DB persistence is correct.** Student message INSERTed at stream start; tutor message INSERTed at stream end with the full reply + pedagogical_reasoning. Turn numbers consistent.
+5. **Mid-stream error handling.** If the LLM call fails partway through, server sends an `error` event, client renders an error banner, no incomplete tutor row is persisted.
+6. **Client-side abort works.** When the student switches conversations mid-stream (or clicks New chat), the stream's `AbortController` cancels cleanly. (Builds on the abort wiring already added.)
+7. **Multi-turn streaming.** Sending a second message also streams; conversation context preserved.
+8. **Existing chat behavior preserved.** Steps 1-8 functionality unchanged (history sidebar, email modal, cross-browser access, active highlight, etc.).
+9. **No proxy / hosting timeout in dev.** Local Flask dev server holds the connection for the full 5-15 second generation window without timing out.
+
+#### Verification steps (manual)
+
+```powershell
+# 1. Boot main_ui, open the chat
+python -m main_ui
+
+# 2. Send a long-reply-eliciting message (e.g. "explain the 6 pathways for urban transformation")
+#    Observe: tutor bubble appears empty, then fills in word by word over several seconds.
+
+# 3. Curl the streaming endpoint directly to inspect raw SSE events
+curl -N -X POST -H "Content-Type: application/json" \
+  -d '{"text":"hi","course":"cities_and_climate_change","exercise":"01","tutor":"tutor_05"}' \
+  http://127.0.0.1:5001/api/chat
+
+# 4. Confirm DB row has full reply (not chunks):
+python -c "import main_ui; from main_ui.db import get_session, Message; \
+with get_session() as s: \
+    [print(m.role, m.content[:80]) for m in s.query(Message).order_by(Message.id.desc()).limit(2)]"
+
+# 5. Mid-stream switch: send a message, immediately click a past conversation
+#    Confirm the in-flight stream aborts cleanly (no stray text appearing in the new convo)
+```
+
+#### What's deliberately NOT in Step 9
+
+- **WebSocket-based bidirectional streaming.** SSE is one-way (server→client), which is all we need.
+- **Voice synthesis** ("speaking" the reply as it streams).
+- **Stream-aware judge.** Judge keeps consuming the final assembled reply from the DB — no per-token grading.
+- **Re-streaming past conversations** in the read-only history view. Past replies render instantly from the DB.
+- **Token-level rate limiting** / cost guards.
+- **Pause/resume control** for the student to slow down or stop generation mid-flight.
+
+#### Risks / gotchas
+
+- **JSON streaming complexity** (the big one — see the table above). Pick an approach early and test it against real tutor outputs before committing.
+- **gunicorn worker class:** the default `sync` worker can't hold a streaming HTTP connection well under load. For production deployment, use `gthread` or `gevent` workers (`gunicorn -k gthread main_ui.run_app:app`). Flask dev server is fine for local testing.
+- **Proxy / hosting timeouts:** Cloudflare, Heroku-style routers, and some reverse proxies kill HTTP connections that go silent for too long. Mitigation: send a periodic keep-alive comment (`:\n\n` SSE comment) every ~15s.
+- **Client-side memory:** for very long replies (1000+ tokens), naively appending `textContent` on every chunk is fine (O(n) total work), but rendering may stutter. Acceptable trade-off; revisit only if it bites.
+- **JSON output drift:** if the tutor prompt's enforced JSON format drifts (e.g., the model adds extra fields or changes order), the incremental parser breaks. Add a server-side fallback that buffers the full reply when parsing fails mid-stream, then sends the assembled reply as a single `delta` (loses the streaming UX for that one reply but doesn't crash).
+- **Browser reconnect on dropped SSE:** browsers auto-reconnect dropped SSE connections by default. For a chat reply stream we don't want that — set `Last-Event-ID` semantics off, or terminate cleanly on `done` so the client closes the reader explicitly.
+- **EventSource limitation:** the browser-native `EventSource` API only supports GET. Since `/api/chat` is POST, use `fetch()` + `ReadableStream` reader instead. Slightly more code but works with any HTTP verb.
+
+---
+
 ## Future steps (just placeholders for now)
 
 These will get fleshed out as we work through them. Each maps to the implementation order in [Phase 8 of the main PLANNING.md](../PLANNING.md).
 
-### Step 9: Image uploads
+### Step 10: Image uploads
 
 Switch `/api/chat` to `multipart/form-data`. Save uploads under `main_ui/uploads/`, record in `uploaded_images` table. Build multimodal HumanMessage via `utils/figures.py`. Forward to tutor. **Depends on Phase 6** of the main PLANNING.md being implemented.
 
-### Step 10: Test iframe page
+### Step 11: Test iframe page
 
 Build `main_ui/test_host.html` — a plain HTML page with multiple iframes at different widths pointing at different course/exercise combos. Local dev verification of the embed UX.
 
-### Step 11: Tests + README + documentation
+### Step 12: Tests + README + documentation
 
 `main_ui/tests/test_routes.py` and `test_models.py`. Flesh out `main_ui/README.md` with the full local dev workflow. Document env vars, migrations, and the `test_host.html` workflow.
