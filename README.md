@@ -24,7 +24,7 @@ The system has five loosely coupled layers:
 - **Conversation pipeline**: two LangGraph agents (tutor + student) trade messages in a structured multi-turn loop, each independently configurable via system prompt files
 - **Judge pipeline**: a separate LangGraph agent reads a finished transcript and returns a structured JSON grade against a rubric, with up to 3 automatic repair-and-retry cycles
 - **Dashboard + visualization**: a Flask web app for browsing transcripts side-by-side with Claude Mini (tutor_05) and Claude grades, and a matplotlib chart module for per-prompt score comparisons and hand-grade correlation analysis
-- **Testing harness (`web_ui/`)**: a 3-step wizard for TAs to manually try out tutor prompt + course + exercise combinations against the same engine
+- **Testing harness (`test_ui/`)**: a 3-step wizard for TAs to manually try out tutor prompt + course + exercise combinations against the same engine
 - **Student-facing app (`main_ui/`)**: iframe-embeddable chat for real OCW students. Postgres persistence, bcrypt-hashed email+password identity, Server-Sent Events streaming, cross-browser conversation history. See [`main_ui/README.md`](main_ui/README.md).
 
 ### Key Components
@@ -203,7 +203,7 @@ humanities_llm_tutor_project_2026/
 │   ├── run_dashboard_ui.py  # Flask app: routes, data loading, grade summaries
 │   └── static/app.js        # Frontend: routing, sortable table, Chart.js histograms
 │
-├── web_ui/
+├── test_ui/
 │   ├── run_app.py           # Flask app: wizard config + chat API routes
 │   └── templates/index.html # 3-step wizard (tutor → course → exercise) + human chat
 │

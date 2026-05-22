@@ -1,4 +1,4 @@
-"""Allow ``python -m web_ui`` to launch the Flask dev server."""
+"""Allow ``python -m test_ui`` to launch the Flask dev server."""
 
 from .run_app import app
 
